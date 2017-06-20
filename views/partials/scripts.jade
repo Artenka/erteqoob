@@ -1,2 +1,20 @@
 script(src='/js/jquery.onepage-scroll.min.js' type='text/javascript')
 script(src='/js/slick.min.js' type='text/javascript')
+
+script.
+  $(function(){
+
+  });
+
+  function getRotatedTextWidth(element, parent){
+    $(element).each(function () {
+      $(this).width($(this).closest(parent).height());
+    });
+  }
+
+  function changeRotatedTextWidth(element, parent){
+    getRotatedTextWidth(element, parent);
+    $(window).on('resize', function () {
+      getRotatedTextWidth(element, parent);
+    });
+  }

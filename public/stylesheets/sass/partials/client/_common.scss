@@ -19,6 +19,17 @@
  }
 }
 
+.erteqoob-title {
+ width: 143px;
+ height: 15px;
+ opacity: 0.93;
+ background: url(../../img/erteqoob-title.svg) no-repeat center / 100%;
+ @include laptop {
+  width: 115px;
+  height: 13px;
+ }
+}
+
 .logo {
  width: 142px;
  height: 142px;
@@ -120,6 +131,41 @@
  }
 }
 
+.page-title {
+ color: $color-alabaster;
+ font-size: 24px;
+ font-weight: 700;
+ line-height: 27px;
+ text-transform: uppercase;
+ text-align: center;
+ letter-spacing: 8px;
+ @include laptop {
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 6px;
+ }
+}
+
+.page-title-big-layout {
+ text-align: center;
+
+ .page-title-big {
+  display: inline-block;
+  color: $color-alabaster;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 64px;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 12px;
+  @include laptop {
+   font-size: 32px;
+   line-height: 40px;
+   letter-spacing: 8px;
+  }
+ }
+}
+
 .btn-black {
  display: block;
  width: 287px;
@@ -153,5 +199,23 @@
   top: -2px;
   left: -2px;
   transition: 0.4s;
+ }
+}
+
+.rotated-text {
+ transform: rotate(-90deg);
+ -webkit-transform: rotate(-90deg);
+ -moz-transform: rotate(-90deg);
+ -ms-transform: rotate(-90deg);
+ -o-transform: rotate(-90deg);
+ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+ position: absolute;
+
+ &.rotated-text--left {
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
  }
 }

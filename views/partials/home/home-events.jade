@@ -1,11 +1,11 @@
-section.home-events-layout
+section.section-layout.home-events-layout
   div.home-events
-    h1.home-events__title ближайшие события
+    h1.page-title.home-events__title ближайшие события
     ul.home-events-list
       li.home-events-list__item
         a(href="#").home-events-list__item-link
           div.home-events-list__item-inner
-            div.home-events-list__item-type pro
+            div.rotated-text.rotated-text--left.home-events-list__item-type pro
             header.home-events-list__item-header
               p.home-events-list__item-date 30.02
               div.home-events-list__item-duration
@@ -15,7 +15,7 @@ section.home-events-layout
       li.home-events-list__item
         a(href="#").home-events-list__item-link
           div.home-events-list__item-inner
-            div.home-events-list__item-type beginner
+            div.rotated-text.rotated-text--left.home-events-list__item-type beginner
             header.home-events-list__item-header
               p.home-events-list__item-date 30.02
               div.home-events-list__item-duration
@@ -25,7 +25,7 @@ section.home-events-layout
       li.home-events-list__item
         a(href="#").home-events-list__item-link
           div.home-events-list__item-inner
-            div.home-events-list__item-type pro
+            div.rotated-text.rotated-text--left.home-events-list__item-type pro
             header.home-events-list__item-header
               p.home-events-list__item-date 30.02
               div.home-events-list__item-duration
@@ -34,3 +34,9 @@ section.home-events-layout
             h1.home-events-list__item-title Базовый курс
 
     a(href="#").btn-black.home-events__more посмотреть календарь
+
+
+script.
+  $(function(){
+    changeRotatedTextWidth('.home-events-list__item-type', '.home-events-list__item-inner');
+  })

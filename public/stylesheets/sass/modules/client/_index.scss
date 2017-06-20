@@ -43,6 +43,11 @@ body, #root, [data-reactroot] {
  overflow-y: hidden;
 }
 
+.section-layout {
+ height: 100%;
+ position: relative;
+}
+
 .br-lg {
  display: block;
  @include tablet {display: none;}
