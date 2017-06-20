@@ -1,0 +1,22 @@
+// common scss files
+@import 'common/reset';
+@import 'common/global';
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/fonts';
+// scss libraries
+@import 'lib/spinner';
+@import 'lib/animate';
+@import 'lib/slick';
+@import 'lib/onepage-scroll';
+// modules
+@import 'modules/client/index';
+@import 'modules/client/home';
+@import 'modules/client/blog';
+@import 'modules/client/article';
+// partials
+@import 'partials/client/main-nav';
+@import 'partials/client/modals';
+@import 'partials/client/popups';
+@import 'partials/client/common';
+@import 'partials/client/page-slider';

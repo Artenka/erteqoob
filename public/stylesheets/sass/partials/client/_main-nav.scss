@@ -1,0 +1,196 @@
+.main-nav {
+ position: absolute;
+ top: 52px;
+ left: 65px;
+ z-index: 3;
+ @include clearfix;
+ @include laptop {
+  top: 35px;
+  left: 40px;
+ }
+ @include tablet-mobile {
+  display: none;
+ }
+
+ .main-nav__item {
+  border: 2px solid transparent;
+  padding: 5px 10px 3px;
+  margin-right: 15px;
+  float: left;
+
+  .main-nav__link {
+   display: block;
+   color: $color-white;
+   font-size: 14px;
+   line-height: 14px;
+   font-weight: 700;
+   text-transform: uppercase;
+   @include laptop {
+    font-size: 10px;
+    line-height: 10px;
+   }
+   &:hover {
+    color: $color-white-07;
+   }
+  }
+
+  &.main-nav__item--active {
+   border: 2px solid $color-scorpion;
+  }
+ }
+
+ &.main-nav--lang {
+  top: auto;
+  bottom: 52px;
+  @include clearfix;
+  @include laptop {
+   top: auto;
+   bottom: 35px;
+  }
+  @include tablet-mobile {
+   display: none;
+  }
+ }
+
+ &.main-nav--cities {
+
+  .main-nav__item {
+   border: none;
+   padding: 0;
+   margin-right: 35px;
+   float: left;
+
+   .main-nav__link {
+    padding: 10px 0 11px;
+    @extend .link-underline;
+    color: $color-gray;
+    &:hover {
+     color: $color-white;
+    }
+   }
+
+   &.main-nav__item--active {
+    color: $color-white;
+   }
+  }
+ }
+
+ &.main-nav--socials {
+  top: auto;
+  left: auto;
+  bottom: 43px;
+  right: 65px;
+  @include clearfix;
+  @include laptop {
+   top: auto;
+   left: auto;
+   bottom: 35px;
+   right: 40px;
+  }
+  @include tablet-mobile {
+   display: none;
+  }
+
+  .main-nav__item {
+   padding: 0;
+   margin-right: 0;
+   float: left;
+
+   .main-nav__link {
+    height: 25px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 0 0 9px;
+    @extend .link-underline;
+   }
+
+   &.main-nav__item--fb {
+
+    .main-nav__link {
+     background-image: url(../../img/icons/fb-icon.png);
+    }
+   }
+
+   &.main-nav__item--in {
+    margin-left: 35px;
+
+    .main-nav__link {
+     background-position: top 3px center;
+     background-image: url(../../img/icons/in-icon.png);
+    }
+   }
+  }
+ }
+}
+
+.main-nav-toggle {
+ width: 22px;
+ height: 14px;
+ background: url(../../img/icons/burger-icon.svg) no-repeat top center;
+ background-size: 22px 14px;
+ position: absolute;
+ top: 60px;
+ left: calc(50% - 11px);
+ z-index: 3;
+ cursor: pointer;
+ @include laptop {
+  width: 16px;
+  height: 12px;
+  background-size: 16px 12px;
+  left: calc(50% - 8px);
+  top: 45px;
+ }
+ @include tablet-mobile {
+  width: 28px;
+  height: 20px;
+  background-size: 28px 20px;
+  left: calc(50% - 14px);
+ }
+}
+
+.register-link {
+ background: url(../../img/icons/arrow-right.png) no-repeat left top 3px;
+ position: absolute;
+ top: 60px;
+ right: 55px;
+ padding-left: 44px;
+ z-index: 5;
+ @include laptop {
+  background: url(../../img/icons/arrow-right.png) no-repeat left top 1px;
+  top: 45px;
+  right: 45px;
+ }
+
+ .register-link__text {
+  display: block;
+  color: $color-chablis;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  text-transform: uppercase;
+  padding: 0 0 11px;
+  position: relative;
+  overflow: hidden;
+  @include laptop {
+   font-size: 10px;
+   line-height: 10px;
+  }
+  &:after {
+   content: '';
+   display: block;
+   height: 2px;
+   width: 100%;
+   background-color: $color-white;
+   position: absolute;
+   bottom: 0;
+   left: -100%;
+   transition: 0.5s;
+  }
+  &:hover {
+   &:after {
+    left: 0;
+   }
+  }
+ }
+}

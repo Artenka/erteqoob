@@ -1,0 +1,17 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#blog
+    include ../partials/blog/blog-categories.jade
+
+    .main-wrapper
+      .absolute-wrapper
+        include ../partials/main-nav-pages.jade
+        include ../partials/main-nav-toggle.jade
+        include ../partials/logo-main.jade
+        include ../partials/modals/scroll-hint.jade
+        include ../partials/modals/swipe-hint.jade
+
+        include ../partials/blog/blog-blocks.jade
+
+    include ../partials/scripts.jade

@@ -1,0 +1,16 @@
+.scroll-hint
+  p.scroll-hint__text используйте скролл для пролистывания
+  button.scroll-hint__btn ок
+
+script.
+  $(function(){
+    $('.scroll-hint').click(function(){
+      $(this).addClass('scroll-hint--clicked');
+      $(this).animate({
+        opacity: 0,
+        marginTop: "-20",
+      }, 600, function(){
+        $(this).hide();
+      });
+    });
+  })

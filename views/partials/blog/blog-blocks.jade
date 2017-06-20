@@ -1,0 +1,76 @@
+.blog-blocks
+  div.blog-blocks__slide
+    .blog-block.blog-block--1
+      img.blog-block__image(src='/img/client/Blog/block-1.jpg')
+      .blog-block__info
+        p киев
+        p 25.12 - 04.02
+      .blog-block__title
+        h1 базовый
+      p.blog-block__type курс
+    .blog-block.blog-block--2
+      img.blog-block__image(src='/img/client/Blog/block-2.jpg')
+      .blog-block__info
+        p 01 фев
+      .blog-block__title
+        h1 креативные решения для новичков
+      p.blog-block__type статья
+    .blog-block.blog-block--3
+      img.blog-block__image(src='/img/client/Blog/block-3.jpg')
+      .blog-block__title
+        h2 коллекция
+        h1 секвенция марта
+      p.blog-block__type фото
+    .blog-block.blog-block--main
+      img.blog-block__image(src='/img/client/Blog/block-main.jpg')
+      .blog-block__info
+        p киев
+        p 25.12 - 04.02
+      .blog-block__title
+        h2 beginner
+        h1 колористика: classic
+      p.blog-block__type курс
+  div.blog-blocks__slide
+    .blog-block.blog-block--1
+      img.blog-block__image(src='/img/client/Blog/block-1.jpg')
+      .blog-block__info
+        p киев
+        p 25.12 - 04.02
+      .blog-block__title
+        h1 базовый
+      p.blog-block__type курс
+    .blog-block.blog-block--2
+      img.blog-block__image(src='/img/client/Blog/block-2.jpg')
+      .blog-block__info
+        p 01 фев
+      .blog-block__title
+        h1 креативные решения для новичков
+      p.blog-block__type статья
+    .blog-block.blog-block--3
+      img.blog-block__image(src='/img/client/Blog/block-3.jpg')
+      .blog-block__title
+        h2 коллекция
+        h1 секвенция марта
+      p.blog-block__type фото
+    .blog-block.blog-block--main
+      img.blog-block__image(src='/img/client/Blog/block-main.jpg')
+      .blog-block__info
+        p киев
+        p 25.12 - 04.02
+      .blog-block__title
+        h2 beginner
+        h1 колористика: classic
+      p.blog-block__type курс
+
+script.
+  $(function(){
+    $('.blog-blocks').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      cssEase: 'cubic-bezier(1.000, 0.005, 0.015, 0.240)',
+      speed: 1200
+    });
+  });

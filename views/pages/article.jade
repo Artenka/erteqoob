@@ -1,0 +1,49 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#article
+    .article-wrapper
+      .article-info
+        .article-left
+          p.article-info__date 25 мар
+          h1.article-info__title ахроматическое цветовое сочетание
+        .article-inner.scroll-gray
+          h1.article-inner__title ахроматическое гармоническое сочетание цветов - однотонное гармоническое сочетание.
+          p.article-inner__description Ахроматический равноступенный цветовой ряд (от белого до черного) является гармоничным. Ахро - матические композиции в интерьере, одежде, на волосах и так далее, по своей сути статичные. Они создают впечатление консерватизма, стабильности и достоинства. Ахроматический равноступенный цветовой ряд (от белого до черного) является гармоничным. Ахроматические композиции в интерьере, одежде, на волосах и так далее, по своей сути статичные. Они создают впечатление консерватизма, стабильности. Они создают впечатление достойного консерватизма и стабильности во всем..
+          ul.subarticles
+            li.subarticle.subarticle--1(style="background-image: url(/img/client/article/article-1.jpg)")
+              a.subarticle__link(href='#')
+                .subarticle__info
+                  p 25.12 - 04.02
+                .subarticle__title
+                  h1 базовый
+                p.subarticle__type курс
+            li.subarticle.subarticle--2(style="background-image: url(/img/client/article/article-2.jpg)")
+              a.subarticle__link(href='#')
+                .subarticle__info
+                  p 25.12 - 04.02
+                .subarticle__title
+                  h1 базовый
+                p.subarticle__type курс
+            li.subarticle.subarticle--3(style="background-image: url(/img/client/article/article-3.jpg)")
+              a.subarticle__link(href='#')
+                .subarticle__info
+                  p 25.12 - 04.02
+                .subarticle__title
+                  h1 базовый
+                p.subarticle__type курс
+            li.subarticle.subarticle--4(style="background-image: url(/img/client/article/article-4.jpg)")
+              a.subarticle__link(href='#')
+                .subarticle__info
+                  p 25.12 - 04.02
+                .subarticle__title
+                  h1 базовый
+                p.subarticle__type курс
+
+        include ../partials/close-center.jade
+        div.main-wrapper
+          div.absolute-wrapper
+            include ../partials/main-nav-pages.jade
+            include ../partials/main-nav-toggle.jade
+            include ../partials/modals/scroll-hint.jade
+        .bg-dots.bg-dots--2
