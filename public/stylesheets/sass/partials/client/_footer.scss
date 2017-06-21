@@ -1,0 +1,228 @@
+.main-footer-layout {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+
+.main-footer {
+
+ .main-footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 52px 65px 0;
+  @include laptop {
+   padding: 60px 50px 0;
+  }
+
+  .main-footer__cities {
+   position: static;
+  }
+
+  .main-footer__menu {
+   position: static;
+
+   .main-nav__item {
+    margin-right: 50px;
+
+    .main-nav__link {
+     color: $color-chablis;
+    }
+   }
+  }
+
+  .main-footer__register {
+   position: static;
+  }
+ }
+
+ .main-footer__middle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .main-footer__aside-link {
+   display: block;
+   width: 240px;
+   color: $color-white-09;
+   font-size: 10px;
+   font-weight: 700;
+   line-height: 10px;
+   text-transform: uppercase;
+   text-align: center;
+   padding-bottom: 33px;
+   position: absolute;
+   bottom: 0;
+
+   svg {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 3px);
+   }
+
+   &.main-footer__aside-link--beginner {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    left: 65px;
+    @include laptop {
+     left: 50px;
+    }
+   }
+   &.main-footer__aside-link--pro {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    -o-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    right: 65px;
+    @include laptop {
+     right: 50px;
+    }
+   }
+  }
+
+  .main-footer__logo {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 240px;
+   height: 240px;
+   position: relative;
+   &:before {
+    content: '';
+    width: 1px;
+    height: 194px;
+    background-color: $color-white-022;
+    position: absolute;
+    top: 23px;
+    left: 50%;
+   }
+
+   .main-footer__logo-circle {
+    border-radius: 50%;
+    border: 1px solid $color-white-022;
+    position: absolute;
+
+    &.main-footer__logo-circle--1 {
+     width: 170px;
+     height: 170px;
+     top: 35px;
+     left: 35px;
+    }
+    &.main-footer__logo-circle--2 {
+     width: 256px;
+     height: 256px;
+     top: -8px;
+     left: -8px;
+    }
+   }
+
+   .main-footer__logo-image {
+    width: 22px;
+    height: 22px;
+    background: url(../../img/client/common/footer/footer-logo.svg) no-repeat center / 22px;
+   }
+   .main-footer__logo-title {
+    width: 109px;
+    height: 24px;
+    margin-top: 14px;
+    background: url(../../img/client/common/footer/footer-logo-title.svg) no-repeat center / 109px 24px;
+   }
+  }
+ }
+
+ .main-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 65px;
+  position: relative;
+  @include laptop {
+   padding: 0 50px;
+  }
+
+  .main-footer__lang {
+   position: static;
+  }
+
+  .main-footer__copy {
+   width: 240px;
+   color: $color-gray;
+   font-size: 15px;
+   line-height: 24px;
+   text-align: center;
+   position: absolute;
+   top: 0;
+   left: calc(50% - 120px);
+  }
+
+  .main-footer__socials {
+   position: static;
+  }
+ }
+}
+
+.footer-disclaimer {
+ display: flex;
+ justify-content: space-between;
+ padding: 0 60px 140px 120px;
+ @include laptop {
+  padding: 0 50px 125px 100px;
+ }
+
+ .footer-disclaimer__title {
+  width: 200px;
+  color: $color-white-09;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+  @include laptop {
+   font-size: 16px;
+   line-height: 30px;
+  }
+ }
+ .footer-disclaimer__text {
+  width: 585px;
+  color: $color-white-04;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27px;
+  @include laptop {
+   font-size: 14px;
+   line-height: 24px;
+  }
+
+  &.footer-disclaimer__text--1 {
+   @include laptop {
+    width: 430px;
+   }
+  }
+  &.footer-disclaimer__text--2 {
+   @include laptop {
+    width: 390px;
+   }
+  }
+ }
+
+ .footer-disclaimer__close {
+  margin-top: 50px;
+  width: 19px;
+  height: 19px;
+  background: url(../../img/icons/close-darkgrey.png) no-repeat center / 100%;
+  cursor: pointer;
+ }
+}
