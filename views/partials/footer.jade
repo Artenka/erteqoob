@@ -56,23 +56,16 @@ section.section-layout.main-footer-layout
 
 include scripts.jade
 
-script.
-  $(function(){
-    if($('.onepage-pagination li .active').data('index') === 12) hideFixedMenus();
-    $(".scroll-layout").onepage_scroll({
-      beforeMove: function (index) {
-        if(index === 12) {
-          hideFixedMenus();
-        } else {
-          if($('.onepage-pagination li .active').data('index') != 12) showFixedMenus();
-        }
-      }
-    });
-  });
-
-  function hideFixedMenus() {
-    $('.main-layout > .main-nav.main-nav--cities, .main-layout > .main-nav.main-nav--socials, .main-layout > .register-link, .main-layout > .main-nav-toggle').fadeOut();
-  }
-  function showFixedMenus() {
-    $('.main-layout > .main-nav.main-nav--cities, .main-layout > .main-nav.main-nav--socials, .main-layout > .register-link, .main-layout > .main-nav-toggle').fadeIn(400);
-  }
+//script.
+//  $(function(){
+//    if($('.onepage-pagination li .active').data('index') === 12) hideFixedMenus();
+//    $(".scroll-layout").onepage_scroll({
+//      beforeMove: function (index) {
+//        if(index === 12) {
+//          hideFixedMenus();
+//        } else {
+//          if($('.onepage-pagination li .active').data('index') != 12) showFixedMenus();
+//        }
+//      }
+//    });
+//  });

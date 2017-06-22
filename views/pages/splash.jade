@@ -1,0 +1,24 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#splash
+    .absolute-wrapper
+      include ../partials/link-back.jade
+      include ../partials/main-nav-toggle.jade
+      include ../partials/register-link.jade
+      include ../partials/splash-hint.jade
+      include ../partials/link-calendar.jade
+      include ../partials/splash/splash-center.jade
+
+    div.splash-layout
+      div.splash.splash--beginner
+        div.splash__background
+        div.splash__preview-layout
+          h1.splash__preview begi<br> nn<br> er &ndash;
+      div.splash.splash--pro
+        div.splash__background
+        div.splash__preview-layout
+          h1.splash__preview prof &ndash;<br> essio<br> nal
+
+    include ../partials/scripts.jade
+

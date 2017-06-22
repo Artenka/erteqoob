@@ -18,3 +18,16 @@ script.
       getRotatedTextWidth(element, parent);
     });
   }
+
+  function hideFixedMenus() {
+    $('.main-layout > .main-nav.main-nav--cities, .main-layout > .main-nav.main-nav--socials, .main-layout > .register-link, .main-layout > .main-nav-toggle, .main-layout > .link-aside').fadeOut();
+  }
+  function showFixedMenus() {
+    $('.main-layout > .main-nav.main-nav--cities, .main-layout > .main-nav.main-nav--socials, .main-layout > .register-link, .main-layout > .main-nav-toggle, .main-layout > .link-aside').fadeIn(400);
+  }
+  function hideScrollDown() {
+    $('.scroll-down').fadeOut();
+  }
+  function showScrollDown() {
+    $('.scroll-down').fadeIn(400);
+  }
