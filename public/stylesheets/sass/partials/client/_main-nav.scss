@@ -17,6 +17,9 @@
   padding: 5px 10px 3px;
   margin-right: 15px;
   float: left;
+  @include tablet-mobile {
+   margin-right: 30px;
+  }
 
   .main-nav__link {
    display: block;
@@ -28,6 +31,10 @@
    @include laptop {
     font-size: 10px;
     line-height: 10px;
+   }
+   @include tablet-mobile {
+    font-size: 16px;
+    line-height: 23px;
    }
    &:hover {
     color: $color-white-07;
@@ -146,5 +153,6 @@
   height: 20px;
   background-size: 28px 20px;
   left: calc(50% - 14px);
+  top: 50px;
  }
 }

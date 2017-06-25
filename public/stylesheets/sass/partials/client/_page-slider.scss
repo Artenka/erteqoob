@@ -80,6 +80,9 @@
 
 .onepage-pagination {
  @extend .page-slider-dots;
+ @include tablet-mobile {
+  display: none;
+ }
 
  li {
   margin-bottom: 10px;

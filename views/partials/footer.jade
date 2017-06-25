@@ -17,8 +17,8 @@ section.section-layout.main-footer-layout
           a(href="#").main-nav__link коллекции
         li.main-nav__item
           a(href="#").main-nav__link контакты
-      div.register-link.main-footer__register
-        a.register-link__text(href='#') запись на обучение
+      div.arrow-link.arrow-link--right.arrow-link--top.register-link.main-footer__register
+        a.arrow-link__text(href='#') запись на обучение
     .main-footer__middle
       a(href="#").main-footer__aside-link.main-footer__aside-link--beginner
         | beginner
@@ -30,6 +30,17 @@ section.section-layout.main-footer-layout
         .main-footer__logo-circle.main-footer__logo-circle--2
         .main-footer__logo-image
         .main-footer__logo-title
+      ul.main-nav.main-nav--cities.main-footer__menu.main-footer__menu--mobile
+        li.main-nav__item
+          a(href="#").main-nav__link академия
+        li.main-nav__item
+          a(href="#").main-nav__link курсы
+        li.main-nav__item
+          a(href="#").main-nav__link кадендарь
+        li.main-nav__item
+          a(href="#").main-nav__link коллекции
+        li.main-nav__item
+          a(href="#").main-nav__link контакты
       a(href="#").main-footer__aside-link.main-footer__aside-link--pro
         | pro
         svg#SvgjsSvg1011(width='12', height='6', viewbox='0 0 12 6', transform='rotate(90)')
@@ -55,6 +66,11 @@ section.section-layout.main-footer-layout
     div.footer-disclaimer__close
 
 include scripts.jade
+
+script.
+  $(function(){
+    changeRotatedTextWidth('.main-footer__aside-link', '.main-footer__middle');
+  })
 
 //script.
 //  $(function(){
