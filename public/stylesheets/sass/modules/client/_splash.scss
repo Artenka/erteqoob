@@ -10,6 +10,25 @@
  display: block;
  position: relative;
  float: left;
+ &:hover {
+
+  .splash__background {
+   &:before {
+    display: none;
+   }
+   &:after {
+    display: block;
+   }
+  }
+
+  .splash__preview-layout {
+   display: none;
+  }
+
+  .splash__inner {
+   display: flex;
+  }
+ }
 
  .splash__background {
   width: 141.66%;
@@ -26,6 +45,16 @@
    background: rgba(0,0,0,0.4);
    position: absolute;
    top: 0;
+   z-index: 3;
+  }
+  &:after {
+   content: '';
+   display: none;
+   width: 45.3%;
+   height: 62.31%;
+   background: url(../../img/client/splash/splash-dots.png) no-repeat center / 100% auto;
+   position: absolute;
+   top: 18.24%;
    z-index: 3;
   }
  }
@@ -47,7 +76,7 @@
    font-size: 15vh;
    font-weight: 700;
    line-height: 140px;
-   line-height: 15vh;
+   line-height: 14vh;
    text-transform: uppercase;
   }
  }
@@ -62,6 +91,9 @@
    &:before {
     left: 0;
    }
+   &:after {
+    left: 13%;
+   }
   }
  }
 
@@ -75,6 +107,40 @@
    &:before {
     right: 0;
    }
+   &:after {
+    right: 10%;
+   }
+  }
+ }
+
+ .splash__inner {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+
+  .splash__inner-text {
+   color: $color-white;
+   font-size: 10px;
+   font-weight: 700;
+   letter-spacing: 2.76px;
+   line-height: 20px;
+  }
+  .splash__inner-title {
+   color: $color-white;
+   font-size: 120px;
+   font-size: 12vh;
+   font-weight: 700;
+   line-height: 100px;
+   line-height: 10vh;
+   margin-top: 5%;
+   text-transform: uppercase;
   }
  }
 }
