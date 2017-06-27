@@ -65,23 +65,9 @@ section.section-layout.main-footer-layout
     p.footer-disclaimer__text.footer-disclaimer__text--2 Поэтому на сайте ты найдёшь важную информацию для профессионального развития стилистов-парикмахеров, много вдохновляющих материалов, коллекций креативных образов. Развивайся, создавай новые уникальные стрижки! Будь примером для парикмахеров.
     div.footer-disclaimer__close
 
-include scripts.jade
-
 script.
   $(function(){
     changeRotatedTextWidth('.main-footer__aside-link', '.main-footer__middle');
   })
 
-//script.
-//  $(function(){
-//    if($('.onepage-pagination li .active').data('index') === 12) hideFixedMenus();
-//    $(".scroll-layout").onepage_scroll({
-//      beforeMove: function (index) {
-//        if(index === 12) {
-//          hideFixedMenus();
-//        } else {
-//          if($('.onepage-pagination li .active').data('index') != 12) showFixedMenus();
-//        }
-//      }
-//    });
-//  });
+include scripts.jade

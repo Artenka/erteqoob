@@ -2,25 +2,15 @@ section.section-layout.home-intro
   include ../link-beginner.jade
   include ../link-pro.jade
   include ../scroll-down.jade
+  div.intro-bg
   div.intro-logo
     div.intro-logo__circle.intro-logo__circle--1
     div.intro-logo__circle.intro-logo__circle--2
     div.intro-logo__circle.intro-logo__circle--3
     div.intro-logo__img
-    div.intro-logo__title
-    p.intro-logo__text  Создавайте новые<br> образы жизни
+    div.intro-logo__title-layout
+      div.intro-logo__title
+    div.intro-logo__text-layout
+      p.intro-logo__text  Создавайте новые<br> образы жизни
   a(href="#").btn-black.home-intro__link Запись на обучение
 
-//script.
-//  $(function(){
-//    if($('.onepage-pagination li .active').data('index') != 1) hideScrollDown();
-//    $(".scroll-layout").onepage_scroll({
-//      beforeMove: function (index) {
-//        if(index != 1) {
-//          hideScrollDown();
-//        } else {
-//          showScrollDown();
-//        }
-//      }
-//    });
-//  });

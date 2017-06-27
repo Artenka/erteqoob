@@ -143,6 +143,40 @@
    background-size: 20px 33px;
   }
  }
+
+ .scroll-down__dot {
+  width: 2px;
+  height: 2px;
+  background: $color-white;
+  position: absolute;
+  left: calc(50% - 1px);
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+
+  &.scroll-down__dot--1 {bottom: -12px; animation-name: scroll-down__dot--1;}
+  &.scroll-down__dot--2 {bottom: -18px; animation-name: scroll-down__dot--2;}
+  &.scroll-down__dot--3 {bottom: -24px; animation-name: scroll-down__dot--3;}
+ }
+}
+
+@keyframes scroll-down__dot--1 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 1;}
+ 66%  {opacity: 0;}
+ 100%  {opacity: 0;}
+}
+@keyframes scroll-down__dot--2 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 0;}
+ 66%  {opacity: 1;}
+ 100%  {opacity: 0;}
+}
+@keyframes scroll-down__dot--3 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 0;}
+ 66%  {opacity: 0;}
+ 100%  {opacity: 1;}
 }
 
 .page-title {
