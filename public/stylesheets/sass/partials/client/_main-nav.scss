@@ -60,6 +60,7 @@
  }
 
  &.main-nav--cities {
+  opacity: 0;
 
   .main-nav__item {
    border: none;
@@ -87,6 +88,7 @@
   left: auto;
   bottom: 43px;
   right: 65px;
+  opacity: 0;
   @include clearfix;
   @include laptop {
    top: auto;
@@ -141,6 +143,7 @@
  left: calc(50% - 11px);
  z-index: 10;
  cursor: pointer;
+ opacity: 0;
  @include laptop {
   width: 16px;
   height: 12px;

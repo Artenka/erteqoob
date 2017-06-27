@@ -79,6 +79,7 @@
 }
 
 .onepage-pagination {
+ opacity: 0;
  @extend .page-slider-dots;
  @include tablet-mobile {
   display: none;

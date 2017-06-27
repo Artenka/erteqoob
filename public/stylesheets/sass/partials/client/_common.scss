@@ -115,6 +115,7 @@
  left: calc(50% - 20px);
  cursor: pointer;
  z-index: 5;
+ opacity: 0;
  @include laptop {
   bottom: 40px;
  }
@@ -306,6 +307,7 @@
  position: absolute;
  bottom: -45px;
  z-index: 3;
+ opacity: 0;
 
  svg {
   position: absolute;
@@ -459,6 +461,7 @@
 }
 
 .register-link {
+ opacity: 0;
  @include tablet-mobile {
   display: none;
  }
