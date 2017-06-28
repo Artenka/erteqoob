@@ -48,6 +48,7 @@ body, #root, [data-reactroot] {
 .section-layout {
  height: 100%;
  position: relative;
+ overflow: hidden;
 }
 
 .br-lg {

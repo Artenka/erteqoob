@@ -5,7 +5,6 @@
 .home-intro {
  height: 100%;
  background: $color-black;
- overflow: hidden;
 
  .intro-bg {
   width: 100%;
@@ -364,9 +363,6 @@
  .home-think__item {
   width: 30%;
   height: 60%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: auto 100%;
   position: relative;
   @include tablet-mobile {
    margin-bottom: 90px;
@@ -379,7 +375,6 @@
   &:nth-child(1) {
    width: 596px;
    height: 617px;
-   background-image: url(../../img/client/home/home-think-1.png);
    @include laptop {
     width: 426px;
     height: 442px;
@@ -389,13 +384,22 @@
     height: 279px;
    }
 
-   .home-think__item-title {
-    padding-top: 234px;
+   .home-think__item-bg {
+    background-image: url(../../img/client/home/home-think-1.png);
+   }
+
+   .home-think__item-title-layout {
+    margin-top: 234px;
     @include laptop {
-     padding-top: 175px;
+     margin-top: 175px;
     }
     @include tablet-mobile {
-     padding-top: 103px;
+     margin-top: 103px;
+    }
+   }
+   .home-think__item-text-layout {
+    @include tablet-mobile {
+     margin-top: 183px;
     }
    }
    .home-think__item-text {
@@ -404,7 +408,6 @@
      padding-left: 221px;
     }
     @include tablet-mobile {
-     padding-top: 183px;
      padding-left: 135px;
     }
    }
@@ -412,7 +415,6 @@
   &:nth-child(2) {
    width: 615px;
    height: 596px;
-   background-image: url(../../img/client/home/home-think-2.png);
    @include laptop {
     width: 441px;
     height: 428px;
@@ -422,13 +424,22 @@
     height: 269px;
    }
 
-   .home-think__item-title {
-    padding-top: 242px;
+   .home-think__item-bg {
+    background-image: url(../../img/client/home/home-think-2.png);
+   }
+
+   .home-think__item-title-layout {
+    margin-top: 242px;
     @include laptop {
-     padding-top: 160px;
+     margin-top: 160px;
     }
     @include tablet-mobile {
-     padding-top: 93px;
+     margin-top: 93px;
+    }
+   }
+   .home-think__item-text-layout {
+    @include tablet-mobile {
+     margin-top: 173px;
     }
    }
    .home-think__item-text {
@@ -437,7 +448,6 @@
      padding-left: 230px;
     }
     @include tablet-mobile {
-     padding-top: 173px;
      padding-left: 159px;
     }
    }
@@ -445,7 +455,6 @@
   &:nth-child(3) {
    width: 596px;
    height: 610px;
-   background-image: url(../../img/client/home/home-think-3.png);
    @include laptop {
     width: 427px;
     height: 437px;
@@ -455,13 +464,22 @@
     height: 275px;
    }
 
-   .home-think__item-title {
-    padding-top: 243px;
+   .home-think__item-bg {
+    background-image: url(../../img/client/home/home-think-3.png);
+   }
+
+   .home-think__item-title-layout {
+    margin-top: 243px;
     @include laptop {
-     padding-top: 162px;
+     margin-top: 162px;
     }
     @include tablet-mobile {
-     padding-top: 100px;
+     margin-top: 100px;
+    }
+   }
+   .home-think__item-text-layout {
+    @include tablet-mobile {
+     margin-top: 171px;
     }
    }
    .home-think__item-text {
@@ -470,21 +488,39 @@
      padding-left: 216px;
     }
     @include tablet-mobile {
-     padding-top: 171px;
      padding-left: 135px;
     }
    }
   }
 
+  .home-think__item-bg {
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+   background-position: center bottom;
+   background-size: auto 100%;
+   position: absolute;
+   top: 0;
+   left: -20%;
+   opacity: 0;
+  }
 
+
+  .home-think__item-title-layout {
+   margin-top: calc(50% - 39px);
+   position: relative;
+  }
   .home-think__item-title {
+   width: 100%;
    color: $color-white;
    font-size: 78px;
    font-weight: 700;
    line-height: 78px;
    text-transform: uppercase;
    text-align: center;
-   padding-top: calc(50% - 39px);
+   position: relative;
+   top: 40px;
+   opacity: 0;
    @include laptop {
     font-size: 62px;
     line-height: 62px;
@@ -494,26 +530,38 @@
     line-height: 35px;
    }
   }
+  .home-think__item-text-layout {
+   margin: 71px 0 0 0;
+   position: relative;
+   @include laptop {
+    margin-top: 39px;
+   }
+   @include tablet-mobile {
+    width: 130%;
+    position: absolute;
+    top: 0;
+    left: 0;
+   }
+  }
   .home-think__item-text {
    color: $color-nobel;
    font-size: 17px;
    font-weight: 700;
    line-height: 31px;
    text-transform: uppercase;
-   padding: 71px 0 0 50%;
+   padding-left: 50%;
+   position: relative;
+   top: 80px;
+   opacity: 0;
    @include laptop {
     font-size: 14px;
     line-height: 28px;
-    padding-top: 39px;
    }
    @include tablet-mobile {
     width: 130%;
     font-size: 18px;
     line-height: 32px;
     padding: 0 0 0 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
    }
   }
  }
@@ -532,33 +580,51 @@
    flex-direction: column;
   }
 
-  .home-video__title {
+  .home-video__title-layout {
    width: 300px;
+   margin-right: 100px;
+   position: relative;
+   @include laptop {
+    width: 275px;
+   }
+   @include tablet-mobile {
+    width: 500px;
+    margin: 0 auto;
+   }
+  }
+  .home-video__title {
    color: white;
    font-size: 38px;
    line-height: 58px;
    text-transform: uppercase;
-   margin-right: 100px;
+   position: relative;
+   top: 20%;
+   left: 0;
+   opacity: 0;
    @include laptop {
-    width: 275px;
     font-size: 34px;
     line-height: 52px;
    }
    @include tablet-mobile {
-    width: 500px;
     font-size: 28px;
     line-height: 39px;
-    margin: 0 auto;
    }
   }
 
-  .home-video__btn {
+  .home-video__btn-layout {
    width: 116px;
    margin-right: 105px;
+   position: relative;
    @include tablet-mobile {
     width: 500px;
     margin: 60px auto 0;
    }
+  }
+  .home-video__btn {
+   position: relative;
+   top: 20%;
+   left: 0;
+   opacity: 0;
 
    .home-video__btn-icon {
     display: block;
@@ -594,21 +660,32 @@
    }
   }
 
-  .home-video__text {
+  .home-video__text-layout {
    width: 340px;
+   position: relative;
+   @include laptop {
+    width: 320px;
+   }
+   @include tablet-mobile {
+    width: 500px;
+    margin: 33px auto 0;
+   }
+  }
+  .home-video__text {
    color: $color-nobel-095;
    font-size: 22px;
    line-height: 33px;
+   position: relative;
+   top: 80%;
+   left: 0;
+   opacity: 0;
    @include laptop {
-    width: 320px;
     font-size: 20px;
     line-height: 31px;
    }
    @include tablet-mobile {
-    width: 500px;
     font-size: 24px;
     line-height: 34px;
-    margin: 33px auto 0;
    }
   }
  }
