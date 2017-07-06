@@ -65,16 +65,35 @@ block contents
           }
 
           if (index == 1) {
+            homeNavHide();
+            homeAboutHide();
+            homeThinkHide();
+            homeVideoHide();
             homeIntroInit();
           } else if (index == 2) {
             homeIntroHide();
+            homeAboutHide();
+            homeThinkHide();
+            homeVideoHide();
             homeNavInit();
           } else if (index == 3) {
             homeIntroHide();
+            homeNavHide();
+            homeAboutHide();
+            homeVideoHide();
             homeThinkInit();
           } else if (index == 4) {
             homeIntroHide();
+            homeNavHide();
+            homeAboutHide();
+            homeThinkHide();
             homeVideoInit();
+          } else if (index == 5) {
+            homeIntroHide();
+            homeNavHide();
+            homeThinkHide();
+            homeVideoHide();
+            homeAboutInit();
           }
         },
         afterMove: function(index) {
@@ -153,6 +172,10 @@ block contents
       //}, 100);
     }
 
+    function homeNavHide(){
+      TweenMax.staggerTo($(".home-nav__item"), 3, {top: '100%', ease: Power1.easeInOut}, 0.2);
+    }
+
     function homeThinkInit() {
       TweenMax.staggerTo($(".home-think__item-bg"), 0.8, {left: '0', opacity: '1', ease: Power1.easeInOut}, 0.5);
       TweenMax.staggerTo($(".home-think__item-title"), 0.8, {top: '0', opacity: '1', ease: Power1.easeInOut}, 0.5);
@@ -160,9 +183,57 @@ block contents
       showPagePagination();
     }
 
-    function homeVideoInit() {
+    function homeThinkHide() {
+      TweenMax.staggerTo($(".home-think__item-bg"), 0.8, {left: '-20%', opacity: '0', ease: Power1.easeInOut}, 0.5);
+      TweenMax.staggerTo($(".home-think__item-title"), 0.8, {top: '40px', opacity: '0', ease: Power1.easeInOut}, 0.5);
+      TweenMax.staggerTo($(".home-think__item-text"), 0.8, {top: '80px', opacity: '0', ease: Power1.easeInOut}, 0.5);
+    }
+
+    function homeVideoInit(){
       TweenMax.to($(".home-video__title"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
       TweenMax.to($(".home-video__btn"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
       TweenMax.to($(".home-video__text"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
       showPagePagination();
+    }
+
+    function homeVideoHide() {
+      TweenMax.to($(".home-video__title"), 1.7, {top: '20%', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__btn"), 1.7, {top: '20%', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__text"), 1.7, {top: '80%', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+    }
+
+    function homeAboutInit(){
+      TweenMax.to($(".home-about__title"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
+      TweenMax.staggerTo($(".home-about-list__item"), 1, {opacity: '1', ease: Power4.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item-number"), 1, {top: '0', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item-text"), 1, {top: '0', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-counter__item"), 0.4, {opacity: '1', ease: Power1.easeInOut, delay: 2.1}, 0.15);
+      var counter = { number1: 0, number2: 0, number3: 0, number4: 0, number5: 0 };
+      TweenMax.to(counter, 2, {
+        number1: $('.home-about-counter__item:nth-child(1) .home-about-counter__item-number').text(),
+        number2: $('.home-about-counter__item:nth-child(2) .home-about-counter__item-number').text(),
+        number3: $('.home-about-counter__item:nth-child(3) .home-about-counter__item-number').text(),
+        number4: $('.home-about-counter__item:nth-child(4) .home-about-counter__item-number').text(),
+        number5: $('.home-about-counter__item:nth-child(5) .home-about-counter__item-number').text(),
+        onUpdate: function () {
+          $('.home-about-counter__item:nth-child(1) .home-about-counter__item-number').html(Math.ceil(counter.number1));
+          $('.home-about-counter__item:nth-child(2) .home-about-counter__item-number').html(Math.ceil(counter.number2));
+          $('.home-about-counter__item:nth-child(3) .home-about-counter__item-number').html(Math.ceil(counter.number3));
+          $('.home-about-counter__item:nth-child(4) .home-about-counter__item-number').html(Math.ceil(counter.number4));
+          $('.home-about-counter__item:nth-child(5) .home-about-counter__item-number').html(Math.ceil(counter.number5));
+        },
+        ease: Circ.easeOut,
+        delay: 2.1
+      });
+      showPagePagination();
+    }
+
+    function homeAboutHide() {
+      TweenMax.to($(".home-about__title"), 1.2, {top: '50%', opacity: '0', ease: Power1.easeInOut, delay: 0.5});
+      TweenMax.staggerTo($(".home-about-list__item"), 1, {opacity: '0', ease: Power4.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item:nth-child(even) .home-about-list__item-number"), 1, {top: '-40px', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item:nth-child(even) .home-about-list__item-text"), 1, {top: '-40px', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item:nth-child(odd) .home-about-list__item-number"), 1, {top: '40px', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-list__item:nth-child(odd) .home-about-list__item-text"), 1, {top: '40px', ease: Power1.easeInOut, delay: 0.5}, 0.3);
+      TweenMax.staggerTo($(".home-about-counter__item"), 0.4, {opacity: '0', ease: Power1.easeInOut, delay: 2.1}, 0.15);
     }
