@@ -16,7 +16,9 @@ script.
   }
 
   function changeRotatedTextWidth(element, parent){
-    getRotatedTextWidth(element, parent);
+    setTimeout(function () {
+      getRotatedTextWidth(element, parent);
+    }, 100);
     $(window).on('resize', function () {
       getRotatedTextWidth(element, parent);
     });

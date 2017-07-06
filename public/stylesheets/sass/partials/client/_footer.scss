@@ -19,12 +19,16 @@
   @include laptop {
    padding: 60px 50px 0;
   }
-  @include tablet-mobile {
+  @include tablet {
    padding: 40px 45px 0;
+  }
+  @include mobile {
+   padding: 17px 24px 0;
   }
 
   .main-footer__cities {
    position: static;
+   opacity: 1;
    @include tablet-mobile {
     display: block;
    }
@@ -32,9 +36,17 @@
 
   .main-footer__register {
    position: static;
+   opacity: 1;
    @include tablet-mobile {
     display: block;
+   }
+   @include tablet {
     margin-top: 15px;
+   }
+   @include mobile {
+    margin-top: 5px;
+    padding-left: 0;
+    background: none;
    }
   }
  }
@@ -48,6 +60,9 @@
    flex: 1;
    padding: 13% 0;
   }
+  @include mobile {
+   padding: 0 0 13%;
+  }
 
   .main-footer__aside-link {
    display: block;
@@ -56,11 +71,17 @@
    font-size: 10px;
    font-weight: 700;
    line-height: 10px;
+   letter-spacing: 3.51px;
    text-transform: uppercase;
    text-align: center;
    padding-bottom: 33px;
    position: absolute;
    bottom: 0;
+   @include mobile {
+    padding-bottom: 20px;
+    font-size: 8px;
+    line-height: 8px;
+   }
 
    svg {
     position: absolute;
@@ -84,6 +105,9 @@
     @include laptop {
      left: 50px;
     }
+    @include mobile {
+     left: 24px;
+    }
    }
    &.main-footer__aside-link--pro {
     transform: rotate(90deg);
@@ -100,6 +124,9 @@
     @include laptop {
      right: 50px;
     }
+    @include mobile {
+     right: 24px;
+    }
    }
   }
 
@@ -111,10 +138,15 @@
    width: 240px;
    height: 240px;
    position: relative;
-   @include tablet-mobile {
+   @include tablet {
     width: 170px;
     height: 170px;
     margin: 0 auto 15%;
+   }
+   @include mobile {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
    }
    &:before {
     content: '';
@@ -124,8 +156,12 @@
     position: absolute;
     top: 23px;
     left: 50%;
-    @include tablet-mobile {
+    @include tablet {
      top: -15px;
+    }
+    @include mobile {
+     height: 112px;
+     top: 19px;
     }
    }
 
@@ -145,6 +181,12 @@
       top: 28px;
       left: 28px;
      }
+     @include mobile {
+      width: 100px;
+      height: 100px;
+      top: 25px;
+      left: 25px;
+     }
     }
     &.main-footer__logo-circle--2 {
      width: 256px;
@@ -152,10 +194,16 @@
      top: -8px;
      left: -8px;
      @include tablet-mobile {
-      width: 170px;
-      height: 170px;
       top: 0;
       left: 0;
+     }
+     @include tablet-mobile {
+      width: 170px;
+      height: 170px;
+     }
+     @include mobile {
+      width: 150px;
+      height: 150px;
      }
     }
    }
@@ -185,6 +233,9 @@
   @include tablet-mobile {
    padding: 0 45px 40px;
   }
+  @include mobile {
+   padding: 0 24px 24px;
+  }
 
   .main-footer__lang {
    position: static;
@@ -209,6 +260,7 @@
 
   .main-footer__socials {
    position: static;
+   opacity: 1;
    @include tablet-mobile {
     display: block;
    }
@@ -231,6 +283,7 @@
  }
 
  &.main-footer__menu--mobile {
+  opacity: 1;
   display: none;
 
   @include tablet-mobile {

@@ -119,6 +119,11 @@
  @include laptop {
   bottom: 40px;
  }
+ @include mobile {
+  width: auto;
+  bottom: 24px;
+  left: calc(50% - 3px);
+ }
 
  .scroll-down__text {
   color: $color-white-07;
@@ -127,9 +132,12 @@
   line-height: 11px;
   text-transform: uppercase;
   text-align: center;
-  @include tablet-mobile {
-   font-size: 14px;
-   line-height: 14px;
+  @include tablet {
+   font-size: 9px;
+   line-height: 9px;
+  }
+  @include mobile {
+   display: none;
   }
  }
  .scroll-down__btn {
@@ -138,10 +146,18 @@
   background: url(../../img/icons/scroll-down.png) no-repeat center;
   background-size: 14px 23px;
   margin: 15px auto 0;
-  @include tablet-mobile {
-   width: 20px;
-   height: 33px;
-   background-size: 20px 33px;
+  @include tablet {
+   width: 12px;
+   height: 17px;
+   background-size: 12px 17px;
+   margin-top: 20px;
+  }
+  @include mobile {
+   width: 6px;
+   height: 18px;
+   background: url(../../img/icons/arrow-bottom.svg) no-repeat center;
+   background-size: 6px 18px;
+   margin: 0;
   }
  }
 
@@ -154,6 +170,9 @@
   opacity: 0;
   animation-iteration-count: infinite;
   animation-duration: 3s;
+  @include mobile {
+   display: none;
+  }
 
   &.scroll-down__dot--1 {bottom: -12px; animation-name: scroll-down__dot--1;}
   &.scroll-down__dot--2 {bottom: -18px; animation-name: scroll-down__dot--2;}
@@ -195,8 +214,13 @@
  }
  @include tablet-mobile {
   font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 9px;
+  line-height: 48px;
+  letter-spacing: 4px;
+ }
+ @include mobile {
+  font-size: 14px;
+  line-height: 27px;
+  letter-spacing: 4px;
  }
 }
 
@@ -217,10 +241,15 @@
    line-height: 40px;
    letter-spacing: 8px;
   }
-  @include tablet-mobile {
+  @include tablet {
    font-size: 24px;
-   line-height: 32px;
-   letter-spacing: 9px;
+   line-height: 48px;
+   letter-spacing: 4px;
+  }
+  @include mobile {
+   font-size: 16px;
+   line-height: 27px;
+   letter-spacing: 4px;
   }
  }
 }
@@ -239,12 +268,21 @@
  letter-spacing: 2px;
  padding-left: 61px;
  position: relative;
- @include tablet-mobile {
+ @include tablet {
   width: 332px;
   height: 62px;
   font-size: 16px;
   line-height: 62px;
   letter-spacing: 2.5px;
+ }
+ @include mobile {
+  width: 190px;
+  height: 40px;
+  padding-left: 40px;
+  background: url(../../img/icons/arrow-right.svg) no-repeat center left 20px / 10px 4px, $color-black;
+  font-size: 9px;
+  letter-spacing: 1.29px;
+  line-height: 38px;
  }
  &:hover {
 
@@ -254,9 +292,13 @@
    border: 5px solid $color-cape-cod;
    top: -5px;
    left: -5px;
-   @include tablet-mobile {
+   @include tablet {
     width: 337px;
     height: 67px;
+   }
+   @include mobile {
+    width: 196px;
+    height: 46px;
    }
   }
  }
@@ -269,9 +311,13 @@
   top: -2px;
   left: -2px;
   transition: 0.4s;
-  @include tablet-mobile {
+  @include tablet {
    width: 332px;
    height: 62px;
+  }
+  @include mobile {
+   width: 190px;
+   height: 40px;
   }
  }
 }
@@ -308,6 +354,19 @@
  bottom: -45px;
  z-index: 3;
  opacity: 0;
+ @include tablet {
+  font-size: 12px;
+  letter-spacing: 5.26px;
+  line-height: 12px;
+  padding-bottom: 25px;
+ }
+ @include mobile {
+  font-size: 8px;
+  letter-spacing: 3.51px;
+  line-height: 8px;
+  padding-bottom: 20px;
+  bottom: -25px;
+ }
 
  svg {
   position: absolute;
@@ -331,7 +390,7 @@
    left: 45px;
   }
   @include tablet-mobile {
-   left: 30px;
+   left: 6.25%;
   }
  }
  &.link-aside--pro {
@@ -350,7 +409,7 @@
    right: 45px;
   }
   @include tablet-mobile {
-   right: 30px;
+   right: 6.25%;
   }
  }
 }
@@ -376,8 +435,15 @@
    line-height: 10px;
   }
   @include tablet-mobile {
-   font-size: 16px;
+   font-size: 12px;
+   letter-spacing: 1.07px;
    line-height: 16px;
+  }
+  @include mobile {
+   font-size: 8px;
+   letter-spacing: 0.71px;
+   line-height: 27.32px;
+   padding-bottom: 5px;
   }
   &:after {
    content: '';
@@ -408,6 +474,9 @@
    background-position: left top 1px;
    right: 45px;
   }
+  @include tablet-mobile {
+   right: 6.25%;
+  }
 
   &.arrow-link--gray {
    background-image: url(../../img/icons/arrow-right-long-gray.svg);
@@ -427,6 +496,9 @@
    background-position: right top 1px;
    left: 45px;
   }
+  @include tablet-mobile {
+   left: 6.25%;
+  }
 
   &.arrow-link--gray {
    background-image: url(../../img/icons/arrow-left-long-gray.svg);
@@ -440,11 +512,17 @@
   @include laptop {
    top: 45px;
   }
+  @include tablet {
+   top: 43px;
+  }
  }
  &.arrow-link--bottom {
   bottom: 60px;
   @include laptop {
    bottom: 45px;
+  }
+  @include tablet-mobile {
+   bottom: 43px;
   }
  }
  &.arrow-link--gray {
@@ -462,7 +540,7 @@
 
 .register-link {
  opacity: 0;
- @include tablet-mobile {
+ @include mobile {
   display: none;
  }
 }
