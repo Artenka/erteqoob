@@ -818,7 +818,7 @@
    line-height: 58px;
    text-transform: uppercase;
    position: relative;
-   top: 20%;
+   top: 100px;
    left: 0;
    opacity: 0;
    @include laptop {
@@ -851,7 +851,7 @@
   }
   .home-video__btn {
    position: relative;
-   top: 20%;
+   top: 100px;
    left: 0;
    opacity: 0;
    @include mobile {
@@ -924,7 +924,7 @@
    font-size: 22px;
    line-height: 33px;
    position: relative;
-   top: 80%;
+   top: 100px;
    left: 0;
    opacity: 0;
    @include laptop {
@@ -1243,16 +1243,19 @@
 }
 
 .home-founders-title {
+ position: relative;
+ z-index: 9;
  @include mobile {
   width: 100%;
   position: absolute;
   top: 36px;
   left: 0;
-  z-index: 6;
  }
 }
 .home-founders-subtitle {
  margin: 23px auto 0;
+ position: relative;
+ z-index: 9;
  @include laptop {
   margin-top: 18px;
  }
@@ -1264,7 +1267,6 @@
   position: absolute;
   top: 67px;
   left: calc(50% - 55px);
-  z-index: 6;
  }
 }
 
@@ -1286,15 +1288,56 @@
  }
 
  .home-founder {
-  width: 28%;
-  height: 81%;
+  width: 35%;
+  height: 100%;
   align-self: flex-end;
   position: relative;
   cursor: pointer;
+  transition: 0.8s;
   @include tablet-mobile {
    width: 100%;
    height: 100%;
+  }
+  @include mobile {
    overflow: hidden;
+  }
+  &:hover {
+   width: 44%;
+   height: 125%;
+   @include tablet-mobile {
+    width: 100%;
+    height: 100%;
+   }
+
+   .home-founder__image {
+
+    @include tablet {
+     width: 65%;
+     height: 210%;
+     bottom: -35%;
+     z-index: 0;
+    }
+   }
+
+   .home-founder__preview {
+
+    .home-founder__preview-position-layout, .home-founder__preview-name, .home-founder__preview-name:before, .home-founder__preview-star-layout {
+     opacity: 0;
+     transform: scale(0);
+    }
+   }
+
+   .home-founder__inner {
+
+    .home-founder__inner-text-layout .home-founder__inner-text-block {
+     opacity: 1;
+     top: 0;
+    }
+    .home-founder__inner-title-layout .home-founder__inner-title {
+     opacity: 1;
+     top: 0;
+    }
+   }
   }
   &:nth-child(1) .home-founder__image { background-image: url(../../img/client/home/founder-1.png); }
   &:nth-child(2) .home-founder__image { background-image: url(../../img/client/home/founder-2.png); }
@@ -1302,12 +1345,23 @@
   &:nth-child(even) {
 
    .home-founder__image {
+    bottom: 60%;
     @include tablet {
-     left: 1%;
+     right: 2%;
+     left: auto;
+    }
+   }
+
+   .home-founder__inner {
+    @include tablet {
+     padding-left: 30%;
     }
    }
 
    .home-founder__preview {
+    @include tablet {
+     padding-top: 20%;
+    }
 
     .home-founder__preview-position-layout {
      @include tablet {
@@ -1324,7 +1378,7 @@
       }
      }
     }
-    .home-founder__preview-star {
+    .home-founder__preview-star-layout {
      @include tablet {
       margin-left: 54%;
      }
@@ -1335,8 +1389,14 @@
 
    .home-founder__image {
     @include tablet {
-     left: auto;
-     right: 4%;
+     //left: auto;
+     left: 2%;
+    }
+   }
+
+   .home-founder__inner {
+    @include tablet {
+     padding-right: 30%;
     }
    }
   }
@@ -1348,11 +1408,16 @@
    background-position: center top;
    background-size: 100% auto;
    position: absolute;
-   bottom: 0;
+   bottom: 30%;
+   opacity: 0;
    left: 0;
+   //transition: 0.5s;
+   z-index: 2;
    @include tablet {
     width: 55%;
-    height: 90%;
+    height: 160%;
+    bottom: -25%;
+    //height: 90%;
    }
    @include mobile {
     width: 90%;
@@ -1368,7 +1433,7 @@
    position: absolute;
    bottom: 0;
    left: 0;
-   z-index: 2;
+   z-index: 3;
    @include laptop {
     padding-top: 55%;
    }
@@ -1377,7 +1442,7 @@
     flex-direction: column;
    }
    @include tablet {
-    padding-top: 10%;
+    padding-top: 12%;
     justify-content: center;
    }
    @include mobile {
@@ -1385,11 +1450,16 @@
     justify-content: flex-end;
    }
 
+   .home-founder__preview-position-layout, .home-founder__preview-name, .home-founder__preview-name:before, .home-founder__preview-star-layout {
+    transition: 0.8s;
+   }
+
    .home-founder__preview-position-layout {
     text-align: center;
     @include tablet-mobile {
      text-align: left;
-     margin-left: 20%;
+     margin-left: 23%;
+     //margin-left: 20%;
     }
     @include mobile {
      text-align: right;
@@ -1405,14 +1475,20 @@
     line-height: 21px;
     text-transform: uppercase;
     text-align: left;
+    position: relative;
+    bottom: -20px;
+    opacity: 0;
     @include laptop {
      font-size: 12px;
      line-height: 20px
     }
     @include tablet {
-     font-size: 18px;
-     line-height: 25px;
-     letter-spacing: 4px;
+     //font-size: 18px;
+     //line-height: 25px;
+     //letter-spacing: 4px;
+     font-size: 10px;
+     letter-spacing: 2.92px;
+     line-height: 18px;
     }
     @include mobile {
      font-size: 8px;
@@ -1427,14 +1503,17 @@
     margin-top: 18px;
     padding: 0 21.8%;
     position: relative;
+    bottom: -40px;
+    opacity: 0;
     @include laptop {
      font-size: 24px;
      line-height: 28px;
     }
     @include tablet {
-     font-size: 34px;
+     font-size: 36px;
      line-height: 38px;
-     padding: 0 5%;
+     padding: 0 10%;
+     //padding: 0 5%;
     }
     @include mobile {
      font-size: 24px;
@@ -1450,8 +1529,10 @@
      bottom: 8px;
      left: 21.8%;
      @include tablet {
-      height: 89px;
-      left: 5%;
+      height: 128px;
+      //height: 89px;
+      left: 10%;
+      //left: 5%;
       bottom: 25px;
      }
      @include mobile {
@@ -1461,20 +1542,128 @@
      }
     }
    }
-   .home-founder__preview-star {
+   .home-founder__preview-star-layout {
     width: 14px;
     height: 14px;
-    background: url(../../img/icons/icon-star.png) no-repeat center / 100%;
     margin: 12px 0 0 21.8%;
+    position: relative;
     @include tablet {
      width: 11px;
      height: 11px;
-     margin: 17px 0 0 5%;
+     margin: 17px 0 0 10%;
+     //margin: 17px 0 0 5%;
     }
     @include mobile {
      width: 10px;
      height: 10px;
      margin: 11px 0 0 24%;
+    }
+   }
+   .home-founder__preview-star {
+    width: 100%;
+    height: 100%;
+    background: url(../../img/icons/icon-star.png) no-repeat center / 100%;
+    bottom: 20px;
+    opacity: 0;
+    position: relative;
+   }
+  }
+
+  .home-founder__inner {
+   padding-top: 55%;
+   position: relative;
+   z-index: 3;
+   @include tablet-mobile {
+    display: flex;
+    flex-direction: column;
+   }
+   @include tablet {
+    padding-top: 15%;
+    justify-content: center;
+   }
+   @include mobile {
+    width: 100%;
+    padding: 0 0 54px;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+   }
+
+   .home-founder__inner-text-layout {
+    position: relative;
+
+    .home-founder__inner-text-block {
+     position: relative;
+     top: 50px;
+     opacity: 0;
+     transition: 0.5s;
+     transition-delay: 0.3s;
+
+     .home-founder__inner-text {
+      color: $color-silver-chalice-2;
+      font-size: 14px;
+      line-height: 28px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      text-align: center;
+      @include mobile {
+       font-size: 10px;
+       line-height: 18px;
+       letter-spacing: 1.2px;
+      }
+      &:nth-child(1){padding-right: 30px;}
+      &:nth-child(3){padding-left: 30px;}
+      &:nth-child(4){padding-right: 120px;@include mobile {padding-right: 90px}}
+     }
+    }
+   }
+
+   .home-founder__inner-title-layout {
+    margin-top: 10%;
+    @include mobile {
+     margin-top: 6%;
+    }
+
+    .home-founder__inner-title {
+     color: $color-white;
+     font-size: 18px;
+     line-height: 27px;
+     position: relative;
+     top: 50px;
+     opacity: 0;
+     transition: 0.5s;
+     transition-delay: 0.3s;
+     padding-left: 50%;
+     @include tablet {
+      padding-left: 44%;
+     }
+     @include mobile {
+      font-size: 14px;
+      line-height: 27px;
+     }
+    }
+   }
+  }
+
+  &.home-founder--disabled {
+   width: 30%;
+   height: 85%;
+   filter: grayscale(20%);
+   opacity: 0.6;
+   @include tablet-mobile {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(0);
+    opacity: 1;
+   }
+
+   .home-founder__preview {
+
+    .home-founder__preview-position-layout, .home-founder__preview-name, .home-founder__preview-star-layout {
+     opacity: 0.6;
+     @include tablet-mobile {
+      opacity: 1;
+     }
     }
    }
   }
