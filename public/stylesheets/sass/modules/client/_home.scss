@@ -1321,7 +1321,7 @@
 
    .home-founder__preview {
 
-    .home-founder__preview-position-layout, .home-founder__preview-name, .home-founder__preview-name:before, .home-founder__preview-star-layout {
+    .home-founder__preview-position-layout, .home-founder__preview-name, .home-founder__preview-name-line, .home-founder__preview-star-layout {
      opacity: 0;
      transform: scale(0);
     }
@@ -1469,6 +1469,7 @@
    }
    .home-founder__preview-position {
     display: inline-block;
+    height: 63px;
     color: $color-white-07;
     font-size: 14px;
     font-weight: 700;
@@ -1479,10 +1480,12 @@
     bottom: -20px;
     opacity: 0;
     @include laptop {
+     height: 60px;
      font-size: 12px;
      line-height: 20px
     }
     @include tablet {
+     height: 54px;
      //font-size: 18px;
      //line-height: 25px;
      //letter-spacing: 4px;
@@ -1491,17 +1494,28 @@
      line-height: 18px;
     }
     @include mobile {
+     height: 42px;
      font-size: 8px;
      letter-spacing: 2.34px;
-     line-height: 13.6px;
+     line-height: 14px;
+    }
+   }
+   .home-founder__preview-name-layout {
+    margin-top: 18px;
+    padding: 0 21.8%;
+    position: relative;
+    @include tablet {
+     padding: 0 10%;
+     //padding: 0 5%;
+    }
+    @include mobile {
+     padding: 0 0 0 24%;
     }
    }
    .home-founder__preview-name {
     color: $color-white;
     font-size: 31px;
     line-height: 38px;
-    margin-top: 18px;
-    padding: 0 21.8%;
     position: relative;
     bottom: -40px;
     opacity: 0;
@@ -1512,34 +1526,32 @@
     @include tablet {
      font-size: 36px;
      line-height: 38px;
-     padding: 0 10%;
-     //padding: 0 5%;
     }
     @include mobile {
      font-size: 24px;
      line-height: 24px;
-     padding: 0 0 0 24%;
     }
-    &:before {
-     content: '';
-     width: 1px;
-     height: 166px;
-     background: $color-gray-2-024;
-     position: absolute;
-     bottom: 8px;
-     left: 21.8%;
-     @include tablet {
-      height: 128px;
-      //height: 89px;
-      left: 10%;
-      //left: 5%;
-      bottom: 25px;
-     }
-     @include mobile {
-      height: 71px;
-      left: 24%;
-      bottom: 34px;
-     }
+   }
+   .home-founder__preview-name-line {
+    content: '';
+    width: 1px;
+    height: 166px;
+    background: $color-gray-2-024;
+    position: absolute;
+    bottom: 28px;
+    left: 21.8%;
+    opacity: 0;
+    @include tablet {
+     height: 128px;
+     //height: 89px;
+     left: 10%;
+     //left: 5%;
+     //bottom: 25px;
+    }
+    @include mobile {
+     height: 71px;
+     left: 24%;
+     //bottom: 34px;
     }
    }
    .home-founder__preview-star-layout {
@@ -1700,7 +1712,9 @@
   }
  }
  .home-system__title {
-
+  position: relative;
+  bottom: 100px;
+  opacity: 0;
  }
 
  .home-system__lists-layout {
@@ -1737,6 +1751,8 @@
   top: calc(50% - 248px);
   left: calc(50% - 249px);
   z-index: 4;
+  opacity: 0;
+  transform: scale(0.75);
   @include laptop {
    width: 242px;
    height: 240px;
@@ -1792,8 +1808,10 @@
      padding-left: inherit;
     }
     &:nth-child(1) {
-     padding-top: 48px;
-     border-top: 1px solid $color-gray-2-024;
+     @include mobile {
+      padding-top: 48px;
+      border-top: 1px solid $color-gray-2-024;
+     }
     }
    }
   }
@@ -1834,6 +1852,10 @@
     @include mobile {
      padding-left: 10%;
     }
+
+    .home-system-list__item-text {
+     bottom: 120px;
+    }
    }
    &:nth-child(2) {
     @include tablet {
@@ -1842,6 +1864,10 @@
     @include mobile {
      padding-left: 30%;
      border-bottom: 1px solid $color-gray-2-024;
+    }
+
+    .home-system-list__item-text {
+     bottom: -5px;
     }
    }
 
@@ -1877,11 +1903,19 @@
   }
  }
 
- .home-system__link {
+ .home-system__link-layout {
   margin: 50px auto 0;
+  position: relative;
   @include mobile {
    margin-top: 47px;
   }
+ }
+
+ .home-system__link {
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  opacity: 0;
  }
 }
 
