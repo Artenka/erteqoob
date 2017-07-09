@@ -545,3 +545,11 @@
   display: none;
  }
 }
+
+.slick-list {
+ overflow: visible;
+}
+.slick-track {
+ display: flex;
+ height: 100%;
+}

@@ -1,9 +1,15 @@
 section.section-layout.home-action-layout
   div.home-action
-    div.home-action__info
-      h1.home-action__title Отличайся!
-      h2.home-action__subtitle Черпай вдохновение<br> из новых коллекций и материалов
-    form.home-action__form
-      input.home-action__form-input(type="text", placeholder="Имя")
-      input.home-action__form-input(type="text", placeholder="E-mail")
-      button(type="submit").btn-black.home-action__form-submit подписаться
+    div.home-action__inner
+      div.home-action__info
+        h1.home-action__title Отличайся!
+        h2.home-action__subtitle Черпай вдохновение<br> из новых коллекций и материалов
+      form.home-action__form
+        div.home-action__form-input-layout
+          .home-action__form-input-line
+          input.home-action__form-input(type="text", placeholder="Имя")
+        div.home-action__form-input-layout
+          .home-action__form-input-line
+          input.home-action__form-input(type="text", placeholder="E-mail")
+        div.home-action__form-submit-layout
+          button(type="submit").btn-black.home-action__form-submit подписаться

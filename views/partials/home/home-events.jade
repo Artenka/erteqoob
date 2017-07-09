@@ -18,6 +18,26 @@ section.section-layout.home-events-layout
           div.home-events-list__item-inner
             header.home-events-list__item-header
               p.home-events-list__item-date 30.02
+              div.rotated-text.rotated-text--left.home-events-list__item-type pro
+              div.home-events-list__item-duration
+                h3 7
+                p месяцев<br> обучения
+            h1.home-events-list__item-title Базовый курс
+      li.home-events-list__item
+        a(href="#").home-events-list__item-link
+          div.home-events-list__item-inner
+            header.home-events-list__item-header
+              p.home-events-list__item-date 30.02
+              div.rotated-text.rotated-text--left.home-events-list__item-type pro
+              div.home-events-list__item-duration
+                h3 7
+                p месяцев<br> обучения
+            h1.home-events-list__item-title Базовый курс
+      li.home-events-list__item
+        a(href="#").home-events-list__item-link
+          div.home-events-list__item-inner
+            header.home-events-list__item-header
+              p.home-events-list__item-date 30.02
               div.rotated-text.rotated-text--left.home-events-list__item-type beginner
               div.home-events-list__item-duration
                 h3 7
@@ -34,10 +54,64 @@ section.section-layout.home-events-layout
                 p месяцев<br> обучения
             h1.home-events-list__item-title Базовый курс
 
-    a(href="#").btn-black.home-events__more <span class="br-lg-md">посмотреть календарь</span><span class="br-sm">посмотреть курсы</span>
+    div.home-events__more-layout
+      a(href="#").btn-black.home-events__more <span class="br-lg-md">посмотреть календарь</span><span class="br-sm">посмотреть курсы</span>
 
 
 script.
   $(function(){
     changeRotatedTextWidth('.home-events-list__item-type', '.home-events-list__item-inner');
+
+    // events slides responsive resize
+    //$('.home-events-list').on('init', function (event, slick) {
+    //  setTimeout(function () {
+    //    eventsSlideResize();
+    //  }, 100);
+    //});
+    //$(window).on('resize', function () {
+    //  eventsSlideResize();
+    //});
+
+    function eventsSlideResize() {
+      var slider = $('.home-events-list');
+      var slideItem = $('.home-events-list__item');
+
+      if ($(window).width() < 640) {
+        slideItem.width(slider.width() * 0.9);
+        slideItem.height('auto');
+      } else if ($(window).width() < 1260 && $(window).width() >= 640) {
+        slideItem.width(slider.width() * 0.7);
+        slideItem.height(slider.height());
+      } else {
+        slideItem.width(slider.width() * 0.19);
+        slideItem.height(slider.height() * 0.9);
+      }
+    }
+
+    // home events slider
+    //$('.home-events-list').slick({
+    //  slidesToShow: 5,
+    //  arrows: false,
+    //  dots: false,
+    //  draggable: true,
+    //  accessibility: false,
+    //  centerMode: true,
+    //  variableWidth: true,
+    //  swipeToSlide: true,
+    //  responsive: [
+    //    {
+    //      breakpoint: 1260,
+    //      settings: {
+    //        slidesToShow: 3
+    //      }
+    //    },
+    //    {
+    //      breakpoint: 640,
+    //      settings: {
+    //        arrows: true,
+    //        slidesToShow: 1
+    //      }
+    //    }
+    //  ]
+    //});
   })
