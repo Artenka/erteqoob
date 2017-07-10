@@ -87,7 +87,11 @@ block contents
           if (index == 12) {
             hideFixedMenus();
           } else {
-            showFixedMenus();
+            fixedMenusReinit();
+          }
+          hidePagePagination();
+          if (index != 1 || index != 8) {
+            showPagePagination();
           }
 
           if (index == 1) {
@@ -242,18 +246,41 @@ block contents
 
     });
 
+    function hideScrollDown() {
+      $('.scroll-down').fadeOut();
+    }
+    function showScrollDown() {
+      $('.scroll-down').fadeIn(400);
+    }
+
     function showPagePagination() {
       setTimeout(function () {
-        TweenMax.to($('.onepage-pagination'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.6});
+        TweenMax.to($('.onepage-pagination'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
+      }, 100);
+    }
+    function hidePagePagination() {
+      setTimeout(function () {
+        TweenMax.to($('.onepage-pagination'), 0.1, {opacity: 0, ease: Power1.easeOut, delay: 0.1});
       }, 100);
     }
 
     function fixedMenusInitAnimation() {
       if ($(window).width() >= 640) {
-        TweenMax.to($('.main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
-        TweenMax.to($('.register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+        TweenMax.to($('.main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
+        TweenMax.to($('.register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
       }
-      TweenMax.to($('.main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
+    }
+    function fixedMenusHideAnimation() {
+      if ($(window).width() >= 640) {
+        TweenMax.to($('.main-nav--cities'), 0.1, {opacity: 0, ease: Power1.easeOut});
+        TweenMax.to($('.register-link'), 0.1, {opacity: 0, ease: Power1.easeOut});
+      }
+      TweenMax.to($('.main-nav-toggle'), 0.1, {opacity: 0, ease: Power1.easeOut});
+    }
+    function fixedMenusReinit() {
+      fixedMenusHideAnimation();
+      fixedMenusInitAnimation();
     }
 
     function homeIntroInit(){
@@ -265,9 +292,6 @@ block contents
       if ($(window).width() >= 640) {
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       }
-      setTimeout(function () {
-        TweenMax.to($('.onepage-pagination'), 1, {opacity: 0, ease: Power4.easeOut});
-      }, 100);
 
       TweenMax.to($('.intro-bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 1, ease: Power4.easeOut});
       TweenMax.to($('.intro-logo__circle--3'), 0.7, {opacity: 1, ease: Power4.easeOut});
@@ -318,7 +342,6 @@ block contents
 
     function homeNavInit(){
       TweenMax.staggerTo( $(".home-nav__item"), 1, { top: '0', ease : Power1.easeInOut }, 0.2 );
-      showPagePagination();
     }
 
     function homeNavHide(){
@@ -329,7 +352,6 @@ block contents
       TweenMax.staggerTo($(".home-think__item-bg"), 0.8, {left: '0', opacity: '1', ease: Power1.easeInOut}, 0.5);
       TweenMax.staggerTo($(".home-think__item-title"), 0.8, {top: '0', opacity: '1', ease: Power1.easeInOut}, 0.5);
       TweenMax.staggerTo($(".home-think__item-text"), 0.8, {top: '0', opacity: '1', ease: Power1.easeInOut}, 0.5);
-      showPagePagination();
     }
 
     function homeThinkHide() {
@@ -342,7 +364,6 @@ block contents
       TweenMax.to($(".home-video__title"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
       TweenMax.to($(".home-video__btn"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
       TweenMax.to($(".home-video__text"), 1.7, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
-      showPagePagination();
     }
 
     function homeVideoHide() {
@@ -374,7 +395,6 @@ block contents
         ease: Circ.easeOut,
         delay: 2.1
       });
-      showPagePagination();
     }
 
     function homeAboutHide() {
@@ -394,7 +414,6 @@ block contents
       TweenMax.staggerTo($(".home-founder__preview-name"), 1, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-name-line"), 1.4, {bottom: '8px', opacity: '1', ease: Power1.easeInOut, delay: 1.6}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-star"), 0.4, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 2.4}, 0.2);
-      showPagePagination();
     }
 
     function homeFoundersHide() {
@@ -405,7 +424,6 @@ block contents
       TweenMax.staggerTo($(".home-founder__preview-name"), 1, {bottom: '-40px', opacity: '0', ease: Power1.easeInOut, delay: 1.2}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-name-line"), 1.4, {bottom: '28px', opacity: '0', ease: Power1.easeInOut, delay: 1.6}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-star"), 0.4, {bottom: '20px', opacity: '0', ease: Power1.easeInOut, delay: 2.4}, 0.2);
-      showPagePagination();
     }
 
     function homeSystemInit() {
@@ -416,7 +434,6 @@ block contents
       TweenMax.staggerTo($(".home-system-list__item:nth-child(1) .home-system-list__item-text-line"), 0.7, {right: '0', ease: Power1.easeInOut, delay: 1.5}, 0.3);
       TweenMax.staggerTo($(".home-system-list__item:nth-child(2) .home-system-list__item-text-line"), 0.7, {right: '0', ease: Power1.easeInOut, delay: 1.8}, 0.3);
       TweenMax.to($(".home-system__link"), 1.5, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.8});
-      showPagePagination();
     }
 
     function homeSystemHide() {
