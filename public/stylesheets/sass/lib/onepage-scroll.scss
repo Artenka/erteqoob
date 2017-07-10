@@ -21,6 +21,7 @@ body, .onepage-wrapper, html {
   position: relative;
   padding: 0;
   -webkit-transform-style: preserve-3d;
+  z-index: 0;
 }
 
 .onepage-wrapper .section {
