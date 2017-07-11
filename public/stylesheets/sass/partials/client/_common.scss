@@ -252,6 +252,30 @@
    line-height: 27px;
    letter-spacing: 4px;
   }
+
+  &.philosophy-title {
+   font-size: 40px;
+   font-weight: 700;
+   letter-spacing: 0.71px;
+   line-height: 62px;
+   text-transform: uppercase;
+   text-align: left;
+   @include laptop {
+    font-size: 30px;
+    line-height: 48px;
+    letter-spacing: 0.53px;
+   }
+   @include tablet {
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: 4px;
+   }
+   @include mobile {
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 1.6px;
+   }
+  }
  }
 }
 
@@ -546,10 +570,80 @@
  }
 }
 
-.slick-list {
- overflow: visible;
+.circle-layout {
+ width: 734px;
+ height: 734px;
+ position: absolute;
+ top: calc(50% - 367px);
+ left: calc(50% - 367px);
+ z-index: 1;
+ @include laptop {
+  width: 450px;
+  height: 450px;
+  top: calc(50% - 225px);
+  left: calc(50% - 225px);
+ }
+ @include tablet {
+  width: 544px;
+  height: 544px;
+  top: calc(50% - 272px);
+  left: calc(50% - 272px);
+ }
+ @include mobile {
+  width: 360px;
+  height: 360px;
+  top: calc(50% - 180px);
+  left: calc(50% - 180px);
+ }
+ &:before{
+  content: '';
+  display: block;
+  padding-top: 100%;
+ }
 }
-.slick-track {
+.circle {
+ border-radius: 50%;
+ border: 1px solid $color-white-022;
+ position: absolute;
+ width: 62%;
+ height: 62%;
+ top: 19%;
+ left: 19%;
+ opacity: 0;
+ z-index: 0;
+
+ &.circle--1 {
+  width: 81%;
+  height: 81%;
+  top: 9.5%;
+  left: 9.5%;
+ }
+}
+
+.hr-dots {
+ width: 30px;
+ height: 7px;
  display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 0 auto;
+
+ .hr-dots__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $color-silver-chalice-3;
+ }
+}
+
+.section-bg {
+ width: 100%;
  height: 100%;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 0;
 }

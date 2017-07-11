@@ -57,6 +57,11 @@ body, #root, [data-reactroot] {
  }
 }
 
+.scroll-layout {
+ height: 100%;
+ position: relative;
+}
+
 .br-lg {
  display: block;
  @include tablet {display: none;}

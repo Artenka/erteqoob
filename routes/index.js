@@ -4,6 +4,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('pages/home');
 });
+router.get('/philosophy', function(req, res, next) {
+  res.render('pages/philosophy');
+});
 router.get('/article', function(req, res, next) {
   res.render('pages/article');
 });

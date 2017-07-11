@@ -247,6 +247,7 @@ block contents
         direction: "vertical"
       });
 
+      // start intro animation on page load
       setTimeout(function () {
         if($('.onepage-pagination li .active').data('index') == 1) {
           homeIntroInit();
@@ -254,43 +255,6 @@ block contents
       }, 100);
 
     });
-
-    function hideScrollDown() {
-      $('.scroll-down').fadeOut();
-    }
-    function showScrollDown() {
-      $('.scroll-down').fadeIn(400);
-    }
-
-    function showPagePagination() {
-      setTimeout(function () {
-        TweenMax.to($('.onepage-pagination'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
-      }, 100);
-    }
-    function hidePagePagination() {
-      setTimeout(function () {
-        TweenMax.to($('.onepage-pagination'), 0.1, {opacity: 0, ease: Power1.easeOut});
-      }, 100);
-    }
-
-    function fixedMenusInitAnimation() {
-      if ($(window).width() >= 640) {
-        TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
-        TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
-      }
-      TweenMax.to($('.main-layout > .main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut, delay: 1.5});
-    }
-    function fixedMenusHideAnimation() {
-      if ($(window).width() >= 640) {
-        TweenMax.to($('.main-layout > .main-nav--cities'), 0.1, {opacity: 0, ease: Power1.easeOut});
-        TweenMax.to($('.main-layout > .register-link'), 0.1, {opacity: 0, ease: Power1.easeOut});
-      }
-      TweenMax.to($('.main-layout > .main-nav-toggle'), 0.1, {opacity: 0, ease: Power1.easeOut});
-    }
-    function fixedMenusReinit() {
-      fixedMenusHideAnimation();
-      fixedMenusInitAnimation();
-    }
 
     var homeIntroReinit = true;
     var homeNavReinit = true;

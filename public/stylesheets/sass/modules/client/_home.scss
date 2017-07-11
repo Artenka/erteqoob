@@ -3,52 +3,13 @@
 }
 
 .home__circle-layout {
- width: 734px;
- height: 734px;
- position: absolute;
- top: calc(50% - 367px);
- left: calc(50% - 367px);
- z-index: 1;
- @include laptop {
-  width: 450px;
-  height: 450px;
-  top: calc(50% - 225px);
-  left: calc(50% - 225px);
- }
- @include tablet {
-  width: 544px;
-  height: 544px;
-  top: calc(50% - 272px);
-  left: calc(50% - 272px);
- }
- @include mobile {
-  width: 360px;
-  height: 360px;
-  top: calc(50% - 180px);
-  left: calc(50% - 180px);
- }
- &:before{
-  content: '';
-  display: block;
-  padding-top: 100%;
- }
+ @extend .circle-layout;
 }
 .home__circle {
- border-radius: 50%;
- border: 1px solid $color-white-022;
- position: absolute;
- width: 62%;
- height: 62%;
- top: 19%;
- left: 19%;
- opacity: 0;
- z-index: 0;
+ @extend .circle;
 
  &.home__circle--1 {
-  width: 81%;
-  height: 81%;
-  top: 9.5%;
-  left: 9.5%;
+  @extend .circle--1;
  }
 }
 
@@ -97,14 +58,13 @@
 }
 
 .intro-logo {
- @extend .home__circle-layout;
- visibility: visible;
+ @extend .circle-layout;
 
  .intro-logo__circle {
-  @extend .home__circle;
+  @extend .circle;
 
   &.intro-logo__circle--1 {
-   @extend .home__circle--1;
+   @extend .circle--1;
   }
  }
 
@@ -793,6 +753,9 @@
 
 .home-video-layout {
  background: url(../../img/client/home/home-video.png) no-repeat top center / cover;
+ &.philosophy-video-layout {
+  background: url(../../img/client/philosophy/philosophy-video.png) no-repeat top center / cover;
+ }
 
  .home-video {
   height: 100%;
