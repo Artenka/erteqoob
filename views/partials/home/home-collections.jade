@@ -4,7 +4,7 @@ section.section-layout.home-collections-layout
       div.home-collections__title
         h1.page-title коллекции
         h2.erteqoob-title
-    div.home-collections__slider-layout
+    div.home-collections__slider-layout.slider-arrows-long
       ul.home-collections-list
         li.home-collections-list__item(style="background-image: url(img/client/home/home-collection-item-1.jpg);")
           p.rotated-text.rotated-text--left.home-collections-list__item-date апрель ‘16
@@ -21,6 +21,9 @@ section.section-layout.home-collections-layout
         li.home-collections-list__item(style="background-image: url(img/client/home/home-collection-item-5.jpg);")
           p.rotated-text.rotated-text--left.home-collections-list__item-date апрель ‘16
           h1.home-collections-list__item-title Сила притяжения
+        li.home-collections-list__item(style="background-image: url(img/client/home/home-collection-item-5.jpg);")
+          p.rotated-text.rotated-text--left.home-collections-list__item-date апрель ‘16
+          h1.home-collections-list__item-title Сила притяжения
     div.home-collections__link-layout
       a(href="#").btn-black.home-collections__link Смотреть коллекции
 
@@ -28,4 +31,42 @@ section.section-layout.home-collections-layout
 script.
   $(function(){
     changeRotatedTextWidth('.home-collections-list__item-date', '.home-collections-list__item');
+
+    $('.home-collections-list').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      changeRotatedTextWidth('.home-collections-list__item-date', '.home-collections-list__item');
+      TweenMax.to($('.home-collections-list__item-date'), 1, {opacity: 1, ease: Power4.easeOut, delay: 0.3});
+      TweenMax.to($('.home-collections-list__item-title'), 1, {opacity: 1, ease: Power4.easeOut, delay: 0.3});
+    });
+    $('.home-collections-list').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      TweenMax.to($('.home-collections-list__item-date'), 0.1, {opacity: 0, ease: Power4.easeOut});
+      TweenMax.to($('.home-collections-list__item-title'), 0.1, {opacity: 0, ease: Power4.easeOut});
+    });
+
+    // home events slider
+    $('.home-collections-list').slick({
+      slidesToShow: 5,
+      arrows: false,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 1260,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            arrows: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
   })

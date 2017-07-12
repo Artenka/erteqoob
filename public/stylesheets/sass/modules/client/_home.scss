@@ -2342,34 +2342,45 @@
 }
 
 .home-collections__slider-layout {
- height: 51%;
+ //height: 51%;
+ height: 521px;
  display: flex;
  justify-content: center;
  margin-top: 80px;
  @include laptop {
+  height: 386px;
   margin-top: 25px;
  }
  @include tablet {
-  height: 43%;
+  //height: 43%;
+  height: 511px;
  }
  @include mobile {
-  height: 60%;
+  //height: 60%;
+  height: 250px;
   margin-top: 35px;
  }
 }
 
 .home-collections-list {
  height: 100%;
- width: 76%;
+ //width: 76%;
+ width: 1474px;
  display: flex;
  align-items: center;
  justify-content: center;
  position: relative;
+ @include laptop {
+  width: 1091px;
+ }
  @include tablet {
-  width: 83%;
+  //width: 83%;
+  //width: 677px;
+  width: 763px;
  }
  @include mobile {
-  width: 100%;
+  //width: 100%;
+  width: 190px;
  }
  &:before {
   content: '';
@@ -2385,7 +2396,127 @@
   }
  }
 
+ .slick-current.slick-active {z-index: 7;}
+
+ //.slick-active {margin-left: 25%}
+ //.slick-active + .slick-active + .slick-active + .slick-active + .slick-active {margin: 0 25% 0 0;}
+
+ //.slick-active {
+ // left: 556px;
+ // @include laptop {left: 412px;}
+ //}
+ //.slick-active + .slick-active + .slick-active + .slick-active + .slick-active {
+ // left: -556px;
+ // @include laptop {left: -412px;}
+ //}
+ //.slick-active + .slick-active {
+ // left: 309px;
+ // @include laptop {left: 230px;}
+ //}
+ //.slick-active + .slick-active + .slick-active + .slick-active {
+ // left: -309px;
+ // @include laptop {left: -230px;}
+ //}
+
+ .slick-active, .slick-active + .slick-active + .slick-active + .slick-active + .slick-active {
+  width: 247px;
+  height: 347px;
+  z-index: 5;
+  @include laptop {
+   width: 183px;
+   height: 257px;
+  }
+
+  .home-collections-list__item-title {
+   font-size: 28px;
+   line-height: 29px;
+   @include laptop {
+    font-size: 19px;
+    line-height: 19px;
+   }
+  }
+ }
+
+ .slick-active + .slick-active, .slick-active + .slick-active + .slick-active + .slick-active {
+  width: 309px;
+  height: 433px;
+  margin: 0;
+  z-index: 6;
+  @include laptop {
+   width: 229px;
+   height: 320px;
+  }
+
+  .home-collections-list__item-title {
+   font-size: 35px;
+   line-height: 29px;
+   @include laptop {
+    font-size: 24px;
+    line-height: 24px;
+   }
+  }
+ }
+
+ .slick-active + .slick-active + .slick-active {
+  width: 372px;
+  height: 521px;
+  margin: 0;
+  @include laptop {
+   width: 275px;
+   height: 386px;
+  }
+
+  .home-collections-list__item-title {
+   font-size: 41px;
+   line-height: 34px;
+   @include laptop {
+    font-size: 30px;
+    line-height: 30px;
+   }
+  }
+ }
+
+
+ @include tablet {
+
+  //.slick-active {
+  // left: 280px;
+  //}
+  //.slick-active + .slick-active + .slick-active {
+  // left: -280px;
+  //}
+
+  .home-collections-list__item.slick-active, .slick-active + .slick-active + .slick-active {
+   width: 200px;
+   height: 280px;
+   position: relative;
+   padding: 19px 10px 30px;
+
+   .home-collections-list__item-title {
+    font-size: 28px;
+    line-height: 29px;
+   }
+  }
+
+  .slick-active + .slick-active {
+   display: flex;
+   //height: 100%;
+   //width: 53.6%;
+   width: 363px;
+   height: 511px;
+   padding: 55px 60px 60px;
+
+   .home-collections-list__item-title {
+    font-size: 32px;
+    line-height: 34px;
+   }
+  }
+ }
+
  .home-collections-list__item {
+  //display: none;
+  width: 247px;
+  height: 347px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -2395,150 +2526,155 @@
   padding: 50px;
   position: relative;
   cursor: pointer;
+  transition: 1s;
   @include laptop {
+   width: 183px;
+   height: 257px;
    padding: 35px 25px;
   }
   @include tablet {
-   display: none;
-   padding: 55px 60px 60px;
+   width: 200px;
+   height: 280px;
   }
   @include mobile {
-   display: none;
+   width: 190px;
+   height: 250px;
    padding: 20px 24px;
   }
-  &:nth-child(1) {
-   left: 41.75%;
-  }
-  &:nth-child(2) {
-   left: 23%;
-   @include tablet {
-    left: 35.25%;
-   }
-   @include mobile {
-    left: 33.6125%;
-   }
-  }
-  &:nth-child(4) {
-   right: 23%;
-   @include tablet {
-    right: 35.25%;
-   }
-   @include mobile {
-    right: 33.6125%;
-   }
-  }
-  &:nth-child(5) {
-   right: 41.75%;
-  }
-  &:nth-child(1), &:nth-child(5) {
-   width: 16.5%;
-   height: 66%;
-   @include mobile {
-    width: 100%;
-    height: 100%;
-   }
 
-   .home-collections-list__item-title {
-    font-size: 28px;
-    line-height: 29px;
-    @include laptop {
-     font-size: 19px;
-     line-height: 19px;
-    }
-    @include mobile {
-     font-size: 49px;
-     line-height: 34px;
-    }
-   }
-  }
-  &:nth-child(2), &:nth-child(4) {
-   width: 21%;
-   height: 83%;
-   z-index: 5;
-   @include tablet-mobile {
-    display: flex;
-   }
-   @include tablet {
-    width: 29.5%;
-    height: 54.8%;
-    padding: 20px 30px;
-   }
-   @include mobile {
-    width: 32.775%;
-    height: 55.2%;
-    position: absolute;
-   }
-
-   .home-collections-list__item-title {
-    font-size: 35px;
-    line-height: 29px;
-    @include laptop {
-     font-size: 24px;
-     line-height: 24px;
-    }
-    @include tablet {
-     font-size: 28px;
-     line-height: 29px;
-    }
-    @include mobile {
-     display: none;
-    }
-   }
-   .home-collections-list__item-date {
-    @include mobile {
-     display: none;
-    }
-   }
-  }
-  &:nth-child(3) {
-   width: 25%;
-   height: 100%;
-   z-index: 6;
-   @include tablet-mobile {
-    display: flex;
-   }
-   @include tablet {
-    height: 100%;
-    width: 53.6%;
-   }
-   @include mobile {
-    height: 100%;
-    width: 59.375%;
-   }
-
-   .home-collections-list__item-title {
-    font-size: 41px;
-    line-height: 34px;
-    @include laptop {
-     font-size: 30px;
-     line-height: 30px;
-    }
-    @include tablet {
-     font-size: 32px;
-     line-height: 34px;
-    }
-    @include mobile {
-     font-size: 20px;
-     line-height: 24px;
-    }
-   }
-  }
-  &:nth-child(2) {
-   @include tablet {
-    left: 6.3%;
-   }
-   @include mobile {
-    left: -25%;
-   }
-  }
-  &:nth-child(4) {
-   @include tablet {
-    right: 6.3%;
-   }
-   @include mobile {
-    right: -25%;
-   }
-  }
+  //&:nth-child(1) {
+  // left: 41.75%;
+  //}
+  //&:nth-child(2) {
+  // left: 23%;
+  // @include tablet {
+  //  left: 35.25%;
+  // }
+  // @include mobile {
+  //  left: 33.6125%;
+  // }
+  //}
+  //&:nth-child(4) {
+  // right: 23%;
+  // @include tablet {
+  //  right: 35.25%;
+  // }
+  // @include mobile {
+  //  right: 33.6125%;
+  // }
+  //}
+  //&:nth-child(5) {
+  // right: 41.75%;
+  //}
+  //&:nth-child(1), &:nth-child(5) {
+  // width: 16.5%;
+  // height: 66%;
+  // @include mobile {
+  //  width: 100%;
+  //  height: 100%;
+  // }
+  //
+  // .home-collections-list__item-title {
+  //  font-size: 28px;
+  //  line-height: 29px;
+  //  @include laptop {
+  //   font-size: 19px;
+  //   line-height: 19px;
+  //  }
+  //  @include mobile {
+  //   font-size: 49px;
+  //   line-height: 34px;
+  //  }
+  // }
+  //}
+  //&:nth-child(2), &:nth-child(4) {
+  // width: 21%;
+  // height: 83%;
+  // z-index: 5;
+  // @include tablet-mobile {
+  //  display: flex;
+  // }
+  // @include tablet {
+  //  width: 29.5%;
+  //  height: 54.8%;
+  //  padding: 20px 30px;
+  // }
+  // @include mobile {
+  //  width: 32.775%;
+  //  height: 55.2%;
+  //  position: absolute;
+  // }
+  //
+  // .home-collections-list__item-title {
+  //  font-size: 35px;
+  //  line-height: 29px;
+  //  @include laptop {
+  //   font-size: 24px;
+  //   line-height: 24px;
+  //  }
+  //  @include tablet {
+  //   font-size: 28px;
+  //   line-height: 29px;
+  //  }
+  //  @include mobile {
+  //   display: none;
+  //  }
+  // }
+  // .home-collections-list__item-date {
+  //  @include mobile {
+  //   display: none;
+  //  }
+  // }
+  //}
+  //&:nth-child(3) {
+  // width: 25%;
+  // height: 100%;
+  // z-index: 6;
+  // @include tablet-mobile {
+  //  display: flex;
+  // }
+  // @include tablet {
+  //  height: 100%;
+  //  width: 53.6%;
+  // }
+  // @include mobile {
+  //  height: 100%;
+  //  width: 59.375%;
+  // }
+  //
+  // .home-collections-list__item-title {
+  //  font-size: 41px;
+  //  line-height: 34px;
+  //  @include laptop {
+  //   font-size: 30px;
+  //   line-height: 30px;
+  //  }
+  //  @include tablet {
+  //   font-size: 32px;
+  //   line-height: 34px;
+  //  }
+  //  @include mobile {
+  //   font-size: 20px;
+  //   line-height: 24px;
+  //  }
+  // }
+  //}
+  //&:nth-child(2) {
+  // @include tablet {
+  //  left: 6.3%;
+  // }
+  // @include mobile {
+  //  left: -25%;
+  // }
+  //}
+  //&:nth-child(4) {
+  // @include tablet {
+  //  right: 6.3%;
+  // }
+  // @include mobile {
+  //  right: -25%;
+  // }
+  //}
 
   .home-collections-list__item-date {
    width: 100%;
@@ -2552,6 +2688,16 @@
   }
   .home-collections-list__item-title {
    color: $color-white;
+   font-size: 28px;
+   line-height: 29px;
+   @include laptop {
+    font-size: 19px;
+    line-height: 19px;
+   }
+   @include mobile {
+    font-size: 49px;
+    line-height: 34px;
+   }
    @include tablet {
     font-size: 32px;
     line-height: 34px;

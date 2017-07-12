@@ -1,5 +1,29 @@
 .slick-track, .slick-list {
  height: 100%;
+ position: static;
+}
+
+.slider-arrows-long {
+
+ .slick-arrow {
+  width: 19px;
+  height: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  position: absolute;
+  padding: 0;
+  font-size: 0;
+  background: transparent;
+  z-index: 6;
+
+  &.slick-prev {
+   background-image: url(../../img/icons/arrow-left-long.svg);
+  }
+  &.slick-next {
+   background-image: url(../../img/icons/arrow-right-long.svg);
+  }
+ }
 }
 
 .events-slider {
@@ -10,24 +34,37 @@
  }
 
  .slick-arrow {
-  width: 19px;
-  height: 4px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px auto;
-  position: absolute;
   bottom: -25px;
-  padding: 0;
-  font-size: 0;
-  background: transparent;
 
   &.slick-prev {
    left: calc(50% - 35px);
-   background-image: url(../../img/icons/arrow-left-long.svg);
   }
   &.slick-next {
    right: calc(50% - 35px);
-   background-image: url(../../img/icons/arrow-right-long.svg);
+  }
+ }
+}
+
+.home-collections-list {
+
+ .slick-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .slick-track, .slick-list {
+  transition: 1s;
+ }
+
+ .slick-arrow {
+  top: calc(50% - 2px);
+
+  &.slick-prev {
+   left: -10px;
+  }
+  &.slick-next {
+   right: -10px;
   }
  }
 }

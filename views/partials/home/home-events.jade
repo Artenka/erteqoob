@@ -2,7 +2,7 @@ section.section-layout.home-events-layout
   div.home-events
     div.page-title-big-layout.home-events__title-layout
       h1.page-title-big.home-events__title ближайшие<br class="br-md-sm"> события
-    ul.home-events-list.events-slider
+    ul.home-events-list.events-slider.slider-arrows-long
       li.home-events-list__item
         a(href="#").home-events-list__item-link
           div.home-events-list__item-inner
@@ -62,32 +62,6 @@ script.
   $(function(){
     changeRotatedTextWidth('.home-events-list__item-type', '.home-events-list__item-inner');
 
-    // events slides responsive resize
-    //$('.home-events-list').on('init', function (event, slick) {
-    //  setTimeout(function () {
-    //    eventsSlideResize();
-    //  }, 100);
-    //});
-    //$(window).on('resize', function () {
-    //  eventsSlideResize();
-    //});
-
-    function eventsSlideResize() {
-      var slider = $('.home-events-list');
-      var slideItem = $('.home-events-list__item');
-
-      if ($(window).width() < 640) {
-        slideItem.width(slider.width() * 0.9);
-        slideItem.height('auto');
-      } else if ($(window).width() < 1260 && $(window).width() >= 640) {
-        slideItem.width(slider.width() * 0.7);
-        slideItem.height(slider.height());
-      } else {
-        slideItem.width(slider.width() * 0.19);
-        slideItem.height(slider.height() * 0.9);
-      }
-    }
-
     // home events slider
     $('.home-events-list').slick({
       slidesToShow: 3,
@@ -97,7 +71,6 @@ script.
       accessibility: false,
       centerMode: true,
       variableWidth: true,
-      //adaptiveHeight: true,
       infinite: true,
       swipeToSlide: true,
       responsive: [

@@ -264,7 +264,7 @@ block contents
     var homeFoundersReinit = true;
     var homeSystemReinit = true;
     var homeEventsReinit = true;
-    var homeCollectionsReinit = true;
+    var homeCollectionsReinit = false;
     var homeBlogReinit = true;
     var homeActionReinit = true;
 
@@ -751,8 +751,11 @@ block contents
     function homeCollectionsInit() {
       TweenMax.to($(".home-collections__title-layout .home-collections__title"), 1, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
       TweenMax.to($(".home-collections__link"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
-      TweenMax.to($(".home-collections-list__item:nth-child(1), .home-collections-list__item:nth-child(2)"), 1.2, {left: '0%', ease: Power1.easeInOut, delay: 0.7});
-      TweenMax.to($(".home-collections-list__item:nth-child(4), .home-collections-list__item:nth-child(5)"), 1.2, {right: '0%', ease: Power1.easeInOut, delay: 0.7});
+      TweenMax.to($(".home-collections-list .slick-active"), 1.5, {
+        left: '0px',
+        ease: Power1.easeInOut,
+        delay: 0.7
+      });
 
       homeCollectionsReinit = false;
     }
@@ -766,50 +769,99 @@ block contents
           delay: 0.5
         });
         TweenMax.to($(".home-collections__link"), 1, {top: '50px', opacity: '0', ease: Power1.easeInOut, delay: 0.5});
-        if ($(window).width() < 1260 && $(window).width() >= 640) {
-          TweenMax.to($(".home-collections-list__item:nth-child(2)"), 1.5, {
-            left: '35.25%',
+        if ($(window).width() < 1850 && $(window).width() >= 1260) {
+          TweenMax.to($(".home-collections-list .slick-active"), 1, {
+            left: '412px',
+            zIndex: '5',
             ease: Power1.easeInOut,
             delay: 0.5
           });
-          TweenMax.to($(".home-collections-list__item:nth-child(4)"), 1.5, {
-            right: '35.25%',
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active"), 1, {
+            left: '230px',
+            zIndex: '6',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+          TweenMax.to($(".home-collections-list .slick-current"), 1, {
+            left: 'auto',
+            zIndex: '7',
+            ease: Power1.easeInOut,
+            delay: 0.7
+          });
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active + .slick-active + .slick-active"), 1, {
+            left: '-230px',
+            zIndex: '6',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active + .slick-active + .slick-active + .slick-active"), 1, {
+            left: '-412px',
+            zIndex: '5',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+        } else if ($(window).width() < 1260 && $(window).width() >= 640) {
+          TweenMax.to($(".home-collections-list .slick-active"), 1, {
+            left: '280px',
+            zIndex: '6',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+          TweenMax.to($(".home-collections-list .slick-current"), 1, {
+            left: 'auto',
+            zIndex: '7',
+            ease: Power1.easeInOut,
+            delay: 0.7
+          });
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active + .slick-active"), 1, {
+            left: '-280px',
+            zIndex: '6',
             ease: Power1.easeInOut,
             delay: 0.5
           });
         } else if ($(window).width() < 640) {
-          TweenMax.to($(".home-collections-list__item:nth-child(2)"), 1.5, {
-            left: '33.6125%',
-            ease: Power1.easeInOut,
-            delay: 0.5
-          });
-          TweenMax.to($(".home-collections-list__item:nth-child(4)"), 1.5, {
-            right: '33.6125%',
-            ease: Power1.easeInOut,
-            delay: 0.5
-          });
+          //TweenMax.to($(".slick-active + .slick-active"), 1.5, {
+          //  left: '33.6125%',
+          //  ease: Power1.easeInOut,
+          //  delay: 0.5
+          //});
+          //TweenMax.to($(".slick-active + .slick-active + .slick-active"), 1.5, {
+          //  right: '33.6125%',
+          //  ease: Power1.easeInOut,
+          //  delay: 0.5
+          //});
         } else {
-          TweenMax.to($(".home-collections-list__item:nth-child(2)"), 1.5, {
-            left: '23%',
+          TweenMax.to($(".home-collections-list .slick-active"), 1, {
+            left: '556px',
+            zIndex: '5',
             ease: Power1.easeInOut,
             delay: 0.5
           });
-          TweenMax.to($(".home-collections-list__item:nth-child(4)"), 1.5, {
-            right: '23%',
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active"), 1, {
+            left: '309px',
+            zIndex: '6',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+          TweenMax.to($(".home-collections-list .slick-current"), 1, {
+            left: 'auto',
+            zIndex: '7',
+            ease: Power1.easeInOut,
+            delay: 0.7
+          });
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active + .slick-active + .slick-active"), 1, {
+            left: '-309px',
+            zIndex: '6',
+            ease: Power1.easeInOut,
+            delay: 0.5
+          });
+          TweenMax.to($(".home-collections-list .slick-active + .slick-active + .slick-active + .slick-active + .slick-active"), 1, {
+            left: '-556px',
+            zIndex: '5',
             ease: Power1.easeInOut,
             delay: 0.5
           });
         }
-        TweenMax.to($(".home-collections-list__item:nth-child(1)"), 1.5, {
-          left: '41.75%',
-          ease: Power1.easeInOut,
-          delay: 0.5
-        });
-        TweenMax.to($(".home-collections-list__item:nth-child(5)"), 1.5, {
-          right: '41.75%',
-          ease: Power1.easeInOut,
-          delay: 0.5
-        });
 
         homeCollectionsReinit = true;
       }
