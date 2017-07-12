@@ -2,7 +2,7 @@ section.section-layout.home-events-layout
   div.home-events
     div.page-title-big-layout.home-events__title-layout
       h1.page-title-big.home-events__title ближайшие<br class="br-md-sm"> события
-    ul.home-events-list
+    ul.home-events-list.events-slider
       li.home-events-list__item
         a(href="#").home-events-list__item-link
           div.home-events-list__item-inner
@@ -89,29 +89,31 @@ script.
     }
 
     // home events slider
-    //$('.home-events-list').slick({
-    //  slidesToShow: 5,
-    //  arrows: false,
-    //  dots: false,
-    //  draggable: true,
-    //  accessibility: false,
-    //  centerMode: true,
-    //  variableWidth: true,
-    //  swipeToSlide: true,
-    //  responsive: [
-    //    {
-    //      breakpoint: 1260,
-    //      settings: {
-    //        slidesToShow: 3
-    //      }
-    //    },
-    //    {
-    //      breakpoint: 640,
-    //      settings: {
-    //        arrows: true,
-    //        slidesToShow: 1
-    //      }
-    //    }
-    //  ]
-    //});
+    $('.home-events-list').slick({
+      slidesToShow: 3,
+      arrows: false,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      //adaptiveHeight: true,
+      infinite: true,
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 1260,
+          settings: {
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            arrows: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
   })
