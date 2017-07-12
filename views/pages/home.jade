@@ -278,9 +278,10 @@ block contents
       if ($(window).width() >= 640) {
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       }
-      TweenMax.to($('.intro-logo__circle--3'), 0.7, {opacity: 1, ease: Power4.easeOut});
+      TweenMax.to($('.intro-logo'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.intro-logo__circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
       TweenMax.to($('.intro-logo__circle--2'), 0.7, {
-        opacity: 1,
+        autoAlpha: 1,
         top: '9.5%',
         left: '9.5%',
         width: '81%',
@@ -289,7 +290,7 @@ block contents
         delay: 0.5
       });
       TweenMax.to($('.intro-logo__circle--1'), 0.7, {
-        opacity: 1,
+        autoAlpha: 1,
         top: 0,
         left: 0,
         width: '100%',
@@ -297,7 +298,7 @@ block contents
         ease: Power4.easeOut,
         delay: 1
       });
-      TweenMax.to($('.intro-logo__circle'), 0.7, {opacity: 0, ease: Power1.easeOut, delay: 3});
+      TweenMax.to($('.intro-logo__circle'), 0.7, {autoAlpha: 0, ease: Power1.easeOut, delay: 3});
       TweenMax.to($('.intro-bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 1, ease: Power4.easeOut});
       TweenMax.to($('.intro-logo__img'), 2, {opacity: 1, delay: 0.5, ease: Power4.easeOut});
       TweenMax.to($(logoTitle), 0.7, {opacity: 1, delay: 1, ease: Power1.easeOut});
@@ -318,9 +319,9 @@ block contents
         TweenMax.to($('.scroll-down'), 1, {opacity: 0, ease: Power4.easeOut});
 
         TweenMax.to($('.intro-bg'), 3, {scaleX: 1, scaleY: 1, opacity: 0, ease: Power4.easeOut});
-        TweenMax.to($('.intro-logo__circle--3'), 0.7, {opacity: 0, ease: Power4.easeOut});
+        TweenMax.to($('.intro-logo__circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
         TweenMax.to($('.intro-logo__circle--2'), 0.7, {
-          opacity: 0,
+          autoAlpha: 0,
           top: '19%',
           left: '19%',
           width: '62%',
@@ -329,7 +330,7 @@ block contents
           delay: 0.5
         });
         TweenMax.to($('.intro-logo__circle--1'), 0.7, {
-          opacity: 0,
+          autoAlpha: 0,
           top: '9.5%',
           left: '9.5%',
           width: '81%',
@@ -337,6 +338,7 @@ block contents
           ease: Power4.easeOut,
           delay: 1
         });
+        TweenMax.to($('.intro-logo'), 1.7, {autoAlpha: 0, ease: Power4.easeOut});
         TweenMax.to($('.intro-logo__img'), 2, {opacity: 0, delay: 0.5, ease: Power4.easeOut});
         TweenMax.to($(logoTitle), 0.7, {opacity: 0, delay: 1, ease: Power1.easeOut});
         TweenMax.to($(logoTitle), 2, {top: '80%', delay: 1, ease: Power4.easeOut});
@@ -446,41 +448,41 @@ block contents
     }
 
     function homeVideoHide() {
-      if(!homeNavReinit ) {
+      if(!homeVideoReinit ) {
         TweenMax.to($(".home-video__title"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
         TweenMax.to($(".home-video__btn"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
         TweenMax.to($(".home-video__text"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
-        TweenMax.to($('.home__circle--3'), 0.7, {
-          autoAlpha: 0,
-          top: '19%',
-          left: '19%',
-          width: '62%',
-          height: '62%',
-          ease: Power4.easeOut,
-          delay: 0.5
-        });
-        TweenMax.to($('.home__circle--2'), 0.7, {
-          autoAlpha: 0,
-          top: '19%',
-          left: '19%',
-          width: '62%',
-          height: '62%',
-          ease: Power4.easeOut,
-          delay: 0.6
-        });
-        TweenMax.to($('.home__circle--1'), 0.7, {
-          autoAlpha: 0,
-          top: '9.5%',
-          left: '9.5%',
-          width: '81%',
-          height: '81%',
-          ease: Power4.easeOut,
-          delay: 0.7
-        });
-        TweenMax.to($('.home__circle-layout'), 0, {
-          autoAlpha: 0,
-          delay: 1.4
-        });
+        //TweenMax.to($('.home__circle--3'), 0.7, {
+        //  autoAlpha: 0,
+        //  top: '19%',
+        //  left: '19%',
+        //  width: '62%',
+        //  height: '62%',
+        //  ease: Power4.easeOut,
+        //  delay: 0.5
+        //});
+        //TweenMax.to($('.home__circle--2'), 0.7, {
+        //  autoAlpha: 0,
+        //  top: '19%',
+        //  left: '19%',
+        //  width: '62%',
+        //  height: '62%',
+        //  ease: Power4.easeOut,
+        //  delay: 0.6
+        //});
+        //TweenMax.to($('.home__circle--1'), 0.7, {
+        //  autoAlpha: 0,
+        //  top: '9.5%',
+        //  left: '9.5%',
+        //  width: '81%',
+        //  height: '81%',
+        //  ease: Power4.easeOut,
+        //  delay: 0.7
+        //});
+        //TweenMax.to($('.home__circle-layout'), 0, {
+        //  autoAlpha: 0,
+        //  delay: 1.4
+        //});
 
         homeVideoReinit = true;
       }

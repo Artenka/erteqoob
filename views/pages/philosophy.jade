@@ -29,11 +29,15 @@ block contents
       // hide fixed menus on mobile
       $(window).on('resize', function () {
         var window = $(this);
-        if (window.width() < 640) {
+        if (window.width() < 1260) {
+          $('.main').css('overflowY', 'auto');
           TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power1.easeOut});
+          philosophyIntroInit();
+          philosophyVideoInit();
         } else {
+          $('.main').css('overflowY', 'hidden');
           if ($('.onepage-pagination li .active').data('index') == 1) {
             TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
             TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
@@ -42,8 +46,10 @@ block contents
       });
 
       // init animations on mobile
-      if ($(window).width() < 640) {
-
+      if ($(window).width() < 1260) {
+        $('.main').css('overflowY', 'auto');
+        philosophyIntroInit();
+        philosophyVideoInit();
       }
 
       // Onepage scroll init
@@ -63,25 +69,44 @@ block contents
           hidePagePagination();
 
           if (index == 1) {
+            philosophyVideoHide();
             philosophyIntroInit();
           } else if (index == 2) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 3) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 4) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 5) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 6) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 7) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 8) {
             philosophyIntroHide();
+            philosophyVideoInit();
+            showPagePagination();
           } else if (index == 9) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           } else if (index == 10) {
             philosophyIntroHide();
+            philosophyVideoHide();
+            showPagePagination();
           }
         },
         afterMove: function(index) {
@@ -89,7 +114,7 @@ block contents
         },
         loop: false,
         keyboard: true,
-        responsiveFallback: 640,
+        responsiveFallback: 1260,
         direction: "vertical"
       });
 
@@ -102,16 +127,18 @@ block contents
     });
 
     var philosophyIntroReinit = true;
+    var philosophyVideoReinit = true;
 
     function philosophyIntroInit() {
 
       TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
-      if ($(window).width() >= 640) {
+      if ($(window).width() >= 1260) {
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       }
-      TweenMax.to($('.circle--3'), 0.7, {opacity: 1, ease: Power4.easeOut});
+      TweenMax.to($('.circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
       TweenMax.to($('.circle--2'), 0.7, {
-        opacity: 1,
+        autoAlpha: 1,
         top: '9.5%',
         left: '9.5%',
         width: '81%',
@@ -120,7 +147,7 @@ block contents
         delay: 0.5
       });
       TweenMax.to($('.circle--1'), 0.7, {
-        opacity: 1,
+        autoAlpha: 1,
         top: 0,
         left: 0,
         width: '100%',
@@ -137,9 +164,9 @@ block contents
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power4.easeOut});
         TweenMax.to($('.scroll-down'), 1, {opacity: 0, ease: Power4.easeOut});
 
-        TweenMax.to($('.circle--3'), 0.7, {opacity: 0, ease: Power4.easeOut});
+        TweenMax.to($('.circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
         TweenMax.to($('.circle--2'), 0.7, {
-          opacity: 0,
+          autoAlpha: 0,
           top: '19%',
           left: '19%',
           width: '62%',
@@ -148,7 +175,7 @@ block contents
           delay: 0.1
         });
         TweenMax.to($('.circle--1'), 0.7, {
-          opacity: 0,
+          autoAlpha: 0,
           top: '9.5%',
           left: '9.5%',
           width: '81%',
@@ -156,8 +183,26 @@ block contents
           ease: Power4.easeOut,
           delay: 0.2
         });
+        TweenMax.to($('.circle-layout'), 0, {autoAlpha: 0, ease: Power4.easeOut, delay: 0.9});
 
         philosophyIntroReinit = true;
       }
     }
 
+    function philosophyVideoInit() {
+      TweenMax.to($(".home-video__title"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__btn"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+
+      philosophyVideoReinit = false;
+    }
+
+    function philosophyVideoHide() {
+      if (!philosophyVideoReinit) {
+        TweenMax.to($(".home-video__title"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+        TweenMax.to($(".home-video__btn"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+        TweenMax.to($(".home-video__text"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+
+        philosophyVideoReinit = true;
+      }
+    }

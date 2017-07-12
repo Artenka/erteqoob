@@ -19,11 +19,22 @@
    width: 7.6%;
    height: 7.8%;
    background: url(../../img/client/philosophy/intro-logo.svg) no-repeat center / 100% auto;
+   @include tablet {
+    width: 196px;
+    height: 109px;
+   }
+   @include mobile {
+    width: 82px;
+    height: 46px;
+   }
   }
 
   .philosophy-intro__title {
    margin-top: 45px;
    text-align: center;
+   @include mobile {
+    margin-top: 22px;
+   }
 
    h1 {
     color: $color-alabaster;
@@ -33,6 +44,11 @@
     line-height: 15vh;
     text-transform: uppercase;
     letter-spacing: 9px;
+    @include mobile {
+     font-size: 30px;
+     line-height: 30px;
+     letter-spacing: 3.06px;
+    }
    }
    h2 {
     color: $color-white;
@@ -43,12 +59,24 @@
     font-weight: 700;
     letter-spacing: 6.74px;
     text-transform: uppercase;
+    @include mobile {
+     font-size: 11px;
+     line-height: 20px;
+     letter-spacing: 2.5px;
+     margin-top: 13px;
+    }
    }
   }
 
   .philosophy-intro__video {
    margin-top: 55px;
    cursor: pointer;
+   @include mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 31px;
+   }
 
    .philosophy-intro__video-btn {
     width: 43px;
@@ -57,6 +85,13 @@
     border: 5px solid $color-white;
     border-radius: 50%;
     margin: 0 auto;
+    @include mobile {
+     width: 26px;
+     height: 26px;
+     background-position: top 5px left 7px;
+     background-size: 8px auto;
+     border: 3px solid $color-white;
+    }
    }
    .philosophy-intro__video-text {
     color: $color-mercury;
@@ -69,7 +104,31 @@
     text-transform: uppercase;
     text-align: center;
     margin-top: 22px;
+    @include mobile {
+     font-size: 8px;
+     line-height: 13px;
+     letter-spacing: 4px;
+     margin: 0 0 0 11px;
+    }
    }
+  }
+ }
+
+ .philosophy-intro__link {
+  display: none;
+  width: 215px;
+  margin: 37px auto 0;
+  @include mobile {
+   display: block;
+  }
+  &:hover {
+
+   &:before {
+    width: 221px;
+   }
+  }
+  &:before {
+   width: 215px;
   }
  }
 }
@@ -85,6 +144,9 @@
   width: 606px;
   //width: 39%;
   position: relative;
+  @include tablet {
+   width: 510px;
+  }
 
   .philosophy-about__line {
    //width: 23.4%;
@@ -96,6 +158,30 @@
    //left: -33%;
    left: -200px;
    top: 72px;
+   @include tablet {
+    width: 62px;
+    height: 6px;
+    left: -85px;
+    top: 60px;
+   }
+   @include mobile {
+    width: 17px;
+    height: 6px;
+    left: -40px;
+    top: 72px;
+   }
+  }
+  .philosophy-about__title-line {
+   width: 1px;
+   height: 245px;
+   background: $color-gray-3-025;
+   position: absolute;
+   left: 0;
+   top: -141px;
+   @include tablet-mobile {
+    height: 164px;
+    top: -76px;
+   }
   }
 
   .philosophy-about__number {
@@ -106,19 +192,34 @@
    //line-height: 1vw;
    font-weight: 700;
    letter-spacing: 7.26px;
+   @include mobile {
+    font-size: 18px;
+    letter-spacing: 7.26px;
+    line-height: 21.09px;
+   }
   }
   .philosophy-about__title {
    color: $color-concrete;
    font-size: 49px;
    line-height: 65px;
-   font-size: 2.55vw;
-   line-height: 3.38vw;
+   //font-size: 2.55vw;
+   //line-height: 3.38vw;
    font-weight: 700;
    text-transform: uppercase;
    margin-top: 3%;
+   @include mobile {
+    font-size: 20px;
+    letter-spacing: 0.39px;
+    line-height: 30px;
+    margin-top: 34px;
+   }
   }
   .philosophy-about__text {
    margin-top: 2%;
+   @include mobile {
+    width: 265px;
+    margin-top: 24px;
+   }
 
    p {
     color: $color-gray-2;
@@ -127,12 +228,19 @@
     //font-size: 1.15vw;
     //line-height: 1.75vw;
     margin-top: 6.5%;
+    @include mobile {
+     font-size: 14px;
+     line-height: 22px;
+    }
    }
   }
  }
 
  &.philosophy-about--1, &.philosophy-about--3 {
   padding-left: 18.5%;
+  @include mobile {
+   padding-left: 40px;
+  }
  }
  &.philosophy-about--1 {
 
@@ -143,6 +251,16 @@
  &.philosophy-about--2 {
   padding-right: 9.5%;
   align-items: flex-end;
+  @include tablet-mobile {
+   padding-right: 0;
+   align-items: flex-start;
+  }
+  @include tablet {
+   padding-left: 18.5%;
+  }
+  @include mobile {
+   padding-left: 40px;
+  }
 
   .philosophy-about__bg {
    background-image: url(../../img/client/philosophy/philosophy-about-2.png);
@@ -151,6 +269,9 @@
  }
  &.philosophy-about--3 {
   padding-left: 18.5%;
+  @include mobile {
+   padding-left: 40px;
+  }
 
   .philosophy-about__bg {
    background-image: url(../../img/client/philosophy/philosophy-about-3.png);
@@ -160,8 +281,14 @@
 }
 
 
-.philosophy-inspiration-layout {
+.onepage-wrapper .section.philosophy-inspiration-layout {
  //background: rgba(255,255,255,0.34);
+ @include tablet {
+  height: 1660px;
+ }
+ @include mobile {
+  height: 1400px;
+ }
 
  .philosophy-inspiration__bg {
   background-image: url(../../img/client/philosophy/philosophy-inspiration.png);
@@ -174,6 +301,9 @@
  align-items: center;
  justify-content: center;
  padding-top: 90px;
+ @include mobile {
+  padding: 80px 0;
+ }
 
  .inspiration-text {
   color: $color-silver-chalice-2;
@@ -182,29 +312,48 @@
   line-height: 31px;
   text-transform: uppercase;
   text-align: center;
-  @include tablet {
+  @include laptop {
    font-size: 14px;
    line-height: 26px;
+  }
+  @include tablet {
+   font-size: 18px;
+   line-height: 32px;
+  }
+  @include mobile {
+   font-size: 10px;
+   line-height: 18px;
   }
  }
 
  .home-inspiration__title-layout {
 
   .home-inspiration__title {
-
+   @include mobile {
+    text-align: center;
+   }
   }
  }
 
  .philosophy-inspiration__subtitle-layout {
   margin-top: 37px;
+  @include mobile {
+   margin-top: 27px;
+  }
 
   .philosophy-inspiration__subtitle {
    margin-bottom: 37px;
+   @include tablet {
+    margin-bottom: 52px;
+   }
   }
  }
 
  .philosophy-inspiration__text-layout {
   margin-bottom: 6%;
+  @include mobile {
+   margin-bottom: 0;
+  }
 
   .philosophy-inspiration__text {
    margin-top: 37px;
@@ -227,6 +376,9 @@
   position: absolute;
   top: 105px;
   left: 10%;
+  @include tablet-mobile {
+   display: none;
+  }
  }
 }
 
@@ -236,12 +388,30 @@
  justify-content: space-between;
  align-items: flex-start;
  padding: 0 10% 0 8%;
+ @include tablet-mobile {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+ }
+ @include mobile {
+  padding: 0 15%;
+ }
 
  .inspiration-list__item {
   position: relative;
-  padding: 0 48px 38px 36px;
+  padding: 0 3% 2.3% 2.3%;
   cursor: pointer;
-  &:hover {
+  @include tablet-mobile {
+   margin-bottom: 40px;
+   padding: 0;
+  }
+  @include tablet {
+   width: 56.25%;
+  }
+  @include mobile {
+   width: 100%;
+  }
+  &:hover, &:focus, &:active {
 
    .inspiration-list__item-hover {
     top: 100%;
@@ -251,6 +421,14 @@
 
   .inspiration-list__item-icon {
    height: 40px;
+   position: relative;
+
+   svg {
+    @include tablet-mobile {
+     width: auto;
+     height: 71%;
+    }
+   }
   }
 
   .inspiration-list__item-title {
@@ -263,6 +441,16 @@
    letter-spacing: 0.64px;
    text-transform: uppercase;
    margin-top: 20px;
+   @include tablet {
+    font-size: 48px;
+    letter-spacing: 0.61px;
+    line-height: 48px;
+   }
+   @include mobile {
+    font-size: 28px;
+    letter-spacing: 0.36px;
+    line-height: 48px;
+   }
   }
 
   .inspiration-list__item-subtitle {
@@ -275,17 +463,31 @@
    letter-spacing: 0.27px;
    text-transform: uppercase;
    margin-top: 4px;
+   @include tablet {
+    font-size: 18px;
+    letter-spacing: 0.24px;
+    line-height: 32px;
+   }
+   @include mobile {
+    font-size: 12px;
+    letter-spacing: 0.16px;
+    line-height: 21px;
+   }
   }
 
   .inspiration-list__item-hover {
    width: 100%;
    background: $color-black;
-   padding: 34px 92px 34px 34px;
+   padding: 8% 25% 8% 8%;
    position: absolute;
    left: 0;
    top: 0;
    opacity: 0;
    transition: 0.5s;
+   z-index: 6;
+   @include tablet-mobile {
+    padding: 15px 25px 15px 15px;
+   }
 
    .inspiration-list__item-hover-text {
     color: $color-silver-chalice-4;
@@ -293,6 +495,10 @@
     line-height: 27px;
     font-size: 0.9vw;
     line-height: 1.45vw;
+    @include tablet-mobile {
+     font-size: 17px;
+     line-height: 27px;
+    }
    }
    .inspiration-list__item-hover-link {
     background: url(../../img/client/philosophy/video-triangle.svg) no-repeat center left;
@@ -306,12 +512,19 @@
     text-transform: uppercase;
     margin-top: 20px;
     padding-left: 25px;
+    @include tablet-mobile {
+     font-size: 14px;
+     line-height: 28px;
+    }
    }
   }
  }
 }
 
-.philosophy-pros {
+.onepage-wrapper .section.philosophy-pros {
+ @include mobile {
+  height: auto;
+ }
 
  .philosophy-pros__main {
   height: 100%;
@@ -332,12 +545,22 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @include tablet-mobile {
+   flex-direction: column;
+   justify-content: space-around;
+  }
 
   .philosophy-pros-list__item {
+   @include tablet-mobile {
+    margin-bottom: 60px;
+   }
 
    .philosophy-pros-list__item-inner {
     position: relative;
     margin-bottom: 90px;
+    @include tablet {
+     margin-bottom: 60px;
+    }
     &:last-child {
      margin-bottom: 0;
     }
@@ -349,6 +572,11 @@
      position: absolute;
      top: 11px;
      left: -100px;
+     @include tablet-mobile {
+      width: 20px;
+      height: 4px;
+      left: -40px;
+     }
     }
     .philosophy-pros-list__item-line-top {
      width: 1px;
@@ -357,6 +585,10 @@
      position: absolute;
      top: -58px;
      left: 0;
+     @include tablet-mobile {
+      height: 55px;
+      top: -33px;
+     }
     }
 
     .philosophy-pros-list__item-text {
@@ -370,6 +602,14 @@
       line-height: 24px;
       font-size: 1.1vw;
       line-height: 1.75vw;
+     }
+     @include tablet {
+      font-size: 24px;
+      line-height: 34px;
+     }
+     @include mobile {
+      font-size: 16px;
+      line-height: 26px;
      }
 
      b {
@@ -389,10 +629,23 @@
 
   .philosophy-pros__main {
    padding: 7% 0 5%;
+   @include tablet {
+    padding: 145px 0;
+   }
+   @include mobile {
+    padding: 80px 0;
+   }
   }
 
   .philosophy-pros-list-layout {
    padding: 0 15% 0 18.5%;
+   @include tablet {
+    padding: 0 15.625% 0 25%;
+   }
+   @include mobile {
+    padding: 0 4.5% 0 17%;
+    margin-top: 45px;
+   }
   }
 
   .philosophy-pros-list {
@@ -400,6 +653,9 @@
 
    .philosophy-pros-list__item {
     width: 40%;
+    @include tablet-mobile {
+     width: 100%;
+    }
    }
   }
  }
@@ -411,10 +667,23 @@
 
   .philosophy-pros__main {
    padding: 9% 0 0;
+   @include tablet {
+    padding-top: 90px;
+   }
+   @include mobile {
+    padding: 80px 0 0;
+   }
   }
 
   .philosophy-pros-list-layout {
    padding: 0 8% 0 10.5%;
+   @include tablet {
+    padding: 0 16.25% 0 21.25%;
+   }
+   @include mobile {
+    padding: 0 4.5% 0 17%;
+    margin-top: 100px;
+   }
   }
 
   .philosophy-pros-list {
@@ -422,6 +691,9 @@
 
    .philosophy-pros-list__item {
     width: 24.6%;
+    @include tablet-mobile {
+     width: 100%;
+    }
    }
   }
  }
@@ -457,6 +729,16 @@
    line-height: 3.7vw;
    letter-spacing: 1.48px;
   }
+  @include tablet {
+   font-size: 31px;
+   letter-spacing: 0.61px;
+   line-height: 42px;
+  }
+  @include mobile {
+   font-size: 16px;
+   letter-spacing: 0.32px;
+   line-height: 27px;
+  }
  }
 
  .philosophy-action__link-layout {
@@ -464,12 +746,30 @@
   .philosophy-action__link {
    width: 260px;
    margin: 70px auto 0;
+   @include tablet {
+    width: 280px;
+   }
+   @include mobile {
+    width: 160px;
+   }
    &:before {
     width: 260px;
+    @include tablet {
+     width: 280px;
+    }
+    @include mobile {
+     width: 160px;
+    }
    }
    &:hover {
     &:before {
      width: 266px;
+     @include tablet {
+      width: 286px;
+     }
+     @include mobile {
+      width: 166px;
+     }
     }
    }
   }

@@ -26,26 +26,26 @@
   top: 0;
   left: 0;
  }
+}
 
- .home-intro__link {
-  display: none;
-  width: 215px;
-  position: absolute;
-  left: calc(50% - 107px);
-  bottom: 26%;
-  z-index: 6;
-  @include mobile {
-   display: block;
-  }
-  &:hover {
+.home-intro__link {
+ display: none;
+ width: 215px;
+ position: absolute;
+ left: calc(50% - 107px);
+ bottom: 26%;
+ z-index: 6;
+ @include mobile {
+  display: block;
+ }
+ &:hover {
 
-   &:before {
-    width: 221px;
-   }
-  }
   &:before {
-   width: 215px;
+   width: 221px;
   }
+ }
+ &:before {
+  width: 215px;
  }
 }
 
@@ -909,6 +909,30 @@
    @include mobile {
     font-size: 13px;
     line-height: 19.5px;
+   }
+  }
+
+  &.philosophy-video {
+
+   .home-video__title-layout {
+    width: auto;
+    margin-right: 116px;
+    @include tablet-mobile {
+     margin: 0 auto;
+    }
+    @include tablet {
+     width: 500px;
+    }
+    @include mobile {
+     width: 230px;
+    }
+   }
+
+   .home-video__btn-layout {
+    margin-right: 107px;
+    @include tablet-mobile {
+     margin: 65px auto 32px;
+    }
    }
   }
  }
