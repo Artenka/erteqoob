@@ -6,10 +6,6 @@ block contents
     include ../partials/main-nav-socials.jade
     include ../partials/main-nav-toggle.jade
     include ../partials/register-link.jade
-    .circle-layout
-      .circle.circle--1
-      .circle.circle--2
-      .circle.circle--3
     div.scroll-layout
       include ../partials/philosophy/philosophy-intro.jade
       include ../partials/philosophy/philosophy-about-1.jade
@@ -36,6 +32,13 @@ block contents
           TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power1.easeOut});
           philosophyIntroInit();
           philosophyVideoInit();
+          philosophyAbout1Init();
+          philosophyAbout2Init();
+          philosophyAbout3Init();
+          philosophyInspirationInit();
+          philosophyPros1Init();
+          philosophyPros2Init();
+          philosophyActionInit();
         } else {
           $('.main').css('overflowY', 'hidden');
           if ($('.onepage-pagination li .active').data('index') == 1) {
@@ -50,6 +53,13 @@ block contents
         $('.main').css('overflowY', 'auto');
         philosophyIntroInit();
         philosophyVideoInit();
+        philosophyAbout1Init();
+        philosophyAbout2Init();
+        philosophyAbout3Init();
+        philosophyInspirationInit();
+        philosophyPros1Init();
+        philosophyPros2Init();
+        philosophyActionInit();
       }
 
       // Onepage scroll init
@@ -70,43 +80,113 @@ block contents
 
           if (index == 1) {
             philosophyVideoHide();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
             philosophyIntroInit();
           } else if (index == 2) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyAbout1Init();
           } else if (index == 3) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyAbout2Init();
           } else if (index == 4) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyAbout3Init();
           } else if (index == 5) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyInspirationInit();
           } else if (index == 6) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyPros1Init();
           } else if (index == 7) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyActionHide();
+            philosophyPros2Init();
           } else if (index == 8) {
             philosophyIntroHide();
-            philosophyVideoInit();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
+            philosophyVideoInit();
           } else if (index == 9) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionInit();
           } else if (index == 10) {
             philosophyIntroHide();
             philosophyVideoHide();
             showPagePagination();
+            philosophyAbout1Hide();
+            philosophyAbout2Hide();
+            philosophyAbout3Hide();
+            philosophyInspirationHide();
+            philosophyPros1Hide();
+            philosophyPros2Hide();
+            philosophyActionHide();
           }
         },
         afterMove: function(index) {
@@ -127,17 +207,30 @@ block contents
     });
 
     var philosophyIntroReinit = true;
+    var philosophyAbout1Reinit = true;
+    var philosophyAbout2Reinit = true;
+    var philosophyAbout3Reinit = true;
     var philosophyVideoReinit = true;
+    var philosophyInspirationReinit = true;
+    var philosophyPros1Reinit = true;
+    var philosophyPros2Reinit = true;
+    var philosophyActionReinit = true;
 
     function philosophyIntroInit() {
 
+      TweenMax.to($('.philosophy-intro__bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 0.73, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-intro__logo'), 0.7, {opacity: 1, ease: Power1.easeOut, delay: 0.9});
+      TweenMax.to($('.philosophy-intro__title h1'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.philosophy-intro__title h2'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.9});
+      TweenMax.to($('.philosophy-intro__video'), 1, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 1.5});
       TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       if ($(window).width() >= 1260) {
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       }
-      TweenMax.to($('.circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
-      TweenMax.to($('.circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
-      TweenMax.to($('.circle--2'), 0.7, {
+      TweenMax.to($('.philosophy-intro .circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-intro .circle-line'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-intro .circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-intro .circle--2'), 0.7, {
         autoAlpha: 1,
         top: '9.5%',
         left: '9.5%',
@@ -146,7 +239,7 @@ block contents
         ease: Power4.easeOut,
         delay: 0.5
       });
-      TweenMax.to($('.circle--1'), 0.7, {
+      TweenMax.to($('.philosophy-intro .circle--1'), 0.7, {
         autoAlpha: 1,
         top: 0,
         left: 0,
@@ -161,11 +254,13 @@ block contents
 
     function philosophyIntroHide() {
       if (!philosophyIntroReinit) {
+
+        TweenMax.to($('.philosophy-intro__bg'), 3, {scaleX: 1, scaleY: 1, opacity: 0, ease: Power4.easeOut});
         TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power4.easeOut});
         TweenMax.to($('.scroll-down'), 1, {opacity: 0, ease: Power4.easeOut});
 
-        TweenMax.to($('.circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
-        TweenMax.to($('.circle--2'), 0.7, {
+        TweenMax.to($('.philosophy-intro .circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
+        TweenMax.to($('.philosophy-intro .circle--2'), 0.7, {
           autoAlpha: 0,
           top: '19%',
           left: '19%',
@@ -174,7 +269,7 @@ block contents
           ease: Power4.easeOut,
           delay: 0.1
         });
-        TweenMax.to($('.circle--1'), 0.7, {
+        TweenMax.to($('.philosophy-intro .circle--1'), 0.7, {
           autoAlpha: 0,
           top: '9.5%',
           left: '9.5%',
@@ -183,16 +278,349 @@ block contents
           ease: Power4.easeOut,
           delay: 0.2
         });
-        TweenMax.to($('.circle-layout'), 0, {autoAlpha: 0, ease: Power4.easeOut, delay: 0.9});
+        TweenMax.to($('.philosophy-intro .circle-layout'), 0, {autoAlpha: 0, ease: Power4.easeOut, delay: 0.9});
+        TweenMax.to($('.philosophy-intro .circle-line'), 0, {autoAlpha: 0, ease: Power4.easeOut});
 
         philosophyIntroReinit = true;
       }
     }
 
+    function philosophyAbout1Init() {
+      TweenMax.to($(".philosophy-about--1 .philosophy-about__number"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--1 .philosophy-about__title"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--1 .philosophy-about__text"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      });
+      TweenMax.to($(".philosophy-about--1 .philosophy-about__line-layout"), 1, {
+        padding: '0',
+        ease: Power1.easeInOut,
+        delay: 0.7
+      });
+
+      philosophyAbout1Reinit = false;
+    }
+
+    function philosophyAbout1Hide() {
+      if (!philosophyAbout1Reinit) {
+        TweenMax.to($(".philosophy-about--1 .philosophy-about__number"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--1 .philosophy-about__title"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--1 .philosophy-about__text"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        });
+        TweenMax.to($(".philosophy-about--1 .philosophy-about__line-layout"), 1, {
+          paddingLeft: '50%',
+          paddingRight: '50%',
+          ease: Power1.easeInOut,
+          delay: 0.7
+        });
+
+        philosophyAbout1Reinit = true;
+      }
+    }
+
+    function philosophyAbout2Init() {
+      TweenMax.to($(".philosophy-about--2 .philosophy-about__number"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--2 .philosophy-about__title"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--2 .philosophy-about__text"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      });
+      TweenMax.to($(".philosophy-about--2 .philosophy-about__line-layout"), 1, {
+        padding: '0',
+        ease: Power1.easeInOut,
+        delay: 0.7
+      });
+
+      philosophyAbout2Reinit = false;
+    }
+
+    function philosophyAbout2Hide() {
+      if (!philosophyAbout2Reinit) {
+        TweenMax.to($(".philosophy-about--2 .philosophy-about__number"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--2 .philosophy-about__title"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--2 .philosophy-about__text"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        });
+        TweenMax.to($(".philosophy-about--2 .philosophy-about__line-layout"), 1, {
+          paddingLeft: '50%',
+          paddingRight: '50%',
+          ease: Power1.easeInOut,
+          delay: 0.7
+        });
+
+        philosophyAbout2Reinit = true;
+      }
+    }
+
+    function philosophyAbout3Init() {
+      TweenMax.to($(".philosophy-about--3 .philosophy-about__number"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--3 .philosophy-about__title"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.to($(".philosophy-about--3 .philosophy-about__text"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      });
+      TweenMax.to($(".philosophy-about--3 .philosophy-about__line-layout"), 1, {
+        padding: '0',
+        ease: Power1.easeInOut,
+        delay: 0.7
+      });
+
+      philosophyAbout3Reinit = false;
+    }
+
+    function philosophyAbout3Hide() {
+      if (!philosophyAbout3Reinit) {
+        TweenMax.to($(".philosophy-about--3 .philosophy-about__number"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--3 .philosophy-about__title"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.to($(".philosophy-about--3 .philosophy-about__text"), 1, {
+          top: '100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        });
+        TweenMax.to($(".philosophy-about--3 .philosophy-about__line-layout"), 1, {
+          paddingLeft: '50%',
+          paddingRight: '50%',
+          ease: Power1.easeInOut,
+          delay: 0.7
+        });
+
+        philosophyAbout3Reinit = true;
+      }
+    }
+
+    function philosophyInspirationInit() {
+      TweenMax.to($(".home-inspiration__title"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".philosophy-inspiration__subtitle"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      });
+      TweenMax.to($(".philosophy-inspiration__subtitle-layout .hr-dots"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.6
+      });
+      TweenMax.staggerTo( $(".inspiration-list__item"), 1, { top: '0', opacity: '1', ease : Power1.easeInOut, delay: 0.7 }, 0.1 );
+      TweenMax.to($(".philosophy-inspiration__text"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.3});
+      TweenMax.to($(".philosophy-inspiration__text-layout .hr-dots"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
+
+      philosophyInspirationReinit = false;
+    }
+
+    function philosophyInspirationHide() {
+      if (!philosophyInspirationReinit) {
+        TweenMax.to($(".home-inspiration__title"), 1, {top: '50px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+        TweenMax.to($(".philosophy-inspiration__subtitle"), 1, {
+          top: '50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        });
+        TweenMax.to($(".philosophy-inspiration__subtitle-layout .hr-dots"), 1, {
+          top: '50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.6
+        });
+        TweenMax.staggerTo( $(".inspiration-list__item"), 0.5, { top: '-100px', opacity: '0', ease : Power1.easeInOut, delay: 0.7 }, 0.2 );
+        TweenMax.to($(".philosophy-inspiration__text-layout .hr-dots"), 1, {top: '-30px', opacity: '0', ease: Power1.easeInOut, delay: 1.2});
+        TweenMax.to($(".philosophy-inspiration__text"), 1, {
+          top: '-50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 1.3
+        });
+
+        philosophyInspirationReinit = true;
+      }
+    }
+
+    function philosophyPros1Init() {
+      TweenMax.to($(".philosophy-pros--1 .home-pros__title--1"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.staggerTo($(".philosophy-pros--1 .philosophy-pros-list__item-text"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      }, 0.1);
+      TweenMax.staggerTo($(".philosophy-pros--1 .philosophy-pros-list__item-line-left-layout"), 1, {
+        padding: '0',
+        ease: Power1.easeInOut,
+        delay: 0.6
+      }, 0.1);
+      TweenMax.to($(".philosophy-pros--1 .home-pros__title--2"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 1
+      });
+
+      philosophyPros1Reinit = false;
+    }
+
+    function philosophyPros1Hide() {
+      if (!philosophyPros1Reinit) {
+        TweenMax.to($(".philosophy-pros--1 .home-pros__title--1"), 1, {
+          top: '-100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.staggerTo($(".philosophy-pros--1 .philosophy-pros-list__item-text"), 1, {
+          top: '-50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        }, 0.1);
+        TweenMax.staggerTo($(".philosophy-pros--1 .philosophy-pros-list__item-line-left-layout"), 1, {
+          paddingLeft: '50%',
+          paddingRight: '50%',
+          ease: Power1.easeInOut,
+          delay: 0.6
+        }, 0.1);
+        TweenMax.to($(".philosophy-pros--1 .home-pros__title--2"), 1, {
+          top: '50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 1
+        });
+
+        philosophyPros1Reinit = true;
+      }
+    }
+
+    function philosophyPros2Init() {
+      TweenMax.to($(".philosophy-pros--2 .home-pros__title--1"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.3
+      });
+      TweenMax.staggerTo($(".philosophy-pros--2 .philosophy-pros-list__item-text"), 1, {
+        top: '0',
+        opacity: '1',
+        ease: Power1.easeInOut,
+        delay: 0.5
+      }, 0.1);
+      TweenMax.staggerTo($(".philosophy-pros--2 .philosophy-pros-list__item-line-left-layout"), 1, {
+        padding: '0',
+        ease: Power1.easeInOut,
+        delay: 0.6
+      }, 0.1);
+
+      philosophyPros2Reinit = false;
+    }
+
+    function philosophyPros2Hide() {
+      if (!philosophyPros2Reinit) {
+        TweenMax.to($(".philosophy-pros--2 .home-pros__title--1"), 1, {
+          top: '-100px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.3
+        });
+        TweenMax.staggerTo($(".philosophy-pros--2 .philosophy-pros-list__item-text"), 1, {
+          top: '-50px',
+          opacity: '0',
+          ease: Power1.easeInOut,
+          delay: 0.5
+        }, 0.1);
+        TweenMax.staggerTo($(".philosophy-pros--2 .philosophy-pros-list__item-line-left-layout"), 1, {
+          paddingLeft: '50%',
+          paddingRight: '50%',
+          ease: Power1.easeInOut,
+          delay: 0.6
+        }, 0.1);
+
+        philosophyPros2Reinit = true;
+      }
+    }
+
     function philosophyVideoInit() {
       TweenMax.to($(".home-video__title"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
-      TweenMax.to($(".home-video__btn"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
-      TweenMax.to($(".home-video__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__btn"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.4});
+      TweenMax.to($(".home-video__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
 
       philosophyVideoReinit = false;
     }
@@ -204,5 +632,63 @@ block contents
         TweenMax.to($(".home-video__text"), 1.7, {top: '100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
 
         philosophyVideoReinit = true;
+      }
+    }
+
+    function philosophyActionInit() {
+      TweenMax.to($(".philosophy-action__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".philosophy-action__link"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+
+      TweenMax.to($('.philosophy-action .circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-action .circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-action .circle--2'), 0.7, {
+        autoAlpha: 1,
+        top: '9.5%',
+        left: '9.5%',
+        width: '81%',
+        height: '81%',
+        ease: Power4.easeOut,
+        delay: 0.5
+      });
+      TweenMax.to($('.philosophy-action .circle--1'), 0.7, {
+        autoAlpha: 1,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        ease: Power4.easeOut,
+        delay: 1
+      });
+
+      philosophyActionReinit = false;
+    }
+
+    function philosophyActionHide() {
+      if (!philosophyActionReinit) {
+        TweenMax.to($(".philosophy-action__text"), 1.2, {top: '-100px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+        TweenMax.to($(".philosophy-action__link"), 1.2, {top: '50px', opacity: '0', ease: Power1.easeInOut, delay: 0.3});
+
+        TweenMax.to($('.philosophy-action .circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
+        TweenMax.to($('.philosophy-action .circle--2'), 0.7, {
+          autoAlpha: 0,
+          top: '19%',
+          left: '19%',
+          width: '62%',
+          height: '62%',
+          ease: Power4.easeOut,
+          delay: 0.1
+        });
+        TweenMax.to($('.philosophy-action .circle--1'), 0.7, {
+          autoAlpha: 0,
+          top: '9.5%',
+          left: '9.5%',
+          width: '81%',
+          height: '81%',
+          ease: Power4.easeOut,
+          delay: 0.2
+        });
+        TweenMax.to($('.philosophy-action .circle-layout'), 0, {autoAlpha: 0, ease: Power4.easeOut, delay: 0.9});
+
+        philosophyActionReinit = true;
       }
     }

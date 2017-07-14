@@ -236,6 +236,19 @@ block contents
             homeBlogHide();
             homeActionInit();
             showPagePagination();
+          } else if (index == 12) {
+            homeIntroHide();
+            homeNavHide();
+            homeThinkHide();
+            homeVideoHide();
+            homeAboutHide();
+            homeFoundersHide();
+            homeSystemHide();
+            homeEventsHide();
+            homeCollectionsHide();
+            homeBlogHide();
+            homeActionHide();
+            showPagePagination();
           }
         },
         afterMove: function(index) {
@@ -411,8 +424,8 @@ block contents
 
     function homeVideoInit(){
       TweenMax.to($(".home-video__title"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
-      TweenMax.to($(".home-video__btn"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
-      TweenMax.to($(".home-video__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.3});
+      TweenMax.to($(".home-video__btn"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
+      TweenMax.to($(".home-video__text"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.7});
       TweenMax.to($('.home__circle-layout'), 0, {
         autoAlpha: 1
       });
@@ -870,7 +883,7 @@ block contents
     function homeBlogInit() {
       TweenMax.to($(".home-blog__title"), 1, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
       TweenMax.to($(".home-blog__link"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
-      TweenMax.to($(".home-blog-row__item-inner"), 1.5, {top: '0', left: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
+      TweenMax.to($(".home-blog-row__item-inner"), 1, {top: '0', left: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.5});
 
       homeBlogReinit = false;
     }
@@ -879,7 +892,7 @@ block contents
       if(!homeBlogReinit ) {
         TweenMax.to($(".home-blog__title"), 1, {bottom: '50px', opacity: '0', ease: Power1.easeInOut, delay: 0.5});
         TweenMax.to($(".home-blog__link"), 1, {top: '50px', opacity: '0', ease: Power1.easeInOut, delay: 0.5});
-        TweenMax.to($(".home-blog-row--top .home-blog-row__item:nth-child(1) .home-blog-row__item-inner, .home-blog-row--top .home-blog-row__item:nth-child(2) .home-blog-row__item-inner"), 1.5, {
+        TweenMax.to($(".home-blog-row--top .home-blog-row__item:nth-child(1) .home-blog-row__item-inner, .home-blog-row--top .home-blog-row__item:nth-child(2) .home-blog-row__item-inner"), 1, {
           top: '-100%',
           left: '-100%',
           opacity: '0',
