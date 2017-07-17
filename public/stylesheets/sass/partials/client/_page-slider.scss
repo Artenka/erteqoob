@@ -107,6 +107,7 @@
 
 .slick-dots {
  @extend .page-slider-dots;
+ position: absolute;
 
  > li {
   @extend .page-slider-dots__item;
@@ -120,6 +121,27 @@
 
   &.slick-active {
    @extend .page-slider-dots__item.page-slider-dots__item--active;
+  }
+ }
+}
+
+.slick-dots-horizontal {
+
+ .slick-dots {
+  @extend .slick-dots;
+  width: 100%;
+  height: 10px;
+  flex-direction: row;
+  right: auto;
+  top: auto;
+  bottom: 85px;
+
+  > li {
+   margin-bottom: 0;
+   margin-right: 10px;
+   &:last-child {
+    margin-right: 0;
+   }
   }
  }
 }

@@ -27,17 +27,19 @@
   }
 
   .main-footer__cities {
+   display: none;
    position: static;
    opacity: 1;
-   @include tablet-mobile {
+   @include mobile {
     display: block;
    }
   }
 
   .main-footer__register {
+   display: none;
    position: static;
    opacity: 1;
-   @include tablet-mobile {
+   @include mobile {
     display: block;
    }
    @include tablet {

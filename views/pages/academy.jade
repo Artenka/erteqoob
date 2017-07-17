@@ -1,0 +1,170 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#academy
+    include ../partials/main-nav-cities.jade
+    include ../partials/main-nav-socials.jade
+    include ../partials/main-nav-toggle.jade
+    include ../partials/register-link.jade
+    div.scroll-layout
+      include ../partials/academy/academy-intro.jade
+      include ../partials/academy/academy-about.jade
+      include ../partials/academy/academy-philosophy.jade
+      include ../partials/academy/academy-lead-teachers.jade
+      include ../partials/academy/academy-teachers.jade
+      include ../partials/academy/academy-masters.jade
+      include ../partials/academy/academy-inspiration.jade
+      include ../partials/footer.jade
+
+  script.
+    $(function () {
+      fixedMenusInitAnimation();
+
+      // hide fixed menus on mobile
+      $(window).on('resize', function () {
+        var window = $(this);
+        if (window.width() < 1260) {
+          $('.main').css('overflowY', 'auto');
+          TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 0, ease: Power1.easeOut});
+          TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 0, ease: Power1.easeOut});
+          TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power1.easeOut});
+        } else {
+          $('.main').css('overflowY', 'hidden');
+          if ($('.onepage-pagination li .active').data('index') == 1) {
+            TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+            TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+          }
+        }
+      });
+
+      // init animations on mobile
+      if ($(window).width() < 1260) {
+        $('.main').css('overflowY', 'auto');
+      }
+
+      // Onepage scroll init
+      var pageScroll = ".scroll-layout";
+      $(pageScroll).onepage_scroll({
+        sectionContainer: "section",
+        easing: "ease",
+        animationTime: 1200,
+        pagination: true,
+        updateURL: false,
+        beforeMove: function (index) {
+          //if (index == 8) {
+          //  fixedMenusHideAnimation();
+          //} else {
+          //  fixedMenusReinit();
+          //}
+          fixedMenusReinit();
+
+          if (index == 1) {
+            academyIntroInit();
+            hidePagePagination();
+          } else if (index == 2) {
+            academyIntroHide();
+            hidePagePagination();
+          } else if (index == 3) {
+            showPagePagination();
+            academyIntroHide();
+          } else if (index == 4) {
+            showPagePagination();
+            academyIntroHide();
+          } else if (index == 5) {
+            hidePagePagination();
+            academyIntroHide();
+          } else if (index == 6) {
+            hidePagePagination();
+            academyIntroHide();
+          } else if (index == 7) {
+            hidePagePagination();
+            showPagePagination();
+            academyIntroHide();
+          } else if (index == 8) {
+            showPagePagination();
+            academyIntroHide();
+          }
+        },
+        afterMove: function(index) {
+
+        },
+        loop: false,
+        keyboard: true,
+        responsiveFallback: 640,
+        direction: "vertical"
+      });
+
+      // start intro animation on page load
+      setTimeout(function () {
+        if ($('.onepage-pagination li .active').data('index') == 1) {
+          academyIntroInit();
+        }
+      }, 100);
+    });
+
+    var academyIntroReinit = true;
+
+    function academyIntroInit() {
+
+      TweenMax.to($('.academy-intro__bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 1, ease: Power4.easeOut});
+      TweenMax.to($('.academy-intro__logo'), 0.7, {opacity: 1, ease: Power1.easeOut, delay: 0.9});
+      TweenMax.to($('.academy-intro__title h1'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      if ($(window).width() >= 1260) {
+        TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      }
+      TweenMax.to($('.academy-intro .circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.academy-intro .circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.academy-intro .circle--2'), 0.7, {
+        autoAlpha: 1,
+        top: '9.5%',
+        left: '9.5%',
+        width: '81%',
+        height: '81%',
+        ease: Power4.easeOut,
+        delay: 0.5
+      });
+      TweenMax.to($('.academy-intro .circle--1'), 0.7, {
+        autoAlpha: 1,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        ease: Power4.easeOut,
+        delay: 1
+      });
+
+      academyIntroReinit = false;
+    }
+
+    function academyIntroHide() {
+      if (!academyIntroReinit) {
+
+        TweenMax.to($('.academy-intro__bg'), 3, {scaleX: 1, scaleY: 1, opacity: 0, ease: Power4.easeOut});
+        TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power4.easeOut});
+        TweenMax.to($('.scroll-down'), 1, {opacity: 0, ease: Power4.easeOut});
+
+        TweenMax.to($('.academy-intro .circle--3'), 0.7, {autoAlpha: 0, ease: Power4.easeOut});
+        TweenMax.to($('.academy-intro .circle--2'), 0.7, {
+          autoAlpha: 0,
+          top: '19%',
+          left: '19%',
+          width: '62%',
+          height: '62%',
+          ease: Power4.easeOut,
+          delay: 0.1
+        });
+        TweenMax.to($('.academy-intro .circle--1'), 0.7, {
+          autoAlpha: 0,
+          top: '9.5%',
+          left: '9.5%',
+          width: '81%',
+          height: '81%',
+          ease: Power4.easeOut,
+          delay: 0.2
+        });
+        TweenMax.to($('.academy-intro .circle-layout'), 0, {autoAlpha: 0, ease: Power4.easeOut, delay: 0.9});
+
+        academyIntroReinit = true;
+      }
+    }

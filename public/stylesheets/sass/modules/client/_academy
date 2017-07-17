@@ -1,0 +1,633 @@
+#academy {
+
+}
+
+.academy-intro {
+
+ .academy-intro__bg {
+  background-image: url(../../img/client/academy/academy-intro.jpg);
+ }
+ .academy-intro__main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .academy-intro__logo {
+   width: 7.6%;
+   height: 7.8%;
+   background: url(../../img/client/philosophy/intro-logo.svg) no-repeat center / 100% auto;
+   opacity: 0;
+   z-index: 6;
+   position: absolute;
+   top: calc(50% - 7.8% - 45px - 60px);
+   left: calc(50% - 3.8%);
+   @include tablet {
+    width: 196px;
+    height: 109px;
+    top: calc(50% - 54px - 45px - 100px);
+    left: calc(50% - 98px);
+   }
+   @include mobile {
+    width: 82px;
+    height: 46px;
+    top: calc(50% - 23px - 22px - 80px);
+    left: calc(50% - 41px);
+   }
+  }
+
+  .academy-intro__title {
+   //margin-top: 45px;
+   text-align: center;
+   @include mobile {
+    //margin-top: 22px;
+   }
+
+   h1 {
+    color: $color-alabaster;
+    font-size: 84px;
+    line-height: 158px;
+    font-size: 7.84vh;
+    line-height: 15vh;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    @include mobile {
+     font-size: 30px;
+     line-height: 30px;
+     letter-spacing: 3.06px;
+    }
+   }
+  }
+ }
+}
+
+.academy-about {
+
+ .academy-about__main {
+  height: 100%;
+ }
+
+ .academy-about__list {
+  height: 100%;
+
+  .academy-about__item {
+   //height: 100%;
+   position: relative;
+
+   .academy-about__item-bg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+   }
+
+   .academy-about__item-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .academy-about__item-title {
+     color: $color-wild-sand-2;
+     font-size: 40px;
+     line-height: 60px;
+     font-size: 2.1vw;
+     line-height: 3.2vw;
+     font-weight: 700;
+     letter-spacing: 5px;
+     text-transform: uppercase;
+     text-align: center;
+    }
+    .academy-about__item-subtitle {
+     color: $color-wild-sand-2;
+     font-size: 15px;
+     font-weight: 700;
+     letter-spacing: 11.27px;
+     line-height: 15px;
+     text-transform: uppercase;
+     text-align: center;
+     margin-top: 25px;
+    }
+
+    .academy-about__item-line {
+     width: 1px;
+     height: 50%;
+     background-color: $color-gray-3-025;
+     position: absolute;
+     top: 25%;
+     left: 50%;
+    }
+   }
+  }
+ }
+}
+
+.academy-philosophy {
+
+ .academy-philosophy__bg {
+  background-image: url(../../img/client/academy/academy-philosophy.jpg);
+ }
+
+ .academy-philosophy__main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .academy-philosophy__title-layout {
+   padding-left: 173px;
+   position: relative;
+
+   .academy-philosophy__title {
+    color: $color-wild-sand-2;
+    font-size: 40px;
+    line-height: 53px;
+    font-size: 2.1vw;
+    line-height: 2.8vw;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+   }
+
+   .academy-philosophy__title-line-layout {
+    width: 134px;
+    height: 6px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+
+    .academy-philosophy__title-line {
+     width: 100%;
+     height: 100%;
+     background-color: $color-wild-sand-2;
+    }
+   }
+  }
+
+  .academy-philosophy__link-layout {
+   margin-top: 110px;
+
+   .academy-philosophy__link {
+    margin: 0 auto;
+    &, &:before {
+     width: 318px;
+    }
+    &:hover {
+     &:before {
+      width: 323px;
+     }
+    }
+   }
+  }
+ }
+}
+
+.academy-lead-teachers {
+
+ .academy-lead-teachers__main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 100px 0;
+
+  .academy-lead-teachers__title-layout {
+   width: 100%;
+  }
+
+  .academy-lead-teachers__list-layout {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .academy-lead-teachers__list {
+   width: 100%;
+   height: 63.13%;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   padding: 0 3.3%;
+
+   .academy-lead-teachers__item {
+    width: 24%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: 0.8s;
+    cursor: pointer;
+    &:before {
+     content: '';
+     display: block;
+     padding-top: 100%;
+    }
+    &:nth-child(even) {
+     align-self: flex-end;
+    }
+    &:nth-child(1){
+     background-image: url(../../img/client/academy/academy-main-teacher-1.jpg);
+     &:hover {
+      background-image: url(../../img/client/academy/academy-main-teacher-1-hover.jpg);
+     }
+    }
+    &:nth-child(2){
+     background-image: url(../../img/client/academy/academy-main-teacher-2.jpg);
+     &:hover {
+      background-image: url(../../img/client/academy/academy-main-teacher-2.jpg);
+     }
+    }
+    &:nth-child(3){
+     background-image: url(../../img/client/academy/academy-main-teacher-3.jpg);
+     &:hover {
+      background-image: url(../../img/client/academy/academy-main-teacher-3.jpg);
+     }
+    }
+    &:nth-child(4){
+     background-image: url(../../img/client/academy/academy-main-teacher-4.jpg);
+     &:hover {
+      background-image: url(../../img/client/academy/academy-main-teacher-4.jpg);
+     }
+    }
+
+    .academy-teachers__socials {
+     position: absolute;
+     top: 10%;
+     left: 10%;
+    }
+
+    .academy-lead-teachers__item-position {
+     width: 44%;
+     color: $color-white;
+     font-size: 14px;
+     font-weight: 700;
+     letter-spacing: 4.09px;
+     line-height: 21px;
+     text-transform: uppercase;
+     position: absolute;
+     bottom: 5px;
+     right: 0;
+    }
+
+    .academy-lead-teachers__item-name-layout {
+     padding-left: 31.5%;
+     position: absolute;
+     bottom: -30%;
+     left: 0;
+
+     .academy-lead-teachers__item-name {
+      color: $color-white;
+      font-size: 24px;
+      line-height: 24px;
+      font-size: 2.1vw;
+      line-height: 2.1vw;
+      position: relative;
+      &:before {
+       content: '';
+       width: 1px;
+       height: 200%;
+       background-color: $color-gray-3-025;
+       position: absolute;
+       left: 0;
+       bottom: 30%;
+      }
+     }
+
+     .academy-lead-teachers__item-star {
+      margin-top: 7%;
+     }
+    }
+
+    &.academy-lead-teachers__item--disabled {
+     opacity: 0.7;
+     transform: scale(0.85);
+    }
+   }
+  }
+ }
+}
+
+.academy-teachers__socials {
+ @include clearfix;
+
+ .academy-teachers__social {
+  width: 14px;
+  height: 17px;
+  float: left;
+  margin-right: 33px;
+  &:last-child {
+   margin-right: 0;
+  }
+
+  a {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   svg {
+    transition: 0.7s;
+
+    path {
+     fill: $color-white;
+     transition: fill .4s ease;
+    }
+   }
+  }
+ }
+}
+
+.academy-teachers {
+
+ .academy-teachers__bg {
+  background-image: url(../../img/client/academy/academy-teachers.jpg);
+ }
+
+ .academy-teachers__main {
+  height: 100%;
+  position: relative;
+
+  .academy-teachers__title-layout {
+   width: 100%;
+   position: absolute;
+   top: 8.5%;
+   left: 0;
+
+   .academy-teachers__subtitle {
+    margin-top: 2px;
+    @include tablet {
+     margin-top: 16px;
+    }
+   }
+  }
+
+  .academy-teachers-slider {
+   height: 100%;
+
+   .slick-slide {
+    position: relative;
+   }
+  }
+ }
+
+ &.academy-teachers--masters {
+
+  .academy-teachers__bg {
+   background-image: url(../../img/client/academy/academy-masters.jpg);
+  }
+ }
+}
+
+.academy-teacher {
+ position: absolute;
+ top: 0;
+ left: 0;
+ &:hover {
+
+  .academy-teachers__socials {
+
+   .academy-teachers__social:nth-child(2) svg path {
+    fill: $color-mine-shaft-2;
+   }
+  }
+
+  .academy-teacher__photo {
+   opacity: 1;
+  }
+ }
+
+ .academy-teachers__socials {
+  position: absolute;
+  top: 7%;
+  left: -30px;
+ }
+
+ .academy-teacher__photo {
+  width: 100%;
+  opacity: 0.7;
+  transition: 0.7s;
+
+  img {
+   width: 100%;
+   height: auto;
+  }
+ }
+
+ .academy-teacher__info {
+  width: 125%;
+  margin-top: 35px;
+
+  .academy-teacher__name {
+   color: $color-white;
+   font-size: 22px;
+   line-height: 22px;
+  }
+  .academy-teacher__position {
+   color: $color-white;
+   font-size: 11px;
+   font-weight: 700;
+   letter-spacing: 4.25px;
+   line-height: 17px;
+   text-transform: uppercase;
+  }
+ }
+
+ &:nth-child(1) {
+  width: 17.6%;
+  left: 12.7%;
+  top: 41.2%;
+ }
+ &:nth-child(2) {
+  width: 12.92%;
+  left: 36.3%;
+  top: 43.33%;
+ }
+ &:nth-child(3) {
+  width: 15%;
+  left: 52.24%;
+  top: 17.31%;
+ }
+ &:nth-child(4) {
+  width: 7.86%;
+  left: 60.17%;
+  top: 57%;
+ }
+ &:nth-child(5) {
+  width: 12.66%;
+  left: 75.94%;
+  top: 40.28%;
+ }
+
+ &.academy-teacher--master {
+
+  &:nth-child(1) {
+   width: 8.3%;
+   left: 13.23%;
+   top: 39.35%;
+  }
+  &:nth-child(2) {
+   width: 10.31%;
+   left: 29.11%;
+   top: 43.24%;
+  }
+  &:nth-child(3) {
+   width: 19.53%;
+   left: 44.9%;
+   top: 21.11%;
+  }
+  &:nth-child(4) {
+   width: 10.52%;
+   left: 52.86%;
+   top: 56.94%;
+  }
+  &:nth-child(5) {
+   width: 11.56%;
+   left: 76.56%;
+   top: 35.1%;
+  }
+ }
+}
+
+.academy-inspiration {
+
+ .academy-inspiration__bg {
+  background-image: url(../../img/client/academy/academy-inspiration.jpg);
+ }
+
+ .academy-inspiration__main {
+  height: 100%;
+  padding: 90px 0 115px;
+  position: relative;
+
+  .academy-inspiration__header {
+   padding-left: 26.51%;
+  }
+
+  .academy-inspiration__subtitle-layout {
+
+   .academy-inspiration__subtitle {
+    color: $color-wild-sand-2;
+    font-size: 29px;
+    line-height: 45px;
+    font-size: 1.5vw;
+    line-height: 2.3vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+   }
+  }
+
+  .academy-inspiration__title-layout {
+   margin-top: 40px;
+
+   .academy-inspiration__title {
+    color: $color-wild-sand-2;
+    font-size: 45px;
+    line-height: 60px;
+    font-size: 2.3vw;
+    line-height: 3.1vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+   }
+  }
+
+  .academy-inspiration__city-btns {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 65px;
+
+   .academy-inspiration__city-btn {
+    border: 2px solid transparent;
+    color: $color-white;
+    font-size: 14px;
+    line-height: 38px;
+    letter-spacing: 1.71px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &.academy-inspiration__city-btn--active {
+     border: 2px solid $color-cape-cod;
+     background-color: $color-black-018;
+    }
+   }
+  }
+
+  .academy-inspiration__slider {
+   width: 1344px;
+   height: 342px;
+   margin: 60px auto 0;
+   @include laptop {
+    width: 806px;
+    height: 205px;
+   }
+
+   .slick-track {
+    display: flex;
+    align-items: center;
+   }
+
+   .academy-inspiration__slide {
+    width: 225px;
+    height: 225px;
+    @include laptop {
+     width: 135px;
+     height: 135px;
+    }
+
+    .academy-inspiration__slide-layout {
+     width: 100%;
+     height: 100%;
+
+     img {
+      width: 100%;
+      height: 100%;
+     }
+    }
+   }
+
+   .slick-active, .slick-active + .slick-active + .slick-active + .slick-active + .slick-active {
+    width: 225px;
+    height: 225px;
+    @include laptop {
+     width: 135px;
+     height: 135px;
+    }
+   }
+
+   .slick-active + .slick-active, .slick-active  + .slick-active + .slick-active + .slick-active {
+    width: 282px;
+    height: 282px;
+    @include laptop {
+     width: 169px;
+     height: 169px;
+    }
+   }
+
+   .slick-active + .slick-active + .slick-active {
+    width: 342px;
+    height: 342px;
+    @include laptop {
+     width: 206px;
+     height: 206px;
+    }
+   }
+  }
+ }
+}

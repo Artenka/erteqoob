@@ -59,3 +59,15 @@ section.section-layout.home-founders-layout
             p.home-founder__inner-text в каждой детали»
         div.home-founder__inner-title-layout
           h1.home-founder__inner-title Андрей Крупчинский
+
+script.
+  $(function(){
+    // founders hover animation
+    $homeFounder = $('.home-founder');
+    $homeFounder.on('mouseover', function () {
+      $homeFounder.not(this).addClass('home-founder--disabled');
+    });
+    $homeFounder.on('mouseleave', function () {
+      $homeFounder.not(this).removeClass('home-founder--disabled');
+    });
+  })

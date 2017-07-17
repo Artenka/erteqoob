@@ -1,0 +1,74 @@
+section.section-layout.academy-inspiration
+  div.section-bg.academy-inspiration__bg
+  .circle-layout
+    .circle.circle--1
+    .circle.circle--2
+    .circle.circle--3
+  div.academy-inspiration__main
+    header.academy-inspiration__header
+      div.academy-inspiration__subtitle-layout
+        h2.academy-inspiration__subtitle
+          | Мы сами создали своё творческое<br>
+          | пространство, в которое приглашаем<br>
+          | ищущих и горящих сердцем!
+      div.academy-inspiration__title-layout
+        h1.academy-inspiration__title
+          | Смотри. Вдохновляйся.<br>
+          | Приходи
+    ul.academy-inspiration__city-btns
+      li.academy-inspiration__city-btn.academy-inspiration__city-btn--active академия в киеве
+      li.academy-inspiration__city-btn академия в харькове
+    ul.academy-inspiration__slider.slider-arrows-long.slider-arrows-long--edge
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+
+script.
+  $(function(){
+
+    // academy inspirations slider
+    $('.academy-inspiration__slider').slick({
+      slidesToShow: 5,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 1260,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            arrows: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  })

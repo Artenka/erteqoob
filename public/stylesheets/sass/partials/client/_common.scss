@@ -223,6 +223,38 @@
   letter-spacing: 4px;
  }
 }
+.page-title-2 {
+ color: $color-wild-sand-2;
+ font-size: 32px;
+ line-height: 48px;
+ font-weight: 700;
+ letter-spacing: 12px;
+ text-align: center;
+ text-transform: uppercase;
+ @include laptop-tablet {
+  font-size: 28px;
+  letter-spacing: 9px;
+ }
+ @include mobile {
+  font-size: 14px;
+  line-height: 27px;
+  letter-spacing: 2px;
+ }
+}
+.page-subtitle-2 {
+ color: $color-silver-chalice-2;
+ font-size: 17px;
+ font-weight: 700;
+ letter-spacing: 1.1px;
+ line-height: 24px;
+ text-transform: uppercase;
+ text-align: center;
+ @include mobile {
+  font-size: 12px;
+  letter-spacing: 0.78px;
+  line-height: 21px;
+ }
+}
 
 .page-title-big-layout {
  text-align: center;

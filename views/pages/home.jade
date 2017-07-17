@@ -30,14 +30,6 @@ block contents
     $(function () {
       fixedMenusInitAnimation();
 
-      // founders hover anmation
-      $('.home-founder').on('mouseover', function () {
-        $('.home-founder').not(this).addClass('home-founder--disabled');
-      });
-      $('.home-founder').on('mouseleave', function () {
-        $('.home-founder').not(this).removeClass('home-founder--disabled');
-      });
-
       // hide fixed menus on mobile
       $(window).on('resize', function () {
         var window = $(this);
@@ -88,14 +80,15 @@ block contents
         pagination: true,
         updateURL: false,
         beforeMove: function (index) {
-          if (index == 12) {
-            fixedMenusHideAnimation();
-          } else {
-            fixedMenusReinit();
-          }
-          hidePagePagination();
+          //if (index == 12) {
+          //  fixedMenusHideAnimation();
+          //} else {
+          //  fixedMenusReinit();
+          //}
+          //hidePagePagination();
 
           if (index == 1) {
+            hidePagePagination();
             homeNavHide();
             homeAboutHide();
             homeThinkHide();
@@ -186,6 +179,7 @@ block contents
             homeSystemInit();
             showPagePagination();
           } else if (index == 8) {
+            hidePagePagination();
             homeIntroHide();
             homeNavHide();
             homeThinkHide();
