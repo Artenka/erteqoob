@@ -28,7 +28,7 @@
  }
 }
 
-.home-intro__link {
+.btn-black.home-intro__link {
  display: none;
  width: 215px;
  position: absolute;
@@ -89,7 +89,8 @@
    width: 92px;
    height: 92px;
    top: 71px;
-   left: 181px;
+   left: 267px;
+   //left: 181px;
   }
   @include tablet {
    width: 106px;
@@ -118,7 +119,8 @@
    width: 394px;
    height: 86px;
    top: 201px;
-   left: 30px;
+   left: 116px;
+   //left: 30px;
   }
   @include tablet {
    width: 428px;

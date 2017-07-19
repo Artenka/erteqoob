@@ -7,6 +7,17 @@
  .academy-intro__bg {
   background-image: url(../../img/client/academy/academy-intro.jpg);
  }
+
+ .circle-layout {
+
+  @include mobile {
+   width: 278px;
+   height: 278px;
+   left: calc(50% - 139px);
+   top: calc(50% - 139px);
+  }
+ }
+
  .academy-intro__main {
   height: 100%;
   display: flex;
@@ -42,6 +53,7 @@
    text-align: center;
    @include mobile {
     //margin-top: 22px;
+    padding-bottom: 40px;
    }
 
    h1 {
@@ -55,6 +67,11 @@
     position: relative;
     top: 50px;
     opacity: 0;
+    @include tablet {
+     font-size: 54px;
+     letter-spacing: 5.51px;
+     line-height: 54px;
+    }
     @include mobile {
      font-size: 30px;
      line-height: 30px;
@@ -63,9 +80,26 @@
    }
   }
  }
+
+ .home-intro__link {
+  bottom: 35%;
+ }
 }
 
 .academy-about {
+
+ .academy-about__bg {
+  background-image: url(../../img/client/academy/academy-about.jpg);
+ }
+
+ .academy-about__line {
+  width: 1px;
+  height: 50%;
+  background-color: $color-gray-3-025;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+ }
 
  .academy-about__main {
   height: 100%;
@@ -96,6 +130,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 0 100px;
+    @include mobile {
+     padding: 0 50px;
+    }
 
     .academy-about__item-title {
      color: $color-wild-sand-2;
@@ -107,6 +145,16 @@
      letter-spacing: 5px;
      text-transform: uppercase;
      text-align: center;
+     @include tablet {
+      font-size: 40px;
+      letter-spacing: 1.63px;
+      line-height: 52px;
+     }
+     @include mobile {
+      font-size: 16px;
+      letter-spacing: 0.65px;
+      line-height: 22px;
+     }
     }
     .academy-about__item-subtitle {
      color: $color-wild-sand-2;
@@ -117,6 +165,17 @@
      text-transform: uppercase;
      text-align: center;
      margin-top: 25px;
+     @include tablet {
+      font-size: 18px;
+      letter-spacing: 13.62px;
+      line-height: 18px;
+     }
+     @include mobile {
+      font-size: 12px;
+      line-height: 21px;
+      letter-spacing: 6px;
+      margin-top: 16px;
+     }
     }
 
     .academy-about__item-line {
@@ -148,6 +207,12 @@
   .academy-philosophy__title-layout {
    padding-left: 173px;
    position: relative;
+   @include tablet {
+    padding-left: 140px;
+   }
+   @include mobile {
+    padding-left: 56px;
+   }
 
    .academy-philosophy__title {
     color: $color-wild-sand-2;
@@ -158,6 +223,16 @@
     font-weight: 700;
     letter-spacing: 5px;
     text-transform: uppercase;
+    @include tablet {
+     font-size: 40px;
+     line-height: 52px;
+     letter-spacing: 1.55px;
+    }
+    @include mobile {
+     font-size: 16px;
+     line-height: 22px;
+     letter-spacing: 0.62px;
+    }
    }
 
    .academy-philosophy__title-line-layout {
@@ -166,6 +241,17 @@
     position: absolute;
     top: 27px;
     left: 0;
+    @include tablet {
+     width: 63px;
+     height: 3px;
+     top: 31px;
+     left: 47px;
+    }
+    @include mobile {
+     width: 36px;
+     height: 3px;
+     top: 9px;
+    }
 
     .academy-philosophy__title-line {
      width: 100%;
@@ -177,15 +263,33 @@
 
   .academy-philosophy__link-layout {
    margin-top: 110px;
+   @include tablet {
+    margin-top: 148px;
+   }
+   @include mobile {
+    margin-top: 70px;
+   }
 
    .academy-philosophy__link {
     margin: 0 auto;
     &, &:before {
      width: 318px;
+     @include tablet {
+      width: 347px;
+     }
+     @include mobile {
+      width: 201px;
+     }
     }
     &:hover {
      &:before {
       width: 323px;
+      @include tablet {
+       width: 352px;
+      }
+      @include mobile {
+       width: 206px;
+      }
      }
     }
    }
@@ -193,13 +297,19 @@
  }
 }
 
-.academy-lead-teachers {
+.onepage-wrapper .academy-lead-teachers {
+ @include tablet-mobile {
+  height: auto;
+ }
 
  .academy-lead-teachers__main {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: 100px 0;
+  @include mobile {
+   padding: 55px 0 20px;
+  }
 
   .academy-lead-teachers__title-layout {
    width: 100%;
@@ -219,6 +329,16 @@
    justify-content: space-between;
    align-items: flex-start;
    padding: 0 3.3%;
+   @include tablet-mobile {
+    flex-direction: column;
+    align-items: center;
+   }
+   @include tablet {
+    margin-top: 75px;
+   }
+   @include mobile {
+    margin-top: 55px;
+   }
 
    .academy-lead-teachers__item {
     width: 24%;
@@ -228,6 +348,16 @@
     position: relative;
     transition: 0.8s;
     cursor: pointer;
+    @include tablet {
+     max-width: 430px;
+     width: 53.75%;
+     margin-bottom: 200px;
+    }
+    @include mobile {
+     width: 93.75%;
+     max-width: 300px;
+     margin-bottom: 135px;
+    }
     &:before {
      content: '';
      display: block;
@@ -235,6 +365,9 @@
     }
     &:nth-child(even) {
      align-self: flex-end;
+     @include tablet-mobile {
+      align-self: center;
+     }
     }
     &:nth-child(1){
      background-image: url(../../img/client/academy/academy-main-teacher-1.jpg);
@@ -278,6 +411,16 @@
      position: absolute;
      bottom: 5px;
      right: 0;
+     @include tablet {
+      font-size: 18px;
+      letter-spacing: 5.26px;
+      line-height: 25px;
+     }
+     @include mobile {
+      font-size: 8px;
+      letter-spacing: 2.34px;
+      line-height: 13px;
+     }
     }
 
     .academy-lead-teachers__item-name-layout {
@@ -285,6 +428,9 @@
      position: absolute;
      bottom: -30%;
      left: 0;
+     @include mobile {
+      bottom: -90px;
+     }
 
      .academy-lead-teachers__item-name {
       color: $color-white;
@@ -293,6 +439,14 @@
       font-size: 2.1vw;
       line-height: 2.1vw;
       position: relative;
+      @include tablet {
+       font-size: 41px;
+       line-height: 41px;
+      }
+      @include mobile {
+       font-size: 24px;
+       line-height: 26px;
+      }
       &:before {
        content: '';
        width: 1px;
@@ -306,6 +460,38 @@
 
      .academy-lead-teachers__item-star {
       margin-top: 7%;
+      @include tablet {
+       margin-top: 13px;
+      }
+      @include mobile {
+       margin-top: 15px;
+      }
+
+       svg {
+        width: 9px;
+        height: 8px;
+        @include tablet {
+         width: 14px;
+         height: 13px;
+        }
+        @include mobile {
+         width: 10px;
+         height: 9px;
+        }
+
+        path {
+         width: 9px;
+         height: 8px;
+         @include tablet {
+          width: 14px;
+          height: 13px;
+         }
+         @include mobile {
+          width: 10px;
+          height: 9px;
+         }
+        }
+       }
      }
     }
 
@@ -325,7 +511,8 @@
   width: 14px;
   height: 17px;
   float: left;
-  margin-right: 33px;
+  margin-right: 20px;
+  //margin-right: 33px;
   &:last-child {
    margin-right: 0;
   }
@@ -355,6 +542,10 @@
   background-image: url(../../img/client/academy/academy-teachers.jpg);
  }
 
+ .slick-dots-horizontal .slick-dots {
+  bottom: 55px;
+ }
+
  .academy-teachers__main {
   height: 100%;
   position: relative;
@@ -379,6 +570,19 @@
    .slick-slide {
     position: relative;
    }
+
+   &.academy-teachers-slider--desktop {
+    display: block;
+    @include mobile {
+     display: none;
+    }
+   }
+   &.academy-teachers-slider--mobile {
+    display: none;
+    @include mobile {
+     display: block;
+    }
+   }
   }
  }
 
@@ -394,6 +598,10 @@
  position: absolute;
  top: 0;
  left: 0;
+ @include mobile {
+  width: 172px!important;
+  padding-top: 60px;
+ }
  &:hover {
 
   .academy-teachers__socials {
@@ -411,7 +619,13 @@
  .academy-teachers__socials {
   position: absolute;
   top: 7%;
-  left: -30px;
+  left: -23px;
+  @include tablet {
+   top: 20px;
+  }
+  @include mobile {
+   top: 78px;
+  }
  }
 
  .academy-teacher__photo {
@@ -428,11 +642,19 @@
  .academy-teacher__info {
   width: 125%;
   margin-top: 35px;
+  @include mobile {
+   width: 100%;
+   margin-top: 12px;
+  }
 
   .academy-teacher__name {
    color: $color-white;
    font-size: 22px;
    line-height: 22px;
+   @include mobile {
+    font-size: 16px;
+    line-height: 16px;
+   }
   }
   .academy-teacher__position {
    color: $color-white;
@@ -441,6 +663,12 @@
    letter-spacing: 4.25px;
    line-height: 17px;
    text-transform: uppercase;
+   @include mobile {
+    font-size: 8px;
+    letter-spacing: 3.09px;
+    line-height: 13px;
+    margin-top: 5px;
+   }
   }
  }
 
@@ -448,26 +676,47 @@
   width: 17.6%;
   left: 12.7%;
   top: 41.2%;
+  @include tablet {
+   width: 21.875%;
+   left: 18%;
+   top: 26%;
+  }
  }
  &:nth-child(2) {
   width: 12.92%;
   left: 36.3%;
   top: 43.33%;
+  @include tablet {
+   width: 27.875%;
+   left: 18%;
+   top: 51.4%;
+  }
  }
  &:nth-child(3) {
   width: 15%;
   left: 52.24%;
   top: 17.31%;
+  @include tablet {
+   width: 32.125%;
+   left: 49.75%;
+   top: 29.3%;
+  }
  }
  &:nth-child(4) {
   width: 7.86%;
   left: 60.17%;
   top: 57%;
+  @include tablet-mobile {
+   display: none;
+  }
  }
  &:nth-child(5) {
   width: 12.66%;
   left: 75.94%;
   top: 40.28%;
+  @include tablet-mobile {
+   display: none;
+  }
  }
 
  &.academy-teacher--master {
@@ -476,16 +725,31 @@
    width: 8.3%;
    left: 13.23%;
    top: 39.35%;
+   @include tablet {
+    width: 32.125%;
+    left: 17%;
+    top: 31.72%;
+   }
   }
   &:nth-child(2) {
    width: 10.31%;
    left: 29.11%;
    top: 43.24%;
+   @include tablet {
+    width: 21.75%;
+    left: 57.125%;
+    top: 24.6%;
+   }
   }
   &:nth-child(3) {
    width: 19.53%;
    left: 44.9%;
    top: 21.11%;
+   @include tablet {
+    width: 27.875%;
+    left: 57.125%;
+    top: 50%;
+   }
   }
   &:nth-child(4) {
    width: 10.52%;
@@ -500,7 +764,10 @@
  }
 }
 
-.academy-inspiration {
+.onepage-wrapper .academy-inspiration {
+ @include tablet-mobile {
+  height: auto;
+ }
 
  .academy-inspiration__bg {
   background-image: url(../../img/client/academy/academy-inspiration.jpg);
@@ -510,12 +777,25 @@
   height: 100%;
   padding: 90px 0 115px;
   position: relative;
+  @include mobile {
+   padding: 56px 0;
+  }
 
   .academy-inspiration__header {
    padding-left: 26.51%;
+   @include tablet {
+    padding-left: 18.125%;
+   }
+   @include mobile {
+    padding-left: 0;
+   }
   }
 
   .academy-inspiration__subtitle-layout {
+   @include mobile {
+    width: 300px;
+    margin: 0 auto;
+   }
 
    .academy-inspiration__subtitle {
     color: $color-wild-sand-2;
@@ -526,11 +806,28 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 8px;
+    @include tablet {
+     font-size: 23px;
+     letter-spacing: 7.39px;
+     line-height: 39px;
+    }
+    @include mobile {
+     font-size: 16px;
+     line-height: 27px;
+     letter-spacing: 4px;
+    }
    }
   }
 
   .academy-inspiration__title-layout {
    margin-top: 40px;
+   @include tablet {
+    margin-top: 25px;
+   }
+   @include mobile {
+    width: 300px;
+    margin: 22px auto 0;
+   }
 
    .academy-inspiration__title {
     color: $color-wild-sand-2;
@@ -541,6 +838,16 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 12px;
+    @include tablet {
+     font-size: 39px;
+     letter-spacing: 11.75px;
+     line-height: 51.78px;
+    }
+    @include mobile {
+     font-size: 20px;
+     letter-spacing: 6px;
+     line-height: 30px;
+    }
    }
   }
 
@@ -549,6 +856,12 @@
    justify-content: center;
    align-items: center;
    margin-top: 65px;
+   @include tablet {
+    margin-top: 80px;
+   }
+   @include mobile {
+    margin-top: 55px;
+   }
 
    .academy-inspiration__city-btn {
     border: 2px solid transparent;
@@ -561,10 +874,33 @@
     padding: 0 20px;
     margin: 0 10px;
     cursor: pointer;
+    @include mobile {
+     font-size: 9px;
+     letter-spacing: 1.12px;
+     padding: 0 15px;
+     margin: 0;
+    }
 
     &.academy-inspiration__city-btn--active {
      border: 2px solid $color-cape-cod;
      background-color: $color-black-018;
+    }
+   }
+  }
+
+  .slider-arrows-long--edge {
+
+   .slick-arrow {
+
+    &.slick-prev {
+     @include mobile {
+      left: -13px;
+     }
+    }
+    &.slick-next {
+     @include tablet-mobile {
+      right: -13px;
+     }
     }
    }
   }
@@ -577,18 +913,38 @@
     width: 806px;
     height: 205px;
    }
+   @include tablet {
+    width: 434px;
+    height: 350px;
+    margin-top: 110px;
+   }
+   @include mobile {
+    width: 190px;
+    height: 250px;
+    margin-top: 70px;
+   }
 
    .slick-track {
     display: flex;
     align-items: center;
+    transition: 1s;
    }
 
    .academy-inspiration__slide {
     width: 225px;
     height: 225px;
+    transition: 0.8s;
     @include laptop {
      width: 135px;
      height: 135px;
+    }
+    @include tablet {
+     width: 267px;
+     height: 267px;
+    }
+    @include mobile {
+     width: 190px;
+     height: 250px;
     }
 
     .academy-inspiration__slide-layout {
@@ -610,7 +966,6 @@
      height: 135px;
     }
    }
-
    .slick-active + .slick-active, .slick-active  + .slick-active + .slick-active + .slick-active {
     width: 282px;
     height: 282px;
@@ -619,13 +974,32 @@
      height: 169px;
     }
    }
-
    .slick-active + .slick-active + .slick-active {
     width: 342px;
     height: 342px;
     @include laptop {
      width: 206px;
      height: 206px;
+    }
+   }
+
+   @include tablet {
+
+    .slick-active, .slick-active + .slick-active + .slick-active {
+     width: 267px;
+     height: 267px;
+    }
+    .slick-active + .slick-active {
+     width: 350px;
+     height: 350px;
+    }
+   }
+
+   @include mobile {
+
+    .slick-active {
+     width: 190px;
+     height: 250px;
     }
    }
   }

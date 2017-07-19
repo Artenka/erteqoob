@@ -68,7 +68,7 @@
  &:before {
   width: 10px;
   height: 10px;
-  background: url(../../img/icons/slider-dot-active.svg) no-repeat center;
+  background: url(../../img/icons/slider-dot-active.svg) no-repeat center / 100% auto;
   border: 0;
   margin: 0;
   padding: 0;
@@ -135,12 +135,38 @@
   right: auto;
   top: auto;
   bottom: 85px;
+  @include tablet {
+   height: 23px;
+  }
 
   > li {
    margin-bottom: 0;
    margin-right: 10px;
+   @include tablet {
+    width: 23px;
+    height: 23px;
+   }
+
+   &:before {
+    @include tablet {
+     width: 13px;
+     height: 13px;
+     top: 5px;
+     left: 5px;
+    }
+   }
    &:last-child {
     margin-right: 0;
+   }
+
+   &.slick-active {
+
+    &:before {
+     @include tablet {
+      width: 23px;
+      height: 23px;
+     }
+    }
    }
   }
  }
