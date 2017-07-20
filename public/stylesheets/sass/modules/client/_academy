@@ -90,6 +90,7 @@
 
  .academy-about__bg {
   background-image: url(../../img/client/academy/academy-about.jpg);
+  opacity: 0;
  }
 
  .academy-about__line {
@@ -99,6 +100,15 @@
   position: absolute;
   top: 25%;
   left: 50%;
+ }
+
+ .slider-arrows-long .slick-arrow {
+  opacity: 0;
+  transform: scale(0.7);
+ }
+ .slick-dots-horizontal .slick-dots {
+  opacity: 0;
+  bottom: 135px;
  }
 
  .academy-about__main {
@@ -145,6 +155,10 @@
      letter-spacing: 5px;
      text-transform: uppercase;
      text-align: center;
+     opacity: 0;
+     transform: scale(0.85);
+     position: relative;
+     top: -20px;
      @include tablet {
       font-size: 40px;
       letter-spacing: 1.63px;
@@ -165,6 +179,8 @@
      text-transform: uppercase;
      text-align: center;
      margin-top: 25px;
+     opacity: 0;
+     transform: scale(0.85);
      @include tablet {
       font-size: 18px;
       letter-spacing: 13.62px;
@@ -195,6 +211,7 @@
 
  .academy-philosophy__bg {
   background-image: url(../../img/client/academy/academy-philosophy.jpg);
+  opacity: 0;
  }
 
  .academy-philosophy__main {
@@ -223,6 +240,9 @@
     font-weight: 700;
     letter-spacing: 5px;
     text-transform: uppercase;
+    position: relative;
+    top: 200px;
+    opacity: 0;
     @include tablet {
      font-size: 40px;
      line-height: 52px;
@@ -237,19 +257,18 @@
 
    .academy-philosophy__title-line-layout {
     width: 134px;
-    height: 6px;
+    height: 3px;
     position: absolute;
     top: 27px;
     left: 0;
+    padding: 0 50%;
     @include tablet {
      width: 63px;
-     height: 3px;
      top: 31px;
      left: 47px;
     }
     @include mobile {
      width: 36px;
-     height: 3px;
      top: 9px;
     }
 
@@ -272,6 +291,10 @@
 
    .academy-philosophy__link {
     margin: 0 auto;
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    transition: 0s;
     &, &:before {
      width: 318px;
      @include tablet {
@@ -313,6 +336,12 @@
 
   .academy-lead-teachers__title-layout {
    width: 100%;
+
+   .academy-lead-teachers__title {
+    position: relative;
+    top: 40px;
+    opacity: 0;
+   }
   }
 
   .academy-lead-teachers__list-layout {
@@ -348,6 +377,8 @@
     position: relative;
     transition: 0.8s;
     cursor: pointer;
+    top: -80px;
+    opacity: 0;
     @include tablet {
      max-width: 430px;
      width: 53.75%;
@@ -365,6 +396,7 @@
     }
     &:nth-child(even) {
      align-self: flex-end;
+     top: 80px;
      @include tablet-mobile {
       align-self: center;
      }
@@ -540,6 +572,7 @@
 
  .academy-teachers__bg {
   background-image: url(../../img/client/academy/academy-teachers.jpg);
+  opacity: 0;
  }
 
  .slick-dots-horizontal .slick-dots {
@@ -556,8 +589,17 @@
    top: 8.5%;
    left: 0;
 
+   .academy-teachers__title {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+   }
+
    .academy-teachers__subtitle {
     margin-top: 2px;
+    position: relative;
+    top: 100px;
+    opacity: 0;
     @include tablet {
      margin-top: 16px;
     }
@@ -598,25 +640,29 @@
  position: absolute;
  top: 0;
  left: 0;
+ cursor: pointer;
  @include mobile {
   width: 172px!important;
   padding-top: 60px;
  }
  &:hover {
 
-  .academy-teachers__socials {
+  .academy-teachers__socials-layout {
 
-   .academy-teachers__social:nth-child(2) svg path {
-    fill: $color-mine-shaft-2;
+   .academy-teachers__socials {
+
+    .academy-teachers__social:nth-child(2) svg path {
+     fill: $color-mine-shaft-2;
+    }
    }
   }
 
   .academy-teacher__photo {
-   opacity: 1;
+    opacity: 1;
   }
  }
 
- .academy-teachers__socials {
+ .academy-teachers__socials-layout {
   position: absolute;
   top: 7%;
   left: -23px;
@@ -627,21 +673,47 @@
    top: 78px;
   }
  }
+ .academy-teachers__socials {
+  position: relative;
+  top: 30px;
+  opacity: 0;
+ }
 
  .academy-teacher__photo {
   width: 100%;
-  opacity: 0.7;
   transition: 0.7s;
+  opacity: 0.7;
+  position: relative;
+  overflow: hidden;
+
+  .academy-teacher__photo-bg {
+   content: '';
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: $color-gray;
+   position: absolute;
+   top: 0;
+   right: 100%;
+   z-index: 3;
+  }
 
   img {
    width: 100%;
    height: auto;
+   position: relative;
+   top: 0;
+   right: 100%;
+   z-index: 4;
   }
  }
 
  .academy-teacher__info {
   width: 125%;
   margin-top: 35px;
+  position: relative;
+  top: 30px;
+  opacity: 0;
   @include mobile {
    width: 100%;
    margin-top: 12px;
@@ -806,6 +878,9 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 8px;
+    position: relative;
+    top: 30px;
+    opacity: 0;
     @include tablet {
      font-size: 23px;
      letter-spacing: 7.39px;
@@ -838,6 +913,9 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 12px;
+    position: relative;
+    top: 200px;
+    opacity: 0;
     @include tablet {
      font-size: 39px;
      letter-spacing: 11.75px;
@@ -856,6 +934,7 @@
    justify-content: center;
    align-items: center;
    margin-top: 65px;
+   opacity: 0;
    @include tablet {
     margin-top: 80px;
    }
@@ -929,11 +1008,17 @@
     align-items: center;
     transition: 1s;
    }
+   &.slider-arrows-long .slick-arrow {
+    opacity: 0;
+    transform: scale(0.7);
+   }
 
    .academy-inspiration__slide {
     width: 225px;
     height: 225px;
     transition: 0.8s;
+    opacity: 0;
+    transform: scale(0.4);
     @include laptop {
      width: 135px;
      height: 135px;
@@ -961,6 +1046,7 @@
    .slick-active, .slick-active + .slick-active + .slick-active + .slick-active + .slick-active {
     width: 225px;
     height: 225px;
+    transition-delay: 1s;
     @include laptop {
      width: 135px;
      height: 135px;
@@ -969,6 +1055,7 @@
    .slick-active + .slick-active, .slick-active  + .slick-active + .slick-active + .slick-active {
     width: 282px;
     height: 282px;
+    transition-delay: 0.5s;
     @include laptop {
      width: 169px;
      height: 169px;
@@ -977,6 +1064,7 @@
    .slick-active + .slick-active + .slick-active {
     width: 342px;
     height: 342px;
+    transition-delay: 0s;
     @include laptop {
      width: 206px;
      height: 206px;
@@ -988,10 +1076,12 @@
     .slick-active, .slick-active + .slick-active + .slick-active {
      width: 267px;
      height: 267px;
+     transition-delay: 0.5s;
     }
     .slick-active + .slick-active {
      width: 350px;
      height: 350px;
+     transition-delay: 0s;
     }
    }
 
@@ -1000,6 +1090,7 @@
     .slick-active {
      width: 190px;
      height: 250px;
+     transition-delay: 0.5s;
     }
    }
   }

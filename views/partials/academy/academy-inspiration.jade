@@ -44,8 +44,9 @@ section.section-layout.academy-inspiration
 script.
   $(function(){
 
+    var $academyInspirationSlider = $('.academy-inspiration__slider');
     // academy inspirations slider
-    $('.academy-inspiration__slider').slick({
+    $academyInspirationSlider.slick({
       slidesToShow: 5,
       arrows: true,
       dots: false,
@@ -71,4 +72,11 @@ script.
         }
       ]
     });
-  })
+
+    $academyInspirationSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      $('.academy-inspiration__slide').css('transition-delay', '0');
+    });
+    $academyInspirationSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      $('.academy-inspiration__slide').css('transition-delay', 'inherit');
+    });
+  });
