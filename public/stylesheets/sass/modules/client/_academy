@@ -641,6 +641,7 @@
  top: 0;
  left: 0;
  cursor: pointer;
+ transition: 0.8s;
  @include mobile {
   width: 172px!important;
   padding-top: 60px;
@@ -833,6 +834,10 @@
    left: 76.56%;
    top: 35.1%;
   }
+ }
+
+ &.academy-teacher--disabled {
+  transform: scale(0.75);
  }
 }
 

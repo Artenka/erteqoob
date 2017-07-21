@@ -29,7 +29,6 @@ block contents
 
   script.
     $(function () {
-      fixedMenusInitAnimation();
 
       // hide fixed menus on mobile
       $(window).on('resize', function () {
@@ -82,11 +81,11 @@ block contents
         pagination: true,
         updateURL: false,
         beforeMove: function (index) {
-          //if (index == 12) {
-          //  fixedMenusHideAnimation();
-          //} else {
-          //  fixedMenusReinit();
-          //}
+          if (index == 2 || index == 12 ) {
+            fixedMenusHideAnimation();
+          } else {
+            fixedMenusInitAnimation();
+          }
           //hidePagePagination();
 
           if (index == 1) {
@@ -245,6 +244,7 @@ block contents
             homeBlogHide();
             homeActionHide();
             showPagePagination();
+            footerMenusHideAnimation();
           }
         },
         afterMove: function(index) {

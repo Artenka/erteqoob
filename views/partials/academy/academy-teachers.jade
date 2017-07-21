@@ -267,6 +267,15 @@ section.section-layout.academy-teachers.academy-teachers--teachers
 script.
   $(function(){
 
+    // lead teachers hover animation
+    $leadTeacher = $('.academy-teacher');
+    $leadTeacher.on('mouseover', function () {
+      $leadTeacher.not(this).addClass('academy-teacher--disabled');
+    });
+    $leadTeacher.on('mouseleave', function () {
+      $leadTeacher.not(this).removeClass('academy-teacher--disabled');
+    });
+
     var $teachersDesktopSlider = $('.academy-teachers--teachers .academy-teachers-slider--desktop');
     var $teachersMobileSlider = $('.academy-teachers--teachers .academy-teachers-slider--mobile');
 

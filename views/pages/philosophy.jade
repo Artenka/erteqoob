@@ -3,6 +3,7 @@ extends ../layouts/main-client.jade
 block contents
   div.main-layout#philosophy
     include ../partials/main-nav-cities.jade
+    include ../partials/main-nav-lang.jade
     include ../partials/main-nav-socials.jade
     include ../partials/main-nav-toggle.jade
     include ../partials/register-link.jade
@@ -188,6 +189,7 @@ block contents
             philosophyPros1Hide();
             philosophyPros2Hide();
             philosophyActionHide();
+            footerMenusHideAnimation();
           }
         },
         afterMove: function(index) {

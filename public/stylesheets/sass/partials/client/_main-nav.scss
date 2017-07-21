@@ -97,6 +97,11 @@
   }
  }
 
+ &.main-nav--home-nav {
+  opacity: 0;
+  top: 90px;
+ }
+
  &.main-nav--socials {
   top: auto;
   left: auto;
