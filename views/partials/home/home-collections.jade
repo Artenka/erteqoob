@@ -4,7 +4,7 @@ section.section-layout.home-collections-layout
       div.home-collections__title
         h1.page-title коллекции
         h2.erteqoob-title
-    div.home-collections__slider-layout.slider-arrows-long
+    div.home-collections__slider-layout.slider-arrows-long.slider-arrows-long--edge
       ul.home-collections-list
         li.home-collections-list__item(style="background-image: url(img/client/home/home-collection-item-1.jpg);")
           p.rotated-text.rotated-text--left.home-collections-list__item-date апрель ‘16
@@ -45,7 +45,7 @@ script.
     // home events slider
     $('.home-collections-list').slick({
       slidesToShow: 5,
-      arrows: false,
+      arrows: true,
       dots: false,
       draggable: true,
       accessibility: false,
@@ -63,7 +63,6 @@ script.
         {
           breakpoint: 640,
           settings: {
-            arrows: true,
             slidesToShow: 1
           }
         }

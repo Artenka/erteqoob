@@ -762,7 +762,7 @@
  .home-video {
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   @include tablet-mobile {
    flex-direction: column;
@@ -770,7 +770,8 @@
 
   .home-video__title-layout {
    width: 300px;
-   margin-right: 155px;
+   //margin-right: 155px;
+   margin-left: 5%;
    position: relative;
    @include laptop {
     width: 250px;
@@ -811,8 +812,15 @@
 
   .home-video__btn-layout {
    width: 116px;
-   margin-right: 95px;
-   position: relative;
+   //margin-right: 95px;
+   position: absolute;
+   left: calc(50% - 58px);
+   top: calc(50% - 104px);
+   @include tablet-mobile {
+    position: relative;
+    top: auto;
+    left: auto;
+   }
    @include tablet {
     width: 500px;
     margin: 60px auto 0;
@@ -1141,6 +1149,7 @@
    width: 20%;
    //width: 382px;
    position: relative;
+   top: -20px;
    opacity: 0;
    @include laptop {
     //width: 282px;
@@ -1344,7 +1353,7 @@
   &:nth-child(even) {
 
    .home-founder__image {
-    bottom: 60%;
+    //bottom: 60%;
     @include tablet {
      right: 2%;
      left: auto;
@@ -1407,7 +1416,8 @@
    background-position: center top;
    background-size: 100% auto;
    position: absolute;
-   bottom: 30%;
+   bottom: -30%;
+   //bottom: 30%;
    opacity: 0;
    left: 0;
    //transition: 0.5s;
@@ -1581,7 +1591,7 @@
   }
 
   .home-founder__inner {
-   padding-top: 55%;
+   padding-top: 75%;
    position: relative;
    z-index: 3;
    @include tablet-mobile {
@@ -1945,6 +1955,37 @@
   padding-top: 42px;
  }
 
+ .home-events__line {
+  width: 1px;
+  height: 70%;
+  background-color: $color-gray-2-024;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  @include tablet-mobile {
+   display: none;
+  }
+
+  &.home-events__line--1 {
+   left: calc(50% - 622px);
+   top: 18%;
+   @include laptop {
+    left: calc(50% - 430px);
+   }
+  }
+  &.home-events__line--2 {
+   left: 50%;
+   top: 25%;
+  }
+  &.home-events__line--3 {
+   left: calc(50% + 622px);
+   top: 18%;
+   @include laptop {
+    left: calc(50% + 430px);
+   }
+  }
+ }
+
  .home-events__title {
   position: relative;
   top: 40px;
@@ -2086,18 +2127,18 @@
   //  display: none;
   // }
   //}
-  &:before {
-   content: '';
-   width: 1px;
-   height: 150%;
-   background-color: $color-gray-2-024;
-   position: absolute;
-   top: -11%;
-   left: 50%;
-   @include tablet-mobile {
-    display: none;
-   }
-  }
+  //&:before {
+  // content: '';
+  // width: 1px;
+  // height: 150%;
+  // background-color: $color-gray-2-024;
+  // position: absolute;
+  // top: -11%;
+  // left: 50%;
+  // @include tablet-mobile {
+  //  display: none;
+  // }
+  //}
 
   .home-events-list__item-link {
    display: block;
@@ -2361,6 +2402,13 @@
   //height: 60%;
   height: 250px;
   margin-top: 35px;
+ }
+
+ .slider-arrows-long {
+
+  .slick-arrow {
+   opacity: 0;
+  }
  }
 }
 
@@ -3176,7 +3224,7 @@
   .home-action__form-input-layout {
    width: 36.6%;
    position: relative;
-   overflow: hidden;
+   //overflow: hidden;
    @include tablet-mobile {
     width: 100%;
    }
@@ -3185,14 +3233,32 @@
    }
 
    .home-action__form-input-line {
-    width: 100%;
+    width: 0;
+    //width: 100%;
     height: 2px;
     background: $color-gray-2-078;
     position: absolute;
     bottom: 0;
-    left: -100%;
+    left: 0;
+    //left: -100%;
+
+    &.home-action__form-input-line--active {
+     background: $color-white;
+    }
    }
   }
+
+  .home-action__form-label {
+   color: $color-white;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 21px;
+   position: absolute;
+   top: 16px;
+   left: 0;
+   opacity: 0;
+  }
+
   .home-action__form-input {
    background: transparent;
    border: none;
@@ -3203,7 +3269,7 @@
    line-height: 53px;
    padding: 0;
    position: relative;
-   top: 50px;
+   //top: 50px;
    @include laptop {
     font-size: 14px;
    }
@@ -3238,11 +3304,15 @@
   }
   .home-action__form-submit {
    width: 170px;
-   padding-left: 38px;
+   padding: 0 0 0 38px;
    background-position: left 0 center;
    border: none;
    position: relative;
-   top: 50px;
+   top: 30px;
+   opacity: 0;
+   @include laptop {
+    font-size: 14px;
+   }
    @include tablet {
     padding-left: 30px;
    }

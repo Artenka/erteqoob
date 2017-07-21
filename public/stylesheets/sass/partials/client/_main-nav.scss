@@ -59,6 +59,7 @@
  &.main-nav--lang {
   top: auto;
   bottom: 52px;
+  opacity: 0;
   @include clearfix;
   @include laptop {
    top: auto;

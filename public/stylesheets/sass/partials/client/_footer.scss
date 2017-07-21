@@ -306,6 +306,7 @@
  display: flex;
  justify-content: space-between;
  padding: 0 60px 140px 120px;
+ position: relative;
  @include laptop {
   padding: 0 50px 125px 100px;
  }

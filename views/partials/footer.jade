@@ -68,6 +68,10 @@ section.section-layout.main-footer-layout
 script.
   $(function(){
     changeRotatedTextWidth('.main-footer__aside-link', '.main-footer__middle');
+
+    $('.footer-disclaimer__close').click(function(){
+      TweenMax.to($('.footer-disclaimer'), 0.5, {top: '50px', opacity: '0', ease: Power1.easeInOut});
+    });
   })
 
 include scripts.jade

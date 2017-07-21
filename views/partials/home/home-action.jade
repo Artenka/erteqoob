@@ -7,9 +7,25 @@ section.section-layout.home-action-layout
       form.home-action__form
         div.home-action__form-input-layout
           .home-action__form-input-line
-          input.home-action__form-input(type="text", placeholder="Имя")
+          label.home-action__form-label Имя
+          input.home-action__form-input(type="text")
         div.home-action__form-input-layout
           .home-action__form-input-line
-          input.home-action__form-input(type="text", placeholder="E-mail")
+          label.home-action__form-label E-mail
+          input.home-action__form-input(type="text")
         div.home-action__form-submit-layout
-          button(type="submit").btn-black.home-action__form-submit подписаться
+          .arrow-link
+            button(type="submit").btn-black.arrow-link__text.home-action__form-submit подписаться
+
+
+script.
+  $(function(){
+    $('.home-action__form-input').focus(function () {
+      TweenMax.to($(this).closest('.home-action__form-input-layout').find('.home-action__form-label'), 0.3, {top: '-16px', scaleX: 0.75, scaleY: 0.75, ease: Power1.easeInOut});
+      $(this).closest('.home-action__form-input-layout').find('.home-action__form-input-line').addClass('home-action__form-input-line--active');
+    });
+    $('.home-action__form-input').blur(function () {
+      TweenMax.to($(this).closest('.home-action__form-input-layout').find('.home-action__form-label'), 0.3, {top: '16px', scaleX: 1, scaleY: 1, ease: Power1.easeInOut});
+      $(this).closest('.home-action__form-input-layout').find('.home-action__form-input-line').removeClass('home-action__form-input-line--active');
+    });
+  })
