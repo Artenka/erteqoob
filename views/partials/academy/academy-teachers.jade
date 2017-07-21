@@ -268,12 +268,12 @@ script.
   $(function(){
 
     // lead teachers hover animation
-    $leadTeacher = $('.academy-teacher');
-    $leadTeacher.on('mouseover', function () {
-      $leadTeacher.not(this).addClass('academy-teacher--disabled');
+    $teacher = $('.academy-teacher');
+    $teacher.on('mouseover', function () {
+      $teacher.not(this).addClass('academy-teacher--disabled');
     });
-    $leadTeacher.on('mouseleave', function () {
-      $leadTeacher.not(this).removeClass('academy-teacher--disabled');
+    $teacher.on('mouseleave', function () {
+      $teacher.not(this).removeClass('academy-teacher--disabled');
     });
 
     var $teachersDesktopSlider = $('.academy-teachers--teachers .academy-teachers-slider--desktop');
