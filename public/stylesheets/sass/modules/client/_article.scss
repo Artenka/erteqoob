@@ -26,42 +26,24 @@
 .article-info {
  height: 100%;
  background-image: url(../../img/client/Article/article-bg.png);
- background-color: $color-black;
  background-repeat: no-repeat;
  background-position: left center;
  background-size: cover;
- position: relative;
  padding: 18% 45px 0 70px;
  //padding: 280px 45px 0 70px;
  @include clearfix;
+ @extend .diagonal-right-black-bg;
  @include tablet-mobile {
-  height: auto;
+  //height: auto;
   background-image: url(../../img/client/Article/article-bg-min.png);
   background-size: 100% auto;
   background-position: top center;
   padding: 140px 0 0;
  }
  &:before, &:after {
-  content: '';
-  width: 50%;
-  height: 100%;
-  background-color: $color-black;
-  position: absolute;
-  right: 0;
-  top: 0;
-  -webkit-transform: skewX(-40deg);
-  -moz-transform: skewX(-40deg);
-  -ms-transform: skewX(-40deg);
-  -o-transform: skewX(-40deg);
-  transform: skewX(-40deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: initial;
   @include tablet-mobile {
    display: none;
   }
- }
- &:after {
-  right: -45%;
  }
 }
 

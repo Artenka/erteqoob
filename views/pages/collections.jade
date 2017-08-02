@@ -1,0 +1,171 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#collections
+    include ../partials/main-nav-socials.jade
+    include ../partials/main-nav-lang.jade
+    include ../partials/main-nav-toggle.jade
+    include ../partials/register-link.jade
+    include ../partials/link-back.jade
+    div.intro-logo.intro-logo__collections
+      div.intro-logo__circle.intro-logo__circle--1
+      div.intro-logo__circle.intro-logo__circle--2
+      div.intro-logo__circle.intro-logo__circle--3
+      div.intro-logo__img
+    div.collections-page-title коллекции
+    div#collections-circle.circle-slider
+      div.circle-slider__dot.circle-slider__dot--1.circle-slider__dot--active
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--2
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--3
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--4
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--5
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--6
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--7
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--8
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--9
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--10
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--11
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+      div.circle-slider__dot.circle-slider__dot--12
+        .circle-slider__dot-inner
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--1
+        .circle-slider__dot-inner-circle.circle-slider__dot-inner-circle--2
+    div.collections-layout
+      div.collections-layout__bg
+      div.collections-right
+        div.collections-info
+          .collections-info__dots
+          header.collections-info__header
+            p.collections-info__number 01.
+            h1.collections-info__title Reportage Backstage
+          p.collections-info__text Живые эмоции за кулисами рок-концерта
+          p.collections-info__date 31 Mar 2015
+        a(href="#").collections-info__more
+          | подробнее
+          svg#SvgjsSvg1011(xmlns='http://www.w3.org/2000/svg', version='1.1', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:svgjs='http://svgjs.com/svgjs', width='19', height='4', viewbox='0 0 19 4', transform='rotate(90)')
+            defs#SvgjsDefs1012
+            path#SvgjsPath1013(d='M1717 53L1717 51L1732.9825 51L1732.97 50L1735.47 51.98L1733.02 54L1733 52.4L1733 53Z ', fill='#ffffff', fill-opacity='1', transform='matrix(1,0,0,1,-1717,-50)')
+
+
+    include ../partials/scripts.jade
+
+  script(src='/js/circle-progress.min.js' type='text/javascript')
+  script.
+    $(function () {
+
+      // Page init animations
+      fixedMenusInitAnimation();
+      TweenMax.to($('.main-layout > .link-back'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.intro-logo'), 0, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.intro-logo__circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.intro-logo__circle--2'), 0.7, {
+        autoAlpha: 1,
+        top: '9.5%',
+        left: '9.5%',
+        width: '81%',
+        height: '81%',
+        ease: Power4.easeOut,
+        delay: 0.5
+      });
+      TweenMax.to($('.intro-logo__circle--1'), 0.7, {
+        autoAlpha: 1,
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        ease: Power4.easeOut,
+        delay: 1
+      });
+      TweenMax.to($('.intro-logo__img'), 2, {opacity: 1, delay: 0.5, ease: Power4.easeOut});
+      TweenMax.to($('.collections-page-title'), 2, {opacity: 1, delay: 0.5, ease: Power4.easeOut});
+      TweenMax.to($('.collections-info__more'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.3});
+
+      changeRotatedTextWidth('.collections-info__more', '.collections-layout');
+
+
+      // circle slider
+      setTimeout(function () {
+        $('#collections-circle').circleProgress({
+          value: 1,
+          size: 738,
+          thickness: 3,
+          startAngle: -Math.PI / 2,
+          fill: "#ffffff",
+          animationStartValue: 0,
+          animation: {
+            duration: 60000,
+            easing: "linear"
+          }
+        }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
+          if (animationProgress == 1) {
+            $('#collections-circle').circleProgress({
+              value: 1,
+              size: 738,
+              thickness: 3,
+              startAngle: -Math.PI / 2,
+              fill: "#ffffff",
+              animationStartValue: 0,
+              animation: {
+                duration: 60000,
+                easing: "linear"
+              }
+            });
+          }
+        });
+      }, 1700);
+
+      circleSliderDotClick(1, 0);
+      circleSliderDotClick(2, 0.083);
+      circleSliderDotClick(3, 0.166);
+      circleSliderDotClick(4, 0.25);
+      circleSliderDotClick(5, 0.333);
+      circleSliderDotClick(6, 0.416);
+      circleSliderDotClick(7, 0.5);
+      circleSliderDotClick(8, 0.583);
+      circleSliderDotClick(9, 0.666);
+      circleSliderDotClick(10, 0.75);
+      circleSliderDotClick(11, 0.833);
+      circleSliderDotClick(12, 0.916);
+
+      $('.circle-slider__dot--1').trigger('click');
+    });
+
+    function circleSliderDotClick(dotNumber, startValue) {
+      $('.circle-slider__dot--' + dotNumber).click(function () {
+        $('#collections-circle').circleProgress({
+          animationStartValue: startValue
+        });
+      })
+    }

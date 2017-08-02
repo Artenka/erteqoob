@@ -10,6 +10,9 @@ router.get('/philosophy', function(req, res, next) {
 router.get('/academy', function(req, res, next) {
   res.render('pages/academy');
 });
+router.get('/collections', function(req, res, next) {
+  res.render('pages/collections');
+});
 router.get('/article', function(req, res, next) {
   res.render('pages/article');
 });
