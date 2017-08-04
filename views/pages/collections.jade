@@ -116,36 +116,6 @@ block contents
 
 
       // circle slider
-      //setTimeout(function () {
-      //  $('#collections-circle').circleProgress({
-      //    value: 0.0833,
-      //    size: 738,
-      //    thickness: 3,
-      //    startAngle: 90,
-      //    fill: "#ffffff",
-      //    animationStartValue: 0,
-      //    animation: {
-      //      duration: 3000,
-      //      easing: "linear"
-      //    }
-      //  }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
-      //    if (animationProgress == 1) {
-      //      $('#collections-circle').circleProgress({
-      //        value: 1,
-      //        size: 738,
-      //        thickness: 3,
-      //        startAngle: -Math.PI / 2,
-      //        fill: "#ffffff",
-      //        animationStartValue: 0,
-      //        animation: {
-      //          duration: 60000,
-      //          easing: "linear"
-      //        }
-      //      });
-      //    }
-      //  });
-      //}, 1700);
-
       circleSliderArc(3*Math.PI/2);
 
       circleSliderDotClick(1, 3*Math.PI/2);
@@ -166,7 +136,10 @@ block contents
 
     function circleSliderDotClick(dotNumber, startAngle) {
       var newStepValue = startAngle;
+
       $('.circle-slider__dot--' + dotNumber).click(function () {
+        $('.circle-slider__dot--active').removeClass('circle-slider__dot--active');
+        $(this).addClass('circle-slider__dot--active');
         $('#collections-circle').circleProgress({
           startAngle: newStepValue
         }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
@@ -182,6 +155,7 @@ block contents
 
     function circleSliderArc(startAngle) {
       var newStepValue = startAngle;
+
       $('#collections-circle').circleProgress({
         value: 0.0833,
         size: 738,
@@ -196,6 +170,13 @@ block contents
       }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
         if (animationProgress == 1) {
           newStepValue += Math.PI/6;
+          if ($('.circle-slider__dot--active').next('.circle-slider__dot').length > 0) {
+            $('.circle-slider__dot--active').removeClass('circle-slider__dot--active').next('.circle-slider__dot').addClass('circle-slider__dot--active');
+          } else {
+            $('.circle-slider__dot--active').removeClass('circle-slider__dot--active');
+            $('.circle-slider__dot:first').addClass('circle-slider__dot--active');
+          }
+
           $('#collections-circle').circleProgress({
             value: 0.0833,
             size: 738,

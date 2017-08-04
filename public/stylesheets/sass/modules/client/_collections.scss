@@ -357,7 +357,7 @@
    height: 14px;
   }
 
-  &:hover {
+  &:hover, &.circle-slider__dot--active {
 
    .circle-slider__dot-inner {
     border: 1px solid $color-white;
