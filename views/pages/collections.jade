@@ -116,56 +116,98 @@ block contents
 
 
       // circle slider
-      setTimeout(function () {
-        $('#collections-circle').circleProgress({
-          value: 1,
-          size: 738,
-          thickness: 3,
-          startAngle: -Math.PI / 2,
-          fill: "#ffffff",
-          animationStartValue: 0,
-          animation: {
-            duration: 60000,
-            easing: "linear"
-          }
-        }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
-          if (animationProgress == 1) {
-            $('#collections-circle').circleProgress({
-              value: 1,
-              size: 738,
-              thickness: 3,
-              startAngle: -Math.PI / 2,
-              fill: "#ffffff",
-              animationStartValue: 0,
-              animation: {
-                duration: 60000,
-                easing: "linear"
-              }
-            });
-          }
-        });
-      }, 1700);
+      //setTimeout(function () {
+      //  $('#collections-circle').circleProgress({
+      //    value: 0.0833,
+      //    size: 738,
+      //    thickness: 3,
+      //    startAngle: 90,
+      //    fill: "#ffffff",
+      //    animationStartValue: 0,
+      //    animation: {
+      //      duration: 3000,
+      //      easing: "linear"
+      //    }
+      //  }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
+      //    if (animationProgress == 1) {
+      //      $('#collections-circle').circleProgress({
+      //        value: 1,
+      //        size: 738,
+      //        thickness: 3,
+      //        startAngle: -Math.PI / 2,
+      //        fill: "#ffffff",
+      //        animationStartValue: 0,
+      //        animation: {
+      //          duration: 60000,
+      //          easing: "linear"
+      //        }
+      //      });
+      //    }
+      //  });
+      //}, 1700);
 
-      circleSliderDotClick(1, 0);
-      circleSliderDotClick(2, 0.083);
-      circleSliderDotClick(3, 0.166);
-      circleSliderDotClick(4, 0.25);
-      circleSliderDotClick(5, 0.333);
-      circleSliderDotClick(6, 0.416);
-      circleSliderDotClick(7, 0.5);
-      circleSliderDotClick(8, 0.583);
-      circleSliderDotClick(9, 0.666);
-      circleSliderDotClick(10, 0.75);
-      circleSliderDotClick(11, 0.833);
-      circleSliderDotClick(12, 0.916);
+      circleSliderArc(3*Math.PI/2);
+
+      circleSliderDotClick(1, 3*Math.PI/2);
+      circleSliderDotClick(2, 5*Math.PI/3);
+      circleSliderDotClick(3, 11*Math.PI/6);
+      circleSliderDotClick(4, 2*Math.PI);
+      circleSliderDotClick(5, Math.PI/6);
+      circleSliderDotClick(6, Math.PI/3);
+      circleSliderDotClick(7, Math.PI/2);
+      circleSliderDotClick(8, 2*Math.PI/3);
+      circleSliderDotClick(9, 5*Math.PI/6);
+      circleSliderDotClick(10, Math.PI);
+      circleSliderDotClick(11, 7*Math.PI/6);
+      circleSliderDotClick(12, 4*Math.PI/3);
 
       $('.circle-slider__dot--1').trigger('click');
     });
 
-    function circleSliderDotClick(dotNumber, startValue) {
+    function circleSliderDotClick(dotNumber, startAngle) {
+      var newStepValue = startAngle;
       $('.circle-slider__dot--' + dotNumber).click(function () {
         $('#collections-circle').circleProgress({
-          animationStartValue: startValue
+          startAngle: newStepValue
+        }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
+          if (animationProgress == 1) {
+            newStepValue += Math.PI / 6;
+            $('#collections-circle').circleProgress({
+              startAngle: newStepValue
+            })
+          }
         });
       })
+    }
+
+    function circleSliderArc(startAngle) {
+      var newStepValue = startAngle;
+      $('#collections-circle').circleProgress({
+        value: 0.0833,
+        size: 738,
+        thickness: 3,
+        startAngle: newStepValue,
+        fill: "#ffffff",
+        animationStartValue: 0,
+        animation: {
+          duration: 5000,
+          easing: "linear"
+        }
+      }).on('circle-animation-progress', function (event, animationProgress, stepValue) {
+        if (animationProgress == 1) {
+          newStepValue += Math.PI/6;
+          $('#collections-circle').circleProgress({
+            value: 0.0833,
+            size: 738,
+            thickness: 3,
+            startAngle: newStepValue,
+            fill: "#ffffff",
+            animationStartValue: 0,
+            animation: {
+              duration: 5000,
+              easing: "linear"
+            }
+          })
+        }
+      });
     }
