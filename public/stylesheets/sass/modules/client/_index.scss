@@ -67,6 +67,24 @@ body, #root, [data-reactroot] {
  @include tablet {display: none;}
  @include mobile {display: none;}
 }
+.br-lp {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.br-lp-md {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: block;}
+ @include mobile {display: none;}
+}
+.br-lp-sm {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: block;}
+ @include mobile {display: block;}
+}
 .br-lg-md {
  display: block;
  @include tablet {display: block;}
