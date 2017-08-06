@@ -1,5 +1,21 @@
 #collections {
 
+ .link-back, .intro-logo, .intro-logo__circle--3, .intro-logo__circle--2, .intro-logo__circle--1, .intro-logo__img, .register-link, .main-nav.main-nav--socials, .main-nav.main-nav--lang, .main-nav-toggle {
+  opacity: 1;
+  visibility: visible;
+ }
+ .intro-logo__circle--1 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+ }
+ .intro-logo__circle--2 {
+  width: 81%;
+  height: 81%;
+  top: 9.5%;
+  left: 9.5%;
+ }
 }
 
 .collections-page-title {
@@ -14,7 +30,7 @@
  position: absolute;
  top: calc(50% - 24px);
  left: 0;
- opacity: 0;
+ //opacity: 0;
  z-index: 2;
  @include laptop-tablet {
   font-size: 36px;
@@ -76,6 +92,8 @@
   top: 0;
   left: 0;
   z-index: 0;
+  transform: scale(1.5);
+  opacity: 0;
 
   &.collections-layout__bg--active {
    display: block;
@@ -85,15 +103,14 @@
 
 .collections-right {
  display: none;
+ flex-direction: column;
  height: 100%;
  padding: 21% 8% 0 75%;
  position: relative;
  z-index: 3;
  @include tablet-mobile {
-  //display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex-direction: column;
   padding: 0 47px 125px;
  }
  @include tablet {
@@ -104,10 +121,7 @@
  }
 
  &.collections-right--active {
-  display: block;
-  @include tablet-mobile {
-   display: flex;
-  }
+  display: flex;
  }
 
  .collections-info {
@@ -120,6 +134,8 @@
    position: absolute;
    top: -47px;
    left: -20px;
+   opacity: 0;
+   transform: scale(0.5);
    @include mobile {
     width: 167px;
     height: 75px;
@@ -139,6 +155,9 @@
     line-height: 31.19px;
     text-transform: uppercase;
     margin-right: 22px;
+    opacity: 0;
+    position: relative;
+    right: -30px;
     @include tablet {
      margin-right: 9px;
     }
@@ -156,6 +175,10 @@
     letter-spacing: 7.43px;
     line-height: 48px;
     text-transform: uppercase;
+    transform: scale(0.85);
+    opacity: 0;
+    position: relative;
+    right: -50px;
     @include laptop-tablet {
      font-size: 24px;
      letter-spacing: 5.57px;
@@ -178,7 +201,10 @@
    text-transform: uppercase;
    margin-top: 60px;
    padding-bottom: 40px;
+   transform: scale(0.85);
    position: relative;
+   right: -50px;
+   opacity: 0;
    @include laptop-tablet {
     font-size: 12px;
     letter-spacing: 2.13px;
@@ -189,17 +215,35 @@
    @include tablet-mobile {
     display: none;
    }
-   &:before {
-    content: '';
-    width: 24px;
-    height: 3px;
+  }
+
+  .collections-info__text-line-layout {
+   width: 24px;
+   height: 3px;
+   position: absolute;
+   bottom: 69px;
+   left: 0;
+   overflow: hidden;
+   @include laptop {
+    bottom: 62px;
+   }
+   @include tablet-mobile {
+    bottom: 0;
+    left: calc(50% - 12px);
+   }
+   @include mobile {
+    width: 14px;
+    height: 1px;
+    left: calc(50% - 7px);
+   }
+
+   .collections-info__text-line {
+    width: 100%;
+    height: 100%;
     background: $color-white-03;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    @include tablet-mobile {
-     display: none;
-    }
+    top: 0;
+    right: 100%;
    }
   }
 
@@ -211,14 +255,17 @@
    line-height: 31px;
    text-transform: uppercase;
    padding-left: 47px;
-   margin-top: 38px;
+   padding-top: 38px;
+   opacity: 0;
+   position: relative;
+   top: 40px;
    @include laptop-tablet {
     font-size: 15px;
     letter-spacing: 4.32px;
     line-height: 30px;
    }
    @include laptop {
-    margin-top: 32px;
+    padding-top: 32px;
     padding-left: 34px;
    }
    @include tablet-mobile {
@@ -226,35 +273,13 @@
     position: relative;
    }
    @include tablet {
-    margin-top: 12px;
-    padding: 0 0 16px;
+    padding: 12px 0 16px;
    }
    @include mobile {
     font-size: 9px;
     line-height: 18px;
     letter-spacing: 2px;
-    margin-top: 1px;
-    padding: 0 0 7px;
-   }
-   &:before {
-    content: '';
-    display: none;
-    background: $color-white-03;
-    position: absolute;
-    bottom: 0;
-    @include tablet-mobile {
-     display: block;
-    }
-    @include tablet {
-     width: 24px;
-     height: 3px;
-     left: calc(50% - 12px);
-    }
-    @include mobile {
-     width: 14px;
-     height: 1px;
-     left: calc(50% - 7px);
-    }
+    padding: 1px 0 7px;
    }
   }
  }
@@ -284,7 +309,6 @@
   top: 0;
   z-index: 3;
   right: 105px;
-  opacity: 0;
   @include laptop-tablet {
    font-size: 12px;
    letter-spacing: 5.26px;
@@ -294,6 +318,7 @@
   }
   @include tablet-mobile {
    width: auto!important;
+   background: url(../../img/icons/arrow-right-long.svg) no-repeat center left 200%;
    position: static;
    transform: none;
    -webkit-transform: none;
@@ -307,24 +332,54 @@
    transform-origin: 0;
   }
   @include tablet {
-   background: url(../../img/icons/arrow-right-long.svg) no-repeat center right 10px;
    margin-top: 21px;
    padding: 0 46px 0 0;
   }
   @include mobile {
    font-size: 9px;
    letter-spacing: 3px;
-   background: url(../../img/icons/arrow-right-long.svg) no-repeat top 4px right 5px / auto 3px;
-   margin-top: 9px;
-   padding: 0 30px 0 0;
+   background-size: auto 3px;
+   padding: 9px 30px 0 0;
+  }
+  &:hover {
+
+   .collections-info__more-text {
+    transform: scale(1.05)!important;
+   }
+
+   .collections-info__more-icon {
+    top: 7px;
+   }
   }
 
-  svg {
+  .collections-info__more-text {
+   display: block;
+   width: 100%;
+   text-align: center;
+   position: relative;
+   top: 80px;
+   opacity: 0;
+   transform: scale(0.6);
+   transition: 0.6s;
+  }
+
+  .collections-info__more-icon {
+   height: 4px;
+   width: 19px;
    position: absolute;
    top: 0;
    left: calc(50% - 4px);
+   transform: rotate(90deg);
+   overflow: hidden;
+   transition: 0.6s;
    @include tablet-mobile {
     display: none;
+   }
+
+   svg {
+    position: absolute;
+    right: 100%;
+    top: 0;
    }
   }
  }
