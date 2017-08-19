@@ -995,10 +995,10 @@ block contents
 
     function homeActionInit() {
       TweenMax.to($(".home-action__inner"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.7});
-      TweenMax.staggerTo($(".home-action__form-label"), 1.5, {top: '16px', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.1);
-      TweenMax.to($(".home-action__form-submit"), 1.3, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
-      TweenMax.to($(".home-action__form-input-line"), 1, {width: '100%', ease: Power1.easeInOut, delay: 1.5});
-      //TweenMax.to($(".home-action__form-input-line"), 1, {left: '0', ease: Power1.easeInOut, delay: 1.5});
+      TweenMax.staggerTo($(".action__form-label"), 1.5, {top: '16px', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.1);
+      TweenMax.to($(".action__form-submit"), 1.3, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
+      TweenMax.to($(".action__form-input-line"), 1, {width: '100%', ease: Power1.easeInOut, delay: 1.5});
+      //TweenMax.to($(".action__form-input-line"), 1, {left: '0', ease: Power1.easeInOut, delay: 1.5});
 
       homeActionReinit = false;
     }
@@ -1006,20 +1006,20 @@ block contents
     function homeActionHide() {
       if(!homeActionReinit ) {
         TweenMax.to($(".home-action__inner"), 1.2, {top: '120px', opacity: '0', ease: Power1.easeInOut});
-        TweenMax.to($(".home-action__form-label"), 1.5, {
+        TweenMax.to($(".action__form-label"), 1.5, {
           top: '66px',
           opacity: '0',
           ease: Power1.easeInOut,
           delay: 0.5
         });
-        TweenMax.to($(".home-action__form-submit"), 1.5, {
+        TweenMax.to($(".action__form-submit"), 1.5, {
           top: '30px',
           opacity: '0',
           ease: Power1.easeInOut,
           delay: 0.5
         });
-        TweenMax.to($(".home-action__form-input-line"), 1, {width: '0%', ease: Power1.easeInOut, delay: 0.5});
-        //TweenMax.to($(".home-action__form-input-line"), 1, {left: '-100%', ease: Power1.easeInOut, delay: 0.5});
+        TweenMax.to($(".action__form-input-line"), 1, {width: '0%', ease: Power1.easeInOut, delay: 0.5});
+        //TweenMax.to($(".action__form-input-line"), 1, {left: '-100%', ease: Power1.easeInOut, delay: 0.5});
 
         homeActionReinit = true;
       }

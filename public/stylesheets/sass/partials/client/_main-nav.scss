@@ -203,4 +203,8 @@
   left: calc(50% - 8px);
   top: 24px;
  }
+
+ &.main-nav-toggle--white {
+  background-image: url(../../img/icons/burger-icon-black.svg);
+ }
 }

@@ -1,0 +1,45 @@
+div.popup-action
+  .popup-action__dots
+  h1.popup-action__title Отличайся!
+  h2.popup-action__subtitle Черпай вдохновение  из новых коллекций<br> и материалов
+  div.action__form.action__form--white.popup-action__form
+    div.action__form-input-layout
+      .action__form-input-line
+      label.action__form-label Имя
+      input.action__form-input(type="text")
+    div.action__form-input-layout
+      .action__form-input-line
+      label.action__form-label E-mail
+      input.action__form-input(type="text")
+    div.action__form-submit-layout
+      .arrow-link
+        button(type="submit").btn-black.arrow-link__text.action__form-submit подписаться
+
+script.
+  $(function(){
+    $('.action__form-input').focus(function () {
+      TweenMax.to($(this).closest('.action__form-input-layout').find('.action__form-label'), 0.3, {top: '-16px', scaleX: 0.75, scaleY: 0.75, ease: Power1.easeInOut});
+      $(this).closest('.action__form-input-layout').find('.action__form-input-line').addClass('home-action__form-input-line--active');
+    });
+    $('.action__form-input').blur(function () {
+      TweenMax.to($(this).closest('.action__form-input-layout').find('.action__form-label'), 0.3, {top: '16px', scaleX: 1, scaleY: 1, ease: Power1.easeInOut});
+      $(this).closest('.action__form-input-layout').find('.action__form-input-line').removeClass('home-action__form-input-line--active');
+    });
+
+    popupActionInit();
+  })
+
+  function popupActionInit() {
+    TweenMax.to($(".home-action__inner"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.7});
+    TweenMax.staggerTo($(".action__form-label"), 1.5, {
+      top: '16px',
+      opacity: '1',
+      ease: Power1.easeInOut,
+      delay: 1
+    }, 0.1);
+    TweenMax.to($(".action__form-submit"), 1.3, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
+    TweenMax.to($(".action__form-input-line"), 1, {width: '100%', ease: Power1.easeInOut, delay: 1.5});
+    //TweenMax.to($(".action__form-input-line"), 1, {left: '0', ease: Power1.easeInOut, delay: 1.5});
+
+    homeActionReinit = false;
+  }
