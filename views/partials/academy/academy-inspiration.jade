@@ -46,6 +46,11 @@ script.
 
     var $academyInspirationSlider = $('.academy-inspiration__slider');
     // academy inspirations slider
+    $academyInspirationSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      setTimeout(function () {
+        $academyInspirationSlider.slick("setPosition");
+      }, 600)
+    });
     $academyInspirationSlider.slick({
       slidesToShow: 5,
       arrows: true,

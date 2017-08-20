@@ -175,7 +175,7 @@ block contents
 
     function academyIntroInit() {
 
-      TweenMax.to($('.academy-intro__bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 1, ease: Power4.easeOut});
+      TweenMax.to($('.academy-intro__bg'), 3, {scaleX: 1.05, scaleY: 1.05, opacity: 1, ease: Power4.easeOut});
       TweenMax.to($('.academy-intro__logo'), 0.7, {opacity: 1, ease: Power1.easeOut, delay: 0.9});
       TweenMax.to($('.academy-intro__title h1'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.7});
       TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
@@ -303,6 +303,7 @@ block contents
 
       TweenMax.to($('.academy-philosophy__bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 1, ease: Power1.easeOut});
       TweenMax.to($('.academy-philosophy__title'), 1.2, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 1});
+      TweenMax.to($('.academy-philosophy__title-logo'), 1.2, {opacity: 0.3, ease: Power1.easeOut, delay: 1});
       TweenMax.to($('.academy-philosophy__link'), 0.9, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 2});
       TweenMax.to($('.academy-philosophy__title-line-layout'), 2.2, {padding: 0, ease: Power4.easeOut, delay: 1.4});
 
@@ -313,6 +314,7 @@ block contents
       if (!academyPhilosophyReinit) {
         TweenMax.to($('.academy-philosophy__bg'), 1, {scaleX: 1, scaleY: 1, opacity: 0, ease: Power1.easeOut});
         TweenMax.to($('.academy-philosophy__title'), 0.6, {top: '200px', opacity: 0, ease: Power1.easeOut, delay: 0.5});
+        TweenMax.to($('.academy-philosophy__title-logo'), 0.6, {opacity: 0, ease: Power1.easeOut, delay: 0.5});
         TweenMax.to($('.academy-philosophy__link'), 0.4, {top: '100px', opacity: 0, ease: Power1.easeOut, delay: 1});
         TweenMax.to($('.academy-philosophy__title-line-layout'), 1.1, {paddingLeft: '50%', paddingRight: '50%', ease: Power4.easeOut, delay: 0.7});
 
@@ -550,14 +552,14 @@ block contents
       TweenMax.to($('.academy-inspiration__city-btns'), 2, {
         opacity: 1,
         ease: Power1.easeOut,
-        delay: 2
+        delay: 1.7
       });
-      TweenMax.to($('.academy-inspiration__slider .academy-inspiration__slide'), 0.4, {
+      TweenMax.to($('.academy-inspiration__slider .academy-inspiration__slide'), 0.2, {
         opacity: 1,
         scaleX: 1,
         scaleY: 1,
         ease: Power1.easeOut,
-        delay: 1.6
+        delay: 1.4
       });
 
       TweenMax.to($('.academy-inspiration__slider .slick-arrow'), 1.4, {
@@ -565,7 +567,7 @@ block contents
         scaleY: 1,
         opacity: 1,
         ease: Power1.easeOut,
-        delay: 2
+        delay: 1.7
       });
 
       academyInspirationReinit = false;

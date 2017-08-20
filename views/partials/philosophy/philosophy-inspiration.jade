@@ -52,4 +52,17 @@ section.section-layout.philosophy-inspiration-layout
         | Проанализировать, что именно восхитило,<br class="br-sm"> и придумать,<br class="br-lg-md">
         | как отобразить чувство в<br class="br-sm"> материальном объекте.
 
-
+script.
+  $(function(){
+    $('.inspiration-list__item').on('mouseover', function(){
+      var inspirationItemBottom = $(window).height() - $(this).offset().top - $(this).outerHeight();
+      var inspirationItemHoverHeight = $(this).find('.inspiration-list__item-hover').outerHeight();
+      console.log(inspirationItemBottom - inspirationItemHoverHeight);
+      if(inspirationItemBottom - inspirationItemHoverHeight < 0) {
+        $('.inspiration-list__item-hover').attr('style', 'top:' +(inspirationItemBottom-60) + 'px!important');
+      }
+    });
+    $('.inspiration-list__item').on('mouseleave', function(){
+      $('.inspiration-list__item-hover').css('top', '0px');
+    });
+  })

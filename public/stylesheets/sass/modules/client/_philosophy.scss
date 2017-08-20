@@ -5,7 +5,7 @@
 .philosophy-intro {
 
  .philosophy-intro__bg {
-  background-image: url(../../img/client/philosophy/philosophy-intro.png);
+  background-image: url(../../img/client/philosophy/philosophy-intro.jpg);
   opacity: 0.73;
  }
  .philosophy-intro__main {
@@ -287,7 +287,7 @@
  &.philosophy-about--1 {
 
   .philosophy-about__bg {
-   background-image: url(../../img/client/philosophy/philosophy-about-1.png);
+   background-image: url(../../img/client/philosophy/philosophy-about-1.jpg);
   }
  }
  &.philosophy-about--2 {
@@ -305,7 +305,7 @@
   }
 
   .philosophy-about__bg {
-   background-image: url(../../img/client/philosophy/philosophy-about-2.png);
+   background-image: url(../../img/client/philosophy/philosophy-about-2.jpg);
    //opacity: 0.6;
   }
  }
@@ -316,7 +316,7 @@
   }
 
   .philosophy-about__bg {
-   background-image: url(../../img/client/philosophy/philosophy-about-3.png);
+   background-image: url(../../img/client/philosophy/philosophy-about-3.jpg);
    //opacity: 0.6;
   }
  }
@@ -333,7 +333,7 @@
  }
 
  .philosophy-inspiration__bg {
-  background-image: url(../../img/client/philosophy/philosophy-inspiration.png);
+  background-image: url(../../img/client/philosophy/philosophy-inspiration.jpg);
  }
 }
 .philosophy-inspiration {
@@ -356,7 +356,7 @@
   text-align: center;
   @include laptop {
    font-size: 14px;
-   line-height: 26px;
+   line-height: 28px;
   }
   @include tablet {
    font-size: 18px;
@@ -481,7 +481,7 @@
   &:hover, &:focus, &:active {
 
    .inspiration-list__item-hover {
-    top: 100%;
+    top: 100%!important;
     opacity: 1;
    }
   }
@@ -717,7 +717,7 @@
  &.philosophy-pros--1 {
 
   .philosophy-pros__bg {
-   background-image: url(../../img/client/philosophy/philosophy-pros-1.png);
+   background-image: url(../../img/client/philosophy/philosophy-pros-1.jpg);
   }
 
   .philosophy-pros__main {
@@ -756,7 +756,7 @@
  &.philosophy-pros--2 {
 
   .philosophy-pros__bg {
-   background-image: url(../../img/client/philosophy/philosophy-pros-2.png);
+   background-image: url(../../img/client/philosophy/philosophy-pros-2.jpg);
   }
 
   .philosophy-pros__main {
@@ -802,7 +802,7 @@
  align-items: center;
 
  .philosophy-action__bg {
-  background-image: url(../../img/client/philosophy/philosophy-action.png);
+  background-image: url(../../img/client/philosophy/philosophy-action.jpg);
  }
 
  .philosophy-action__text-layout {

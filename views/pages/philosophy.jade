@@ -222,34 +222,34 @@ block contents
     function philosophyIntroInit() {
 
       TweenMax.to($('.philosophy-intro__bg'), 3, {scaleX: 1.1, scaleY: 1.1, opacity: 0.73, ease: Power4.easeOut});
-      TweenMax.to($('.philosophy-intro__logo'), 0.7, {opacity: 1, ease: Power1.easeOut, delay: 0.9});
-      TweenMax.to($('.philosophy-intro__title h1'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.7});
-      TweenMax.to($('.philosophy-intro__title h2'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.9});
-      TweenMax.to($('.philosophy-intro__video'), 1, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 1.5});
-      TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.philosophy-intro__logo'), 0.7, {opacity: 1, ease: Power1.easeOut, delay: 0.5});
+      TweenMax.to($('.philosophy-intro__title h1'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.3});
+      TweenMax.to($('.philosophy-intro__title h2'), 0.7, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.5});
+      TweenMax.to($('.philosophy-intro__video'), 1, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 1});
+      TweenMax.to($('.scroll-down'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.5});
       if ($(window).width() >= 1260) {
-        TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+        TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.5});
       }
       TweenMax.to($('.philosophy-intro .circle-layout'), 0, {autoAlpha: 1, ease: Power4.easeOut});
       TweenMax.to($('.philosophy-intro .circle-line'), 0, {autoAlpha: 1, ease: Power4.easeOut});
-      TweenMax.to($('.philosophy-intro .circle--3'), 0.7, {autoAlpha: 1, ease: Power4.easeOut});
-      TweenMax.to($('.philosophy-intro .circle--2'), 0.7, {
+      TweenMax.to($('.philosophy-intro .circle--3'), 0.4, {autoAlpha: 1, ease: Power4.easeOut});
+      TweenMax.to($('.philosophy-intro .circle--2'), 0.4, {
         autoAlpha: 1,
         top: '9.5%',
         left: '9.5%',
         width: '81%',
         height: '81%',
         ease: Power4.easeOut,
-        delay: 0.5
+        delay: 0.3
       });
-      TweenMax.to($('.philosophy-intro .circle--1'), 0.7, {
+      TweenMax.to($('.philosophy-intro .circle--1'), 0.4, {
         autoAlpha: 1,
         top: 0,
         left: 0,
         width: '100%',
         height: '100%',
         ease: Power4.easeOut,
-        delay: 1
+        delay: 0.6
       });
 
       philosophyIntroReinit = false;
@@ -481,7 +481,7 @@ block contents
         ease: Power1.easeInOut,
         delay: 0.6
       });
-      TweenMax.staggerTo( $(".inspiration-list__item"), 1, { top: '0', opacity: '1', ease : Power1.easeInOut, delay: 0.7 }, 0.1 );
+      TweenMax.staggerTo( $(".inspiration-list__item"), 1, { top: '0', opacity: '1', ease : Power1.easeInOut, delay: 0.7 }, 0.2 );
       TweenMax.to($(".philosophy-inspiration__text"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.3});
       TweenMax.to($(".philosophy-inspiration__text-layout .hr-dots"), 1, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
 

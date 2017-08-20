@@ -244,8 +244,13 @@
    }
 
    .home-nav__title {
-    @include tablet {
+    font-size: 31px;
+    line-height: 31px;
+    @include laptop-tablet {
      font-size: 26px;
+     line-height: 26px;
+    }
+    @include tablet {
      letter-spacing: 10px;
     }
     @include mobile {
@@ -400,6 +405,8 @@
    margin: 0 auto 62px;
    width: 80%;
    height: 10%;
+   background-repeat: no-repeat;
+   background-position: center;
    background-size: cover;
    transition: 0.5s;
    @include tablet-mobile {
@@ -453,13 +460,23 @@
    &:after {
     content: '';
     display: block;
-    width: 100%;
+    //width: 100%;
+    width: 116px;
     height: 3px;
     background: $color-white-09;
     position: absolute;
     bottom: 0;
-    left: calc(6px - 100%);
+    //left: calc(6px - 100%);
+    left: -110px;
     transition: 0.5s;
+    @include laptop-tablet {
+     width: 76px;
+     left: -70px;
+    }
+    @include mobile {
+     width: 56px;
+     left: -50px;
+    }
    }
    &:hover {
     &:after {
@@ -756,7 +773,7 @@
 .home-video-layout {
  background: url(../../img/client/home/home-video.png) no-repeat top center / cover;
  &.philosophy-video-layout {
-  background: url(../../img/client/philosophy/philosophy-video.png) no-repeat top center / cover;
+  background: url(../../img/client/philosophy/philosophy-video.jpg) no-repeat top center / cover;
  }
 
  .home-video {
@@ -1214,15 +1231,10 @@
     text-transform: uppercase;
     margin-top: 30px;
     text-align: center;
-    @include laptop {
-     font-size: 12px;
-     line-height: 20px;
-     margin-top: 28px;
-    }
-    @include tablet {
+    @include laptop-tablet {
      font-size: 10px;
      line-height: 20px;
-     margin-top: 27px;
+     margin-top: 28px;
     }
     @include mobile {
      font-size: 10px;
