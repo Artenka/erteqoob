@@ -2,7 +2,7 @@
  position: absolute;
  top: 52px;
  left: 65px;
- z-index: 10;
+ z-index: 100;
  @include clearfix;
  @include laptop {
   top: 35px;
@@ -171,40 +171,429 @@
  }
 }
 
+
 .main-nav-toggle {
  width: 22px;
  height: 14px;
- background: url(../../img/icons/burger-icon.svg) no-repeat top center;
- background-size: 22px 14px;
  position: absolute;
+ -webkit-transform: rotate(0deg);
+ -moz-transform: rotate(0deg);
+ -o-transform: rotate(0deg);
+ transform: rotate(0deg);
+ //-webkit-transition: .5s ease-in-out;
+ //-moz-transition: .5s ease-in-out;
+ //-o-transition: .5s ease-in-out;
+ //transition: .5s ease-in-out;
  top: 60px;
  left: calc(50% - 11px);
- z-index: 10;
+ z-index: 100;
  cursor: pointer;
  opacity: 0;
  @include laptop {
   width: 16px;
   height: 12px;
-  background-size: 16px 12px;
   left: calc(50% - 8px);
   top: 45px;
  }
  @include tablet {
   width: 19px;
   height: 12px;
-  background-size: 19px 12px;
   left: calc(50% - 10px);
   top: 44px;
  }
  @include mobile {
   width: 16px;
   height: 11px;
-  background-size: 16px 11px;
   left: calc(50% - 8px);
   top: 24px;
  }
 
+ span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: $color-white;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+
+  &:nth-child(1) {
+   top: 0px;
+  }
+  &:nth-child(2), &:nth-child(3) {
+   top: 6px;
+   @include laptop-mobile {
+    top: 5px;
+   }
+  }
+  &:nth-child(4) {
+   top: 12px;
+   @include laptop-mobile {
+    top: 10px;
+   }
+  }
+ }
+
+ &.main-nav-toggle--active {
+
+  span {
+
+   &:nth-child(1) {
+    top: 6px;
+    width: 0%;
+    left: 50%;
+    @include laptop-mobile {
+     top: 5px;
+    }
+   }
+   &:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+   }
+   &:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+   }
+   &:nth-child(4) {
+    top: 6px;
+    width: 0%;
+    left: 50%;
+    @include laptop-mobile {
+     top: 5px;
+    }
+   }
+  }
+ }
+
  &.main-nav-toggle--white {
-  background-image: url(../../img/icons/burger-icon-black.svg);
+
+  span {
+   background: $color-black;
+  }
+
+  &.main-nav-toggle--active {
+
+   span {
+    background: $color-white;
+   }
+  }
+ }
+}
+
+//.main-nav-toggle {
+// width: 22px;
+// height: 14px;
+// background: url(../../img/icons/burger-icon.svg) no-repeat top center;
+// background-size: 22px 14px;
+// position: absolute;
+// top: 60px;
+// left: calc(50% - 11px);
+// z-index: 10;
+// cursor: pointer;
+// opacity: 0;
+// @include laptop {
+//  width: 16px;
+//  height: 12px;
+//  background-size: 16px 12px;
+//  left: calc(50% - 8px);
+//  top: 45px;
+// }
+// @include tablet {
+//  width: 19px;
+//  height: 12px;
+//  background-size: 19px 12px;
+//  left: calc(50% - 10px);
+//  top: 44px;
+// }
+// @include mobile {
+//  width: 16px;
+//  height: 11px;
+//  background-size: 16px 11px;
+//  left: calc(50% - 8px);
+//  top: 24px;
+// }
+//
+// &.main-nav-toggle--white {
+//  background-image: url(../../img/icons/burger-icon-black.svg);
+// }
+//}
+
+.modal-nav-layout {
+ @extend .popup-layout;
+ z-index: 99;
+ @include mobile {
+  overflow-y: auto;
+ }
+}
+
+.modal-nav {
+ @extend .popup;
+ background-color: $color-black;
+ color: $color-white;
+ overflow-y: auto;
+ display: flex;
+ @include mobile {
+  height: auto;
+  flex-direction: column;
+ }
+
+ .modal-nav__logo {
+  width: 494px;
+  height: 494px;
+  background: url(../../img/icons/main-nav-logo.svg) no-repeat center / 100% auto;
+  position: absolute;
+  top: calc(50% - 247px);
+  left: calc(50% - 247px);
+  z-index: 100;
+  @include laptop {
+   width: 394px;
+   height: 394px;
+   top: calc(50% - 197px);
+   left: calc(50% - 197px);
+  }
+  @include tablet {
+   width: 512px;
+   height: 512px;
+   top: calc(50% - 256px);
+   left: calc(50% - 256px);
+  }
+  @include mobile {
+   width: 276px;
+   height: 276px;
+   top: 106px;
+   left: calc(50% - 138px);
+  }
+ }
+
+ .modal-nav-list-layout, .modal-nav-links-layout {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 101;
+  @include tablet {
+   padding-left: 12%;
+  }
+  @include mobile {
+   width: 100%;
+   height: auto;
+  }
+ }
+ .modal-nav-links-layout {
+  padding-left: 20%;
+  @include tablet-mobile {
+   padding-left: 0;
+  }
+ }
+
+ .modal-nav-list {
+  width: 350px;
+  @include tablet {
+   height: 560px;
+  }
+  @include mobile {
+   width: 150px;
+   margin-top: 100px;
+  }
+
+  .modal-nav-list__item {
+   margin-bottom: 45px;
+   @include laptop {
+    margin-bottom: 35px;
+   }
+   @include tablet {
+    margin-bottom: 96px;
+   }
+
+   .modal-nav-list__link {
+    display: flex;
+    align-items: flex-start;
+   }
+
+   .modal-nav-list__number {
+    width: 55px;
+    color: $color-white-03;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    @include laptop-tablet {
+     width: 40px;
+     line-height: 25px;
+    }
+    @include mobile {
+     width: 36px;
+     font-size: 9px;
+     letter-spacing: 2.57px;
+     line-height: 20px;
+    }
+   }
+   .modal-nav-list__name {
+    color: $color-white-06;
+    font-size: 24px;
+    line-height: 45px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    @include laptop-tablet {
+     font-size: 20px;
+     line-height: 35px;
+     letter-spacing: 5px;
+    }
+    @include mobile {
+     font-size: 12px;
+     line-height: 23px;
+     letter-spacing: 2.25px;
+    }
+   }
+
+   &:last-child {
+    margin-bottom: 0;
+   }
+   &:hover {
+
+    .modal-nav-list__number {
+     color: $color-white-05;
+    }
+    .modal-nav-list__name {
+     font-size: 30px;
+     color: $color-white;
+     letter-spacing: 7.5px;
+     @include laptop-tablet {
+      font-size: 24px;
+      letter-spacing: 6px;
+     }
+     @include mobile {
+      font-size: 16px;
+      letter-spacing: 1.6px;
+     }
+    }
+   }
+  }
+ }
+
+ .modal-nav-links {
+  width: 200px;
+  @include mobile {
+   width: 300px;
+   height: 126px;
+   flex-wrap: wrap;
+   margin-top: 104px;
+   @include clearfix;
+  }
+
+  .modal-nav-links__item {
+   margin: 10px 0;
+   @include laptop {
+    margin: 6px 0;
+   }
+   @include tablet {
+    margin: 0 0 50px;
+   }
+   @include mobile {
+    width: 50%;
+    margin: 6px 0;
+    padding: 0 30px;
+    float: left;
+   }
+   &:hover {
+
+    .modal-nav-links__link:before {
+     left: 0;
+    }
+   }
+
+   .modal-nav-links__link {
+    display: block;
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 4.57px;
+    line-height: 30px;
+    text-transform: uppercase;
+    overflow: hidden;
+    position: relative;
+    @include laptop {
+     font-size: 13px;
+     letter-spacing: 3.71px;
+    }
+    @include tablet {
+     letter-spacing: 3.8px;
+    }
+    @include mobile {
+     font-size: 10px;
+     letter-spacing: 2.25px;
+    }
+
+    &:before {
+     content: '';
+     width: 20px;
+     height: 2px;
+     background-color: $color-tundora;
+     position: absolute;
+     left: -20px;
+     bottom: 0;
+     transition: 0.5s;
+    }
+   }
+  }
+ }
+
+ .modal-nav-answer-link {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin-top: 110px;
+  position: static;
+  @include tablet {
+   margin-top: 50px;
+  }
+  @include mobile {
+   width: auto;
+   margin-bottom: 84px;
+  }
+
+  > svg {
+   width: 10px;
+   height: 4px;
+   margin: 0 21px 11px 0;
+   @include tablet-mobile {
+    width: 20px;
+    height: 7px;
+    margin: 0 10px 11px 0;
+   }
+  }
+
+  > a {
+   width: auto;
+   color: $color-white;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 18px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   @include laptop-mobile {
+    font-size: 12px;
+    letter-spacing: 2.4px;
+   }
+  }
  }
 }

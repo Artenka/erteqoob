@@ -1,1 +1,62 @@
 .main-nav-toggle
+  span
+  span
+  span
+  span
+
+.modal-nav-layout
+  .modal-nav
+    .modal-nav__logo
+    div.modal-nav-list-layout
+      ul.modal-nav-list
+        li.modal-nav-list__item
+          a(href="#").modal-nav-list__link
+            p.modal-nav-list__number 01
+            p.modal-nav-list__name академия
+        li.modal-nav-list__item
+          a(href="#").modal-nav-list__link
+            p.modal-nav-list__number 02
+            p.modal-nav-list__name курсы
+        li.modal-nav-list__item
+          a(href="#").modal-nav-list__link
+            p.modal-nav-list__number 03
+            p.modal-nav-list__name календарь
+        li.modal-nav-list__item
+          a(href="#").modal-nav-list__link
+            p.modal-nav-list__number 04
+            p.modal-nav-list__name коллекции
+        li.modal-nav-list__item
+          a(href="#").modal-nav-list__link
+            p.modal-nav-list__number 05
+            p.modal-nav-list__name контакты
+    div.modal-nav-links-layout
+      ul.modal-nav-links
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link философия
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link салоны
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link блог
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link моделям
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link букинг
+        li.modal-nav-links__item
+          a(href="#").modal-nav-links__link DOM
+      div.modal-nav-answer-link.arrow-link
+        svg#SvgjsSvg1011(xmlns='http://www.w3.org/2000/svg', version='1.1', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:svgjs='http://svgjs.com/svgjs', width='19', height='4', viewbox='0 0 19 4')
+          defs#SvgjsDefs1012
+          path#SvgjsPath1013(d='M1717 53L1717 51L1732.9825 51L1732.97 50L1735.47 51.98L1733.02 54L1733 52.4L1733 53Z ', fill='#ffffff', fill-opacity='1', transform='matrix(1,0,0,1,-1717,-50)')
+        a(href="#").arrow-link__text написать нам
+
+script.
+  $(document).ready(function () {
+    $('.main-nav-toggle').click(function () {
+      $(this).toggleClass('main-nav-toggle--active');
+      if($(this).hasClass('main-nav-toggle--active')) {
+        TweenMax.to($('.modal-nav-layout'), 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
+      } else {
+        TweenMax.to($('.modal-nav-layout'), 1, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut});
+      }
+    });
+  });

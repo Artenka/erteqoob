@@ -604,6 +604,7 @@
 
 .register-link {
  opacity: 0;
+ z-index: 100;
  @include mobile {
   display: none;
  }
