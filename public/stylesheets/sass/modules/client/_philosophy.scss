@@ -1,5 +1,8 @@
 #philosophy {
 
+ .circle-layout {
+  z-index: 0;
+ }
 }
 
 .philosophy-intro {
@@ -543,7 +546,7 @@
   }
 
   .inspiration-list__item-hover {
-   width: 100%;
+   width: 390px;
    background: $color-black;
    padding: 8% 25% 8% 8%;
    position: absolute;
@@ -552,8 +555,14 @@
    opacity: 0;
    transition: 0.5s;
    z-index: 6;
+   @include laptop {
+    width: 290px;
+   }
    @include tablet-mobile {
     padding: 15px 25px 15px 15px;
+   }
+   @include tablet-mobile {
+    width: 100%;
    }
 
    .inspiration-list__item-hover-text {
