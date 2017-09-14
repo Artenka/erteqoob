@@ -13,24 +13,51 @@ block contents
       div.splash.splash--beginner
         div.splash__background
         div.splash__preview-layout
+          p.splash__inner-text Получи престижную профессию,<br> обрети уверенность в своём мастерстве,<br> воспитай безукоризненное чувство стиля.
           h1.br-lg.splash__preview begi<br> nn<br> er &ndash;
           h1.br-md-sm.splash__preview begin<br> &nbsp;&ndash; ner
-        div.splash__inner
-          p.splash__inner-text Получи престижную профессию,<br> обрети уверенность в своём мастерстве,<br> воспитай безукоризненное чувство стиля.
-          h1.br-lg.splash__inner-title begi<br> nn<br> er &ndash;
-          h1.br-md-sm.splash__inner-title begin<br> &nbsp;&ndash; ner
+        //div.splash__inner
+        //  p.splash__inner-text Получи престижную профессию,<br> обрети уверенность в своём мастерстве,<br> воспитай безукоризненное чувство стиля.
+        //  h1.br-lg.splash__inner-title begi<br> nn<br> er &ndash;
+        //  h1.br-md-sm.splash__inner-title begin<br> &nbsp;&ndash; ner
       div.splash.splash--pro
         div.splash__background
         div.splash__preview-layout
-          h1.splash__preview prof &ndash;<br> essio<br> nal
-        div.splash__inner
           p.splash__inner-text Освежи и пополни спектр своих техник,<br> начни реализовывать свои творческие идеи<br> в работе, выходи на новый уровень профессии.
-          h1.splash__inner-title prof &ndash;<br> essio<br> nal
+          h1.splash__preview prof &ndash;<br> essio<br> nal
+        //div.splash__inner
+        //  p.splash__inner-text Освежи и пополни спектр своих техник,<br> начни реализовывать свои творческие идеи<br> в работе, выходи на новый уровень профессии.
+        //  h1.splash__inner-title prof &ndash;<br> essio<br> nal
 
     include ../partials/scripts.jade
 
   script.
     $(function(){
+      // splash init animations
       fixedMenusInitAnimation();
       TweenMax.to($('.main-layout > .link-back'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.splash-hint'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.link-calendar'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.splash__background'), 0.1, {opacity: 1, ease: Power1.easeOut, delay: 0.2});
+      TweenMax.to($('.splash__preview'), 0.1, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power1.easeOut, delay: 0.2});
+      TweenMax.to($('.splash-center '), 1.6, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power1.easeOut, delay: 0.2});
+
+      // splash hover
+      $(".splash").hover(
+        function () {
+          $(this).addClass("splash--active");
+          $('.splash').not('.splash--active').addClass("splash--disable");
+          $('.splash-center').addClass("splash-center--disable");
+          if($(this).hasClass("splash--beginner")){
+            $('.splash-center').addClass("splash-center--beginner");
+          } else {
+            $('.splash-center').addClass("splash-center--pro");
+          }
+        },
+        function () {
+          $(this).removeClass("splash--active");
+          $('.splash').removeClass("splash--disable");
+          $('.splash-center').removeClass("splash-center--disable splash-center--beginner splash-center--pro");
+        }
+      );
     });

@@ -10,6 +10,7 @@
  display: block;
  position: relative;
  float: left;
+ cursor: pointer;
  @include tablet-mobile {
   height: 50%;
   width: 100%;
@@ -19,20 +20,20 @@
 
   .splash__background {
    &:before {
-    display: none;
+    opacity: 0;
    }
    &:after {
-    display: block;
+    opacity: 1;
    }
   }
 
-  .splash__preview-layout {
-   display: none;
-  }
-
-  .splash__inner {
-   display: flex;
-  }
+  //.splash__preview-layout {
+  // display: none;
+  //}
+  //
+  //.splash__inner {
+  // display: flex;
+  //}
  }
 
  .splash__background {
@@ -43,6 +44,8 @@
   position: absolute;
   top: 0;
   z-index: 2;
+  opacity: 0;
+  transition: 1.5s;
   @include tablet-mobile {
    width: 100%;
    height: 141.66%;
@@ -55,16 +58,23 @@
    position: absolute;
    top: 0;
    z-index: 3;
+   transition: 1.5s;
+   opacity: 1;
+   @include tablet-mobile {
+    width: 100%;
+    height: 141.66%;
+   }
   }
   &:after {
    content: '';
-   display: none;
    width: 45.3%;
    height: 62.31%;
    background: url(../../img/client/splash/splash-dots.png) no-repeat center / 100% auto;
    position: absolute;
    top: 18.24%;
    z-index: 3;
+   transition: 1.5s;
+   opacity: 0;
   }
  }
 
@@ -74,6 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
@@ -82,11 +93,20 @@
   .splash__preview {
    color: $color-emperor-04;
    font-size: 160px;
-   font-size: 15vh;
+   font-size: 12.4vh;
    font-weight: 700;
    line-height: 140px;
-   line-height: 14vh;
+   line-height: 11vh;
    text-transform: uppercase;
+   transition: 1.5s;
+   transform: scale(0.9);
+   opacity: 0;
+   @include laptop {
+    font-size: 140px;
+    font-size: 12.4vh;
+    line-height: 130px;
+    line-height: 11vh;
+   }
    @include tablet {
     font-size: 110px;
     line-height: 90px;
@@ -95,6 +115,13 @@
     font-size: 48px;
     line-height: 42px;
    }
+  }
+
+  .splash__inner-text {
+   //display: none;
+   top: -30px;
+   opacity: 0;
+   transition: 1.5s;
   }
  }
 
@@ -131,6 +158,10 @@
    }
    &:before {
     right: 0;
+    @include tablet-mobile {
+     top: auto;
+     bottom: 0;
+    }
    }
    &:after {
     right: 10%;
@@ -150,21 +181,6 @@
   left: 0;
   z-index: 4;
 
-  .splash__inner-text {
-   color: $color-white;
-   font-size: 10px;
-   font-weight: 700;
-   letter-spacing: 2.76px;
-   line-height: 20px;
-   text-transform: uppercase;
-   @include tablet {
-    font-size: 12px;
-    letter-spacing: 3.32px;
-   }
-   @include mobile {
-    display: none;
-   }
-  }
   .splash__inner-title {
    color: $color-white;
    font-size: 120px;
@@ -186,6 +202,79 @@
    }
   }
  }
+
+ &.splash--active {
+
+  .splash__preview-layout {
+
+   .splash__preview {
+    color: $color-white;
+    font-size: 120px;
+    font-size: 12vh;
+    line-height: 100px;
+    line-height: 10vh;
+    margin-top: 5%;
+    @include tablet {
+     font-size: 120px;
+     line-height: 100px;
+     margin-top: 68px;
+    }
+    @include mobile {
+     font-size: 56px;
+     line-height: 56px;
+     margin-top: 0;
+    }
+   }
+
+   .splash__inner-text {
+    //display: block;
+    opacity: 1;
+    position: relative;
+    top: 0;
+   }
+  }
+ }
+ &.splash--disable {
+
+  .splash__background {
+   opacity: 0!important;
+  }
+
+  .splash__preview-layout {
+
+   .splash__preview {
+    color: $color-mine-shaft-3;
+    font-size: 200px;
+    font-size: 15vh;
+    line-height: 170px;
+    line-height: 14vh;
+    @include tablet {
+     font-size: 100px;
+     line-height: 80px;
+    }
+    @include mobile {
+     font-size: 36px;
+     line-height: 36px;
+    }
+   }
+  }
+ }
+}
+
+.splash__inner-text {
+ color: $color-white;
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 2.76px;
+ line-height: 20px;
+ text-transform: uppercase;
+ @include tablet {
+  font-size: 12px;
+  letter-spacing: 3.32px;
+ }
+ @include mobile {
+  display: none;
+ }
 }
 
 .splash-hint {
@@ -193,6 +282,7 @@
  left: 55px;
  bottom: 60px;
  z-index: 10;
+ opacity: 0;
  @include clearfix;
  @include laptop {
   left: 45px;
@@ -253,6 +343,8 @@
  left: calc(50% - 85px);
  top: calc(50% - 71px);
  z-index: 10;
+ opacity: 0;
+ transform: scale(0.9);
  @include tablet {
   width: 184px;
   height: 164px;
@@ -260,6 +352,7 @@
   top: calc(50% - 82px);
  }
  @include mobile {
+  display: none;
   width: 106px;
   height: 94px;
   left: calc(50% - 53px);
@@ -270,6 +363,7 @@
   border: 1px solid $color-mine-shaft;
   border-radius: 50%;
   position: absolute;
+  transition: 1.5s;
 
   &.splash-center__circle--1 {
    width: 142px;
@@ -317,6 +411,9 @@
   letter-spacing: 7px;
   position: relative;
   z-index: 11;
+  transition: 0.8s;
+  opacity: 1;
+  transform: scale(1);
   @include tablet {
    font-size: 14px;
    letter-spacing: 6px;
@@ -326,6 +423,103 @@
    font-size: 8px;
    letter-spacing: 3.43px;
    line-height: 14px;
+  }
+ }
+
+ .splash-center__arrow {
+  width: 19px;
+  height: 4px;
+  position: absolute;
+  top: calc(50% - 2px);
+  opacity: 0;
+  transition: 1s;
+  transition-delay: 0s;
+
+  svg {
+   display: block;
+   width: auto;
+   height: 100%;
+
+   path {
+    fill: $color-white;
+    transition: 1s;
+   }
+  }
+
+  &.splash-center__arrow--left {
+   left: 35px;
+   @include tablet {
+    left: 32px;
+   }
+  }
+  &.splash-center__arrow--right {
+   right: 35px;
+   @include tablet {
+    right: 32px;
+   }
+  }
+ }
+
+ &.splash-center--disable {
+
+  .splash-center__circle {
+
+   &.splash-center__circle--1 {
+    width: 100px;
+    height: 100px;
+    top: 21px;
+    left: 35px;
+    @include tablet {
+     top: 32px;
+     left: 42px;
+    }
+   }
+   &.splash-center__circle--2 {
+    width: 46px;
+    height: 46px;
+    top: 48px;
+    left: 62px;
+    @include tablet {
+     top: 59px;
+     left: 69px;
+    }
+   }
+  }
+
+  .splash-center__text {
+   opacity: 0;
+   transform: scale(0);
+  }
+
+  .splash-center__arrow {
+   opacity: 1;
+   transition-delay: 0.5s;
+
+   &.splash-center__arrow--left {
+    left: 25px;
+    @include tablet {
+     left: 32px;
+    }
+   }
+   &.splash-center__arrow--right {
+    right: 25px;
+    @include tablet {
+     right: 32px;
+    }
+   }
+  }
+
+  &.splash-center--beginner {
+
+   .splash-center__arrow.splash-center__arrow--right svg path {
+    fill: $color-scorpion;
+   }
+  }
+  &.splash-center--pro {
+
+   .splash-center__arrow.splash-center__arrow--left svg path {
+    fill: $color-scorpion;
+   }
   }
  }
 }

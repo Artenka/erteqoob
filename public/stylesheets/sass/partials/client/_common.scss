@@ -632,6 +632,7 @@
  }
 }
 .arrow-link.arrow-link--right.arrow-link--gray.link-calendar {
+ opacity: 0;
  @include mobile {
   right: 22px;
   bottom: 16px;

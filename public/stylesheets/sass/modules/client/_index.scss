@@ -106,6 +106,50 @@ body, #root, [data-reactroot] {
  @include mobile {display: block;}
 }
 
+.inline-lg {
+ display: inline;
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.inline-lp {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.inline-lp-md {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-lp-sm {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: inline;}
+ @include mobile {display: inline;}
+}
+.inline-lg-md {
+ display: inline;
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-md-sm {
+ display: none;
+ @include tablet {display: inline;}
+ @include mobile {display: inline;}
+}
+.inline-md {
+ display: none;
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-sm {
+ display: none;
+ @include tablet {display: none;}
+ @include mobile {display: inline;}
+}
+
 .hidden {display: none;}
 
 .clear {
