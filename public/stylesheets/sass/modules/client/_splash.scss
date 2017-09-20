@@ -511,13 +511,13 @@
 
   &.splash-center--beginner {
 
-   .splash-center__arrow.splash-center__arrow--right svg path {
+   .splash-center__arrow.splash-center__arrow--left svg path {
     fill: $color-scorpion;
    }
   }
   &.splash-center--pro {
 
-   .splash-center__arrow.splash-center__arrow--left svg path {
+   .splash-center__arrow.splash-center__arrow--right svg path {
     fill: $color-scorpion;
    }
   }
