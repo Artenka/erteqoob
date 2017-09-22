@@ -10,7 +10,9 @@ block contents
 
     .contacts-title-block
       .contacts-title-block__title контакты
+      .contacts-title-block__logo-q
       .contacts-title-block__logo
+      .contacts-title-block__logo-academy
 
     .contacts-coordinates
       .contacts-coordinates__header.contacts-coordinates__header--kiev
@@ -61,9 +63,60 @@ block contents
       .contacts-side.contacts-side--kharkiv
         .contacts-side__background
 
+    .contacts-info__exit
+      .contacts-info__exit-center
+      .circle.contacts-info__exit-circle.contacts-info__exit-circle--1
+      .circle.contacts-info__exit-circle.contacts-info__exit-circle--2
+      p.contacts-info__exit-text закрыть
+    .contacts-info-layout
+      .contacts-info.contacts-info--kiev
+        .contacts-info__title киев,<br> ул. мишуги, 2
+        .contacts-info__subtitle 2 этаж, возле ТЦ “Пирамида”,<br> метро Позняки
+        .contacts-info__inner
+          ul.contacts-info__inner-list
+            li.contacts-info__inner-item
+              h3 телефон:
+              p
+                | 044 575 05 05<br>
+                | 067 550 18 15
+            li.contacts-info__inner-item
+              h3 график работы:
+              p
+                | Ежедневно<br>
+                | с 10:00 до 18:00
+        .contacts-info__pin-block
+          .contacts-info__pin
+          .circle.contacts-info__pin-circle.contacts-info__pin-circle--1
+          .circle.contacts-info__pin-circle.contacts-info__pin-circle--2
+      .contacts-info.contacts-info--kharkiv
+        .contacts-info__title харьков,<br> пр-т московский,<br class="br-lp"> 142
+        .contacts-info__subtitle бизнес-центр сити холл, 1й этаж,<br> метро маршала жукова
+        .contacts-info__inner
+          ul.contacts-info__inner-list
+            li.contacts-info__inner-item
+              h3 телефон:
+              p
+                | 067 535 52 52<br>
+                | 066 248 52 52
+            li.contacts-info__inner-item
+              h3 график работы:
+              p
+                | Ежедневно<br>
+                | с 10:00 до 18:00
+        .contacts-info__pin-block
+          .contacts-info__pin
+          .circle.contacts-info__pin-circle.contacts-info__pin-circle--1
+          .circle.contacts-info__pin-circle.contacts-info__pin-circle--2
+
+
     .contacts-layout-dummy
       .contacts-side-dummy.contacts-side-dummy--kiev
       .contacts-side-dummy.contacts-side-dummy--kharkiv
+
+    .arrow-link.arrow-link--right.arrow-link--top.contacts-info__inner-link.contacts-info__inner-link--kiev
+      a.arrow-link__text(href='#') написать нам
+    .arrow-link.arrow-link--right.arrow-link--top.contacts-info__inner-link.contacts-info__inner-link--kharkiv
+      a.arrow-link__text(href='#') написать нам
 
   include ../partials/scripts.jade
 
@@ -97,14 +150,36 @@ block contents
 
       // contacts side click
       $(".contacts-side-dummy").click( function () {
-        if ($(this).hasClass('contacts-side-dummy--kiev')) {
-          $('.contacts-side--kiev').addClass("contacts-side--clicked");
-        } else {
-          $('.contacts-side--kharkiv').addClass("contacts-side--clicked");
+        if(!$('.contacts-side').hasClass("contacts-side--clicked")){
+
+          if ($(this).hasClass('contacts-side-dummy--kiev')) {
+            $('.contacts-side--kiev').addClass("contacts-side--clicked");
+            $('.contacts-side--kharkiv').addClass("contacts-side--disabled");
+            $('.contacts-info--kiev').addClass('contacts-info--active');
+            $('.contacts-info__inner-link--kiev').addClass('contacts-info__inner-link--active');
+          } else {
+            $('.contacts-side--kharkiv').addClass("contacts-side--clicked");
+            $('.contacts-side--kiev').addClass("contacts-side--disabled");
+            $('.contacts-info--kharkiv').addClass('contacts-info--active');
+            $('.contacts-info__inner-link--kharkiv').addClass('contacts-info__inner-link--active');
+          }
+          $('.contacts-side').not('.contacts-side--clicked').addClass("contacts-side--hidden");
+          $('.contacts-center').addClass("contacts-center--disabled");
+          $('.contacts-coordinates').addClass("contacts-coordinates--disabled");
+          $('.contacts-title-block').addClass("contacts-title-block--disabled");
+          $('.contacts-info__exit').addClass('contacts-info__exit--active');
+
         }
-        $('.contacts-side').not('.contacts-side--clicked').addClass("contacts-side--hidden");
-        $('.contacts-center').addClass("contacts-center--disabled");
-        $('.contacts-coordinates').addClass("contacts-coordinates--disabled");
-        $('.contacts-title-block').addClass("contacts-title-block--disabled");
+      });
+
+      // contacts side exit click
+      $(".contacts-info__exit").click( function () {
+        $('.contacts-side').removeClass("contacts-side--clicked contacts-side--disabled contacts-side--hidden");
+        $('.contacts-info').removeClass('contacts-info--active');
+        $('.contacts-center').removeClass("contacts-center--disabled");
+        $('.contacts-coordinates').removeClass("contacts-coordinates--disabled");
+        $('.contacts-title-block').removeClass("contacts-title-block--disabled");
+        $('.contacts-info__exit').removeClass('contacts-info__exit--active');
+        $('.contacts-info__inner-link').removeClass('contacts-info__inner-link--active');
       });
     });
