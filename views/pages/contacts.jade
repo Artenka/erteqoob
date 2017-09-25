@@ -84,10 +84,10 @@ block contents
               p
                 | Ежедневно<br>
                 | с 10:00 до 18:00
-        .contacts-info__pin-block
-          .contacts-info__pin
-          .circle.contacts-info__pin-circle.contacts-info__pin-circle--1
-          .circle.contacts-info__pin-circle.contacts-info__pin-circle--2
+        .pin-block
+          .pin
+          .circle.pin-circle.pin-circle--1
+          .circle.pin-circle.pin-circle--2
       .contacts-info.contacts-info--kharkiv
         .contacts-info__title харьков,<br> пр-т московский,<br class="br-lp"> 142
         .contacts-info__subtitle бизнес-центр сити холл, 1й этаж,<br> метро маршала жукова
@@ -103,10 +103,10 @@ block contents
               p
                 | Ежедневно<br>
                 | с 10:00 до 18:00
-        .contacts-info__pin-block
-          .contacts-info__pin
-          .circle.contacts-info__pin-circle.contacts-info__pin-circle--1
-          .circle.contacts-info__pin-circle.contacts-info__pin-circle--2
+        .pin-block
+          .pin
+          .circle.pin-circle.pin-circle--1
+          .circle.pin-circle.pin-circle--2
 
 
     .contacts-layout-dummy
@@ -122,8 +122,6 @@ block contents
 
   script.
     $(function () {
-      changeRotatedTextWidth('');
-
       // contacts init animations
       fixedMenusInitAnimation();
       TweenMax.to($('.main-layout > .link-back'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});

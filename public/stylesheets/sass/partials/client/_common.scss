@@ -779,3 +779,59 @@
  background: url(../../img/icons/dots.svg) no-repeat center / contain;
  position: absolute;
 }
+
+.pin-block {
+ width: 100px;
+ height: 100px;
+ position: absolute;
+ transition: 1s;
+ @include mobile {
+  width: 56px;
+  height: 56px;
+ }
+
+ .pin {
+  width: 24px;
+  height: 44px;
+  background: url(../../img/client/contacts/contacts-pin.png) no-repeat center / contain;
+  position: absolute;
+  top: 14px;
+  left: calc(50% - 12px);
+  transform: scale(2);
+  transition: 1s;
+  z-index: 2;
+  opacity: 0;
+  @include mobile {
+   width: 14px;
+   height: 26px;
+   top: 8px;
+   left: calc(50% - 7px);
+  }
+ }
+
+ .pin-circle {
+  transform: scale(0.5);
+  transition: 1s;
+
+  &.pin-circle--1 {
+   width: 100%;
+   height: 100%;
+   border-color: $color-dust-gray-02;
+   top: 0;
+   left: 0;
+  }
+  &.pin-circle--2 {
+   width: 46px;
+   height: 46px;
+   border-color: $color-dust-gray-04;
+   top: calc(50% - 23px);
+   left: calc(50% - 23px);
+   @include mobile {
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+   }
+  }
+ }
+}

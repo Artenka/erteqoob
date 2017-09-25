@@ -1,0 +1,149 @@
+extends ../layouts/main-client.jade
+
+block contents
+  div.main-layout#salons
+    include ../partials/link-back.jade
+    include ../partials/main-nav-socials.jade
+    include ../partials/main-nav-lang.jade
+    include ../partials/main-nav-toggle.jade
+    include ../partials/courses-link.jade
+
+    .salons-circles
+      .circle.salons-circle.salons-circle--1
+      .circle.salons-circle.salons-circle--2
+      .circle.salons-circle.salons-circle--3
+
+    .salons-logo
+    h1.salons-title салоны
+    h2.salons-subtitle настоящий комфорт<br> для создания уникального<br> образа
+
+    p.salons-info__exit выбрать другой<br> салон
+    .salons-info
+      .salons-info__item.salons-info__item--kost
+        h1.salons-title.salons-info__title салон
+        p.salons-info__text в киеве<br> на улице костельной,<br> 9
+      .salons-info__item.salons-info__item--vlad
+        h1.salons-title.salons-info__title салон
+        p.salons-info__text в киеве<br> на улице владимирской,<br> 49 А
+      .salons-info__item.salons-info__item--nval
+        h1.salons-title.salons-info__title салон
+        p.salons-info__text в харькове<br> на улице нижний вал,<br> 18
+
+    ul.salons-btns
+      li.salons-btn.salons-btn--kost
+        h3 киев
+        p
+          | ул. костельная<br class="br-lg"> <span class="inline-md-sm">/</span>
+          | 9
+      li.salons-btn.salons-btn--vlad
+        h3 киев
+        p
+          | ул. владимирская<br class="br-lg"> <span class="inline-md-sm">/</span>
+          | 49 А
+      li.salons-btn.salons-btn--nval
+        h3 Харьков
+        p
+          | ул. нижний вал<br class="br-lg"> <span class="inline-md-sm">/</span>
+          | 18
+
+    .salons-layout
+      .salon-side.salon-side--left
+        .salon-side__background
+        .salon-side__background-mobile
+        .salon-side__background-hover.salon-side__background-hover--kost
+        .salon-side__background-hover.salon-side__background-hover--vlad
+          .pin-block
+            .pin
+            .circle.pin-circle.pin-circle--1
+            .circle.pin-circle.pin-circle--2
+        .salon-side__background-hover.salon-side__background-hover--nval
+      .salon-side.salon-side--right
+        .salon-side__background
+        .salon-side__background-mobile
+          .pin-block
+            .pin
+            .circle.pin-circle.pin-circle--1
+            .circle.pin-circle.pin-circle--2
+        .salon-side__background-hover.salon-side__background-hover--kost
+          .pin-block
+            .pin
+            .circle.pin-circle.pin-circle--1
+            .circle.pin-circle.pin-circle--2
+        .salon-side__background-hover.salon-side__background-hover--vlad
+        .salon-side__background-hover.salon-side__background-hover--nval
+          .pin-block
+            .pin
+            .circle.pin-circle.pin-circle--1
+            .circle.pin-circle.pin-circle--2
+
+
+  include ../partials/scripts.jade
+
+  script.
+    $(function () {
+      // salons init animations
+      fixedMenusInitAnimation();
+      TweenMax.to($('.main-layout > .link-back'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('#salons'), 1.2, {opacity: 1, ease: Power1.easeOut, delay: 0.2});
+
+      // salon btn hover laptop
+      $('.salons-btn').hover(
+        function(){
+          if ($(window).width() > 1250) {
+            $('.salon-side__background').addClass('salon-side__background--disable');
+
+            if ($(this).hasClass('salons-btn--kost')) {
+              $('.salon-side__background-hover--kost').addClass('salon-side__background-hover--active');
+            } else if ($(this).hasClass('salons-btn--vlad')) {
+              $('.salon-side__background-hover--vlad').addClass('salon-side__background-hover--active');
+              $('.salon-side__background').addClass('salon-side__background--disable-reverse');
+            } else if ($(this).hasClass('salons-btn--nval')) {
+              $('.salon-side__background-hover--nval').addClass('salon-side__background-hover--active');
+            }
+          }
+        },
+        function(){
+          if ($(window).width() > 1250) {
+            salonsSideDisable()
+          }
+        }
+      );
+
+      // salon btn click tablet-mobile
+      $('.salons-btn').click(function(){
+        $('.salon-side__background').addClass('salon-side__background--disable');
+        $('.salon-side__background-mobile').addClass('salon-side__background-mobile--active');
+        $('.salons-logo').addClass('salons-logo--disable');
+        $('.salons-title').addClass('salons-title--disable');
+        $('.salons-subtitle').addClass('salons-subtitle--disable');
+        $('.salons-btns').addClass('salons-btns--disable');
+        $('.salons-info__exit').addClass('salons-info__exit--active');
+
+        if ($(this).hasClass('salons-btn--kost')) {
+          $('.salons-info__item--kost').addClass('salons-info__item--active');
+        } else if ($(this).hasClass('salons-btn--vlad')) {
+          $('.salons-info__item--vlad').addClass('salons-info__item--active');
+        } else if ($(this).hasClass('salons-btn--nval')) {
+          $('.salons-info__item--nval').addClass('salons-info__item--active');
+        }
+      });
+
+      $('.salons-info__exit').click(function(){
+        salonsSideDisable();
+      });
+
+      function salonsSideDisable() {
+        $('.salon-side__background-hover').removeClass('salon-side__background-hover--active');
+        $('.salon-side__background-mobile').removeClass('salon-side__background-mobile--active');
+        $('.salons-logo').removeClass('salons-logo--disable');
+        $('.salons-title').removeClass('salons-title--disable');
+        $('.salons-subtitle').removeClass('salons-subtitle--disable');
+        $('.salons-btns').removeClass('salons-btns--disable');
+        $('.salons-info__item').removeClass('salons-info__item--active');
+        $('.salons-info__exit').removeClass('salons-info__exit--active');
+        $('.salon-side__background').removeClass('salon-side__background--disable salon-side__background--disable-reverse');
+      }
+    });
+
+
+
