@@ -15,13 +15,20 @@ block contents
       .contacts-title-block__logo-academy
 
     .contacts-coordinates
-      .contacts-coordinates__header.contacts-coordinates__header--kiev
+      .contacts-coordinates__header.contacts-coordinates__header--kiev.contacts-coordinates__header--active
         h1 131°
         h3
           span nw
           span kiev
-      .contacts-coordinates__footer
+      .contacts-coordinates__footer.contacts-coordinates__footer--kiev.contacts-coordinates__footer--active
         p 50.4501° N, 30.5234° E<br> 105 m Elevation
+      .contacts-coordinates__header.contacts-coordinates__header--kharkiv
+        h1 254°
+        h3
+          span se
+          span Kharkov
+      .contacts-coordinates__footer.contacts-coordinates__footer--kharkiv
+        p 50.46203° N, 30.48710° E<br> 124 m Elevation
 
 
     .contacts-center
@@ -118,6 +125,70 @@ block contents
     .arrow-link.arrow-link--right.arrow-link--top.contacts-info__inner-link.contacts-info__inner-link--kharkiv
       a.arrow-link__text(href='#') написать нам
 
+    ul.slider-arrows-long.contacts-slider.contacts-slider--kiev
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 1
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 2
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 3
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 4
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 5
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 6
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+
+    ul.slider-arrows-long.contacts-slider.contacts-slider--kharkiv
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 1
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 2
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 3
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 4
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 5
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+      li.contacts-slide
+        .contacts-slide-inner
+          .contacts-slide-inner__img
+            p.contacts-slide-inner__number 6
+            img(src="/img/client/contacts/contacts-slide-1.jpg")
+
   include ../partials/scripts.jade
 
   script.
@@ -133,9 +204,15 @@ block contents
           if($(this).hasClass('contacts-side-dummy--kiev')){
             $('.contacts-side--kiev').addClass("contacts-side--active");
             $('.contacts-center').addClass("contacts-center--kiev");
+            $('.contacts-coordinates__header--kiev').addClass("contacts-coordinates__header--active");
+            $('.contacts-coordinates__footer--kiev').addClass("contacts-coordinates__footer--active");
           } else {
             $('.contacts-side--kharkiv').addClass("contacts-side--active");
             $('.contacts-center').addClass("contacts-center--kharkiv");
+            $('.contacts-coordinates__header--kiev').removeClass("contacts-coordinates__header--active");
+            $('.contacts-coordinates__footer--kiev').removeClass("contacts-coordinates__footer--active");
+            $('.contacts-coordinates__header--kharkiv').addClass("contacts-coordinates__header--active");
+            $('.contacts-coordinates__footer--kharkiv').addClass("contacts-coordinates__footer--active");
           }
           $('.contacts-side').not('.contacts-side--active').addClass("contacts-side--disable");
           $('.contacts-center').addClass("contacts-center--active");
@@ -143,6 +220,10 @@ block contents
         function () {
           $('.contacts-side').removeClass("contacts-side--active contacts-side--disable");
           $('.contacts-center').removeClass("contacts-center--active contacts-center--kiev contacts-center--kharkiv");
+          $('.contacts-coordinates__header--kharkiv').removeClass("contacts-coordinates__header--active");
+          $('.contacts-coordinates__footer--kharkiv').removeClass("contacts-coordinates__footer--active");
+          $('.contacts-coordinates__footer--kiev').addClass("contacts-coordinates__footer--active");
+          $('.contacts-coordinates__header--kiev').addClass("contacts-coordinates__header--active");
         }
       );
 
@@ -155,11 +236,13 @@ block contents
             $('.contacts-side--kharkiv').addClass("contacts-side--disabled");
             $('.contacts-info--kiev').addClass('contacts-info--active');
             $('.contacts-info__inner-link--kiev').addClass('contacts-info__inner-link--active');
+            $('.contacts-slider--kiev').addClass('contacts-slider--active');
           } else {
             $('.contacts-side--kharkiv').addClass("contacts-side--clicked");
             $('.contacts-side--kiev').addClass("contacts-side--disabled");
             $('.contacts-info--kharkiv').addClass('contacts-info--active');
             $('.contacts-info__inner-link--kharkiv').addClass('contacts-info__inner-link--active');
+            $('.contacts-slider--kharkiv').addClass('contacts-slider--active');
           }
           $('.contacts-side').not('.contacts-side--clicked').addClass("contacts-side--hidden");
           $('.contacts-center').addClass("contacts-center--disabled");
@@ -179,5 +262,23 @@ block contents
         $('.contacts-title-block').removeClass("contacts-title-block--disabled");
         $('.contacts-info__exit').removeClass('contacts-info__exit--active');
         $('.contacts-info__inner-link').removeClass('contacts-info__inner-link--active');
+        $('.contacts-slider').removeClass('contacts-slider--active');
+      });
+
+
+      // contacts slider
+      $('.contacts-slider').slick({
+        slidesToShow: 5,
+        speed: 1000,
+        mobileFirst: true,
+        arrows: true,
+        dots: false,
+        draggable: true,
+        accessibility: false,
+        centerMode: true,
+        variableWidth: true,
+        adaptiveHeight: false,
+        infinite: true,
+        swipeToSlide: true
       });
     });
