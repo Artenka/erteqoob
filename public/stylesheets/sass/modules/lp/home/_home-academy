@@ -1,0 +1,161 @@
+.home-academy {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: url(../../../img/lp/home/academy/home-academy.jpg) no-repeat center / cover;
+}
+
+.home-academy-line {
+ width: 2px;
+ height: 40px;
+ background: $color-white;
+ position: absolute;
+ top: -20px;
+ left: 50%;
+}
+
+.home-academy__switcher {
+ position: relative;
+ z-index: 5;
+
+ .home-academy__switcher-item {
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.6s;
+  @include mobile {
+   margin: 0 10px;
+  }
+
+  &.home-academy__switcher-item--active {
+   font-size: inherit;
+   color: inherit;
+  }
+ }
+}
+
+.home-academy-lists {
+ flex: 1;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+}
+
+.home-academy-lists__curve {
+ width: 1320px;
+ height: 205px;
+ background: url(../../../img/lp/home/academy/home-academy-curve.svg) no-repeat center / contain;
+ opacity: 0.12;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ @include laptop {
+  width: 1056px;
+  height: 164px;
+ }
+ @include tablet-mobile {
+  display: none;
+ }
+}
+
+.home-academy-list {
+ display: none;
+ width: 1320px;
+ height: 300px;
+ position: relative;
+ @include laptop {
+  width: 1056px;
+ }
+ @include tablet-mobile {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+ }
+ @include mobile {
+  margin: 37px 0;
+ }
+ &.home-academy-list--active {
+  display: block;
+ }
+
+ .home-academy-list__item {
+  display: flex;
+  position: absolute;
+  @include tablet-mobile {
+   position: static;
+  }
+  @include tablet {
+   margin-bottom: 102px;
+  }
+  @include mobile {
+   flex-direction: column;
+   text-align: center;
+   align-items: center;
+   margin-bottom: 30px;
+  }
+  &:last-child {
+   margin-bottom: 0;
+  }
+
+  .home-academy-list__item-number {
+   color: $color-white;
+   font-size: 90px;
+   font-weight: 700;
+   margin-right: 24px;
+   @include tablet {
+    width: 40%;
+    margin-right: 21px;
+    text-align: right;
+   }
+   @include mobile {
+    font-size: 70px;
+    line-height: 70px;
+    margin: 0;
+   }
+  }
+  .home-academy-list__item-text {
+   color: $color-nobel;
+   font-size: 14px;
+   font-weight: 700;
+   letter-spacing: 2.56px;
+   line-height: 24px;
+   text-transform: uppercase;
+   @include mobile {
+    font-size: 10px;
+    letter-spacing: 0.83px;
+    line-height: 15px;
+   }
+  }
+
+  &:nth-child(1){
+   top: 55px;
+   left: 106px;
+   @include laptop {
+    left: 23px;
+   }
+  }
+  &:nth-child(3){
+   top: 55px;
+   left: 536px;
+   @include laptop {
+    left: 393px;
+   }
+  }
+  &:nth-child(2){
+   bottom: 38px;
+   left: 295px;
+   @include laptop {
+    left: 152px;
+   }
+  }
+  &:nth-child(4){
+   bottom: 38px;
+   left: 910px;
+   @include laptop {
+    left: 707px;
+   }
+  }
+ }
+}

@@ -1,0 +1,22 @@
+// common scss files
+@import 'common/reset';
+@import 'common/global';
+@import 'common/variables-lp';
+@import 'common/mixins';
+@import 'common/fonts';
+// scss libraries
+@import 'lib/animate';
+@import 'lib/slick';
+// modules
+@import 'modules/lp/index';
+@import 'modules/lp/common';
+@import 'modules/lp/home';
+@import 'modules/lp/sp';
+@import 'modules/lp/sp-other';
+@import 'modules/lp/webinar';
+// partials
+@import 'partials/lp/header';
+@import 'partials/lp/footer';
+@import 'partials/lp/main-nav';
+@import 'partials/lp/page-slider';
+@import 'partials/lp/popups';

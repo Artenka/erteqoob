@@ -1,0 +1,104 @@
+.sp-intro {
+ min-height: 900px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-image: url(../../../img/lp/sp/intro/sp-intro.jpg);
+ padding-bottom: 400px;
+ @include tablet {
+  min-height: 538px;
+  height: 538px;
+  padding-bottom: 112px;
+ }
+ @include mobile {
+  min-height: 523px;
+  height: 523px;
+  padding: 0;
+ }
+
+ .logo {
+  @include tablet {
+   width: 196px;
+   height: 109px;
+   top: 48px;
+   left: calc(50% - 98px);
+  }
+ }
+
+ &.sp-intro--kharkiv {
+
+  .sp-intro-main {
+
+   .sp-intro-main__title {
+    @include tablet {
+     font-size: 36px;
+     line-height: 48px;
+    }
+   }
+  }
+ }
+}
+
+.sp-intro-main {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ margin-top: 188px;
+ @include tablet {
+  margin-top: 196px;
+ }
+ @include mobile {
+  margin-top: 87px;
+ }
+
+ .sp-intro-main__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  @include tablet {
+   font-size: 28px;
+   letter-spacing: 4.31px;
+   line-height: 40px;
+  }
+  @include mobile {
+   letter-spacing: 1.62px;
+   font-size: 12px;
+   line-height: 19px;
+  }
+
+  span {
+   font-size: 18px;
+   @include tablet {
+    font-size: 16px;
+   }
+   @include mobile {
+    font-size: 12px;
+   }
+  }
+ }
+ .sp-intro-main__subtitle {
+  color: $color-gray-2;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin-top: 17px;
+  @include tablet {
+   font-size: 14px;
+   letter-spacing: 2px;
+   line-height: 21px;
+   margin-top: 22px;
+  }
+  @include mobile {
+   font-size: 9px;
+   letter-spacing: 1.17px;
+   line-height: 16px;
+   margin-top: 17px;
+  }
+ }
+}

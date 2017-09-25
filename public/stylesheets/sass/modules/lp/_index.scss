@@ -1,0 +1,259 @@
+html {
+ height: 100%;
+ min-height: 100%;
+}
+body {
+ height: 100%;
+}
+
+.main-layout {
+ min-height: 100%;
+ height: 100%;
+ position: relative;
+}
+
+.main-wrapper {
+ width: 1140px;
+ margin: 0 auto;
+ @include clearfix;
+ @include tablet-mobile {
+  width: 100%;
+ }
+}
+.absolute-wrapper {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ left: 0;
+ @include clearfix;
+}
+
+.main {
+ height: 100%;
+ min-height: 100%;
+ color: $color-white;
+ font-family: Circe, sans-serif;
+ background-color: $color-black;
+ //overflow-x: hidden;
+}
+
+.section-layout {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: relative;
+ //overflow: hidden;
+ background: no-repeat center / cover;
+ background-color: $color-black;
+ min-height: 900px;
+ @include laptop {
+  min-height: 768px;
+ }
+ @include mobile {
+  min-height: 480px;
+  height: auto;
+  //border-bottom: 1px solid $color-mine-shaft;
+ }
+}
+
+.scroll-layout {
+ height: 100%;
+ position: relative;
+}
+
+.br-lg {
+ display: block;
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.br-lp {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.br-lp-md {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: block;}
+ @include mobile {display: none;}
+}
+.br-lp-sm {
+ display: none;
+ @include laptop {display: block;}
+ @include tablet {display: block;}
+ @include mobile {display: block;}
+}
+.br-lg-md {
+ display: block;
+ @include tablet {display: block;}
+ @include mobile {display: none;}
+}
+.br-lg--sm {
+ display: block;
+ @include tablet {display: none;}
+ @include mobile {display: block;}
+}
+.br-md-sm {
+ display: none;
+ @include tablet {display: block;}
+ @include mobile {display: block;}
+}
+.br-md {
+ display: none;
+ @include tablet {display: block;}
+ @include mobile {display: none;}
+}
+.br-sm {
+ display: none;
+ @include tablet {display: none;}
+ @include mobile {display: block;}
+}
+.br-sm-text {
+ display: none;
+ @include tablet {display: none;}
+ @include mobile {display: inline;}
+}
+.br-lg-md-text {
+ display: inline;
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+
+.hidden {display: none;}
+
+.clear {
+ display: table;
+ clear: both;
+}
+
+p, h1, h2, h3, h4, h5, h6, img {
+ display: block;
+}
+
+a {
+ color: $color-white;
+ text-decoration: none;
+ cursor: pointer;
+ transition: 0.3s;
+}
+
+.p {
+ color: $color-gray-2;
+ font-size: 12px;
+ font-weight: 700;
+ line-height: 22px;
+ text-transform: uppercase;
+ @include mobile {
+  line-height: 16px;
+  font-weight: 400;
+  text-transform: none;
+ }
+}
+
+em {
+ font-style: italic;
+}
+
+b, strong {
+ font-weight: 700;
+}
+
+button, input[type=button], input[type=submit] {
+ display: block;
+ font-family: Circe, sans-serif;
+ cursor: pointer;
+ border: none;
+ transition: 0.3s;
+ outline: none;
+}
+
+label {
+ font-family: Circe, sans-serif;
+ font-size: 12px;
+ font-weight: 700;
+ line-height: 17px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ @include tablet-mobile {
+  font-size: 10px;
+  line-height: 15px;
+  letter-spacing: 0.83px;
+ }
+}
+input, textarea, select {
+ width: 100%;
+ height: 50px;
+ border: 2px solid $color-black;
+ background-color: $color-white;
+ color: $color-black;
+ font-family: Circe, sans-serif;
+ font-size: 16px;
+ line-height: 46px;
+ padding: 0 19px;
+ outline: none;
+ @include tablet-mobile {
+  height: 40px;
+  line-height: 36px;
+ }
+}
+.input-material {
+ height: 38px;
+ position: relative;
+
+ label {
+  height: 17px;
+  color: $color-white;
+  letter-spacing: 1px;
+  text-transform: none;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  transition: 0.5s;
+ }
+ input {
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-dove-gray;
+  color: $color-white;
+  font-size: 12px;
+  line-height: 37px;
+  padding: 0;
+  transition: 0.5s;
+  position: relative;
+  z-index: 3;
+ }
+
+ &.input-material--active {
+
+  label {
+   bottom: 38px;
+   transform: scale(0.75);
+  }
+  input {
+   border-bottom: 1px solid $color-white;
+  }
+ }
+}
+
+.scroll-gray {
+ &::-webkit-scrollbar {
+  width: 3px;
+  cursor: pointer;
+ }
+ &::-webkit-scrollbar-track {
+  background-color: $color-mine-shaft;
+ }
+ &::-webkit-scrollbar-thumb {
+  background: $color-dove-gray;
+  &:window-inactive {
+   background: $color-dove-gray;
+  }
+ }
+ &::-webkit-scrollbar-button:start:decrement {
+  display: none;
+ }
+}

@@ -1,0 +1,245 @@
+.home-teachers {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: url(../../../img/lp/home/teachers/home-teachers.jpg) no-repeat center / cover;
+ @include tablet-mobile {
+  background: $color-mine-shaft-3;
+ }
+}
+
+.home-teachers-list {
+ width: 100%;
+ flex: 1;
+ display: flex;
+ justify-content: space-around;
+ align-items: flex-end;
+
+
+ .home-teachers-list__item {
+  width: 590px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  @include laptop {
+   width: 465px;
+  }
+  @include tablet-mobile {
+   width: 50%;
+  }
+  @include tablet {
+   max-width: 500px;
+  }
+  @include mobile {
+   max-height: 350px;
+  }
+
+  .home-teachers-list__image {
+   width: 100%;
+   height: 736px;
+   background: no-repeat center bottom / contain;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   @include laptop {
+    height: 589px;
+   }
+   @include tablet-mobile {
+    background-size: 138% auto;
+   }
+   @include mobile {
+    background-position: center bottom;
+   }
+  }
+
+  .home-teachers-list__name-layout {
+
+   .home-teachers-list__name {
+    font-size: 24px;
+    line-height: 28.8px;
+    position: relative;
+    @include mobile {
+     font-size: 14px;
+     line-height: 21px;
+    }
+    &:before {
+     content: '';
+     height: 100px;
+     width: 1px;
+     background: $color-tundora;
+     position: absolute;
+     left: 0;
+     bottom: 27px;
+     @include mobile {
+      height: 65px;
+      bottom: 25px;
+     }
+    }
+   }
+
+   .home-teachers-list__star {
+    width: 12px;
+    height: 12px;
+    background: url(../../../img/lp/icons/icon-star.svg) no-repeat center / contain;
+    margin-top: 8px;
+    @include mobile {
+     width: 8px;
+     height: 8px;
+     margin-top: 4px;
+    }
+   }
+  }
+
+  &:nth-child(1) {
+
+   .home-teachers-list__name-layout {
+    margin: 0 0 208px 160px;
+    @include laptop {
+     margin: 0 0 109px 97px;
+    }
+    @include tablet {
+     margin: 0 0 231px 148px;
+    }
+    @include mobile {
+     margin: 0 0 61px 36px;
+    }
+   }
+
+   .home-teachers-list__image {
+    background-image: url(../../../img/lp/home/teachers/teacher-1.png);
+   }
+  }
+  &:nth-child(2) {
+
+   .home-teachers-list__name-layout {
+    margin: 0 0 350px 383px;
+    @include laptop {
+     margin: 0 0 249px 310px;
+    }
+    @include tablet {
+     margin: 0 0 279px 148px;
+    }
+    @include mobile {
+     margin: 0 0 103px 45px;
+    }
+   }
+
+   .home-teachers-list__image {
+    background-image: url(../../../img/lp/home/teachers/teacher-2.png);
+   }
+  }
+ }
+}
+
+
+.home-teachers-about {
+ height: 500px;
+ width: 300px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ bottom: 127px;
+ left: calc(50% - 150px);
+ @include laptop-tablet {
+  height: 400px;
+ }
+ @include tablet {
+  bottom: auto;
+  top: 211px;
+ }
+ @include mobile {
+  height: 222px;
+  width: 286px;
+  left: calc(50% - 143px);
+  bottom: auto;
+  top: 83px;
+ }
+
+ .home-teachers-about__line {
+  width: 1px;
+  height: 500px;
+  background-color: $color-scorpion;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  @include laptop-tablet {
+   height: 400px;
+  }
+  @include mobile {
+   display: none;
+  }
+ }
+
+ .home-teachers-about__text {
+  color: $color-nobel;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  @include mobile {
+   display: none;
+   font-size: 9px;
+   line-height: 13.5px;
+  }
+  &.home-teachers-about__text--sm {
+   display: none;
+   @include mobile {
+    display: block;
+   }
+  }
+ }
+
+ .home-teachers-about__video-block {
+  display: flex;
+  margin: 82px 0 88px;
+  cursor: pointer;
+  @include tablet-mobile {
+   flex-direction: column;
+   align-items: center;
+   justify-items: center;
+  }
+  @include mobile {
+   margin: 60px 0 0;
+  }
+  &:hover {
+
+   .home-teachers-about__video-icon {
+    transform: scale(1.2);
+   }
+  }
+
+  .home-teachers-about__video-icon {
+   width: 48px;
+   height: 48px;
+   background: url(../../../img/lp/icons/video-icon.png) no-repeat center / contain;
+   margin-right: 30px;
+   transition: 0.6s;
+   @include tablet {
+    margin: 0 0 28px;
+   }
+   @include mobile {
+    margin: 0;
+   }
+  }
+  .home-teachers-about__video-text {
+   font-size: 14px;
+   font-weight: 700;
+   letter-spacing: 4.67px;
+   line-height: 23px;
+   text-transform: uppercase;
+   @include tablet {
+    text-align: center;
+   }
+   @include mobile {
+    display: none;
+   }
+  }
+ }
+}

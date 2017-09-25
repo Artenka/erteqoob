@@ -1,0 +1,60 @@
+section.section-layout.home-academy#home-academy
+  .home-academy-line
+
+  div.page-title
+    .page-title__logo
+    h1.home-academy__switcher
+      span(data-switcher="academy").home-academy__switcher-item.home-academy__switcher-item--active Академия
+      span /
+      span(data-switcher="salon").home-academy__switcher-item салоны
+      br
+      | ERTEQOOB - это:
+
+  div.home-academy-lists
+    ul.home-academy-list.home-academy-list--academy.home-academy-list--active
+      li.home-academy-list__item
+        p.home-academy-list__item-number 6
+        p.home-academy-list__item-text лет успешной<br> работы
+      li.home-academy-list__item
+        p.home-academy-list__item-number 24
+        p.home-academy-list__item-text преподавателя-<br>эксперта
+      li.home-academy-list__item
+        p.home-academy-list__item-number 7-17
+        p.home-academy-list__item-text лет стажа<br> в индустрии у команды
+      li.home-academy-list__item
+        p.home-academy-list__item-number 12
+        p.home-academy-list__item-text стран, где работают<br> наши выпускники
+      .home-academy-lists__curve
+    ul.home-academy-list.home-academy-list--salon
+      li.home-academy-list__item
+        p.home-academy-list__item-number 6
+        p.home-academy-list__item-text лет успешной<br> работы
+      li.home-academy-list__item
+        p.home-academy-list__item-number 24
+        p.home-academy-list__item-text преподавателя-<br>эксперта
+      li.home-academy-list__item
+        p.home-academy-list__item-number 7-17
+        p.home-academy-list__item-text лет стажа<br> в индустрии у команды
+      li.home-academy-list__item
+        p.home-academy-list__item-number 12
+        p.home-academy-list__item-text стран, где работают<br> наши выпускники
+      .home-academy-lists__curve
+
+script.
+  $(function(){
+    //academy switcher
+    $('.home-academy__switcher-item').click(function () {
+      if (!$(this).hasClass('home-academy__switcher-item--active')) {
+        var switcherItem = $(this).data('switcher');
+        $('.home-academy__switcher-item--active').removeClass('home-academy__switcher-item--active');
+        $(this).addClass('home-academy__switcher-item--active');
+        $('.home-academy-list--active').fadeOut(200);
+        setTimeout(function () {
+          $('.home-academy-list--' + switcherItem).fadeIn(200);
+        }, 200);
+        setTimeout(function () {
+          $('.home-academy-list--' + switcherItem).addClass('home-academy-list--active');
+        }, 400);
+      }
+    });
+  });

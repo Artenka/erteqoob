@@ -1,0 +1,55 @@
+section.section-layout.sp-offer.sp-offer--webinar
+
+  h1.sp-offer__title Оставаться на прежнем уровне<br> или начать карьерный рост с обучения?
+
+  .sp-offer-main-layout
+    div.sp-offer-main
+      ul.sp-offer-main__list
+        h1.sp-offer-main__list-title У Вас есть 24 часа
+        h1.sp-offer-main__list-subtitle чтобы записаться<br class="br-lg"> на <span>Базовый Курс</span><br class="br-md-sm"> Erteqoob<br class="br-lg"> <span>со скидкой 10%</span>
+
+      div.sp-offer-main__timer
+        .circle.sp-offer-main__timer-circle-1
+        .circle.sp-offer-main__timer-circle-2
+        .circle.sp-offer-main__timer-circle-main
+          .sp-offer-main__timer-circle-progress#offer-circle-progress
+          p.sp-offer-main__timer-time#offer-countdown 48:00:00
+
+      div.sp-offer-main__register
+        a(href="#").btn.sp-offer-main__register-link Перейти на Базовый курс
+        p.sp-offer-main__register-text Вы будете перенаправлены на страницу<br> с подробным описанием курса и формой<br> регистрации на обучение
+
+script(src='/js/circle-progress.min.js' type='text/javascript')
+script(src='/js/jquery.countdown.min.js' type='text/javascript')
+script.
+  $(function(){
+    var offerTime = 86400000;
+    var offerTimeFull = new Date().getTime() + offerTime;
+
+    if ($.cookie("offerTimeFull-sp1")) {
+      offerTimeFull = $.cookie("offerTimeFull-sp1");
+    } else {
+      $.cookie("offerTimeFull-sp1", offerTimeFull, {expires: 30});
+    }
+
+    $("#offer-countdown").countdown(offerTimeFull, function (event) {
+      var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+      $(this).text(event.strftime(totalHours + ':%M:%S'));
+    }).on('finish.countdown', function(event) {
+      console.log('offer finished');
+    });
+
+    $('#offer-circle-progress').circleProgress({
+      value: 1,
+      size: 200,
+      thickness: 4,
+      fill: "rgba(0,0,0,0.1)",
+      emptyFill: "#ffffff",
+      startAngle: 3*Math.PI/2,
+      animationStartValue: 1 - (offerTimeFull - new Date().getTime())/offerTime,
+      animation: {
+        duration: offerTimeFull - new Date().getTime(),
+        easing: "linear"
+      }
+    });
+  });

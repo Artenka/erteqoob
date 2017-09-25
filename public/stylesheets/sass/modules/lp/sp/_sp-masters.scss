@@ -1,0 +1,180 @@
+.sp-masters {
+ height: 580px;
+ min-height: 580px;
+ background-image: url(../../../img/lp/sp/masters/sp-masters.jpg);
+ @include tablet {
+  height: 700px;
+  background-image: url(../../../img/lp/sp/masters/sp-masters-tablet.jpg);
+ }
+ @include mobile {
+  height: 485px;
+  min-height: 485px;
+  background-image: url(../../../img/lp/sp/masters/sp-masters-mobile.jpg);
+ }
+
+ .page-title {
+  height: 170px;
+  padding-top: 10px;
+  @include tablet {
+   margin-top: 58px;
+  }
+  @include mobile {
+   height: 90px;
+   margin-top: 32px;
+   padding-top: 0;
+  }
+
+  .page-title__logo {
+   width: 170px;
+   height: 170px;
+   left: calc(50% - 85px);
+   @include mobile {
+    width: 90px;
+    height: 90px;
+    left: calc(50% - 45px);
+   }
+  }
+
+  > h1 {
+   line-height: 40px;
+   @include mobile {
+    line-height: 22px;
+   }
+  }
+  > h2 {
+   font-size: 10px;
+   line-height: 15px;
+   margin-bottom: 8px;
+   @include mobile {
+    font-size: 12px;
+    line-height: 17px;
+    margin-bottom: 2px;
+    text-transform: none;
+   }
+  }
+ }
+}
+
+.sp-masters-list {
+ width: 970px;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ padding-top: 107px;
+ @include tablet {
+  width: 500px;
+  flex-wrap: wrap;
+  padding-top: 82px;
+ }
+ @include mobile {
+  width: 320px;
+  flex-direction: column;
+  padding: 17px 0 5px 117px;
+ }
+
+ .sp-masters-list__item {
+  @include tablet {
+   width: 50%;
+   margin-bottom: 128px;
+  }
+  @include mobile {
+   width: 100%;
+   margin-bottom: 40px;
+   position: relative;
+  }
+
+  .sp-masters-list__item-text {
+   font-weight: 700;
+   letter-spacing: 2px;
+   line-height: 24px;
+   text-transform: uppercase;
+   color: $color-silver-chalice-2;
+   font-size: 12px;
+   position: relative;
+   z-index: 3;
+   @include mobile {
+    line-height: 20px;
+    letter-spacing: 0;
+   }
+   &:before {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: $color-dove-gray;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    @include mobile {
+     display: none;
+    }
+   }
+
+   span {
+    display: block;
+    color: $color-white;
+    font-size: 16px;
+    @include mobile {
+     font-size: 12px;
+    }
+   }
+  }
+
+  .sp-masters-list__item-dot {
+   display: none;
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   background-color: $color-dove-gray;
+   position: absolute;
+   top: 15px;
+   left: -24px;
+   @include mobile {
+    display: block;
+   }
+   &:before, &:after {
+    content: '';
+    border: 1px solid $color-tundora;
+    border-radius: 50%;
+    position: absolute;
+   }
+   &:before {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+   }
+   &:after {
+    width: 52px;
+    height: 52px;
+    opacity: 0.5;
+    top: calc(50% - 26px);
+    left: calc(50% - 26px);
+   }
+  }
+
+  &:nth-child(even) {
+   padding-top: 50px;
+   @include tablet-mobile {
+    padding-top: 0;
+   }
+   @include tablet {
+    width: 190px;
+    padding-bottom: 18px;
+   }
+
+   .sp-masters-list__item-text {
+    &:before {
+     top: auto;
+     bottom: -14px;
+    }
+   }
+  }
+  &:nth-child(odd) {
+   @include tablet {
+    width: 310px;
+    padding-top: 18px;
+   }
+  }
+ }
+}

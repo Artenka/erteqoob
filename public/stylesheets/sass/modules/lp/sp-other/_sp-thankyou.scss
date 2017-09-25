@@ -1,0 +1,251 @@
+#sp-1-thankyou {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ background-image: url(../../img/lp/sp-1/thankyou/sp-1-thankyou.jpg);
+ @include mobile {
+  height: 100%;
+ }
+}
+
+.sp-title.sp-title--1-thankyou {
+ @include tablet {
+  margin: 171px 0 0 58px;
+  padding: 89px 0 0 160px;
+ }
+
+ > h1 {
+
+  &:after {
+   bottom: -105px;
+  }
+
+  .sp-title__dots {
+   @include tablet {
+    top: -65px;
+    left: -95px;
+   }
+  }
+
+  .sp-title__line {
+   @include tablet {
+    height: 810px;
+    top: -387px;
+   }
+   @include mobile {
+    height: 312px;
+    top: -136px;
+   }
+  }
+ }
+
+ > h3 {
+  margin-left: -46px;
+  @include mobile {
+   margin-left: 0;
+  }
+ }
+}
+
+.sp-1-thankyou-main {
+ width: 100%;
+ display: flex;
+ margin-top: 53px;
+ @include tablet-mobile {
+  flex-direction: column;
+ }
+ @include tablet {
+  margin-top: 61px;
+ }
+ @include mobile {
+  margin-top: 11px;
+ }
+
+ .sp-1-thankyou-main__item {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+
+  .sp-1-thankyou-main__item-text {
+   position: relative;
+   &:before {
+    content: '+';
+    color: $color-tundora;
+    position: absolute;
+    @include tablet-mobile {
+     display: none;
+    }
+   }
+
+   span {
+    color: $color-white;
+    @include mobile {
+     font-weight: 700;
+    }
+   }
+
+   h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3.68px;
+    line-height: 28px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    @include tablet-mobile {
+     text-align: center;
+    }
+   }
+   h2 {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 22px;
+    text-transform: uppercase;
+    @include tablet-mobile {
+     text-align: center;
+    }
+   }
+  }
+
+  .sp-1-thankyou-main__item-line-1 {
+   height: 160px;
+   left: 0;
+   top: -26px;
+   @include tablet-mobile {
+    display: none;
+   }
+  }
+
+  &:nth-child(1){
+   width: 52%;
+   @include tablet-mobile {
+    width: 100%;
+   }
+
+   .sp-1-thankyou-main__item-text {
+    margin-left: 220px;
+    @include mobile {
+     margin-left: 75px;
+    }
+    &:before {
+     top: 0;
+     right: -31px;
+    }
+   }
+  }
+  &:nth-child(2){
+   width: 48%;
+   @include tablet-mobile {
+    width: 100%;
+    align-self: center;
+   }
+   @include mobile {
+    text-align: center;
+   }
+
+   .sp-1-thankyou-main__item-text {
+    margin-top: 53px;
+    @include tablet {
+     margin: 202px auto 0;
+    }
+    @include mobile {
+     margin: 54px auto 0;
+    }
+    &:before {
+     top: -19px;
+     left: -21px;
+    }
+   }
+  }
+ }
+
+ .socials {
+  margin: 22px 0 0 93px;
+  @include tablet {
+   margin: 55px auto 0;
+  }
+  @include mobile {
+   margin: 22px auto 27px;
+  }
+ }
+
+ &.sp-1-thankyou-main--2 {
+  margin-top: 62px;
+  @include laptop {
+   margin-top: 42px;
+  }
+  @include mobile {
+   margin-top: 11px;
+  }
+
+  .sp-1-thankyou-main__item:nth-child(1) .sp-1-thankyou-main__item-text:before {
+   display: none;
+  }
+  .sp-1-thankyou-main__item:nth-child(2) .sp-1-thankyou-main__item-text {
+   margin-top: 0;
+   @include tablet {
+    margin-top: 178px;
+   }
+   @include mobile {
+    margin: 54px auto 0;
+   }
+  }
+
+  .sp-1-thankyou-main__item-divider {
+   display: none;
+   @include tablet {
+    display: block;
+   }
+  }
+
+
+  .socials {
+   margin: 36px 0 0 -32px;
+   @include tablet {
+    margin: 55px auto 40px;
+   }
+   @include mobile {
+    margin: 22px auto 27px;
+   }
+  }
+ }
+}
+
+.sp-1-thankyou-main__item-divider {
+ width: 98px;
+ height: 2px;
+ background-color: $color-white-03;
+ position: absolute;
+ top: 7px;
+ right: -61px;
+ @include tablet {
+  bottom: -22px;
+  top: auto;
+  left: calc(50% - 49px);
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.sp-1-thankyou-main__item-line-2 {
+ height: 100%;
+ right: 244px;
+ top: 0;
+ @include laptop {
+  right: 84px;
+ }
+ @include tablet-mobile {
+  display: none;
+ }
+
+ .sp-1-thankyou-main__item-divider {
+  top: 597px;
+  right: -58px;
+  @include laptop {
+   top: 557px;
+  }
+ }
+}

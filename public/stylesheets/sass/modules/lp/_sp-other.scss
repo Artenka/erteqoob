@@ -1,0 +1,165 @@
+@import "sp-other/sp-expired";
+@import "sp-other/sp-thankyou";
+
+
+
+.sp-logo {
+ width: 144px;
+ height: 73px;
+ align-self: center;
+ background: url(../../img/lp/logo.svg) no-repeat center top, url(../../img/lp/logo-title.svg) no-repeat center bottom / 100% auto;
+ margin-top: 45px;
+ @include mobile {
+  width: 105px;
+  height: 50px;
+  background: url(../../img/lp/logo.svg) no-repeat center top / 16px auto, url(../../img/lp/logo-title.svg) no-repeat center bottom / 100% auto;
+ }
+}
+
+.sp-title {
+ margin: 81px 0 0 58px;
+ padding: 70px 0 0 160px;
+ position: relative;
+ @include mobile {
+  margin: 0;
+  padding: 37px 0 0 75px;
+ }
+
+ .sp-title__logo {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include tablet {
+   left: -30px;
+  }
+  @include mobile {
+   width: 188px;
+   height: 188px;
+   top: -10px;
+   left: -6px;
+  }
+
+  .sp-title__logo-image {
+   width: 250px;
+   height: 250px;
+   background: url(../../img/lp/logo-gray.svg) no-repeat center / contain;
+   opacity: 0.1;
+   position: absolute;
+   top: 50px;
+   left: 50px;
+   @include mobile {
+    width: 134px;
+    height: 134px;
+    top: 27px;
+    left: 27px;
+   }
+  }
+ }
+
+ > h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  line-height: 60px;
+  text-transform: uppercase;
+  position: relative;
+  @include tablet {
+   font-size: 48px;
+   letter-spacing: 7.2px;
+   line-height: 72px;
+  }
+  @include mobile {
+   font-size: 16px;
+   letter-spacing: 2.4px;
+   line-height: 27px;
+  }
+  &:before, &:after {
+   content: '';
+   position: absolute;
+  }
+  &:before {
+   width: 130px;
+   height: 3px;
+   background-color: $color-alto-2;
+   top: 39px;
+   left: -162px;
+   @include tablet {
+    width: 96px;
+    top: 45px;
+    left: -130px;
+   }
+   @include mobile {
+    width: 30px;
+    height: 2px;
+    top: 15px;
+    left: -51px;
+   }
+  }
+  &:after {
+   width: 23px;
+   height: 2px;
+   background-color: $color-white-03;
+   bottom: -44px;
+   left: -46px;
+   @include tablet {
+    top: 232px;
+   }
+   @include mobile {
+    display: none;
+   }
+  }
+
+  .sp-title__dots {
+   width: 286px;
+   height: 125px;
+   background: url(../../img/lp/sp-1/expired/sp-1-expired-dots.png) no-repeat center / contain;
+   position: absolute;
+   top: -46px;
+   left: -94px;
+   @include mobile {
+    width: 153px;
+    height: 67px;
+    top: -34px;
+    left: -51px;
+   }
+  }
+
+  .sp-title__line {
+   height: 760px;
+   top: -278px;
+   left: 0;
+   @include tablet {
+    height: 850px;
+    top: -337px;
+   }
+   @include mobile {
+    height: 312px;
+    top: -136px;
+   }
+  }
+ }
+
+ > h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2.94px;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin-top: 61px;
+  position: relative;
+  @include laptop {
+   margin-top: 41px;
+  }
+  @include tablet {
+   margin-top: 53px;
+  }
+  @include mobile {
+   font-size: 10px;
+   letter-spacing: 1.84px;
+   line-height: 16px;
+   margin-top: 19px;
+  }
+ }
+}

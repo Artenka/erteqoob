@@ -1,0 +1,19 @@
+.page-slider-dots-layout
+  .page-slider-dots
+    a(href="#home-intro").link-smooth.page-slider-dots__item.page-slider-dots__item--active
+    a(href="#home-program").link-smooth.page-slider-dots__item
+    a(href="#home-plan").link-smooth.page-slider-dots__item
+    a(href="#home-action").link-smooth.page-slider-dots__item
+    a(href="#home-skills").link-smooth.page-slider-dots__item
+    a(href="#home-cases").link-smooth.page-slider-dots__item
+    a(href="#home-teachers").link-smooth.page-slider-dots__item
+    a(href="#home-academy").link-smooth.page-slider-dots__item
+    a(href="#home-knowledge").link-smooth.page-slider-dots__item
+
+script.
+  $(function(){
+    $('.page-slider-dots__item').click(function(){
+      $('.page-slider-dots__item--active').removeClass('page-slider-dots__item--active');
+      $(this).addClass('page-slider-dots__item--active');
+    });
+  });

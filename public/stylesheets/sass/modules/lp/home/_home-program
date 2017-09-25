@@ -1,0 +1,112 @@
+.home-program {
+ display: flex;
+ flex-direction: column;
+ background: url(../../../img/lp/home/program/home-program.jpg) no-repeat center / cover;
+
+ .page-title {
+
+  @include tablet {
+   margin-top: 185px;
+  }
+ }
+}
+
+.home-program-list {
+ display: flex;
+ flex: 1;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-content: center;
+ padding-left: 80px;
+ padding-bottom: 3%;
+ @include tablet {
+  padding-left: 7%;
+ }
+ @include mobile {
+  max-width: 400px;
+  padding: 0 0 55px 22px;
+  margin-top: 13px;
+ }
+
+ .home-program-list__item {
+  width: 33%;
+  padding: 25px 20px 0 62px;
+  margin-bottom: 100px;
+  position: relative;
+  @include laptop {
+   margin-bottom: 78px;
+  }
+  @include tablet {
+   width: 50%;
+   margin-bottom: 53px;
+  }
+  @include mobile {
+   width: 100%;
+   padding: 21px 20px 0 48px;
+   margin-bottom: 24px;
+  }
+  &:last-child {margin-bottom: 0;}
+
+  .home-program-list__circles {
+   width: 76px;
+   height: 76px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   @include mobile {
+    width: 52px;
+    height: 52px;
+   }
+
+   .home-program-list__circle {
+    border-color: $color-dove-gray;
+
+    &.home-program-list__circle--2 {
+     width: 50%;
+     height: 50%;
+     top: 25%;
+     left: 25%;
+    }
+    &.home-program-list__circle--3 {
+     background: $color-dove-gray;
+     width: 8px;
+     height: 8px;
+     top: calc(50% - 4px);
+     left: calc(50% - 4px);
+     @include mobile {
+      width: 6px;
+      height: 6px;
+      top: calc(50% - 3px);
+      left: calc(50% - 3px);
+     }
+    }
+   }
+  }
+
+  .home-program-list__info {
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 32px;
+   text-transform: uppercase;
+   position: relative;
+   z-index: 2;
+   @include laptop {
+    font-size: 14px;
+    line-height: 30px;
+   }
+   @include tablet {
+    font-size: 14px;
+    line-height: 28px;
+   }
+   @include mobile {
+    font-size: 12px;
+    line-height: 20px;
+   }
+
+   span {
+    display: block;
+    color: $color-boulder-2;
+   }
+  }
+ }
+}

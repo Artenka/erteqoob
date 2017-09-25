@@ -1,0 +1,31 @@
+extends ../../layouts/main-lp.jade
+
+block contents
+  div.main-layout
+    .section-layout.sp#sp-1-expired
+      .sp-logo
+
+      div.sp-title.sp-title--1-expired
+        .sp-title__logo
+          .sp-title__logo-image
+          .circle.sp-title__circle
+        h1 к сожалению,<br> время предложения<br> истекло.
+          .sp-title__dots
+          .vertical-line.sp-title__line
+
+      div.sp-1-expired-main
+        div.sp-1-expired-main__info
+          p.sp-1-expired-main__info-text Следите за обновлениями ERTEQOOB на сайте<br> или подписавшись на рассыклу:
+          a(href="#").line-link.sp-1-expired-main__info-link перейти на сайт
+        div.sp-1-expired-main__form
+          div.sp-1-expired-main__formgroups
+            div.sp-1-expired-main__formgroup.input-material
+              label Имя
+              input(type="text")
+            div.sp-1-expired-main__formgroup.input-material
+              label E-mail
+              input(type="email")
+          button(type="submit").btn.sp-1-expired-main__submit подписаться
+
+
+  include ../../partials/lp/scripts.jade

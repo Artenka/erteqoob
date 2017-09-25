@@ -1,0 +1,256 @@
+.main-footer {
+ min-height: 280px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ background: $color-black;
+ padding: 45px 0;
+ position: relative;
+ @include tablet {
+  padding: 218px 0 40px;
+ }
+ @include mobile {
+  padding: 49px 0 24px;
+ }
+
+ .main-footer__phone-sm {
+  display: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 15px;
+  text-align: center;
+  @include mobile {
+   display: block;
+  }
+ }
+
+ .main-footer__logo {
+  width: 83px;
+  height: 46px;
+  position: relative;
+  @include tablet {
+   margin-bottom: 34px;
+  }
+  @include mobile {
+   width: 127px;
+   height: 71px;
+   margin: 55px 0 35px;
+  }
+
+  svg {
+   width: 100%;
+   height: 100%;
+  }
+ }
+
+ .main-footer__info {
+  width: 100%;
+  position: relative;
+  //display: flex;
+  //justify-content: space-around;
+  @include clearfix;
+  @include tablet-mobile {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+  }
+
+  .main-footer__info-item {
+   width: 25%;
+   display: flex;
+   justify-content: center;
+   float: left;
+   @include tablet-mobile {
+    width: 100%;
+    margin-bottom: 40px;
+   }
+
+   p, a {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-transform: uppercase;
+    @include laptop {
+     line-height: 17px;
+    }
+
+    span {
+     color: $color-gray;
+    }
+   }
+
+   &:nth-child(1) {
+    justify-content: flex-end;
+    @include tablet-mobile {
+     justify-content: center;
+     order: 2;
+    }
+    @include mobile {
+     display: none;
+    }
+   }
+   &:nth-child(3) {
+    justify-content: flex-start;
+    @include tablet-mobile {
+     justify-content: center;
+     order: 3;
+    }
+   }
+   &:nth-child(2) {
+    width: 50%;
+    order: 1;
+    @include tablet-mobile {
+     width: 100%;
+    }
+    @include mobile {
+     flex-direction: column;
+    }
+
+    p {
+     width: 50%;
+     @include mobile {
+      width: 100%;
+     }
+
+     &:nth-child(1){
+      text-align: right;
+      padding-right: 12px;
+      @include mobile {
+       padding: 0;
+       text-align: center;
+      }
+     }
+     &:nth-child(2){
+      padding-left: 12px;
+      @include mobile {
+       padding: 0;
+       text-align: center;
+      }
+     }
+    }
+   }
+  }
+ }
+
+ .main-footer__copy {
+  color: $color-gray-2;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  position: relative;
+  @include tablet {
+   margin-top: 152px;
+  }
+  @include mobile {
+   margin-top: 0;
+   font-size: 10px;
+   line-height: 17px;
+  }
+ }
+}
+
+.main-footer__socials {
+ height: 100%;
+ width: 85px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ top: 0;
+ right: 0;
+ @include mobile {
+  width: 100%;
+  height: 18px;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-right: 15px;
+  margin-top: 36px;
+ }
+
+ .main-footer__social {
+  width: 10px;
+  height: 18px;
+  margin: 13px 0;
+  background: no-repeat center;
+  @include mobile {
+   margin: 0 11px;
+  }
+
+  > a {
+   height: 100%;
+   display: block;
+  }
+
+  &.main-footer__social--fb {
+   background-image: url(../../img/icons/fb-icon.png);
+   background-size: 6px 13px;
+  }
+  &.main-footer__social--in {
+   background-image: url(../../img/icons/in-icon.png);
+   background-size: 10px;
+  }
+ }
+}
+
+.main-footer__circles {
+ width: 190px;
+ height: 190px;
+ position: absolute;
+ top: calc(50% - 95px);
+ left: calc(50% - 95px);
+ @include tablet {
+  width: 256px;
+  height: 256px;
+  top: 124px;
+  left: calc(50% - 128px);
+ }
+ @include mobile {
+  width: 290px;
+  height: 290px;
+  top: 14px;
+  left: calc(50% - 145px);
+ }
+
+ .main-footer__circle {
+
+  &.main-footer__circle--2 {
+   width: 130px;
+   height: 130px;
+   top: 30px;
+   left: 30px;
+   @include tablet {
+    width: 170px;
+    height: 170px;
+    top: calc(50% - 85px);
+    left: calc(50% - 85px);
+   }
+   @include mobile {
+    width: 194px;
+    height: 194px;
+    top: calc(50% - 97px);
+    left: calc(50% - 97px);
+   }
+  }
+ }
+
+ .main-footer__circle-line {
+  height: 144px;
+  top: 23px;
+  left: 50%;
+  @include tablet {
+   height: 194px;
+   top: 29px;
+  }
+  @include mobile {
+   height: 220px;
+   top: 35px;
+  }
+ }
+}

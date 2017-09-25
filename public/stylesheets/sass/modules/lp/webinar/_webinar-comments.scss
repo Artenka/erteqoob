@@ -1,0 +1,34 @@
+.webinar-comments {
+ height: 660px;
+ min-height: 0;
+ background: url(../../../img/lp/webinar/webinar-comments-dummy.jpg) no-repeat center , $color-white;
+ padding: 70px 0;
+ @include mobile {
+  height: auto;
+  min-height: 900px;
+  padding: 40px 0;
+ }
+}
+
+.webinar-comments-list {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ @include mobile {
+  flex-direction: column;
+ }
+
+ .webinar-comments-list__item {
+  width: 700px;
+  height: 100%;
+  margin: 0 20px;
+  @include mobile {
+   width: 100%;
+   min-height: 400px;
+   padding: 0 20px;
+   margin: 10px 0;
+  }
+ }
+}

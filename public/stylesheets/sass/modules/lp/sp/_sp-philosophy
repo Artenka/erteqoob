@@ -1,0 +1,135 @@
+.sp-philosophy {
+ background-image: url(../../../img/lp/sp/philosophy/sp-philosophy.jpg);
+ @include tablet {
+  height: 830px;
+ }
+ @include mobile {
+  height: 573px;
+ }
+}
+
+.sp-philosophy-main {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+
+ .sp-philosophy-main__title {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  line-height: 45px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 8px 0 86px;
+  position: relative;
+  z-index: 3;
+  @include laptop {
+   margin-top: 28px;
+  }
+  @include tablet {
+   margin: 28px 0 98px;
+  }
+  @include mobile {
+   font-size: 17px;
+   letter-spacing: 4.25px;
+   line-height: 25.5px;
+   margin: 0 0 52px;
+  }
+
+  .sp-philosophy-main__title-dots {
+   width: 94px;
+   height: 140px;
+   position: absolute;
+   top: 18px;
+   right: 18px;
+   z-index: 0;
+   @include mobile {
+    display: none;
+   }
+  }
+ }
+
+ .sp-philosophy-main__text {
+  width: 320px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: uppercase;
+  @include mobile {
+   width: 320px;
+   font-size: 11px;
+   line-height: 22px;
+   padding: 0 29px 0 37px;
+  }
+
+  span {
+   color: $color-emperor-2;
+   @include mobile {
+    color: $color-boulder-2;
+   }
+  }
+
+  &.sp-philosophy-main__text--2 {
+   padding-left: 25px;
+   margin-top: 26px;
+   @include mobile {
+    color: $color-boulder-2;
+    padding: 0 29px 0 57px;
+    margin-top: 22px;
+   }
+  }
+ }
+
+ .sp-philosophy-main__disclaimer {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 84px;
+  position: relative;
+  z-index: 3;
+  @include tablet {
+   margin-top: 92px;
+  }
+  @include mobile {
+   width: 280px;
+   font-size: 10px;
+   line-height: 15px;
+   margin-top: 35px;
+  }
+
+  .sp-philosophy-main__disclaimer-dots {
+   width: 232px;
+   height: 94px;
+   position: absolute;
+   bottom: 7px;
+   left: -95px;
+   @include mobile {
+    display: none;
+   }
+  }
+ }
+
+ .sp-philosophy-main__btns {
+  display: flex;
+  margin-top: 32px;
+  @include mobile {
+   flex-direction: column;
+   margin-top: 2px;
+  }
+
+  .sp-philosophy-main__btns-item {
+   margin: 0 16px;
+   @include mobile {
+    margin: 12px 0 0;
+   }
+
+   .sp-philosophy-main__btn {
+    width: 175px;
+    text-align: center;
+   }
+  }
+ }
+}

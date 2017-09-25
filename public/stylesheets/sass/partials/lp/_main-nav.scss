@@ -1,0 +1,231 @@
+.main-nav {
+ position: absolute;
+ top: 52px;
+ left: 65px;
+ z-index: 100;
+ @include clearfix;
+ @include laptop {
+  top: 35px;
+  left: 40px;
+ }
+ @include tablet-mobile {
+  top: 28px;
+  left: 6.25%;
+ }
+ @include mobile {
+  display: none;
+ }
+
+ .main-nav__item {
+  border: 2px solid transparent;
+  padding: 5px 10px 3px;
+  margin-right: 15px;
+  float: left;
+  @include tablet-mobile {
+   margin-right: 30px;
+  }
+
+  .main-nav__link {
+   display: block;
+   color: $color-white;
+   font-size: 14px;
+   line-height: 14px;
+   font-weight: 700;
+   text-transform: uppercase;
+   @include laptop {
+    font-size: 10px;
+    line-height: 10px;
+   }
+   @include tablet {
+    font-size: 13px;
+    letter-spacing: 1.16px;
+    line-height: 27.32px;
+   }
+   @include mobile {
+    font-size: 8px;
+    letter-spacing: 0.71px;
+    line-height: 27.32px;
+   }
+   &:hover {
+    color: $color-white-07;
+   }
+  }
+
+  &.main-nav__item--active {
+   border: 2px solid $color-scorpion;
+  }
+ }
+
+ &.main-nav--lang {
+  top: auto;
+  bottom: 52px;
+  opacity: 0;
+  @include clearfix;
+  @include laptop {
+   top: auto;
+   bottom: 35px;
+  }
+  @include mobile {
+   display: none;
+  }
+ }
+
+ &.main-nav--socials {
+  top: auto;
+  left: auto;
+  bottom: 43px;
+  right: 65px;
+  @include clearfix;
+  @include laptop {
+   top: auto;
+   left: auto;
+   bottom: 35px;
+   right: 40px;
+  }
+  @include tablet-mobile {
+   right: 6.25%;
+  }
+  @include mobile {
+   display: none;
+   bottom: 26px;
+   right: 24px;
+  }
+
+  .main-nav__item {
+   padding: 0;
+   margin-right: 0;
+   float: left;
+
+   .main-nav__link {
+    height: 25px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 0 0 9px;
+    @extend .link-underline;
+    @include mobile {
+     height: 23px;
+     width: 10px;
+     padding-bottom: 5px;
+    }
+   }
+
+   &.main-nav__item--fb {
+
+    .main-nav__link {
+     background-image: url(../../img/icons/fb-icon.png);
+     @include mobile {
+      background-size: 7px auto;
+     }
+    }
+   }
+
+   &.main-nav__item--in {
+    margin-left: 35px;
+    @include mobile {
+     margin-left: 23px;
+    }
+
+    .main-nav__link {
+     background-position: top 3px center;
+     background-image: url(../../img/icons/in-icon.png);
+     @include mobile {
+      background-size: 10px auto;
+     }
+    }
+   }
+  }
+ }
+}
+
+.scroll-down {
+ width: 40px;
+ position: absolute;
+ bottom: 55px;
+ left: calc(50% - 20px);
+ cursor: pointer;
+ z-index: 5;
+ @include laptop {
+  bottom: 40px;
+ }
+ @include tablet {
+  bottom: 42px;
+ }
+ @include mobile {
+  width: auto;
+  bottom: 24px;
+  left: calc(50% - 3px);
+  opacity: 0.43;
+ }
+
+ .scroll-down__text {
+  color: $color-gray-2;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  @include tablet {
+   font-size: 8px;
+   line-height: 8px;
+  }
+  @include mobile {
+   display: none;
+  }
+ }
+ .scroll-down__btn {
+  width: 14px;
+  height: 23px;
+  background: url(../../img/icons/scroll-down.png) no-repeat center / contain;
+  margin: 15px auto 0;
+  @include tablet {
+   width: 11px;
+   height: 18px;
+   margin-top: 6px;
+  }
+  @include mobile {
+   width: 6px;
+   height: 18px;
+   background: url(../../img/icons/arrow-bottom.svg) no-repeat center;
+   background-size: 6px 18px;
+   margin: 0;
+  }
+ }
+
+ .scroll-down__dot {
+  width: 2px;
+  height: 2px;
+  background: $color-white;
+  position: absolute;
+  left: calc(50% - 1px);
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  @include mobile {
+   display: none;
+  }
+
+  &.scroll-down__dot--1 {bottom: -12px; animation-name: scroll-down__dot--1;}
+  &.scroll-down__dot--2 {bottom: -18px; animation-name: scroll-down__dot--2;}
+  &.scroll-down__dot--3 {bottom: -24px; animation-name: scroll-down__dot--3;}
+ }
+}
+
+@keyframes scroll-down__dot--1 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 1;}
+ 66%  {opacity: 0;}
+ 100%  {opacity: 0;}
+}
+@keyframes scroll-down__dot--2 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 0;}
+ 66%  {opacity: 1;}
+ 100%  {opacity: 0;}
+}
+@keyframes scroll-down__dot--3 {
+ 0%   {opacity: 0;}
+ 33%  {opacity: 0;}
+ 66%  {opacity: 0;}
+ 100%  {opacity: 1;}
+}

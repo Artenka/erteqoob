@@ -1,0 +1,106 @@
+section.section-layout.sp-teachers
+  div.page-title
+    .page-title__logo
+    h1.sp-teachers-switcher
+      span(data-switcher="teachers").sp-teachers-switcher__item преподаватели
+      span /
+      span(data-switcher="guests").sp-teachers-switcher__item.sp-teachers-switcher__item--active специальные гости
+    .page-title__logo-title
+
+  .sp-teachers-list-layout
+    .sp-teachers-list-layout__item.sp-teachers-list-layout__item--teachers.sp-teachers-list-layout__item--active
+      div.sp-teachers-list
+        include sp-teachers-list-1.jade
+
+      ul.sp-teachers-list-mobile.slick-dots-horizontal
+        include sp-teachers-list-1.jade
+
+    .sp-teachers-list-layout__item.sp-teachers-list-layout__item--guests
+      div.sp-teachers-list
+        include sp-teachers-list-1.jade
+
+      ul.sp-teachers-list-mobile.slick-dots-horizontal
+        include sp-teachers-list-1.jade
+
+
+script.
+  $(function(){
+    teachersSlideInit();
+
+    // teachers mobile slider
+    $('.sp-teachers-list-mobile').slick({
+      slidesToShow: 1,
+      arrows: false,
+      dots: true,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true
+    });
+
+    //teachers switcher
+    $('.sp-teachers-switcher__item').click(function(){
+      if(!$(this).hasClass('sp-teachers-switcher__item--active')){
+        var switcherItem = $(this).data('switcher');
+        $('.sp-teachers-switcher__item--active').removeClass('sp-teachers-switcher__item--active');
+        $(this).addClass('sp-teachers-switcher__item--active');
+        $('.sp-teachers-list-layout__item--active').fadeOut(200);
+        setTimeout(function(){
+          $('.sp-teachers-list-layout__item--' + switcherItem).fadeIn(200);
+        },200);
+        setTimeout(function(){
+          $('.sp-teachers-list-layout__item--' + switcherItem).addClass('sp-teachers-list-layout__item--active');
+        },400);
+      }
+    });
+  });
+
+  function teachersSlideInit() {
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__photo-bg'), 0.5, {
+      right: 0,
+      ease: Power1.easeOut
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__photo img'), 0.5, {
+      right: 0,
+      ease: Power1.easeOut,
+      delay: 0.2
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teachers__socials'), 0.7, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__info'), 0.7, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+  }
+
+  function teachersSlideHide() {
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__photo-bg'), 0.5, {
+      right: '100%',
+      ease: Power1.easeOut
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__photo img'), 0.5, {
+      right: '100%',
+      ease: Power1.easeOut,
+      delay: 0.2
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teachers__socials'), 0.7, {
+      top: '30px',
+      opacity: 0,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+    TweenMax.staggerTo($('.sp-teachers-list .academy-teacher__info'), 0.7, {
+      top: '30px',
+      opacity: 0,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+  }

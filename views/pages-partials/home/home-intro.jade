@@ -1,0 +1,48 @@
+section.section-layout.home-intro#home-intro
+  include ../../partials/lp/header.jade
+  include ../../partials/lp/main-nav-socials.jade
+  include ../../partials/lp/scroll-down.jade
+  div.home-intro-left
+    .home-intro-left__academy
+      p.home-intro-text-rotated academy
+      .vertical-line.home-intro-line.home-intro-line--1
+    .home-intro-left__logo
+      .home-intro-left__logo-image
+        svg(version='1.1', id='Слой_1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 397 398', style='enable-background:new 0 0 397 398;', xml:space='preserve')
+          path(d='M48.6,221.2h299.8c-4.7,32.1-19.7,61.8-42.6,84.7c-59.2,59.3-155.4,59.3-214.6,0\
+          C68.2,283,53.3,253.3,48.6,221.2z M305.8,91.2c23.2,23.2,38.2,53.2,42.7,85.7H48.4C53,144.5,68,114.4,91.2,91.2\
+          C150.4,31.9,246.5,31.9,305.8,91.2z M58.1,58.2c-77.5,77.6-77.5,203.3,0,280.8c71.7,71.8,184.7,77,262.6,15.9l42.3,42.3l33.9-34\
+          l-42.2-42.3c61-77.9,55.9-190.9-15.9-262.7C261.3-19.4,135.6-19.4,58.1,58.2z')
+      .circle.home-intro-left__logo-circle.home-intro-left__logo-circle--1
+      .circle.home-intro-left__logo-circle.home-intro-left__logo-circle--2
+      .circle.home-intro-left__logo-circle.home-intro-left__logo-circle--3
+      .circle.home-intro-left__logo-circle.home-intro-left__logo-circle--4
+    ul.home-intro-info
+      li.home-intro-info__item
+        h2 бесплатно
+          .dots.home-intro-dots-1
+        h1 On-line<br> МАСТЕР-КЛАСС
+      li.home-intro-info__item
+        h1 Март 14, 2017
+        h3 11:00 - 18:00
+  div.home-intro-right
+    .vertical-line.home-intro-line.home-intro-line--2
+    .vertical-line.home-intro-line.home-intro-line--3
+      p.home-intro-text-rotated 2017
+    h1 Как построить<br> успешную карьеру<br> мастера-парикмахера
+      .dots.home-intro-dots-2
+    h3 Практические советы о достижении<br> ТОП-уровня и высоких гонораров<br> в парикмахерском искусстве
+    div.home-intro-right__date
+      h1 14.03.2017
+      h2 11:00 - 18:00
+      h3 бесплатнаый on-line<br> мастер-класс
+    a(href="#home-action").link-smooth.btn.home-intro-right__btn Принять участие
+
+script.
+  $(function(){
+    $('.scroll-down').on('click', function (event) {
+      $('html, body').animate({
+        scrollTop: $('#home-program').offset().top
+      }, 2000);
+    });
+  });

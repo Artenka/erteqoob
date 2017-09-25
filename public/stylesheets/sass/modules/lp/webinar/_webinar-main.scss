@@ -1,0 +1,12 @@
+.webinar-main {
+ height: 530px;
+ min-height: 0;
+ background-image: url(../../../img/lp/webinar/webinar-main.jpg);
+ @include mobile {
+  height: 380px;
+ }
+
+ .webinar-video {
+  bottom: -70px;
+ }
+}

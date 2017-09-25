@@ -1,0 +1,73 @@
+section.section-layout.sp-offer.sp-offer--sp1
+  .logo
+
+  h1.sp-offer__title Успейте<br class="br-md"> записаться<br class="br-sm"> на курс сейчас<br> по особым условиям:
+
+  .sp-offer-main-layout
+    div.sp-offer-main
+      ul.sp-offer-main__list
+        li.sp-offer-main__list-item
+          p.sp-offer-main__list-number 01.
+          div.sp-offer-main__list-text
+            h2 скидка 10%
+            p на стоимость курса Базовый
+        li.sp-offer-main__list-item
+          p.sp-offer-main__list-number 02.
+          div.sp-offer-main__list-text
+            h2 + скидка 5%
+            p на оплату трека Адаптация
+        li.sp-offer-main__list-item
+          p.sp-offer-main__list-number 03.
+          div.sp-offer-main__list-text
+            h2 эксклюзивный
+            p инструмент erteqoob в подарок
+
+      div.sp-offer-main__timer
+        .circle.sp-offer-main__timer-circle-1
+        .circle.sp-offer-main__timer-circle-2
+        .circle.sp-offer-main__timer-circle-main
+          .sp-offer-main__timer-circle-progress#offer-circle-progress
+          p.sp-offer-main__timer-time#offer-countdown 24:00:00
+
+      div.sp-offer-main__register
+        h2.sp-offer-main__register-date 29.09&nbsp;&nbsp;с&nbsp;&nbsp;21:00
+        p.sp-offer-main__register-text эта страница станет недоступна,<br> а предложение - не актуально
+        a(href="#").btn.sp-offer-main__register-link записаться на курс
+        a(href="#").line-link.sp-offer-main__register-more узнать подробнее
+
+  p.sp-offer__disclaimer В группе всего 15 мест, поэтому, чтобы забронировать<br class="br-sm"> своё место,<br class="br-lg-md"> необходимо внести предоплату<br class="br-sm"> 1000 грн
+
+script(src='/js/circle-progress.min.js' type='text/javascript')
+script(src='/js/jquery.countdown.min.js' type='text/javascript')
+script.
+  $(function(){
+    var offerTime = 86400000;
+    var offerTimeFull = new Date().getTime() + offerTime;
+
+    if($.cookie("offerTimeFull-sp1")) {
+      offerTimeFull = $.cookie("offerTimeFull-sp1");
+    } else {
+      $.cookie("offerTimeFull-sp1", offerTimeFull, { expires : 30 });
+    }
+
+    $("#offer-countdown").countdown(offerTimeFull, function (event) {
+      var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+      $(this).text(event.strftime(totalHours + ':%M:%S'));
+    }).on('finish.countdown', function(event) {
+      console.log('offer finished');
+    });
+
+    $('#offer-circle-progress').circleProgress({
+      value: 1,
+      size: 200,
+      thickness: 4,
+      fill: "rgba(0,0,0,0.1)",
+      emptyFill: "#ffffff",
+      startAngle: 3*Math.PI/2,
+      animationStartValue: 1 - (offerTimeFull - new Date().getTime())/offerTime,
+      animation: {
+        duration: offerTimeFull - new Date().getTime(),
+        easing: "linear"
+      }
+    });
+  });

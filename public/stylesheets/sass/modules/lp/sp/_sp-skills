@@ -1,0 +1,211 @@
+.home-skills.sp-skills {
+ background-image: url(../../../img/lp/sp/skills/sp-skills.jpg);
+
+ .page-title {
+
+  > h2 {
+   @include mobile {
+    font-size: 10px;
+    line-height: 15px;
+   }
+  }
+ }
+
+ .home-skills-list {
+  @include tablet {
+   padding: 29px 0 62px;
+  }
+
+  .home-skills-list__item {
+   flex-direction: column;
+   align-items: flex-start;
+   padding-left: 100px;
+   @include laptop {
+    padding-left: 80px;
+   }
+   @include tablet {
+    width: 370px;
+    height: 312px;
+    padding-left: 0;
+   }
+   @include mobile {
+    padding-left: 0!important;
+    margin-bottom: 15px;
+   }
+
+   .home-skills-list__item-inner {
+    margin: 28px 0;
+    @include tablet {
+     margin: 55px 0;
+    }
+    @include mobile {
+     margin: 30px 0;
+    }
+
+    &:nth-child(even) {
+     @include mobile {
+
+      .home-skills-list__item-title, .home-skills-list__item-text {
+       text-align: right!important;
+       margin-right: 47px;
+       margin-left: 0!important;
+      }
+      .home-skills-list__item-number {
+       left: auto!important;
+       right: 0;
+       text-align: right!important;
+      }
+     }
+    }
+   }
+
+   .home-skills-list__item-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include mobile {
+     display: block;
+    }
+   }
+
+   .home-skills-list__item-title {
+    padding: 0;
+    margin-top: 0;
+    margin-left: 36px;
+    @include mobile {
+     text-align: left;
+     margin-bottom: 0!important;
+    }
+
+    &:after {
+     display: none;
+    }
+   }
+
+   .home-skills-list__item-text {
+    line-height: 17px;
+    margin-top: 10px;
+    margin-left: 36px;
+    @include mobile {
+     text-align: left;
+     margin-top: 3px;
+    }
+   }
+
+   .home-skills-list__item-line {
+    @include tablet {
+     display: none;
+    }
+   }
+
+   .home-skills-list__item-circle {
+    @include tablet {
+     width: 370px;
+     height: 370px;
+     top: calc(50% - 185px);
+     left: calc(50% - 185px);
+    }
+
+    &.home-skills-list__item-circle--2 {
+     @include tablet {
+      width: 474px;
+      height: 474px;
+      top: calc(50% - 237px);
+      left: calc(50% - 237px);
+     }
+    }
+    &.home-skills-list__item-circle--3 {
+     @include tablet {
+      width: 590px;
+      height: 590px;
+      top: calc(50% - 295px);
+      left: calc(50% - 295px);
+     }
+    }
+   }
+
+   &.home-skills-list__item--1 {
+
+    .home-skills-list__item-inner {
+
+     &:nth-child(1){
+      @include tablet {
+       margin-left: 43px;
+      }
+     }
+     &:nth-child(2){
+      @include tablet {
+       margin-left: 123px;
+      }
+     }
+    }
+   }
+   &.home-skills-list__item--2 {
+    padding-left: 95px;
+    @include laptop {
+     padding-left: 60px;
+    }
+    @include tablet {
+     padding-left: 0;
+    }
+
+    .home-skills-list__item-inner {
+     margin: 45px 0;
+     @include tablet {
+      margin: 55px 0;
+     }
+     @include mobile {
+      margin: 30px 0;
+     }
+     &:nth-child(1){
+      @include tablet {
+       margin-left: -37px;
+      }
+      @include mobile {
+       margin-top: -55px;
+      }
+     }
+     &:nth-child(2){
+      @include tablet {
+       margin-left: 43px;
+      }
+     }
+    }
+   }
+   &.home-skills-list__item--3 {
+    padding-left: 90px;
+    @include laptop {
+     padding-left: 42px;
+    }
+    @include tablet {
+     padding-left: 0;
+    }
+
+    .home-skills-list__item-inner {
+
+     &:nth-child(1){
+      @include tablet {
+       margin-left: -37px;
+      }
+      @include mobile {
+       margin-top: -55px;
+      }
+     }
+     &:nth-child(2){
+      @include tablet {
+       margin-left: 34px;
+      }
+     }
+    }
+   }
+
+   &.home-skills-list__item--1, &.home-skills-list__item--3 {
+
+    .home-skills-list__item-inner .home-skills-list__item-text {
+     display: block;
+    }
+   }
+  }
+ }
+}
+

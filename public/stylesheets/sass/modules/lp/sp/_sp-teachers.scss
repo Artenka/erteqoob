@@ -1,0 +1,429 @@
+.sp-teachers {
+ background-image: url(../../../img/lp/sp/teachers/sp-teachers.jpg);
+ @include tablet {
+  height: 1280px;
+ }
+ @include mobile {
+  min-height: 460px;
+ }
+
+ .page-title {
+  margin-top: 84px;
+  @include laptop {
+   margin-top: 34px;
+  }
+  @include tablet {
+   margin-top: 74px;
+  }
+  @include mobile {
+   line-height: 20.5px;
+   margin-top: 34px;
+  }
+
+
+  > h1.sp-teachers-switcher {
+   position: relative;
+   z-index: 3;
+   @include mobile {
+    width: 280px;
+   }
+
+   span {
+    font-size: 16px;
+    margin: 0 5px;
+    transition: 0.6s;
+    @include mobile {
+     font-size: 9px;
+     letter-spacing: 2px;
+     margin: 0 3px;
+    }
+   }
+
+   .sp-teachers-switcher__item {
+    cursor: pointer;
+    &:hover {
+     color: $color-white;
+    }
+
+    &.sp-teachers-switcher__item--active {
+     color: inherit;
+     font-size: inherit;
+    }
+   }
+  }
+
+  .page-title__logo-title {
+   @include mobile {
+    display: none;
+   }
+  }
+ }
+}
+
+.sp-teachers-list-layout {
+ flex: 1;
+ justify-content: center;
+ align-items: center;
+
+ .sp-teachers-list-layout__item {
+  display: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  &.sp-teachers-list-layout__item--active {
+   display: flex;
+  }
+ }
+}
+.sp-teachers-list {
+ width: 975px;
+ height: 529px;
+ position: relative;
+ margin-top: 61px;
+ @include laptop {
+  height: 500px;
+  margin-top: 31px;
+ }
+ @include tablet {
+  width: 675px;
+  height: 880px;
+  margin-top: 72px;
+ }
+ @include mobile {
+  display: none;
+ }
+ &:before, &:after {
+  @extend .horizontal-line;
+  content: '';
+  left: 0;
+ }
+ &:before {
+  top: 74px;
+  @include tablet {
+   top: 138px;
+  }
+ }
+ &:after {
+  bottom: 74px;
+  @include laptop {
+   bottom: 84px;
+  }
+  @include tablet {
+   bottom: 88px;
+  }
+ }
+}
+
+.academy-teacher {
+ position: absolute;
+ top: 0;
+ left: 0;
+ cursor: pointer;
+ transition: 0.8s;
+ &:hover {
+
+  .academy-teachers__socials-layout {
+
+   .academy-teachers__socials {
+
+    .academy-teachers__social:nth-child(2) svg path {
+     //fill: $color-mine-shaft-2;
+    }
+   }
+  }
+
+  .academy-teacher__photo {
+   width: 110%;
+   left: -5%;
+
+   &:before {
+    opacity: 0;
+   }
+  }
+
+  .academy-teacher__info {
+   margin-top: calc(35px - 6%);
+  }
+ }
+
+ .academy-teachers__socials-layout {
+  position: absolute;
+  top: 15%;
+  left: -16px;
+  @include tablet {
+   top: 20px;
+  }
+  @include mobile {
+   top: 78px;
+  }
+ }
+ .academy-teachers__socials {
+  position: relative;
+  top: 30px;
+  opacity: 0;
+ }
+
+ .academy-teacher__photo {
+  width: 100%;
+  transition: 0.7s;
+  //opacity: 0.7;
+  position: relative;
+  left: 0;
+  overflow: hidden;
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-02;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 6;
+   transition: 0.4s;
+  }
+
+  .academy-teacher__photo-bg {
+   content: '';
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: $color-gray;
+   position: absolute;
+   top: 0;
+   right: 100%;
+   z-index: 3;
+  }
+
+  img {
+   width: 100%;
+   height: auto;
+   border: 1px solid $color-gray-3-025;
+   position: relative;
+   top: 0;
+   right: 100%;
+   z-index: 4;
+  }
+ }
+
+ .academy-teacher__info {
+  width: 125%;
+  margin-top: 24px;
+  position: relative;
+  transition: 0.7s;
+  top: 30px;
+  opacity: 0;
+  @include mobile {
+   width: 100%;
+   margin-top: 12px;
+  }
+
+  .academy-teacher__name {
+   color: $color-white;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: 4px;
+   text-transform: uppercase;
+  }
+  .academy-teacher__position {
+   color: $color-gray;
+   font-size: 10px;
+   line-height: 15px;
+   font-weight: 700;
+   letter-spacing: 2.76px;
+   text-transform: uppercase;
+   margin-top: 5px;
+  }
+ }
+
+ &:nth-child(1) {
+  width: 260px;
+  height: 180px;
+  top: 157px;
+  left: 0;
+  @include laptop {
+   top: 137px;
+  }
+  @include tablet {
+   top: 347px;
+   left: 38px;
+  }
+ }
+ &:nth-child(2) {
+  width: 292px;
+  height: 218px;
+  top: 0;
+  left: 390px;
+  @include tablet {
+   top: 0;
+   left: 200px;
+  }
+ }
+ &:nth-child(3) {
+  width: 195px;
+  height: 156px;
+  bottom: 0;
+  top: auto;
+  left: 322px;
+  @include tablet {
+   left: 120px;
+  }
+
+  .academy-teacher__info {
+   top: -60px!important;
+   margin: 0;
+   left: calc(100% + 30px);
+  }
+ }
+ &:nth-child(4) {
+  width: 195px;
+  height: 264px;
+  right: 0;
+  left: auto;
+  top: 145px;
+  @include laptop {
+   top: 125px;
+  }
+  @include tablet {
+   top: 426px;
+   right: 45px;
+  }
+ }
+
+ &.academy-teacher--disabled {
+  transform: scale(0.95);
+
+  &:nth-child(1) {
+   left: calc(12.7% + 12.7%*0.04);
+   top: calc(47.2% + 47.2%*0.04);
+   @include tablet {
+    left: calc(18% + 18%*0.04);
+    top: calc(26% + 26%*0.04);
+   }
+  }
+  &:nth-child(2) {
+   left: calc(36.3% + 36.3%*0.04);
+   top: calc(49.33% + 49.33%*0.04);
+   @include tablet {
+    left: calc(18% + 18%*0.04);
+    top: calc(51.4% + 51.4%*0.04);
+   }
+  }
+  &:nth-child(3) {
+   left: calc(52.24% - 52.24%*0.04);
+   top: calc(23.31% - 23.31%*0.04);
+   @include tablet {
+    left: calc(49.75% - 49.75%*0.04);
+    top: calc(29.3% - 29.3%*0.04);
+   }
+  }
+  &:nth-child(4) {
+   left: calc(60.17% - 60.17%*0.04);
+   top: calc(63% - 63%*0.04);
+  }
+  &:nth-child(5) {
+   left: calc(75.94% - 75.94%*0.04);
+   top: calc(46.28% - 46.28%*0.04);
+  }
+ }
+}
+
+.academy-teachers__socials {
+ z-index: 7;
+ @include clearfix;
+
+ .academy-teachers__social {
+  width: 10px;
+  height: 18px;
+  float: left;
+  margin-right: 20px;
+  //margin-right: 33px;
+  &:nth-child(1) {
+   width: 6px;
+  }
+  &:last-child {
+   margin-right: 0;
+  }
+
+  a {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   svg {
+    transition: 0.7s;
+
+    path {
+     fill: $color-white;
+     transition: 0.5s ease;
+    }
+   }
+  }
+ }
+}
+
+.sp-teachers-list-mobile {
+ display: none;
+ max-width: 210px;
+ height: auto;
+ margin: 40px auto 84px;
+ position: relative;
+ @include mobile {
+  display: block;
+ }
+
+ &.slick-dots-horizontal .slick-dots {
+  bottom: -35px;
+ }
+
+ .academy-teacher {
+  width: 210px !important;
+  height: 223px !important;
+  position: relative;
+  top: auto!important;
+  bottom: auto!important;
+  left: auto!important;
+  right: auto!important;
+
+  .academy-teacher__photo {
+   height: 146px;
+   width: auto;
+   margin: 0 auto;
+
+   img {
+    right: 0;
+   }
+  }
+
+  .academy-teachers__socials-layout {
+   top: 27px;
+   left: 16px;
+
+   .academy-teachers__socials {
+    top: 0;
+    opacity: 1;
+   }
+  }
+
+  .academy-teacher__info {
+   top: auto!important;
+   left: auto!important;
+   opacity: 1;
+   margin-top: 22px;
+
+   .academy-teacher__name {
+    font-size: 12px;
+    letter-spacing: 3.43px;
+    line-height: 17px;
+   }
+   .academy-teacher__position {
+    width: 140px;
+    font-size: 9px;
+    letter-spacing: 2.49px;
+    line-height: 13px;
+    margin-top: 12px;
+   }
+  }
+ }
+}
