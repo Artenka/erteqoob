@@ -6,6 +6,17 @@
  @include mobile {
   height: 554px;
  }
+
+ &.sp-action--qualification {
+
+  .sp-action__title {
+   padding-right: 70px;
+   @include mobile {
+    padding: 0 27px;
+    text-align: center;
+   }
+  }
+ }
 }
 
 .sp-action__title {

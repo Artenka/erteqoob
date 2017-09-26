@@ -7,6 +7,10 @@
 // scss libraries
 @import 'lib/animate';
 @import 'lib/slick';
+// partials main
+@import 'partials/client/modals';
+@import 'partials/client/popups';
+@import 'partials/client/main-nav';
 // modules
 @import 'modules/lp/index';
 @import 'modules/lp/common';

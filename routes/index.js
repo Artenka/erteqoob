@@ -28,12 +28,6 @@ router.get('/salons', function(req, res, next) {
 router.get('/contacts', function(req, res, next) {
   res.render('pages/contacts');
 });
-router.get('/base/kiev', function(req, res, next) {
-  res.render('pages/lp/base-kiev');
-});
-router.get('/base/kharkiv', function(req, res, next) {
-  res.render('pages/lp/base-kharkiv');
-});
 
 
 router.get('/lp', function(req, res, next) {
@@ -65,6 +59,17 @@ router.get('/sp1/kharkiv', function(req, res, next) {
 
 router.get('/webinar', function(req, res, next) {
   res.render('pages/lp/webinar');
+});
+
+router.get('/base/kiev', function(req, res, next) {
+  res.render('pages/lp/base-kiev');
+});
+router.get('/base/kharkiv', function(req, res, next) {
+  res.render('pages/lp/base-kharkiv');
+});
+
+router.get('/qualification', function(req, res, next) {
+  res.render('pages/lp/qualification');
 });
 
 module.exports = router;

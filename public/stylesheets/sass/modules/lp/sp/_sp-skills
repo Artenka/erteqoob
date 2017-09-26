@@ -207,5 +207,165 @@
    }
   }
  }
+
+ &.sp-skills--qualification {
+
+  .home-skills-list .home-skills-list__item {
+   &.home-skills-list__item--1 {
+    @include laptop {
+     padding-left: 20px;
+    }
+
+    .home-skills-list__item-line {
+     @include laptop {
+      width: 60px;
+      top: 25px;
+      left: 47px;
+     }
+    }
+
+    .home-skills-list__item-inner {
+
+     @include tablet {
+      &:nth-child(1){
+       margin: -50px 0 0 7px;
+      }
+      &:nth-child(2){
+       margin: 64px 0 0 126px;
+      }
+      &:nth-child(3){
+       margin: 60px 0 0 -28px;
+      }
+     }
+    }
+   }
+   &.home-skills-list__item--2 {
+    @include laptop {
+     padding-left: 50px;
+    }
+
+    .home-skills-list__item-inner {
+     margin: 55px 0;
+     @include laptop {
+      margin: 31px 0;
+     }
+     @include mobile {
+      margin: 20px 0;
+     }
+     &:after {
+      bottom: -56px;
+      @include laptop {
+       bottom: -34px;
+      }
+     }
+
+     @include tablet {
+      &:nth-child(1){
+       margin: 40px 0 0 46px;
+      }
+      &:nth-child(2){
+       margin: 60px 0 0 -34px;
+      }
+      &:nth-child(3){
+       margin: 60px 0 0 107px;
+      }
+     }
+
+     &:nth-child(odd) {
+      @include mobile {
+
+       .home-skills-list__item-title, .home-skills-list__item-text {
+        text-align: right!important;
+        margin-right: 47px;
+        margin-left: 0!important;
+       }
+       .home-skills-list__item-number {
+        left: auto!important;
+        right: 0;
+        text-align: right!important;
+       }
+      }
+     }
+     &:nth-child(even) {
+      @include mobile {
+
+       .home-skills-list__item-title, .home-skills-list__item-text {
+        text-align: left!important;
+        margin-left: 47px!important;
+        margin-right: 0!important;
+       }
+       .home-skills-list__item-number {
+        right: auto!important;
+        left: 0!important;
+        text-align: left!important;
+       }
+      }
+     }
+    }
+   }
+   &.home-skills-list__item--3 {
+    @include laptop {
+     padding-left: 20px;
+    }
+
+    .home-skills-list__item-inner {
+     &:nth-child(1){
+      @include mobile {
+       margin-top: 20px;
+      }
+     }
+
+     @include tablet {
+      &:nth-child(1){
+       margin: 70px 0 0 -50px;
+      }
+      &:nth-child(2){
+       margin: 60px 0 0 111px;
+      }
+      &:nth-child(3){
+       margin: 60px 0 0 61px;
+      }
+     }
+    }
+   }
+
+   .home-skills-list__item-inner {
+    margin: 35px 0;
+    @include laptop {
+     margin: 25px 0;
+    }
+    @include mobile {
+     margin: 20px 0;
+    }
+    &:after {
+     content: '';
+     width: 22px;
+     height: 4px;
+     background-color: $color-tundora;
+     position: absolute;
+     bottom: -36px;
+     left: 130px;
+     @include laptop {
+      bottom: -26px;
+     }
+     @include tablet-mobile {
+      display: none;
+     }
+    }
+    &:nth-child(3) {
+
+     &:after {
+      display: none;
+     }
+    }
+   }
+
+   .home-skills-list__item-line {
+    @include mobile {
+     display: none;
+    }
+   }
+  }
+ }
 }
 

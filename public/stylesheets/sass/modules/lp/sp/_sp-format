@@ -47,6 +47,118 @@
    }
   }
  }
+
+ &.sp-format--qualification {
+  @include mobile {
+   height: 1040px;
+  }
+
+  .sp-format-block {
+   width: 940px;
+   @include tablet {
+    width: 505px;
+    height: 705px;
+   }
+   @include mobile {
+    width: 250px;
+    height: auto;
+   }
+
+   .sp-format-block__left {
+    width: 360px;
+    padding-right: 0;
+    @include tablet-mobile {
+     width: 100%;
+    }
+    @include tablet {
+     padding-left: 75px;
+    }
+    @include mobile {
+     padding-bottom: 25px;
+    }
+
+    .sp-format-block__title-block {
+     @include tablet {
+      justify-content: flex-start;
+     }
+    }
+   }
+   .sp-format-block__right {
+    width: 580px;
+    @include tablet-mobile {
+     width: 100%;
+    }
+    @include mobile {
+     padding-top: 25px;
+    }
+
+    .sp-format-block__right-lists {
+     @include mobile {
+      border: none;
+      padding: 0;
+     }
+    }
+   }
+
+   .sp-format-block__title-block .sp-format-block__title-number {
+    letter-spacing: 0;
+    margin-right: 12px;
+   }
+
+   .sp-format-block__info-list {
+    width: 234px;
+    &:last-child {
+     margin-right: 0;
+    }
+
+    .sp-format-block__info-list-item {
+     padding: 0;
+    }
+   }
+  }
+
+  .sp-format-register {
+   align-items: center;
+   @include tablet {
+    width: 650px;
+    height: 160px;
+    padding: 55px;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+   @include mobile {
+    height: 227px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+   }
+   &:before, &:after {
+    @include tablet {
+     height: 160px;
+    }
+   }
+   &:after {
+    @include mobile {
+     bottom: 0;
+    }
+   }
+
+   .sp-format-register__price {
+    @include mobile {
+     text-align: center;
+    }
+   }
+
+   .sp-format-register__link {
+    @include tablet {
+     margin: 0;
+    }
+    @include mobile {
+     margin-top: 30px;
+    }
+   }
+  }
+ }
 }
 
 .sp-format-block-layout {
@@ -101,6 +213,7 @@
    @include mobile {
     font-size: 12px;
     line-height: 17px;
+    letter-spacing: 0;
    }
   }
  }
@@ -302,6 +415,23 @@
    margin-top: 32px;
   }
  }
+ .sp-format-block__right-disclaimer-2 {
+  color: $color-boulder-2;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-top: 38px;
+  @include mobile {
+   font-size: 10px;
+   line-height: 15px;
+   margin-top: 32px;
+  }
+
+  span {
+   color: $color-white;
+  }
+ }
 
  .sp-format-block__left {
   width: 50%;
@@ -323,6 +453,92 @@
 
   .sp-format-block__left-lists {
    display: flex;
+  }
+
+  .sp-format-block__left-list-2 {
+   display: flex;
+   margin-top: 51px;
+   @include tablet {
+    margin-top: 46px;
+   }
+   @include mobile {
+    margin-top: 22px;
+   }
+
+   .sp-format-block__left-list-2-item {
+    width: 170px;
+    position: relative;
+    &:before {
+     @extend .dots-2;
+     content: '';
+     top: -38px;
+     left: -69px;
+     @include mobile {
+      display: none;
+     }
+    }
+
+    h3 {
+     color: $color-white;
+     font-family: GothamPro, sans-serif;
+     font-size: 26px;
+     font-weight: 700;
+     line-height: 40px;
+     text-transform: uppercase;
+     position: relative;
+     z-index: 2;
+     @include tablet {
+      font-size: 18px;
+      line-height: 25px;
+     }
+    }
+    p {
+     color: $color-gray-2;
+     font-size: 12px;
+     font-weight: 700;
+     line-height: 16px;
+     text-transform: uppercase;
+     position: relative;
+     z-index: 2;
+     @include mobile {
+      font-size: 10px;
+      line-height: 14px;
+     }
+    }
+   }
+  }
+
+  .sp-format-block__left-list-3 {
+   margin-top: 50px;
+   @include tablet {
+    margin-top: 35px;
+   }
+   @include mobile {
+    margin-top: 22px;
+   }
+
+   .sp-format-block__left-list-3-item {
+    color: $color-white;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    position: relative;
+    @include mobile {
+     color: $color-gray-2;
+     font-size: 10px;
+     line-height: 15px;
+    }
+    &:before {
+     content: '-';
+     position: absolute;
+     top: 0;
+     left: -20px;
+     @include mobile {
+      left: -10px;
+     }
+    }
+   }
   }
  }
 

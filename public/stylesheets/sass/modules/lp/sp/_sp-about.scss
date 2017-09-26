@@ -50,6 +50,13 @@
    left: calc(50% - 59px);
   }
  }
+
+ &.sp-about--qualification {
+
+  .scroll-down {
+   display: block;
+  }
+ }
 }
 
 .sp-about-logo {

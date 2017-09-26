@@ -21,6 +21,95 @@
    }
   }
  }
+
+ &.sp-program--qualification {
+  height: 1300px;
+  @include tablet {
+   height: 1525px;
+  }
+  @include mobile {
+   height: auto;
+  }
+
+  .home-program-list {
+   width: 1120px;
+   padding: 0;
+   margin-top: 54px;
+   flex: initial;
+   @include tablet {
+    width: 710px;
+    margin-top: 33px;
+   }
+   @include mobile {
+    display: none;
+   }
+
+   .home-program-list__item {
+    margin-bottom: 27px;
+    padding: 15px 10px 0 72px;
+    @include tablet {
+     margin-bottom: 50px;
+    }
+    &:nth-child(1){order: 1;@include tablet{order: 1;}}
+    &:nth-child(2){order: 4;@include tablet{order: 3;}}
+    &:nth-child(3){order: 7;@include tablet{order: 5;}}
+    &:nth-child(4){order: 10;@include tablet{order: 7;}}
+    &:nth-child(5){order: 2;@include tablet{order: 9;}}
+    &:nth-child(6){order: 5;@include tablet{order: 11;}}
+    &:nth-child(7){order: 8;@include tablet{order: 2;}}
+    &:nth-child(8){order: 11;@include tablet{order: 4;}}
+    &:nth-child(9){order: 3;@include tablet{order: 6;}}
+    &:nth-child(10){order: 6;@include tablet{order: 8;}}
+    &:nth-child(11){order: 9;@include tablet{order: 10;}}
+    &:nth-child(12){order: 12;@include tablet{order: 12;}}
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+     width: 34%;
+     @include tablet {
+      width: 50%;
+     }
+    }
+    &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+     width: 39.21%;
+     @include tablet {
+      width: 50%;
+     }
+    }
+    &:nth-child(9), &:nth-child(10), &:nth-child(11), &:nth-child(12) {
+     width: 26.79%;
+     @include tablet {
+      width: 50%;
+     }
+    }
+
+    .home-program-list__info {
+     font-size: 14px;
+     line-height: 24px;
+    }
+   }
+  }
+
+  .sp-program__disclaimer {
+   margin-top: 84px;
+   @include tablet {
+    margin-top: 20px;
+   }
+   @include mobile {
+    margin-top: 25px;
+    color: $color-nobel;
+    font-size: 12px;
+    line-height: 17px;
+   }
+  }
+  .sp-program__subscribe {
+   margin-top: 97px;
+   @include tablet {
+    margin-top: 69px;
+   }
+   @include mobile {
+    margin: 29px 0 55px;
+   }
+  }
+ }
 }
 
 .sp-program__disclaimer {

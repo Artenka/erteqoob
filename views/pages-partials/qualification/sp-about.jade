@@ -1,0 +1,35 @@
+section.section-layout.sp-about.sp-about--qualification
+  include ../../partials/main-nav-links-1.jade
+  include ../../partials/main-nav-socials.jade
+  include ../../partials/main-nav-lang.jade
+  include ../../partials/main-nav-toggle.jade
+  include ../../partials/courses-link.jade
+
+  .logo
+
+  .sp-about-logo
+    .sp-about-logo__image
+    .circle.sp-about-logo__circle-1
+    .circle.sp-about-logo__circle-2
+    .circle.sp-about-logo__circle-3
+    .circle.sp-about-logo__circle-4
+
+  div.sp-about-block
+    p.sp-about-block__duration 12 дней<br class="br-lg-md"> 10:00 - 17:00
+    div.sp-about-block__main
+      .logo.sp-about-block__logo
+      h1.sp-about-block__main-title
+        span курс
+        | Повышение<br> квалификации
+      h2.sp-about-block__main-subtitle Обновление технологий и систематизация знаний<br> в сжатые сроки, улучшение качества работы<br> практикующих мастеров-парикмахеров
+      a(href="#").btn.sp-about-block__main-link записать на курс
+    div.sp-about-block__info
+      ul.switcher
+        li.switcher__btn.switcher__btn--active
+          a(href="/base/kiev") киев
+        li.switcher__btn
+          a(href="/base/kharkiv") харьков
+      p.sp-about-block__info-date 14.03.2017
+      p.sp-about-block__info-seats <span>Места: 7</span> из 10
+
+  include ../../partials/lp/scroll-down.jade

@@ -36,6 +36,10 @@ body {
  font-family: Circe, sans-serif;
  background-color: $color-black;
  //overflow-x: hidden;
+
+ .register-link, .main-nav-toggle, .main-nav.main-nav--lang, .main-nav.main-nav--socials, .main-nav.main-nav--cities {
+  opacity: 1;
+ }
 }
 
 .section-layout {
@@ -44,7 +48,7 @@ body {
  flex-direction: column;
  align-items: center;
  position: relative;
- //overflow: hidden;
+ overflow: hidden;
  background: no-repeat center / cover;
  background-color: $color-black;
  min-height: 900px;
@@ -120,6 +124,50 @@ body {
  display: inline;
  @include tablet {display: inline;}
  @include mobile {display: none;}
+}
+
+.inline-lg {
+ display: inline;
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.inline-lp {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.inline-lp-md {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-lp-sm {
+ display: none;
+ @include laptop {display: inline;}
+ @include tablet {display: inline;}
+ @include mobile {display: inline;}
+}
+.inline-lg-md {
+ display: inline;
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-md-sm {
+ display: none;
+ @include tablet {display: inline;}
+ @include mobile {display: inline;}
+}
+.inline-md {
+ display: none;
+ @include tablet {display: inline;}
+ @include mobile {display: none;}
+}
+.inline-sm {
+ display: none;
+ @include tablet {display: none;}
+ @include mobile {display: inline;}
 }
 
 .hidden {display: none;}

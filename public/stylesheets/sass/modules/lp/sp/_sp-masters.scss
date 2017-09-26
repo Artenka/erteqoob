@@ -53,6 +53,60 @@
    }
   }
  }
+
+ &.sp-masters--qualification {
+
+  .page-title {
+   margin-top: 70px;
+   @include laptop-tablet {
+    margin-top: 58px;
+   }
+   @include mobile {
+    margin-top: 32px;
+   }
+  }
+
+  .sp-masters-list {
+   padding-top: 67px;
+   @include laptop-tablet {
+    padding-top: 64px;
+   }
+   @include tablet {
+    width: 570px;
+    height: 260px;
+    position: relative;
+   }
+   @include mobile {
+    padding-top: 47px;
+   }
+
+   .sp-masters-list__item {
+    @include tablet {
+     margin: 0;
+     position: absolute;
+
+     &:nth-child(1){
+      width: 250px;
+      top: 64px;
+      left: 0;
+     }
+     &:nth-child(2){
+      width: 225px;
+      top: 212px;
+      left: 111px;
+     }
+     &:nth-child(3){
+      width: 170px;
+      top: 161px;
+      right: 0;
+     }
+    }
+    @include mobile {
+     margin-bottom: 60px;
+    }
+   }
+  }
+ }
 }
 
 .sp-masters-list {
@@ -176,5 +230,19 @@
     padding-top: 18px;
    }
   }
+ }
+}
+
+.sp-masters-disclaimer {
+ color: $color-nobel-07;
+ font-size: 14px;
+ line-height: 20px;
+ text-align: center;
+ margin-top: 118px;
+ @include laptop-tablet {
+  margin-top: 128px;
+ }
+ @include mobile {
+  display: none;
  }
 }
