@@ -56,6 +56,27 @@
     }
    }
   }
+
+  &.sp-philosophy--adaptation {
+
+   .sp-philosophy-main {
+
+    .sp-philosophy-main__title {
+     @include tablet {
+      font-size: 22px;
+      line-height: 36px;
+      letter-spacing: 4.4px;
+     }
+    }
+
+    .sp-philosophy-main__text.sp-philosophy-main__text--2 {
+     margin-bottom: 107px;
+     @include mobile {
+      margin-bottom: 0;
+     }
+    }
+   }
+  }
  }
 }
 

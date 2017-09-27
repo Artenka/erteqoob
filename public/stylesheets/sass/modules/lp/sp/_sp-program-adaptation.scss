@@ -1,0 +1,277 @@
+.sp-program-adaptation {
+ height: auto;
+ background-image: url(../../../img/lp/sp/program/sp-program.jpg);
+ padding-bottom: 75px;
+
+ .page-title {
+  margin-top: 51px;
+ }
+}
+
+.sp-program-adaptation-days {
+ width: 1120px;
+ height: 165px;
+ background: url(../../../img/lp/sp/program/sp-program-wave.svg) no-repeat center / auto 100%;
+ margin: 133px auto 0;
+ position: relative;
+ @include tablet {
+  width: 800px;
+  margin-top: 115px;
+ }
+ @include mobile {
+  width: 320px;
+  height: 66px;
+  margin-top: 90px;
+ }
+
+ .sp-program-adaptation-day {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  @include mobile {
+   width: 20px;
+   height: 20px;
+  }
+
+  .sp-program-adaptation-day__text {
+   width: 140px;
+   color: $color-gray-2-07;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 20px;
+   text-transform: uppercase;
+   letter-spacing: 1.17px;
+   position: absolute;
+   top: -40px;
+   left: 15px;
+   z-index: 3;
+   transition: 0.6s;
+   cursor: pointer;
+   @include mobile {
+    top: -30px;
+    left: -20px;
+   }
+  }
+
+  .sp-program-adaptation-day__dot {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   z-index: 3;
+   cursor: pointer;
+
+   .sp-program-adaptation-day__dot-center {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $color-dove-gray;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+    @include mobile {
+     width: 8px;
+     height: 8px;
+     top: calc(50% - 4px);
+     left: calc(50% - 4px);
+    }
+   }
+   .sp-program-adaptation-day__dot-circle {
+    border-color: $color-tundora;
+   }
+  }
+
+  .sp-program-adaptation-day__bg {
+   width: 462px;
+   height: 462px;
+   position: absolute;
+   top: calc(50% - 231px);
+   left: calc(50% - 231px);
+   opacity: 0;
+   transform: scale(0.4);
+   transition: 0.6s;
+   @include mobile {
+    width: 184px;
+    height: 184px;
+    top: calc(50% - 92px);
+    left: calc(50% - 92px);
+   }
+
+   .sp-program-adaptation-day__bg-img {
+    width: 226px;
+    height: 226px;
+    opacity: 0.6;
+    position: absolute;
+    top: calc(50% - 113px);
+    left: calc(50% - 113px);
+    @include mobile {
+     width: 90px;
+     height: 90px;
+     top: calc(50% - 45px);
+     left: calc(50% - 45px);
+    }
+
+    img {
+     width: 100%;
+     height: 100%;
+    }
+   }
+
+   .sp-program-adaptation-day__bg-circle {
+
+    &.sp-program-adaptation-day__bg-circle--1 {
+     border-color: $color-mine-shaft-6;
+    }
+    &.sp-program-adaptation-day__bg-circle--2 {
+     width: 378px;
+     height: 378px;
+     border-color: $color-mine-shaft-5;
+     top: calc(50% - 189px);
+     left: calc(50% - 189px);
+     @include mobile {
+      width: 150px;
+      height: 150px;
+      top: calc(50% - 75px);
+      left: calc(50% - 75px);
+     }
+    }
+    &.sp-program-adaptation-day__bg-circle--3 {
+     width: 294px;
+     height: 294px;
+     border-color: $color-mine-shaft-5;
+     top: calc(50% - 147px);
+     left: calc(50% - 147px);
+     @include mobile {
+      width: 118px;
+      height: 118px;
+      top: calc(50% - 59px);
+      left: calc(50% - 59px);
+     }
+    }
+   }
+  }
+
+  &.sp-program-adaptation-day--active {
+
+   .sp-program-adaptation-day__text {
+    color: $color-white;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: 6px;
+    top: -70px;
+    @include mobile {
+     font-size: 14px;
+     line-height: 20px;
+     letter-spacing: 1.17px;
+     top: -30px;
+    }
+   }
+   .sp-program-adaptation-day__bg {
+    opacity: 1;
+    transform: scale(1);
+   }
+  }
+
+  &.sp-program-adaptation-day--1 {
+   left: 350px;
+   bottom: -18px;
+   @include tablet {
+    left: 140px;
+    bottom: -14px;
+   }
+   @include mobile {
+    left: 60px;
+    bottom: -9px;
+   }
+  }
+  &.sp-program-adaptation-day--2 {
+   right: 275px;
+   top: -16px;
+   @include tablet {
+    right: 182px;
+    top: 0;
+   }
+   @include mobile {
+    right: 45px;
+    top: -9px;
+   }
+  }
+ }
+}
+
+.sp-program-adaptation-list {
+ display: none;
+ width: 890px;
+ margin: 80px auto 0;
+ position: relative;
+ transition: 0.6s;
+ z-index: 2;
+ opacity: 0;
+ @include tablet {
+  width: 580px;
+ }
+ @include mobile {
+  width: 300px;
+  margin-top: 50px;
+ }
+
+ .sp-program-adaptation-list__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  @include tablet-mobile {
+   flex-direction: column;
+  }
+  &:last-child {
+   margin-bottom: 0;
+  }
+
+  .sp-program-adaptation-list__number {
+   width: 330px;
+   color: $color-white;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 21px;
+   text-transform: uppercase;
+   letter-spacing: 1.33px;
+   margin-right: 30px;
+   @include tablet-mobile {
+    width: 100%;
+    margin: 0;
+   }
+   @include mobile {
+    font-size: 10px;
+    line-height: 17px;
+   }
+  }
+  .sp-program-adaptation-list__text {
+   width: 530px;
+   color: $color-gray;
+   font-size: 12px;
+   font-weight: 700;
+   line-height: 21px;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   @include tablet-mobile {
+    width: 100%;
+   }
+   @include tablet {
+    padding-left: 40px;
+   }
+   @include mobile {
+    font-size: 12px;
+    line-height: 17px;
+    text-transform: none;
+
+    br {
+     display: none;
+    }
+   }
+  }
+ }
+
+ &.sp-program-adaptation-list--active {
+  display: block;
+  opacity: 1;
+ }
+}

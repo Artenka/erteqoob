@@ -17,6 +17,19 @@
    }
   }
  }
+ &.sp-action--adaptation {
+  @include tablet {
+   height: 1010px;
+  }
+
+  .sp-action__title {
+   @include tablet {
+    font-size: 26px;
+    line-height: 45px;
+    letter-spacing: 3.47px;
+   }
+  }
+ }
 }
 
 .sp-action__title {

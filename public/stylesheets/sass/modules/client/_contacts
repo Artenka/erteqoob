@@ -28,7 +28,7 @@
   position: relative;
   top: 0;
   transition: 1s;
-  transition-delay: 1s;
+  //transition-delay: 1s;
   @include mobile {
    font-size: 14px;
    line-height: 20px;
@@ -53,7 +53,7 @@
   position: relative;
   top: 0;
   transition: 1s;
-  transition-delay: 1s;
+  //transition-delay: 1s;
   @include mobile {
    width: 68px;
    height: 8px;

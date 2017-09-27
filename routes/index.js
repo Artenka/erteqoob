@@ -72,4 +72,8 @@ router.get('/qualification', function(req, res, next) {
   res.render('pages/lp/qualification');
 });
 
+router.get('/adaptation', function(req, res, next) {
+  res.render('pages/lp/adaptation');
+});
+
 module.exports = router;

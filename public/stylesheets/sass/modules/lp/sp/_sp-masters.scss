@@ -107,6 +107,60 @@
    }
   }
  }
+
+ &.sp-masters--adaptation {
+  @include mobile {
+   height: 580px;
+  }
+
+  .sp-masters-list {
+   @include mobile {
+    padding-left: 90px;
+   }
+   @include tablet {
+    width: 650px;
+    height: 370px;
+    padding-top: 78px;
+    position: relative;
+   }
+
+   .sp-masters-list__item {
+    @include tablet {
+     position: absolute;
+     margin: 0;
+    }
+    @include mobile {
+     margin-bottom: 60px;
+    }
+    &:nth-child(1){
+     @include tablet {
+      top: 60px;
+      left: 0;
+     }
+    }
+    &:nth-child(2){
+     @include tablet {
+      width: auto;
+      top: 99px;
+      right: 0;
+     }
+    }
+    &:nth-child(3){
+     @include tablet {
+      bottom: 0;
+      left: 138px;
+     }
+    }
+
+    .sp-masters-list__item-text {
+
+     span {
+      margin-bottom: 10px;
+     }
+    }
+   }
+  }
+ }
 }
 
 .sp-masters-list {

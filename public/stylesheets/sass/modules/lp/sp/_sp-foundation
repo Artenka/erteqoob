@@ -77,6 +77,18 @@
    }
   }
  }
+
+ &.sp-foundation--adaptation {
+
+  .page-title {
+
+   > h2 {
+    font-size: 10px;
+    line-height: 15px;
+    margin-top: 0;
+   }
+  }
+ }
 }
 
 .sp-foundation-list {

@@ -1,0 +1,71 @@
+section.section-layout.sp-program-adaptation
+  div.page-title
+    .page-title__logo
+    h2 программа трека
+    h1 адаптация
+
+  ul.sp-program-adaptation-days
+    li(data-day='1').sp-program-adaptation-day.sp-program-adaptation-day--1.sp-program-adaptation-day--active
+      p.sp-program-adaptation-day__text 01  день
+      .sp-program-adaptation-day__dot
+        .sp-program-adaptation-day__dot-center
+        .circle.sp-program-adaptation-day__dot-circle
+      .sp-program-adaptation-day__bg
+        .sp-program-adaptation-day__bg-img
+          img(src="/img/lp/sp/program/sp-program-adaptation-day.png")
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--1
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--2
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--3
+    li(data-day='2').sp-program-adaptation-day.sp-program-adaptation-day--2
+      p.sp-program-adaptation-day__text 02  день
+      .sp-program-adaptation-day__dot
+        .sp-program-adaptation-day__dot-center
+        .circle.sp-program-adaptation-day__dot-circle
+      .sp-program-adaptation-day__bg
+        .sp-program-adaptation-day__bg-img
+          img(src="/img/lp/sp/program/sp-program-adaptation-day.png")
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--1
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--2
+        .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--3
+
+
+  .sp-program-adaptation-lists
+    ul.sp-program-adaptation-list.sp-program-adaptation-list--1.sp-program-adaptation-list--active
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 01. &nbsp;&nbsp;Технологии:
+        p.sp-program-adaptation-list__text улучшают жизнь и улучшаются сами.<br> Примеры применения технологий на практике.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 02. &nbsp;&nbsp;Потребности клиента:
+        p.sp-program-adaptation-list__text Разбор «хамелеонов» и личностей с ярко выраженным характером.<br> Этикет общения с клиентом. Эмоции клиента: влияние на продажи<br> и дополнительные услуги в салоне.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 03. &nbsp;&nbsp;Постановка целей мастера:
+        p.sp-program-adaptation-list__text что главное в работе.<br> Позиционирование себя как профессионала<br> на примере основателей ERTEQOOB.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 04. &nbsp;&nbsp;Мотивационный финал.
+        p.sp-program-adaptation-list__text Применение знаний в салоне. Вдохновение от команды ERTEQOOB,<br> демонстрация подготовленных моделей.
+    ul.sp-program-adaptation-list.sp-program-adaptation-list--2
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 01. &nbsp;&nbsp;Технологии:
+        p.sp-program-adaptation-list__text улучшают жизнь и улучшаются сами.<br> Примеры применения технологий на практике.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 02. &nbsp;&nbsp;Потребности клиента:
+        p.sp-program-adaptation-list__text Разбор «хамелеонов» и личностей с ярко выраженным характером.<br> Этикет общения с клиентом. Эмоции клиента: влияние на продажи<br> и дополнительные услуги в салоне.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 03. &nbsp;&nbsp;Постановка целей мастера:
+        p.sp-program-adaptation-list__text что главное в работе.<br> Позиционирование себя как профессионала<br> на примере основателей ERTEQOOB.
+      li.sp-program-adaptation-list__item
+        p.sp-program-adaptation-list__number 04. &nbsp;&nbsp;Мотивационный финал.
+        p.sp-program-adaptation-list__text Применение знаний в салоне. Вдохновение от команды ERTEQOOB,<br> демонстрация подготовленных моделей.
+
+
+script.
+  $(function(){
+    $('.sp-program-adaptation-day').click(function(){
+      if(!$(this).hasClass('sp-program-adaptation-day--active')){
+        $('.sp-program-adaptation-day--active').removeClass('sp-program-adaptation-day--active');
+        $(this).addClass('sp-program-adaptation-day--active');
+        $('.sp-program-adaptation-list').removeClass('sp-program-adaptation-list--active');
+        $('.sp-program-adaptation-list--' + $(this).data('day')).addClass('sp-program-adaptation-list--active');
+      }
+    });
+  });
