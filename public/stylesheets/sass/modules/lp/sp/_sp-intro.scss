@@ -5,6 +5,7 @@
  align-items: center;
  background-image: url(../../../img/lp/sp/intro/sp-intro.jpg);
  padding-bottom: 400px;
+ overflow: auto;
  @include tablet {
   min-height: 538px;
   height: 538px;
