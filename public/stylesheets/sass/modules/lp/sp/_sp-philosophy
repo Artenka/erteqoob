@@ -77,6 +77,61 @@
     }
    }
   }
+
+  &.sp-philosophy--courses {
+
+   .sp-philosophy-main {
+
+    .sp-philosophy-main__title {
+     margin-bottom: 56px;
+     @include laptop {
+      margin-top: 8px;
+     }
+     @include tablet {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 4.8px;
+      text-align: left;
+      margin: -24px 0 117px;
+     }
+
+     .sp-philosophy-main__title-placeholder {
+      @include tablet {
+       display: inline-block;
+      }
+      &.sp-philosophy-main__title-placeholder--1 {
+       width: 30px;
+      }
+      &.sp-philosophy-main__title-placeholder--2 {
+       width: 65px;
+      }
+     }
+    }
+
+    .sp-philosophy-main__text {
+     text-transform: none;
+     @include mobile {
+      width: 266px;
+      font-size: 10px;
+      line-height: 17px;
+      @include mobile {
+       padding: 0;
+      }
+     }
+     &.sp-philosophy-main__text--1 {
+      font-size: 18px;
+      padding-left: 40px;
+     }
+     &.sp-philosophy-main__text--2 {
+      margin: 42px 0;
+      padding-left: 0;
+     }
+     &.sp-philosophy-main__text--3 {
+      padding-left: 85px;
+     }
+    }
+   }
+  }
  }
 }
 

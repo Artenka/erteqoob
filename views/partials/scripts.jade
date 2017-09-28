@@ -73,3 +73,12 @@ script.
     fixedMenusHideAnimation();
     fixedMenusInitAnimation();
   }
+
+  function heightAsWidth($element){
+    var cw = $element.width();
+    $element.css({'height': cw + 'px'});
+    $(window).on('resize', function () {
+      var cw = $element.width();
+      $element.css({'height': cw + 'px'});
+    });
+  }

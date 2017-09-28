@@ -30,6 +30,10 @@ router.get('/contacts', function(req, res, next) {
 });
 
 
+router.get('/courses/beginner', function(req, res, next) {
+  res.render('pages/lp/courses-beginner');
+});
+
 router.get('/lp', function(req, res, next) {
   res.render('pages/lp/home');
 });
@@ -61,18 +65,18 @@ router.get('/webinar', function(req, res, next) {
   res.render('pages/lp/webinar');
 });
 
-router.get('/base/kiev', function(req, res, next) {
+router.get('/courses/kiev', function(req, res, next) {
   res.render('pages/lp/base-kiev');
 });
-router.get('/base/kharkiv', function(req, res, next) {
+router.get('/courses/kharkiv', function(req, res, next) {
   res.render('pages/lp/base-kharkiv');
 });
 
-router.get('/qualification', function(req, res, next) {
+router.get('/courses/qualification', function(req, res, next) {
   res.render('pages/lp/qualification');
 });
 
-router.get('/adaptation', function(req, res, next) {
+router.get('/courses/adaptation', function(req, res, next) {
   res.render('pages/lp/adaptation');
 });
 

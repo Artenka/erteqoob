@@ -26,3 +26,12 @@ script.
       }, 2000);
     });
   });
+
+  function heightAsWidth($element) {
+    var cw = $element.outerWidth();
+    $element.css({'height': cw + 'px'});
+    $(window).on('resize', function () {
+      var cw = $element.outerWidth();
+      $element.css({'height': cw + 'px'});
+    });
+  }
