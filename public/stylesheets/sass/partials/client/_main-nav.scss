@@ -339,7 +339,9 @@
 }
 
 .modal-nav {
- @extend .popup;
+ height: 100%;
+ min-height: 100%;
+ position: relative;
  background-color: $color-black;
  color: $color-white;
  overflow-y: auto;

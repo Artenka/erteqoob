@@ -15,7 +15,7 @@ block contents
       include ../partials/philosophy/philosophy-inspiration.jade
       include ../partials/philosophy/philosophy-pros-1.jade
       include ../partials/philosophy/philosophy-pros-2.jade
-      include ../partials/philosophy/philosophy-video.jade
+      //include ../partials/philosophy/philosophy-video.jade
       include ../partials/philosophy/philosophy-action.jade
       include ../partials/footer.jade
 
@@ -165,8 +165,13 @@ block contents
             philosophyInspirationHide();
             philosophyPros1Hide();
             philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyVideoInit();
+            //philosophyActionHide();
+
+            // temp
+            philosophyVideoHide();
+
+            //philosophyVideoInit();
+            philosophyActionInit();
           } else if (index == 9) {
             philosophyIntroHide();
             philosophyVideoHide();
@@ -177,19 +182,24 @@ block contents
             philosophyInspirationHide();
             philosophyPros1Hide();
             philosophyPros2Hide();
-            philosophyActionInit();
-          } else if (index == 10) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
+
+            //temp
             philosophyActionHide();
+
+            //philosophyActionInit();
             footerMenusHideAnimation();
+          //} else if (index == 10) {
+          //  philosophyIntroHide();
+          //  philosophyVideoHide();
+          //  showPagePagination();
+          //  philosophyAbout1Hide();
+          //  philosophyAbout2Hide();
+          //  philosophyAbout3Hide();
+          //  philosophyInspirationHide();
+          //  philosophyPros1Hide();
+          //  philosophyPros2Hide();
+          //  philosophyActionHide();
+          //  footerMenusHideAnimation();
           }
         },
         afterMove: function(index) {

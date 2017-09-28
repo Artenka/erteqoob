@@ -19,7 +19,7 @@ router.get('/article', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   res.render('pages/blog');
 });
-router.get('/splash', function(req, res, next) {
+router.get('/courses', function(req, res, next) {
   res.render('pages/splash');
 });
 router.get('/salons', function(req, res, next) {
