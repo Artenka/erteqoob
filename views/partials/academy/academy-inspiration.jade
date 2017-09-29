@@ -16,9 +16,32 @@ section.section-layout.academy-inspiration
           | Смотрите. Вдохновляйтесь.<br>
           | Приходите.
     ul.academy-inspiration__city-btns
-      li.academy-inspiration__city-btn.academy-inspiration__city-btn--active академия в киеве
-      li.academy-inspiration__city-btn академия в харькове
-    ul.academy-inspiration__slider.slider-arrows-long.slider-arrows-long--edge
+      li(data-slider='kiev').academy-inspiration__city-btn.academy-inspiration__city-btn--active академия в киеве
+      li(data-slider='kharkiv').academy-inspiration__city-btn академия в харькове
+
+    ul.academy-inspiration__slider.academy-inspiration__slider--kiev.slider-arrows-long.slider-arrows-long--edge.academy-inspiration__slider--active
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+      li.academy-inspiration__slide
+        div.academy-inspiration__slide-layout
+          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+    ul.academy-inspiration__slider.academy-inspiration__slider--kharkiv.slider-arrows-long.slider-arrows-long--edge
       li.academy-inspiration__slide
         div.academy-inspiration__slide-layout
           img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
@@ -83,5 +106,24 @@ script.
     });
     $academyInspirationSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
       $('.academy-inspiration__slide').css('transition-delay', 'inherit');
+    });
+
+
+    // slider change
+    $('.academy-inspiration__city-btn').click(function(){
+      if(!$(this).hasClass('academy-inspiration__city-btn--active')){
+        var $newActiveSlider;
+        $newActiveSlider = $('.academy-inspiration__slider--' + $(this).data('slider'));
+        $('.academy-inspiration__city-btn--active').removeClass('academy-inspiration__city-btn--active');
+        $(this).addClass('academy-inspiration__city-btn--active');
+        $('.academy-inspiration__slider .academy-inspiration__slide').css('opacity', 0);
+        $('.academy-inspiration__slider .slick-arrow').css('opacity', 0);
+        setTimeout(function(){
+          $('.academy-inspiration__slider--active').removeClass('academy-inspiration__slider--active');
+          $newActiveSlider.addClass('academy-inspiration__slider--active');
+          $('.academy-inspiration__slider .academy-inspiration__slide').css('opacity', 1);
+          $('.academy-inspiration__slider .slick-arrow').css('opacity', 1);
+        }, 1500);
+      }
     });
   });

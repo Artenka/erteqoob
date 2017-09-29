@@ -1174,6 +1174,7 @@
     padding: 0 20px;
     margin: 0 10px;
     cursor: pointer;
+    transition: 0.5s;
     @include mobile {
      font-size: 9px;
      letter-spacing: 1.12px;
@@ -1206,9 +1207,15 @@
   }
 
   .academy-inspiration__slider {
+   //display: none;
    width: 1344px;
    height: 342px;
+   position: absolute;
+   top: 0;
+   left: 0;
    margin: 60px auto 0;
+   opacity: 0;
+   transition: 0.3s;
    @include laptop {
     width: 806px;
     height: 205px;
@@ -1313,6 +1320,12 @@
      height: 250px;
      transition-delay: 0.5s;
     }
+   }
+
+   &.academy-inspiration__slider--active {
+    //display: block;
+    position: relative;
+    opacity: 1;
    }
   }
  }
