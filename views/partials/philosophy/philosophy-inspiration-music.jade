@@ -1,0 +1,30 @@
+.popup-layout.inspiration-music
+  .popup
+    .popup__close
+    .inspiration-music-equalizer
+      .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--1
+      .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--2
+      .inspiration-music-equalizer__waves
+      .inspiration-music-equalizer__image
+
+    .inspiration-music__player
+      p.inspiration-music__player-text Воспроизведение...
+      audio(width="100%" height="auto").mejs__player
+        source(src="/sounds/inspiration.mp3")
+
+script(src='/js/mediaelement-and-player.min.js' type='text/javascript')
+script.
+  $(function(){
+    var playerClicked = false;
+    $('.mejs__container .mejs__button').click(function(){
+      if(!playerClicked){
+        $('.inspiration-music__player-text').css('opacity', 1);
+        $('.inspiration-music-equalizer').addClass('inspiration-music-equalizer--active');
+        playerClicked = true;
+      } else {
+        $('.inspiration-music__player-text').css('opacity', 0);
+        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
+        playerClicked = false;
+      }
+    });
+  });
