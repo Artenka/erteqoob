@@ -598,12 +598,17 @@
 }
 
 .popup-layout.inspiration-music {
+ @include tablet-mobile {
+  overflow-y: auto;
+ }
 
  .popup {
   background: url(../../img/client/philosophy/inspiration-music-bg.jpg) no-repeat center / cover, $color-black;
   @include tablet-mobile {
    min-height: 1136px;
    padding: 190px 0 387px;
+   overflow-x: hidden;
+   overflow-y: auto;
   }
 
   .popup__close {
