@@ -613,6 +613,10 @@
 
   .popup__close {
    background-image: url(../../img/popups/popup-close-white.svg);
+   @include tablet-mobile {
+    top: 32px;
+    right: 32px;
+   }
   }
 
   .inspiration-music-equalizer {

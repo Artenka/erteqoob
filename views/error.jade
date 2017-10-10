@@ -1,6 +1,39 @@
-extends layout
+extends  layouts/main-client.jade
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+block contents
+  div.main-layout#error
+    include partials/main-nav-toggle.jade
+
+    .error-background
+
+    .error-center
+      .circle.error-center__circle.error-center__circle--1
+      .circle.error-center__circle.error-center__circle--2
+      .error-center__logo
+        .error-center__dash.error-center__dash--1
+        .error-center__dash.error-center__dash--2
+        .error-center__dash.error-center__dash--3
+        h1.error-center__title= error.status
+
+    .error-right
+      .error-right__title
+        h1 к сожалению,<br> страница не найдена
+      .error-right__content
+        ul.error-right__links
+          li.error-right__link
+            .arrow-link.arrow-link--left.error-right__link-back
+              a.arrow-link__text(href='#') назад
+          li.error-right__link
+            .arrow-link.arrow-link--right.error-right__link-register
+              a.arrow-link__text(href='#') запись на обучение
+        include partials/main-nav-socials.jade
+
+  include partials/scripts.jade
+
+  script.
+    $(function () {
+      // splash init animations
+      fixedMenusInitAnimation();
+      TweenMax.to($('#error'), 1, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power1.easeOut, delay: 0.2});
+      TweenMax.to($('.error-background'), 1, {scaleX: 1.05, scaleY: 1.05, opacity: 1, ease: Power1.easeOut, delay: 0.2});
+    });
