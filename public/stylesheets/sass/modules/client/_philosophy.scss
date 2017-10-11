@@ -80,6 +80,7 @@
   }
 
   .philosophy-intro__video-layout {
+   opacity: 0!important;
    margin-top: 55px;
    @include mobile {
     margin-top: 31px;

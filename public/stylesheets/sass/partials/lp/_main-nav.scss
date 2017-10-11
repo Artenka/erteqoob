@@ -2,7 +2,7 @@
  position: absolute;
  top: 52px;
  left: 65px;
- z-index: 100;
+ z-index: 99;
  @include clearfix;
  @include laptop {
   top: 35px;

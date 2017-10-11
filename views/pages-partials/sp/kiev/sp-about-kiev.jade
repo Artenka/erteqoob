@@ -1,4 +1,10 @@
 section.section-layout.sp-about
+  include ../../../partials/main-nav-links-1.jade
+  include ../../../partials/main-nav-socials.jade
+  include ../../../partials/main-nav-lang.jade
+  include ../../../partials/main-nav-toggle.jade
+  include ../../../partials/courses-link.jade
+
   .logo
 
   .sp-about-logo
@@ -20,9 +26,9 @@ section.section-layout.sp-about
     div.sp-about-block__info
       ul.switcher
         li.switcher__btn.switcher__btn--active
-          a(href="/base/kiev") киев
+          a(href="/courses/beginner/kiev") киев
         li.switcher__btn
-          a(href="/base/kharkiv") харьков
+          a(href="/courses/beginner/kharkiv") харьков
       p.sp-about-block__info-date 14.03.2017
       p.sp-about-block__info-seats <span>Места: 7</span> из 10
 
