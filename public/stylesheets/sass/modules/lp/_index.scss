@@ -279,7 +279,7 @@ input, textarea, select {
 
   label {
    bottom: 38px;
-   transform: scale(0.75);
+   transform: scale(0.75) translateZ(0);
   }
   input {
    border-bottom: 1px solid $color-white;

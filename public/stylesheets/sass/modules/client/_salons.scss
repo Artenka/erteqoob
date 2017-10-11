@@ -545,7 +545,7 @@
   .pin-block {
 
    .pin, .pin-circle {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     opacity: 1;
     transition: 0.3s;
     transition-delay: 0.3s;
@@ -582,7 +582,7 @@
   .pin-block {
 
    .pin, .pin-circle {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     opacity: 1;
     transition: 1s;
     transition-delay: 0.7s;

@@ -290,7 +290,7 @@
  }
 
  &.academy-teacher--disabled {
-  transform: scale(0.95);
+  transform: scale(0.95) translateZ(0);
 
   &:nth-child(1) {
    left: calc(12.7% + 12.7%*0.04);

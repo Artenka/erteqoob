@@ -101,7 +101,7 @@
    line-height: 11vh;
    text-transform: uppercase;
    transition: 1.5s;
-   transform: scale(0.9) translateZ(0);
+   transform: scale(0.9) translateZ(0) translateZ(0);
    opacity: 0;
    @include laptop {
     font-size: 140px;
@@ -346,7 +346,7 @@
  top: calc(50% - 71px);
  z-index: 10;
  opacity: 0;
- transform: scale(0.9) translateZ(0);
+ transform: scale(0.9) translateZ(0) translateZ(0);
  @include tablet {
   width: 184px;
   height: 164px;
@@ -415,7 +415,7 @@
   z-index: 11;
   transition: 0.8s;
   opacity: 1;
-  transform: scale(1) translateZ(0);
+  transform: scale(1) translateZ(0) translateZ(0);
   @include tablet {
    font-size: 14px;
    letter-spacing: 6px;
@@ -490,7 +490,7 @@
 
   .splash-center__text {
    opacity: 0;
-   transform: scale(0) translateZ(0);
+   transform: scale(0) translateZ(0) translateZ(0);
   }
 
   .splash-center__arrow {

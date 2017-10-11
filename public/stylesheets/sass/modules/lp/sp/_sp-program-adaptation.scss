@@ -87,7 +87,7 @@
    top: calc(50% - 231px);
    left: calc(50% - 231px);
    opacity: 0;
-   transform: scale(0.4);
+   transform: scale(0.4) translateZ(0);
    transition: 0.6s;
    @include mobile {
     width: 184px;
@@ -167,7 +167,7 @@
    }
    .sp-program-adaptation-day__bg {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
    }
   }
 
