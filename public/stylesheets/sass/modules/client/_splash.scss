@@ -20,10 +20,11 @@
 
   .splash__background {
    &:before {
-    opacity: 0;
+    //opacity: 0;
    }
    &:after {
-    opacity: 1;
+    display: block;
+    //opacity: 1;
    }
   }
 
@@ -45,7 +46,7 @@
   top: 0;
   z-index: 2;
   opacity: 0;
-  transition: 2s;
+  transition: 1.5s;
   @include tablet-mobile {
    width: 100%;
    height: 141.66%;
@@ -58,7 +59,7 @@
    position: absolute;
    top: 0;
    z-index: 3;
-   transition: 2s;
+   transition: 1.5s;
    opacity: 1;
    @include tablet-mobile {
     width: 100%;
@@ -67,14 +68,15 @@
   }
   &:after {
    content: '';
+   display: none;
    width: 45.3%;
    height: 62.31%;
    background: url(../../img/client/splash/splash-dots.png) no-repeat center / 100% auto;
    position: absolute;
    top: 18.24%;
    z-index: 3;
-   transition: 2s;
-   opacity: 0;
+   transition: 1.5s;
+   opacity: 1;
   }
  }
 
@@ -98,12 +100,7 @@
    line-height: 140px;
    line-height: 11vh;
    text-transform: uppercase;
-   transition: 2s;
-   /* Enable hardware acceleration to fix laggy transitions */
-   -webkit-transform: scale(0.9) translateZ(0);
-   -moz-transform: scale(0.9) translateZ(0);
-   -ms-transform: scale(0.9) translateZ(0);
-   -o-transform: scale(0.9) translateZ(0);
+   transition: 1.5s;
    transform: scale(0.9) translateZ(0);
    opacity: 0;
    @include laptop {
@@ -126,7 +123,7 @@
    //display: none;
    top: -30px;
    opacity: 0;
-   transition: 2s;
+   transition: 1.5s;
   }
  }
 
@@ -349,7 +346,7 @@
  top: calc(50% - 71px);
  z-index: 10;
  opacity: 0;
- transform: scale(0.9);
+ transform: scale(0.9) translateZ(0);
  @include tablet {
   width: 184px;
   height: 164px;
@@ -368,7 +365,7 @@
   border: 1px solid $color-mine-shaft;
   border-radius: 50%;
   position: absolute;
-  transition: 2s;
+  transition: 1.5s;
 
   &.splash-center__circle--1 {
    width: 142px;
@@ -418,7 +415,7 @@
   z-index: 11;
   transition: 0.8s;
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateZ(0);
   @include tablet {
    font-size: 14px;
    letter-spacing: 6px;
@@ -493,7 +490,7 @@
 
   .splash-center__text {
    opacity: 0;
-   transform: scale(0);
+   transform: scale(0) translateZ(0);
   }
 
   .splash-center__arrow {

@@ -33,6 +33,9 @@ router.get('/contacts', function(req, res, next) {
 router.get('/courses/beginner', function(req, res, next) {
   res.render('pages/lp/courses-beginner');
 });
+router.get('/courses/pro', function(req, res, next) {
+  res.render('pages/lp/courses-pro');
+});
 
 router.get('/lp', function(req, res, next) {
   res.render('pages/lp/home');
