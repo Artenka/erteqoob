@@ -797,7 +797,7 @@
   position: absolute;
   top: 14px;
   left: calc(50% - 12px);
-  transform: scale(2);
+  transform: scale(2) translateZ(0);
   transition: 1s;
   z-index: 2;
   opacity: 0;
@@ -810,7 +810,7 @@
  }
 
  .pin-circle {
-  transform: scale(0.5);
+  transform: scale(0.5) translateZ(0);
   transition: 1s;
 
   &.pin-circle--1 {

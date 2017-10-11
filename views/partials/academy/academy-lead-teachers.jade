@@ -84,35 +84,29 @@ script.
     $leadTeacher.on('mouseover', function () {
       var $this = $(this);
       $leadTeacher.not(this).addClass('academy-lead-teachers__item--disabled');
-      //if(!inFinished && outFinished) {
-      //  smilesAnimationIn($this);
-      //  setTimeout(function () {
-      //    inFinished = true;
-      //  }, 500)
-      //} else if(inFinished && outFinished) {
-      //  setTimeout(function () {
-      //    smilesAnimationIn($this);
-      //    inFinished = true;
-      //  }, 500);
-      //}
-      smilesAnimationIn($this);
+      if(!inFinished && outFinished) {
+        smilesAnimationIn($this);
+        inFinished = true;
+      } else if(inFinished && outFinished) {
+        setTimeout(function () {
+          smilesAnimationIn($this);
+          inFinished = true;
+        }, 500);
+      }
     });
 
     $leadTeacher.on('mouseleave', function () {
       var $this = $(this);
       $leadTeacher.not(this).removeClass('academy-lead-teachers__item--disabled');
-      //if (inFinished && !outFinished) {
-      //  smilesAnimationOut($this);
-      //  setTimeout(function () {
-      //    outFinished = true;
-      //  }, 500)
-      //} else if (inFinished && outFinished) {
-      //  setTimeout(function () {
-      //    smilesAnimationOut($this);
-      //    outFinished = true;
-      //  }, 500);
-      //}
-      smilesAnimationOut($this);
+      if (inFinished && !outFinished) {
+        smilesAnimationOut($this);
+        outFinished = true;
+      } else if (inFinished && outFinished) {
+        setTimeout(function () {
+          smilesAnimationOut($this);
+          outFinished = true;
+        }, 500);
+      }
     });
 
   });
