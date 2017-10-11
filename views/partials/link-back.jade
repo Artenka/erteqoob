@@ -1,2 +1,8 @@
 .arrow-link.arrow-link--left.arrow-link--top.link-back
   a.arrow-link__text(href='#') вернуться назад
+
+script.
+  $(function(){
+    var referrer =  document.referrer;
+    $('.link-back a').attr('href', referrer);
+  });

@@ -25,7 +25,7 @@ block contents
               a.arrow-link__text(href='#') назад
           li.error-right__link
             .arrow-link.arrow-link--right.error-right__link-register
-              a.arrow-link__text(href='#') запись на обучение
+              a.arrow-link__text(href='/courses') запись на обучение
         include partials/main-nav-socials.jade
 
   include partials/scripts.jade
@@ -36,4 +36,10 @@ block contents
       fixedMenusInitAnimation();
       TweenMax.to($('#error'), 1, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power1.easeOut, delay: 0.2});
       TweenMax.to($('.error-background'), 1, {scaleX: 1.05, scaleY: 1.05, opacity: 1, ease: Power1.easeOut, delay: 0.2});
+
+      //var referrer = document.referrer;
+      //$('.error-right__link-back a').attr('href', referrer);
+      jQuery('.error-right__link-back a').click(function () {
+        history.go(-1)
+      });
     });
