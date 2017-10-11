@@ -63,12 +63,14 @@ section.section-layout.home-founders-layout
 
 script.
   $(function(){
-    // founders hover animation
+    // founders click animation
     $homeFounder = $('.home-founder');
-    $homeFounder.on('mouseover', function () {
+    $homeFounder.on('click', function () {
+      $homeFounder.removeClass('home-founder--disabled home-founder--active');
       $homeFounder.not(this).addClass('home-founder--disabled');
+      $(this).addClass('home-founder--active');
     });
-    $homeFounder.on('mouseleave', function () {
-      $homeFounder.not(this).removeClass('home-founder--disabled');
-    });
+    //$homeFounder.on('mouseleave', function () {
+    //  $homeFounder.not(this).removeClass('home-founder--disabled');
+    //});
   })

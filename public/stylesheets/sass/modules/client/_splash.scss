@@ -45,7 +45,7 @@
   top: 0;
   z-index: 2;
   opacity: 0;
-  transition: 1.5s;
+  transition: 2s;
   @include tablet-mobile {
    width: 100%;
    height: 141.66%;
@@ -58,7 +58,7 @@
    position: absolute;
    top: 0;
    z-index: 3;
-   transition: 1.5s;
+   transition: 2s;
    opacity: 1;
    @include tablet-mobile {
     width: 100%;
@@ -73,7 +73,7 @@
    position: absolute;
    top: 18.24%;
    z-index: 3;
-   transition: 1.5s;
+   transition: 2s;
    opacity: 0;
   }
  }
@@ -98,8 +98,13 @@
    line-height: 140px;
    line-height: 11vh;
    text-transform: uppercase;
-   transition: 1.5s;
-   transform: scale(0.9);
+   transition: 2s;
+   /* Enable hardware acceleration to fix laggy transitions */
+   -webkit-transform: scale(0.9) translateZ(0);
+   -moz-transform: scale(0.9) translateZ(0);
+   -ms-transform: scale(0.9) translateZ(0);
+   -o-transform: scale(0.9) translateZ(0);
+   transform: scale(0.9) translateZ(0);
    opacity: 0;
    @include laptop {
     font-size: 140px;
@@ -121,7 +126,7 @@
    //display: none;
    top: -30px;
    opacity: 0;
-   transition: 1.5s;
+   transition: 2s;
   }
  }
 
@@ -363,7 +368,7 @@
   border: 1px solid $color-mine-shaft;
   border-radius: 50%;
   position: absolute;
-  transition: 1.5s;
+  transition: 2s;
 
   &.splash-center__circle--1 {
    width: 142px;

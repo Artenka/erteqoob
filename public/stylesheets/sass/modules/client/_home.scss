@@ -1321,7 +1321,7 @@
   @include mobile {
    overflow: hidden;
   }
-  &:hover {
+  &.home-founder--active {
    width: 44%;
    height: 125%;
    @include tablet-mobile {

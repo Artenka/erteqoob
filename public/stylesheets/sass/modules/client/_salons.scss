@@ -247,7 +247,7 @@
     opacity: 0;
     @include tablet-mobile {
      background: url(../../img/icons/arrow-right-long-gray.svg) no-repeat center / contain;
-     opacity: 1;
+     //opacity: 1;
     }
    }
   }
@@ -266,7 +266,7 @@
    p {
     color: $color-white;
     &:after {
-     opacity: 1;
+     //opacity: 1;
      @include tablet-mobile {
       background: url(../../img/icons/arrow-right-long.svg) no-repeat center / contain;
      }
