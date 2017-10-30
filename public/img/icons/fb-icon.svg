@@ -1,15 +1,21 @@
-<svg width="6px" height="12px" viewBox="0 0 6 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal" font-family=".AppleSystemUIFont" letter-spacing="4.42352915" font-size="16">
-        <g id="ERTEQOOB_404_1920x1080" transform="translate(-1645.000000, -753.000000)" fill="#FFFFFF">
-            <g id="text" transform="translate(1241.000000, 476.000000)">
-                <g id="social" transform="translate(404.000000, 273.000000)">
-                    <g id="Social/facebook" transform="translate(0.065045, 0.687092)">
-                        <text id="f">
-                            <tspan x="0" y="15">f</tspan>
-                        </text>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 6 12" width="6" height="12" style="enable-background:new 0 0 6 12;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'ArialMT';}
+	.st2{font-size:16px;}
+	.st3{letter-spacing:4;}
+</style>
+<g id="Contact-Academy-Kiev">
+	<g id="Contact-Academy-Kiev-1920x1080" transform="translate(-1829.000000, -1020.000000)">
+		<g id="static" transform="translate(45.000000, 45.000000)">
+			<g id="social" transform="translate(1784.000000, 971.000000)">
+				<g id="Social_x2F_facebook" transform="translate(0.065045, 0.687092)">
+					<text transform="matrix(1 0 0 1 -1.204102e-05 15)" class="st0 st1 st2 st3">f</text>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

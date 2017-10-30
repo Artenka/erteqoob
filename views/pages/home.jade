@@ -196,7 +196,8 @@ block contents
             homeCollectionsInit();
             showPagePagination();
           } else if (index == 8) {
-            hidePagePagination();
+            showPagePagination();
+            //hidePagePagination();
             homeIntroHide();
             homeNavHide();
             homeThinkHide();
@@ -210,6 +211,7 @@ block contents
             //homeEventsInit();
             homeActionInit();
           }  else if (index == 9) {
+            hidePagePagination();
             homeIntroHide();
             homeNavHide();
             homeThinkHide();
@@ -221,7 +223,7 @@ block contents
             //homeBlogHide();
             homeActionHide();
             //homeCollectionsInit();
-            showPagePagination();
+            //showPagePagination();
             footerMenusHideAnimation();
           }
           //} else if (index == 10) {
@@ -642,8 +644,9 @@ block contents
     }
 
     function homeFoundersInit() {
-      TweenMax.staggerTo($(".home-founder:nth-child(odd) .home-founder__image"), 1.2, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.2}, 0.2);
-      TweenMax.to($(".home-founder:nth-child(even) .home-founder__image"), 0.7, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.6});
+      //TweenMax.staggerTo($(".home-founder:nth-child(odd) .home-founder__image"), 1.2, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.2}, 0.2);
+      //TweenMax.to($(".home-founder:nth-child(even) .home-founder__image"), 0.7, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.6});
+      TweenMax.to($(".home-founder .home-founder__image"), 1.2, {bottom: '0%', opacity: '1', ease: Power1.easeInOut, delay: 0.2});
       TweenMax.staggerTo($(".home-founder__preview-position"), 1, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-name"), 1, {bottom: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2}, 0.2);
       TweenMax.staggerTo($(".home-founder__preview-name-line"), 1.4, {bottom: '8px', opacity: '1', ease: Power1.easeInOut, delay: 1.6}, 0.2);

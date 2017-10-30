@@ -34,6 +34,9 @@ script.
 
     $('.home-collections-list').on('afterChange', function (event, slick, currentSlide, nextSlide) {
       changeRotatedTextWidth('.home-collections-list__item-date', '.home-collections-list__item');
+      setTimeout(function () {
+        $('.home-collections-list').slick("setPosition");
+      }, 300)
       TweenMax.to($('.home-collections-list__item-date'), 1, {opacity: 1, ease: Power4.easeOut, delay: 0.3});
       TweenMax.to($('.home-collections-list__item-title'), 1, {opacity: 1, ease: Power4.easeOut, delay: 0.3});
     });

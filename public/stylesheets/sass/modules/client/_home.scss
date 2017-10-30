@@ -1323,7 +1323,8 @@
   }
   &.home-founder--active {
    width: 44%;
-   height: 125%;
+   height: 110%;
+   //height: 125%;
    @include tablet-mobile {
     width: 100%;
     height: 100%;
@@ -1456,7 +1457,7 @@
    //bottom: 30%;
    opacity: 0;
    left: 0;
-   transition: 0.5s;
+   transition: 1.2s;
    z-index: 2;
    @include tablet {
     width: 55%;

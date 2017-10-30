@@ -83,16 +83,31 @@
    padding-bottom: 33px;
    position: absolute;
    bottom: 0;
+   transition: 0.7s;
    @include mobile {
     padding-bottom: 20px;
     font-size: 8px;
     line-height: 8px;
+   }
+   &:hover {
+    font-size: 12px;
+    @include mobile {
+     font-size: 10px;
+    }
+
+    svg {
+     bottom: 10px;
+     @include mobile {
+      bottom: 5px;
+     }
+    }
    }
 
    svg {
     position: absolute;
     bottom: 0;
     left: calc(50% - 3px);
+    transition: 0.7s;
    }
 
    &.main-footer__aside-link--beginner {
