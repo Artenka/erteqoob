@@ -20,7 +20,7 @@ block contents
       include ../partials/home/home-founders.jade
       include ../partials/home/home-system.jade
       //include ../partials/home/home-events.jade
-      include ../partials/home/home-collections.jade
+      //include ../partials/home/home-collections.jade
       //include ../partials/home/home-blog.jade
       include ../partials/home/home-action.jade
       include ../partials/footer.jade
@@ -81,7 +81,7 @@ block contents
         pagination: true,
         updateURL: false,
         beforeMove: function (index) {
-          if (index == 2 || index == 9 ) {
+          if (index == 2 || index == 8 ) {
             fixedMenusHideAnimation();
           } else {
             fixedMenusInitAnimation();
@@ -177,25 +177,23 @@ block contents
             //homeFoundersInit();
             homeSystemInit();
             showPagePagination();
+          //} else if (index == 7) {
+          //  homeIntroHide();
+          //  homeNavHide();
+          //  homeThinkHide();
+          //  //homeVideoHideFull();
+          //  homeAboutHide();
+          //  homeFoundersHide();
+          //  //homeEventsHide();
+          //  //homeCollectionsHide();
+          //  //homeBlogHide();
+          //  // temp
+          //  homeSystemHide();
+          //  homeActionHide();
+          //  //homeSystemInit();
+          //  homeCollectionsInit();
+          //  showPagePagination();
           } else if (index == 7) {
-            homeIntroHide();
-            homeNavHide();
-            homeThinkHide();
-            //homeVideoHideFull();
-            homeAboutHide();
-            homeFoundersHide();
-            //homeEventsHide();
-            //homeCollectionsHide();
-            //homeBlogHide();
-
-            // temp
-            homeSystemHide();
-
-            homeActionHide();
-            //homeSystemInit();
-            homeCollectionsInit();
-            showPagePagination();
-          } else if (index == 8) {
             showPagePagination();
             //hidePagePagination();
             homeIntroHide();
@@ -210,7 +208,7 @@ block contents
             //homeActionHide();
             //homeEventsInit();
             homeActionInit();
-          }  else if (index == 9) {
+          }  else if (index == 8) {
             hidePagePagination();
             homeIntroHide();
             homeNavHide();

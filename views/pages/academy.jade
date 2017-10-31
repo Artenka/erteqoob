@@ -9,7 +9,7 @@ block contents
     include ../partials/register-link.jade
     div.scroll-layout
       include ../partials/academy/academy-intro.jade
-      include ../partials/academy/academy-about.jade
+      //include ../partials/academy/academy-about.jade
       include ../partials/academy/academy-philosophy.jade
       include ../partials/academy/academy-lead-teachers.jade
       //include ../partials/academy/academy-teachers.jade
@@ -84,16 +84,16 @@ block contents
             //academyMastersHide();
             academyInspirationHide();
             academyIntroInit();
+          //} else if (index == 2) {
+          //  academyIntroHide();
+          //  academyPhilosophyHide();
+          //  hidePagePagination();
+          //  academyLeadTeachersHide();
+          //  //academyTeachersHide();
+          //  //academyMastersHide();
+          //  academyInspirationHide();
+          //  academyAboutInit();
           } else if (index == 2) {
-            academyIntroHide();
-            academyPhilosophyHide();
-            hidePagePagination();
-            academyLeadTeachersHide();
-            //academyTeachersHide();
-            //academyMastersHide();
-            academyInspirationHide();
-            academyAboutInit();
-          } else if (index == 3) {
             showPagePagination();
             academyIntroHide();
             academyAboutHide();
@@ -102,7 +102,7 @@ block contents
             //academyMastersHide();
             academyInspirationHide();
             academyPhilosophyInit();
-          } else if (index == 4) {
+          } else if (index == 3) {
             showPagePagination();
             academyIntroHide();
             academyAboutHide();
@@ -111,7 +111,7 @@ block contents
             //academyMastersHide();
             academyInspirationHide();
             academyLeadTeachersInit();
-          } else if (index == 5) {
+          } else if (index == 4) {
             hidePagePagination();
             academyIntroHide();
             academyAboutHide();
@@ -121,7 +121,7 @@ block contents
             //academyInspirationHide();
             academyInspirationInit();
             //academyTeachersInit();
-          } else if (index == 6) {
+          } else if (index == 5) {
             hidePagePagination();
             academyIntroHide();
             academyAboutHide();
