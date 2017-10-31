@@ -68,12 +68,12 @@ block contents
         pagination: true,
         updateURL: false,
         beforeMove: function (index) {
-          //if (index == 8) {
-          //  fixedMenusHideAnimation();
-          //} else {
-          //  fixedMenusReinit();
-          //}
-          fixedMenusReinit();
+          if (index == 5) {
+            fixedMenusHideAnimation();
+          } else {
+            fixedMenusReinit();
+          }
+          //fixedMenusReinit();
 
           if (index == 1) {
             hidePagePagination();
