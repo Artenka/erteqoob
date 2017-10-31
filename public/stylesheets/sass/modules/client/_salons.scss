@@ -168,11 +168,13 @@
  align-items: center;
  position: absolute;
  left: calc(50% - 460px);
- bottom: 250px;
+ bottom: 170px;
+ //bottom: 250px;
  z-index: 7;
  @include laptop {
   width: 920px;
-  bottom: 140px;
+  bottom: 80px;
+  //bottom: 140px;
  }
  @include tablet-mobile {
   width: 324px;
@@ -272,6 +274,10 @@
      }
     }
    }
+   .salons-btn__phones {
+    opacity: 1;
+    color: $color-white;
+   }
   }
 
   &:nth-child(2) {
@@ -282,6 +288,12 @@
    h3 {@include tablet-mobile {display: none;}}
    p {@include tablet-mobile {margin-top: 0;}}
   }
+ }
+
+ .salons-btn__phones {
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.5s;
  }
 
  &.salons-btns--disable {
