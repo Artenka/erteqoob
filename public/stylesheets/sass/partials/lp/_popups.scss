@@ -10,27 +10,6 @@
  z-index: 999;
 }
 
-.popup-white {
- height: 100%;
- min-height: 100%;
- background-color: $color-white;
- color: $color-black;
- overflow-y: scroll;
- position: relative;
-
- .popup__close {
-  width: 16px;
-  height: 16px;
-  background: url(../../img/popups/popup-close.svg) no-repeat center;
-  position: absolute;
-  top: 67px;
-  right: 67px;
-  opacity: 0;
-  transform: scale(0.7) translateZ(0);
-  cursor: pointer;
- }
-}
-
 .city-switcher {
  height: 100%;
  display: flex;
@@ -296,41 +275,6 @@
    top: calc(50% - 24px);
    left: calc(50% - 24px);
   }
- }
-}
-
-.popup-title {
- color: $color-black;
- font-size: 24px;
- font-weight: 700;
- line-height: 40.8px;
- text-transform: uppercase;
- letter-spacing: 6px;
- text-align: center;
- @include tablet {
-  font-size: 30px;
-  line-height: 48px;
- }
- @include mobile {
-  font-size: 22px;
-  line-height: 28.8px;
-  letter-spacing: 2.44px;
- }
-}
-.popup-text {
- color: $color-black;
- font-size: 14px;
- font-weight: 700;
- line-height: 24.5px;
- text-transform: uppercase;
- letter-spacing: 1px;
- text-align: center;
- @include tablet {
-  font-size: 15px;
- }
- @include mobile {
-  font-size: 10px;
-  line-height: 15px;
  }
 }
 

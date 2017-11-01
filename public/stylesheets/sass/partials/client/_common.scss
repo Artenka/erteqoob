@@ -393,6 +393,14 @@
  letter-spacing: 2px;
  text-align: center;
  padding: 13px 24px 12px 26px;
+ &:hover {
+  background: $color-black;
+  color: $color-white;
+
+  svg path {
+   fill: $color-white;
+  }
+ }
 
  svg {
   width: 19px;
@@ -874,5 +882,24 @@
     left: calc(50% - 12px);
    }
   }
+ }
+}
+
+.input-underline {
+ height: auto;
+ border: none;
+ border-bottom: 2px solid $color-black;
+ font-family: Circe, sans-serif;
+ color: $color-black;
+ font-size: 16px;
+ line-height: 16px;
+ text-align: center;
+ padding: 4px 0;
+ outline: none;
+ @include mobile {
+  border-bottom: 1px solid $color-black;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 10px 0;
  }
 }
