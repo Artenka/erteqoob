@@ -1,0 +1,25 @@
+div#register-step-1.popup-layout
+  div.popup-white.register-step-1
+    .popup__close
+    h1.popup-title.register-step-1__title <span>Регистрация на обучение</span><br> «курс Базовый /<br class="br-sm"> трек Gray»
+    form
+      .register-step-1__select
+        p в городе&nbsp;
+        select
+          option киев
+          option харьков
+      .register-step-1__groups
+        h2.register-step-1__subtitle здравствуйте!
+        .register-step-1__input.register-step-1__input--name
+          label <span>здравствуйте!</span> меня зовут
+          input(type="text" placeholder="Введи свои Имя и Фамилию")
+        .register-step-1__input.register-step-1__input--phone
+          label Со мной можно связаться по телефону
+          input(type="tel" placeholder="+38 099 500 50 50")
+          p ,
+        .register-step-1__input.register-step-1__input--email
+          label Дополнительную информацию можете присылать на почту:
+          input(type="text" placeholder="Введи личный e-mail")
+          p .
+      button(type="submit").btn-white.register-step-1__submit
+        | Забронировать место

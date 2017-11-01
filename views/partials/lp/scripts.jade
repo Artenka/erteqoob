@@ -5,6 +5,25 @@ script(src='/js/jquery.gsap.min.js' type='text/javascript')
 
 script.
   $(function(){
+    // popup close
+    $('.popup__close').click(function () {
+      TweenMax.to($(this).closest('.popup-layout'), 0.5, {
+        display: 'none',
+        autoAlpha: 0,
+        scaleX: 0.7,
+        scaleY: 0.7,
+        ease: Power4.easeOut
+      });
+      TweenMax.to($(this).closest('.popup__close'), 0.5, {
+        display: 'none',
+        autoAlpha: 0,
+        scaleX: 0.7,
+        scaleY: 0.7,
+        ease: Power4.easeOut,
+        delay: 0.5
+      });
+    });
+
     // input material focus event
     inputMaterial = '.input-material';
     inputMaterialInput = '.input-material input';
@@ -33,5 +52,17 @@ script.
     $(window).on('resize', function () {
       var cw = $element.outerWidth();
       $element.css({'height': cw + 'px'});
+    });
+  }
+
+  function showPopup(popupId) {
+    TweenMax.to($(popupId), 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
+    TweenMax.to($('.popup__close'), 1, {
+      display: 'block',
+      autoAlpha: 1,
+      scaleX: 1,
+      scaleY: 1,
+      ease: Power4.easeOut,
+      delay: 0.5
     });
   }

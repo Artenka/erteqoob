@@ -379,6 +379,28 @@
  }
 }
 
+.btn-white {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border: 2px solid $color-black;
+ background: $color-white;
+ color: $color-black;
+ font-size: 10px;
+ font-weight: 700;
+ line-height: 15px;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ text-align: center;
+ padding: 13px 24px 12px 26px;
+
+ svg {
+  width: 19px;
+  height: 4px;
+  margin-right: 16px;
+ }
+}
+
 .rotated-text {
  transform: rotate(-90deg);
  -webkit-transform: rotate(-90deg);
