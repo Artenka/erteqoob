@@ -142,11 +142,14 @@
     -ms-transform-origin: 100% 0;
     transform-origin: 100% 0;
     right: 65px;
+    padding-left: 9px;
     @include laptop {
      right: 50px;
+     padding-left: 8px;
     }
     @include mobile {
      right: 24px;
+     padding-left: 5px;
     }
    }
   }

@@ -651,6 +651,13 @@
  }
 }
 
+.link-home {
+ opacity: 0;
+ z-index: 10;
+ @include mobile {
+  display: none;
+ }
+}
 .register-link {
  opacity: 0;
  z-index: 10;

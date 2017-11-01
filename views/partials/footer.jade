@@ -55,9 +55,9 @@ section.section-layout.main-footer-layout
       p.main-footer__copy Copyright 2017  ERTEQOOB
       ul.main-nav.main-nav--socials.main-footer__socials
         li.main-nav__item.main-nav__item--fb
-          a.main-nav__link(href='#')
+          a.main-nav__link(href="https://www.facebook.com/erteqoob/" target="_blank")
         li.main-nav__item.main-nav__item--in
-          a.main-nav__link(href='#')
+          a.main-nav__link(href="https://www.instagram.com/erteqoob/" target="_blank")
 
   div.footer-disclaimer
     h1.footer-disclaimer__title Приглашаем в мир ERTEQOOB.
@@ -80,6 +80,7 @@ script.
     if ($(window).width() >= 640) {
       TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
       TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.main-layout > .link-home'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
     }
     TweenMax.to($('.main-layout > .main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
   }
