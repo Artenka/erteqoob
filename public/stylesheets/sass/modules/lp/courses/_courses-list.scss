@@ -113,11 +113,15 @@
 
   .courses-list-grid-item__header {
    width: 100%;
+   min-height: 36px;
    display: flex;
    justify-content: flex-start;
    align-items: flex-start;
    opacity: 0;
    transition: 0.5s;
+   @include mobile {
+    min-height: 0;
+   }
 
    .courses-list-grid-item__header-item {
     color: $color-gray;
