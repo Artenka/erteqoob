@@ -25,7 +25,14 @@ script.
       $(this).closest('.action__form-input-layout').find('.action__form-input-line').addClass('action__form-input-line--active');
     });
     $('.action__form-input').blur(function () {
-      TweenMax.to($(this).closest('.action__form-input-layout').find('.action__form-label'), 0.3, {top: '16px', scaleX: 1, scaleY: 1, ease: Power1.easeInOut});
-      $(this).closest('.action__form-input-layout').find('.action__form-input-line').removeClass('action__form-input-line--active');
+      if($(this).val() == ''){
+        TweenMax.to($(this).closest('.action__form-input-layout').find('.action__form-label'), 0.3, {
+          top: '16px',
+          scaleX: 1,
+          scaleY: 1,
+          ease: Power1.easeInOut
+        });
+        $(this).closest('.action__form-input-layout').find('.action__form-input-line').removeClass('action__form-input-line--active');
+      }
     });
   })
