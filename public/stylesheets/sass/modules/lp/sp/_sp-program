@@ -1,5 +1,6 @@
 .sp-program {
- height: 1339px;
+ //height: 1339px;
+ height: 1100px;
  background-image: url(../../../img/lp/sp/program/sp-program.jpg);
  @include mobile {
   height: auto;
