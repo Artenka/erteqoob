@@ -68,15 +68,18 @@ router.get('/webinar', function(req, res, next) {
   res.render('pages/lp/webinar');
 });
 
-router.get('/courses/beginner/kiev', function(req, res, next) {
+router.get('/courses/beginner/base/kiev', function(req, res, next) {
   res.render('pages/lp/base-kiev');
 });
-router.get('/courses/beginner/kharkiv', function(req, res, next) {
+router.get('/courses/beginner/base/kharkiv', function(req, res, next) {
   res.render('pages/lp/base-kharkiv');
 });
 
-router.get('/courses/beginner/qualification', function(req, res, next) {
-  res.render('pages/lp/qualification');
+router.get('/courses/beginner/qualification/kiev', function(req, res, next) {
+  res.render('pages/lp/qualification-kiev');
+});
+router.get('/courses/beginner/qualification/kharkiv', function(req, res, next) {
+  res.render('pages/lp/qualification-kharkiv');
 });
 
 router.get('/courses/pro/adaptation', function(req, res, next) {

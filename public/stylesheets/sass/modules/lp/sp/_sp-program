@@ -24,9 +24,11 @@
  }
 
  &.sp-program--qualification {
-  height: 1300px;
+  height: 1025px;
+  //height: 1300px;
   @include tablet {
-   height: 1525px;
+   height: 1250px;
+   //height: 1525px;
   }
   @include mobile {
    height: auto;
