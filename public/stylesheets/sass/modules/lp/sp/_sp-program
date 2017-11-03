@@ -413,6 +413,34 @@
    }
   }
  }
+
+ &.circle-slider--7-dots {
+
+  .circle-slider__dot {
+
+   &.circle-slider__dot--1 {
+    top: -18px; left: calc(50% - 18px);
+   }
+   &.circle-slider__dot--2 {
+    top: 90px; right: 39px;
+   }
+   &.circle-slider__dot--3 {
+    top: 318px; right: -11px;
+   }
+   &.circle-slider__dot--4 {
+    right: 146px; bottom: 6px;
+   }
+   &.circle-slider__dot--5 {
+    bottom: 9px; left: 142px;
+   }
+   &.circle-slider__dot--6 {
+    left: -11px; bottom: 200px;
+   }
+   &.circle-slider__dot--7 {
+    left: 40px; top: 89px;
+   }
+  }
+ }
 }
 
 .sp-program-info-mobile {
