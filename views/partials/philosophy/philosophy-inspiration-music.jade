@@ -27,4 +27,10 @@ script.
         playerClicked = false;
       }
     });
+
+    $('.inspiration-music .popup__close').click(function(){
+      if(playerClicked){
+        $('.mejs__container .mejs__button').trigger('click');
+      }
+    });
   });

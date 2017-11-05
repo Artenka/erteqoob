@@ -339,6 +339,12 @@
  @include mobile {
   overflow-y: auto;
  }
+
+ .link-home, .register-link, .main-nav.main-nav--socials {
+  position: absolute;
+  opacity: 1;
+  z-index: 102;
+ }
 }
 
 .modal-nav {

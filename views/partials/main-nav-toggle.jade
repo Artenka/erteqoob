@@ -5,29 +5,33 @@
   span
 
 .modal-nav-layout
+  include ../partials/link-home.jade
+  include ../partials/main-nav-socials.jade
+  include ../partials/register-link.jade
+
   .modal-nav
     .modal-nav__logo
     div.modal-nav-list-layout
       ul.modal-nav-list
         li.modal-nav-list__item
           a(href="/academy").modal-nav-list__link
-            p.modal-nav-list__number 01
+            p.modal-nav-list__number 01.
             p.modal-nav-list__name академия
         li.modal-nav-list__item
           a(href="/courses").modal-nav-list__link
-            p.modal-nav-list__number 02
+            p.modal-nav-list__number 02.
             p.modal-nav-list__name курсы
         li.modal-nav-list__item
           a(href="/philosophy").modal-nav-list__link
-            p.modal-nav-list__number 03
+            p.modal-nav-list__number 03.
             p.modal-nav-list__name Философия
         li.modal-nav-list__item
           a(href="/salons").modal-nav-list__link
-            p.modal-nav-list__number 04
+            p.modal-nav-list__number 04.
             p.modal-nav-list__name Салоны
         li.modal-nav-list__item
           a(href="/contacts").modal-nav-list__link
-            p.modal-nav-list__number 05
+            p.modal-nav-list__number 05.
             p.modal-nav-list__name контакты
     //div.modal-nav-links-layout
     //  ul.modal-nav-links

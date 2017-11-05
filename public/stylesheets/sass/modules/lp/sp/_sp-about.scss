@@ -37,7 +37,7 @@
  .logo {
   display: none;
   z-index: 3;
-  @include tablet-mobile {
+  @include tablet {
    display: block;
   }
   @include tablet {

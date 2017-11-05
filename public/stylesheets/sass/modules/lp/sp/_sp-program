@@ -4,6 +4,7 @@
  background-image: url(../../../img/lp/sp/program/sp-program.jpg);
  @include mobile {
   height: auto;
+  padding-bottom: 59px;
  }
 
  .page-title {
@@ -503,7 +504,7 @@
   margin-top: 56px;
  }
  @include mobile {
-  margin: 20px 0 59px;
+  margin: 20px 0 0;
  }
 
  .sp-program__subscribe-title {
