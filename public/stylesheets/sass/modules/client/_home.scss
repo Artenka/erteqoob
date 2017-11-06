@@ -4,6 +4,9 @@
 
 .home__circle-layout {
  @extend .circle-layout;
+ @include mobile {
+  display: none;
+ }
 }
 .home__circle {
  @extend .circle;
@@ -3363,6 +3366,7 @@
   }
   &:before {
    display: none;
+   border: none;
    @include mobile {
     display: block;
     width: 150px;

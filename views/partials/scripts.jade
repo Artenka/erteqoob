@@ -13,6 +13,14 @@ script.
       TweenMax.to($(this).closest('.popup-layout'), 0.5, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut});
       TweenMax.to($(this).closest('.popup__close'), 0.5, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut, delay: 0.5});
     });
+
+    // smooth scroll on anchors
+    $(document).on('click', '.link-smooth', function (event) {
+      event.preventDefault();
+      $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top
+      }, 2000);
+    });
   });
 
   function showPopup(popupId){

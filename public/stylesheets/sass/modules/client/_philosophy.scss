@@ -487,6 +487,9 @@
    .inspiration-list__item-hover {
     top: 100%!important;
     opacity: 1;
+    @include mobile {
+     display: none;
+    }
    }
   }
 

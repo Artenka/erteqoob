@@ -1,13 +1,15 @@
-.scroll-down
+.scroll-down.br-lg-md
   p.scroll-down__text вниз
   .scroll-down__btn
   .scroll-down__dot.scroll-down__dot--1
   .scroll-down__dot.scroll-down__dot--2
   .scroll-down__dot.scroll-down__dot--3
+a(href="#section-2").scroll-down.br-sm
+  .scroll-down__btn
 
 script.
   $(function(){
-    $('.scroll-down').click(function(){
+    $('.scroll-down.br-lg-md').click(function(){
       $('.scroll-layout').moveDown();
     });
   });
