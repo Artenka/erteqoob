@@ -644,6 +644,7 @@
   }
   @include mobile {
    padding: 115px 30px 60px;
+   overflow-x: hidden;
   }
 
   .popup__close {
