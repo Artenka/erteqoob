@@ -98,6 +98,9 @@
   top: calc(50% - 415px);
   left: calc(50% - 67px);
  }
+ @include mobile {
+  top: calc(50% - 560px);
+ }
 
  &.salons-logo--disable {
   @include tablet-mobile {
@@ -124,6 +127,12 @@
  }
  @include tablet-mobile {
   top: calc(50% - 280px);
+ }
+ @include mobile {
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 4px;
+  top: calc(50% - 440px);
  }
 
  &.salons-title--disable {
@@ -154,6 +163,9 @@
   letter-spacing: 4px;
   top: calc(50% - 174px);
  }
+ @include mobile {
+  top: calc(50% - 340px);
+ }
 
  &.salons-subtitle--disable {
   opacity: 0;
@@ -182,6 +194,11 @@
   align-items: flex-start;
   left: calc(50% - 162px);
   bottom: 177px;
+ }
+ @include mobile {
+  width: 300px;
+  top: calc(50% - 160px);
+  left: calc(50% - 150px);
  }
 
  .salons-btn {
@@ -282,6 +299,9 @@
   &:nth-child(2) {
    @include tablet-mobile {
     margin-bottom: 115px;
+   }
+   @include mobile {
+    margin-bottom: 45px;
    }
 
    h3 {@include tablet-mobile {display: none;}}
