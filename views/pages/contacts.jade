@@ -90,7 +90,7 @@ block contents
             li.contacts-info__inner-item
               h3 график работы:
               p
-                | Пн-Сб<br>
+                | Пн-Сб<br class="br-lg-md">
                 | с 10:00 до 18:00
         .pin-block
           .pin
@@ -109,7 +109,7 @@ block contents
             li.contacts-info__inner-item
               h3 график работы:
               p
-                | Пн-Пт<br>
+                | Пн-Пт<br class="br-lg-md">
                 | с 10:00 до 18:00
         .pin-block
           .pin
@@ -194,7 +194,7 @@ block contents
 
   script.
     $(function () {
-      $('#client-page').css('overflow', 'hidden');
+      $('#client-page').css('overflow')
 
       // contacts init animations
       fixedMenusInitAnimation();

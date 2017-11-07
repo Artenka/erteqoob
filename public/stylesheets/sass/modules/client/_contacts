@@ -1015,10 +1015,6 @@
     @include mobile {
      width: 100%;
      margin-bottom: 12px;
-
-     br {
-      display: none;
-     }
     }
     &:before {
      content: '';
