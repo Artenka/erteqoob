@@ -335,6 +335,7 @@
  @include mobile {
   height: 1250px;
   //height: 1400px;
+  overflow-y: auto;
  }
 
  .philosophy-inspiration__bg {
