@@ -11,6 +11,10 @@
  align-items: center;
  margin: 118px auto 0;
  position: relative;
+ @include mobile {
+  height: 144px;
+  margin-top: 57px;
+ }
 
  .courses-list-title__logo {
   width: 164px;
@@ -20,6 +24,12 @@
   position: absolute;
   top: calc(50% - 82px);
   left: calc(50% - 82px);
+  @include mobile {
+   width: 144px;
+   height: 144px;
+   top: calc(50% - 72px);
+   left: calc(50% - 72px);
+  }
  }
 
  h1 {
@@ -30,6 +40,11 @@
   text-transform: uppercase;
   letter-spacing: 16px;
   text-align: center;
+  @include mobile {
+   font-size: 24px;
+   line-height: 19px;
+   letter-spacing: 6px;
+  }
  }
  h2 {
   color: $color-white;
@@ -39,6 +54,13 @@
   text-transform: uppercase;
   letter-spacing: 4px;
   text-align: center;
+  @include mobile {
+   color: $color-nobel;
+   font-size: 9px;
+   line-height: 15.3px;
+   letter-spacing: 3.27px;
+   margin-top: 22px;
+  }
  }
 }
 
@@ -52,6 +74,9 @@
  //opacity: 0;
  @include tablet {
   margin-top: 55px;
+ }
+ @include mobile {
+  display: none;
  }
 
  .courses-list__filter-item {
@@ -86,6 +111,9 @@
  margin-top: 45px;
  @include tablet {
   margin-top: 53px;
+ }
+ @include mobile {
+  margin-top: 18px;
  }
 }
 
@@ -163,6 +191,14 @@
     @include tablet {
      justify-content: flex-start;
     }
+    @include mobile {
+     font-size: 9px;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     justify-content: flex-start;
+     padding-top: 20px;
+    }
 
     .courses-list-grid-item__subtitle-course {
      padding-left: 20px;
@@ -200,6 +236,12 @@
     @include tablet {
      padding-bottom: 30px;
     }
+    @include mobile {
+     font-size: 16px;
+     line-height: 19px;
+     letter-spacing: 4px;
+     margin-top: 9px;
+    }
     &:after {
      content: '';
      width: 76px;
@@ -224,6 +266,9 @@
    position: relative;
    padding-left: 20px;
    transition: 0.5s;
+   @include mobile {
+    display: none;
+   }
    &:after {
     content: '';
     width: 32px;
@@ -246,6 +291,10 @@
    letter-spacing: 4.2px;
    @include tablet {
     width: auto;
+   }
+   @include mobile {
+    letter-spacing: 2px;
+    text-align: left;
    }
 
    span {
@@ -374,6 +423,12 @@
     height: 250px!important;
     padding: 85px 0 66px;
    }
+   @include mobile {
+    height: 160px!important;
+    align-items: center;
+    padding: 0 40px;
+    //padding: 59px 0 0;
+   }
 
    .courses-list-grid-item__header {
     width: auto;
@@ -386,6 +441,9 @@
     @include tablet {
      top: 66px;
      left: 52px;
+    }
+    @include mobile {
+     display: none;
     }
 
     .courses-list-grid-item__header-item {
@@ -415,6 +473,9 @@
 
     .courses-list-grid-item__subtitle {
      justify-content: center;
+     @include mobile {
+      justify-content: flex-start;
+     }
 
      .courses-list-grid-item__subtitle-course {
       padding: 0;
@@ -427,6 +488,9 @@
       display: flex;
       margin-top: 20px;
       opacity: 0;
+      @include mobile {
+       display: none;
+      }
 
       .courses-list-grid-item__subtitle-duration {
        width: 100%;
@@ -440,6 +504,9 @@
      margin-top: 14px;
      text-align: center;
      padding-bottom: 20px;
+     @include mobile {
+      text-align: left;
+     }
      &:after {
       right: calc(50% - 38px);
       opacity: 0;
@@ -457,6 +524,9 @@
     right: 45px;
     @include tablet {
      right: 50px;
+    }
+    @include mobile {
+     display: none;
     }
     &:after {
      top: calc(50% - 2px);
@@ -495,6 +565,11 @@
     @include tablet {
      padding: 85px 170px 66px 0;
     }
+    @include mobile {
+     padding: 0 40px;
+     align-items: flex-start;
+     justify-content: center;
+    }
 
     .courses-list-grid-item__progress-text {
 
@@ -502,6 +577,9 @@
       text-align: center;
       @include tablet {
        padding: 0;
+      }
+      @include mobile {
+       text-align: left;
       }
      }
      &.courses-list-grid-item__progress-text--2 {
@@ -513,12 +591,23 @@
       letter-spacing: 6px;
       text-align: center;
       margin-top: 14px;
+      @include mobile {
+       font-size: 10px;
+       line-height: 20px;
+       letter-spacing: 2px;
+       margin-top: 0;
+       text-align: left;
+      }
      }
      &.courses-list-grid-item__progress-text--3 {
       width: auto;
       position: absolute;
       top: calc(50% - 10px);
       right: 50px;
+      @include mobile {
+       text-align: left;
+       position: static;
+      }
      }
     }
 
@@ -526,10 +615,16 @@
      position: absolute;
      top: calc(50% - 43px);
      right: 184px;
+     @include mobile {
+      right: 40px;
+     }
     }
 
     .br-list {
      display: block;
+     @include mobile {
+      display: none;
+     }
     }
    }
   }

@@ -6,7 +6,7 @@ section.section-layout.courses-list.courses-list--beginner
   .courses-list-title
     .courses-list-title__logo
     h1 beginner
-    h2 набор курсов и треков для начинающих<br> мастеров-парикмахеров
+    h2 набор курсов и треков<br class="br-sm"> для начинающих<br> мастеров-парикмахеров
 
   ul.courses-list__filter
     li(data-grid='row').courses-list__filter-item.courses-list__filter-item--active
@@ -55,7 +55,7 @@ section.section-layout.courses-list.courses-list--beginner
             span.courses-list-grid-item__subtitle-duration 7 месяцев / 9 занятий
         .courses-list-grid-item__more узнать больше
       .courses-list-grid-item.courses-list-grid-item--progress
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 &nbsp;&nbsp;Курс
+        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 <span class="br-lg-md">&nbsp;&nbsp;</span>Курс
         p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
           span БАЗОВЫЙ <br class="br-list"> МУЖСКОЙ
         .courses-list-grid-item__progress-layout
@@ -86,4 +86,19 @@ section.section-layout.courses-list.courses-list--beginner
           }, 500);
         }
       });
+
+      // courses list mobile
+      $(window).on('resize', function () {
+        var window = $(this);
+        if (window.width() < 640) {
+          $('.courses-list-grid').addClass('courses-list-grid--column');
+          $('.courses-list__filter-item--active').removeClass('courses-list__filter-item--active');
+          $('.courses-list__filter-item[data-grid="column"]').addClass('courses-list__filter-item--active');
+        }
+      });
+      if ($(window).width() < 640) {
+        $('.courses-list-grid').addClass('courses-list-grid--column');
+        $('.courses-list__filter-item--active').removeClass('courses-list__filter-item--active');
+        $('.courses-list__filter-item[data-grid="column"]').addClass('courses-list__filter-item--active');
+      }
     })
