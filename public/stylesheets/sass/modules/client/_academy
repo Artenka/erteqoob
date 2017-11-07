@@ -639,7 +639,11 @@
   padding: 13.39% 0 0 11.3%;
   @include tablet-mobile {
    padding: 215px 85px 90px;
-   background-position: top right 75%;
+   //background-position: top right 75%;
+   background: url(../../img/client/academy/academy-main-teacher-popup-2-mobile.jpg) no-repeat top right / cover, $color-black;
+  }
+  @include mobile {
+   padding: 115px 30px 60px;
   }
 
   .popup__close {
@@ -661,6 +665,9 @@
    position: absolute;
    top: calc(50% - 3px);
    z-index: 10;
+   @include mobile {
+    display: none;
+   }
 
    &.popup-lead-teacher__arrow--left {
     background-image: url(../../img/icons/arrow-left-long.svg);
@@ -728,10 +735,13 @@
     @include tablet-mobile {
      width: 100%;
      font-size: 18px;
-     font-weight: 700;
      line-height: 28px;
-     text-transform: uppercase;
      letter-spacing: 5.3px;
+    }
+    @include mobile {
+     font-size: 14px;
+     line-height: 20px;
+     letter-spacing: 4px;
     }
    }
    .popup-lead-teacher__title {
@@ -742,6 +752,11 @@
      font-size: 56px;
      line-height: 52px;
      margin-top: 56px;
+    }
+    @include mobile {
+     font-size: 46px;
+     line-height: 52px;
+     margin-top: 40px;
     }
    }
    .popup-lead-teacher__text {
@@ -756,6 +771,11 @@
      line-height: 34px;
      margin-top: 31px;
     }
+    @include mobile {
+     font-size: 18px;
+     line-height: 27px;
+     margin-top: 20px;
+    }
    }
 
    .academy-teachers__socials {
@@ -763,6 +783,9 @@
     margin-top: 65px;
     @include tablet-mobile {
      margin-top: 97px;
+    }
+    @include mobile {
+     margin-top: 60px;
     }
 
     .academy-teachers__social {

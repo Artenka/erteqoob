@@ -840,6 +840,7 @@
  display: none;
  z-index: 97;
  transition: 0.5s;
+ position: absolute;
  &.contacts-info__exit-mobile--active {
   @include mobile {
    display: block;
