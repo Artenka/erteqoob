@@ -86,4 +86,10 @@ router.get('/courses/pro/adaptation', function(req, res, next) {
   res.render('pages/lp/adaptation');
 });
 
+
+router.get('/in-development', function(req, res, next) {
+  res.render('pages/indev');
+});
+
+
 module.exports = router;

@@ -15,8 +15,8 @@ body, #root, [data-reactroot] {
  height: 100%;
  position: relative;
  @include mobile {
-  overflow-y: auto;
-  overflow-x: hidden;
+  //overflow-y: auto;
+  overflow: hidden;
  }
 }
 
@@ -48,7 +48,7 @@ body, #root, [data-reactroot] {
 .main {
  overflow-y: hidden;
  @include mobile {
-  //overflow-y: auto;
+  overflow-y: auto;
  }
 }
 
