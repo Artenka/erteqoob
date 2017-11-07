@@ -76,6 +76,13 @@ block contents
       .circle.contacts-info__exit-circle.contacts-info__exit-circle--1
       .circle.contacts-info__exit-circle.contacts-info__exit-circle--2
       p.contacts-info__exit-text закрыть
+
+    .contacts-info__exit-mobile
+      span
+      span
+      span
+      span
+
     .contacts-info-layout
       .contacts-info.contacts-info--kiev
         .contacts-info__title киев,<br> ул. мишуги, 2
@@ -252,12 +259,15 @@ block contents
           $('.contacts-coordinates').addClass("contacts-coordinates--disabled");
           $('.contacts-title-block').addClass("contacts-title-block--disabled");
           $('.contacts-info__exit').addClass('contacts-info__exit--active');
-
+          if ($(window).width() < 640) {
+            $('.contacts-info__exit-mobile').addClass('contacts-info__exit-mobile--active');
+            $('.main-nav-toggle').fadeOut(0);
+          }
         }
       });
 
       // contacts side exit click
-      $(".contacts-info__exit").click( function () {
+      $(".contacts-info__exit, .contacts-info__exit-mobile").click( function () {
         $('.contacts-side').removeClass("contacts-side--clicked contacts-side--disabled contacts-side--hidden");
         $('.contacts-info').removeClass('contacts-info--active');
         $('.contacts-center').removeClass("contacts-center--disabled");
@@ -266,6 +276,10 @@ block contents
         $('.contacts-info__exit').removeClass('contacts-info__exit--active');
         $('.contacts-info__inner-link').removeClass('contacts-info__inner-link--active');
         $('.contacts-slider').removeClass('contacts-slider--active');
+        if ($(window).width() < 640) {
+          $('.contacts-info__exit-mobile').removeClass('contacts-info__exit-mobile--active');
+          $('.main-nav-toggle').fadeIn(0);
+        }
       });
 
 

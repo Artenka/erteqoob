@@ -834,6 +834,20 @@
  z-index: 7;
 }
 
+.contacts-info__exit-mobile {
+ @extend .main-nav-toggle;
+ @extend .main-nav-toggle--active;
+ display: none;
+ z-index: 97;
+ transition: 0.5s;
+ &.contacts-info__exit-mobile--active {
+  @include mobile {
+   display: block;
+   opacity: 1;
+  }
+ }
+}
+
 .contacts-info__exit {
  position: absolute;
  width: 142px;
