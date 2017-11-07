@@ -246,6 +246,7 @@
  }
 
  &.main-nav-toggle--active {
+  position: fixed;
 
   span {
 
@@ -344,6 +345,13 @@
   position: absolute;
   opacity: 1;
   z-index: 102;
+ }
+}
+.arrow-link.arrow-link--left.link-home {
+ @include mobile {
+  top: 16px;
+  padding-right: 0;
+  background: transparent;
  }
 }
 

@@ -1,9 +1,8 @@
 #salons {
  opacity: 0;
- //@include tablet-mobile {
- // min-height: 1135px;
- // overflow: auto;
- //}
+ @include tablet-mobile {
+  height: 1297px;
+ }
 }
 
 .salons-layout {
@@ -294,6 +293,9 @@
   font-size: 12px;
   opacity: 0;
   transition: 0.5s;
+  @include mobile {
+   opacity: 1;
+  }
  }
 
  &.salons-btns--disable {

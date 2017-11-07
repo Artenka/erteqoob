@@ -671,6 +671,15 @@
  }
 }
 
+.arrow-link.arrow-link--left.link-home {
+ z-index: 10;
+ @include mobile {
+  top: 16px;
+  padding-right: 0;
+  background: transparent;
+ }
+}
+
 .register-link {
  opacity: 0;
  z-index: 10;

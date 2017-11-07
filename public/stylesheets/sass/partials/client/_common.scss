@@ -655,7 +655,9 @@
  opacity: 0;
  z-index: 10;
  @include mobile {
-  display: none;
+  top: 16px;
+  padding-right: 0;
+  background: transparent;
  }
 }
 .register-link {
@@ -672,7 +674,7 @@
   height: 7px;
   padding: 0;
   background-size: 100% auto;
-  top: 28px;
+  top: 24px;
   //left: 16px;
   left: 22px;
  }
