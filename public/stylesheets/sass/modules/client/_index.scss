@@ -16,7 +16,7 @@ body, #root, [data-reactroot] {
  position: relative;
  @include mobile {
   //overflow-y: auto;
-  overflow: hidden;
+  overflow-x: hidden;
  }
 }
 
