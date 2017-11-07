@@ -106,6 +106,9 @@
   @include tablet-mobile {
    top: calc(50% - 160px);
   }
+  @include mobile {
+   top: calc(50% - 560px);
+  }
  }
 }
 .salons-title {
@@ -646,6 +649,9 @@
    top: 225px;
    opacity: 1;
   }
+  @include mobile {
+   top: 200px;
+  }
  }
 }
 
@@ -684,6 +690,9 @@
    @include tablet-mobile {
     top: calc(50% - 26px);
     opacity: 1;
+   }
+   @include mobile {
+    top: calc(50% - 326px);
    }
   }
  }
