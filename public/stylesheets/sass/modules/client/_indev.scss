@@ -189,6 +189,12 @@
  }
 }
 
+@keyframes dash {
+ to {
+  fill: $color-white;
+ }
+}
+
 .indev-text {
  color: $color-gray-2;
  font-size: 12px;
