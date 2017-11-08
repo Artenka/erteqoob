@@ -200,6 +200,8 @@
    font-size: 14px;
    line-height: 21px;
    letter-spacing: 4px;
+   opacity: 1;
+   top: 0;
   }
  }
 }
@@ -3342,6 +3344,12 @@
    width: 150px;
    margin-left: auto;
    margin-right: auto;
+  }
+
+  .arrow-link {
+   @include tablet {
+    position: relative;
+   }
   }
  }
  .action__form-submit.arrow-link__text {
