@@ -462,6 +462,7 @@
   padding-bottom: 20px;
   bottom: -25px;
   transition-delay: 1s;
+  transition: 0s;
  }
  &:hover {
   font-size: 16px;
@@ -475,7 +476,8 @@
   svg {
    bottom: 12px;
    @include mobile {
-    bottom: 5px;
+    //bottom: 5px;
+    bottom: 0;
    }
   }
  }

@@ -36,8 +36,11 @@
  width: 215px;
  position: absolute;
  left: calc(50% - 107px);
- bottom: 26%;
+ bottom: 20%;
+ //bottom: 26%;
  z-index: 6;
+ opacity: 0;
+ transition: 0s;
  @include mobile {
   display: block;
  }
