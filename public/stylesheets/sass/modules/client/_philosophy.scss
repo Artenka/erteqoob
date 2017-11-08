@@ -352,7 +352,6 @@
  padding-top: 90px;
  @include mobile {
   padding: 80px 0;
-  overflow: hidden;
  }
 
  .inspiration-text {
@@ -441,9 +440,6 @@
  align-items: flex-start;
  padding-top: 25px;
  position: relative;
- @include mobile {
-  overflow: hidden;
- }
 
  .philosophy-inspiration__list-line {
   width: 78%;
@@ -471,14 +467,6 @@
  }
  @include mobile {
   padding: 0 15%;
-  position: relative;
-  &:before {
-   content: '';
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   z-index: 5;
-  }
  }
 
  .inspiration-list__item {
@@ -582,6 +570,9 @@
    }
    @include tablet-mobile {
     width: 100%;
+   }
+   @include mobile {
+    display: none;
    }
 
    .inspiration-list__item-hover-text {
