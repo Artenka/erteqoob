@@ -6,6 +6,7 @@
  }
  @include mobile {
   min-height: 604px;
+  overflow-y: hidden;
  }
 
  .main-nav.main-nav--socials {
