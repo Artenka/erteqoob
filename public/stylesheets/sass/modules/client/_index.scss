@@ -47,7 +47,7 @@ body, #root, [data-reactroot] {
 }
 .main {
  overflow-y: hidden;
- @include mobile {
+ @include tablet-mobile {
   overflow-y: auto;
  }
 }

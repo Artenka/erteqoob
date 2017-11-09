@@ -97,6 +97,9 @@ block contents
 
   script.
     $(function () {
+      // stupid bug fix(delete if possible)
+      $('.main-layout').css('overflow', 'hidden');
+
       // salons init animations
       fixedMenusInitAnimation();
       TweenMax.to($('.main-layout > .link-back'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});

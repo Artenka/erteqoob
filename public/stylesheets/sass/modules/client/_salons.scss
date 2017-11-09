@@ -1,7 +1,12 @@
 #salons {
  opacity: 0;
- @include tablet-mobile {
-  height: 1297px;
+ @include tablet {
+  min-height: 1135px;
+  //overflow-y: auto;
+ }
+ @include mobile {
+  min-height: 568px;
+  //overflow-y: auto;
  }
 }
 
@@ -9,6 +14,9 @@
  height: 100%;
  position: relative;
  @include clearfix;
+ @include tablet-mobile {
+  overflow: hidden;
+ }
 }
 
 .salons-circles {
@@ -95,19 +103,25 @@
  @include tablet-mobile {
   width: 134px;
   height: 74px;
-  top: calc(50% - 415px);
+  //top: calc(50% - 415px);
+  top: 153px;
   left: calc(50% - 67px);
  }
  @include mobile {
-  top: calc(50% - 560px);
+  width: 82px;
+  height: 46px;
+  left: calc(50% - 41px);
+  top: 76px;
  }
 
  &.salons-logo--disable {
   @include tablet-mobile {
-   top: calc(50% - 160px);
+   //top: calc(50% - 160px);
+   top: 406px;
   }
   @include mobile {
-   top: calc(50% - 560px);
+   //top: calc(50% - 460px);
+   top: 183px;
   }
  }
 }
@@ -129,13 +143,15 @@
   top: calc(50% - 97px);
  }
  @include tablet-mobile {
-  top: calc(50% - 280px);
+  top: 306px;
+  //top: calc(50% - 280px);
  }
  @include mobile {
-  font-size: 36px;
-  line-height: 48px;
-  letter-spacing: 4px;
-  top: calc(50% - 440px);
+  font-size: 32px;
+  line-height: 47px;
+  letter-spacing: 8px;
+  top: 153px;
+  //top: calc(50% - 340px);
  }
 
  &.salons-title--disable {
@@ -164,10 +180,15 @@
  @include tablet-mobile {
   font-size: 14px;
   letter-spacing: 4px;
-  top: calc(50% - 174px);
+  top: 398px;
+  //top: calc(50% - 174px);
  }
  @include mobile {
-  top: calc(50% - 340px);
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 3.33px;
+  top: 199px;
+  //top: calc(50% - 240px);
  }
 
  &.salons-subtitle--disable {
@@ -196,12 +217,14 @@
   justify-content: flex-start;
   align-items: flex-start;
   left: calc(50% - 162px);
-  bottom: 177px;
+  bottom: 57px;
+  //bottom: 177px;
  }
  @include mobile {
-  width: 300px;
-  top: calc(50% - 160px);
-  left: calc(50% - 150px);
+  width: 200px;
+  left: calc(50% - 100px);
+  //top: calc(50% - 60px);
+  bottom: 28px;
  }
 
  .salons-btn {
@@ -209,6 +232,9 @@
   position: relative;
   @include tablet-mobile {
    margin-bottom: 45px;
+  }
+  @include mobile {
+   margin-bottom: 22px;
   }
   &:before {
    @extend .dots;
@@ -236,6 +262,11 @@
    @include tablet-mobile {
     color: $color-white;
    }
+   @include mobile {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
+   }
   }
   p {
    color: $color-gray;
@@ -255,6 +286,12 @@
    }
    @include tablet-mobile {
     margin-top: 45px;
+   }
+   @include mobile {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1.2px;
+    margin-top: 12px;
    }
    &:after {
     content: '';
@@ -304,7 +341,8 @@
     margin-bottom: 115px;
    }
    @include mobile {
-    margin-bottom: 45px;
+    margin-bottom: 22px;
+    //margin-bottom: 45px;
    }
 
    h3 {@include tablet-mobile {display: none;}}
@@ -316,7 +354,7 @@
   font-size: 12px;
   opacity: 0;
   transition: 0.5s;
-  @include mobile {
+  @include tablet-mobile {
    opacity: 1;
   }
  }
@@ -465,6 +503,9 @@
     .pin-block {
      bottom: 170px;
      left: calc(50% - 50px);
+     @include mobile {
+      bottom: 60px;
+     }
     }
    }
   }
@@ -650,7 +691,10 @@
    opacity: 1;
   }
   @include mobile {
-   top: 200px;
+   font-size: 10px;
+   line-height: 12px;
+   letter-spacing: 2px;
+   top: 112px;
   }
  }
 }
@@ -684,6 +728,11 @@
    text-transform: uppercase;
    letter-spacing: 5.14px;
    text-align: center;
+   @include mobile {
+    font-size: 12px;
+    line-height: 21px;
+    letter-spacing: 2.5px;
+   }
   }
 
   &.salons-info__item--active {
@@ -692,7 +741,7 @@
     opacity: 1;
    }
    @include mobile {
-    top: calc(50% - 326px);
+    top: calc(50% - 26px);
    }
   }
  }
