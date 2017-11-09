@@ -147,10 +147,10 @@
    &.main-nav__item--fb {
 
     .main-nav__link {
-     background-image: url(../../img/icons/fb-icon.svg);
-     background-size: 9px 17px;
+     background-image: url(../../img/icons/fb-icon.png);
+     background-size: 7px auto;
      @include mobile {
-      background-size: 7px auto;
+      //background-size: 7px auto;
      }
     }
    }
