@@ -66,6 +66,8 @@ script.
   $(document).ready(function () {
     // close popup
     $('.popup-lead-teacher .popup__close').click(function(){
+      var $popup = $('.popup-lead-teacher');
+      $popup.removeClass('popup-lead-teacher--1 popup-lead-teacher--2 popup-lead-teacher--3 popup-lead-teacher--4')
       hideLeadTeacherPopupInfo();
     });
 
@@ -79,7 +81,7 @@ script.
     var $title = $popup.find('.popup-lead-teacher__title--' + teacherNumber);
     var $text = $popup.find('.popup-lead-teacher__text--' + teacherNumber);
     var $socials = $popup.find('.academy-teachers__socials--' + teacherNumber);
-    $popup.addClass('popup-lead-teacher--active');
+    $popup.addClass('popup-lead-teacher--active popup-lead-teacher--' + teacherNumber);
     TweenMax.to($('.popup__close'), 1, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut, delay: 0.5});
     TweenMax.to($popup, 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
     showLeadTeacherPopupInfo($subtitle, $title, $text, $socials);
@@ -94,8 +96,10 @@ script.
     var $popup = $('.popup-lead-teacher');
     var $subtitle, $title, $text, $socials;
     var number;
+    $popup.removeClass('popup-lead-teacher--1 popup-lead-teacher--2 popup-lead-teacher--3 popup-lead-teacher--4')
     if(direction == 'prev'){
       number = leadTeacherPrev;
+      $popup.addClass('popup-lead-teacher--' + number);
       $subtitle = $popup.find('.popup-lead-teacher__subtitle--' + leadTeacherPrev);
       $title = $popup.find('.popup-lead-teacher__title--' + leadTeacherPrev);
       $text = $popup.find('.popup-lead-teacher__text--' + leadTeacherPrev);
@@ -104,6 +108,7 @@ script.
       leadTeacherPrev = number - 1;
     } else if(direction == 'next'){
       number = leadTeacherNext;
+      $popup.addClass('popup-lead-teacher--' + number);
       $subtitle = $popup.find('.popup-lead-teacher__subtitle--' + leadTeacherNext);
       $title = $popup.find('.popup-lead-teacher__title--' + leadTeacherNext);
       $text = $popup.find('.popup-lead-teacher__text--' + leadTeacherNext);

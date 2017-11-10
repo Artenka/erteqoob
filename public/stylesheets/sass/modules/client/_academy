@@ -633,10 +633,24 @@
 
 .popup-layout.popup-lead-teacher {
 
+ &.popup-lead-teacher--1 .popup {
+  background-image: url(../../img/client/academy/academy-main-teacher-popup-1.jpg);
+ }
+ &.popup-lead-teacher--2 .popup {
+  background-image: url(../../img/client/academy/academy-main-teacher-popup-2.jpg);
+ }
+ &.popup-lead-teacher--3 .popup {
+  background-image: url(../../img/client/academy/academy-main-teacher-popup-3.jpg);
+ }
+ &.popup-lead-teacher--4 .popup {
+  background-image: url(../../img/client/academy/academy-main-teacher-popup-4.jpg);
+ }
+
  .popup {
-  background: url(../../img/client/academy/academy-main-teacher-popup-2.jpg) no-repeat top 1.35% right / 58.8% auto, $color-black;
+  background: no-repeat top right / auto 100%, $color-black;
   color: $color-white;
   padding: 13.39% 0 0 11.3%;
+  transition: 0.4s;
   @include laptop {
    padding-top: 9.39%;
   }
