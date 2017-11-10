@@ -720,6 +720,9 @@
      top: 0;
      left: -322px;
     }
+    @include mobile {
+     display: none;
+    }
 
     .popup-lead-teacher__circle {
      opacity: 1;
