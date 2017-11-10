@@ -87,11 +87,14 @@ script.
       if(!inFinished && outFinished) {
         smilesAnimationIn($this);
         inFinished = true;
+        //if (!$this.is(':hover')) {
+        //  smilesAnimationOut($this);
+        //}
       } else if(inFinished && outFinished) {
         setTimeout(function () {
           smilesAnimationIn($this);
           inFinished = true;
-        }, 500);
+        }, 1500);
       }
     });
 
@@ -105,7 +108,7 @@ script.
         setTimeout(function () {
           smilesAnimationOut($this);
           outFinished = true;
-        }, 500);
+        }, 1500);
       }
     });
   });

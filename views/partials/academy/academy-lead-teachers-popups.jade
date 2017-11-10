@@ -73,6 +73,8 @@ script.
 
     window.leadTeacherNext = '';
     window.leadTeacherPrev = '';
+
+    window.stopClick = false;
   });
 
   function showLeadTeachersPopup(teacherNumber) {
@@ -93,6 +95,12 @@ script.
   }
 
   function changeLeadTeacherPopup(direction){
+    if(stopClick) return;
+    stopClick = true;
+    setTimeout(function () {
+      stopClick = false;
+    }, 900);
+
     var $popup = $('.popup-lead-teacher');
     var $subtitle, $title, $text, $socials;
     var number;
