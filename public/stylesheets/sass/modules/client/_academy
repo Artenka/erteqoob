@@ -657,10 +657,11 @@
   @include tablet-mobile {
    padding: 215px 85px 90px;
    //background-position: top right 75%;
-   background: url(../../img/client/academy/academy-main-teacher-popup-2-mobile.jpg) no-repeat top right / cover, $color-black;
+   background: no-repeat top right / cover, $color-black;
   }
   @include mobile {
    padding: 115px 30px 60px;
+   background: no-repeat top right 30% / cover, $color-black;
    overflow-x: hidden;
   }
 
