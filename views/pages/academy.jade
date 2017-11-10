@@ -311,6 +311,9 @@ block contents
       TweenMax.to($('.academy-philosophy__title'), 1.2, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 1});
       TweenMax.to($('.academy-philosophy__title-logo'), 1.2, {opacity: 0.3, ease: Power1.easeOut, delay: 1});
       TweenMax.to($('.academy-philosophy__link'), 0.9, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 2});
+      setTimeout(function(){
+        $('.academy-philosophy__link').css('transition', '0.5s');
+      }, 3000)
       TweenMax.to($('.academy-philosophy__title-line-layout'), 2.2, {padding: 0, ease: Power4.easeOut, delay: 1.4});
 
       academyPhilosophyReinit = false;
@@ -322,6 +325,7 @@ block contents
         TweenMax.to($('.academy-philosophy__title'), 0.6, {top: '200px', opacity: 0, ease: Power1.easeOut, delay: 0.5});
         TweenMax.to($('.academy-philosophy__title-logo'), 0.6, {opacity: 0, ease: Power1.easeOut, delay: 0.5});
         TweenMax.to($('.academy-philosophy__link'), 0.4, {top: '100px', opacity: 0, ease: Power1.easeOut, delay: 1});
+        $('.academy-philosophy__link').css('transition', '0s');
         TweenMax.to($('.academy-philosophy__title-line-layout'), 1.1, {paddingLeft: '50%', paddingRight: '50%', ease: Power4.easeOut, delay: 0.7});
 
         academyPhilosophyReinit = true;

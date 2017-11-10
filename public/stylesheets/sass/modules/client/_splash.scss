@@ -350,10 +350,13 @@
  &:before {
   content: '';
   width: 150%;
-  height: 300%;
+  height: 2000px;
   position: absolute;
-  top: -100%;
+  top: calc(50% - 1000px);
   left: -25%;
+  @include mobile {
+   display: none;
+  }
  }
  @include tablet {
   width: 184px;

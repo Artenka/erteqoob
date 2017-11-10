@@ -86,8 +86,11 @@
 
  li {
   margin-bottom: 10px;
-  &:last-child {
+  &:nth-last-child(2) {
    margin-bottom: 0;
+  }
+  &:last-child {
+   display: none;
   }
 
   a {

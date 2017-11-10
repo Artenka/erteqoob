@@ -86,6 +86,9 @@
  &.btn--black {
   background-color: $color-black;
   color: $color-white;
+  &:hover {
+   border-color: $color-white;
+  }
   &:before {
    background: url(../../img/lp/icons/arrow-right-white.svg) no-repeat center / contain;
   }
@@ -94,6 +97,9 @@
   background-color: $color-cod-gray-2;
   border-color: $color-mine-shaft-4;
   color: $color-white;
+  &:hover {
+   border-color: $color-white;
+  }
   &:before {
    background: url(../../img/lp/icons/arrow-right-white.svg) no-repeat center / contain;
   }
@@ -129,6 +135,7 @@
  &:hover {
   background: $color-black;
   color: $color-white;
+  border: 2px solid $color-black;
 
   svg path {
    fill: $color-white;
