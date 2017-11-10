@@ -166,6 +166,9 @@
       padding-right: 70px;
       margin-right: 70px;
      }
+     &:last-child {
+      border-right: none;
+     }
     }
    }
   }

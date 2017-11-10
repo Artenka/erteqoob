@@ -1016,10 +1016,15 @@ block contents
     }
 
     function homeActionInit() {
+      var emptyInput, fullInput;
+      $emptyInput = $('.action__form-input-layout').not('.action__form-input-layout--active').find('.action__form-label');
+      $fullInput = $('.action__form-input-layout--active').find('.action__form-label');
       TweenMax.to($(".home-action__inner"), 1.2, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 0.7});
-      TweenMax.staggerTo($(".action__form-label"), 1.5, {top: '16px', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.1);
+      TweenMax.staggerTo($emptyInput, 1.5, {top: '16px', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.1);
+      TweenMax.staggerTo($fullInput, 1.5, {top: '-16px', opacity: '1', ease: Power1.easeInOut, delay: 1}, 0.1);
       TweenMax.to($(".action__form-submit"), 1.3, {top: '0', opacity: '1', ease: Power1.easeInOut, delay: 1.2});
       TweenMax.to($(".action__form-input-line"), 1, {width: '100%', ease: Power1.easeInOut, delay: 1.5});
+      $('.action__form-input-layout').find().hasClass()
       //TweenMax.to($(".action__form-input-line"), 1, {left: '0', ease: Power1.easeInOut, delay: 1.5});
 
       homeActionReinit = false;

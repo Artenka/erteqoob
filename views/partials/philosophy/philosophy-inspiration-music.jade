@@ -31,6 +31,9 @@ script.
     $('.inspiration-music .popup__close').click(function(){
       if(playerClicked){
         $('.mejs__container .mejs__button').trigger('click');
+        $('.inspiration-music__player-text').css('opacity', 0);
+        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
+        playerClicked = false;
       }
     });
   });

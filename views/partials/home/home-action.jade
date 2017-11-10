@@ -22,6 +22,7 @@ script.
   $(function(){
     $('.action__form-input').focus(function () {
       TweenMax.to($(this).closest('.action__form-input-layout').find('.action__form-label'), 0.3, {top: '-16px', scaleX: 0.75, scaleY: 0.75, ease: Power1.easeInOut});
+      $(this).closest('.action__form-input-layout').addClass('action__form-input-layout--active');
       $(this).closest('.action__form-input-layout').find('.action__form-input-line').addClass('action__form-input-line--active');
     });
     $('.action__form-input').blur(function () {
@@ -33,6 +34,7 @@ script.
           ease: Power1.easeInOut
         });
         $(this).closest('.action__form-input-layout').find('.action__form-input-line').removeClass('action__form-input-line--active');
+        $(this).closest('.action__form-input-layout').removeClass('action__form-input-layout--active');
       }
     });
   })
