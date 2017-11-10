@@ -731,12 +731,21 @@
    }
 
    .popup-lead-teacher__subtitle {
+    display: none;
     width: 500px;
     font-size: 17px;
     font-weight: 700;
     line-height: 26px;
     text-transform: uppercase;
     letter-spacing: 5px;
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    visibility: hidden;
+    @include laptop {
+     font-size: 15px;
+     line-height: 24px;
+    }
     @include tablet-mobile {
      width: 100%;
      font-size: 18px;
@@ -750,9 +759,17 @@
     }
    }
    .popup-lead-teacher__title {
+    display: none;
     font-size: 84px;
     line-height: 84px;
     margin-top: 64px;
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    visibility: hidden;
+    @include laptop {
+     margin-top: 50px;
+    }
     @include tablet-mobile {
      font-size: 56px;
      line-height: 52px;
@@ -765,10 +782,19 @@
     }
    }
    .popup-lead-teacher__text {
+    display: none;
     width: 620px;
     font-size: 22px;
     line-height: 33px;
     margin-top: 50px;
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    visibility: hidden;
+    @include laptop {
+     font-size: 20px;
+     line-height: 31px;
+    }
     @include tablet-mobile {
      width: 100%;
      font-size: 24px;
@@ -784,8 +810,12 @@
    }
 
    .academy-teachers__socials {
+    display: none;
     position: relative;
     margin-top: 65px;
+    opacity: 0;
+    top: 50px;
+    visibility: hidden;
     @include tablet-mobile {
      margin-top: 97px;
     }
