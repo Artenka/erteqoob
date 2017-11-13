@@ -28,7 +28,7 @@ block contents
       $(window).on('resize', function () {
         var window = $(this);
         if (window.width() < 1260) {
-          $('.main').css('overflowY', 'auto');
+          //$('.main').css('overflowY', 'auto');
           TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power1.easeOut});
@@ -40,7 +40,7 @@ block contents
           academyMastersInit();
           academyInspirationInit();
         } else {
-          $('.main').css('overflowY', 'hidden');
+          //$('.main').css('overflowY', 'hidden');
           if ($('.onepage-pagination li .active').data('index') == 1) {
             TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
             TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
@@ -50,7 +50,7 @@ block contents
 
       // init animations on mobile
       if ($(window).width() < 1260) {
-        $('.main').css('overflowY', 'auto');
+        //$('.main').css('overflowY', 'auto');
         academyIntroInit();
         academyAboutInit();
         academyPhilosophyInit();
