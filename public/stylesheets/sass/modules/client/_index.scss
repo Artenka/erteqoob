@@ -11,6 +11,7 @@ body, #root, [data-reactroot] {
  //min-width: 620px;
 }
 body, html {
+ min-height: 100vh;
  @include tablet-mobile {
   height: auto;
   overflow: auto;
@@ -22,6 +23,7 @@ body, html {
  position: relative;
  @include mobile {
   //overflow-y: auto;
+  min-height: 100vh;
   overflow-x: hidden;
  }
 }
