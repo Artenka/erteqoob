@@ -5,7 +5,7 @@
   //overflow-y: auto;
  }
  @include mobile {
-  min-height: 568px;
+  min-height: 480px;
   //overflow-y: auto;
  }
 }
@@ -32,11 +32,17 @@
   top: calc(50% - 265px);
   left: calc(50% - 265px);
  }
- @include tablet-mobile {
+ @include tablet {
   width: 800px;
   height: 800px;
   top: calc(50% - 400px);
   left: calc(50% - 400px);
+ }
+ @include mobile {
+  width: 450px;
+  height: 450px;
+  top: calc(50% - 225px);
+  left: calc(50% - 225px);
  }
 
  .salons-circle {
@@ -60,11 +66,17 @@
     top: calc(50% - 213px);
     left: calc(50% - 213px);
    }
-   @include tablet-mobile {
+   @include tablet {
     width: 640px;
     height: 640px;
     top: calc(50% - 320px);
     left: calc(50% - 320px);
+   }
+   @include mobile {
+    width: 362px;
+    height: 362px;
+    top: calc(50% - 181px);
+    left: calc(50% - 181px);
    }
   }
   &.salons-circle--3 {
@@ -78,11 +90,17 @@
     top: calc(50% - 161px);
     left: calc(50% - 161px);
    }
-   @include tablet-mobile {
+   @include tablet {
     width: 486px;
     height: 486px;
     top: calc(50% - 243px);
     left: calc(50% - 243px);
+   }
+   @include mobile {
+    width: 276px;
+    height: 276px;
+    top: calc(50% - 138px);
+    left: calc(50% - 138px);
    }
   }
  }
@@ -111,7 +129,7 @@
   width: 82px;
   height: 46px;
   left: calc(50% - 41px);
-  top: 76px;
+  top: 71px;
  }
 
  &.salons-logo--disable {
@@ -121,7 +139,7 @@
   }
   @include mobile {
    //top: calc(50% - 460px);
-   top: 183px;
+   top: 133px;
   }
  }
 }
@@ -147,10 +165,10 @@
   //top: calc(50% - 280px);
  }
  @include mobile {
-  font-size: 32px;
-  line-height: 47px;
-  letter-spacing: 8px;
-  top: 153px;
+  font-size: 34px;
+  line-height: 26px;
+  letter-spacing: 8.5px;
+  top: 152px;
   //top: calc(50% - 340px);
  }
 
@@ -186,7 +204,7 @@
  @include mobile {
   font-size: 10px;
   line-height: 16px;
-  letter-spacing: 3.33px;
+  letter-spacing: 2.86px;
   top: 199px;
   //top: calc(50% - 240px);
  }
@@ -221,10 +239,10 @@
   //bottom: 177px;
  }
  @include mobile {
-  width: 200px;
+  width: 180px;
   left: calc(50% - 100px);
   //top: calc(50% - 60px);
-  bottom: 28px;
+  bottom: 44px;
  }
 
  .salons-btn {
@@ -234,7 +252,7 @@
    margin-bottom: 45px;
   }
   @include mobile {
-   margin-bottom: 22px;
+   margin-bottom: 20px;
   }
   &:before {
    @extend .dots;
@@ -263,9 +281,9 @@
     color: $color-white;
    }
    @include mobile {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 1.67px;
    }
   }
   p {
@@ -284,14 +302,15 @@
     letter-spacing: 1.75px;
     margin-top: 6px;
    }
-   @include tablet-mobile {
+   @include tablet {
     margin-top: 45px;
    }
    @include mobile {
     font-size: 10px;
-    line-height: 12px;
-    letter-spacing: 1.2px;
-    margin-top: 12px;
+    line-height: 10px;
+    letter-spacing: 1.25px;
+    margin-top: 20px;
+    padding-left: 16px;
    }
    &:after {
     content: '';
@@ -337,12 +356,12 @@
   }
 
   &:nth-child(2) {
-   @include tablet-mobile {
+   @include tablet {
     margin-bottom: 115px;
    }
    @include mobile {
-    margin-bottom: 22px;
-    //margin-bottom: 45px;
+    //margin-bottom: 22px;
+    margin-bottom: 42px;
    }
 
    h3 {@include tablet-mobile {display: none;}}
@@ -354,8 +373,11 @@
   font-size: 12px;
   opacity: 0;
   transition: 0.5s;
-  @include tablet-mobile {
+  @include tablet {
    opacity: 1;
+  }
+  @include mobile {
+   display: none;
   }
  }
 
@@ -589,17 +611,27 @@
  }
 
  .pin-block {
-  @include tablet-mobile {
+  @include tablet {
    width: 100px;
    height: 100px;
   }
+  @include mobile {
+   width: 50px;
+   height: 50px;
+  }
 
   .pin {
-   @include tablet-mobile {
+   @include tablet {
     width: 24px;
     height: 44px;
     top: 14px;
     left: calc(50% - 12px);
+   }
+   @include mobile {
+    width: 12px;
+    height: 22px;
+    top: 7px;
+    left: calc(50% - 6px);
    }
   }
 
@@ -609,6 +641,12 @@
     height: 46px;
     top: calc(50% - 23px);
     left: calc(50% - 23px);
+   }
+   @include mobile {
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
    }
   }
 
@@ -694,7 +732,7 @@
    font-size: 10px;
    line-height: 12px;
    letter-spacing: 2px;
-   top: 112px;
+   top: 78px;
   }
  }
 }

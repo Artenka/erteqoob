@@ -1,7 +1,8 @@
 #contacts {
  opacity: 0;
+ min-height: 800px;
  @include mobile {
-  min-height: 640px;
+  min-height: 478px;
  }
 }
 
@@ -823,6 +824,11 @@
 
 .contacts-side-dummy {
  @extend .contacts-side;
+ @include mobile {
+  height: 100%;
+  width: 50%;
+  float: left;
+ }
 }
 
 .contacts-info-layout {
@@ -1279,25 +1285,30 @@
  height: 332px;
  position: absolute;
  bottom: 110px;
+ //top: calc(50% + 100px);
  left: calc(50% - 1130px);
  z-index: 3;
  opacity: 0;
  @include laptop {
   bottom: 96px;
+  //top: 50%;
  }
  @include tablet {
   display: none;
+  top: auto;
   bottom: 105px;
  }
  @include mobile {
   width: 1130px;
   height: 166px;
+  top: auto;
   bottom: 24px;
   left: calc(50% - 565px);
  }
 
  .slick-arrow {
   bottom: -62px;
+  //top: 382px;
   z-index: 12;
   opacity: 0;
   transition: 0.5s;

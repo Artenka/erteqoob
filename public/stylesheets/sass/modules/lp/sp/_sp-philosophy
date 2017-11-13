@@ -182,7 +182,7 @@
  .sp-philosophy-main__text {
   width: 320px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 26px;
   text-transform: uppercase;
   @include mobile {

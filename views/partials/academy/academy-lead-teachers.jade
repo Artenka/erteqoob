@@ -81,37 +81,40 @@ script.
     var inFinished = false;
     var outFinished = true;
 
-    $leadTeacher.on('mouseover', function () {
-      var $this = $(this);
-      $leadTeacher.not(this).addClass('academy-lead-teachers__item--disabled');
-      if(!inFinished && outFinished) {
-        smilesAnimationIn($this);
-        inFinished = true;
-        //if (!$this.is(':hover')) {
-        //  smilesAnimationOut($this);
-        //}
-      } else if(inFinished && outFinished) {
-        setTimeout(function () {
+    if ($(window).width() > 640) {
+      $leadTeacher.on('mouseover', function () {
+        var $this = $(this);
+        $leadTeacher.not(this).addClass('academy-lead-teachers__item--disabled');
+        if (!inFinished && outFinished) {
           smilesAnimationIn($this);
           inFinished = true;
-        }, 1500);
-      }
-    });
+          //if (!$this.is(':hover')) {
+          //  smilesAnimationOut($this);
+          //}
+        } else if (inFinished && outFinished) {
+          setTimeout(function () {
+            smilesAnimationIn($this);
+            inFinished = true;
+          }, 1500);
+        }
+      });
 
-    $leadTeacher.on('mouseleave', function () {
-      var $this = $(this);
-      $leadTeacher.not(this).removeClass('academy-lead-teachers__item--disabled');
-      if (inFinished && !outFinished) {
-        smilesAnimationOut($this);
-        outFinished = true;
-      } else if (inFinished && outFinished) {
-        setTimeout(function () {
+      $leadTeacher.on('mouseleave', function () {
+        var $this = $(this);
+        $leadTeacher.not(this).removeClass('academy-lead-teachers__item--disabled');
+        if (inFinished && !outFinished) {
           smilesAnimationOut($this);
           outFinished = true;
-        }, 1500);
-      }
-    });
+        } else if (inFinished && outFinished) {
+          setTimeout(function () {
+            smilesAnimationOut($this);
+            outFinished = true;
+          }, 1500);
+        }
+      });
+    }
   });
+
 
   function smilesAnimationIn($this){
     if ($this.hasClass('academy-lead-teachers__item--1')) {

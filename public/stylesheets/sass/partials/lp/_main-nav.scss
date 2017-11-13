@@ -113,7 +113,7 @@
    &.main-nav__item--fb {
 
     .main-nav__link {
-     background-image: url(../../img/icons/fb-icon.png);
+     background-image: url(../../img/icons/fb-icon.svg);
      @include mobile {
       background-size: 7px auto;
      }
@@ -128,7 +128,7 @@
 
     .main-nav__link {
      background-position: top 3px center;
-     background-image: url(../../img/icons/in-icon.png);
+     background-image: url(../../img/icons/in-icon.svg);
      @include mobile {
       background-size: 10px auto;
      }
