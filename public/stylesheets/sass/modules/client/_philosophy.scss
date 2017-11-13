@@ -12,7 +12,7 @@
   opacity: 0.73;
  }
  .philosophy-intro__main {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

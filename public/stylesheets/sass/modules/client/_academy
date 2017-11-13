@@ -28,7 +28,7 @@
  }
 
  .academy-intro__main {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -257,7 +257,7 @@
  }
 
  .academy-philosophy__main {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
