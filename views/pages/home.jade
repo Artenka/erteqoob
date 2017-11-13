@@ -74,207 +74,209 @@ block contents
       }
 
       // Onepage scroll init
-      var pageScroll = ".scroll-layout";
-      $(pageScroll).onepage_scroll({
-        sectionContainer: "section",
-        easing: "ease",
-        animationTime: 1200,
-        pagination: true,
-        updateURL: false,
-        beforeMove: function (index) {
-          if (index == 2 || index == 8) {
-            fixedMenusHideAnimation();
-          } else {
-            fixedMenusInitAnimation();
-          }
-          //hidePagePagination();
+      if ($(window).width() >= 640) {
+        var pageScroll = ".scroll-layout";
+        $(pageScroll).onepage_scroll({
+          sectionContainer: "section",
+          easing: "ease",
+          animationTime: 1200,
+          pagination: true,
+          updateURL: false,
+          beforeMove: function (index) {
+            if (index == 2 || index == 8) {
+              fixedMenusHideAnimation();
+            } else {
+              fixedMenusInitAnimation();
+            }
+            //hidePagePagination();
 
-          if (index == 1) {
-            hidePagePagination();
-            homeNavHide();
-            homeAboutHide();
-            homeThinkHide();
-            //homeVideoHideFull();
-            homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            homeIntroInit();
-          } else if (index == 2) {
-            homeIntroHide();
-            homeAboutHide();
-            homeThinkHide();
-            //homeVideoHideFull();
-            homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            homeNavInit();
-            showPagePagination();
-          } else if (index == 3) {
-            homeIntroHide();
-            homeNavHide();
-            homeAboutHide();
-            //homeVideoHideFull();
-            homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            homeThinkInit();
-            showPagePagination();
-          } else if (index == 4) {
-            homeIntroHide();
-            homeNavHide();
-            //homeAboutHide();
-            homeThinkHide();
-            homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            //homeVideoInit();
-            homeAboutInit();
-            showPagePagination();
-          } else if (index == 5) {
-            homeIntroHide();
-            homeNavHide();
-            homeThinkHide();
+            if (index == 1) {
+              hidePagePagination();
+              homeNavHide();
+              homeAboutHide();
+              homeThinkHide();
+              //homeVideoHideFull();
+              homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              homeIntroInit();
+            } else if (index == 2) {
+              homeIntroHide();
+              homeAboutHide();
+              homeThinkHide();
+              //homeVideoHideFull();
+              homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              homeNavInit();
+              showPagePagination();
+            } else if (index == 3) {
+              homeIntroHide();
+              homeNavHide();
+              homeAboutHide();
+              //homeVideoHideFull();
+              homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              homeThinkInit();
+              showPagePagination();
+            } else if (index == 4) {
+              homeIntroHide();
+              homeNavHide();
+              //homeAboutHide();
+              homeThinkHide();
+              homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              //homeVideoInit();
+              homeAboutInit();
+              showPagePagination();
+            } else if (index == 5) {
+              homeIntroHide();
+              homeNavHide();
+              homeThinkHide();
 
-            // temp
-            homeAboutHide();
+              // temp
+              homeAboutHide();
 
-            //homeVideoHide();
-            //homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            //homeAboutInit();
-            homeFoundersInit();
-            showPagePagination();
-          } else if (index == 6) {
-            homeIntroHide();
-            homeNavHide();
-            homeThinkHide();
-            //homeVideoHide();
+              //homeVideoHide();
+              //homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              //homeAboutInit();
+              homeFoundersInit();
+              showPagePagination();
+            } else if (index == 6) {
+              homeIntroHide();
+              homeNavHide();
+              homeThinkHide();
+              //homeVideoHide();
 
-            // temp
-            homeFoundersHide();
+              // temp
+              homeFoundersHide();
 
-            homeAboutHide();
-            //homeSystemHide();
-            //homeEventsHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            homeActionHide();
-            //homeFoundersInit();
-            homeSystemInit();
-            showPagePagination();
-            //} else if (index == 7) {
+              homeAboutHide();
+              //homeSystemHide();
+              //homeEventsHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              homeActionHide();
+              //homeFoundersInit();
+              homeSystemInit();
+              showPagePagination();
+              //} else if (index == 7) {
+              //  homeIntroHide();
+              //  homeNavHide();
+              //  homeThinkHide();
+              //  //homeVideoHideFull();
+              //  homeAboutHide();
+              //  homeFoundersHide();
+              //  //homeEventsHide();
+              //  //homeCollectionsHide();
+              //  //homeBlogHide();
+              //  // temp
+              //  homeSystemHide();
+              //  homeActionHide();
+              //  //homeSystemInit();
+              //  homeCollectionsInit();
+              //  showPagePagination();
+            } else if (index == 7) {
+              showPagePagination();
+              //hidePagePagination();
+              homeIntroHide();
+              homeNavHide();
+              homeThinkHide();
+              //homeVideoHideFull();
+              homeAboutHide();
+              homeFoundersHide();
+              homeSystemHide();
+              homeCollectionsHide();
+              //homeBlogHide();
+              //homeActionHide();
+              //homeEventsInit();
+              homeActionInit();
+            } else if (index == 8) {
+              hidePagePagination();
+              homeIntroHide();
+              homeNavHide();
+              homeThinkHide();
+              //homeVideoHideFull();
+              homeAboutHide();
+              homeFoundersHide();
+              homeSystemHide();
+              //homeEventsHide();
+              //homeBlogHide();
+              homeActionHide();
+              //homeCollectionsInit();
+              //showPagePagination();
+              footerMenusHideAnimation();
+            }
+            //} else if (index == 10) {
             //  homeIntroHide();
             //  homeNavHide();
             //  homeThinkHide();
             //  //homeVideoHideFull();
             //  homeAboutHide();
             //  homeFoundersHide();
-            //  //homeEventsHide();
-            //  //homeCollectionsHide();
-            //  //homeBlogHide();
-            //  // temp
             //  homeSystemHide();
+            //  //homeEventsHide();
+            //  homeCollectionsHide();
             //  homeActionHide();
-            //  //homeSystemInit();
-            //  homeCollectionsInit();
+            //  homeBlogInit();
             //  showPagePagination();
-          } else if (index == 7) {
-            showPagePagination();
-            //hidePagePagination();
-            homeIntroHide();
-            homeNavHide();
-            homeThinkHide();
-            //homeVideoHideFull();
-            homeAboutHide();
-            homeFoundersHide();
-            homeSystemHide();
-            homeCollectionsHide();
-            //homeBlogHide();
-            //homeActionHide();
-            //homeEventsInit();
-            homeActionInit();
-          } else if (index == 8) {
-            hidePagePagination();
-            homeIntroHide();
-            homeNavHide();
-            homeThinkHide();
-            //homeVideoHideFull();
-            homeAboutHide();
-            homeFoundersHide();
-            homeSystemHide();
-            //homeEventsHide();
-            //homeBlogHide();
-            homeActionHide();
-            //homeCollectionsInit();
-            //showPagePagination();
-            footerMenusHideAnimation();
-          }
-          //} else if (index == 10) {
-          //  homeIntroHide();
-          //  homeNavHide();
-          //  homeThinkHide();
-          //  //homeVideoHideFull();
-          //  homeAboutHide();
-          //  homeFoundersHide();
-          //  homeSystemHide();
-          //  //homeEventsHide();
-          //  homeCollectionsHide();
-          //  homeActionHide();
-          //  homeBlogInit();
-          //  showPagePagination();
-          //} else if (index == 11) {
-          //  homeIntroHide();
-          //  homeNavHide();
-          //  homeThinkHide();
-          //  //homeVideoHideFull();
-          //  homeAboutHide();
-          //  homeFoundersHide();
-          //  homeSystemHide();
-          //  //homeEventsHide();
-          //  homeCollectionsHide();
-          //  //homeBlogHide();
-          //  homeActionInit();
-          //  showPagePagination();
-          //} else if (index == 12) {
-          //  homeIntroHide();
-          //  homeNavHide();
-          //  homeThinkHide();
-          //  //homeVideoHideFull();
-          //  homeAboutHide();
-          //  homeFoundersHide();
-          //  homeSystemHide();
-          //  //homeEventsHide();
-          //  homeCollectionsHide();
-          //  //homeBlogHide();
-          //  homeActionHide();
-          //  showPagePagination();
-          //  footerMenusHideAnimation();
-          //}
-        },
-        afterMove: function (index) {
+            //} else if (index == 11) {
+            //  homeIntroHide();
+            //  homeNavHide();
+            //  homeThinkHide();
+            //  //homeVideoHideFull();
+            //  homeAboutHide();
+            //  homeFoundersHide();
+            //  homeSystemHide();
+            //  //homeEventsHide();
+            //  homeCollectionsHide();
+            //  //homeBlogHide();
+            //  homeActionInit();
+            //  showPagePagination();
+            //} else if (index == 12) {
+            //  homeIntroHide();
+            //  homeNavHide();
+            //  homeThinkHide();
+            //  //homeVideoHideFull();
+            //  homeAboutHide();
+            //  homeFoundersHide();
+            //  homeSystemHide();
+            //  //homeEventsHide();
+            //  homeCollectionsHide();
+            //  //homeBlogHide();
+            //  homeActionHide();
+            //  showPagePagination();
+            //  footerMenusHideAnimation();
+            //}
+          },
+          afterMove: function (index) {
 
-        },
-        loop: false,
-        keyboard: true,
-        responsiveFallback: 640,
-        direction: "vertical"
-      });
+          },
+          loop: false,
+          keyboard: true,
+          responsiveFallback: 640,
+          direction: "vertical"
+        });
+      }
 
       // start intro animation on page load
       setTimeout(function () {
