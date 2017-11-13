@@ -67,152 +67,154 @@ block contents
       }
 
       // Onepage scroll init
-      var pageScroll = ".scroll-layout";
-      $(pageScroll).onepage_scroll({
-        sectionContainer: "section",
-        easing: "ease",
-        animationTime: 1200,
-        pagination: true,
-        updateURL: false,
-        beforeMove: function (index) {
-          //if (index == 10) {
-          //  fixedMenusHideAnimation();
-          //} else {
-          //  fixedMenusReinit();
-          //}
-          //hidePagePagination();
+      if ($(window).width() >= 1260) {
+        var pageScroll = ".scroll-layout";
+        $(pageScroll).onepage_scroll({
+          sectionContainer: "section",
+          easing: "ease",
+          animationTime: 1200,
+          pagination: true,
+          updateURL: false,
+          beforeMove: function (index) {
+            //if (index == 10) {
+            //  fixedMenusHideAnimation();
+            //} else {
+            //  fixedMenusReinit();
+            //}
+            //hidePagePagination();
 
-          if (index == 1) {
-            hidePagePagination();
-            philosophyVideoHide();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyIntroInit();
-          } else if (index == 2) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyAbout1Init();
-          } else if (index == 3) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyAbout2Init();
-          } else if (index == 4) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyAbout3Init();
-          } else if (index == 5) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyInspirationInit();
-          } else if (index == 6) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros2Hide();
-            philosophyActionHide();
-            philosophyPros1Init();
-          } else if (index == 7) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyActionHide();
-            philosophyPros2Init();
-          } else if (index == 8) {
-            philosophyIntroHide();
-            showPagePagination();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
-            //philosophyActionHide();
+            if (index == 1) {
+              hidePagePagination();
+              philosophyVideoHide();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyIntroInit();
+            } else if (index == 2) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyAbout1Init();
+            } else if (index == 3) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyAbout2Init();
+            } else if (index == 4) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyAbout3Init();
+            } else if (index == 5) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyInspirationInit();
+            } else if (index == 6) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros2Hide();
+              philosophyActionHide();
+              philosophyPros1Init();
+            } else if (index == 7) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyActionHide();
+              philosophyPros2Init();
+            } else if (index == 8) {
+              philosophyIntroHide();
+              showPagePagination();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
+              //philosophyActionHide();
 
-            // temp
-            philosophyVideoHide();
+              // temp
+              philosophyVideoHide();
 
-            //philosophyVideoInit();
-            philosophyActionInit();
-          } else if (index == 9) {
-            philosophyIntroHide();
-            philosophyVideoHide();
-            philosophyAbout1Hide();
-            philosophyAbout2Hide();
-            philosophyAbout3Hide();
-            philosophyInspirationHide();
-            philosophyPros1Hide();
-            philosophyPros2Hide();
+              //philosophyVideoInit();
+              philosophyActionInit();
+            } else if (index == 9) {
+              philosophyIntroHide();
+              philosophyVideoHide();
+              philosophyAbout1Hide();
+              philosophyAbout2Hide();
+              philosophyAbout3Hide();
+              philosophyInspirationHide();
+              philosophyPros1Hide();
+              philosophyPros2Hide();
 
-            //temp
-            philosophyActionHide();
-            hidePagePagination();
+              //temp
+              philosophyActionHide();
+              hidePagePagination();
 
-            //philosophyActionInit();
-            footerMenusHideAnimation();
-          //} else if (index == 10) {
-          //  philosophyIntroHide();
-          //  philosophyVideoHide();
-          //  showPagePagination();
-          //  philosophyAbout1Hide();
-          //  philosophyAbout2Hide();
-          //  philosophyAbout3Hide();
-          //  philosophyInspirationHide();
-          //  philosophyPros1Hide();
-          //  philosophyPros2Hide();
-          //  philosophyActionHide();
-          //  footerMenusHideAnimation();
-          }
-        },
-        afterMove: function(index) {
+              //philosophyActionInit();
+              footerMenusHideAnimation();
+              //} else if (index == 10) {
+              //  philosophyIntroHide();
+              //  philosophyVideoHide();
+              //  showPagePagination();
+              //  philosophyAbout1Hide();
+              //  philosophyAbout2Hide();
+              //  philosophyAbout3Hide();
+              //  philosophyInspirationHide();
+              //  philosophyPros1Hide();
+              //  philosophyPros2Hide();
+              //  philosophyActionHide();
+              //  footerMenusHideAnimation();
+            }
+          },
+          afterMove: function (index) {
 
-        },
-        loop: false,
-        keyboard: true,
-        responsiveFallback: 1260,
-        direction: "vertical"
-      });
+          },
+          loop: false,
+          keyboard: true,
+          responsiveFallback: 1260,
+          direction: "vertical"
+        });
+      }
 
       // start intro animation on page load
       setTimeout(function () {
