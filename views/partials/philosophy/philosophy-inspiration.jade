@@ -64,9 +64,10 @@ script.
     $('.inspiration-list__item').on('mouseover', function(){
       var inspirationItemBottom = $(window).height() - $(this).offset().top - $(this).outerHeight();
       var inspirationItemHoverHeight = $(this).find('.inspiration-list__item-hover').outerHeight();
+      var inspirationItemHeight = $(this).outerHeight();
       console.log(inspirationItemBottom - inspirationItemHoverHeight);
       if(inspirationItemBottom - inspirationItemHoverHeight < 0) {
-        $(this).find('.inspiration-list__item-hover').attr('style', 'top:' +(inspirationItemBottom-60) + 'px!important');
+        $(this).find('.inspiration-list__item-hover').attr('style', 'top:' +(inspirationItemHeight+inspirationItemBottom-inspirationItemHoverHeight-20) + 'px!important');
       }
     });
     $('.inspiration-list__item').on('mouseleave', function(){
