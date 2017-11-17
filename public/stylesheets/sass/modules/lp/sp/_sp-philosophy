@@ -133,6 +133,110 @@
    }
   }
  }
+
+ &.sp-philosophy--gbw-base {
+  @include tablet {
+   height: 768px;
+   min-height: 768px;
+  }
+  @include mobile {
+   height: 480px;
+  }
+
+  .sp-philosophy-main__title {
+   line-height: 50px;
+   text-align: left;
+   margin: 28px 0 0;
+   @include mobile {
+    line-height: 25.5px;
+    letter-spacing: 2.35px;
+    margin: 0 0 20px;
+   }
+   &:before {
+    content: '';
+    width: 270px;
+    height: 110px;
+    background: url(../../../img/lp/gbw/philosophy/dots-1.svg) no-repeat center / contain;
+    position: absolute;
+    bottom: -172px;
+    left: -124px;
+    @include mobile {
+     display: none;
+    }
+   }
+   &:after {
+    content: '';
+    width: 258px;
+    height: 174px;
+    background: url(../../../img/lp/gbw/philosophy/dots-1.svg) no-repeat center / contain;
+    transform: rotate(90deg);
+    position: absolute;
+    top: -250px;
+    right: -65px;
+    @include mobile {
+     display: none;
+    }
+   }
+
+   span {
+    display: inline-block;
+    &:nth-child(2){
+     display: inline;
+     @include mobile {
+      display: block;
+      margin-left: 12px;
+     }
+    }
+    &:nth-child(3){
+     margin-left: 140px;
+     @include mobile {
+      margin: 25px 0 0 50px;
+     }
+    }
+    &:nth-child(4){
+     display: inline;
+     @include mobile {
+      display: block;
+     }
+    }
+    &:nth-child(5){
+     margin-left: 80px;
+     @include mobile {
+      margin-left: 30px;
+     }
+    }
+   }
+  }
+
+  .circles-big {
+   @include mobile {
+    width: 382px;
+    height: 382px;
+    top: calc(50% - 191px);
+    left: calc(50% - 191px);
+   }
+
+   .circles-big__circle {
+
+    &.circles-big__circle--2 {
+     @include mobile {
+      width: 306px;
+      height: 306px;
+      top: calc(50% - 153px);
+      left: calc(50% - 153px);
+     }
+    }
+    &.circles-big__circle--3 {
+     @include mobile {
+      width: 238px;
+      height: 238px;
+      top: calc(50% - 119px);
+      left: calc(50% - 119px);
+     }
+    }
+   }
+  }
+ }
 }
 
 .sp-philosophy-main {

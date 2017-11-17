@@ -86,6 +86,10 @@ router.get('/courses/pro/adaptation', function(req, res, next) {
   res.render('pages/lp/adaptation');
 });
 
+router.get('/courses/pro/gbw', function(req, res, next) {
+  res.render('pages/lp/gbw-base');
+});
+
 
 router.get('/in-development', function(req, res, next) {
   res.render('pages/indev');

@@ -43,7 +43,7 @@ body {
 }
 
 .section-layout {
- height: 100%;
+ height: 100vh;
  display: flex;
  flex-direction: column;
  align-items: center;
@@ -69,6 +69,12 @@ body {
 
 .br-lg {
  display: block;
+ @include tablet {display: none;}
+ @include mobile {display: none;}
+}
+.br-lg--lp {
+ display: block;
+ @include laptop {display: none;}
  @include tablet {display: none;}
  @include mobile {display: none;}
 }

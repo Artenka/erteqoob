@@ -434,5 +434,63 @@
    }
   }
  }
+
+ &.sp-skills--gbw-base {
+  background-image: url(../../../img/lp/gbw/skills/gbw-skills.jpg);
+  @include laptop {
+   min-height: 800px;
+  }
+
+  .home-skills-list {
+   @include laptop {
+    padding-bottom: 10%;
+   }
+
+   .home-skills-list__item .home-skills-list__item-inner, .home-skills-list__item.home-skills-list__item--2 .home-skills-list__item-inner {
+    @include tablet {
+     margin: 30px 0;
+    }
+    @include mobile {
+     margin: 20px 0!important;
+    }
+   }
+
+   .home-skills-list__item .home-skills-list__item-line {
+    @include mobile {
+     display: none;
+    }
+   }
+
+   .home-skills-list__item:nth-child(3) {
+
+    .home-skills-list__item-inner:nth-child(odd) {
+
+     .home-skills-list__item-number {
+      right: 0!important;
+      left: auto;
+      text-align: right!important;
+     }
+     .home-skills-list__item-title, .home-skills-list__item-text {
+      text-align: right!important;
+      margin-right: 47px!important;
+      margin-left: 0 !important;
+     }
+    }
+    .home-skills-list__item-inner:nth-child(even) {
+
+     .home-skills-list__item-number {
+      left: 0 !important;
+      right: auto;
+      text-align: left !important;
+     }
+     .home-skills-list__item-title, .home-skills-list__item-text {
+      text-align: left!important;
+      margin-left: 36px!important;
+      margin-right: 0 !important;
+     }
+    }
+   }
+  }
+ }
 }
 

@@ -1,0 +1,63 @@
+.gbw-video {
+ min-height: 0;
+ height: 600px;
+ justify-content: center;
+ background: url(../../../img/lp/gbw/video/gbw-video.jpg) no-repeat center / cover;
+ @include laptop-mobile {
+  height: 400px;
+ }
+ @include mobile {
+  align-items: center;
+  background-position: center left 40%;
+ }
+}
+
+.gbw-video__link {
+ display: flex;
+ align-items: center;
+ margin: 0 0 16px 447px;
+ cursor: pointer;
+ @include tablet {
+  margin-left: 155px;
+ }
+ @include mobile {
+  width: 240px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 0 11px 0;
+ }
+ &:hover {
+
+  .gbw-video__link-icon svg {
+   transform: scale(1.1);
+  }
+ }
+
+ .gbw-video__link-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 48px;
+  @include mobile {
+   margin-right: 36px;
+  }
+
+  svg {
+   width: 100%;
+   height: 100%;
+   transition: 0.5s;
+  }
+ }
+ .gbw-video__link-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  @include mobile {
+   width: 100%;
+   font-size: 12px;
+   letter-spacing: 3.43px;
+   margin-top: 15px;
+  }
+ }
+}

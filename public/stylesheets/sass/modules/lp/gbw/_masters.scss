@@ -1,0 +1,265 @@
+.gbw-masters {
+ background: url(../../../img/lp/gbw/masters/gbw-masters.jpg) no-repeat center / cover;
+ @include tablet {
+  height: 900px;
+  background: url(../../../img/lp/gbw/masters/gbw-masters-tablet.jpg) no-repeat center / cover;
+ }
+ @include mobile {
+  height: 774px;
+  background: url(../../../img/lp/gbw/masters/gbw-masters-mobile.jpg) no-repeat center / cover;
+ }
+
+ .page-title {
+
+  h2 {
+   @include mobile {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    text-transform: none;
+    margin-top: 25px;
+   }
+  }
+ }
+}
+
+.gbw-masters-list-layout {
+ flex: 1;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.gbw-masters-list {
+ width: 820px;
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ @include laptop {
+  padding-bottom: 25px;
+ }
+ @include tablet {
+  width: 570px;
+ }
+ @include mobile {
+  width: 230px;
+  flex-direction: column;
+ }
+
+ .gbw-masters-list__item {
+  padding-top: 23px;
+  position: relative;
+  @include tablet {
+   padding-top: 29px;
+  }
+  @include mobile {
+   padding: 35px 0 30px;
+   margin: -5px 0;
+  }
+  &:before {
+   content: '';
+   width: 25px;
+   height: 3px;
+   background-color: $color-dove-gray;
+   position: absolute;
+   top: 0;
+   left: 0;
+   @include mobile {
+    content: '+';
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    color: $color-gray-2-04;
+    font-size: 24px;
+    font-weight: 700;
+    top: 4px;
+    left: -23px;
+   }
+  }
+  &:nth-child(even) {
+   margin-top: 150px;
+   @include laptop {
+    margin-top: 100px;
+   }
+   @include mobile {
+    align-self: flex-end;
+    margin-top: 0;
+    text-align: right;
+   }
+   &:before {
+    @include mobile {
+     left: auto;
+     right: -23px;
+    }
+   }
+   &:after {
+    @include mobile {
+     content: '';
+     width: 209px;
+     height: 48px;
+     background: url(../../../img/lp/gbw/masters/dots-mobile.svg) no-repeat center;
+     position: absolute;
+     bottom: 0;
+     right: -23px;
+    }
+   }
+
+   .gbw-masters-list__item-line-mobile {
+    left: auto;
+    right: 20px;
+   }
+
+   .gbw-masters-list__item-text {
+    @include mobile {
+     padding: 0 20px 0 0;
+    }
+   }
+  }
+  &:nth-child(1) {
+   &:after {
+    content: '';
+    width: 140px;
+    height: 209px;
+    background: url(../../../img/lp/gbw/masters/dots-1.svg) no-repeat center;
+    position: absolute;
+    top: -48px;
+    left: 41px;
+    @include mobile {
+     width: 209px;
+     height: 48px;
+     background: url(../../../img/lp/gbw/masters/dots-mobile.svg) no-repeat center;
+     top: auto;
+     bottom: 0;
+     left: -23px;
+    }
+   }
+  }
+  &:nth-child(3) {
+   @include tablet {
+    margin-top: 45px;
+   }
+   &:after {
+    content: '';
+    width: 209px;
+    height: 72px;
+    background: url(../../../img/lp/gbw/masters/dots-2.svg) no-repeat center;
+    position: absolute;
+    top: 51px;
+    left: -81px;
+    @include mobile {
+     width: 209px;
+     height: 48px;
+     background: url(../../../img/lp/gbw/masters/dots-mobile.svg) no-repeat center;
+     top: auto;
+     bottom: 0;
+     left: -23px;
+    }
+   }
+  }
+
+  .gbw-masters-list__item-title {
+   font-size: 18px;
+   font-weight: 700;
+   letter-spacing: 5.1px;
+   line-height: 26px;
+   text-transform: uppercase;
+   position: relative;
+   @include mobile {
+    font-size: 16px;
+    line-height: 16px;
+   }
+  }
+  .gbw-masters-list__item-text {
+   color: $color-gray-2;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 20px;
+   text-transform: uppercase;
+   margin-top: 13px;
+   position: relative;
+   @include mobile {
+    font-size: 10px;
+    line-height: 15px;
+    padding-left: 20px;
+    margin-top: 16px;
+   }
+  }
+ }
+
+ .gbw-masters-list__item-line-mobile {
+  display: none;
+  width: 1px;
+  height: 100%;
+  background: $color-tundora-05;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 0;
+  @include mobile {
+   display: block;
+  }
+ }
+}
+
+.gbw-masters__text {
+ color: $color-gray-2;
+ font-size: 14px;
+ line-height: 26px;
+ text-transform: uppercase;
+ margin-bottom: 120px;
+ position: relative;
+ @include laptop {
+  margin-bottom: 65px;
+ }
+ @include tablet {
+  margin-bottom: 105px;
+ }
+ @include mobile {
+  font-size: 10px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 55px;
+ }
+ &:before {
+  content: '';
+  width: 255px;
+  height: 186px;
+  background: url(../../../img/lp/gbw/masters/dots-3.svg) no-repeat top left;
+  position: absolute;
+  top: -75px;
+  left: -44px;
+  @include mobile {
+   display: none;
+  }
+ }
+
+ span {
+  display: block;
+  color: $color-white;
+  font-size: 18px;
+  font-weight: 700;
+  @include mobile {
+   font-size: 16px;
+   margin-bottom: 10px;
+   text-align: left;
+  }
+ }
+}
+
+.gbw-masters__disclaimer {
+ font-size: 16px;
+ line-height: 23px;
+ color: $color-dove-gray;
+ text-align: center;
+ margin-bottom: 120px;
+ @include laptop {
+  margin-bottom: 69px;
+ }
+ @include tablet {
+  margin-bottom: 90px;
+ }
+ @include mobile {
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 75px;
+ }
+}
