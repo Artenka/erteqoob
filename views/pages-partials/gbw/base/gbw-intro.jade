@@ -101,4 +101,29 @@ script.
     $dice.on('mouseleave', function () {
       $(this).removeClass('gbw-base-intro-dice--active');
     });
+
+    var $dice1 = $('.gbw-base-intro-dice--1');
+    var $dice2 = $('.gbw-base-intro-dice--2');
+    var $dice3 = $('.gbw-base-intro-dice--3');
+    var $window = $(window);
+    //var dice1X = parseFloat($dice1.css('right').replace('px', ''));
+    //var dice1Y = parseFloat($dice1.css('top').replace('px', ''));
+    //var dice2X = parseFloat($dice2.css('left').replace('px', ''));
+    //var dice2Y = parseFloat($dice2.css('top').replace('px', ''));
+    //var dice3X = parseFloat($dice3.css('right').replace('px', ''));
+    //var dice3Y = parseFloat($dice3.css('bottom').replace('px', ''));
+    $(document).on('mousemove', function (e) {
+      $dice1.find('.gbw-base-intro-dice__image').css({
+        left: e.pageX/$window.width() * 150,
+        top: -e.pageY/$window.height() * 75
+      });
+      $dice2.find('.gbw-base-intro-dice__image').css({
+        left: -e.pageX/$window.width() * 150,
+        top: e.pageY/$window.height() * 75
+      });
+      $dice3.find('.gbw-base-intro-dice__image').css({
+        left: -e.pageX/$window.width() * 150,
+        top: -e.pageY/$window.height() * 75
+      });
+    });
   });
