@@ -112,18 +112,23 @@ script.
     //var dice2Y = parseFloat($dice2.css('top').replace('px', ''));
     //var dice3X = parseFloat($dice3.css('right').replace('px', ''));
     //var dice3Y = parseFloat($dice3.css('bottom').replace('px', ''));
-    $(document).on('mousemove', function (e) {
-      $dice1.find('.gbw-base-intro-dice__image').css({
-        left: e.pageX/$window.width() * 150,
-        top: -e.pageY/$window.height() * 75
+
+    if ($window.width() >= 640) {
+      $(document).on('mousemove', function (e) {
+        if(e.pageY < $window.height()){
+          $dice1.find('.gbw-base-intro-dice__image').css({
+            left: e.pageX / $window.width() * 150,
+            top: -e.pageY / $window.height() * 75
+          });
+          $dice2.find('.gbw-base-intro-dice__image').css({
+            left: -e.pageX / $window.width() * 150,
+            top: e.pageY / $window.height() * 75
+          });
+          $dice3.find('.gbw-base-intro-dice__image').css({
+            left: -e.pageX / $window.width() * 150,
+            top: -e.pageY / $window.height() * 75
+          });
+        }
       });
-      $dice2.find('.gbw-base-intro-dice__image').css({
-        left: -e.pageX/$window.width() * 150,
-        top: e.pageY/$window.height() * 75
-      });
-      $dice3.find('.gbw-base-intro-dice__image').css({
-        left: -e.pageX/$window.width() * 150,
-        top: -e.pageY/$window.height() * 75
-      });
-    });
+    }
   });

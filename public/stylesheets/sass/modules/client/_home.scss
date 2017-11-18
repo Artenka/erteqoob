@@ -235,6 +235,10 @@
      left: 0;
      top: -15%;
     }
+    @include mobile {
+     height: 100%;
+     top: 0;
+    }
 
     &:before {
      opacity: 0;
@@ -246,6 +250,9 @@
     @include tablet-mobile {
      padding-left: 11%;
      padding-right: 8%;
+    }
+    @include mobile {
+     padding: 0 17.5% 7%;
     }
    }
 
@@ -260,7 +267,9 @@
      letter-spacing: 10px;
     }
     @include mobile {
-     font-size: 16px;
+     //font-size: 16px;
+     font-size: 14px;
+     line-height: 21px;
     }
    }
 
@@ -290,6 +299,9 @@
   }
   &:nth-child(1) .home-nav__layout {
    background-image: url(/img/client/home/home-nav-bg-1.jpg);
+   @include mobile {
+    background: url(/img/client/home/home-nav-bg-1-mobile.png) no-repeat center / cover;
+   }
 
    .home-nav__image-inner {
     background-image: url(/img/client/home/home-nav-inner-1.jpg);
@@ -297,6 +309,9 @@
   }
   &:nth-child(2) .home-nav__layout {
    background-image: url(/img/client/home/home-nav-bg-2.jpg);
+   @include mobile {
+    background: url(/img/client/home/home-nav-bg-2-mobile.png) no-repeat center / cover;
+   }
 
    .home-nav__image-inner {
     background-image: url(/img/client/home/home-nav-inner-2.jpg);
@@ -304,6 +319,9 @@
   }
   &:nth-child(3) .home-nav__layout {
    background-image: url(/img/client/home/home-nav-bg-3.jpg);
+   @include mobile {
+    background: url(/img/client/home/home-nav-bg-3-mobile.png) no-repeat center / cover;
+   }
 
    .home-nav__image-inner {
     background-image: url(/img/client/home/home-nav-inner-3.jpg);
@@ -311,6 +329,9 @@
   }
   &:nth-child(4) .home-nav__layout {
    background-image: url(/img/client/home/home-nav-bg-4.jpg);
+   @include mobile {
+    background: url(/img/client/home/home-nav-bg-4-mobile.png) no-repeat center / cover;
+   }
 
    .home-nav__image-inner {
     background-image: url(/img/client/home/home-nav-inner-4.jpg);
@@ -318,6 +339,9 @@
   }
   &:nth-child(5) .home-nav__layout {
    background-image: url(/img/client/home/home-nav-bg-5.jpg);
+   @include mobile {
+    background: url(/img/client/home/home-nav-bg-5-mobile.png) no-repeat center / cover;
+   }
 
    .home-nav__image-inner {
     background-image: url(/img/client/home/home-nav-inner-5.jpg);
@@ -353,6 +377,9 @@
     top: 0;
     left: 0;
     transition: 0.5s;
+    @include mobile {
+     display: none;
+    }
    }
   }
 
@@ -401,9 +428,11 @@
     line-height: 21px;
    }
    @include mobile {
-    font-size: 10px;
+    //font-size: 10px;
     letter-spacing: 4.03px;
     line-height: 21px;
+    font-size: 12px;
+    left: 6%;
    }
   }
 
@@ -419,6 +448,9 @@
     width: 18.75%;
     height: 27.3%;
     margin: 0;
+   }
+   @include mobile {
+    visibility: hidden;
    }
   }
 
@@ -458,8 +490,13 @@
     padding-bottom: 10px;
    }
    @include mobile {
-    font-size: 10px;
-    letter-spacing: 4.03px;
+    //font-size: 10px;
+    //letter-spacing: 4.03px;
+    //line-height: 21px;
+    //padding-bottom: 6px;
+    color: $color-white;
+    font-size: 14px;
+    letter-spacing: 5.42px;
     line-height: 21px;
     padding-bottom: 6px;
    }
@@ -480,8 +517,11 @@
      left: -70px;
     }
     @include mobile {
+     height: 2px;
      width: 56px;
-     left: -50px;
+     //left: -50px;
+     left: 0;
+     opacity: 0.5;
     }
    }
    &:hover {
