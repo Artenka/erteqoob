@@ -232,11 +232,27 @@
   @include tablet {
    min-height: 1177px;
   }
+  @include mobile {
+   height: 1286px;
+  }
+
+  .page-title {
+
+   > h2 {
+    @include mobile {
+     margin: 0;
+    }
+   }
+  }
 
   .sp-format-block {
    width: 820px;
    @include tablet {
     width: 500px;
+    height: auto;
+   }
+   @include mobile {
+    width: 250px;
     height: auto;
    }
 
@@ -250,12 +266,26 @@
      padding: 0 0 40px 84px;
      margin: 0;
     }
+    @include mobile {
+     padding: 0;
+     border: none;
+     margin-bottom: 20px;
+    }
+
+    .sp-format-block__title-block {
+     margin-bottom: 35px;
+    }
    }
    .sp-format-block__right {
     width: 40%;
     padding-left: 80px;
     @include tablet-mobile {
      width: 100%;
+    }
+    @include mobile {
+     display: flex;
+     flex-direction: column;
+     padding: 0;
     }
     @include tablet {
      display: flex;
@@ -268,6 +298,21 @@
     .sp-format-block-list {
      @include tablet {
       margin: 0;
+     }
+     @include mobile {
+      order: 1;
+     }
+    }
+
+    .sp-format-block__title-block {
+     @include mobile {
+      order: 2;
+      justify-content: center;
+      text-align: center;
+      border-top: 1px solid $color-mine-shaft-07;
+      border-bottom: 1px solid $color-mine-shaft-07;
+      padding: 30px 0;
+      margin-top: 30px;
      }
     }
    }
@@ -286,16 +331,33 @@
     background: url(../../../img/lp/sp/format/sp-format-dots.svg) no-repeat center;
     padding: 25px 75px;
    }
+   @include mobile {
+    height: 227px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: url(../../../img/lp/sp/format/dots-mobile.svg) no-repeat center;
+    padding: 58px 27px 50px;
+    margin: 0 0 37px;
+   }
 
    &:after, &:before {
     @include tablet {
      height: 100%;
     }
    }
+   &:after {
+    @include mobile {
+     bottom: 0;
+    }
+   }
 
    .sp-format-register__link {
     @include tablet {
      margin-top: 0;
+    }
+    @include mobile {
+     margin: 0;
     }
    }
   }
@@ -845,6 +907,9 @@
 
 .sp-format-block-list {
  margin-top: 60px;
+ @include mobile {
+  margin: 0;
+ }
 
  .sp-format-block-list__item {
   color: $color-gray-2;
@@ -877,20 +942,41 @@
  @include tablet {
   margin: 35px 0 40px;
  }
+ @include mobile {
+  width: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 12px;
+  margin: 30px 0;
+ }
 
  p {
   font-size: 10px;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
+  @include mobile {
+   margin-bottom: 25px;
+  }
   &:first-child {
    padding-left: 20px;
    position: relative;
+   @include mobile {
+    padding-left: 0;
+   }
    &:before {
     content: '+';
     position: absolute;
     top: 0;
     left: 0;
+    @include mobile {
+     left: -19px;
+    }
+   }
+  }
+  &:last-child {
+   @include mobile {
+    margin-bottom: 0;
    }
   }
  }

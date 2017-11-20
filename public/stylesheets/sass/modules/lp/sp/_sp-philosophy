@@ -243,14 +243,31 @@
   .sp-philosophy-main__title {
    text-align: left;
    margin-top: 0;
+   @include mobile {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 2px;
+   }
 
    span {
     display: block;
     &:nth-child(2){
      padding-left: 80px;
+     @include mobile {
+      padding-left: 32px;
+     }
     }
     &:nth-child(3){
+     display: inline;
+     @include mobile {
+      display: block;
+     }
+    }
+    &:nth-child(4){
      padding-left: 40px;
+     @include mobile {
+      padding-left: 15px;
+     }
     }
    }
   }
@@ -259,6 +276,13 @@
    font-size: 16px;
    line-height: 26px;
    letter-spacing: 4.57px;
+   @include mobile {
+    width: auto;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: normal;
+    padding: 0;
+   }
   }
  }
 }

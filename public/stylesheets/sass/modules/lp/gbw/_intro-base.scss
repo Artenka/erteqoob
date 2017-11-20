@@ -29,6 +29,9 @@
   @include laptop {
    width: 1190px;
   }
+  @include tablet-mobile {
+   width: 100%;
+  }
 
   .switcher {
    justify-content: flex-start;
@@ -52,6 +55,9 @@
    @include laptop {
     padding-top: 70px;
    }
+   @include mobile {
+    padding-top: 0;
+   }
 
    .sp-about-block__main-title {
     font-size: 64px;
@@ -63,6 +69,11 @@
      font-size: 48px;
      line-height: 48px;
     }
+    @include mobile {
+     font-size: 66px;
+     line-height: 66px;
+     letter-spacing: 6.88px;
+    }
 
     span {
      font-size: 12px;
@@ -72,6 +83,12 @@
      text-transform: uppercase;
      margin-bottom: 22px;
      @include laptop {
+      margin-bottom: 5px;
+     }
+     @include mobile {
+      font-size: 9px;
+      line-height: 16px;
+      letter-spacing: 1.17px;
       margin-bottom: 9px;
      }
     }
@@ -94,6 +111,12 @@
     @include tablet {
      margin-top: 330px;
     }
+    @include mobile {
+     font-size: 9px;
+     line-height: 16px;
+     letter-spacing: 1.17px;
+     margin-top: 15px;
+    }
    }
    .sp-about-block__main-link {
     margin-top: 53px;
@@ -102,6 +125,19 @@
     }
     @include tablet {
      margin-top: 66px;
+    }
+    @include mobile {
+     width: 235px;
+     margin: 0;
+    }
+   }
+  }
+
+  .sp-about-block__info {
+
+   .sp-about-block__info-date {
+    @include mobile {
+     margin-top: 20px;
     }
    }
   }
@@ -120,6 +156,9 @@
     height: 760px;
     top: 105px;
     left: calc(50% - 380px);
+   }
+   @include mobile {
+    top: 60px;
    }
 
    .gbw-base-intro__circles-logo {
@@ -751,6 +790,9 @@
   height: 424px;
   top: 275px;
   left: calc(50% - 212px);
+ }
+ @include mobile {
+  display: none;
  }
 
  .gbw-intro-center__item {
