@@ -1,0 +1,63 @@
+section.section-layout.gbw-base-intro
+  include ../../../../partials/link-back-gbw.jade
+  include ../../../../partials/main-nav-socials.jade
+  include ../../../../partials/main-nav-lang.jade
+  include ../../../../partials/main-nav-toggle.jade
+  include ../../../../partials/courses-link.jade
+
+  .logo
+
+  .gbw-base-intro__circles
+    .gbw-base-intro__circles-logo
+    .circle.gbw-base-intro__circle.gbw-base-intro__circle--1
+    .circle.gbw-base-intro__circle.gbw-base-intro__circle--2
+    .circle.gbw-base-intro__circle.gbw-base-intro__circle--3
+
+  .gbw-base-intro-dice.gbw-base-intro-dice--1
+    .gbw-base-intro-dice__image
+
+  .gbw-base-intro-dice.gbw-base-intro-dice--2
+    .gbw-base-intro-dice__image
+
+  .gbw-base-intro-dice.gbw-base-intro-dice--3
+    .gbw-base-intro-dice__image
+
+  .gbw-intro-center
+    .gbw-intro-center__item.gbw-intro-center__item--1
+      .gbw-intro-center__item-circle-block
+        .gbw-intro-center__item-circle
+        p.gbw-intro-center__item-circle-text 70%
+      p.gbw-intro-center__item-text градация
+    .gbw-intro-center__item.gbw-intro-center__item--2
+      .gbw-intro-center__item-circle-block
+        .gbw-intro-center__item-circle
+        p.gbw-intro-center__item-circle-text 20%
+      p.gbw-intro-center__item-text слои
+    .gbw-intro-center__item.gbw-intro-center__item--3
+      .gbw-intro-center__item-circle-block
+        .gbw-intro-center__item-circle
+        p.gbw-intro-center__item-circle-text 10%
+      p.gbw-intro-center__item-text линии
+
+  .sp-about-block
+    p.sp-about-block__duration 5 дней<br class="br-lg-md"> 11:00 - 18:00
+    div.sp-about-block__main
+      h1.sp-about-block__main-title
+        span трек
+        | grey
+      h2.sp-about-block__main-subtitle Быстрое приобретение<br> и тренировка навыков салонных стрижек
+      a(href="#").btn.sp-about-block__main-link записаться на трек
+    .sp-about-block__info
+      ul.switcher
+        li.switcher__btn
+          a(href="/courses/pro/gbw/grey/kiev") киев
+        li.switcher__btn.switcher__btn--active
+          a(href="/courses/pro/gbw/grey/kharkiv") харьков
+      p.sp-about-block__info-date 14.03.2017
+      p.sp-about-block__info-seats <span>Места: 7</span> из 10
+
+
+script.
+  $(function(){
+    gbwDicesFloating();
+  });

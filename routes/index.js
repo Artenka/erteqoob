@@ -89,6 +89,12 @@ router.get('/courses/pro/adaptation', function(req, res, next) {
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });
+router.get('/courses/pro/gbw/grey/kiev', function(req, res, next) {
+  res.render('pages/lp/gbw-grey-kiev');
+});
+router.get('/courses/pro/gbw/grey/kharkiv', function(req, res, next) {
+  res.render('pages/lp/gbw-grey-kharkiv');
+});
 
 
 router.get('/in-development', function(req, res, next) {

@@ -19,7 +19,7 @@ section.section-layout.gbw-base-intro
     p.gbw-base-intro-main__text Уникальная авторская программа<br class="br-sm"> по адаптивному<br class="br-lp-md"> дизайну волос<br class="br-sm"><br class="br-lg--lp"> и комбинированию<br class="br-lp-md"> основных форм:
     p.gbw-base-intro-main__text.gbw-base-intro-main__text--white линии, слои, градация
 
-  .gbw-base-intro-dice.gbw-base-intro-dice--1
+  a(href="/courses/pro/gbw/grey/kiev").gbw-base-intro-dice.gbw-base-intro-dice--1
     .gbw-base-intro-dice__image
     .gbw-base-intro-dice__content
       h1.gbw-base-intro-dice__title grey
@@ -29,7 +29,7 @@ section.section-layout.gbw-base-intro
         li.gbw-base-intro-dice__list-item
           p.gbw-base-intro-dice__list-item-text <span>20%</span> градация
           p.gbw-base-intro-dice__list-item-text <span>10%</span> слои
-      a(href="#").gbw-base-intro-dice__link
+      .gbw-base-intro-dice__link
         | перейти
         svg(width='12px', height='5px', viewbox='0 0 12 5', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
           g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', opacity='0.5')
@@ -42,7 +42,7 @@ section.section-layout.gbw-base-intro
                         g(id='Arrow/Short/right-active')
                           path(d='M8.40301533,3.46261873 L0,3.46261873 L0,1.46261873 L8.38138622,1.46261873 L8.36556864,0 L11.3655686,2.46981835 L8.41964143,5 L8.40301533,3.46261873 Z', id='Arrow/Long/right-active-Copy')
 
-  .gbw-base-intro-dice.gbw-base-intro-dice--2
+  a(href="/courses/pro/gbw/black/kiev").gbw-base-intro-dice.gbw-base-intro-dice--2
     .gbw-base-intro-dice__image
     .gbw-base-intro-dice__content
       h1.gbw-base-intro-dice__title black
@@ -52,7 +52,7 @@ section.section-layout.gbw-base-intro
         li.gbw-base-intro-dice__list-item
           p.gbw-base-intro-dice__list-item-text <span>20%</span> градация
           p.gbw-base-intro-dice__list-item-text <span>10%</span> слои
-      a(href="#").gbw-base-intro-dice__link
+      .gbw-base-intro-dice__link
         | перейти
         svg(width='12px', height='5px', viewbox='0 0 12 5', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
           g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', opacity='0.5')
@@ -65,7 +65,7 @@ section.section-layout.gbw-base-intro
                         g(id='Arrow/Short/right-active')
                           path(d='M8.40301533,3.46261873 L0,3.46261873 L0,1.46261873 L8.38138622,1.46261873 L8.36556864,0 L11.3655686,2.46981835 L8.41964143,5 L8.40301533,3.46261873 Z', id='Arrow/Long/right-active-Copy')
 
-  .gbw-base-intro-dice.gbw-base-intro-dice--3
+  a(href="/courses/pro/gbw/white/kiev").gbw-base-intro-dice.gbw-base-intro-dice--3
     .gbw-base-intro-dice__image
     .gbw-base-intro-dice__content
       h1.gbw-base-intro-dice__title White
@@ -75,7 +75,7 @@ section.section-layout.gbw-base-intro
         li.gbw-base-intro-dice__list-item
           p.gbw-base-intro-dice__list-item-text <span>20%</span> градация
           p.gbw-base-intro-dice__list-item-text <span>10%</span> слои
-      a(href="#").gbw-base-intro-dice__link
+      .gbw-base-intro-dice__link
         | перейти
         svg(width='12px', height='5px', viewbox='0 0 12 5', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
           g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', opacity='0.5')
@@ -94,41 +94,5 @@ section.section-layout.gbw-base-intro
 
 script.
   $(function(){
-    var $dice = $('.gbw-base-intro-dice');
-    $dice.on('mouseover', function(){
-      $(this).addClass('gbw-base-intro-dice--active');
-    });
-    $dice.on('mouseleave', function () {
-      $(this).removeClass('gbw-base-intro-dice--active');
-    });
-
-    var $dice1 = $('.gbw-base-intro-dice--1');
-    var $dice2 = $('.gbw-base-intro-dice--2');
-    var $dice3 = $('.gbw-base-intro-dice--3');
-    var $window = $(window);
-    //var dice1X = parseFloat($dice1.css('right').replace('px', ''));
-    //var dice1Y = parseFloat($dice1.css('top').replace('px', ''));
-    //var dice2X = parseFloat($dice2.css('left').replace('px', ''));
-    //var dice2Y = parseFloat($dice2.css('top').replace('px', ''));
-    //var dice3X = parseFloat($dice3.css('right').replace('px', ''));
-    //var dice3Y = parseFloat($dice3.css('bottom').replace('px', ''));
-
-    if ($window.width() >= 640) {
-      $(document).on('mousemove', function (e) {
-        if(e.pageY < $window.height()){
-          $dice1.find('.gbw-base-intro-dice__image').css({
-            left: e.pageX / $window.width() * 150,
-            top: -e.pageY / $window.height() * 75
-          });
-          $dice2.find('.gbw-base-intro-dice__image').css({
-            left: -e.pageX / $window.width() * 150,
-            top: e.pageY / $window.height() * 75
-          });
-          $dice3.find('.gbw-base-intro-dice__image').css({
-            left: -e.pageX / $window.width() * 150,
-            top: -e.pageY / $window.height() * 75
-          });
-        }
-      });
-    }
+    gbwDicesFloating();
   });

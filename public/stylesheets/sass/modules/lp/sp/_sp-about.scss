@@ -169,7 +169,7 @@
  position: relative;
  @include laptop {
   width: 1190px;
-  padding-left: 50px;
+  //padding-left: 50px;
  }
  @include tablet-mobile {
   width: 100%;
@@ -178,6 +178,7 @@
  }
 
  .sp-about-block__duration {
+  width: 200px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -185,6 +186,7 @@
   text-transform: uppercase;
   position: relative;
   @include tablet-mobile {
+   width: auto;
    order: 3;
   }
   @include tablet {
@@ -303,7 +305,9 @@
  }
 
  .sp-about-block__info {
+  width: 200px;
   @include tablet-mobile {
+   width: auto;
    order: 2;
   }
   @include tablet {

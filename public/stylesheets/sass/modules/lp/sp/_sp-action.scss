@@ -66,6 +66,20 @@
    margin-top: 135px;
   }
  }
+
+ &.sp-action--gbw-inner {
+  height: 800px;
+  min-height: 800px;
+  justify-content: center;
+  @include mobile {
+   height: 480px;
+   min-height: 480px;
+  }
+
+  .sp-action-box {
+   margin: 0;
+  }
+ }
 }
 
 .sp-action__title {
