@@ -34,7 +34,7 @@ block contents
       // hide fixed menus on mobile
       $(window).on('resize', function () {
         var window = $(this);
-        if (window.width() < 640) {
+        if (window.width() < 1260) {
           TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 0, ease: Power1.easeOut});
           TweenMax.to($('.main-layout > .main-nav--socials'), 1, {opacity: 0, ease: Power1.easeOut});
@@ -59,7 +59,7 @@ block contents
       });
 
       // init animations on mobile
-      if ($(window).width() < 640) {
+      if ($(window).width() < 1260) {
         fixedMenusInitAnimation();
         homeIntroInit();
         homeNavInit();
@@ -75,7 +75,7 @@ block contents
       }
 
       // Onepage scroll init
-      if ($(window).width() >= 640) {
+      if ($(window).width() >= 1260) {
         var pageScroll = ".scroll-layout";
         $(pageScroll).onepage_scroll({
           sectionContainer: "section",
@@ -274,7 +274,7 @@ block contents
           },
           loop: false,
           keyboard: true,
-          responsiveFallback: 640,
+          responsiveFallback: 1260,
           direction: "vertical"
         });
       }

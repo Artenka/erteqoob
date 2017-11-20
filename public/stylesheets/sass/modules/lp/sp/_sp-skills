@@ -448,6 +448,7 @@
       width: 410px;
       height: 410px;
      }
+
      &.home-skills-list__item--1 {
       padding-left: 82px;
 
@@ -469,14 +470,14 @@
 
        @include tablet {
         &:nth-child(1){
-         margin: -43px 0 0 -41px;
+         margin: -73px 0 0 -41px;
         }
         &:nth-child(2){
          width: 320px;
-         margin: 50px 0 0 132px;
+         margin: 40px 0 0 60px;
         }
         &:nth-child(3){
-         margin: 50px 0 0 -37px;
+         margin: 40px 0 0 -37px;
         }
        }
       }
@@ -513,6 +514,9 @@
        &:nth-child(3) {
         &:after {
          display: block;
+         @include tablet-mobile {
+          display: none;
+         }
         }
        }
        &:nth-child(4) {
@@ -523,15 +527,18 @@
 
        @include tablet {
         &:nth-child(1){
-         width: 270px;
+         width: 370px;
          margin: -30px 0 0 128px;
         }
         &:nth-child(2){
-         margin: 53px 0 0 -36px;
+         margin: 40px 0 0 40px;
         }
         &:nth-child(3){
-         width: 290px;
-         margin: 53px 0 0 131px;
+         width: 370px;
+         margin: 40px 0 0 128px;
+        }
+        &:nth-child(4){
+         margin: 40px 0 0 40px;
         }
        }
       }
@@ -544,6 +551,9 @@
      }
      &.home-skills-list__item--3 {
       padding-left: 56px;
+      @include tablet {
+       padding-left: 82px;
+      }
 
       .home-skills-list__item-letter {
        @include laptop {
@@ -563,13 +573,15 @@
 
        @include tablet {
         &:nth-child(1){
-         margin: 0px 0 0 -40px;
+         width: 370px;
+         margin: 20px 0 0 60px;
         }
         &:nth-child(2){
-         margin: 53px 0 0 129px;
+         margin: 40px 0 0 -21px;
         }
         &:nth-child(3){
-         margin: 53px 0 0 -42px;
+         width: 370px;
+         margin: 40px 0 0 60px;
         }
        }
       }
@@ -597,6 +609,13 @@
         top: calc(50% - 325px);
         left: calc(50% - 325px);
        }
+      }
+     }
+
+     .home-skills-list__item-line-horizontal {
+      @include laptop {
+       width: 360px;
+       left: calc(50% - 180px);
       }
      }
     }
@@ -635,27 +654,35 @@
     .home-skills-list__item-inner:nth-child(odd) {
 
      .home-skills-list__item-number {
-      right: 0!important;
-      left: auto;
-      text-align: right!important;
+      @include tablet {
+       right: 0!important;
+       left: auto;
+       text-align: right!important;
+      }
      }
      .home-skills-list__item-title, .home-skills-list__item-text {
-      text-align: right!important;
-      margin-right: 47px!important;
-      margin-left: 0 !important;
+      @include tablet {
+       text-align: right!important;
+       margin-right: 47px!important;
+       margin-left: 0 !important;
+      }
      }
     }
     .home-skills-list__item-inner:nth-child(even) {
 
      .home-skills-list__item-number {
-      left: 0 !important;
-      right: auto;
-      text-align: left !important;
+      @include tablet {
+       left: 0 !important;
+       right: auto;
+       text-align: left !important;
+      }
      }
      .home-skills-list__item-title, .home-skills-list__item-text {
-      text-align: left!important;
-      margin-left: 36px!important;
-      margin-right: 0 !important;
+      @include tablet {
+       text-align: left!important;
+       margin-left: 36px!important;
+       margin-right: 0 !important;
+      }
      }
     }
    }

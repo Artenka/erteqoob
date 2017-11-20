@@ -10,6 +10,7 @@
 
  .logo {
   top: 133px;
+  z-index: 5;
   @include laptop-tablet {
    width: 104px;
    height: 60px;
@@ -58,11 +59,9 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 16px;
-    margin-top: 22px;
-    @include laptop {
+    @include laptop-tablet {
      font-size: 48px;
      line-height: 48px;
-     margin-top: 9px;
     }
 
     span {
@@ -71,6 +70,10 @@
      line-height: 18px;
      letter-spacing: 1.2px;
      text-transform: uppercase;
+     margin-bottom: 22px;
+     @include laptop {
+      margin-bottom: 9px;
+     }
     }
    }
    .sp-about-block__main-subtitle {
@@ -80,17 +83,71 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-top: 400px;
-    @include laptop {
+    @include laptop-tablet {
      font-size: 12px;
      line-height: 18px;
      letter-spacing: 3.43px;
+    }
+    @include laptop {
      margin-top: 267px;
+    }
+    @include tablet {
+     margin-top: 330px;
     }
    }
    .sp-about-block__main-link {
     margin-top: 53px;
     @include laptop {
      margin-top: 26px;
+    }
+    @include tablet {
+     margin-top: 66px;
+    }
+   }
+  }
+ }
+
+ &.gbw-base-intro--inner {
+
+  .gbw-base-intro-dice {
+   z-index: 0;
+  }
+
+  .gbw-base-intro__circles {
+   z-index: 2;
+   @include tablet {
+    width: 760px;
+    height: 760px;
+    top: 105px;
+    left: calc(50% - 380px);
+   }
+
+   .gbw-base-intro__circles-logo {
+    @include tablet {
+     width: 478px;
+     height: 478px;
+     top: calc(50% - 239px);
+     left: calc(50% - 239px);
+    }
+   }
+
+   .gbw-base-intro__circle {
+
+    &.gbw-base-intro__circle--2 {
+     @include tablet {
+      width: 592px;
+      height: 592px;
+      top: calc(50% - 296px);
+      left: calc(50% - 296px);
+     }
+    }
+    &.gbw-base-intro__circle--3 {
+     @include tablet {
+      width: 424px;
+      height: 424px;
+      top: calc(50% - 212px);
+      left: calc(50% - 212px);
+     }
     }
    }
   }
@@ -682,11 +739,18 @@
  position: absolute;
  top: calc(50% - 198px);
  left: calc(50% - 198px);
+ z-index: 2;
  @include laptop {
   width: 296px;
   height: 296px;
   top: calc(50% - 148px);
   left: calc(50% - 148px);
+ }
+ @include tablet {
+  width: 424px;
+  height: 424px;
+  top: 275px;
+  left: calc(50% - 212px);
  }
 
  .gbw-intro-center__item {
@@ -699,7 +763,7 @@
    width: 88px;
    height: 88px;
    position: relative;
-   @include laptop {
+   @include laptop-tablet {
     width: 70px;
     height: 70px;
    }
@@ -721,7 +785,7 @@
     text-transform: uppercase;
     letter-spacing: 1.67px;
     text-align: center;
-    @include laptop {
+    @include laptop-tablet {
      font-size: 18px;
      letter-spacing: 1.5px;
      line-height: 74px;
@@ -737,7 +801,7 @@
    text-transform: uppercase;
    letter-spacing: 3.87px;
    margin-left: 20px;
-   @include laptop {
+   @include laptop-tablet {
     font-size: 12px;
     letter-spacing: 3.32px;
     margin-left: 13px;
@@ -751,6 +815,10 @@
     top: 87px;
     left: -151px;
    }
+   @include tablet {
+    top: 115px;
+    left: -143px;
+   }
   }
   &.gbw-intro-center__item--2 {
    top: 88px;
@@ -759,6 +827,10 @@
     top: 36px;
     right: -210px;
    }
+   @include tablet {
+    top: 92px;
+    right: -259px;
+   }
   }
   &.gbw-intro-center__item--3 {
    bottom: 54px;
@@ -766,6 +838,10 @@
    @include laptop {
     bottom: 54px;
     right: -190px;
+   }
+   @include tablet {
+    bottom: 128px;
+    right: -170px;
    }
   }
  }
