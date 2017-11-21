@@ -95,6 +95,18 @@ router.get('/courses/pro/gbw/grey/kiev', function(req, res, next) {
 router.get('/courses/pro/gbw/grey/kharkiv', function(req, res, next) {
   res.render('pages/lp/gbw-grey-kharkiv');
 });
+router.get('/courses/pro/gbw/black/kiev', function(req, res, next) {
+  res.render('pages/lp/gbw-black-kiev');
+});
+router.get('/courses/pro/gbw/black/kharkiv', function(req, res, next) {
+  res.render('pages/lp/gbw-black-kharkiv');
+});
+router.get('/courses/pro/gbw/white/kiev', function(req, res, next) {
+  res.render('pages/lp/gbw-white-kiev');
+});
+router.get('/courses/pro/gbw/white/kharkiv', function(req, res, next) {
+  res.render('pages/lp/gbw-white-kharkiv');
+});
 
 
 router.get('/in-development', function(req, res, next) {
