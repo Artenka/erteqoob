@@ -1,0 +1,73 @@
+#academy-inspiration-popup.popup-layout.popup-layout--black
+  .photo-popup.photo-popup--academy
+    ul.academy-inspiration__city-btns.academy-inspiration__city-btns--popup
+      li(data-slider='kiev').academy-inspiration__city-btn.academy-inspiration__city-btn--kiev.academy-inspiration__city-btn--active академия в киеве
+      li(data-slider='kharkiv').academy-inspiration__city-btn.academy-inspiration__city-btn--kharkiv академия в харькове
+
+    ul.photo-popup-slider.academy-inspiration-popup__slider.academy-inspiration-popup__slider--kiev.academy-inspiration-popup__slider--active.slider-arrows-long.slider-arrows-long--edge.academy-inspiration-slider.academy-inspiration-slider--kiev
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+
+    ul.photo-popup-slider.academy-inspiration-popup__slider.academy-inspiration-popup__slider--kharkiv.slider-arrows-long.slider-arrows-long--edge.academy-inspiration-slider.academy-inspiration-slider--kharkiv
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/popups/photo-popup-dummy.jpg")
+
+script.
+  $(function(){
+    var $academyInspirationSliderPopup = $('.academy-inspiration-popup__slider');
+    // academy inspirations slider
+    $academyInspirationSliderPopup.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      setTimeout(function () {
+        $academyInspirationSliderPopup.slick("setPosition");
+      }, 100)
+    });
+    $academyInspirationSliderPopup.slick({
+      slidesToShow: 1,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true
+    });
+  });

@@ -10,8 +10,15 @@ script.
   $(function(){
     // popup close
     $('.popup__close').click(function(){
-      TweenMax.to($(this).closest('.popup-layout'), 0.5, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut});
-      TweenMax.to($(this).closest('.popup__close'), 0.5, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut, delay: 0.5});
+      popupClose($(this).closest('.popup-layout'));
+    });
+
+    //popup link
+    $("body").click(function () {
+      popupClose($('.popup-layout'))
+    });
+    $(".popup, .popup-white, .photo-popup, .slick-arrow, .popup-link").click(function (e) {
+      e.stopPropagation();
     });
 
     // smooth scroll on anchors
@@ -126,4 +133,22 @@ script.
     return 'ontouchstart' in document.documentElement
             || navigator.maxTouchPoints > 0
             || navigator.msMaxTouchPoints > 0;
+  }
+
+  function popupClose($popup){
+    TweenMax.to($popup, 0.5, {
+      display: 'none',
+      autoAlpha: 0,
+      scaleX: 0.7,
+      scaleY: 0.7,
+      ease: Power4.easeOut
+    });
+    TweenMax.to($popup, 0.5, {
+      display: 'none',
+      autoAlpha: 0,
+      scaleX: 0.7,
+      scaleY: 0.7,
+      ease: Power4.easeOut,
+      delay: 0.5
+    });
   }

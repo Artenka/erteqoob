@@ -16,53 +16,54 @@ section.section-layout.academy-inspiration
           | Смотрите. Вдохновляйтесь.<br>
           | Приходите.
     ul.academy-inspiration__city-btns
-      li(data-slider='kiev').academy-inspiration__city-btn.academy-inspiration__city-btn--active академия в киеве
-      li(data-slider='kharkiv').academy-inspiration__city-btn академия в харькове
+      li(data-slider='kiev').academy-inspiration__city-btn.academy-inspiration__city-btn--kiev.academy-inspiration__city-btn--active академия в киеве
+      li(data-slider='kharkiv').academy-inspiration__city-btn.academy-inspiration__city-btn--kharkiv академия в харькове
 
-    ul.academy-inspiration__slider.academy-inspiration__slider--kiev.slider-arrows-long.slider-arrows-long--edge.academy-inspiration__slider--active
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
-    ul.academy-inspiration__slider.academy-inspiration__slider--kharkiv.slider-arrows-long.slider-arrows-long--edge
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
-      li.academy-inspiration__slide
-        div.academy-inspiration__slide-layout
-          img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+    .academy-inspiration__slider-layout
+      ul.academy-inspiration__slider.academy-inspiration__slider--kiev.slider-arrows-long.slider-arrows-long--edge.academy-inspiration__slider--active.academy-inspiration-slider.academy-inspiration-slider--kiev
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+      ul.academy-inspiration__slider.academy-inspiration__slider--kharkiv.slider-arrows-long.slider-arrows-long--edge.academy-inspiration-slider.academy-inspiration-slider--kharkiv
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-1.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-2.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-3.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-4.jpg")
+        li(onclick="showPopup('#academy-inspiration-popup')").academy-inspiration__slide.popup-link
+          div.academy-inspiration__slide-layout
+            img(src="/img/client/academy/academy-inspiration-slider-5.jpg")
 
 script.
   $(function(){
@@ -74,7 +75,7 @@ script.
         $academyInspirationSlider.slick("setPosition");
       }, 600)
     });
-    $academyInspirationSlider.slick({
+    $('.academy-inspiration__slider--kiev').slick({
       slidesToShow: 5,
       arrows: true,
       dots: false,
@@ -84,6 +85,7 @@ script.
       variableWidth: true,
       infinite: true,
       swipeToSlide: true,
+      asNavFor: '.academy-inspiration-popup__slider--kiev',
       responsive: [
         {
           breakpoint: 1260,
@@ -94,7 +96,32 @@ script.
         {
           breakpoint: 640,
           settings: {
-            arrows: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+    $('.academy-inspiration__slider--kharkiv').slick({
+      slidesToShow: 5,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true,
+      asNavFor: '.academy-inspiration-popup__slider--kharkiv',
+      responsive: [
+        {
+          breakpoint: 1260,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
             slidesToShow: 1
           }
         }
@@ -112,18 +139,26 @@ script.
     // slider change
     $('.academy-inspiration__city-btn').click(function(){
       if(!$(this).hasClass('academy-inspiration__city-btn--active')){
-        var $newActiveSlider;
-        $newActiveSlider = $('.academy-inspiration__slider--' + $(this).data('slider'));
+        var data = $(this).data('slider');
+        //var $newActiveSlider;
+        var newActiveSlider = '.academy-inspiration-slider--' + data;
+        //$newActiveSlider = $('.academy-inspiration-slider--' + data);
         $('.academy-inspiration__city-btn--active').removeClass('academy-inspiration__city-btn--active');
-        $(this).addClass('academy-inspiration__city-btn--active');
+        $('.academy-inspiration__city-btn--' + data).addClass('academy-inspiration__city-btn--active');
         $('.academy-inspiration__slider .academy-inspiration__slide').css('opacity', 0);
         $('.academy-inspiration__slider .slick-arrow').css('opacity', 0);
         setTimeout(function(){
           $('.academy-inspiration__slider--active').removeClass('academy-inspiration__slider--active');
-          $newActiveSlider.addClass('academy-inspiration__slider--active');
+          $(newActiveSlider + '.academy-inspiration__slider').addClass('academy-inspiration__slider--active');
           $('.academy-inspiration__slider .academy-inspiration__slide').css('opacity', 1);
           $('.academy-inspiration__slider .slick-arrow').css('opacity', 1);
         }, 1500);
+        TweenMax.to($('.academy-inspiration-popup__slider--active'), 0.3, {scaleX: 0.8, scaleY: 0.8, opacity: 0, ease: Power4.easeOut});
+        setTimeout(function(){
+          $('.academy-inspiration-popup__slider--active').removeClass('academy-inspiration-popup__slider--active');
+          $(newActiveSlider + '.academy-inspiration-popup__slider').addClass('academy-inspiration-popup__slider--active');
+          TweenMax.to($(newActiveSlider + '.academy-inspiration-popup__slider'), 0.3, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power4.easeOut});
+        }, 400);
       }
     });
   });
