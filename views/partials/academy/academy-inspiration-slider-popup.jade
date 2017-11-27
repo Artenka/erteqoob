@@ -59,7 +59,7 @@ script.
         $academyInspirationSliderPopup.slick("setPosition");
       }, 100)
     });
-    $academyInspirationSliderPopup.slick({
+    $('.academy-inspiration-popup__slider--kiev').slick({
       slidesToShow: 1,
       arrows: true,
       dots: false,
@@ -68,6 +68,19 @@ script.
       centerMode: true,
       variableWidth: true,
       infinite: true,
+      asNavFor: '.academy-inspiration__slider--kiev',
+      swipeToSlide: true
+    });
+    $('.academy-inspiration-popup__slider--kharkiv').slick({
+      slidesToShow: 1,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      asNavFor: '.academy-inspiration__slider--kharkiv',
       swipeToSlide: true
     });
   });
