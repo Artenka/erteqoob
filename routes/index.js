@@ -82,8 +82,11 @@ router.get('/courses/beginner/qualification/kharkiv', function(req, res, next) {
   res.render('pages/lp/qualification-kharkiv');
 });
 
-router.get('/courses/pro/adaptation', function(req, res, next) {
-  res.render('pages/lp/adaptation');
+router.get('/courses/pro/adaptation/kiev', function(req, res, next) {
+  res.render('pages/lp/adaptation-kiev');
+});
+router.get('/courses/pro/adaptation/kharkiv', function(req, res, next) {
+  res.render('pages/lp/adaptation-kharkiv');
 });
 
 router.get('/courses/pro/gbw', function(req, res, next) {

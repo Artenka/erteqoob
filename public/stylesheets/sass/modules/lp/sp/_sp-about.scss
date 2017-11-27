@@ -219,13 +219,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-left: 35px;
+  //padding-left: 35px;
   @include laptop {
-   padding-left: 0;
+   //padding-left: 0;
   }
   @include tablet-mobile {
    order: 1;
-   padding: 0;
+   //padding: 0;
   }
 
   .sp-about-block__logo {
@@ -295,7 +295,7 @@
     margin-top: 61px;
    }
    @include mobile {
-    width: 216px;
+    min-width: 216px;
     position: absolute;
     bottom: 60px;
     left: calc(50% - 108px);
