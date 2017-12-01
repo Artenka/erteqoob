@@ -1585,6 +1585,9 @@
 
  &.academy-inspiration__city-btns--popup {
   margin: 0 0 80px;
+  @include mobile {
+   display: none;
+  }
  }
 }
 

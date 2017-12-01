@@ -24,18 +24,18 @@
  overflow-y: scroll;
  //padding-right: 17px;
  position: relative;
-
- .popup__close {
-  width: 16px;
-  height: 16px;
-  background: url(../../img/popups/popup-close.svg) no-repeat center;
-  position: absolute;
-  top: 67px;
-  right: 67px;
-  opacity: 0;
-  transform: scale(0.7) translateZ(0);
-  cursor: pointer;
- }
+}
+.popup__close {
+ width: 16px;
+ height: 16px;
+ background: url(../../img/popups/popup-close.svg) no-repeat center;
+ position: absolute;
+ top: 67px;
+ right: 67px;
+ opacity: 0;
+ transform: scale(0.7) translateZ(0);
+ cursor: pointer;
+ z-index: 5;
 }
 
 .popup-action {
@@ -105,8 +105,8 @@
   left: calc(50% - 400px);
  }
  @include mobile {
-  top: calc(50% - 90px);
-  left: calc(50% - 160px);
+  top: 0;
+  left: 0;
  }
 
  .photo-popup-slider {
@@ -119,8 +119,8 @@
    height: 480px;
   }
   @include mobile {
-   width: 320px;
-   height: 200px;
+   width: 100vw;
+   height: 100vh;
   }
 
   &.slider-arrows-long--edge .slick-arrow {
@@ -154,5 +154,17 @@
 
  &.photo-popup--academy {
   top: 80px;
+  @include mobile {
+   top: 0;
+  }
+
+  .popup__close {
+   @include mobile {
+    width: 24px;
+    height: 24px;
+    top: 20px;
+    right: 20px;
+   }
+  }
  }
 }
