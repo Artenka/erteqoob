@@ -1389,12 +1389,12 @@
 
    &.slick-prev {
     @include mobile {
-     left: -13px;
+     left: -36px;
     }
    }
    &.slick-next {
     @include tablet-mobile {
-     right: -13px;
+     right: -36px;
     }
    }
   }
@@ -1540,6 +1540,7 @@
    //display: block;
    position: relative;
    opacity: 1;
+   z-index: 3;
   }
  }
 }

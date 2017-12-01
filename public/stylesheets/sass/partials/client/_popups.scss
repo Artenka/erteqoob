@@ -105,7 +105,8 @@
   left: calc(50% - 400px);
  }
  @include mobile {
-  display: none;
+  top: calc(50% - 90px);
+  left: calc(50% - 160px);
  }
 
  .photo-popup-slider {
@@ -118,8 +119,8 @@
    height: 480px;
   }
   @include mobile {
-   width: 300px;
-   height: 180px;
+   width: 320px;
+   height: 200px;
   }
 
   &.slider-arrows-long--edge .slick-arrow {
