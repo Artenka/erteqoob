@@ -1459,6 +1459,7 @@
    transition: 0.8s;
    opacity: 0;
    transform: scale(0.4) translateZ(0);
+   cursor: pointer;
    @include laptop {
     width: 135px;
     height: 135px;
@@ -1486,7 +1487,7 @@
   .slick-active, .slick-active + .slick-active + .slick-active + .slick-active + .slick-active {
    width: 225px;
    height: 225px;
-   transition-delay: 0.6s!important;
+   transition-delay: 0.4s!important;
    @include laptop {
     width: 135px;
     height: 135px;
@@ -1495,7 +1496,7 @@
   .slick-active + .slick-active, .slick-active  + .slick-active + .slick-active + .slick-active {
    width: 282px;
    height: 282px;
-   transition-delay: 0.3s!important;
+   transition-delay: 0.2s!important;
    @include laptop {
     width: 169px;
     height: 169px;
@@ -1516,7 +1517,7 @@
    .slick-active, .slick-active + .slick-active + .slick-active {
     width: 267px;
     height: 267px;
-    transition-delay: 0.5s;
+    transition-delay: 0.4s;
    }
    .slick-active + .slick-active {
     width: 350px;
