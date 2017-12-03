@@ -13,8 +13,8 @@ block contents
       //include ../partials/academy/academy-about.jade
       include ../partials/academy/academy-philosophy.jade
       include ../partials/academy/academy-lead-teachers.jade
-      //include ../partials/academy/academy-teachers.jade
-      //include ../partials/academy/academy-masters.jade
+      include ../partials/academy/academy-teachers.jade
+      include ../partials/academy/academy-masters.jade
       include ../partials/academy/academy-inspiration.jade
       include ../partials/footer.jade
 
@@ -83,8 +83,8 @@ block contents
               academyAboutHide();
               academyPhilosophyHide();
               academyLeadTeachersHide();
-              //academyTeachersHide();
-              //academyMastersHide();
+              academyTeachersHide();
+              academyMastersHide();
               academyInspirationHide();
               academyIntroInit();
               //} else if (index == 2) {
@@ -99,61 +99,61 @@ block contents
             } else if (index == 2) {
               showPagePagination();
               academyIntroHide();
-              academyAboutHide();
+              //academyAboutHide();
               academyLeadTeachersHide();
-              //academyTeachersHide();
-              //academyMastersHide();
+              academyTeachersHide();
+              academyMastersHide();
               academyInspirationHide();
               academyPhilosophyInit();
             } else if (index == 3) {
               showPagePagination();
               academyIntroHide();
-              academyAboutHide();
+              //academyAboutHide();
               academyPhilosophyHide();
-              //academyTeachersHide();
-              //academyMastersHide();
+              academyTeachersHide();
+              academyMastersHide();
               academyInspirationHide();
               academyLeadTeachersInit();
             } else if (index == 4) {
               showPagePagination();
-              //hidePagePagination();
+              hidePagePagination();
               academyIntroHide();
-              academyAboutHide();
+              //academyAboutHide();
               academyPhilosophyHide();
               academyLeadTeachersHide();
-              //academyMastersHide();
-              //academyInspirationHide();
+              academyMastersHide();
+              academyInspirationHide();
               academyInspirationInit();
-              //academyTeachersInit();
+              academyTeachersInit();
             } else if (index == 5) {
               hidePagePagination();
               academyIntroHide();
-              academyAboutHide();
+              //academyAboutHide();
               academyPhilosophyHide();
-              //academyTeachersHide();
+              academyTeachersHide();
               academyLeadTeachersHide();
               academyInspirationHide();
-              //academyMastersInit();
+              academyMastersInit();
+              //footerMenusHideAnimation();
+            } else if (index == 6) {
+              showPagePagination();
+              academyIntroHide();
+              //academyAboutHide();
+              academyPhilosophyHide();
+              academyLeadTeachersHide();
+              academyTeachersHide();
+              academyMastersHide();
+              academyInspirationInit();
+            } else if (index == 7) {
+              showPagePagination();
+              academyIntroHide();
+              //academyAboutHide();
+              academyPhilosophyHide();
+              academyLeadTeachersHide();
+              academyTeachersHide();
+              academyMastersHide();
+              academyInspirationHide();
               footerMenusHideAnimation();
-              //} else if (index == 7) {
-              //  showPagePagination();
-              //  academyIntroHide();
-              //  academyAboutHide();
-              //  academyPhilosophyHide();
-              //  academyLeadTeachersHide();
-              //  //academyTeachersHide();
-              //  //academyMastersHide();
-              //  academyInspirationInit();
-              //} else if (index == 8) {
-              //  showPagePagination();
-              //  academyIntroHide();
-              //  academyAboutHide();
-              //  academyPhilosophyHide();
-              //  academyLeadTeachersHide();
-              //  //academyTeachersHide();
-              //  //academyMastersHide();
-              //  academyInspirationHide();
-              //  footerMenusHideAnimation();
             }
           },
           afterMove: function (index) {
