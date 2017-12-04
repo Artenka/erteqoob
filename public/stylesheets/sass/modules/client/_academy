@@ -905,7 +905,7 @@
  }
 
  .academy-teachers__main {
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
 
   .academy-teachers__title-layout {
@@ -932,7 +932,7 @@
   }
 
   .academy-teachers-slider {
-   height: 100%;
+   height: 100vh;
 
    .slick-slide {
     position: relative;
@@ -945,14 +945,10 @@
     }
    }
    &.academy-teachers-slider--mobile {
-    height: 100vh;
     display: none;
     @include mobile {
      display: block;
     }
-   }
-   &.academy-teachers-slider--desktop {
-
    }
   }
  }
@@ -1058,20 +1054,20 @@
   position: relative;
   left: 0;
   overflow: hidden;
-  &:before {
-   content: '';
-   width: 100%;
-   height: 100%;
-   background: $color-black-02;
-   position: absolute;
-   top: 0;
-   left: 0;
-   z-index: 6;
-   transition: 0.4s;
-   @include mobile {
-    display: none;
-   }
-  }
+  //&:before {
+  // content: '';
+  // width: 100%;
+  // height: 100%;
+  // background: $color-black-02;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // z-index: 6;
+  // transition: 0.4s;
+  // @include mobile {
+  //  display: none;
+  // }
+  //}
 
   .academy-teacher__photo-bg {
    content: '';
@@ -1096,6 +1092,7 @@
    top: 0;
    right: 100%;
    z-index: 4;
+   filter: grayscale(1);
   }
  }
 
