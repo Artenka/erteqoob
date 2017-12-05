@@ -118,7 +118,7 @@
  position: absolute;
  top: 0;
  left: 0;
- cursor: pointer;
+ //cursor: pointer;
  transition: 0.8s;
  &:hover {
 
@@ -198,6 +198,7 @@
    width: 100%;
    height: auto;
    border: 1px solid $color-gray-3-025;
+   filter: grayscale(1);
    position: relative;
    top: 0;
    right: 100%;
@@ -260,7 +261,7 @@
  }
  &:nth-child(3) {
   width: 195px;
-  height: 156px;
+  height: 146px;
   bottom: 0;
   top: auto;
   left: 322px;
