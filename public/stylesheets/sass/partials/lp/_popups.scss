@@ -285,9 +285,11 @@
  justify-content: center;
 
  .register-step-1__title {
+  @include mobile {
+   width: 300px;
+  }
 
-
-  span {
+  .register-step-1__title-subtitle {
    @include mobile{
     font-size: 12px;
     line-height: 17px;

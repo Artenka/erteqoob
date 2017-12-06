@@ -3,6 +3,7 @@ script(src='/js/TweenMax.min.js' type='text/javascript')
 script(src='/js/TimelineMax.min.js' type='text/javascript')
 script(src='/js/jquery.gsap.min.js' type='text/javascript')
 
+
 script.
   $(function(){
     // popup close
@@ -69,6 +70,19 @@ script.
       } catch (ex) {
       }
     }
+
+    registerStep2();
+
+    // get register form cookie
+    if ($.cookie("name")) {
+      $('#register-name').val($.cookie("name"));
+    }
+    if ($.cookie("phone")) {
+      $('#register-phone').val($.cookie("phone"));
+    }
+    if ($.cookie("email")) {
+      $('#register-email').val($.cookie("email"));
+    }
   });
 
   function heightAsWidth($element) {
@@ -87,6 +101,24 @@ script.
       autoAlpha: 1,
       scaleX: 1,
       scaleY: 1,
+      ease: Power4.easeOut,
+      delay: 0.5
+    });
+  }
+
+  function hidePopup(popupId) {
+    TweenMax.to($(popupId + '.popup-layout'), 0.5, {
+      display: 'none',
+      autoAlpha: 0,
+      scaleX: 0.7,
+      scaleY: 0.7,
+      ease: Power4.easeOut
+    });
+    TweenMax.to($(popupId + '.popup__close'), 0.5, {
+      display: 'none',
+      autoAlpha: 0,
+      scaleX: 0.7,
+      scaleY: 0.7,
       ease: Power4.easeOut,
       delay: 0.5
     });
@@ -136,4 +168,44 @@ script.
         }
       });
     }
+  }
+
+  function registerStep1(courseId, step1Title, step3Title, city, courseDate){
+    showPopup('#register-step-1');
+    $('#register-step-1-title').text(step1Title);
+    $('#register-step-3-title, #register-step-2-title').text(step3Title);
+    $('#register-step-2-date').text(courseDate);
+    $('#register-city').val(city).attr('selected','selected');
+    $('#register-course-id').val(courseId);
+  }
+  function registerStep2() {
+    $("#register-form").submit(function (e) {
+
+      e.preventDefault();
+
+      $.ajax({
+        //type: "POST",
+        //url: '',
+        data: $("#register-form").serialize(),
+        success: function (data) {
+          console.log($("#register-form").serialize());
+          $.cookie('name', $('#register-name').val(), 30);
+          $.cookie('phone', $('#register-phone').val(), 30);
+          $.cookie('email', $('#register-email').val(), 30);
+
+          $('#register-step-2-city').text($('#register-city option:selected').text());
+          $('#register-step-2-name').text($('#register-name').val());
+          $('#register-step-3-name').text($('#register-name').val());
+          $('#register-step-2-phone').text($('#register-phone').val());
+          $('#register-step-2-email').text($('#register-email').val());
+
+          hidePopup('#register-step-1');
+          showPopup('#register-step-2');
+        }
+      });
+    });
+  }
+  function registerStep3() {
+    hidePopup('#register-step-2');
+    showPopup('#register-step-3');
   }
