@@ -4,18 +4,25 @@ section.section-layout.home-action-layout
       div.home-action__info
         h1.home-action__title Отличайтесь!
         h2.home-action__subtitle Черпайте вдохновение<br> из новых коллекций и материалов
-      form.action__form
+      form#action-form.action__form
         div.action__form-input-layout
           .action__form-input-line
           label.action__form-label Имя
-          input.action__form-input(type="text")
+          input.action__form-input(type="text" name="name" required)
         div.action__form-input-layout
           .action__form-input-line
           label.action__form-label E-mail
-          input.action__form-input(type="text")
+          input.action__form-input(type="email" name="email" required)
         div.action__form-submit-layout
           .arrow-link
             button(type="submit").btn-black.arrow-link__text.action__form-submit подписаться
+      .home-action__thankyou-layout
+        .home-action__thankyou
+          h1 Спасибо!
+          p
+            | Вы подписаны на новости ERTEQOOB.<br>
+            | Мы будем держать тебя в курсе всех<br>
+            | наших событий.
 
 
 script.
@@ -37,4 +44,33 @@ script.
         $(this).closest('.action__form-input-layout').removeClass('action__form-input-layout--active');
       }
     });
+
+    // action form submit
+    $("#action-form").submit(function (e) {
+
+      e.preventDefault();
+
+      $.ajax({
+        //type: "POST",
+        //url: '',
+        data: $("#action-form").serialize(),
+        success: function (data) {
+          $.cookie('subscribed', 'true', 356);
+          $('.home-action__info').fadeOut(400);
+          $('.action__form').fadeOut(400);
+          setTimeout(function(){
+            $('.home-action__thankyou-layout').fadeIn(400);
+          }, 400)
+        }
+      });
+    });
+
+    // check if subscribed
+    if ($.cookie("subscribed") == 'true') {
+      $('.home-action__info').fadeOut();
+      $('.action__form').fadeOut();
+      setTimeout(function () {
+        $('.home-action__thankyou-layout').fadeIn(200);
+      }, 50)
+    }
   })
