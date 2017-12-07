@@ -950,6 +950,51 @@
      display: block;
     }
    }
+   &.academy-teachers-slider--4-slides {
+
+    .academy-teacher {
+
+     &:nth-child(1) {
+      width: 18.5%;
+      top: 24.6%;
+      @include tablet {
+       width: 21.875%;
+       left: 18%;
+       top: 26%;
+      }
+     }
+     &:nth-child(2) {
+      width: 13%;
+      top: 56.22%;
+      left: 34.3%;
+      @include tablet {
+       width: 27.875%;
+       left: 18%;
+       top: 51.4%;
+      }
+     }
+     &:nth-child(3) {
+      width: 17%;
+      top: 26.5%;
+      @include tablet {
+       width: 32.125%;
+       left: 49.75%;
+       top: 29.3%;
+      }
+     }
+     &:nth-child(4) {
+      width: 14%;
+      top: 53%;
+      left: 75%;
+      @include tablet {
+       display: block;
+       width: 24%;
+       top: 65%;
+       left: 60%;
+      }
+     }
+    }
+   }
   }
  }
 
