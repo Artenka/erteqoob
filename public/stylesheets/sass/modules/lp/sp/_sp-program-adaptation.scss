@@ -6,6 +6,24 @@
  .page-title {
   margin-top: 51px;
  }
+
+ &.sp-program-adaptation--man-innovations {
+  min-height: 960px;
+  background-image: url(../../../img/lp/sp/program/sp-program-man-innovations.jpg);
+  @include mobile {
+   min-height: 0;
+  }
+
+  .sp-program-adaptation-days-layout {
+   margin-top: 232px;
+   @include tablet {
+    margin-top: 130px;
+   }
+  }
+  .sp-program-adaptation-days {
+   margin-top: 0;
+  }
+ }
 }
 
 .sp-program-adaptation-days {
@@ -196,6 +214,44 @@
    }
   }
  }
+
+ &.sp-program-adaptation-days--3-dots {
+  width: 1340px;
+  background-image: url(../../../img/lp/sp/program/sp-program-wave-2.svg);
+  @include tablet {
+   width: 800px;
+   background-image: url(../../../img/lp/sp/program/sp-program-wave-2-tablet.svg);
+  }
+
+  .sp-program-adaptation-day {
+
+   &.sp-program-adaptation-day--1 {
+    left: 250px;
+    top: 40px;
+    @include tablet {
+     top: 73px;
+     left: 124px;
+    }
+   }
+   &.sp-program-adaptation-day--2 {
+    left: 570px;
+    right: auto;
+    top: auto;
+    bottom: -16px;
+    @include tablet {
+     left: 342px;
+    }
+   }
+   &.sp-program-adaptation-day--3 {
+    right: 275px;
+    top: -16px;
+    @include tablet {
+     top: -2px;
+     right: 117px;
+    }
+   }
+  }
+ }
 }
 
 .sp-program-adaptation-list {
@@ -273,5 +329,60 @@
  &.sp-program-adaptation-list--active {
   display: block;
   opacity: 1;
+ }
+}
+
+.sp-program-adaptation-days-layout {
+ position: relative;
+}
+
+.sp-program-man-innovations-info-layout {
+ @include tablet {
+  display: flex;
+  justify-content: center;
+  margin-top: 167px;
+ }
+}
+.sp-program-man-innovations-info {
+ display: none;
+ opacity: 0;
+ position: absolute;
+ @include tablet {
+  position: static;
+ }
+
+ h1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: 1.33px;
+ }
+ p {
+  color: $color-gray;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 21px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 22px;
+  margin-top: 9px;
+ }
+
+ &.sp-program-man-innovations-info--active {
+  display: block;
+  opacity: 1;
+ }
+ &.sp-program-man-innovations-info--1 {
+  top: 210px;
+  left: 190px;
+ }
+ &.sp-program-man-innovations-info--2 {
+  top: 220px;
+  left: 725px;
+ }
+ &.sp-program-man-innovations-info--3 {
+  top: 150px;
+  left: 995px;
  }
 }

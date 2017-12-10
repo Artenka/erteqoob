@@ -89,6 +89,13 @@ router.get('/courses/pro/adaptation/kharkiv', function(req, res, next) {
   res.render('pages/lp/adaptation-kharkiv');
 });
 
+router.get('/courses/pro/man-innovations/kiev', function(req, res, next) {
+  res.render('pages/lp/man-innovations-kiev');
+});
+router.get('/courses/pro/man-innovations/kharkiv', function(req, res, next) {
+  res.render('pages/lp/man-innovations-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });

@@ -224,7 +224,8 @@
   .home-skills-list__item-line-horizontal {
    width: 400px;
    height: 1px;
-   background: $color-white-02;
+   //background: $color-white-02;
+   background: $color-mine-shaft-5;
    position: absolute;
    top: 50%;
    left: calc(50% - 200px);

@@ -1,0 +1,19 @@
+<svg width="1340px" height="167px" viewBox="0 0 1340 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="0%" y1="79.6061902%" x2="100%" y2="89.4099653%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#474747" offset="13.4576677%"></stop>
+            <stop stop-color="#474747" offset="89.5233%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.2.3-Man-Innovations-1440x900" transform="translate(-50.000000, -4505.000000)" stroke="url(#linearGradient-1)">
+            <g id="block-6" transform="translate(0.000000, 4081.000000)">
+                <g id="scheme" transform="translate(50.000000, 198.000000)">
+                    <path d="M0.297544458,374.955712 C66.3798384,315.295317 139.991964,284.284009 221.133921,281.921789 C342.846857,278.378459 384.22806,393.292147 596.347976,392.37342 C808.467891,391.454693 1079.41867,32.9422369 1340,374.955712" id="line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

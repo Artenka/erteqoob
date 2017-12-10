@@ -323,6 +323,35 @@
    }
   }
  }
+
+ &.sp-philosophy--man-innovations {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-man-innovations.png);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-02;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+
+  .sp-philosophy-main .sp-philosophy-main__text.sp-philosophy-main__text--2 {
+   position: relative;
+   &:before {
+    content: '';
+    height: 123px;
+    width: 255px;
+    background: url(../../../img/lp/sp/philosophy/dots-1.svg) no-repeat center / contain;
+    position: absolute;
+    top: 15px;
+    left: -36px;
+    @include mobile {
+     display: none;
+    }
+   }
+  }
+ }
 }
 
 .sp-philosophy-main {

@@ -80,6 +80,58 @@
    margin: 0;
   }
  }
+
+ &.sp-action--man-innovations {
+  @include tablet {
+   height: 1010px;
+  }
+
+  .sp-action__title {
+   padding-right: 340px;
+   @include tablet-mobile {
+    padding: 0;
+   }
+   @include mobile {
+    width: 260px;
+    margin-top: 78px;
+   }
+  }
+  .sp-action-info {
+   @include tablet {
+    margin: 0;
+   }
+   @include mobile {
+    margin-top: 13px;
+   }
+
+   .sp-action-info__video-link {
+    @include tablet {
+     margin-top: 120px;
+    }
+    @include mobile {
+     margin-top: 80px;
+    }
+   }
+  }
+
+  .sp-action-box {
+   @include tablet {
+    margin-top: 130px;
+   }
+   @include mobile {
+    height: 58px;
+    margin-top: 72px;
+   }
+
+   .sp-action-box__inner {
+
+    .sp-action-box__text {
+     font-size: 20px;
+     line-height: 29px;
+    }
+   }
+  }
+ }
 }
 
 .sp-action__title {
@@ -320,5 +372,19 @@
  margin-top: 65px;
  @include mobile {
   margin-top: 43px;
+ }
+}
+
+.sp-action-logo-mobile {
+ display: none;
+ width: 140px;
+ height: 140px;
+ background: url(../../img/lp/logo-transparent.svg) no-repeat center / contain;
+ opacity: 0.25;
+ position: absolute;
+ top: 50px;
+ left: calc(50% - 70px);
+ @include mobile {
+  display: block;
  }
 }

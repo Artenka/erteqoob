@@ -362,6 +362,119 @@
    }
   }
  }
+
+ &.sp-format--man-innovations.sp-format--qualification.sp-format--adaptation {
+
+  .sp-format-block {
+   width: 960px;
+   @include tablet {
+    width: 500px;
+   }
+   @include mobile {
+    width: 250px;
+   }
+
+   .sp-format-block__left {
+    width: 480px;
+    @include tablet-mobile {
+     width: 100%;
+    }
+    @include tablet {
+     padding-left: 50px;
+    }
+    @include mobile {
+
+    }
+
+    .sp-format-block__left-lists {
+     margin-left: 60px;
+     @include tablet {
+      margin-left: 20px;
+     }
+     @include mobile {
+      margin-left: 0;
+     }
+    }
+    .sp-format-block__left-list-4 {
+     &:before {
+      top: -29px;
+      left: -91px;
+      @include tablet {
+       display: block;
+       left: -51px;
+      }
+     }
+    }
+   }
+   .sp-format-block__right {
+    width: 480px;
+    @include tablet-mobile {
+     width: 100%;
+    }
+
+    .sp-format-block__title-block {
+     @include mobile {
+      text-align: left;
+      justify-content: flex-start;
+     }
+    }
+
+    .sp-format-block__right-list-3 {
+     @include tablet {
+      padding-left: 70px;
+     }
+
+     .sp-format-block__right-list-3-item {
+      display: flex;
+      color: $color-boulder-2;
+      @include mobile {
+       flex-direction: column;
+       text-align: left;
+       font-size: 10px;
+       line-height: 18.2px;
+      }
+
+      span {
+       color: $color-white;
+       @include mobile {
+        font-size: 14px;
+       }
+      }
+     }
+    }
+   }
+  }
+
+  .sp-format-disclaimer {
+   @include tablet {
+    width: 650px;
+    justify-content: space-between;
+    text-transform: uppercase;
+   }
+   @include mobile {
+
+   }
+
+   h5 {
+    @include tablet {
+     display: block;
+     margin: 0;
+    }
+   }
+   p {
+    margin-right: 50px;
+    @include mobile {
+     margin: 0;
+    }
+   }
+   h3 {
+    width: 215px;
+    @include tablet-mobile {
+     width: auto;
+    }
+   }
+  }
+ }
 }
 
 .sp-format-block-layout {
@@ -857,7 +970,7 @@
 .sp-format-disclaimer {
  display: flex;
  justify-content: center;
- align-items: center;
+ //align-items: center;
  margin-top: 45px;
  @include tablet {
   margin-top: 30px;

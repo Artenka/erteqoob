@@ -58,6 +58,12 @@
    }
   }
  }
+
+ &.sp-teachers--2-items {
+  @include tablet {
+   height: 920px;
+  }
+ }
 }
 
 .sp-teachers-list-layout {
@@ -110,6 +116,36 @@
   }
   @include tablet {
    bottom: 88px;
+  }
+ }
+
+ &.sp-teachers-list--2-items {
+  @include tablet {
+   height: 500px;
+  }
+
+  .academy-teacher {
+
+   &:nth-child(1) {
+    width: 292px;
+    height: 218px;
+    top: 0;
+    left: 390px;
+    @include tablet {
+     top: 0;
+     left: 200px;
+    }
+   }
+   &:nth-child(2) {
+    width: 195px;
+    height: 146px;
+    bottom: 0;
+    top: auto;
+    left: 322px;
+    @include tablet {
+     left: 120px;
+    }
+   }
   }
  }
 }
