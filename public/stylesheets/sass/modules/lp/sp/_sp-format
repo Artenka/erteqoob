@@ -426,17 +426,19 @@
 
      .sp-format-block__right-list-3-item {
       display: flex;
-      color: $color-boulder-2;
+      color: $color-white;
       @include mobile {
        flex-direction: column;
        text-align: left;
+       color: $color-boulder-2;
        font-size: 10px;
        line-height: 18.2px;
       }
 
       span {
-       color: $color-white;
+       color: $color-boulder-2;
        @include mobile {
+        color: $color-white;
         font-size: 14px;
        }
       }

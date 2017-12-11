@@ -352,6 +352,10 @@
    }
   }
  }
+ &.sp-philosophy--salon-innovations {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy.jpg);
+  &:before {display: none}
+ }
 }
 
 .sp-philosophy-main {

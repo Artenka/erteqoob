@@ -96,6 +96,13 @@ router.get('/courses/pro/man-innovations/kharkiv', function(req, res, next) {
   res.render('pages/lp/man-innovations-kharkiv');
 });
 
+router.get('/courses/pro/salon-innovations/kiev', function(req, res, next) {
+  res.render('pages/lp/salon-innovations-kiev');
+});
+router.get('/courses/pro/salon-innovations/kharkiv', function(req, res, next) {
+  res.render('pages/lp/salon-innovations-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });
