@@ -1,26 +1,27 @@
 section.section-layout.sp-teachers
   div.page-title
     .page-title__logo
-    h1.sp-teachers-switcher
-      span(data-switcher="teachers").sp-teachers-switcher__item преподаватели
-      span /
-      span(data-switcher="guests").sp-teachers-switcher__item.sp-teachers-switcher__item--active специальные гости
+    h1.sp-teachers-switcher преподаватели
+    //h1.sp-teachers-switcher
+    //  span(data-switcher="teachers").sp-teachers-switcher__item преподаватели
+    //  span /
+    //  span(data-switcher="guests").sp-teachers-switcher__item.sp-teachers-switcher__item--active специальные гости
     .page-title__logo-title
 
   .sp-teachers-list-layout
     .sp-teachers-list-layout__item.sp-teachers-list-layout__item--teachers.sp-teachers-list-layout__item--active
-      div.sp-teachers-list
+      div.sp-teachers-list.sp-teachers-list--5-items
         include sp-teachers-list-1.jade
 
       ul.sp-teachers-list-mobile.slick-dots-horizontal
         include sp-teachers-list-1.jade
 
-    .sp-teachers-list-layout__item.sp-teachers-list-layout__item--guests
-      div.sp-teachers-list
-        include sp-teachers-list-1.jade
-
-      ul.sp-teachers-list-mobile.slick-dots-horizontal
-        include sp-teachers-list-1.jade
+    //.sp-teachers-list-layout__item.sp-teachers-list-layout__item--guests
+    //  div.sp-teachers-list
+    //    include sp-teachers-list-1.jade
+    //
+    //  ul.sp-teachers-list-mobile.slick-dots-horizontal
+    //    include sp-teachers-list-1.jade
 
 
 script.

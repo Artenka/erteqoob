@@ -148,6 +148,59 @@
    }
   }
  }
+
+ &.sp-teachers-list--5-items {
+
+  .academy-teacher {
+
+   &:nth-child(2) {
+    width: 260px;
+    height: 195px;
+    left: 360px;
+   }
+   &:nth-child(3) {
+    left: 302px;
+    @include tablet {
+     left: 60px;
+    }
+
+    .academy-teacher__info {
+     top: 0!important;
+     left: 0;
+     margin-top: 24px;
+    }
+   }
+   &:nth-child(4) {
+    top: 0;
+    @include tablet {
+     top: 326px;
+    }
+   }
+   &:nth-child(5) {
+    width: 195px;
+    height: 146px;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 100px;
+    @include tablet {
+     right: 60px;
+    }
+   }
+  }
+ }
+
+ &.sp-teachers-list--2 {
+
+  .academy-teacher:nth-child(3) {
+
+   .academy-teacher__info {
+    top: 0!important;
+    left: 0;
+    margin-top: 24px;
+   }
+  }
+ }
 }
 
 .academy-teacher {

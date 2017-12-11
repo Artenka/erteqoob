@@ -59,6 +59,16 @@
  }
 
  &.sp-about--adaptation {
+  background-image: url(../../../img/lp/sp/about/sp-about-adaptation.jpg);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-04;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
 
   .scroll-down {
    display: block;
