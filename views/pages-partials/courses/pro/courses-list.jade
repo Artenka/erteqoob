@@ -1,4 +1,4 @@
-section.section-layout.section.courses-list.courses-list--beginner
+section.section-layout.section.courses-list.courses-list--pro
   include ../../../partials/main-nav-toggle.jade
   include ../../../partials/courses-link.jade
   include ../../../partials/link-back.jade
@@ -6,7 +6,7 @@ section.section-layout.section.courses-list.courses-list--beginner
   .courses-list-title
     .courses-list-title__logo
     h1 pro
-    h2 набор треков для оттачивания мастерства<br> и чувства стиля
+    h2 набор треков<br class="br-sm"> для оттачивания мастерства<br> и чувства стиля
 
   ul.courses-list__filter
     li(data-grid='row').courses-list__filter-item.courses-list__filter-item--active
@@ -17,7 +17,7 @@ section.section-layout.section.courses-list.courses-list--beginner
         path(d='M5 0h12v2H5zm0 6h12v2H5zm0 6h12v2H5zM0 0h2v2H0zm0 6h2v2H0zm0 6h2v2H0z')
 
   .courses-lists-layout
-    .courses-list-grid
+    .courses-list-grid.courses-list-grid--pro
       a(href="#").courses-list-grid-item
         .courses-list-grid-item__header
           p.courses-list-grid-item__header-item киев<br> 21/01/2017
@@ -38,7 +38,7 @@ section.section-layout.section.courses-list.courses-list--beginner
           h2.courses-list-grid-item__subtitle
             span.courses-list-grid-item__subtitle-course трек
             span.courses-list-grid-item__subtitle-duration 7 месяцев / 9 занятий
-          h1.courses-list-grid-item__title Men<br> Innovations
+          h1.courses-list-grid-item__title Man<br> Innovations
           h2.courses-list-grid-item__subtitle.courses-list-grid-item__subtitle--column
             span.courses-list-grid-item__subtitle-duration 7 месяцев / 9 занятий
         .courses-list-grid-item__more узнать больше
@@ -115,7 +115,11 @@ section.section-layout.section.courses-list.courses-list--beginner
             span.courses-list-grid-item__subtitle-duration 7 месяцев / 9 занятий
         .courses-list-grid-item__more узнать больше
 
-
+  .courses-list-loading
+    .courses-list-loading__icon
+    .courses-list-loading__text
+      span Мы активно работаем
+      | над новыми<br class="br-sm"> программами обучения
 
 
   script.
@@ -138,4 +142,19 @@ section.section-layout.section.courses-list.courses-list--beginner
           }, 500);
         }
       });
+
+      // courses list mobile
+      $(window).on('resize', function () {
+        var window = $(this);
+        if (window.width() < 640) {
+          $('.courses-list-grid').addClass('courses-list-grid--column');
+          $('.courses-list__filter-item--active').removeClass('courses-list__filter-item--active');
+          $('.courses-list__filter-item[data-grid="column"]').addClass('courses-list__filter-item--active');
+        }
+      });
+      if ($(window).width() < 640) {
+        $('.courses-list-grid').addClass('courses-list-grid--column');
+        $('.courses-list__filter-item--active').removeClass('courses-list__filter-item--active');
+        $('.courses-list__filter-item[data-grid="column"]').addClass('courses-list__filter-item--active');
+      }
     })
