@@ -1,0 +1,16 @@
+.page-slider-dots-layout
+  .page-slider-dots
+    a(href="#intro").link-smooth.page-slider-dots__item.page-slider-dots__item--active
+    a(href="#sp-foundation").link-smooth.page-slider-dots__item
+    a(href="#skills").link-smooth.page-slider-dots__item
+    a(href="#philosophy").link-smooth.page-slider-dots__item
+    a(href="#format").link-smooth.page-slider-dots__item
+    a(href="#action").link-smooth.page-slider-dots__item
+
+script.
+  $(function(){
+    $('.page-slider-dots__item').click(function(){
+      $('.page-slider-dots__item--active').removeClass('page-slider-dots__item--active');
+      $(this).addClass('page-slider-dots__item--active');
+    });
+  });
