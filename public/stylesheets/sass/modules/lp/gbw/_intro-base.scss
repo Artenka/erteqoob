@@ -192,6 +192,28 @@
    }
   }
  }
+
+ .gbw-video__link {
+  margin: 40px 0 0;
+  @include mobile {
+   margin-top: 20px;
+  }
+
+  .gbw-video__link-icon {
+   margin-right: 30px;
+   @include mobile {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+   }
+  }
+  .gbw-video__link-text {
+   text-align: left;
+   @include mobile {
+    text-align: center;
+   }
+  }
+ }
 }
 
 .gbw-base-intro__circles {
@@ -590,21 +612,21 @@
    }
   }
 
-  &.gbw-base-intro-dice--active {
-
-   .gbw-base-intro-dice__content {
-    top: 100px;
-    left: 150px;
-    @include laptop {
-     top: 120px;
-     left: 160px;
-    }
-    @include tablet {
-     top: -5px;
-     left: -5px;
-    }
-   }
-  }
+  //&.gbw-base-intro-dice--active {
+  //
+  // .gbw-base-intro-dice__content {
+  //  top: 100px;
+  //  left: 150px;
+  //  @include laptop {
+  //   top: 120px;
+  //   left: 160px;
+  //  }
+  //  @include tablet {
+  //   top: -5px;
+  //   left: -5px;
+  //  }
+  // }
+  //}
  }
  &.gbw-base-intro-dice--2 {
   width: 568px;
@@ -661,22 +683,22 @@
    }
   }
 
-  &.gbw-base-intro-dice--active {
-
-   .gbw-base-intro-dice__content {
-    top: 200px;
-    left: 150px;
-    @include laptop {
-     top: 150px;
-     left: 200px;
-    }
-    @include tablet {
-     top: 177px;
-     left: auto;
-     right: 0;
-    }
-   }
-  }
+  //&.gbw-base-intro-dice--active {
+  //
+  // .gbw-base-intro-dice__content {
+  //  top: 200px;
+  //  left: 150px;
+  //  @include laptop {
+  //   top: 150px;
+  //   left: 200px;
+  //  }
+  //  @include tablet {
+  //   top: 177px;
+  //   left: auto;
+  //   right: 0;
+  //  }
+  // }
+  //}
  }
  &.gbw-base-intro-dice--3 {
   width: 516px;
@@ -734,44 +756,44 @@
    }
   }
 
-  &.gbw-base-intro-dice--active {
-
-   .gbw-base-intro-dice__content {
-    top: 90px;
-    left: 140px;
-    @include laptop {
-     top: -50px;
-     left: 100px;
-    }
-    @include tablet {
-     top: 77px;
-     left: auto;
-     right: 0;
-    }
-   }
-  }
+  //&.gbw-base-intro-dice--active {
+  //
+  // .gbw-base-intro-dice__content {
+  //  top: 90px;
+  //  left: 140px;
+  //  @include laptop {
+  //   top: -50px;
+  //   left: 100px;
+  //  }
+  //  @include tablet {
+  //   top: 77px;
+  //   left: auto;
+  //   right: 0;
+  //  }
+  // }
+  //}
  }
 
- &.gbw-base-intro-dice--active {
-
-  .gbw-base-intro-dice__image {
-   filter: blur(11px);
-  }
-
-  .gbw-base-intro-dice__title {
-   color: $color-white;
-   font-size: 36px;
-   letter-spacing: 7.2px;
-   &:before {
-    opacity: 0;
-   }
-  }
-
-  .gbw-base-intro-dice__list, .gbw-base-intro-dice__link {
-   opacity: 1;
-   visibility: visible;
-  }
- }
+ //&.gbw-base-intro-dice--active {
+ //
+ // .gbw-base-intro-dice__image {
+ //  filter: blur(11px);
+ // }
+ //
+ // .gbw-base-intro-dice__title {
+ //  color: $color-white;
+ //  font-size: 36px;
+ //  letter-spacing: 7.2px;
+ //  &:before {
+ //   opacity: 0;
+ //  }
+ // }
+ //
+ // .gbw-base-intro-dice__list, .gbw-base-intro-dice__link {
+ //  opacity: 1;
+ //  visibility: visible;
+ // }
+ //}
 }
 
 .gbw-intro-center {

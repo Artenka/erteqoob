@@ -1,0 +1,14 @@
+div#gbw-video-popup.popup-layout
+  div.popup-white
+    .popup__close
+    .popup__video
+      video#gbw-video(loop)
+        source(src='/videos/gbw-presentation.mp4', type='video/mp4')
+
+script.
+  $(function(){
+    // video stop
+    $('#gbw-video-popup .popup__close').click(function () {
+      $('#gbw-video').get(0).pause();
+    });
+  });
