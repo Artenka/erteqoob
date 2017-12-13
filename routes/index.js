@@ -103,6 +103,13 @@ router.get('/courses/pro/salon-innovations/kharkiv', function(req, res, next) {
   res.render('pages/lp/salon-innovations-kharkiv');
 });
 
+router.get('/courses/pro/long/kiev', function(req, res, next) {
+  res.render('pages/lp/long-kiev');
+});
+router.get('/courses/pro/long/kharkiv', function(req, res, next) {
+  res.render('pages/lp/long-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });

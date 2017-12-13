@@ -356,6 +356,22 @@
   background-image: url(../../../img/lp/sp/philosophy/sp-philosophy.jpg);
   &:before {display: none}
  }
+ &.sp-philosophy--long {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-long.png);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-02;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+
+  .sp-philosophy-main .sp-philosophy-main__title {
+   text-align: center;
+  }
+ }
 }
 
 .sp-philosophy-main {

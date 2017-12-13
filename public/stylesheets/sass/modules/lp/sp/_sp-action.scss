@@ -132,6 +132,16 @@
    }
   }
  }
+
+ &.sp-action--man-innovations.sp-action--long {
+
+  .sp-action__title {
+   padding-right: 380px;
+   @include tablet-mobile {
+    padding: 0;
+   }
+  }
+ }
 }
 
 .sp-action__title {
