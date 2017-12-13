@@ -1028,6 +1028,18 @@
    left: 0;
   }
  }
+ &.sp-skills--qualification.sp-skills--adaptation.sp-skills--curly {
+  background-image: url(../../../img/lp/sp/skills/sp-skills-curly.jpg);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-02;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+ }
 
  &.sp-skills--gbw-base {
   background-image: url(../../../img/lp/gbw/skills/gbw-skills.jpg);

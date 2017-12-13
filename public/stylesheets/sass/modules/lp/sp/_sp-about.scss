@@ -111,6 +111,18 @@
    left: 0;
   }
  }
+ &.sp-about--curly {
+  background-image: url(../../../img/lp/sp/about/sp-about-curly.png);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-02;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+ }
 }
 
 .sp-about-logo {

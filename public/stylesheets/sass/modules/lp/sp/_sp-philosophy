@@ -372,6 +372,9 @@
    text-align: center;
   }
  }
+ &.sp-philosophy--curly {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-curly.png);
+ }
 }
 
 .sp-philosophy-main {

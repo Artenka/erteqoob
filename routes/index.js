@@ -110,6 +110,13 @@ router.get('/courses/pro/long/kharkiv', function(req, res, next) {
   res.render('pages/lp/long-kharkiv');
 });
 
+router.get('/courses/pro/curly/kiev', function(req, res, next) {
+  res.render('pages/lp/curly-kiev');
+});
+router.get('/courses/pro/curly/kharkiv', function(req, res, next) {
+  res.render('pages/lp/curly-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });

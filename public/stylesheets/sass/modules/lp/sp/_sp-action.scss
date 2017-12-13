@@ -140,6 +140,22 @@
    @include tablet-mobile {
     padding: 0;
    }
+   @include mobile {
+    width: 240px;
+   }
+  }
+ }
+
+ &.sp-action--man-innovations.sp-action--curly {
+
+  .sp-action__title {
+   padding-right: 175px;
+   @include tablet-mobile {
+    padding: 0;
+   }
+   @include mobile {
+    width: 230px;
+   }
   }
  }
 }
