@@ -1,6 +1,6 @@
 .page-slider-dots-layout
   .page-slider-dots
-    a(href="#about").link-smooth.page-slider-dots__item.page-slider-dots__item--active
+    a(href="#about").link-smooth.page-slider-dots__item
     a(href="#sp-foundation").link-smooth.page-slider-dots__item
     a(href="#masters").link-smooth.page-slider-dots__item
     a(href="#skills").link-smooth.page-slider-dots__item
@@ -16,4 +16,6 @@ script.
       $('.page-slider-dots__item--active').removeClass('page-slider-dots__item--active');
       $(this).addClass('page-slider-dots__item--active');
     });
+
+    updateActiveSectionPaginator(['#about', '#sp-foundation', '#masters', '#skills', '#format', '#program', '#study', '#philosophy', '#action']);
   });

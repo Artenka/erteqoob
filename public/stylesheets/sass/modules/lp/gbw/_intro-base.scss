@@ -194,13 +194,18 @@
  }
 
  .gbw-video__link {
-  margin: 40px 0 0;
+  margin: 0 0 20px;
+  position: relative;
   @include mobile {
-   margin-top: 20px;
+   margin-bottom: 10px;
+  }
+  &:hover {
+
+   .gbw-video__link-text {opacity: 1;}
   }
 
   .gbw-video__link-icon {
-   margin-right: 30px;
+   margin-right: 0;
    @include mobile {
     width: 36px;
     height: 36px;
@@ -208,9 +213,18 @@
    }
   }
   .gbw-video__link-text {
+   width: 400px;
+   opacity: 0;
    text-align: left;
+   position: absolute;
+   top: 0;
+   left: 72px;
+   transition: 0.8s;
    @include mobile {
+    width: auto;
     text-align: center;
+    position: static;
+    opacity: 1;
    }
   }
  }
@@ -362,9 +376,10 @@
   line-height: 108px;
   text-transform: uppercase;
   letter-spacing: 15.42px;
-  margin: 65px 0 63px;
+  //margin: 65px 0 63px;
+  margin: 65px 0 12px;
   @include laptop-tablet {
-   margin: 35px 0 27px;
+   margin: 35px 0 12px;
   }
   @include mobile {
    font-size: 66px;
@@ -704,7 +719,7 @@
   width: 516px;
   height: 522px;
   bottom: -4.17%;
-  right: 6.25%;
+  right: 1.25%;
   @include laptop {
    width: 392px;
    height: 396px;

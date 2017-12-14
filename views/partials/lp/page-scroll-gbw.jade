@@ -1,6 +1,6 @@
 .page-slider-dots-layout
   .page-slider-dots
-    a(href="#intro").link-smooth.page-slider-dots__item.page-slider-dots__item--active
+    a(href="#intro").link-smooth.page-slider-dots__item
     a(href="#sp-foundation").link-smooth.page-slider-dots__item
     a(href="#skills").link-smooth.page-slider-dots__item
     a(href="#program").link-smooth.page-slider-dots__item
@@ -14,4 +14,6 @@ script.
       $('.page-slider-dots__item--active').removeClass('page-slider-dots__item--active');
       $(this).addClass('page-slider-dots__item--active');
     });
+
+    updateActiveSectionPaginator(['#intro', '#sp-foundation', '#skills', '#program', '#format', '#teachers', '#action']);
   });
