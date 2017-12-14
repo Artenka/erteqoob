@@ -11,4 +11,8 @@ script.
     $('#gbw-video-popup .popup__close').click(function () {
       $('#gbw-video').get(0).pause();
     });
+    $('.popup__video').click(function(){
+      hidePopup('#gbw-video-popup');
+      $('#gbw-video').get(0).pause();
+    });
   });
