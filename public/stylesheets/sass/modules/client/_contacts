@@ -1336,6 +1336,7 @@
 
  .contacts-slide {
   width: 452px;
+  cursor: pointer;
   @include mobile {
    width: 226px;
   }
