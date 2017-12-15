@@ -418,6 +418,9 @@
  &.sp-philosophy--curly {
   background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-curly.png);
  }
+ &.sp-philosophy--blond {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-blond.jpg);
+ }
 }
 
 .sp-philosophy-main {

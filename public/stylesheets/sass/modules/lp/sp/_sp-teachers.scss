@@ -64,6 +64,16 @@
    height: 920px;
   }
  }
+
+ &.sp-teachers--blond {
+  background-image: url(../../../img/lp/sp/teachers/sp-teachers-blond.jpg);
+  @include tablet {
+   height: 930px;
+  }
+  @include mobile {
+   height: 508px;
+  }
+ }
 }
 
 .sp-teachers-list-layout {
@@ -514,6 +524,22 @@
     line-height: 13px;
     margin-top: 12px;
    }
+  }
+ }
+}
+
+.sp-teacher-blond {
+
+ .gbw-base-teachers-name {
+  left: 33.54%;
+  bottom: 34.22%;
+  @include tablet {
+   left: 61.75%;
+   bottom: 17.9%;
+  }
+  @include mobile {
+   left: 31.88%;
+   bottom: 23.03%;
   }
  }
 }

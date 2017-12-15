@@ -117,6 +117,13 @@ router.get('/courses/pro/curly/kharkiv', function(req, res, next) {
   res.render('pages/lp/curly-kharkiv');
 });
 
+router.get('/courses/pro/blond/kiev', function(req, res, next) {
+  res.render('pages/lp/blond-kiev');
+});
+router.get('/courses/pro/blond/kharkiv', function(req, res, next) {
+  res.render('pages/lp/blond-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });

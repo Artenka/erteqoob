@@ -27,6 +27,18 @@
  &.sp-program-adaptation--man-innovations.sp-program-adaptation--curly {
   background-image: url(../../../img/lp/sp/program/sp-program-curly.png);
  }
+ &.sp-program-adaptation--man-innovations.sp-program-adaptation--blond {
+  background-image: url(../../../img/lp/sp/program/sp-program-blond.jpg);
+
+  .sp-program-man-innovations-info {
+   top: 321px;
+   left: 413px;
+   @include tablet {
+    top: 210px;
+    left: 190px;
+   }
+  }
+ }
 }
 
 .sp-program-adaptation-days {

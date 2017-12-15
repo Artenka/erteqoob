@@ -89,6 +89,9 @@
    }
   }
  }
+ &.sp-foundation--blond {
+  background-image: url(../../../img/lp/sp/foundation/sp-foundation-blond.jpg);
+ }
 }
 
 .sp-foundation-list {
