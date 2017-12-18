@@ -1,0 +1,202 @@
+.salon-info {
+ height: 600px;
+ min-height: 600px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: url(../../../img/client/salon/info/salon-info.jpg) no-repeat center / cover;
+ @include tablet-mobile {
+  flex-direction: column;
+ }
+ @include tablet {
+  height: 1135px;
+  min-height: 1135px;
+ }
+ @include mobile {
+  height: 480px;
+  min-height: 480px;
+ }
+}
+
+.salon-info-block {
+ width: 650px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ position: relative;
+ padding: 76px 0 72px;
+ @include tablet-mobile {
+  flex-direction: column;
+ }
+ @include tablet {
+  width: 295px;
+  padding: 100px 0 90px;
+ }
+ @include mobile {
+  width: 220px;
+  padding: 40px 0 30px;
+ }
+
+ .salon-info-block__item {
+  position: relative;
+  @include tablet {
+   width: 350px;
+   margin-bottom: 42px;
+  }
+  @include mobile {
+   width: 100%;
+   margin-bottom: 21px;
+  }
+  &:last-child {
+   margin-bottom: 0;
+  }
+  &:before {
+   content: '';
+   width: 79px;
+   height: 79px;
+   background: url(../../../img/client/salon/info/dots-1.svg) no-repeat center / contain;
+   position: absolute;
+   top: -28px;
+   left: -74px;
+   @include mobile {
+    width: 40px;
+    height: 40px;
+   }
+  }
+
+  .salon-info-block__item-subitem {
+   margin-right: 24px;
+   @include tablet {
+    margin-right: 34px;
+   }
+   &:last-child {
+    margin-right: 0;
+   }
+   &:nth-child(1) {
+    @include tablet-mobile {
+     text-align: right;
+    }
+    @include tablet {
+     width: 160px;
+    }
+    @include mobile {
+     width: 100px;
+    }
+   }
+  }
+
+  &.salon-info-block__item--1 {
+   display: flex;
+   margin-left: 123px;
+   @include tablet-mobile {
+    margin-left: 0;
+   }
+  }
+  &.salon-info-block__item--2 {
+   width: 213px;
+   @include tablet-mobile {
+    display: flex;
+   }
+   @include tablet {
+    width: 350px;
+   }
+   @include mobile {
+    width: 100%;
+   }
+
+   h3 {
+    @include tablet-mobile {
+     text-align: right;
+    }
+    @include tablet {
+     width: 160px;
+     margin-right: 34px;
+    }
+    @include mobile {
+     width: 100px;
+     margin-right: 24px;
+    }
+   }
+  }
+ }
+
+ p {
+  color: $color-gray-2;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 1px;
+  @include tablet-mobile {
+   letter-spacing: normal;
+  }
+  @include tablet {
+   font-size: 22px;
+   font-weight: 400;
+  }
+  @include mobile {
+   font-size: 10px;
+   font-weight: 400;
+   line-height: 21px;
+  }
+ }
+ h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 34px;
+  @include tablet {
+   font-size: 22px;
+   font-weight: 400;
+  }
+  @include mobile {
+   font-size: 10px;
+   font-weight: 400;
+   line-height: 21px;
+  }
+ }
+
+ .salon-info-block__border {
+  height: 2px;
+  width: 100%;
+  background: $color-mine-shaft;
+  position: absolute;
+  &:before, &:after {
+   content: '';
+   height: 43px;
+   width: 2px;
+   background: $color-mine-shaft;
+   position: absolute;
+  }
+  &:before {
+   left: 0;
+  }
+  &:after {
+   right: 0;
+  }
+
+  &.salon-info-block__border--top {
+   top: 0;
+   &:before, &:after {
+    top: 0;
+   }
+  }
+  &.salon-info-block__border--bottom {
+   bottom: 0;
+   &:before, &:after {
+    bottom: 0;
+   }
+  }
+ }
+}
+
+.salon-info-video {
+ margin-left: 345px;
+ @include laptop {
+  margin-left: 115px;
+ }
+ @include tablet {
+  margin:  240px 0 0;
+ }
+ @include mobile {
+  margin: 60px 0 0;
+ }
+}

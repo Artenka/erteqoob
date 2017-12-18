@@ -59,6 +59,12 @@
   }
  }
 
+ .page-slider-dots, .onepage-pagination, .slick-dots, .slick-dots-horizontal .slick-dots {
+  @include mobile {
+   display: flex;
+  }
+ }
+
  &.sp-teachers--2-items {
   @include tablet {
    height: 920px;

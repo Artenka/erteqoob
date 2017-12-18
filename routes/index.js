@@ -25,6 +25,9 @@ router.get('/courses', function(req, res, next) {
 router.get('/salons', function(req, res, next) {
   res.render('pages/salons');
 });
+router.get('/salons/kost', function(req, res, next) {
+  res.render('pages/salon-kost');
+});
 router.get('/contacts', function(req, res, next) {
   res.render('pages/contacts');
 });

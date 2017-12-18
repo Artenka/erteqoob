@@ -1,0 +1,70 @@
+section.section-layout.main-footer-layout.main-footer-layout--min
+  footer.main-footer.main-footer--min
+    .main-footer__top
+      ul.main-nav.main-nav--cities.main-footer__cities
+        li.main-nav__item
+          a(href="/courses/beginner/base/kiev").main-nav__link киев
+        li.main-nav__item
+          a(href="/courses/beginner/base/kharkiv").main-nav__link харьков
+      ul.main-nav.main-nav--cities.main-footer__menu
+      div.arrow-link.arrow-link--right.arrow-link--top.register-link.main-footer__register
+        a.arrow-link__text(href='/courses') запись на обучение
+    .main-footer__middle
+      a(href="/courses/beginner").main-footer__aside-link.main-footer__aside-link--beginner
+        | beginner
+        svg#SvgjsSvg1011(version='1.1', xmlns:svgjs='http://svgjs.com/svgjs', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 5 12', style='enable-background:new 0 0 5 12;', xml:space='preserve' width="5" height="12")
+          path#SvgjsPath1013.st0(fill='#ffffff', d='M3,9.5H1v-7l-1,0L2,0l2,2.5l-1.6,0H3V9.5z')
+      div.main-footer__logo
+        .main-footer__logo-circle.main-footer__logo-circle--1
+        .main-footer__logo-circle.main-footer__logo-circle--2
+        .main-footer__logo-image
+        .main-footer__logo-title
+      ul.main-nav.main-nav--cities.main-footer__menu.main-footer__menu--mobile
+        li.main-nav__item
+          a(href="/academy").main-nav__link академия
+        li.main-nav__item
+          a(href="/courses").main-nav__link курсы
+        li.main-nav__item
+          a(href="/philosophy").main-nav__link Философия
+        li.main-nav__item
+          a(href="/salons").main-nav__link Салоны
+        li.main-nav__item
+          a(href="/contacts").main-nav__link контакты
+      a(href="/in-development").main-footer__aside-link.main-footer__aside-link--pro
+        | pro
+        svg#SvgjsSvg1011(version='1.1', xmlns:svgjs='http://svgjs.com/svgjs', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 5 12', style='enable-background:new 0 0 5 12;', xml:space='preserve' width="5" height="12")
+          path#SvgjsPath1013.st0(fill='#ffffff', d='M3,9.5H1v-7l-1,0L2,0l2,2.5l-1.6,0H3V9.5z')
+    .main-footer__bottom
+      ul.main-nav.main-nav--cities.main-footer__lang
+        li.main-nav__item
+          a(href="#").main-nav__link eng
+        li.main-nav__item
+          a(href="#").main-nav__link rus
+      p.main-footer__copy Copyright 2017  ERTEQOOB
+      ul.main-nav.main-nav--socials.main-footer__socials
+        li.main-nav__item.main-nav__item--fb
+          a.main-nav__link(href="https://www.facebook.com/erteqoob/" target="_blank")
+        li.main-nav__item.main-nav__item--in
+          a.main-nav__link(href="https://www.instagram.com/erteqoob/" target="_blank")
+
+script.
+  $(function(){
+    changeRotatedTextWidth('.main-footer__aside-link', '.main-footer__middle');
+
+    $('.footer-disclaimer__close').click(function(){
+      TweenMax.to($('.footer-disclaimer'), 0.5, {top: '50px', opacity: '0', ease: Power1.easeInOut});
+    });
+  })
+
+  function footerMenusHideAnimation() {
+    TweenMax.to($('.main-layout > .main-nav--socials'), 0.1, {opacity: 0, ease: Power1.easeOut});
+    TweenMax.to($('.main-layout > .main-nav--lang'), 0.1, {opacity: 0, ease: Power1.easeOut});
+    if ($(window).width() >= 640) {
+      TweenMax.to($('.main-layout > .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.main-layout > .register-link'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+      TweenMax.to($('.main-layout > .link-home'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+    }
+    TweenMax.to($('.main-layout > .main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut, delay: 0.7});
+  }
+
+include scripts.jade

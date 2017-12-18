@@ -241,6 +241,84 @@
   letter-spacing: 2px;
  }
 }
+
+.page-title-lp {
+ height: 140px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ margin-top: 82px;
+ position: relative;
+ z-index: 10;
+ @include laptop {
+  margin-top: 66px;
+ }
+ @include tablet {
+  margin-top: 60px;
+ }
+ @include mobile {
+  height: 80px;
+  margin-top: 37px;
+ }
+
+ .page-title__logo {
+  width: 140px;
+  height: 140px;
+  background: url(../../img/lp/logo-transparent.svg) no-repeat center / contain;
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 70px);
+  @include mobile {
+   width: 80px;
+   height: 80px;
+   left: calc(50% - 40px);
+  }
+ }
+
+ > h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-align: center;
+  @include mobile {
+   font-size: 12px;
+   letter-spacing: 3px;
+   line-height: 18px;
+  }
+
+  span {
+   color: $color-boulder-2;
+   font-size: 18px;
+   letter-spacing: 4.29px;
+   @include mobile {
+    font-size: 10px;
+   }
+  }
+ }
+
+ > h2 {
+  color: $color-gray-2;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+  text-align: center;
+ }
+
+ .page-title__logo-title {
+  align-self: center;
+  width: 136px;
+  height: 15px;
+  background: url(../../img/lp/erteqoob-title.svg) no-repeat center / contain;
+  margin-top: 18px;
+ }
+}
+
 .page-subtitle-2 {
  color: $color-silver-chalice-2;
  font-size: 17px;
@@ -920,4 +998,76 @@
   line-height: 12px;
   padding: 10px 0;
  }
+}
+
+.video-btn {
+ display: flex;
+ cursor: pointer;
+ @include tablet-mobile {
+  flex-direction: column;
+  align-items: center;
+ }
+ &:hover {
+
+  .video-btn__icon {
+   transform: scale(1.1);
+  }
+ }
+
+ .video-btn__icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 45px;
+  transition: 0.7s;
+  @include laptop {
+   margin-right: 35px;
+  }
+  @include tablet {
+   width: 48px;
+   height: 48px;
+   margin: 0 0 30px;
+  }
+  @include mobile {
+   width: 28px;
+   height: 28px;
+   margin: 0 0 15px;
+  }
+
+  svg {
+   width: 100%;
+   height: 100%;
+  }
+ }
+ .video-btn__text {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  @include tablet-mobile {
+   text-align: center;
+  }
+  @include tablet {
+   font-size: 16px;
+   line-height: 34px;
+   letter-spacing: 5.33px;
+  }
+  @include mobile {
+   font-size: 10px;
+   line-height: 17px;
+   letter-spacing: 2px;
+  }
+ }
+}
+
+.vertical-line {
+ width: 1px;
+ background: $color-white-02;
+ position: absolute;
+}
+.horizontal-line {
+ height: 1px;
+ width: 100%;
+ background: $color-white-02;
+ position: absolute;
 }

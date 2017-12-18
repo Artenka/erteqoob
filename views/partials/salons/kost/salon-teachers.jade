@@ -1,0 +1,118 @@
+section#teachers.section-layout.sp-teachers
+  div.page-title-lp
+    .page-title__logo
+    h1 мастера
+    h2 салон на костельной
+
+  .sp-teachers-list-layout
+    .sp-teachers-list-layout__item.sp-teachers-list-layout__item--teachers.sp-teachers-list-layout__item--active
+      div.sp-teachers-list-slider.slider-arrows-long.slider-arrows-long--edge
+        include salon-teachers-list.jade
+
+      ul.sp-teachers-list-mobile.slick-dots-horizontal
+        include salon-teachers-list-mobile.jade
+
+
+
+script.
+  $(function(){
+    var $teachersDesktopSlider = $('.sp-teachers-list-slider');
+    var $teachersMobileSlider = $('.sp-teachers-list-mobile');
+
+    $teachersDesktopSlider.on('init', function (event, slick) {
+      teachersSlideInit();
+    });
+    $teachersMobileSlider.on('init', function (event, slick) {
+      teachersSlideInit();
+    });
+
+    // academy teachers slider
+    $teachersDesktopSlider.slick({
+      slidesToShow: 1,
+      speed: 500,
+      mobileFirst: true,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: false,
+      adaptiveHeight: true,
+      infinite: true,
+      swipeToSlide: true
+    });
+    // teachers mobile slider
+    $teachersMobileSlider.slick({
+      slidesToShow: 1,
+      arrows: false,
+      dots: true,
+      draggable: true,
+      accessibility: false,
+      centerMode: true,
+      variableWidth: true,
+      infinite: true,
+      swipeToSlide: true
+    });
+
+
+    $teachersDesktopSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      teachersSlideHide();
+    });
+    $teachersDesktopSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      teachersSlideInit();
+    });
+    $teachersMobileSlider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+      teachersSlideHide();
+    });
+    $teachersMobileSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+      teachersSlideInit();
+    });
+  });
+
+  function teachersSlideInit() {
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__photo-bg'), 0.5, {
+      right: 0,
+      ease: Power1.easeOut
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__photo img'), 0.5, {
+      right: 0,
+      ease: Power1.easeOut,
+      delay: 0.2
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teachers__socials'), 0.7, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__info'), 0.7, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+  }
+
+  function teachersSlideHide() {
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__photo-bg'), 0.5, {
+      right: '100%',
+      ease: Power1.easeOut
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__photo img'), 0.5, {
+      right: '100%',
+      ease: Power1.easeOut,
+      delay: 0.2
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teachers__socials'), 0.7, {
+      top: '30px',
+      opacity: 0,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+    TweenMax.staggerTo($('.slick-current.slick-active .sp-teachers-list .academy-teacher__info'), 0.7, {
+      top: '30px',
+      opacity: 0,
+      ease: Power1.easeOut,
+      delay: 0.7
+    }, 0.2);
+  }

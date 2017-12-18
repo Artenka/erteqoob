@@ -9,9 +9,69 @@
   //overflow-y: auto;
  }
 }
+#salon {
+ opacity: 0;
+ @include tablet {
+  min-height: 1135px;
+ }
+ @include mobile {
+  min-height: 480px;
+ }
+
+ .salons-info__exit {
+  width: 25%;
+  top: calc(50% - 20px);
+  @include tablet-mobile {
+   width: 100%;
+  }
+  @include tablet {
+   top: 225px;
+  }
+  @include mobile {
+   top: 78px;
+  }
+
+  &.salons-info__exit--right {
+   left: 60%;
+   @include tablet-mobile {
+    left: 0;
+   }
+  }
+
+  &.salons-info__exit--active {
+   opacity: 1;
+  }
+ }
+
+ .salons-info .salons-info__item {
+
+  .salons-info__text {
+   font-size: 12px;
+   line-height: 30px;
+   letter-spacing: 8px;
+   margin-top: 17px;
+   @include tablet {
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 5.14px;
+    margin-top: 0;
+   }
+   @include mobile {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 2.5px;
+   }
+  }
+
+  &.salons-info__item--active {
+   opacity: 1;
+  }
+ }
+}
 
 .salons-layout {
- height: 100%;
+ height: 100vh;
  position: relative;
  @include clearfix;
  @include tablet-mobile {
@@ -709,19 +769,40 @@
 
 .salons-info__exit {
  width: 100%;
+ background: url(../../img/icons/arrow-left-long-gray.svg) no-repeat bottom right / 19px auto;
  color: $color-gray-2;
- font-size: 14px;
+ font-size: 10px;
  font-weight: 700;
- line-height: 24px;
+ line-height: 20px;
  text-transform: uppercase;
- letter-spacing: 4px;
- text-align: center;
+ letter-spacing: 2.76px;
+ text-align: right;
  position: absolute;
  top: 205px;
  left: 0;
- transition: 0.2s;
+ padding-bottom: 26px;
+ transition: 0.5s;
+ //transition: background-position 0.6s ease;
  z-index: 7;
  opacity: 0;
+ cursor: pointer;
+ &:hover {
+  color: $color-white;
+  background: url(../../img/icons/arrow-left-long.svg) no-repeat bottom right / 19px auto;
+  @include tablet-mobile {
+   background: transparent;
+  }
+ }
+ @include tablet-mobile {
+  background: transparent;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 4px;
+  top: 205px;
+  left: 0;
+  padding-bottom: 0;
+ }
 
  &.salons-info__exit--active {
   @include tablet-mobile {

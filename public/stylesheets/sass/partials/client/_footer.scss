@@ -6,6 +6,10 @@
  &.main-footer-layout--white {
   height: auto;
  }
+ &.main-footer-layout--min {
+  min-height: 310px;
+  height: 310px;
+ }
 }
 
 .main-footer {
@@ -235,13 +239,13 @@
    .main-footer__logo-image {
     width: 22px;
     height: 22px;
-    background: url(../../img/client/common/footer/footer-logo.svg) no-repeat center / 22px;
+    background: url(../../img/client/common/footer/footer-logo.svg) no-repeat center / contain;
    }
    .main-footer__logo-title {
     width: 109px;
     height: 24px;
     margin-top: 14px;
-    background: url(../../img/client/common/footer/footer-logo-title.svg) no-repeat center / 109px 24px;
+    background: url(../../img/client/common/footer/footer-logo-title.svg) no-repeat center / contain;
    }
   }
  }
@@ -353,6 +357,81 @@
     .main-footer__logo-title {
      background: url(../../img/client/common/footer/footer-logo-title-black.svg) no-repeat center / 109px 24px;
     }
+   }
+  }
+ }
+
+ &.main-footer--min {
+
+  .register-link {
+   z-index: 100;
+  }
+
+  .main-footer__top {
+
+   .main-footer__register {
+    display: block;
+   }
+  }
+
+  .main-footer__middle {
+   height: 150px;
+
+   .main-footer__logo {
+    height: 192px;
+    width: 192px;
+    margin-top: -30px;
+    &:before {
+     height: 144px;
+     top: calc(50% - 72px);
+    }
+
+    .main-footer__logo-image {
+     width: 17px;
+     height: 17px;
+    }
+    .main-footer__logo-title {
+     width: 83px;
+     height: 20px;
+     margin-top: 9px;
+    }
+
+    .main-footer__logo-circle {
+
+     &.main-footer__logo-circle--1 {
+      height: 132px;
+      width: 132px;
+      top: calc(50% - 66px);
+      left: calc(50% - 66px);
+     }
+     &.main-footer__logo-circle--2 {
+      height: 192px;
+      width: 192px;
+      top: calc(50% - 96px);
+      left: calc(50% - 96px);
+     }
+    }
+   }
+
+   .main-footer__aside-link {
+    bottom: -30px;
+   }
+  }
+
+  .main-footer__menu.main-footer__menu--mobile {
+   width: 100%;
+   flex-direction: row;
+   display: flex;
+   justify-content: center;
+   position: absolute;
+   top: -37px;
+   left: 0;
+   @include tablet-mobile {
+    flex-direction: column;
+   }
+
+   .main-nav__item {
+    margin: 0 20px;
    }
   }
  }

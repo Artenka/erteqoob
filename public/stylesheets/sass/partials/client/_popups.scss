@@ -109,6 +109,20 @@
   left: 0;
  }
 
+
+ .popup__close {
+  width: 0;
+  height: 0;
+  display: none;
+  @include mobile {
+   display: block;
+   width: 24px;
+   height: 24px;
+   top: 20px;
+   right: 20px;
+  }
+ }
+
  .photo-popup-slider {
   width: 1280px;
   height: 768px;
@@ -156,15 +170,6 @@
   top: 80px;
   @include mobile {
    top: 0;
-  }
-
-  .popup__close {
-   @include mobile {
-    width: 24px;
-    height: 24px;
-    top: 20px;
-    right: 20px;
-   }
   }
  }
 }

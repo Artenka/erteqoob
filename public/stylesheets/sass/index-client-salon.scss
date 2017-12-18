@@ -2,6 +2,7 @@
 @import 'common/reset';
 @import 'common/global';
 @import 'common/variables';
+@import 'common/variables-lp';
 @import 'common/mixins';
 @import 'common/fonts';
 // scss libraries
@@ -24,6 +25,8 @@
 @import 'modules/client/salon';
 @import 'modules/client/contacts';
 @import 'modules/client/indev';
+@import 'modules/lp/sp/sp-teachers';
+@import 'modules/lp/common';
 @import 'modules/error';
 // partials
 @import 'partials/client/modals';
