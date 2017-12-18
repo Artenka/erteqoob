@@ -82,6 +82,16 @@
  }
 
  &.sp-action--man-innovations {
+  background-image: url(../../../img/lp/sp/action/sp-action-man-innovations.jpg);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-04;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
   @include tablet {
    height: 1010px;
   }
@@ -168,6 +178,7 @@
  letter-spacing: 4px;
  margin-top: 140px;
  padding-right: 110px;
+ position: relative;
  @include laptop {
   margin-top: 83px;
  }
@@ -199,6 +210,7 @@
  justify-content: space-between;
  align-items: center;
  margin-top: 56px;
+ position: relative;
  @include tablet-mobile {
   width: auto;
   flex-direction: column;

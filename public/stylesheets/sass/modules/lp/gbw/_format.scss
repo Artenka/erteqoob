@@ -785,13 +785,15 @@
 }
 
 .gbw-format-list {
- width: 1570px;
+ //width: 1570px;
+ width: 1300px;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-between;
  position: absolute;
  bottom: 200px;
- left: calc(50% - 785px);
+ //left: calc(50% - 785px);
+ left: calc(50% - 610px);
  z-index: 2;
  @include laptop {
   width: 940px;

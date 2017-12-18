@@ -92,6 +92,18 @@
  &.sp-foundation--blond {
   background-image: url(../../../img/lp/sp/foundation/sp-foundation-blond.jpg);
  }
+ &.sp-foundation--man-innovations {
+  background-image: url(../../../img/lp/sp/foundation/sp-foundation-man-innovations.jpg);
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-04;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+ }
 }
 
 .sp-foundation-list {

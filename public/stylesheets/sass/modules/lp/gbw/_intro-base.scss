@@ -961,3 +961,15 @@
   }
  }
 }
+
+#gbw-video-popup {
+
+ .popup-white {
+  background: $color-black;
+ }
+
+ .popup__video.popup__video--fullscreen video {
+  width: 100%;
+  height: 100%;
+ }
+}

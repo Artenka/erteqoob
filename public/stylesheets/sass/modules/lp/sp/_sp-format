@@ -364,6 +364,18 @@
  }
 
  &.sp-format--man-innovations.sp-format--qualification.sp-format--adaptation {
+  background: url(../../../img/lp/sp/format/sp-format-man-innovations.jpg) no-repeat center / cover;
+  position: relative;
+  &:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   background: $color-black-04;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+  }
 
   .sp-format-block {
    width: 960px;
@@ -484,6 +496,7 @@
  display: flex;
  justify-content: center;
  align-items: center;
+ position: relative;
 }
 .sp-format-block {
  width: 1080px;
