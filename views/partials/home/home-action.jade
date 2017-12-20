@@ -4,15 +4,18 @@ section.section-layout.home-action-layout
       div.home-action__info
         h1.home-action__title Отличайтесь!
         h2.home-action__subtitle Черпайте вдохновение<br> из новых коллекций и материалов
-      form#action-form.action__form
+      form(action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" onsubmit="homeActionForm();")#action-form.action__form
         div.action__form-input-layout
           .action__form-input-line
           label.action__form-label Имя
-          input.action__form-input(type="text" name="name" required)
+          input.action__form-input(type="text" name="first_name" required)
         div.action__form-input-layout
           .action__form-input-line
           label.action__form-label E-mail
           input.action__form-input(type="email" name="email" required)
+        input(type='hidden', name='campaign_token', value='43sy9')
+        input(type='hidden', name='forward_data', value='post')
+        input(type='hidden', name='thankyou_url', value='/')
         div.action__form-submit-layout
           .arrow-link
             button(type="submit").btn-black.arrow-link__text.action__form-submit подписаться
@@ -46,24 +49,24 @@ script.
     });
 
     // action form submit
-    $("#action-form").submit(function (e) {
-
-      e.preventDefault();
-
-      $.ajax({
-        //type: "POST",
-        //url: '',
-        data: $("#action-form").serialize(),
-        success: function (data) {
-          $.cookie('subscribed', 'true', 356);
-          $('.home-action__info').fadeOut(400);
-          $('.action__form').fadeOut(400);
-          setTimeout(function(){
-            $('.home-action__thankyou-layout').fadeIn(400);
-          }, 400)
-        }
-      });
-    });
+    //$("#action-form").submit(function (e) {
+    //  e.preventDefault();
+    //  $.ajax({
+    //    type: "POST",
+    //    url: 'https://app.getresponse.com/add_subscriber.html',
+    //    dataType: 'jsonp',
+    //    data: $("#action-form").serialize(),
+    //    success: function (data) {
+    //      console.log('ku');
+    //      $.cookie('subscribed', 'true', 356);
+    //      $('.home-action__info').fadeOut(400);
+    //      $('.action__form').fadeOut(400);
+    //      setTimeout(function(){
+    //        $('.home-action__thankyou-layout').fadeIn(400);
+    //      }, 400)
+    //    }
+    //  });
+    //});
 
     // check if subscribed
     if ($.cookie("subscribed") == 'true') {
@@ -74,3 +77,13 @@ script.
       }, 50)
     }
   })
+
+  function homeActionForm() {
+    console.log('ku');
+    $.cookie('subscribed', 'true', 356);
+    $('.home-action__info').fadeOut(400);
+    $('.action__form').fadeOut(400);
+    setTimeout(function () {
+      $('.home-action__thankyou-layout').fadeIn(400);
+    }, 400)
+  }
