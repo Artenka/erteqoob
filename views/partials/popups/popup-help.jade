@@ -1,0 +1,23 @@
+div#popup-help.popup-layout
+  div.popup-white.register-step-1.help-popup
+    .popup__close
+    h1.popup-title Хочу задать вопрос
+    form()#help-form
+      .register-step-1__groups
+        .register-step-1__input.register-step-1__input--name
+          label Меня зовут
+          input(type="text" required name="name" placeholder="Введи свои Имя и Фамилию")#help-name
+          p .
+        .register-step-1__input.register-step-1__input--name
+          textarea(placeholder="Введи свой вопрос")
+        .register-step-1__inputs
+          .register-step-1__input.register-step-1__input--phone
+            label Вы можете ответить мне по телефону
+            input(type="tel" required name="phone" placeholder="+38 099 500 50 50")#help-phone
+          .register-step-1__input.register-step-1__input--email
+            label или по почте
+            input(type="email" required name="email" placeholder="Введи личный e-mail")#help-email
+            p .
+      button(type="submit")#help-submit.btn-white.register-step-1__submit
+        | отправить
+      p.popup-disclaimer Мы свяжемся с тобой в ближайшее время
