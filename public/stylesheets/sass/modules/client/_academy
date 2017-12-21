@@ -949,6 +949,23 @@
     @include mobile {
      display: block;
     }
+
+    &.slider-arrows-long--standard .slick-arrow {
+     @include mobile {
+      top: calc(50% + 22px);
+     }
+
+     &.slick-prev {
+      @include tablet {
+       left: 10px;
+      }
+     }
+     &.slick-next {
+      @include tablet {
+       right: 10px;
+      }
+     }
+    }
    }
    &.academy-teachers-slider--4-slides {
 
@@ -1037,9 +1054,9 @@
  cursor: pointer;
  transition: 0.8s;
  @include mobile {
-  width: 172px!important;
+  width: 240px!important;
   padding-top: 60px;
-  left: calc(50% - 86px) !important;
+  left: calc(50% - 120px) !important;
   top: 23.31% !important;
  }
  &:hover {
@@ -1159,8 +1176,8 @@
    font-size: 22px;
    line-height: 22px;
    @include mobile {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 18px;
    }
   }
   .academy-teacher__position {
