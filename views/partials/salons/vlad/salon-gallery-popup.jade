@@ -1,0 +1,77 @@
+#salon-gallery-popup.popup-layout.popup-layout--black
+  .photo-popup
+    .popup__close
+
+    ul.photo-popup-slider.academy-inspiration-popup__slider.academy-inspiration-popup__slider--active.slider-arrows-long.slider-arrows-long--edge.salon-gallery-popup-slider
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_065.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_067.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_069.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_070.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_072.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_073.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_074.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_075.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_076.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_077.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_079.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_081.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_082.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_083.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_085.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_086.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_087.jpg")
+      li.photo-popup-slide
+        .photo-popup-slide-layout
+          img(src="/img/client/salons/gallery/vlad/Erteqoob_088.jpg")
+
+
+    script.
+      $(function () {
+        $('.salon-gallery-popup-slider').slick({
+          slidesToShow: 1,
+          speed: 800,
+          arrows: true,
+          dots: false,
+          draggable: true,
+          accessibility: false,
+          centerMode: true,
+          variableWidth: true,
+          infinite: true,
+          asNavFor: '.salon-gallery-slider',
+          swipeToSlide: true
+        });
+      });

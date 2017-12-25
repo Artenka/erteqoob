@@ -28,6 +28,12 @@ router.get('/salons', function(req, res, next) {
 router.get('/salons/kost', function(req, res, next) {
   res.render('pages/salon-kost');
 });
+router.get('/salons/vlad', function(req, res, next) {
+  res.render('pages/salon-vlad');
+});
+router.get('/salons/kharkiv', function(req, res, next) {
+  res.render('pages/salon-kharkiv');
+});
 router.get('/contacts', function(req, res, next) {
   res.render('pages/contacts');
 });

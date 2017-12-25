@@ -1,0 +1,39 @@
+section.section-layout.salon-intro
+  //include ../partials/link-home.jade
+  include ../../../partials/link-back-salons.jade
+  include ../../../partials/main-nav-socials.jade
+  include ../../../partials/main-nav-lang.jade
+  include ../../../partials/main-nav-toggle.jade
+  include ../../../partials/courses-link.jade
+
+  .salons-circles
+    .circle.salons-circle.salons-circle--1
+    .circle.salons-circle.salons-circle--2
+    .circle.salons-circle.salons-circle--3
+
+  .salons-logo.salons-logo--disable
+
+  a(href="/salons").salons-info__exit.salons-info__exit--left.salons-info__exit--active выбрать другой<br> салон
+  .salons-info
+    .salons-info__item.salons-info__item--kost.salons-info__item--active
+      h1.salons-title.salons-info__title салон
+      p.salons-info__text в киеве<br> на улице владимирской,<br> 49 А
+
+
+  .salons-layout
+    .salon-side.salon-side--left
+      .salon-side__background
+      .salon-side__background-mobile.salon-side__background-mobile--active
+      .salon-side__background-hover.salon-side__background-hover--kost.salon-side__background-hover--active
+    .salon-side.salon-side--right
+      .salon-side__background
+      .salon-side__background-mobile.salon-side__background-mobile--active
+        .pin-block
+          .pin
+          .circle.pin-circle.pin-circle--1
+          .circle.pin-circle.pin-circle--2
+      .salon-side__background-hover.salon-side__background-hover--kost.salon-side__background-hover--active
+        .pin-block
+          .pin
+          .circle.pin-circle.pin-circle--1
+          .circle.pin-circle.pin-circle--2
