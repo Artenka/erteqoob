@@ -6,7 +6,7 @@
 }
 
 .sp-teachers {
- height: 1080px;
+ height: 1180px;
  background-image: url(../../../img/client/salon/teachers/salon-teachers.jpg);
  position: relative;
  &:before {
@@ -19,10 +19,10 @@
   left: 0;
  }
  @include laptop {
-  height: 900px;
+  height: 1020px;
  }
  @include tablet {
-  height: 1280px;
+  height: 1360px;
  }
  @include mobile {
   height: 480px;
@@ -352,7 +352,7 @@
   display: none;
   max-width: 210px;
   height: auto;
-  margin: 40px auto 84px;
+  margin: 40px auto 24px;
   position: relative;
   @include mobile {
    display: block;
@@ -443,21 +443,21 @@
 
  .slider-arrows-long--edge .slick-arrow {
   @include tablet {
-   top: auto;
-   bottom: -70px;
+   top: calc(50% - 2px);
+   //bottom: -70px;
   }
 
   &.slick-prev {
    left: -45px;
-   @include tablet {
-    left: 170px;
-   }
+   //@include tablet {
+   // left: 170px;
+   //}
   }
   &.slick-next {
    right: -50px;
-   @include tablet {
-    right: 170px;
-   }
+   //@include tablet {
+   // right: 170px;
+   //}
   }
  }
 }

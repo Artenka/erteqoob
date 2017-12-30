@@ -190,6 +190,8 @@
 
 .salon-info-video {
  margin-left: 345px;
+ opacity: 0;
+ visibility: hidden;
  @include laptop {
   margin-left: 115px;
  }
