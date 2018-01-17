@@ -15,7 +15,7 @@ section.section-layout.home-action-layout
           input.action__form-input(type="email" name="email" required)
         input(type='hidden', name='campaign_token', value='43sy9')
         input(type='hidden', name='forward_data', value='post')
-        input(type='hidden', name='thankyou_url', value='/')
+        input(type='hidden', name='thankyou_url', value='https://erteqoob.com/')
         div.action__form-submit-layout
           .arrow-link
             button(type="submit").btn-black.arrow-link__text.action__form-submit подписаться
@@ -79,7 +79,6 @@ script.
   })
 
   function homeActionForm() {
-    console.log('ku');
     $.cookie('subscribed', 'true', 356);
     $('.home-action__info').fadeOut(400);
     $('.action__form').fadeOut(400);
