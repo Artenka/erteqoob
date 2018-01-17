@@ -172,39 +172,103 @@ script.
     }
   }
 
-  function registerStep1(courseId, step1Title, step3Title, city, courseDate){
+  function registerStep1(courseId, step1Title, step3Title, city, courseDate, grtoken){
     showPopup('#register-step-1');
     $('#register-step-1-title').text(step1Title);
     $('#register-step-3-title, #register-step-2-title').text(step3Title);
     $('#register-step-2-date').text(courseDate);
     $('#register-city').val(city).attr('selected','selected');
     $('#register-course-id').val(courseId);
+    $('#register-grtoken').val(grtoken);
+    $('#register-thankyou').val(window.location.href);
   }
   function registerStep2() {
     $("#register-form").submit(function (e) {
 
-      e.preventDefault();
+      //e.preventDefault();
 
-      $.ajax({
-        //type: "POST",
-        //url: '',
-        data: $("#register-form").serialize(),
-        success: function (data) {
-          console.log($("#register-form").serialize());
-          $.cookie('name', $('#register-name').val(), 30);
-          $.cookie('phone', $('#register-phone').val(), 30);
-          $.cookie('email', $('#register-email').val(), 30);
+      //$.ajax({
+      //  type: "POST",
+      //  dataType: 'jsonp',
+      //  url: 'https://api.getresponse.com/v3',
+      //  //data: $("#register-form").serialize(),
+      //  data: [
+      //    "1cdce2862360c102d92cbfd374d35fa1",
+      //    {
+      //      "campaign": $('#register-grtoken').val(),
+      //      "name": $('#register-name').val(),
+      //      "email": $('#register-email').val(),
+      //      "customs": [
+      //        {
+      //          "name": "custom_mobile_phone",
+      //          "content": $('#register-phone').val()
+      //        },
+      //        {
+      //          "name": "custom_city",
+      //          "content": $('#register-city').val()
+      //        }
+      //      ]
+      //    }
+      //  ],
+      //  success: function (data) {
+      //    console.log($("#register-form").serialize());
+      //    $.cookie('name', $('#register-name').val(), 30);
+      //    $.cookie('phone', $('#register-phone').val(), 30);
+      //    $.cookie('email', $('#register-email').val(), 30);
+      //    $('#register-step-2-city').text($('#register-city option:selected').text());
+      //    $('#register-step-2-name').text($('#register-name').val());
+      //    $('#register-step-3-name').text($('#register-name').val());
+      //    $('#register-step-2-phone').text($('#register-phone').val());
+      //    $('#register-step-2-email').text($('#register-email').val());
+      //    hidePopup('#register-step-1');
+      //    showPopup('#register-step-2');
+      //  }
+      //});
 
-          $('#register-step-2-city').text($('#register-city option:selected').text());
-          $('#register-step-2-name').text($('#register-name').val());
-          $('#register-step-3-name').text($('#register-name').val());
-          $('#register-step-2-phone').text($('#register-phone').val());
-          $('#register-step-2-email').text($('#register-email').val());
 
-          hidePopup('#register-step-1');
-          showPopup('#register-step-2');
-        }
-      });
+      //$.ajax({
+      //  url: 'https://api2.getresponse.com',
+      //  data: JSON.stringify({
+      //    'jsonrpc': '2.0',
+      //    'method': 'add_contact',
+      //    'params': [
+      //      '1cdce2862360c102d92cbfd374d35fa1',
+      //      {
+      //        "campaign": $('#register-grtoken').val(),
+      //        "name": $('#register-name').val(),
+      //        "email": $('#register-email').val(),
+      //        "customs": [
+      //          {
+      //            "name": "custom_mobile_phone",
+      //            "content": $('#register-phone').val()
+      //          },
+      //          {
+      //            "name": "custom_city",
+      //            "content": $('#register-city').val()
+      //          }
+      //        ]
+      //      }
+      //    ]
+      //  }),
+      //  type: 'POST',
+      //  contentType: 'application/json',
+      //  dataType: 'JSON',
+      //  crossDomain: true,
+      //  async: false,
+      //  success: function (response) {
+      //    console.log('Contact added');
+      //    $.cookie('name', $('#register-name').val(), 30);
+      //    $.cookie('phone', $('#register-phone').val(), 30);
+      //    $.cookie('email', $('#register-email').val(), 30);
+      //    $('#register-step-2-city').text($('#register-city option:selected').text());
+      //    $('#register-step-2-name').text($('#register-name').val());
+      //    $('#register-step-3-name').text($('#register-name').val());
+      //    $('#register-step-2-phone').text($('#register-phone').val());
+      //    $('#register-step-2-email').text($('#register-email').val());
+      //    hidePopup('#register-step-1');
+      //    showPopup('#register-step-2');
+      //  }
+      //});
     });
   }
   function registerStep3() {

@@ -2,22 +2,24 @@ div#popup-help.popup-layout
   div.popup-white.register-step-1.help-popup
     .popup__close
     h1.popup-title Хочу задать вопрос
-    form()#help-form
+    form(action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post")#help-form
       .register-step-1__groups
         .register-step-1__input.register-step-1__input--name
           label Меня зовут
-          input(type="text" required name="name" placeholder="Введи свои Имя и Фамилию")#help-name
+          input(type="text" name="name" required placeholder="Введи свои Имя и Фамилию")#help-name
           p .
         .register-step-1__input.register-step-1__input--name
-          textarea(placeholder="Введи свой вопрос")
+          textarea(placeholder="Введи свой вопрос" name="custom_comment" required)
         .register-step-1__inputs
           .register-step-1__input.register-step-1__input--phone
             label Вы можете ответить мне по телефону
-            input(type="tel" required name="phone" placeholder="+38 099 500 50 50")#help-phone
+            input(type="text" required name="custom_mobile_phone" placeholder="+38 099 500 50 50")#help-phone
           .register-step-1__input.register-step-1__input--email
             label или по почте
-            input(type="email" required name="email" placeholder="Введи личный e-mail")#help-email
+            input(type="email" name="email" required placeholder="Введи личный e-mail")#help-email
             p .
+          input(type='hidden', name='campaign_token', value='4t1pw')
+          input(type='hidden', name='thankyou_url', value='https://erteqoob.com/courses')
       button(type="submit")#help-submit.btn-white.register-step-1__submit
         | отправить
       p.popup-disclaimer Мы свяжемся с тобой в ближайшее время

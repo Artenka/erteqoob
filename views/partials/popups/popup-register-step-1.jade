@@ -2,11 +2,11 @@ div#register-step-1.popup-layout
   div.popup-white.register-step-1
     .popup__close
     h1.popup-title.register-step-1__title <span class="register-step-1__title-subtitle">Регистрация на обучение</span><br> «<span id="register-step-1-title">курс Базовый / трек Gray</span>»
-    form()#register-form
+    form(action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post")#register-form
       input(type="hidden" name="courseId")#register-course-id
       .register-step-1__select
         p в городе&nbsp;
-        select(name="city")#register-city
+        select(name="custom_city")#register-city
           option(value="kiev") Киев
           option(value="kharkiv") Харьков
       .register-step-1__groups
@@ -16,11 +16,13 @@ div#register-step-1.popup-layout
           input(type="text" required name="name" placeholder="Введи свои Имя и Фамилию")#register-name
         .register-step-1__input.register-step-1__input--phone
           label Со мной можно связаться по телефону
-          input(type="tel" required name="phone" placeholder="+38 099 500 50 50")#register-phone
+          input(type="tel" required name="custom_mobile_phone" placeholder="+38 099 500 50 50")#register-phone
           p ,
         .register-step-1__input.register-step-1__input--email
           label Дополнительную информацию можете присылать на почту:
           input(type="email" required name="email" placeholder="Введи личный e-mail")#register-email
           p .
+        input(type='hidden', name='campaign_token', value='#')#register-grtoken
+        input(type='hidden', name='thankyou_url', value='https://erteqoob.com')#register-thankyou
       button(type="submit")#register-submit.btn-white.register-step-1__submit
         | Забронировать место
