@@ -50,3 +50,12 @@ section#about.section-layout.section.sp-about.sp-about--man-innovations
     .scroll-down__dot.scroll-down__dot--1
     .scroll-down__dot.scroll-down__dot--2
     .scroll-down__dot.scroll-down__dot--3
+
+script.
+  $(function () {
+    // video popup
+    $('.gbw-video__link').click(function () {
+      showPopup('#gbw-video-popup');
+      $('#gbw-video').get(0).play();
+    });
+  });
