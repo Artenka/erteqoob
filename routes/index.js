@@ -133,6 +133,13 @@ router.get('/courses/pro/blond/kharkiv', function(req, res, next) {
   res.render('pages/lp/blond-kharkiv');
 });
 
+router.get('/courses/pro/cinema/kiev', function(req, res, next) {
+  res.render('pages/lp/cinema-kiev');
+});
+router.get('/courses/pro/cinema/kharkiv', function(req, res, next) {
+  res.render('pages/lp/cinema-kharkiv');
+});
+
 router.get('/courses/pro/gbw', function(req, res, next) {
   res.render('pages/lp/gbw-base');
 });
