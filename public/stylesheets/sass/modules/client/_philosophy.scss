@@ -324,6 +324,69 @@
    //opacity: 0.6;
   }
  }
+
+ &.philosophy-about--cinema {
+  min-height: 740px;
+  @include mobile {
+   min-height: 480px;
+  }
+  &:before {
+   z-index: 1;
+  }
+
+  .philosophy-about__main {
+   width: 900px;
+   z-index: 2;
+   @include mobile {
+    max-width: 400px;
+    width: 100%;
+    padding-right: 20px;
+   }
+
+   .philosophy-about__title {
+    font-size: 34px;
+    line-height: 48px;
+    position: relative;
+    @include mobile {
+     font-size: 12px;
+     letter-spacing: 0.3px;
+     line-height: 20px;
+    }
+   }
+   .philosophy-about__text {
+    @include mobile {
+     width: auto;
+    }
+
+    p {
+     color: $color-white-07;
+     font-size: 18px;
+     line-height: 28px;
+     @include mobile {
+      font-size: 10px;
+      line-height: 18px;
+     }
+    }
+   }
+  }
+
+  &.philosophy-about--2 {
+
+   .philosophy-about__main {
+    width: 620px;
+    @include mobile {
+     max-width: 400px;
+     width: 100%;
+     padding-right: 30px;
+    }
+   }
+  }
+ }
+
+ &.philosophy-about--cinema-1 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-1.jpg); filter: grayscale(1);}
+ &.philosophy-about--cinema-2 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-2.jpg); filter: grayscale(1);}
+ &.philosophy-about--cinema-3 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-3.jpg); filter: grayscale(1);}
+ &.philosophy-about--cinema-4 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-4.jpg); filter: grayscale(1);}
 }
 
 
@@ -1062,6 +1125,49 @@
     @include tablet-mobile {
      width: 100%;
     }
+   }
+  }
+ }
+
+ &.philosophy-pros--cinema-about-5 {
+  background-image: url(../../img/client/philosophy/philosophy-pros-cinema.jpg);
+  @include mobile {
+   min-height: 1000px;
+  }
+
+  .page-title-big-layout {
+   @include mobile {
+    padding: 0 20px;
+   }
+
+   .page-title-big.philosophy-title {
+    @include mobile {
+     font-size: 12px;
+     letter-spacing: 1.1px;
+     line-height: 24px;
+    }
+   }
+  }
+
+  .philosophy-pros__bg {background-image: none;}
+
+  .sp-about-block {
+   height: auto;
+
+   .sp-about-block__main .sp-about-block__main-link {
+    position: relative;
+    bottom: 0;
+    left: 0;
+   }
+  }
+
+  &.philosophy-pros--1 .philosophy-pros-list-layout {
+   padding-right: 12%;
+   @include tablet {
+    padding-right: 15.625%;
+   }
+   @include tablet {
+    padding-right: 4.5%;
    }
   }
  }

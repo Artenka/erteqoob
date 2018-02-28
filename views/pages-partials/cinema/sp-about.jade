@@ -1,9 +1,9 @@
-section#about.section-layout.section.sp-about.sp-about--man-innovations
-  include ../../../partials/main-nav-links-1.jade
-  include ../../../partials/main-nav-socials.jade
-  include ../../../partials/main-nav-lang.jade
-  include ../../../partials/main-nav-toggle.jade
-  include ../../../partials/courses-link.jade
+section#about.section-layout.section.sp-about.sp-about--cinema.black-overlay
+  include ../../partials/main-nav-links-1.jade
+  include ../../partials/main-nav-socials.jade
+  include ../../partials/main-nav-lang.jade
+  include ../../partials/main-nav-toggle.jade
+  include ../../partials/courses-link.jade
 
   .logo
 
@@ -15,11 +15,15 @@ section#about.section-layout.section.sp-about.sp-about--man-innovations
     .circle.sp-about-logo__circle-4
 
   div.sp-about-block
-    p.sp-about-block__duration 3 дня<br class="br-lg-md"> 11:00 - 18:00
+    p.sp-about-block__duration
+      | Цена:<br>
+      | Март - 700 грн.<br>
+      | Апрель-Май - 800 грн.<br>
+      | Июнь - 1000 грн.
     div.sp-about-block__main
       .logo.sp-about-block__logo
       h1.sp-about-block__main-title
-        span трек
+        span Творческий проект
         | Cinema
       .gbw-video__link.gbw-video__link--center
         .gbw-video__link-icon
@@ -32,17 +36,15 @@ section#about.section-layout.section.sp-about.sp-about--man-innovations
                       rect#Rectangle(fill='#FFFFFF', fill-rule='evenodd', transform='translate(43.000000, 42.000000) scale(-1, 1) rotate(45.000000) translate(-43.000000, -42.000000) ', x='41.3333333', y='37.3333333', width='3.33333333', height='9.33333333')
                       circle#Oval-2(stroke='#FFFFFF', stroke-width='2.5', cx='24', cy='24', r='22.75')
                       polygon#Path-4(fill='#FFFFFF', fill-rule='evenodd', points='20.1836552 17.3333333 20 31.0468861 31.7501461 24.2819373')
-        p.gbw-video__link-text смотрите,<br class="br-sm"> как проходит<br class="br-lg-md"> обучение
-      h2.sp-about-block__main-subtitle Адаптация и создание мужских форм -<br> технологии, которые удвоят<br> Ваш успех в салоне
-      button(onclick="registerStep1('manInnovationsKharkiv','Man Innovations', 'трек «Man Innovations»', 'kharkiv', '14.03.2017', '43sgE')").btn.sp-about-block__main-link записаться на трек
+        p.gbw-video__link-text Заглянуть<br class="br-sm"> за кулисы<br> Cinema
+      h2.sp-about-block__main-subtitle Творческий проект,<br> аналогов которого нет в Украине
+      button(onclick="registerStep1('cinema','Cinema', 'творческий проект «Cinema»', 'kiev', '15.06.2018', '-')").btn.sp-about-block__main-link Забронировать место
     div.sp-about-block__info
-      ul.switcher
-        li.switcher__btn
-          a(href="/courses/pro/cinema/kiev") киев
-        li.switcher__btn.switcher__btn--active
-          a(href="/courses/pro/cinema/kharkiv") харьков
-      p.sp-about-block__info-date 14.03.2017
-      p.sp-about-block__info-seats <span>Места: 7</span> из 10
+      p.sp-about-block__info-date
+        | 15.06.2018 <br>
+        | 20:00
+      a(href="https://goo.gl/maps/tzbamWZnLzj" target="_blank").sp-about-block__info-place Платформа культурных инициатив iZone (Киев, ул. Набережно-Луговая, 8)
+      p.sp-about-block__info-seats <span>Места: 1000</span> из 1000
 
   .scroll-down.link-smooth(href="#sp-foundation")
     p.scroll-down__text вниз
@@ -53,6 +55,7 @@ section#about.section-layout.section.sp-about.sp-about--man-innovations
 
 script.
   $(function () {
+
     // video popup
     $('.gbw-video__link').click(function () {
       showPopup('#gbw-video-popup');

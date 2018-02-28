@@ -135,6 +135,36 @@
    left: 0;
   }
  }
+ &.sp-about--cinema {
+  background-image: url(../../../img/lp/sp/about/sp-about-cinema.jpg);
+  filter: grayscale(1);
+  @include mobile {
+   height: 720px;
+  }
+
+  .sp-about-block {
+
+   .sp-about-block__duration {
+    @include mobile {
+     line-height: 20px;
+     text-align: center;
+     margin-top: 30px;
+    }
+   }
+
+   .sp-about-block__info {
+    width: 230px;
+    //@include tablet-mobile {
+    // width: auto;
+    //}
+
+    .sp-about-block__info-date {
+     line-height: 1.4;
+     margin-top: 0;
+    }
+   }
+  }
+ }
 }
 
 .sp-about-logo {
@@ -389,6 +419,21 @@
   @include mobile {
    text-align: center;
    margin-top: 31px;
+  }
+
+  .sp-about-block__info-place {
+   font-size: 9px;
+   line-height: 15px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   margin-top: 10px;
+   cursor: pointer;
+   @include mobile {
+    margin-top: 7px;
+   }
+   &:hover {
+    text-decoration: underline;
+   }
   }
 
   .sp-about-block__info-date {

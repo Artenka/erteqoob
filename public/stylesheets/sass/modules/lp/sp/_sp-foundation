@@ -104,6 +104,66 @@
    left: 0;
   }
  }
+
+ &.sp-foundation--cinema {
+  min-height: 1000px;
+  background-image: url(../../../img/lp/sp/foundation/sp-foundation-cinema.jpg);
+  filter: grayscale(1);
+  @include mobile {
+   min-height: 1200px;
+  }
+
+  .page-title {
+
+   > h1 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 3px;
+    @include mobile {
+     font-size: 12px;
+     letter-spacing: 2px;
+     line-height: 18px;
+    }
+   }
+
+   > h2 {
+    @include mobile {
+     font-size: 10px;
+    }
+   }
+
+   &.page-title--bottom {
+    margin: 0 0 82px;
+    @include mobile {
+     margin-bottom: 37px;
+    }
+   }
+  }
+
+  .sp-foundation-list {
+   padding: 100px 45px;
+   @include tablet {
+    padding: 70px 85px 147px 145px;
+   }
+
+   .sp-foundation-list__item {
+    &:nth-child(1) {padding-top: 80px; @include tablet-mobile {padding: 0}}
+    &:nth-child(3) {padding-top: 120px; @include tablet-mobile {padding: 0}}
+    &:nth-child(4) {padding-top: 40px; @include tablet-mobile {padding: 0}}
+
+    .sp-foundation-list__item-title {
+     font-size: 14px;
+     line-height: 24px;
+    }
+
+    .sp-foundation-list__item-text {
+     font-size: 10px;
+     line-height: 22px;
+    }
+   }
+  }
+ }
 }
 
 .sp-foundation-list {

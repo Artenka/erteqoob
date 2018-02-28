@@ -421,6 +421,13 @@
  &.sp-philosophy--blond {
   background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-blond.jpg);
  }
+ &.sp-philosophy--cinema {
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-cinema.jpg);
+  filter: grayscale(1);
+  @include mobile {
+   height: 480px;
+  }
+ }
 }
 
 .sp-philosophy-main {

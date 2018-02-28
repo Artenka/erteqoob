@@ -1,6 +1,7 @@
 // common scss files
 @import 'common/reset';
 @import 'common/global';
+@import 'common/variables';
 @import 'common/variables-lp';
 @import 'common/mixins';
 @import 'common/fonts';
@@ -22,6 +23,7 @@
 @import 'modules/lp/webinar';
 @import 'modules/lp/courses';
 @import 'modules/lp/gbw';
+@import 'modules/client/philosophy';
 // partials
 @import 'partials/lp/header';
 @import 'partials/lp/footer';
