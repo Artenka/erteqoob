@@ -1,9 +1,13 @@
 .page-slider-dots-layout
   .page-slider-dots
     a(href="#about").link-smooth.page-slider-dots__item
-    a(href="#skills").link-smooth.page-slider-dots__item
-    a(href="#teachers").link-smooth.page-slider-dots__item
-    a(href="#action").link-smooth.page-slider-dots__item
+    a(href="#sp-foundation").link-smooth.page-slider-dots__item
+    a(href="#philosophy").link-smooth.page-slider-dots__item
+    a(href="#cinema-about-1").link-smooth.page-slider-dots__item
+    a(href="#cinema-about-2").link-smooth.page-slider-dots__item
+    a(href="#cinema-about-3").link-smooth.page-slider-dots__item
+    a(href="#cinema-about-4").link-smooth.page-slider-dots__item
+    a(href="#cinema-about-5").link-smooth.page-slider-dots__item
 
 script.
   $(function(){
@@ -12,5 +16,5 @@ script.
       $(this).addClass('page-slider-dots__item--active');
     });
 
-    updateActiveSectionPaginator(['#about', '#skills', '#teachers', '#action']);
+    updateActiveSectionPaginator(['#about', '#sp-foundation', '#philosophy', '#cinema-about-1', '#cinema-about-2', '#cinema-about-3', '#cinema-about-4', '#cinema-about-5']);
   });

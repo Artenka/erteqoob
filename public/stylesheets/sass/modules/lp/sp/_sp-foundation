@@ -158,6 +158,7 @@
     }
 
     .sp-foundation-list__item-text {
+     color: $color-white-07;
      font-size: 10px;
      line-height: 22px;
     }

@@ -1161,6 +1161,10 @@
    }
   }
 
+  .philosophy-pros-list .philosophy-pros-list__item .philosophy-pros-list__item-inner .philosophy-pros-list__item-text {
+   color: $color-white-07;
+  }
+
   &.philosophy-pros--1 .philosophy-pros-list-layout {
    padding-right: 12%;
    @include tablet {
