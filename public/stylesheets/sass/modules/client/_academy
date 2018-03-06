@@ -442,7 +442,8 @@
   }
 
   .academy-lead-teachers__item {
-   width: 24%;
+   width: 20%;
+   //width: 24%;
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
@@ -485,6 +486,9 @@
    &:nth-child(4){
     background-image: url(../../img/client/academy/academy-main-teacher-4-in.jpg);
    }
+   &:nth-child(5){
+    background-image: url(../../img/client/academy/academy-main-teacher-5-in.jpg);
+   }
 
    .academy-lead-teachers__item-bg {
     width: 100%;
@@ -504,10 +508,13 @@
    .academy-lead-teachers__item-position {
     width: 44%;
     color: $color-white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 4.09px;
-    line-height: 21px;
+    letter-spacing: 3.4px;
+    line-height: 18px;
+    //font-size: 14px;
+    //letter-spacing: 4.09px;
+    //line-height: 21px;
     text-transform: uppercase;
     position: absolute;
     bottom: 5px;
@@ -535,10 +542,14 @@
 
     .academy-lead-teachers__item-name {
      color: $color-white;
-     font-size: 24px;
-     line-height: 24px;
-     font-size: 2.1vw;
-     line-height: 2.1vw;
+     font-size: 20px;
+     line-height: 20px;
+     font-size: 1.75vw;
+     line-height: 1.75vw;
+     //font-size: 24px;
+     //line-height: 24px;
+     //font-size: 2.1vw;
+     //line-height: 2.1vw;
      position: relative;
      @include tablet {
       font-size: 41px;
@@ -650,8 +661,12 @@
  &.popup-lead-teacher--4 .popup {
   background-image: url(../../img/client/academy/academy-main-teacher-popup-4.jpg);
  }
+ &.popup-lead-teacher--5 .popup {
+  background-image: url(../../img/client/academy/academy-main-teacher-popup-5.jpg);
+ }
 
  .popup {
+  min-height: 100vh;
   background: no-repeat top right / auto 100%, $color-black;
   color: $color-white;
   padding: 13.39% 0 0 11.3%;
