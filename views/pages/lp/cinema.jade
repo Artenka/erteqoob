@@ -26,6 +26,8 @@ block contents
       philosophyAbout1Init();
       philosophyAbout2Init();
       philosophyPros1Init();
+
+      registerStep2Cinema();
     });
 
     function philosophyAbout1Init() {
@@ -110,4 +112,22 @@ block contents
       });
 
       philosophyPros1Reinit = false;
+    }
+
+    function registerStep1Cinema() {
+      showPopup('#register-step-1');
+    }
+    function registerStep2Cinema() {
+      $("#register-form-cinema").submit(function (e) {
+        e.preventDefault();
+
+        $.cookie('name', $('#register-name').val(), 30);
+        $.cookie('phone', $('#register-phone').val(), 30);
+        $.cookie('email', $('#register-email').val(), 30);
+
+        $('#register-step-3-name').text($.cookie('name'));
+
+        hidePopup('#register-step-1');
+        showPopup('#register-step-2');
+      });
     }

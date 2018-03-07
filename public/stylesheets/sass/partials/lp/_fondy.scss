@@ -1,0 +1,47 @@
+.fondy-checkout {
+
+ #f {
+  background: transparent;
+
+  .f-min.f-container {
+   max-width: 400px;
+   padding-top: 0!important;
+
+   .f-header {
+    display: none;
+   }
+
+   .f-info {
+    display: none;
+   }
+
+   .f-wrapper {
+    background: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+
+    .f-center {
+     width: 100%;
+     border-right: 0;
+     background: transparent;
+     float: none;
+     right: 0;
+    }
+   }
+
+   .f-form-control-feedback {
+    bottom: 5px;
+   }
+  }
+
+  .f-card {
+
+   .f-text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+  }
+ }
+}

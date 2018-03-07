@@ -1,14 +1,30 @@
 div#register-step-2.popup-layout
   div.popup-white.register-step-2
     .popup__close
-    h1.popup-title.register-step-2__title Вы почти<br class="br-sm"> студент Академии<br> ERTEQOOB!
-    .register-step-2__info
-      h2.register-step-2__info-title Проверьте, правильно ли мы записали<br> Ваши данные
-      ul.register-step-2__info-list
-        li <span id="register-step-2-title">Курс Базовый</span>
-        li <span id="register-step-2-city">Киев</span> - <span id="register-step-2-date">17.05.2017</span>
-        li <span id="register-step-2-name">Вадим Гурко</span> <span id="register-step-2-phone">+380731021680</span>
-        li <span id="register-step-2-email">gurko.vadim@gmail.com</span>
-    h2.popup-text.register-step-2__subtitle Внесите предоплату в размере<br class="br-sm"> 1000 грн, чтобы забронировать<br> место в группе.
-    button(onclick="registerStep3()").btn-white.register-step-2__btn внести предоплату
-    p.register-step-2__disclaimer Вы будете перенаправлены<br class="br-sm"> на страницу оплаты.
+    .fondy-checkout
+      #checkout
+
+//script(src='https://api.fondy.eu/static_common/v1/checkout/ipsp.js')
+script(src='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.js')
+link(rel='stylesheet' href='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.css')
+script.
+
+  var Options = {
+    options: {
+      title: "Cinema",
+      fullScreen: true,
+      locales: ["ru"],
+      fee: true,
+      css: 'bootstrap4'
+    },
+    params: {
+      merchant_id: 1402220,
+      currency: 'UAH',
+      order_id: new Date().getTime(),
+      amount: 100,
+      order_desc: 'Cinema payment',
+      response_url: 'https://erteqoob.com/cinema#register-step-3',
+      lang: 'ru'
+    }
+  }
+  fondy('#checkout', Options)

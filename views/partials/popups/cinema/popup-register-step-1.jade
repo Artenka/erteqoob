@@ -1,8 +1,8 @@
 div#register-step-1.popup-layout
   div.popup-white.register-step-1
     .popup__close
-    h1.popup-title.register-step-1__title <span class="register-step-1__title-subtitle">Регистрация на </span><br> «<span id="register-step-1-title">курс Базовый / трек Gray</span>»
-    form(action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post")#register-form
+    h1.popup-title.register-step-1__title <span class="register-step-1__title-subtitle">Регистрация на </span><br> «<span id="register-step-1-title">Cinema</span>»
+    form(action="#" accept-charset="utf-8" method="post")#register-form-cinema
       input(type="hidden" name="courseId")#register-course-id
       .register-step-1__groups
         h2.register-step-1__subtitle здравствуйте!
@@ -17,7 +17,7 @@ div#register-step-1.popup-layout
           label Дополнительную информацию можете присылать на почту:
           input(type="email" required name="email" placeholder="Введи личный e-mail")#register-email
           p .
-        input(type='hidden', name='campaign_token', value='#')#register-grtoken
-        input(type='hidden', name='thankyou_url', value='https://erteqoob.com')#register-thankyou
+        //input(type='hidden', name='campaign_token', value='#')#register-grtoken
+        //input(type='hidden', name='thankyou_url', value='https://erteqoob.com')#register-thankyou
       button(type="submit")#register-submit.btn-white.register-step-1__submit
         | Забронировать место

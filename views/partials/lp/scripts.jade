@@ -75,9 +75,16 @@ script.
 
     registerStep2();
 
+    // show hashed popups
+    var hash = window.location.hash.substr(1);
+    if ($('#' + hash).length) {
+      showPopup($('#' + hash));
+    }
+
     // get register form cookie
     if ($.cookie("name")) {
       $('#register-name').val($.cookie("name"));
+      $('#register-step-3-name').text($.cookie("name"));
     }
     if ($.cookie("phone")) {
       $('#register-phone').val($.cookie("phone"));
@@ -182,6 +189,7 @@ script.
     $('#register-grtoken').val(grtoken);
     $('#register-thankyou').val(window.location.href);
   }
+
   function registerStep2() {
     $("#register-form").submit(function (e) {
 
