@@ -119,15 +119,10 @@ block contents
     }
     function registerStep2Cinema() {
       $("#register-form-cinema").submit(function (e) {
-        e.preventDefault();
-
         $.cookie('name', $('#register-name').val(), 30);
         $.cookie('phone', $('#register-phone').val(), 30);
         $.cookie('email', $('#register-email').val(), 30);
 
-        $('#register-step-3-name').text($.cookie('name'));
-
-        hidePopup('#register-step-1');
-        showPopup('#register-step-2');
+        return true;
       });
     }
