@@ -103,8 +103,10 @@ script.
 
     leadTeacherNext = teacherNumber + 1;
     leadTeacherPrev = teacherNumber - 1;
-    if (leadTeacherNext > 5) leadTeacherNext = 1;
-    if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
+    if (leadTeacherNext > 4) leadTeacherNext = 1;
+    if (leadTeacherPrev <= 0) leadTeacherPrev = 4;
+    //if (leadTeacherNext > 5) leadTeacherNext = 1;
+    //if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
   }
 
   function changeLeadTeacherPopup(direction){
@@ -145,8 +147,10 @@ script.
     //TweenMax.to($(popup), 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
     //$(popup).addClass('popup-lead-teacher--active');
 
-    if (leadTeacherNext > 5) leadTeacherNext = 1;
-    if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
+    if (leadTeacherNext > 4) leadTeacherNext = 1;
+    if (leadTeacherPrev <= 0) leadTeacherPrev = 4;
+    //if (leadTeacherNext > 5) leadTeacherNext = 1;
+    //if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
   }
 
   function showLeadTeacherPopupInfo($subtitle, $title, $text, $socials){
