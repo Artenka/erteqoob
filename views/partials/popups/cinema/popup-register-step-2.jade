@@ -28,9 +28,8 @@ script.
     }
   }
   fondy('#checkout', Options).$on("success", function (model) {
-    if (order_status == "approved") {
-      showPopup('#register-step-3');
-    }
+    hidePopup('#register-step-2');
+    showPopup('#register-step-3');
   })
 
   setTimeout(function(){
