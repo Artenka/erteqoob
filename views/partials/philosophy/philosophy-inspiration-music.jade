@@ -1,39 +1,42 @@
 .popup-layout.inspiration-music
   .popup
     .popup__close
-    .inspiration-music-equalizer
-      .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--1
-      .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--2
-      .inspiration-music-equalizer__waves
-      .inspiration-music-equalizer__image
+    //.inspiration-music-equalizer
+    //  .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--1
+    //  .circle.inspiration-music-equalizer__circle.inspiration-music-equalizer__circle--2
+    //  .inspiration-music-equalizer__waves
+    //  .inspiration-music-equalizer__image
 
-    .inspiration-music__player
-      p.inspiration-music__player-text Воспроизведение...
-      audio(width="100%" height="auto").mejs__player
-        source(src="/sounds/inspiration.mp3")
+    //.inspiration-music__player
+    //  p.inspiration-music__player-text Воспроизведение...
+    //  audio(width="100%" height="auto").mejs__player
+    //    source(src="/sounds/inspiration.mp3")
 
-script(src='/js/mediaelement-and-player.min.js' type='text/javascript')
-script.
-  $(function(){
-    var playerClicked = false;
-    $('.mejs__container .mejs__button').click(function(){
-      if(!playerClicked){
-        $('.inspiration-music__player-text').css('opacity', 1);
-        $('.inspiration-music-equalizer').addClass('inspiration-music-equalizer--active');
-        playerClicked = true;
-      } else {
-        $('.inspiration-music__player-text').css('opacity', 0);
-        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
-        playerClicked = false;
-      }
-    });
+    .popup-soundcloud
+      iframe(width='100%', height='100%', scrolling='no', frameborder='no', allow='autoplay', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/465079797&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
 
-    $('.inspiration-music .popup__close').click(function(){
-      if(playerClicked){
-        $('.mejs__container .mejs__button').trigger('click');
-        $('.inspiration-music__player-text').css('opacity', 0);
-        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
-        playerClicked = false;
-      }
-    });
-  });
+//script(src='/js/mediaelement-and-player.min.js' type='text/javascript')
+//script.
+//  $(function(){
+//    var playerClicked = false;
+//    $('.mejs__container .mejs__button').click(function(){
+//      if(!playerClicked){
+//        $('.inspiration-music__player-text').css('opacity', 1);
+//        $('.inspiration-music-equalizer').addClass('inspiration-music-equalizer--active');
+//        playerClicked = true;
+//      } else {
+//        $('.inspiration-music__player-text').css('opacity', 0);
+//        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
+//        playerClicked = false;
+//      }
+//    });
+//
+//    $('.inspiration-music .popup__close').click(function(){
+//      if(playerClicked){
+//        $('.mejs__container .mejs__button').trigger('click');
+//        $('.inspiration-music__player-text').css('opacity', 0);
+//        $('.inspiration-music-equalizer').removeClass('inspiration-music-equalizer--active');
+//        playerClicked = false;
+//      }
+//    });
+//  });
