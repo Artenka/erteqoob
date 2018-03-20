@@ -82,6 +82,8 @@ script.
       var $popup = $('.popup-lead-teacher');
       $popup.removeClass('popup-lead-teacher--1 popup-lead-teacher--2 popup-lead-teacher--3 popup-lead-teacher--4 popup-lead-teacher--5')
       hideLeadTeacherPopupInfo();
+      academyOnepagescrollInit();
+      $("body").removeClass("disabled-onepage-scroll");
     });
 
     window.leadTeacherNext = '';
@@ -91,6 +93,7 @@ script.
   });
 
   function showLeadTeachersPopup(teacherNumber) {
+    $(".scroll-layout").onepage_scroll({ responsiveFallback : 9000 });
     var $popup = $('.popup-lead-teacher');
     var $subtitle = $popup.find('.popup-lead-teacher__subtitle--' + teacherNumber);
     var $title = $popup.find('.popup-lead-teacher__title--' + teacherNumber);

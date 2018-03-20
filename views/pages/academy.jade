@@ -62,6 +62,17 @@ block contents
       }
 
       // Onepage scroll init
+      academyOnepagescrollInit();
+
+      // start intro animation on page load
+      setTimeout(function () {
+        if ($('.onepage-pagination li .active').data('index') == 1) {
+          academyIntroInit();
+        }
+      }, 100);
+    });
+
+    function academyOnepagescrollInit(){
       if ($(window).width() >= 1260) {
         var pageScroll = ".scroll-layout";
         $(pageScroll).onepage_scroll({
@@ -125,16 +136,16 @@ block contents
               academyInspirationHide();
               academyInspirationInit();
               academyTeachersInit();
-            //} else if (index == 5) {
-            //  hidePagePagination();
-            //  academyIntroHide();
-            //  //academyAboutHide();
-            //  academyPhilosophyHide();
-            //  academyTeachersHide();
-            //  academyLeadTeachersHide();
-            //  academyInspirationHide();
-            //  academyMastersInit();
-            //  //footerMenusHideAnimation();
+              //} else if (index == 5) {
+              //  hidePagePagination();
+              //  academyIntroHide();
+              //  //academyAboutHide();
+              //  academyPhilosophyHide();
+              //  academyTeachersHide();
+              //  academyLeadTeachersHide();
+              //  academyInspirationHide();
+              //  academyMastersInit();
+              //  //footerMenusHideAnimation();
             } else if (index == 5) {
               showPagePagination();
               academyIntroHide();
@@ -165,14 +176,7 @@ block contents
           direction: "vertical"
         });
       }
-
-      // start intro animation on page load
-      setTimeout(function () {
-        if ($('.onepage-pagination li .active').data('index') == 1) {
-          academyIntroInit();
-        }
-      }, 100);
-    });
+    }
 
     var academyIntroReinit = true;
     var academyAboutReinit = true;
