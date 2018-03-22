@@ -88,7 +88,7 @@ script.
     // get register form cookie
     if ($.cookie("name")) {
       $('#register-name').val($.cookie("name"));
-      $('#register-step-3-name').text($.cookie("name"));
+      $('#register-step-3-name').text(', '+ $.cookie("name"));
     }
     if ($.cookie("phone")) {
       $('#register-phone').val($.cookie("phone"));
