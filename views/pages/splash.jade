@@ -46,21 +46,23 @@ block contents
       TweenMax.to($('.splash-center '), 1.6, {scaleX: 1, scaleY: 1, opacity: 1, ease: Power1.easeOut, delay: 0.2});
 
       // splash hover
-      $(".splash").hover(
-        function () {
-          $(this).addClass("splash--active");
-          $('.splash').not('.splash--active').addClass("splash--disable");
-          $('.splash-center').addClass("splash-center--disable");
-          if($(this).hasClass("splash--beginner")){
-            $('.splash-center').addClass("splash-center--beginner");
-          } else {
-            $('.splash-center').addClass("splash-center--pro");
+      if($(window).width() > 720){
+        $(".splash").hover(
+          function () {
+            $(this).addClass("splash--active");
+            $('.splash').not('.splash--active').addClass("splash--disable");
+            $('.splash-center').addClass("splash-center--disable");
+            if ($(this).hasClass("splash--beginner")) {
+              $('.splash-center').addClass("splash-center--beginner");
+            } else {
+              $('.splash-center').addClass("splash-center--pro");
+            }
+          },
+          function () {
+            $(this).removeClass("splash--active");
+            $('.splash').removeClass("splash--disable");
+            $('.splash-center').removeClass("splash-center--disable splash-center--beginner splash-center--pro");
           }
-        },
-        function () {
-          $(this).removeClass("splash--active");
-          $('.splash').removeClass("splash--disable");
-          $('.splash-center').removeClass("splash-center--disable splash-center--beginner splash-center--pro");
-        }
-      );
+        );
+      }
     });
