@@ -411,7 +411,8 @@
  }
 
  .sp-about-block__info {
-  width: 200px;
+  width: 230px;
+  //width: 200px;
   @include tablet-mobile {
    width: auto;
    order: 2;
