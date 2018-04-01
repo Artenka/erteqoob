@@ -68,6 +68,7 @@ body, html {
  overflow: hidden;
  @include tablet-mobile {
   height: auto;
+  min-height: 540px;
   //overflow-y: auto;
  }
  @include mobile {

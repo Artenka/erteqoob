@@ -225,6 +225,7 @@
  align-items: stretch;
  @include tablet-mobile {
   flex-direction: column;
+  min-height: 540px;
  }
 
  .home-nav__item {

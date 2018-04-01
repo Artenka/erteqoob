@@ -81,8 +81,14 @@ script.
     $('.popup-lead-teacher .popup__close').click(function(){
       var $popup = $('.popup-lead-teacher');
       $popup.removeClass('popup-lead-teacher--1 popup-lead-teacher--2 popup-lead-teacher--3 popup-lead-teacher--4 popup-lead-teacher--5')
-      hideLeadTeacherPopupInfo();
-      academyOnepagescrollInit();
+
+      if (window.width() < 1260) {
+        hideLeadTeacherPopupInfo();
+        academyOnepagescrollInit();
+      } else {
+        hideLeadTeacherPopupInfo();
+      }
+
       $("body").removeClass("disabled-onepage-scroll");
     });
 

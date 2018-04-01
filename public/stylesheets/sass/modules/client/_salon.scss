@@ -2,3 +2,12 @@
 @import "salon/salon-teachers";
 @import "salon/salon-gallery";
 @import "salon/salon-pricelist";
+
+#salon, #salons {
+
+ .salon-intro, .salons-layout {
+  @include mobile {
+   min-height: 540px;
+  }
+ }
+}

@@ -16,6 +16,7 @@
  @include tablet-mobile {
   display: flex;
   height: 100vh;
+  min-height: 540px;
   flex-direction: column;
   justify-content: space-between;
  }

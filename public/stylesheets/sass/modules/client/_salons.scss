@@ -601,7 +601,20 @@
     }
    }
 
-   &.salon-side__background-mobile--kost {background-image: url(../../img/client/salons/salon-kost-map-mobile.png);}
+   &.salon-side__background-mobile--kost {
+    background-image: url(../../img/client/salons/salon-kost-map-mobile.png);
+
+    .pin-block {
+     @include tablet {
+      bottom: 20px;
+      left: calc(50% + 30px);
+     }
+     @include mobile {
+      bottom: 20px;
+      left: calc(50% + 30px);
+     }
+    }
+   }
    &.salon-side__background-mobile--vlad {background-image: url(../../img/client/salons/salon-vlad-map-mobile.png);}
    &.salon-side__background-mobile--nval {background-image: url(../../img/client/salons/salon-nval-map-mobile.png);}
   }

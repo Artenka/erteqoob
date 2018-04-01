@@ -33,6 +33,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include tablet-mobile {
+   min-height: 540px;
+  }
 
   .academy-intro__logo {
    width: 7.6%;
@@ -262,6 +265,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include mobile {
+   min-height: 540px;
+  }
 
   .academy-philosophy__title-layout {
    padding-left: 173px;
@@ -922,6 +928,9 @@
  .academy-teachers__main {
   min-height: 100%;
   position: relative;
+  @include mobile {
+   min-height: 540px;
+  }
 
   .academy-teachers__title-layout {
    width: 100%;

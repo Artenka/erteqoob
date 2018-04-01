@@ -17,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include mobile {
+   height: 100vh;
+   min-height: 540px;
+  }
 
   .philosophy-intro__logo {
    width: 7.6%;
@@ -689,8 +693,10 @@
  .popup {
   background: url(../../img/client/philosophy/inspiration-music-bg.jpg) no-repeat center / cover, $color-black;
   @include tablet-mobile {
-   min-height: 1136px;
-   padding: 190px 0 387px;
+   //min-height: 1136px;
+   min-height: 100vh;
+   padding: 20px 0;
+   //padding: 190px 0 387px;
    overflow-x: hidden;
    overflow-y: auto;
   }
@@ -700,6 +706,14 @@
    @include tablet-mobile {
     top: 32px;
     right: 32px;
+   }
+  }
+
+  .popup-soundcloud {
+   width: 80%;
+   height: 300px;
+   @include mobile {
+    height: 200px;
    }
   }
 
