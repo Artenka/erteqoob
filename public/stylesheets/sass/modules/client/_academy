@@ -1,5 +1,8 @@
 #academy {
 
+ .main-footer .main-footer__middle .main-footer__logo .main-footer__logo-title {
+  background-image: url(../../img/client/common/footer/footer-logo-title-academy.svg);
+ }
 }
 
 .academy-intro {
@@ -40,7 +43,7 @@
   .academy-intro__logo {
    width: 7.6%;
    height: 7.8%;
-   background: url(../../img/client/philosophy/intro-logo.svg) no-repeat center / contain;
+   background: url(../../img/client/academy/intro-logo.svg) no-repeat center / contain;
    opacity: 0;
    z-index: 6;
    position: absolute;
@@ -406,6 +409,7 @@
 .academy-lead-teachers__main {
  display: flex;
  flex-direction: column;
+ width: 100%;
  height: 100%;
  padding: 100px 0;
  @include mobile {
@@ -421,171 +425,184 @@
    opacity: 0;
   }
  }
+}
 
- .academy-lead-teachers__list-layout {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+.academy-lead-teachers__list-layout {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.academy-lead-teachers__list {
+ width: 100%;
+ height: 63.13%;
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ padding: 0 3.3%;
+ @include tablet-mobile {
+  flex-direction: column;
   align-items: center;
  }
+ @include tablet {
+  margin-top: 75px;
+ }
+ @include mobile {
+  margin-top: 55px;
+ }
 
- .academy-lead-teachers__list {
-  width: 100%;
-  height: 63.13%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 3.3%;
-  @include tablet-mobile {
-   flex-direction: column;
-   align-items: center;
-  }
+ .academy-lead-teachers__item {
+  width: 20%;
+  //width: 24%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  transition: 0.8s;
+  cursor: pointer;
+  top: -80px;
+  opacity: 0;
   @include tablet {
-   margin-top: 75px;
+   max-width: 430px;
+   width: 53.75%;
+   margin-bottom: 200px;
   }
   @include mobile {
-   margin-top: 55px;
+   width: 93.75%;
+   max-width: 300px;
+   margin-bottom: 135px;
+  }
+  &:before {
+   content: '';
+   display: block;
+   padding-top: 100%;
+  }
+  &:nth-child(even) {
+   align-self: flex-end;
+   top: 80px;
+   @include tablet-mobile {
+    align-self: center;
+   }
+  }
+  &:nth-child(1){
+   background-image: url(../../img/client/academy/academy-main-teacher-1-in.jpg);
+  }
+  &:nth-child(2){
+   background-image: url(../../img/client/academy/academy-main-teacher-2-in.jpg);
+  }
+  &:nth-child(3){
+   background-image: url(../../img/client/academy/academy-main-teacher-3-in.jpg);
+  }
+  &:nth-child(4){
+   background-image: url(../../img/client/academy/academy-main-teacher-4-in.jpg);
+  }
+  &:nth-child(5){
+   background-image: url(../../img/client/academy/academy-main-teacher-5-in.jpg);
   }
 
-  .academy-lead-teachers__item {
-   width: 20%;
-   //width: 24%;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   position: relative;
-   transition: 0.8s;
-   cursor: pointer;
-   top: -80px;
-   opacity: 0;
+  .academy-lead-teachers__item-bg {
+   width: 100%;
+   height: 100%;
+   background: no-repeat center / 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+  }
+
+  .academy-teachers__socials {
+   position: absolute;
+   top: 10%;
+   left: 10%;
+  }
+
+  .academy-lead-teachers__item-position {
+   width: 44%;
+   color: $color-white;
+   font-size: 12px;
+   font-weight: 700;
+   letter-spacing: 3.4px;
+   line-height: 18px;
+   //font-size: 14px;
+   //letter-spacing: 4.09px;
+   //line-height: 21px;
+   text-transform: uppercase;
+   position: absolute;
+   bottom: 5px;
+   right: 0;
    @include tablet {
-    max-width: 430px;
-    width: 53.75%;
-    margin-bottom: 200px;
+    font-size: 18px;
+    letter-spacing: 5.26px;
+    line-height: 25px;
    }
    @include mobile {
-    width: 93.75%;
-    max-width: 300px;
-    margin-bottom: 135px;
+    font-size: 8px;
+    letter-spacing: 2.34px;
+    line-height: 13px;
    }
-   &:before {
-    content: '';
-    display: block;
-    padding-top: 100%;
-   }
-   &:nth-child(even) {
-    align-self: flex-end;
-    top: 80px;
-    @include tablet-mobile {
-     align-self: center;
-    }
-   }
-   &:nth-child(1){
-    background-image: url(../../img/client/academy/academy-main-teacher-1-in.jpg);
-   }
-   &:nth-child(2){
-    background-image: url(../../img/client/academy/academy-main-teacher-2-in.jpg);
-   }
-   &:nth-child(3){
-    background-image: url(../../img/client/academy/academy-main-teacher-3-in.jpg);
-   }
-   &:nth-child(4){
-    background-image: url(../../img/client/academy/academy-main-teacher-4-in.jpg);
-   }
-   &:nth-child(5){
-    background-image: url(../../img/client/academy/academy-main-teacher-5-in.jpg);
+  }
+
+  .academy-lead-teachers__item-name-layout {
+   padding-left: 31.5%;
+   position: absolute;
+   bottom: -30%;
+   left: 0;
+   @include mobile {
+    bottom: -90px;
    }
 
-   .academy-lead-teachers__item-bg {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-   }
-
-   .academy-teachers__socials {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-   }
-
-   .academy-lead-teachers__item-position {
-    width: 44%;
+   .academy-lead-teachers__item-name {
     color: $color-white;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 3.4px;
-    line-height: 18px;
-    //font-size: 14px;
-    //letter-spacing: 4.09px;
-    //line-height: 21px;
-    text-transform: uppercase;
-    position: absolute;
-    bottom: 5px;
-    right: 0;
+    font-size: 20px;
+    line-height: 20px;
+    font-size: 1.75vw;
+    line-height: 1.75vw;
+    //font-size: 24px;
+    //line-height: 24px;
+    //font-size: 2.1vw;
+    //line-height: 2.1vw;
+    position: relative;
     @include tablet {
-     font-size: 18px;
-     letter-spacing: 5.26px;
-     line-height: 25px;
+     font-size: 41px;
+     line-height: 41px;
     }
     @include mobile {
-     font-size: 8px;
-     letter-spacing: 2.34px;
-     line-height: 13px;
+     font-size: 24px;
+     line-height: 26px;
+    }
+    &:before {
+     content: '';
+     width: 1px;
+     height: 200%;
+     background-color: $color-gray-3-025;
+     position: absolute;
+     left: 0;
+     bottom: 30%;
     }
    }
 
-   .academy-lead-teachers__item-name-layout {
-    padding-left: 31.5%;
-    position: absolute;
-    bottom: -30%;
-    left: 0;
+   .academy-lead-teachers__item-star {
+    margin-top: 7%;
+    @include tablet {
+     margin-top: 13px;
+    }
     @include mobile {
-     bottom: -90px;
+     margin-top: 15px;
     }
 
-    .academy-lead-teachers__item-name {
-     color: $color-white;
-     font-size: 20px;
-     line-height: 20px;
-     font-size: 1.75vw;
-     line-height: 1.75vw;
-     //font-size: 24px;
-     //line-height: 24px;
-     //font-size: 2.1vw;
-     //line-height: 2.1vw;
-     position: relative;
+    svg {
+     width: 9px;
+     height: 8px;
      @include tablet {
-      font-size: 41px;
-      line-height: 41px;
+      width: 14px;
+      height: 13px;
      }
      @include mobile {
-      font-size: 24px;
-      line-height: 26px;
-     }
-     &:before {
-      content: '';
-      width: 1px;
-      height: 200%;
-      background-color: $color-gray-3-025;
-      position: absolute;
-      left: 0;
-      bottom: 30%;
-     }
-    }
-
-    .academy-lead-teachers__item-star {
-     margin-top: 7%;
-     @include tablet {
-      margin-top: 13px;
-     }
-     @include mobile {
-      margin-top: 15px;
+      width: 10px;
+      height: 9px;
      }
 
-     svg {
+     path {
       width: 9px;
       height: 8px;
       @include tablet {
@@ -596,58 +613,45 @@
        width: 10px;
        height: 9px;
       }
-
-      path {
-       width: 9px;
-       height: 8px;
-       @include tablet {
-        width: 14px;
-        height: 13px;
-       }
-       @include mobile {
-        width: 10px;
-        height: 9px;
-       }
-      }
      }
     }
    }
+  }
 
-   &.academy-lead-teachers__item--disabled {
-    opacity: 0.7;
-    transform: scale(0.85) translateZ(0);
+  &.academy-lead-teachers__item--disabled {
+   opacity: 0.7;
+   transform: scale(0.85) translateZ(0);
+  }
+
+  &.academy-lead-teachers__item--hover-in {
+
+   &:nth-child(1){
+    background-image: url(../../img/client/academy/academy-main-teacher-1-in.gif);
    }
-
-   &.academy-lead-teachers__item--hover-in {
-
-    &:nth-child(1){
-     background-image: url(../../img/client/academy/academy-main-teacher-1-in.gif);
-    }
-    &:nth-child(2){
-     background-image: url(../../img/client/academy/academy-main-teacher-2-in.gif);
-    }
-    &:nth-child(3){
-     background-image: url(../../img/client/academy/academy-main-teacher-3-in.gif);
-    }
-    &:nth-child(4){
-     background-image: url(../../img/client/academy/academy-main-teacher-4-in.gif);
-    }
+   &:nth-child(2){
+    background-image: url(../../img/client/academy/academy-main-teacher-2-in.gif);
    }
+   &:nth-child(3){
+    background-image: url(../../img/client/academy/academy-main-teacher-3-in.gif);
+   }
+   &:nth-child(4){
+    background-image: url(../../img/client/academy/academy-main-teacher-4-in.gif);
+   }
+  }
 
-   &.academy-lead-teachers__item--hover-out {
+  &.academy-lead-teachers__item--hover-out {
 
-    &:nth-child(1){
-     background-image: url(../../img/client/academy/academy-main-teacher-1-out.gif);
-    }
-    &:nth-child(2){
-     background-image: url(../../img/client/academy/academy-main-teacher-2-out.gif);
-    }
-    &:nth-child(3){
-     background-image: url(../../img/client/academy/academy-main-teacher-3-out.gif);
-    }
-    &:nth-child(4){
-     background-image: url(../../img/client/academy/academy-main-teacher-4-out.gif);
-    }
+   &:nth-child(1){
+    background-image: url(../../img/client/academy/academy-main-teacher-1-out.gif);
+   }
+   &:nth-child(2){
+    background-image: url(../../img/client/academy/academy-main-teacher-2-out.gif);
+   }
+   &:nth-child(3){
+    background-image: url(../../img/client/academy/academy-main-teacher-3-out.gif);
+   }
+   &:nth-child(4){
+    background-image: url(../../img/client/academy/academy-main-teacher-4-out.gif);
    }
   }
  }

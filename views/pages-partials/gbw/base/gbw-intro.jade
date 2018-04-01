@@ -31,10 +31,15 @@ section.section#intro.section-layout.section.gbw-base-intro
     p.gbw-base-intro-main__text Уникальная авторская программа<br class="br-sm"> по адаптивному<br class="br-lp-md"> дизайну волос<br class="br-sm"><br class="br-lg--lp"> и комбинированию<br class="br-lp-md"> основных форм:
     p.gbw-base-intro-main__text.gbw-base-intro-main__text--white линии, слои, градация
 
-  a(href="/courses/pro/gbw/grey/kiev").gbw-base-intro-dice.gbw-base-intro-dice--1
-    .gbw-base-intro-dice__image
-    .gbw-base-intro-dice__content
-      h1.gbw-base-intro-dice__title grey
+  .dices
+    a(href="/courses/pro/gbw/black/kiev").dice.dice--2
+    a(href="/courses/pro/gbw/grey/kiev").dice.dice--3
+    a(href="/courses/pro/gbw/white/kiev").dice.dice--4
+
+  //a(href="/courses/pro/gbw/grey/kiev").gbw-base-intro-dice.gbw-base-intro-dice--1
+  //  .gbw-base-intro-dice__image
+  //  .gbw-base-intro-dice__content
+  //    h1.gbw-base-intro-dice__title grey
     //  ul.gbw-base-intro-dice__list
     //    li.gbw-base-intro-dice__list-item
     //      p.gbw-base-intro-dice__list-item-text <span class="lg">70%</span> линии
@@ -54,10 +59,10 @@ section.section#intro.section-layout.section.gbw-base-intro
     //                    g(id='Arrow/Short/right-active')
     //                      path(d='M8.40301533,3.46261873 L0,3.46261873 L0,1.46261873 L8.38138622,1.46261873 L8.36556864,0 L11.3655686,2.46981835 L8.41964143,5 L8.40301533,3.46261873 Z', id='Arrow/Long/right-active-Copy')
 
-  a(href="/courses/pro/gbw/black/kiev").gbw-base-intro-dice.gbw-base-intro-dice--2
-    .gbw-base-intro-dice__image
-    .gbw-base-intro-dice__content
-      h1.gbw-base-intro-dice__title black
+  //a(href="/courses/pro/gbw/black/kiev").gbw-base-intro-dice.gbw-base-intro-dice--2
+  //  .gbw-base-intro-dice__image
+  //  .gbw-base-intro-dice__content
+  //    h1.gbw-base-intro-dice__title black
     //  ul.gbw-base-intro-dice__list
     //    li.gbw-base-intro-dice__list-item
     //      p.gbw-base-intro-dice__list-item-text <span class="lg">70%</span> линии
@@ -77,10 +82,10 @@ section.section#intro.section-layout.section.gbw-base-intro
     //                    g(id='Arrow/Short/right-active')
     //                      path(d='M8.40301533,3.46261873 L0,3.46261873 L0,1.46261873 L8.38138622,1.46261873 L8.36556864,0 L11.3655686,2.46981835 L8.41964143,5 L8.40301533,3.46261873 Z', id='Arrow/Long/right-active-Copy')
 
-  a(href="/courses/pro/gbw/white/kiev").gbw-base-intro-dice.gbw-base-intro-dice--3
-    .gbw-base-intro-dice__image
-    .gbw-base-intro-dice__content
-      h1.gbw-base-intro-dice__title White
+  //a(href="/courses/pro/gbw/white/kiev").gbw-base-intro-dice.gbw-base-intro-dice--3
+  //  .gbw-base-intro-dice__image
+  //  .gbw-base-intro-dice__content
+  //    h1.gbw-base-intro-dice__title White
     //  ul.gbw-base-intro-dice__list
     //    li.gbw-base-intro-dice__list-item
     //      p.gbw-base-intro-dice__list-item-text <span class="lg">70%</span> линии
@@ -105,6 +110,10 @@ section.section#intro.section-layout.section.gbw-base-intro
   include ../../../partials/lp/scroll-down.jade
 
 script.
+  var t2 = 0;
+  var t3 = 360;
+  var t4 = 720;
+
   $(function(){
     gbwDicesFloating();
 
@@ -113,4 +122,60 @@ script.
       showPopup('#gbw-video-popup');
       $('#gbw-video').get(0).play();
     });
+
+    moveitDice2();
+    moveitDice3();
+    moveitDice4();
   });
+
+  function moveitDice2(element) {
+    t2 += 0.0005;
+
+    var r = 355;         // radius
+    var xcenter = 265;   // center X position
+    var ycenter = 255;   // center Y position
+
+    var newLeft = Math.floor(xcenter + (r * Math.cos(t2)));
+    var newTop = Math.floor(ycenter + (r * Math.sin(t2)));
+
+    $('.dice--2').animate({
+      top: newTop,
+      left: newLeft,
+    }, 1, function () {
+      moveitDice2();
+    });
+  }
+  function moveitDice3(element) {
+    t3 += 0.0005;
+
+    var r = 355;         // radius
+    var xcenter = 265;   // center X position
+    var ycenter = 255;   // center Y position
+
+    var newLeft = Math.floor(xcenter + (r * Math.cos(t3)));
+    var newTop = Math.floor(ycenter + (r * Math.sin(t3)));
+
+    $('.dice--3').animate({
+      top: newTop,
+      left: newLeft,
+    }, 1, function () {
+      moveitDice3();
+    });
+  }
+  function moveitDice4(element) {
+    t4 += 0.0005;
+
+    var r = 355;         // radius
+    var xcenter = 265;   // center X position
+    var ycenter = 255;   // center Y position
+
+    var newLeft = Math.floor(xcenter + (r * Math.cos(t4)));
+    var newTop = Math.floor(ycenter + (r * Math.sin(t4)));
+
+    $('.dice--4').animate({
+      top: newTop,
+      left: newLeft,
+    }, 1, function () {
+      moveitDice4();
+    });
+  }

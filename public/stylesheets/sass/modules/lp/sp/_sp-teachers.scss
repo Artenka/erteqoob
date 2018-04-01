@@ -93,6 +93,45 @@
    left: 0;
   }
  }
+ &.sp-teachers--adaptation {
+  @include tablet {
+   height: 1560px;
+  }
+
+  .academy-lead-teachers__main {
+   padding: 100px 20%;
+   @include tablet {
+    padding: 100px 0;
+   }
+   @include mobile {
+    padding: 55px 0 20px;
+   }
+  }
+  .academy-lead-teachers__list {
+   @include tablet-mobile {
+    margin-top: 0;
+   }
+   @include tablet {
+    height: 100%;
+   }
+
+   .academy-lead-teachers__item {
+    width: 50%;
+    @include tablet {
+     width: 53.75%;
+    }
+    @include mobile {
+     width: 93.75%;
+    }
+    &:nth-child(even) {
+     align-self: flex-start;
+     @include tablet-mobile {
+      align-self: center;
+     }
+    }
+   }
+  }
+ }
 }
 
 .sp-teachers-list-layout {

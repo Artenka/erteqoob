@@ -1,4 +1,4 @@
-section#teachers.section-layout.section.sp-teachers.sp-teachers--2-items
+section#teachers.section-layout.section.sp-teachers.sp-teachers--adaptation
   div.page-title
     .page-title__logo
     h1 преподаватели
@@ -8,13 +8,51 @@ section#teachers.section-layout.section.sp-teachers.sp-teachers--2-items
     //  span(data-switcher="guests").sp-teachers-switcher__item.sp-teachers-switcher__item--active специальные гости
     .page-title__logo-title
 
-  .sp-teachers-list-layout
-    .sp-teachers-list-layout__item.sp-teachers-list-layout__item--teachers.sp-teachers-list-layout__item--active
-      div.sp-teachers-list.sp-teachers-list--2-items
-        include sp-teachers-list-1.jade
+  //.sp-teachers-list-layout
+  //  .sp-teachers-list-layout__item.sp-teachers-list-layout__item--teachers.sp-teachers-list-layout__item--active
+  //    div.sp-teachers-list.sp-teachers-list--2-items
+  //      include sp-teachers-list-1.jade
+  //
+  //    ul.sp-teachers-list-mobile.slick-dots-horizontal
+  //      include sp-teachers-list-1.jade
 
-      ul.sp-teachers-list-mobile.slick-dots-horizontal
-        include sp-teachers-list-1.jade
+  div.academy-lead-teachers__main
+    div.academy-lead-teachers__list-layout
+      ul.academy-lead-teachers__list
+        li.popup-link.academy-lead-teachers__item.academy-lead-teachers__item--disabled.academy-lead-teachers__item--1
+          img(src="/img/client/academy/academy-main-teacher-1-in.jpg").academy-lead-teachers__item-bg
+          ul.academy-teachers__socials
+            li.academy-teachers__social
+              a(target="_blank" href="https://www.facebook.com/andrey.krupchinskiy")
+                svg(xmlns='http://www.w3.org/2000/svg', width='8', height='17', viewbox='0 0 8 17')
+                  path(fill='#fff', d='M0 7.07V4.78h1.49v-.86c0-1.33.32-2.32.96-2.97C3.07.32 3.95 0 5.1 0c.75 0 1.48.1 2.17.31v2.31a5.06 5.06 0 0 0-1.57-.28c-1.04 0-1.56.6-1.56 1.8v.66h3.11v2.27H4.18v9.61H1.49V7.07z')
+            li.academy-teachers__social
+              a(target="_blank" href="https://www.instagram.com/krupchinskiy1/")
+                svg(xmlns='http://www.w3.org/2000/svg', width='14', height='15', viewbox='0 0 14 15')
+                  path(fill='#fff', d='M1.79 0h10.34c.98 0 1.78.82 1.78 1.82v10.53c0 1-.8 1.82-1.78 1.82H1.79A1.8 1.8 0 0 1 0 12.35V1.82C0 .82.8 0 1.79 0zm8.35 1.57a.64.64 0 0 0-.63.64v1.53c0 .35.28.64.63.64h1.57c.34 0 .62-.29.62-.64V2.21a.63.63 0 0 0-.62-.64zm2.2 4.42h-1.22a4.29 4.29 0 0 1-4.15 5.48 4.3 4.3 0 0 1-4.15-5.48H1.55v5.98c0 .31.25.57.55.57h9.69c.3 0 .55-.26.55-.57zM6.97 4.3a2.77 2.77 0 0 0-2.79 2.75 2.78 2.78 0 0 0 2.79 2.76 2.78 2.78 0 0 0 2.79-2.76A2.77 2.77 0 0 0 6.97 4.3z')
+          p.academy-lead-teachers__item-position Compose<br> Director
+          div.academy-lead-teachers__item-name-layout
+            h1.academy-lead-teachers__item-name Андрей<br> Крупчинский
+            div.academy-lead-teachers__item-star
+              svg(xmlns='http://www.w3.org/2000/svg', width='9', height='8', viewbox='0 0 9 8')
+                path(fill='#fff', d='M4.19.18A.35.35 0 0 1 4.5 0c.13 0 .25.07.31.18l1.12 2.11c.05.1.15.17.27.18l2.5.34c.13.02.24.1.28.22a.3.3 0 0 1-.09.33L7.08 5.01a.31.31 0 0 0-.1.29l.43 2.32a.32.32 0 0 1-.14.32.38.38 0 0 1-.37.02L4.66 6.87a.36.36 0 0 0-.32 0L2.1 7.96a.38.38 0 0 1-.37-.02.32.32 0 0 1-.14-.32l.43-2.32a.31.31 0 0 0-.1-.29L.11 3.36a.3.3 0 0 1-.09-.33c.04-.12.15-.2.28-.22l2.5-.34a.33.33 0 0 0 .27-.18z')
+        li.popup-link.academy-lead-teachers__item.academy-lead-teachers__item--disabled.academy-lead-teachers__item--3
+          img(src="/img/client/academy/academy-main-teacher-3-in.jpg").academy-lead-teachers__item-bg
+          ul.academy-teachers__socials
+            li.academy-teachers__social
+              a(target="_blank" href="https://www.facebook.com/profile.php?id=100006560228838")
+                svg(xmlns='http://www.w3.org/2000/svg', width='8', height='17', viewbox='0 0 8 17')
+                  path(fill='#fff', d='M0 7.07V4.78h1.49v-.86c0-1.33.32-2.32.96-2.97C3.07.32 3.95 0 5.1 0c.75 0 1.48.1 2.17.31v2.31a5.06 5.06 0 0 0-1.57-.28c-1.04 0-1.56.6-1.56 1.8v.66h3.11v2.27H4.18v9.61H1.49V7.07z')
+            li.academy-teachers__social
+              a(target="_blank" href="https://www.instagram.com/dmitry_kuzmichev/")
+                svg(xmlns='http://www.w3.org/2000/svg', width='14', height='15', viewbox='0 0 14 15')
+                  path(fill='#fff', d='M1.79 0h10.34c.98 0 1.78.82 1.78 1.82v10.53c0 1-.8 1.82-1.78 1.82H1.79A1.8 1.8 0 0 1 0 12.35V1.82C0 .82.8 0 1.79 0zm8.35 1.57a.64.64 0 0 0-.63.64v1.53c0 .35.28.64.63.64h1.57c.34 0 .62-.29.62-.64V2.21a.63.63 0 0 0-.62-.64zm2.2 4.42h-1.22a4.29 4.29 0 0 1-4.15 5.48 4.3 4.3 0 0 1-4.15-5.48H1.55v5.98c0 .31.25.57.55.57h9.69c.3 0 .55-.26.55-.57zM6.97 4.3a2.77 2.77 0 0 0-2.79 2.75 2.78 2.78 0 0 0 2.79 2.76 2.78 2.78 0 0 0 2.79-2.76A2.77 2.77 0 0 0 6.97 4.3z')
+          p.academy-lead-teachers__item-position Frame<br> Director
+          div.academy-lead-teachers__item-name-layout
+            h1.academy-lead-teachers__item-name Дмитрий<br> Кузьмичев
+            div.academy-lead-teachers__item-star
+              svg(xmlns='http://www.w3.org/2000/svg', width='9', height='8', viewbox='0 0 9 8')
+                path(fill='#fff', d='M4.19.18A.35.35 0 0 1 4.5 0c.13 0 .25.07.31.18l1.12 2.11c.05.1.15.17.27.18l2.5.34c.13.02.24.1.28.22a.3.3 0 0 1-.09.33L7.08 5.01a.31.31 0 0 0-.1.29l.43 2.32a.32.32 0 0 1-.14.32.38.38 0 0 1-.37.02L4.66 6.87a.36.36 0 0 0-.32 0L2.1 7.96a.38.38 0 0 1-.37-.02.32.32 0 0 1-.14-.32l.43-2.32a.31.31 0 0 0-.1-.29L.11 3.36a.3.3 0 0 1-.09-.33c.04-.12.15-.2.28-.22l2.5-.34a.33.33 0 0 0 .27-.18z')
 
     //.sp-teachers-list-layout__item.sp-teachers-list-layout__item--guests
     //  div.sp-teachers-list
@@ -104,4 +142,87 @@ script.
       ease: Power1.easeOut,
       delay: 0.7
     }, 0.2);
+  }
+
+
+script.
+  $(function(){
+    academyLeadTeachersInit();
+
+    // lead teachers hover animation
+    var $leadTeacher = $('.academy-lead-teachers__item');
+    var inFinished = false;
+    var outFinished = true;
+
+    if ($(window).width() > 640) {
+      $leadTeacher.on('mouseover', function () {
+        var $this = $(this);
+        //$leadTeacher.not(this).addClass('academy-lead-teachers__item--disabled');
+        $this.removeClass('academy-lead-teachers__item--disabled');
+        if (!inFinished && outFinished) {
+          //smilesAnimationIn($this);
+          inFinished = true;
+          //if (!$this.is(':hover')) {
+          //  smilesAnimationOut($this);
+          //}
+        } else if (inFinished && outFinished) {
+          setTimeout(function () {
+            //smilesAnimationIn($this);
+            inFinished = true;
+          }, 1500);
+        }
+      });
+
+      $leadTeacher.on('mouseleave', function () {
+        var $this = $(this);
+        //$leadTeacher.not(this).removeClass('academy-lead-teachers__item--disabled');
+        $this.addClass('academy-lead-teachers__item--disabled');
+        if (inFinished && !outFinished) {
+          //smilesAnimationOut($this);
+          outFinished = true;
+        } else if (inFinished && outFinished) {
+          setTimeout(function () {
+            //smilesAnimationOut($this);
+            outFinished = true;
+          }, 1500);
+        }
+      });
+    }
+  });
+
+  function academyLeadTeachersInit() {
+
+    TweenMax.to($('.academy-lead-teachers__title'), 1, {top: 0, opacity: 1, ease: Power1.easeOut, delay: 0.5});
+    TweenMax.to($('.academy-lead-teachers__item:nth-child(1)'), 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.9
+    });
+    TweenMax.to($('.academy-lead-teachers__item:nth-child(2)'), 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.5
+    });
+    TweenMax.to($('.academy-lead-teachers__item:nth-child(3)'), 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.7
+    });
+    TweenMax.to($('.academy-lead-teachers__item:nth-child(4)'), 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 0.9
+    });
+    TweenMax.to($('.academy-lead-teachers__item:nth-child(5)'), 0.2, {
+      top: 0,
+      opacity: 1,
+      ease: Power1.easeOut,
+      delay: 1.1
+    });
+
+    academyLeadTeachersReinit = false;
   }

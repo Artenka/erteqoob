@@ -1024,3 +1024,54 @@
   height: 100%;
  }
 }
+
+.dices {
+ width: 710px;
+ height: 710px;
+ background: url(../../img/lp/gbw/intro/dices-circle.svg) no-repeat center / contain;
+ position: absolute;
+ top: calc(50% - 355px);
+ left: calc(50% - 355px);
+}
+
+.dice {
+ display: block;
+ width: 160px;
+ height: 180px;
+ background: no-repeat center / contain;
+ position: absolute;
+ filter: grayscale(1);
+ transition: 0.5s;
+ cursor: pointer;
+ z-index: 3;
+ &:hover {
+  transform: scale(1.1);
+ }
+
+ &.dice--1 {
+  background-image: url(../../img/lp/gbw/intro/dice-1.svg);
+  //top: -90px;
+  //left: calc(50% - 80px);
+ }
+ &.dice--2 {
+  background-image: url(../../img/lp/gbw/intro/dice-2.svg);
+  //top: calc(50% - 90px);
+  //right: -80px;
+  left: 620px;
+  top: 255px;
+ }
+ &.dice--3 {
+  background-image: url(../../img/lp/gbw/intro/dice-3.svg);
+  //bottom: -90px;
+  //left: calc(50% - 80px);
+  left: 164px;
+  top: 595px;
+ }
+ &.dice--4 {
+  background-image: url(../../img/lp/gbw/intro/dice-4.svg);
+  //top: calc(50% - 90px);
+  //left: -80px;
+  top: 61px;
+  left: -33px;
+ }
+}
