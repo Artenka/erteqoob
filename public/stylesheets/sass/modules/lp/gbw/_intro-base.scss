@@ -1,3 +1,29 @@
+#gbw-base {
+
+ .gbw-base-intro {
+  min-height: 1065px;
+  @include tablet {
+   height: 920px;
+   min-height: 920px;
+  }
+  @include mobile {
+   min-height: 800px;
+  }
+ }
+
+ .gbw-base-intro-main {
+  @include mobile {
+   padding: 60px 0 340px;
+  }
+ }
+
+ .gbw-base-intro__circles {
+  @include mobile {
+   top: calc(50% - 342px);
+  }
+ }
+}
+
 .gbw-base-intro {
  align-items: center;
  justify-content: center;
@@ -1026,12 +1052,24 @@
 }
 
 .dices {
- width: 710px;
- height: 710px;
+ width: 900px;
+ height: 900px;
  background: url(../../img/lp/gbw/intro/dices-circle.svg) no-repeat center / contain;
  position: absolute;
- top: calc(50% - 355px);
- left: calc(50% - 355px);
+ top: calc(50% - 450px);
+ left: calc(50% - 450px);
+ @include tablet {
+  width: 720px;
+  height: 720px;
+  top: calc(50% - 360px);
+  left: calc(50% - 360px);
+ }
+ @include mobile {
+  width: 272px;
+  height: 272px;
+  top: calc(50% + 90px);
+  left: calc(50% - 136px);
+ }
 }
 
 .dice {
@@ -1044,34 +1082,54 @@
  transition: 0.5s;
  cursor: pointer;
  z-index: 3;
+ @include mobile {
+  width: 80px;
+  height: 90px;
+ }
  &:hover {
   transform: scale(1.1);
  }
 
  &.dice--1 {
   background-image: url(../../img/lp/gbw/intro/dice-1.svg);
-  //top: -90px;
-  //left: calc(50% - 80px);
  }
  &.dice--2 {
   background-image: url(../../img/lp/gbw/intro/dice-2.svg);
-  //top: calc(50% - 90px);
-  //right: -80px;
-  left: 620px;
-  top: 255px;
+  left: 810px;
+  top: 350px;
+  @include tablet {
+   left: 630px;
+   top: 260px;
+  }
+  @include mobile {
+   left: 236px;
+   top: 90px;
+  }
  }
  &.dice--3 {
   background-image: url(../../img/lp/gbw/intro/dice-3.svg);
-  //bottom: -90px;
-  //left: calc(50% - 80px);
-  left: 164px;
-  top: 595px;
+  left: 232px;
+  top: 781px;
+  @include tablet {
+   left: 167px;
+   top: 605px;
+  }
+  @include mobile {
+   left: 61px;
+   top: 220px;
+  }
  }
  &.dice--4 {
   background-image: url(../../img/lp/gbw/intro/dice-4.svg);
-  //top: calc(50% - 90px);
-  //left: -80px;
-  top: 61px;
-  left: -33px;
+  left: -18px;
+  top: 105px;
+  @include tablet {
+   left: -33px;
+   top: 64px;
+  }
+  @include mobile {
+   left: -15px;
+   top: 16px;
+  }
  }
 }
