@@ -42,6 +42,10 @@ body {
  }
 }
 
+.no-scroll {
+ overflow: hidden;
+}
+
 .section-layout {
  height: 100vh;
  display: flex;

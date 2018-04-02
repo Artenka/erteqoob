@@ -66,8 +66,10 @@ script.
       $(this).toggleClass('main-nav-toggle--active');
       if($(this).hasClass('main-nav-toggle--active')) {
         TweenMax.to($('.modal-nav-layout'), 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
+        $('body').addClass('no-scroll');
       } else {
         TweenMax.to($('.modal-nav-layout'), 1, {display: 'none', autoAlpha: 0, scaleX: 0.7, scaleY: 0.7, ease: Power4.easeOut});
+        $('body').removeClass('no-scroll');
       }
     });
   });

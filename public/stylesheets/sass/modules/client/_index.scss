@@ -18,6 +18,10 @@ body, html {
  }
 }
 
+.no-scroll {
+ overflow: hidden;
+}
+
 .main-layout {
  height: 100%;
  position: relative;

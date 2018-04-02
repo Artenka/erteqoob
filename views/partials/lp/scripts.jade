@@ -25,6 +25,7 @@ script.
         ease: Power4.easeOut,
         delay: 0.5
       });
+      $('body').removeClass('no-scroll');
     });
 
     // input material focus event
@@ -117,6 +118,7 @@ script.
       ease: Power4.easeOut,
       delay: 0.5
     });
+    $('body').addClass('no-scroll');
   }
 
   function hidePopup(popupId) {
