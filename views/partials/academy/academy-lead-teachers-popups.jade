@@ -89,7 +89,7 @@ script.
         hideLeadTeacherPopupInfo();
       }
 
-      $("body").removeClass("disabled-onepage-scroll");
+      $("body, html").removeClass("disabled-onepage-scroll").removeClass('no-scroll');
     });
 
     window.leadTeacherNext = '';
@@ -114,6 +114,8 @@ script.
     leadTeacherPrev = teacherNumber - 1;
     if (leadTeacherNext > 5) leadTeacherNext = 1;
     if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
+
+    $('body, html').addClass('no-scroll');
   }
 
   function changeLeadTeacherPopup(direction){

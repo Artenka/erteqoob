@@ -7,20 +7,22 @@
    min-height: 920px;
   }
   @include mobile {
-   min-height: 800px;
+   min-height: 400px;
+   //min-height: 800px;
   }
  }
 
  .gbw-base-intro-main {
   @include mobile {
-   padding: 60px 0 340px;
+   padding: 60px 0;
+   //padding: 60px 0 340px;
   }
  }
 
  .gbw-base-intro__circles {
-  @include mobile {
-   top: calc(50% - 342px);
-  }
+  //@include mobile {
+  // top: calc(50% - 342px);
+  //}
  }
 }
 
@@ -1065,10 +1067,10 @@
   left: calc(50% - 360px);
  }
  @include mobile {
-  width: 272px;
-  height: 272px;
-  top: calc(50% + 90px);
-  left: calc(50% - 136px);
+  width: 340px;
+  height: 340px;
+  top: calc(50% - 170px);
+  left: calc(50% - 170px);
  }
 }
 
@@ -1085,6 +1087,7 @@
  @include mobile {
   width: 80px;
   height: 90px;
+  z-index: 0;
  }
  &:hover {
   transform: scale(1.1);
