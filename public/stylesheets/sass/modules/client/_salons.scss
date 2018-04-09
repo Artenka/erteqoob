@@ -622,7 +622,15 @@
     }
    }
    &.salon-side__background-mobile--vlad {background-image: url(../../img/client/salons/salon-vlad-map-mobile.png);}
-   &.salon-side__background-mobile--nval {background-image: url(../../img/client/salons/salon-nval-map-mobile.png);}
+   &.salon-side__background-mobile--nval {
+    background-image: url(../../img/client/salons/salon-nval-map-mobile.png);
+
+    .pin-block {
+     @include mobile {
+      left: calc(50% - 85px);
+     }
+    }
+   }
   }
 
   .salon-side__background-hover {
@@ -666,8 +674,8 @@
      right: 0;
 
      .pin-block {
-      top: 49.8%;
-      right: 17.6%;
+      top: 52%;
+      right: 22%;
      }
     }
    }
