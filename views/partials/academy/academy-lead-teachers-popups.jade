@@ -82,14 +82,14 @@ script.
       var $popup = $('.popup-lead-teacher');
       $popup.removeClass('popup-lead-teacher--1 popup-lead-teacher--2 popup-lead-teacher--3 popup-lead-teacher--4 popup-lead-teacher--5')
 
-      if (window.width() < 1260) {
-        hideLeadTeacherPopupInfo();
-        academyOnepagescrollInit();
-      } else {
-        hideLeadTeacherPopupInfo();
-      }
+      //if ($(window).width() < 1260) {
+      //  hideLeadTeacherPopupInfo();
+      //  academyOnepagescrollInit();
+      //} else {
+      //  hideLeadTeacherPopupInfo();
+      //}
 
-      $("body, html").removeClass("disabled-onepage-scroll").removeClass('no-scroll');
+      //$("body, html").removeClass("disabled-onepage-scroll").removeClass('no-scroll');
     });
 
     window.leadTeacherNext = '';
@@ -99,7 +99,7 @@ script.
   });
 
   function showLeadTeachersPopup(teacherNumber) {
-    $(".scroll-layout").onepage_scroll({ responsiveFallback : 9000 });
+    //$(".scroll-layout").onepage_scroll({ responsiveFallback : 9000 });
     var $popup = $('.popup-lead-teacher');
     var $subtitle = $popup.find('.popup-lead-teacher__subtitle--' + teacherNumber);
     var $title = $popup.find('.popup-lead-teacher__title--' + teacherNumber);
@@ -115,7 +115,7 @@ script.
     if (leadTeacherNext > 5) leadTeacherNext = 1;
     if (leadTeacherPrev <= 0) leadTeacherPrev = 5;
 
-    $('body, html').addClass('no-scroll');
+    //$('body, html').addClass('no-scroll');
   }
 
   function changeLeadTeacherPopup(direction){
