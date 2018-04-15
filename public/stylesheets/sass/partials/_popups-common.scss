@@ -1,6 +1,5 @@
 .popup-white {
- height: 100%;
- min-height: 100vh;
+ height: 100vh;
  background-color: $color-white;
  color: $color-black;
  overflow-y: auto;
@@ -26,7 +25,6 @@
 
 .popup-black {
  height: 100vh;
- min-height: 100vh;
  background-color: $color-black;
  color: $color-black;
  position: relative;
@@ -466,6 +464,9 @@
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ @include mobile {
+  justify-content: flex-start;
+ }
 
  .register-step-1__title {
   @include mobile {
@@ -701,6 +702,9 @@
  @include tablet-mobile {
   background: url(../../img/popups/register-step-2-tablet.png) no-repeat right bottom , $color-white;
  }
+ @include mobile {
+  justify-content: flex-start;
+ }
 
  .register-step-2__title {
 
@@ -807,6 +811,9 @@
  background: url(../../img/popups/register-step-3-curve.svg) no-repeat center top 55%, $color-white;
  @include tablet-mobile {
   background: url(../../img/popups/register-step-3-curve-tablet.svg) no-repeat center top 55%, $color-white;
+ }
+ @include mobile {
+  justify-content: flex-start;
  }
 
  .register-step-3__circles {

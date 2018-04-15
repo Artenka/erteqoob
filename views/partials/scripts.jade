@@ -58,7 +58,7 @@ script.
   function showPopup(popupId){
     TweenMax.to($(popupId), 0.5, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut});
     TweenMax.to($('.popup__close'), 1, {display: 'block', autoAlpha: 1, scaleX: 1, scaleY: 1, ease: Power4.easeOut, delay: 0.5});
-    $('body').addClass('no-scroll');
+    $('body, html').addClass('no-scroll');
   }
 
   function getRotatedTextWidth(element, parent){
@@ -152,5 +152,5 @@ script.
       ease: Power4.easeOut,
       delay: 0.5
     });
-    $('body').removeClass('no-scroll');
+    $("body, html").removeClass("disabled-onepage-scroll").removeClass('no-scroll');
   }
