@@ -1110,21 +1110,28 @@
    }
   }
   .pin-block {
-   top: 28.611%;
-   left: 25.1%;
+   top: 35.611%;
+   left: 10.1%;
+   //top: 28.611%;
+   //left: 25.1%;
    @include laptop {
-    top: 26.225%;
-    left: 23.8%;
+    top: 34%;
+    left: 9.6%;
+    //top: 26.225%;
+    //left: 23.8%;
    }
    @include tablet {
-    top: 27.03%;
-    left: auto;
-    right: 23.25%;
+    top: 25.03%;
+    left: 26%;
+    //top: 27.03%;
+    //right: 23.25%;
    }
    @include mobile {
-    top: 29.79%;
-    left: auto;
-    right: 10.625%;
+    top: 25%;
+    left: 26%;
+    //top: 29.79%;
+    //left: auto;
+    //right: 10.625%;
    }
   }
  }
