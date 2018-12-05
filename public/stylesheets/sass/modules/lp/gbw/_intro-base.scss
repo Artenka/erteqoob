@@ -26,6 +26,26 @@
  }
 }
 
+
+#gbw-white, #gbw-black, #gbw-grey {
+
+ .gbw-base-intro {
+  min-height: 1065px;
+  @include mobile {
+   min-height: 400px;
+  }
+ }
+
+ .dices {
+  @include tablet {
+   top: calc(50% - 480px);
+  }
+  @include mobile {
+   top: calc(50% - 195px);
+  }
+ }
+}
+
 .gbw-base-intro {
  align-items: center;
  justify-content: center;

@@ -13,14 +13,14 @@ section#intro.section-layout.section.gbw-base-intro.gbw-base-intro--inner
     .circle.gbw-base-intro__circle.gbw-base-intro__circle--2
     .circle.gbw-base-intro__circle.gbw-base-intro__circle--3
 
-  .gbw-base-intro-dice.gbw-base-intro-dice--1
-    .gbw-base-intro-dice__image
-
-  .gbw-base-intro-dice.gbw-base-intro-dice--2
-    .gbw-base-intro-dice__image
-
-  .gbw-base-intro-dice.gbw-base-intro-dice--3
-    .gbw-base-intro-dice__image
+  //.gbw-base-intro-dice.gbw-base-intro-dice--1
+  //  .gbw-base-intro-dice__image
+  //
+  //.gbw-base-intro-dice.gbw-base-intro-dice--2
+  //  .gbw-base-intro-dice__image
+  //
+  //.gbw-base-intro-dice.gbw-base-intro-dice--3
+  //  .gbw-base-intro-dice__image
 
   .gbw-intro-center
     .gbw-intro-center__head.gbw-intro-center__head--grey
@@ -57,10 +57,17 @@ section#intro.section-layout.section.gbw-base-intro.gbw-base-intro--inner
       p.sp-about-block__info-date 22.04.2019
       p.sp-about-block__info-seats <span>Места: 7</span> из 10
 
+  .dices
+    a(href="/courses/pro/gbw/black/kiev").dice.dice--2
+    a(href="/courses/pro/gbw/grey/kiev").dice.dice--3
+    a(href="/courses/pro/gbw/white/kiev").dice.dice--4
+
   include ../../../../partials/lp/scroll-down.jade
 
 
-script.
-  $(function(){
-    gbwDicesFloating();
-  });
+//script.
+//  $(function(){
+//    gbwDicesFloating();
+//  });
+
+script(src='/js/gbw-dices.js' type='text/javascript')
