@@ -422,7 +422,7 @@
   background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-blond.jpg);
  }
  &.sp-philosophy--cinema {
-  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-cinema.jpg);
+  background-image: url(../../../img/lp/sp/philosophy/sp-philosophy-cinema-1.jpg);
   filter: grayscale(1);
   @include mobile {
    height: 480px;

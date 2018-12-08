@@ -12,6 +12,7 @@ block contents
       include ../../pages-partials/cinema/cinema-about-2.jade
       include ../../pages-partials/cinema/cinema-about-3.jade
       include ../../pages-partials/cinema/cinema-about-4.jade
+      include ../../pages-partials/cinema/cinema-about-6.jade
       include ../../pages-partials/cinema/cinema-about-5.jade
 
       include ../../partials/lp/footer.jade
@@ -29,6 +30,9 @@ block contents
       philosophyPros1Init();
 
       registerStep2Cinema();
+
+      // seats counter
+      var seats = 1000;
     });
 
     function philosophyAbout1Init() {

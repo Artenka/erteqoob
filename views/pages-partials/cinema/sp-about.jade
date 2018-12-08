@@ -18,16 +18,13 @@ section#about.section-layout.section.sp-about.sp-about--cinema.black-overlay
   div.sp-about-block
     p.sp-about-block__duration
       | Цена:<br>
-      span.sp-about-block__duration--passed Март - 700 грн.<br>
-      span.sp-about-block__duration--passed Апрель - 800 грн.<br>
-      span.sp-about-block__duration--passed Май - 900 грн.<br>
-      span.sp-about-block__duration--passed Июнь - 1000 грн.<br>
-      | Билеты на входе - 1500 грн.
+      //span.sp-about-block__duration--passed Март - 700 грн.<br>
+      | Декабрь - 800 грн.
     div.sp-about-block__main
       .logo.sp-about-block__logo
-      h1.sp-about-block__main-title
-        span Творческий проект
-        | Cinema
+      h1#cinema-logo.sp-about-block__main-title
+        //span Творческий проект
+        //| Cinema
       .gbw-video__link.gbw-video__link--center
         .gbw-video__link-icon
           svg(width='49px', height='49px', viewbox='0 0 49 49', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
@@ -40,14 +37,14 @@ section#about.section-layout.section.sp-about.sp-about--cinema.black-overlay
                       circle#Oval-2(stroke='#FFFFFF', stroke-width='2.5', cx='24', cy='24', r='22.75')
                       polygon#Path-4(fill='#FFFFFF', fill-rule='evenodd', points='20.1836552 17.3333333 20 31.0468861 31.7501461 24.2819373')
         p.gbw-video__link-text Заглянуть<br class="br-sm"> за кулисы<br> Cinema
-      h2.sp-about-block__main-subtitle Творческий проект,<br> аналогов которого нет в Украине
-      //button(onclick="registerStep1Cinema()").btn.sp-about-block__main-link Купить билет
+      h2.sp-about-block__main-subtitle Стань частью главного события<br> в парикмахерском искусстве страны
+      button(onclick="registerStep1Cinema()").btn.sp-about-block__main-link Купить билет
     div.sp-about-block__info
       p.sp-about-block__info-date
-        | 15.06.2018 <br>
-        | 20:00
-      a(href="https://goo.gl/maps/tzbamWZnLzj" target="_blank").sp-about-block__info-place Платформа культурных инициатив iZone (Киев, ул. Набережно-Луговая, 8)
-      p.sp-about-block__info-seats <span>Места: 855</span> из 1000
+        | 14.06.2019 <br>
+        | TBA
+      .sp-about-block__info-place Secret Space
+      p.sp-about-block__info-seats <span>Места: 1000</span> из 1000
 
   .scroll-down.link-smooth(href="#sp-foundation")
     p.scroll-down__text вниз
@@ -63,5 +60,10 @@ script.
     $('.gbw-video__link').click(function () {
       showPopup('#gbw-video-popup');
       $('#gbw-video').get(0).play();
+    });
+
+    // bg toggle
+    $('#cinema-logo').click(function(){
+      $('#about.sp-about--cinema').toggleClass('sp-about--cinema-white');
     });
   });

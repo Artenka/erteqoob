@@ -136,13 +136,24 @@
   }
  }
  &.sp-about--cinema {
-  background-image: url(../../../img/lp/sp/about/sp-about-cinema.jpg);
-  filter: grayscale(1);
+  background-image: url(../../../img/lp/sp/about/sp-about-cinema-1.jpg);
+  //filter: grayscale(1);
+  transition: 0.7s;
   @include mobile {
    height: 720px;
   }
 
   .sp-about-block {
+
+   .sp-about-block__main {
+
+    .sp-about-block__main-title {
+     width: 240px;
+     height: 82px;
+     background: url(../../../img/cinema-logo.png) no-repeat center / contain;
+     cursor: pointer;
+    }
+   }
 
    .sp-about-block__duration {
     @include mobile {
@@ -172,6 +183,10 @@
      color: $color-white-04;
     }
    }
+  }
+
+  &.sp-about--cinema-white {
+   background-image: url(../../../img/lp/sp/about/sp-about-cinema-2.jpg);
   }
  }
 }

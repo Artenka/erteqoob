@@ -390,7 +390,15 @@
  &.philosophy-about--cinema-1 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-1.jpg); filter: grayscale(1);}
  &.philosophy-about--cinema-2 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-2.jpg); filter: grayscale(1);}
  &.philosophy-about--cinema-3 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-3.jpg); filter: grayscale(1);}
- &.philosophy-about--cinema-4 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-4.jpg); filter: grayscale(1);}
+ &.philosophy-about--cinema-4 .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-4-1.jpg); filter: grayscale(1);}
+ &.philosophy-about--cinema-6 {
+
+  .philosophy-about__bg {background-image: url(../../img/client/philosophy/philosophy-about-cinema-6.jpg); filter: grayscale(1);}
+
+  .philosophy-about__main .philosophy-about__text {
+   max-width: 700px;
+  }
+ }
 }
 
 

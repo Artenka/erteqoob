@@ -1,0 +1,23 @@
+.main #f {
+
+ .f-container {
+  width: 300px;
+  padding-top: 0!important;
+ }
+
+ .f-center {
+  width: 100%;
+  right: auto;
+ }
+
+ .f-block-sm .f-text-center .f-btn-link, .f-info {
+  display: none;
+ }
+ .f-mobile-menu {
+  display: none!important;
+ }
+
+ .f-form-control-feedback {
+  bottom: 5px;
+ }
+}
