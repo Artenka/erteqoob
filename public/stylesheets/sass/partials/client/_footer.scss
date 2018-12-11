@@ -13,6 +13,7 @@
 }
 
 .main-footer {
+ width: 100%;
  @include tablet-mobile {
   display: flex;
   height: 100vh;
@@ -472,6 +473,7 @@
 }
 
 .footer-disclaimer {
+ width: 100%;
  display: flex;
  justify-content: space-between;
  padding: 0 60px 140px 120px;

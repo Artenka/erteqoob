@@ -1157,6 +1157,16 @@
    min-height: 1000px;
   }
 
+  .philosophy-pros__main {
+   padding: 7% 0 10%;
+   @include tablet {
+    padding: 145px 0;
+   }
+   @include mobile {
+    padding: 80px 0;
+   }
+  }
+
   .page-title-big-layout {
    @include mobile {
     padding: 0 20px;

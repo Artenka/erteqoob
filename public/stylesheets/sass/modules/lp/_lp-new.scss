@@ -1,0 +1,82 @@
+.lp-new {
+ @include tablet-mobile {
+  height: auto;
+  overflow: auto;
+ }
+
+ .black-overlay {
+  &:before {
+   height: 100vh;
+   @include tablet-mobile {
+    height: 100%;
+   }
+  }
+ }
+
+ .main {
+
+  .register-link, .main-nav-toggle, .main-nav.main-nav--lang, .main-nav.main-nav--socials, .main-nav.main-nav--cities, .arrow-link.arrow-link--left.link-back, .link-home {
+   opacity: 0;
+   @include tablet-mobile {
+    opacity: 1;
+   }
+  }
+ }
+
+ .sp-philosophy {
+
+  .sp-philosophy-main__title {
+   top: -100px;
+   opacity: 0;
+  }
+  .sp-philosophy-main__text {
+   position: relative;
+   top: 100px;
+   opacity: 0;
+  }
+ }
+
+ .sp-foundation {
+
+  .page-title {
+
+   > h2 {
+    position: relative;
+    top: -60px;
+    opacity: 0;
+   }
+   > h1 {
+    position: relative;
+    top: -60px;
+    opacity: 0;
+   }
+  }
+
+  .sp-foundation-list .sp-foundation-list__item {
+   position: relative;
+   top: -60px;
+   opacity: 0;
+  }
+ }
+
+ .sp-about {
+
+  .sp-about-block__main-title {
+   opacity: 0;
+   transform: scale(0.9);
+  }
+
+  .gbw-video__link, .sp-about-block__main-subtitle {
+   opacity: 0;
+   position: relative;
+   top: 40px;
+  }
+  .sp-about-block__main-link, .sp-about-block__duration, .sp-about-block__info {
+   opacity: 0;
+  }
+
+  &.sp-about--intro {
+   opacity: 0;
+  }
+ }
+}

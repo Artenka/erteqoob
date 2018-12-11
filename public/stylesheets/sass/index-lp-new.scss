@@ -1,0 +1,38 @@
+// common scss files
+@import 'common/reset';
+@import 'common/global';
+@import 'common/variables';
+@import 'common/variables-lp';
+@import 'common/mixins';
+@import 'common/fonts';
+// scss libraries
+@import 'lib/animate';
+@import 'lib/slick';
+@import 'lib/jquery.fullpage';
+@import 'lib/onepage-scroll';
+// partials main
+@import 'partials/client/modals';
+@import 'partials/popups-common';
+@import 'partials/client/popups';
+@import 'partials/client/main-nav';
+// modules
+@import 'modules/lp/index';
+@import 'modules/lp/common';
+@import 'modules/lp/home';
+@import 'modules/lp/sp';
+@import 'modules/lp/sp-other';
+@import 'modules/lp/webinar';
+@import 'modules/lp/courses';
+@import 'modules/lp/gbw';
+@import 'modules/lp/cinema';
+@import 'modules/lp/lp-new';
+@import 'modules/client/philosophy';
+// partials
+@import 'partials/lp/header';
+//@import 'partials/lp/footer';
+@import 'partials/lp/main-nav';
+@import 'partials/lp/page-slider';
+@import 'partials/lp/popups';
+@import 'partials/lp/fondy';
+@import 'partials/client/page-slider';
+@import 'partials/client/footer';
