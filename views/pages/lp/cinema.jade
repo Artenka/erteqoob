@@ -199,7 +199,9 @@ block contents
       }
 
       // start intro animation on page load
-      fixedMenusInitAnimation();
+      setTimeout(function () {
+        fixedMenusInitAnimation();
+      }, 2000);
       setTimeout(function () {
         if ($('.onepage-pagination li .active').data('index') == 1) {
           cinemaIntroInit();
@@ -216,7 +218,7 @@ block contents
     var philosophyPros1Reinit = true;
 
     function cinemaIntroInit() {
-      TweenMax.to($(".sp-about.sp-about--intro"), 0.7, {
+      TweenMax.to($(".sp-about.sp-about--intro"), 1, {
         opacity: '1',
         ease: Power1.easeInOut,
         delay: 0.2
@@ -226,34 +228,34 @@ block contents
         scaleX: '1',
         scaleY: '1',
         ease: Power1.easeInOut,
-        delay: 1.8
+        delay: 1
       });
       TweenMax.to($(".sp-about.sp-about--intro .gbw-video__link"), 1, {
         opacity: '1',
         top: '0',
         ease: Power1.easeInOut,
-        delay: 0.6
+        delay: 1.4
       });
       TweenMax.to($(".sp-about.sp-about--intro .sp-about-block__main-subtitle"), 1, {
         opacity: '1',
         top: '0',
         ease: Power1.easeInOut,
-        delay: 1
+        delay: 1.8
       });
       TweenMax.to($(".sp-about.sp-about--intro .sp-about-block__main-link"), 1, {
         opacity: '1',
         ease: Power1.easeInOut,
-        delay: 1
+        delay: 1.8
       });
       TweenMax.to($(".sp-about.sp-about--intro .sp-about-block__duration"), 1, {
         opacity: '1',
         ease: Power1.easeInOut,
-        delay: 1.4
+        delay: 2.2
       });
       TweenMax.to($(".sp-about.sp-about--intro .sp-about-block__info"), 1, {
         opacity: '1',
         ease: Power1.easeInOut,
-        delay: 1.4
+        delay: 2.2
       });
     }
     function cinemaIntroHide() {
