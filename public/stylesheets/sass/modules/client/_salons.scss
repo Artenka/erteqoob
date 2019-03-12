@@ -5,8 +5,7 @@
   //overflow-y: auto;
  }
  @include mobile {
-  min-height: 100vh;
-  //min-height: 480px;
+  min-height: 480px;
   //overflow-y: auto;
  }
  &:before {

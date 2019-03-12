@@ -13,6 +13,7 @@ body, #root, [data-reactroot] {
 body, html {
  min-height: 100vh;
  @include tablet-mobile {
+  min-height: 100%;
   height: auto;
   overflow: auto;
  }
