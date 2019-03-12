@@ -315,10 +315,10 @@
   //bottom: 177px;
  }
  @include mobile {
-  width: 180px;
-  left: calc(50% - 100px);
+  width: 260px;
+  left: calc(50% - 130px);
   //top: calc(50% - 60px);
-  bottom: 44px;
+  bottom: 60px;
  }
 
  .salons-btn {
@@ -357,8 +357,10 @@
     color: $color-white;
    }
    @include mobile {
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 14px;
+    line-height: 14px;
+    //font-size: 10px;
+    //line-height: 10px;
     letter-spacing: 1.67px;
    }
   }
@@ -382,8 +384,10 @@
     margin-top: 45px;
    }
    @include mobile {
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 14px;
+    line-height: 14px;
+    //font-size: 10px;
+    //line-height: 10px;
     letter-spacing: 1.25px;
     margin-top: 20px;
     padding-left: 16px;
@@ -394,13 +398,13 @@
     height: 4px;
     background: url(../../img/icons/arrow-right-long.svg) no-repeat center / contain;
     position: absolute;
-    top: 8px;
-    right: -43px;
+    top: calc(50% - 2px);
+    right: -35px;
     transition: 0.5s;
     opacity: 0;
     @include tablet-mobile {
      background: url(../../img/icons/arrow-right-long-gray.svg) no-repeat center / contain;
-     //opacity: 1;
+     opacity: 1;
     }
    }
   }

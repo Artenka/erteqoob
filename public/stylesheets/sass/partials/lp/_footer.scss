@@ -21,6 +21,7 @@
   letter-spacing: 2.5px;
   line-height: 15px;
   text-align: center;
+  position: relative;
   @include mobile {
    display: block;
   }
@@ -119,7 +120,7 @@
      &:nth-child(1){
       text-align: right;
       padding-right: 12px;
-      @include mobile {
+      @include tablet-mobile {
        padding: 0;
        text-align: center;
       }

@@ -130,23 +130,22 @@ block contents
       );
 
       // salon btn click tablet-mobile
-      $('.salons-btn').click(function(){
-        $('.salon-side__background').addClass('salon-side__background--disable');
-        $('.salon-side__background-mobile').addClass('salon-side__background-mobile--active');
-        $('.salons-logo').addClass('salons-logo--disable');
-        $('.salons-title').addClass('salons-title--disable');
-        $('.salons-subtitle').addClass('salons-subtitle--disable');
-        $('.salons-btns').addClass('salons-btns--disable');
-        $('.salons-info__exit').addClass('salons-info__exit--active');
-
-        if ($(this).hasClass('salons-btn--kost')) {
-          $('.salons-info__item--kost').addClass('salons-info__item--active');
-        } else if ($(this).hasClass('salons-btn--vlad')) {
-          $('.salons-info__item--vlad').addClass('salons-info__item--active');
-        } else if ($(this).hasClass('salons-btn--nval')) {
-          $('.salons-info__item--nval').addClass('salons-info__item--active');
-        }
-      });
+      //$('.salons-btn').click(function(){
+      //  $('.salon-side__background').addClass('salon-side__background--disable');
+      //  $('.salon-side__background-mobile').addClass('salon-side__background-mobile--active');
+      //  $('.salons-logo').addClass('salons-logo--disable');
+      //  $('.salons-title').addClass('salons-title--disable');
+      //  $('.salons-subtitle').addClass('salons-subtitle--disable');
+      //  $('.salons-btns').addClass('salons-btns--disable');
+      //  $('.salons-info__exit').addClass('salons-info__exit--active');
+      //  if ($(this).hasClass('salons-btn--kost')) {
+      //    $('.salons-info__item--kost').addClass('salons-info__item--active');
+      //  } else if ($(this).hasClass('salons-btn--vlad')) {
+      //    $('.salons-info__item--vlad').addClass('salons-info__item--active');
+      //  } else if ($(this).hasClass('salons-btn--nval')) {
+      //    $('.salons-info__item--nval').addClass('salons-info__item--active');
+      //  }
+      //});
 
       $('.salons-info__exit').click(function(){
         salonsSideDisable();
