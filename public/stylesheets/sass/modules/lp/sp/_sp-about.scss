@@ -149,7 +149,7 @@
 
     .sp-about-block__main-title {
      width: 240px;
-     height: 82px;
+     height: 60px;
      background: url(../../../img/cinema-logo.png) no-repeat center / contain;
      cursor: pointer;
     }
@@ -159,7 +159,7 @@
     @include mobile {
      line-height: 20px;
      text-align: center;
-     margin-top: 30px;
+     margin-top: 15px;
     }
 
     .sp-about-block__duration--passed {
