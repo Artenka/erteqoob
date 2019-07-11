@@ -168,4 +168,12 @@ router.get('/in-development', function(req, res, next) {
 });
 
 
+router.get('/admin', function(req, res, next) {
+  res.render('pages/admin/admin');
+});
+router.get('/login', function(req, res, next) {
+  res.render('pages/admin/login');
+});
+
+
 module.exports = router;

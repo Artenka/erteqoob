@@ -1,0 +1,22 @@
+// Left navbar-header
+.navbar-default.sidebar(role='navigation')
+	.sidebar-nav.navbar-collapse.slimscrollsidebar
+		ul#side-menu.nav
+			li
+				a.waves-effect(href='/admin/admins')
+					i.fa.fa-users
+					span.hide-menu
+						| Администраторы
+						span.fa.arrow
+				ul.nav.nav-second-level
+					li
+						a(href='/admin/admins') Все администраторы
+					li
+						a(href='/admin/admins/new') Добавить
+
+			li
+				a.waves-effect(href='/logout')
+					i.fa.fa-sign-out(data-icon='g')
+					span.hide-menu
+						| Выход
+// Left navbar-header end
