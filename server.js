@@ -77,6 +77,8 @@ if (cluster.isMaster) {
 } else {
     var express = require('express');
 
+    var http = require('http');
+
     var favicon = require('serve-favicon');
     var logger = require('morgan');
     var cookieParser = require('cookie-parser');
@@ -119,8 +121,9 @@ if (cluster.isMaster) {
         }
     }));
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended: false}));
+    app.use(bodyParser.json({limit: '524288000'}));
+    app.use(bodyParser.urlencoded({limit: '524288000', extended: true}));
+    app.use(bodyParser.raw({limit: '524288000'}));
     app.use(cookieParser());
     app.use(require('node-sass-middleware')({
         src        : __dirname + '/public/stylesheets/sass',
@@ -131,27 +134,29 @@ if (cluster.isMaster) {
     }));
     app.use(express.static(path.join(__dirname, 'public')));
 
-    // app.use(session({
-    //     secret           : 'mySecretGeniusKey',
-    //     resave           : true,
-    //     saveUninitialized: true,
-    //     store            : new MongoStore({
-    //         db                : config.get('dbName'),
-    //         mongooseConnection: mongoose.connection,
-    //         clear_interval    : 10 * 60, //интервал очистки просроченых сессий (в секундах)
-    //         autoRemove        : 'native'
-    //     })
-    // }));
+    app.use(session({
+        secret           : 'mySecretErteqoobKey',
+        resave           : true,
+        saveUninitialized: true,
+        store            : new MongoStore({
+            db                : config.get('dbName'),
+            mongooseConnection: mongoose.connection,
+            clear_interval    : 10 * 60, //интервал очистки просроченых сессий (в секундах)
+            autoRemove        : 'native'
+        })
+    }));
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(flash());
 
     //Routers
-    var index = require('./routes/index');
-    var users = require('./routes/users');
+    var router = require('./routes/router')(app, passport); // load router.js and pass in app and passport
 
-    app.use('/', index);
-    app.use('/users', users);
+    var admin = require('./routes/admin/index');
+    app.use('/admin', admin);
+
+    var adminAdmin = require('./routes/admin/admins');
+    app.use('/admin/admins', adminAdmin);
 
     // catch 404 and forward to error handler
     app.use(function(req, res, next) {

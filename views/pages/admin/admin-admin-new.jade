@@ -1,0 +1,45 @@
+extends ../../layouts/main-admin
+
+block contents
+    // Preloader
+    .preloader
+        .cssload-speeding-wheel
+
+    #wrapper
+        include ./../../partials/admin/header.jade
+        include ./../../partials/admin/aside-menu.jade
+
+        // Page Content
+        #page-wrapper
+            .container-fluid
+                .row.bg-title
+                    .col-lg-3.col-md-4.col-sm-4.col-xs-12
+                        h4.page-title Creating a new administrator
+                    .col-lg-9.col-sm-8.col-md-8.col-xs-12
+                        ol.breadcrumb
+                            li
+                                a(href='/admin') Main
+                            li
+                                a(href='/admin/admins') All admins
+                            li.active Creating a new administrator
+                if (message)
+                    .row
+                        p(style='color:red;') #{message}
+                .row
+                    form(method='post', action='/admin/admins/new')
+                        .form-group
+                            label Email:
+                            input.form-control(type='email', name='email', required='', placeholder='Enter e-mail')
+                        .form-group
+                            label First name:
+                            input.form-control(type='text', name='name', required='', placeholder='Enter first name')
+                        .form-group
+                            label Last name:
+                            input.form-control(type='text', name='lastName', required='', placeholder='Enter last name')
+                        .form-group
+                            label Password:
+                            input.form-control(type='password', name='password', required='', placeholder='Enter password')
+                        .clear
+                        button.btn(type='submit' style="float:left") Create
+
+        include ./../../partials/admin/footer.jade

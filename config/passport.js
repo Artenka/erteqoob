@@ -3,73 +3,66 @@
  */
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../models/user').User;
+var Admin = require('../models/admin').Admin;
 var crypto = require('crypto');
 
-module.exports = function(passport) {
+module.exports = function (passport) {
 
 // passport session setup ==================================================
 
-    /**
-     * Serialize the user, determine what data is stored in session
-     * done(null, user.id); - req.session.passport.user = {id: "user_id"}
-     */
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
-    });
+  /**
+   * Serialize the user, determine what data is stored in session
+   * done(null, user.id); - req.session.passport.user = {id: "user_id"}
+   */
+  passport.serializeUser(function (admin, done) {
+    done(null, admin.id);
+  });
 
-    /**
-     * Deserealize the user
-     */
-    passport.deserializeUser(function(id, done) {
-        User.findById(id)
-            .populate('plan')
-            .exec(function(err, user) {
-                done(err, user);
-            });
-    });
+  /**
+   * Deserealize the user
+   */
+  passport.deserializeUser(function (id, done) {
+    Admin.findById(id)
+      .exec(function (err, admin) {
+        done(err, admin);
+      });
+  });
 
 // LOCAL LOGIN =============================================================
-    passport.use('local-login', new LocalStrategy({
-            usernameField    : 'email',
-            passwordField    : 'password',
-            passReqToCallback: true // pass in the request from route (check if a user is logged in or not)
-        },
-        function(req, email, password, done) {
-            if (email)
-                email = email.toLowerCase().trim();
+  passport.use('local-login', new LocalStrategy({
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true // pass in the request from route (check if a admin is logged in or not)
+    },
+    function (req, email, password, done) {
+      if (email)
+        email = email.toLowerCase().trim();
 
-            // asynchronous
-            process.nextTick(function() {
-                User.findOne({'email': email}, function(err, user) {
-                    if (err)
-                        return done(err);
+      // asynchronous
+      process.nextTick(function () {
+        Admin.findOne({'email': email}, function (err, admin) {
+          if (err) return done(err);
 
-                    // if no user is found, return the message
-                    if (!user) {
-                        return done(null, false, req.flash('loginMessage', 'Пользователь не найден.'));
-                    }
+          // if no admin is found, return the message
+          if (!admin) {
+            return done(null, false, req.flash('loginMessage', 'Пользователь не найден.'));
+          }
 
-                    //if (user && !user.paid) {
-                    //    return done(null, false, req.flash('loginMessage', 'Вы не прошли регистрацию. Пожалуйста, перейдите по ссылке в письме и зарегистрируйтесь'));
-                    //}
+          if (!admin.validPassword(password)) {
+            return done(null, false, req.flash('loginMessage', 'Неправильный пароль!'));
+          }
 
-                    if (!user.validPassword(password)) {
-                        return done(null, false, req.flash('loginMessage', 'Неправильный пароль!'));
-                    }
-
-                    // all is well, return user
-                    else {
-                        var token = crypto.randomBytes(64).toString('hex');
-                        user.autoLoginHash = token;
-                        user.save(function(err) {
-                            if (err) console.error(err);
-                        });
-                        return done(null, user);
-
-                    }
-                });
+          // all is well, return admin
+          else {
+            var token = crypto.randomBytes(64).toString('hex');
+            admin.autoLoginHash = token;
+            admin.save(function (err) {
+              if (err) console.error(err);
             });
+            return done(null, admin);
+          }
+        });
+      });
 
-        }));
+    }));
 };

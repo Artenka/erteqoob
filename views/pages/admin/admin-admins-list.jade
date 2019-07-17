@@ -1,0 +1,54 @@
+extends ../../layouts/main-admin
+
+block contents
+    // Preloader
+    .preloader
+        .cssload-speeding-wheel
+
+    #wrapper
+        include ./../../partials/admin/header.jade
+        include ./../../partials/admin/aside-menu.jade
+
+        // Page Content
+        #page-wrapper
+            .container-fluid
+                .row.bg-title
+                    .col-lg-3.col-md-4.col-sm-4.col-xs-12
+                        h4.page-title List of site administrators
+                    .col-lg-9.col-sm-8.col-md-8.col-xs-12
+                        ol.breadcrumb
+                            li
+                                a(href='/admin') Main
+                            li.active List of site administrators
+                .row
+                    .form-group
+                        .col-sm-4.m-b-20
+                            a.btn.btn-block.btn-outline.btn-rounded.btn-info.btn-lg(href="/admin/admins/new") Create new
+                .row
+                    .form-group
+                        .col-sm-3.m-b-20
+                            select.form-control(name="selected_action")
+                                option(value = 'activate' selected='selected')= 'Activate'
+                                option(value = 'block')= 'Block'
+                        .col-sm-3.m-b-20
+                            button.btn.btn-block.btn-success.accept Accept
+
+                .row
+                    .col-sm-12
+                        .white-box
+                            .table-responsive
+                                table#table_admins.table.table-striped
+                                    thead
+                                        tr
+                                            th(style='vertical-align:middle')
+                                                input.example-select-all(name="select_all" value="1" type="checkbox")
+                                            th ID
+                                            th Name
+                                            th Email
+                                            th Status
+                                            th Action
+
+        include ./../../partials/admin/footer.jade
+
+        script(src='/plugins/bower_components/datatables/jquery.dataTables.min.js')
+        script(src="/js/pages/admin/admin-admins-list.js")

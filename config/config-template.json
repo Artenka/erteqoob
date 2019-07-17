@@ -3,7 +3,7 @@
   "port": "3000",
   "dbName": "erteqoob",
   "mongoose": {
-    "uri": "mongodb://admin:hQycI32Kd1c@127.0.0.1:27017/settings_cabinet_project?authSource=admin",
+    "uri": "mongodb://admin:hQycI32Kd1c@127.0.0.1:27017/erteqoob?authSource=admin",
     "options": {
       "server": {
         "socketOptions": {
