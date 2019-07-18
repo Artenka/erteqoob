@@ -1,0 +1,102 @@
+extends ../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../partials/admin/header.jade
+    include ./../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Контакты
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/pages') Страницы
+              li.active Контакты
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/pages/contacts')
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок (телефон):
+                  input.form-control(type='text', name='title1', required='', value= contacts.title1)
+              .col-sm-6
+                .form-group
+                  label Заголовок (график работы):
+                  input.form-control(type='text', name='title2', required='', value= contacts.title2)
+
+            br
+            h2 Киев
+            br
+            .row
+              .col-xs-12
+                .form-group
+                  label Адрес:
+                  input.form-control(type='text', name='kyivAddress', value= contacts.kyivAddress)
+            .row
+              .col-sm-6
+                .form-group
+                  label Телефон 1:
+                  input.form-control(type='text', name='kyivPhone1', value= contacts.kyivPhone1)
+              .col-sm-6
+                .form-group
+                  label Телефон 2:
+                  input.form-control(type='text', name='kyivPhone2', value= contacts.kyivPhone2)
+            .row
+              .col-sm-6
+                .form-group
+                  label Время работы (дни):
+                  input.form-control(type='text', name='kyivTime1', value= contacts.kyivTime1)
+              .col-sm-6
+                .form-group
+                  label Время работы (время):
+                  input.form-control(type='text', name='kyivTime2', value= contacts.kyivTime2)
+
+            br
+            h2 Харьков
+            br
+            .row
+              .col-xs-12
+                .form-group
+                  label Адрес:
+                  input.form-control(type='text', name='kharkivAddress', value= contacts.kharkivAddress)
+            .row
+              .col-sm-6
+                .form-group
+                  label Телефон 1:
+                  input.form-control(type='text', name='kharkivPhone1', value= contacts.kharkivPhone1)
+              .col-sm-6
+                .form-group
+                  label Телефон 2:
+                  input.form-control(type='text', name='kharkivPhone2', value= contacts.kharkivPhone2)
+            .row
+              .col-sm-6
+                .form-group
+                  label Время работы (дни):
+                  input.form-control(type='text', name='kharkivTime1', value= contacts.kharkivTime1)
+              .col-sm-6
+                .form-group
+                  label Время работы (время):
+                  input.form-control(type='text', name='kharkivTime2', value= contacts.kharkivTime2)
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../partials/admin/footer.jade

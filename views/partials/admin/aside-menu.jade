@@ -4,6 +4,16 @@
 		ul#side-menu.nav
 			li
 				a.waves-effect(href='/admin/admins')
+					i.ti-book
+					span.hide-menu
+						| Страницы
+						span.fa.arrow
+				ul.nav.nav-second-level
+					li
+						a(href='/admin/pages/contacts') Контакты
+
+			li
+				a.waves-effect(href='/admin/admins')
 					i.fa.fa-users
 					span.hide-menu
 						| Администраторы

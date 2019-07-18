@@ -85,39 +85,39 @@ block contents
 
     .contacts-info-layout
       .contacts-info.contacts-info--kiev
-        .contacts-info__title киев,<br> ул. владимирская, 49 А
+        .contacts-info__title киев,<br> #{contacts.kyivAddress}
         //.contacts-info__subtitle 2 этаж, возле ТЦ “Пирамида”,<br> метро Позняки
         .contacts-info__inner
           ul.contacts-info__inner-list
             li.contacts-info__inner-item
-              h3 телефон:
+              h3 #{contacts.title1}
               p
-                | 067 550 18 15<br>
-                | 095 040 51 59
+                | #{contacts.kyivPhone1}<br>
+                | #{contacts.kyivPhone2}
             li.contacts-info__inner-item
-              h3 график работы:
+              h3 #{contacts.title2}
               p
-                | Пн-Сб<br class="br-lg-md">
-                | с 10:00 до 18:00
+                | #{contacts.kyivTime1}<br class="br-lg-md">
+                | #{contacts.kyivTime2}
         .pin-block
           .pin
           .circle.pin-circle.pin-circle--1
           .circle.pin-circle.pin-circle--2
       .contacts-info.contacts-info--kharkiv
-        .contacts-info__title харьков,<br> пр-т московский,<br class="br-lp"> 19/23
+        .contacts-info__title харьков,<br> #{contacts.kharkivAddress}
         //.contacts-info__subtitle бизнес-центр сити холл, 1й этаж,<br> метро "Дворец спорта"
         .contacts-info__inner
           ul.contacts-info__inner-list
             li.contacts-info__inner-item
-              h3 телефон:
+              h3 #{contacts.title1}
               p
-                | 067 535 52 52<br>
-                | 066 248 52 52
+                | #{contacts.kharkivPhone1}<br>
+                | #{contacts.kharkivPhone2}
             li.contacts-info__inner-item
-              h3 график работы:
+              h3 #{contacts.title2}
               p
-                | Пн-Пт<br class="br-lg-md">
-                | с 10:00 до 18:00
+                | #{contacts.kharkivTime1}<br class="br-lg-md">
+                | #{contacts.kharkivTime2}
         .pin-block
           .pin
           .circle.pin-circle.pin-circle--1

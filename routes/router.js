@@ -1,6 +1,9 @@
 var nodemailer = require('nodemailer');
 var eLogger = require('../lib/logger').eLogger;
 
+var Contacts = require('../models/contacts').Contacts;
+
+
 module.exports = function (app, passport) {
 
   app.get('/', function(req, res, next) {
@@ -38,7 +41,17 @@ module.exports = function (app, passport) {
     res.render('pages/salon-kharkiv');
   });
   app.get('/contacts', function(req, res, next) {
-    res.render('pages/contacts');
+    Contacts.findOne({contacts_id: 1})
+      .exec(function (err, contacts) {
+        if (!err && contacts) {
+          res.render('pages/contacts', {
+            contacts: contacts
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
 
 

@@ -28,6 +28,26 @@ body, h1, h2, h3, h4, h5, h6 {
  }
 }
 
+.btn {
+ border: 1px solid #fff;
+ background: transparent;
+ color: #fff;
+ text-transform: uppercase;
+ font-size: 12px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ padding: 13px 25px 11px;
+ transition: 0.5s;
+ &:hover {
+  background: #fff;
+  color: #000;
+ }
+}
+.form-control {
+ height: auto;
+ padding: 13px 20px;
+}
+
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
  word-break: break-word;
  min-width: 70px;
