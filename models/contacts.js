@@ -24,7 +24,7 @@ var contactsSchema = new Schema({
 });
 
 contactsSchema.plugin(autoIncrement.plugin, {
-  model      : 'contacts',
+  model      : 'Contacts',
   field      : 'contacts_id',
   startAt    : 1,
   incrementBy: 1

@@ -1,0 +1,287 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Философия
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/pages') Страницы
+              li.active Философия
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/pages/philosophy' enctype='multipart/form-data')
+            br
+            h2 Секция 1
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1' rows="2")!= philosophies.title1
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle1' rows="2")!= philosophies.subtitle1
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg1.dropify(type='file' name="imageBg1" data-default-file=(philosophies.imageBg1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+
+            br
+            h2 Секция 2
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title2', rows="4")!= philosophies.title2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текст:
+                  textarea.form-control(name='text2' rows="4")!= philosophies.text2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg2.dropify(type='file' name="imageBg2" data-default-file=(philosophies.imageBg2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+
+            br
+            h2 Секция 3
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title3', rows="4")!= philosophies.title3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текст:
+                  textarea.form-control(name='text3' rows="4")!= philosophies.text3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg3.dropify(type='file' name="imageBg3" data-default-file=(philosophies.imageBg3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+
+            br
+            h2 Секция 4
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title4', rows="4")!= philosophies.title4
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текст:
+                  textarea.form-control(name='text4' rows="4")!= philosophies.text4
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg4.dropify(type='file' name="imageBg4" data-default-file=(philosophies.imageBg4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+
+            br
+            h2 Секция 5
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5', rows="4")!= philosophies.title5
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5' rows="4")!= philosophies.subtitle5
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg5.dropify(type='file' name="imageBg5" data-default-file=(philosophies.imageBg5 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+
+            br
+            h2 Секция 5 - Музыка
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5_1', rows="4")!= philosophies.title5_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5_1' rows="4")!= philosophies.subtitle5_1
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Иконка (40 X 40):
+                  input#imageBg5_1.dropify(type='file' name="imageBg5_1" data-default-file=(philosophies.imageBg5_1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Текст при наведении:
+                  textarea.form-control(name='text5_1' rows="9")!= philosophies.text5_1
+
+            br
+            h2 Секция 5 - Арт
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5_2', rows="4")!= philosophies.title5_2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5_2' rows="4")!= philosophies.subtitle5_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Иконка (40 X 40):
+                  input#imageBg5_2.dropify(type='file' name="imageBg5_2" data-default-file=(philosophies.imageBg5_2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Текст при наведении:
+                  textarea.form-control(name='text5_2' rows="9")!= philosophies.text5_2
+
+            br
+            h2 Секция 5 - Архитектура
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5_3', rows="4")!= philosophies.title5_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5_3' rows="4")!= philosophies.subtitle5_3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Иконка (40 X 40):
+                  input#imageBg5_3.dropify(type='file' name="imageBg5_3" data-default-file=(philosophies.imageBg5_3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Текст при наведении:
+                  textarea.form-control(name='text5_3' rows="9")!= philosophies.text5_3
+
+            br
+            h2 Секция 5 - Фотография
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5_4', rows="4")!= philosophies.title5_4
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5_4' rows="4")!= philosophies.subtitle5_4
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Иконка (40 X 40):
+                  input#imageBg5_4.dropify(type='file' name="imageBg5_4" data-default-file=(philosophies.imageBg5_4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Текст при наведении:
+                  textarea.form-control(name='text5_4' rows="9")!= philosophies.text5_4
+
+            br
+            h2 Секция 6
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title6', rows="9")!= philosophies.title6
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg6.dropify(type='file' name="imageBg6" data-default-file=(philosophies.imageBg6 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст слева по центру:
+                  textarea.form-control(name='text6_1' rows="7")!= philosophies.text6_1
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст справа сверху:
+                  textarea.form-control(name='text6_2' rows="7")!= philosophies.text6_2
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст справа снизу:
+                  textarea.form-control(name='text6_3' rows="7")!= philosophies.text6_3
+
+            br
+            h2 Секция 7
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title7', rows="9")!= philosophies.title7
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg7.dropify(type='file' name="imageBg7" data-default-file=(philosophies.imageBg7 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст слева по центру:
+                  textarea.form-control(name='text7_1' rows="7")!= philosophies.text7_1
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст справа сверху:
+                  textarea.form-control(name='text7_2' rows="7")!= philosophies.text7_2
+              .col-sm-4.col-sx-12
+                .form-group
+                  label.control-label Текст справа снизу:
+                  textarea.form-control(name='text7_3' rows="7")!= philosophies.text7_3
+
+            br
+            h2 Секция 8
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title8', rows="9")!= philosophies.title8
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg8.dropify(type='file' name="imageBg8" data-default-file=(philosophies.imageBg8 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текст кнопки:
+                  input.form-control(type="text" name='btn8' value= philosophies.btn8)
+
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade

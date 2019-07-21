@@ -2,6 +2,7 @@ var nodemailer = require('nodemailer');
 var eLogger = require('../lib/logger').eLogger;
 
 var Contacts = require('../models/contacts').Contacts;
+var Philosophies = require('../models/philosophies').Philosophies;
 
 
 module.exports = function (app, passport) {
@@ -11,7 +12,17 @@ module.exports = function (app, passport) {
   });
 
   app.get('/philosophy', function(req, res, next) {
-    res.render('pages/philosophy');
+    Philosophies.findOne({philosophies_id: 1})
+      .exec(function (err, philosophies) {
+        if (!err && philosophies) {
+          res.render('pages/philosophy', {
+            philosophies: philosophies
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
   app.get('/academy', function(req, res, next) {
     res.render('pages/academy');

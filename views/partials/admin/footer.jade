@@ -11,52 +11,6 @@ footer.footer.text-center  2019 © Erteqoob. Все права защищены.
       div#confirmButtons
         a.button.button-yes Да
         a.button.button-no Нет
-  script.
-
-    function setError(text) {
-      $(".form-errors").html("<div class='alert alert-danger'><h4>" + text + "</h4></div>");
-      $('.edit-message-popup').removeClass('first-info').addClass('second-info');
-      $('.edit-error-popup').removeClass('fadeOutRight second-info').fadeIn(100).addClass('animated shake first-info');
-      setTimeout(function () {
-        $('.edit-error-popup').removeClass('shake').addClass('fadeOutRight');
-      }, 4000);
-    }
-
-    function setInfoMessage(text) {
-      $(".form-messages").html("<div class='alert alert-danger'><h4>" + text + "</h4></div>");
-      $('.edit-error-popup').removeClass('first-info').addClass('second-info');
-      $('.edit-message-popup').removeClass('fadeOutRight second-info').fadeIn(100).addClass('animated fadeInRight first-info');
-      setTimeout(function () {
-        $('.edit-message-popup').removeClass('shake').addClass('fadeOutRight');
-      }, 4000);
-    }
-
-    function Dialog(message, yesCallback, noCallback) {
-      $('.confirm-popup h2').html(message);
-      var dialog = $('.confirm-popup').fadeIn(300);
-
-      $('.button-yes').click(function () {
-        dialog.fadeOut(300);
-        yesCallback();
-        noCallback = function () {
-          return false;
-        };
-        yesCallback = function () {
-          return false;
-        }
-      });
-
-      $('.button-no').click(function () {
-        dialog.fadeOut(300);
-        noCallback();
-        yesCallback = function () {
-          return false;
-        };
-        noCallback = function () {
-          return false;
-        }
-      });
-    }
 // /#page-wrapper
 // /#wrapper
 
@@ -78,6 +32,8 @@ script(src='/js/pages/admin-material/custom.min.js')
 // Style Switcher
 script(src='/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')
 
+script(src='/plugins/bower_components/dropify/dist/js/dropify.min.js')
+
 
 script.
   if ('#{err_message}') {
@@ -87,3 +43,88 @@ script.
   if ('#{info_message}') {
     setInfoMessage('#{info_message}');
   }
+
+script.
+  $(function(){
+    $('.dropify').dropify({
+      messages: {
+        default: 'Перетащите файл сюда или нажмите'
+        , replace: 'Перетащите файл сюда или нажмите для изменения'
+        , remove: 'Удалить'
+        , error: 'К сожалению, файл слишком большой'
+      },
+      error: {
+        'fileSize': 'Размер файла слишком большой ({{ value }} max).'
+      }
+    });
+  });
+
+  function setError(text) {
+    $(".form-errors").html("<div class='alert alert-danger'><h4>" + text + "</h4></div>");
+    $('.edit-message-popup').removeClass('first-info').addClass('second-info');
+    $('.edit-error-popup').removeClass('fadeOutRight second-info').fadeIn(100).addClass('animated shake first-info');
+    setTimeout(function () {
+      $('.edit-error-popup').removeClass('shake').addClass('fadeOutRight');
+    }, 4000);
+  }
+
+  function setInfoMessage(text) {
+    $(".form-messages").html("<div class='alert alert-danger'><h4>" + text + "</h4></div>");
+    $('.edit-error-popup').removeClass('first-info').addClass('second-info');
+    $('.edit-message-popup').removeClass('fadeOutRight second-info').fadeIn(100).addClass('animated fadeInRight first-info');
+    setTimeout(function () {
+      $('.edit-message-popup').removeClass('shake').addClass('fadeOutRight');
+    }, 4000);
+  }
+
+  function Dialog(message, yesCallback, noCallback) {
+    $('.confirm-popup h2').html(message);
+    var dialog = $('.confirm-popup').fadeIn(300);
+
+    $('.button-yes').click(function () {
+      dialog.fadeOut(300);
+      yesCallback();
+      noCallback = function () {
+        return false;
+      };
+      yesCallback = function () {
+        return false;
+      }
+    });
+
+    $('.button-no').click(function () {
+      dialog.fadeOut(300);
+      noCallback();
+      yesCallback = function () {
+        return false;
+      };
+      noCallback = function () {
+        return false;
+      }
+    });
+  }
+
+  var initTinyMCE = function () {
+    if ($(".mymce").length > 0) {
+      tinymce.init({
+        selector: "textarea.mymce",
+        theme: "modern",
+        height: 150,
+        file_browser_callback: function (field_name, url, type, win) {
+          if (type == 'image') $('#img_editor_upload input').click();
+        },
+        file_browser_callback_types: 'image',
+        images_upload_url: '/upload',
+        automatic_uploads: true,
+        plugins: [
+          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "save table contextmenu directionality emoticons paste textcolor",
+          "fullpage codesample toc imagetools colorpicker textpattern help"
+        ],
+        toolbar1: 'insertfile undo redo | fontsizeselect | fontselect | styleselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | numlist bullist | outdent indent',
+        toolbar2: 'link removeformat | image media preview emoticons',
+        image_advtab: true
+      });
+    }
+  };

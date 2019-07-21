@@ -370,6 +370,7 @@
    line-height: 62px;
    text-transform: uppercase;
    text-align: left;
+   white-space: pre-line;
    @include laptop {
     font-size: 30px;
     line-height: 48px;

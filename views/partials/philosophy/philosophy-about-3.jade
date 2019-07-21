@@ -1,12 +1,17 @@
 section.section-layout.philosophy-about.philosophy-about--3
-  div.section-bg.philosophy-about__bg
+  if philosophies.imageBg4 == ''
+    div.section-bg.philosophy-about__bg
+  else
+    div.section-bg.philosophy-about__bg(style="background-image: url(#{philosophies.imageBg4})")
   div.philosophy-about__main
     .philosophy-about__line-layout
       .philosophy-about__line
     .philosophy-about__title-line
     p.philosophy-about__number 03
     div.philosophy-about__title-layout
-      h1.philosophy-about__title превратили<br> свою работу<br> в искусство
+      h1.philosophy-about__title #{philosophies.title4}
+      //h1.philosophy-about__title превратили<br> свою работу<br> в искусство
     div.philosophy-about__text-layout
       div.philosophy-about__text
-        p Делая стрижку, нужно всё детально изучить,<br class="br-md"> затем<br class="br-lg"> спроектировать, и после этого<br class="br-md"> воплотить творческую идею.<br class="br-lg"> Мы становимся<br class="br-md"> скульпторами, работая с материей волос.<br class="br-lg-md"> В момент создания мы проваливаемся<br class="br-lg-md"> в параллельный мир и так творим.
+        p #{philosophies.text4}
+        //p Делая стрижку, нужно всё детально изучить,<br class="br-md"> затем<br class="br-lg"> спроектировать, и после этого<br class="br-md"> воплотить творческую идею.<br class="br-lg"> Мы становимся<br class="br-md"> скульпторами, работая с материей волос.<br class="br-lg-md"> В момент создания мы проваливаемся<br class="br-lg-md"> в параллельный мир и так творим.

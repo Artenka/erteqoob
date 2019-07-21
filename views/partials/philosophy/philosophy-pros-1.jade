@@ -1,8 +1,12 @@
 section.section-layout.philosophy-pros.philosophy-pros--1
-  div.section-bg.philosophy-pros__bg
+  if philosophies.imageBg6 == ''
+    div.section-bg.philosophy-pros__bg
+  else
+    div.section-bg.philosophy-pros__bg(style="background-image: url(#{philosophies.imageBg6})")
   div.philosophy-pros__main
     div.page-title-big-layout.home-pros__title-layout
-      h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title «Срезателей» волос<br> в скором будущем<br class="br-md-sm"> заменят роботы
+      h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title #{philosophies.title6}
+      //h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title «Срезателей» волос<br> в скором будущем<br class="br-md-sm"> заменят роботы
     div.philosophy-pros-list-layout
       ul.philosophy-pros-list
         li.philosophy-pros-list__item
@@ -10,17 +14,20 @@ section.section-layout.philosophy-pros.philosophy-pros--1
             div.philosophy-pros-list__item-line-left-layout
               div.philosophy-pros-list__item-line-left
             div.philosophy-pros-list__item-line-top
-            p.philosophy-pros-list__item-text Поэтому мастер должен не только работать руками, но и ориентироваться на свою интуицию, видение пропорций, понимание материи, текстур, умение общаться с клиентом, разгадывать его.
+            p.philosophy-pros-list__item-text #{philosophies.text6_1}
+            //p.philosophy-pros-list__item-text Поэтому мастер должен не только работать руками, но и ориентироваться на свою интуицию, видение пропорций, понимание материи, текстур, умение общаться с клиентом, разгадывать его.
         li.philosophy-pros-list__item
           div.philosophy-pros-list__item-inner
             div.philosophy-pros-list__item-line-left-layout
               div.philosophy-pros-list__item-line-left
             div.philosophy-pros-list__item-line-top
-            p.philosophy-pros-list__item-text Важно обладать безукоризненным чувством стиля и фильтром качества.
+            p.philosophy-pros-list__item-text #{philosophies.text6_2}
+            //p.philosophy-pros-list__item-text Важно обладать безукоризненным чувством стиля и фильтром качества.
           div.philosophy-pros-list__item-inner
             div.philosophy-pros-list__item-line-left-layout
               div.philosophy-pros-list__item-line-left
             div.philosophy-pros-list__item-line-top
-            p.philosophy-pros-list__item-text А для того, чтобы использовать эмоциональный интеллект, нужно обладать крепким фундаментом и постоянно тренироваться.
+            p.philosophy-pros-list__item-text #{philosophies.text6_3}
+            //p.philosophy-pros-list__item-text А для того, чтобы использовать эмоциональный интеллект, нужно обладать крепким фундаментом и постоянно тренироваться.
     //div.page-title-big-layout.home-pros__title-layout
     //  h1.page-title-big.home-pros__title.home-pros__title--2.philosophy-title Творчество<br> на фундаменте<br class="br-md-sm"> отточенных техник<br> делает мастера<br class="br-md-sm"> востребованным

@@ -5,12 +5,17 @@ section.section-layout.philosophy-intro
     .circle.circle--2
     .circle.circle--3
     .circle-line
-  div.section-bg.philosophy-intro__bg
+  if philosophies.imageBg1 == ''
+    div.section-bg.philosophy-intro__bg
+  else
+    div.section-bg.philosophy-intro__bg(style="background-image: url(#{philosophies.imageBg1})")
   div.philosophy-intro__main
     div.philosophy-intro__logo
     div.philosophy-intro__title
-      h1 философия
-      h2 Создаем своё время<br class="md-sm"> и пространство
+      h1 #{philosophies.title1}
+      //h1 философия
+      h2 #{philosophies.subtitle1}
+      //h2 Создаем своё время<br class="md-sm"> и пространство
     div.philosophy-intro__video-layout
       div.philosophy-intro__video
         div.philosophy-intro__video-btn

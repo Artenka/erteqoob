@@ -1,13 +1,18 @@
 section.section-layout.philosophy-about.philosophy-about--2
-  div.section-bg.philosophy-about__bg
+  if philosophies.imageBg3 == ''
+    div.section-bg.philosophy-about__bg
+  else
+    div.section-bg.philosophy-about__bg(style="background-image: url(#{philosophies.imageBg3})")
   div.philosophy-about__main
     .philosophy-about__line-layout
       .philosophy-about__line
     .philosophy-about__title-line
     p.philosophy-about__number 02
     div.philosophy-about__title-layout
-      h1.philosophy-about__title Пропагандируем<br> творческую<br> смелость
+      h1.philosophy-about__title #{philosophies.title3}
+      //h1.philosophy-about__title Пропагандируем<br> творческую<br> смелость
     div.philosophy-about__text-layout
       div.philosophy-about__text
-        p Импровизация и профессиональные находки<br class="br-md"> всей команды<br class="br-lg"> делают наш общий продукт<br class="br-md"> шедевром. Мы верим в то, что<br class="br-lg"> фантазии и<br class="br-md"> идеи нуждаются в реализации,<br class="br-lg"> без<br class="br-md"> замедлений и без страха.
-        p И для этого мы собрали команду<br class="br-md"> единомышленников, смелых и<br class="br-md"> трудолюбивых профессионалов.
+        p #{philosophies.text3}
+        //p Импровизация и профессиональные находки<br class="br-md"> всей команды<br class="br-lg"> делают наш общий продукт<br class="br-md"> шедевром. Мы верим в то, что<br class="br-lg"> фантазии и<br class="br-md"> идеи нуждаются в реализации,<br class="br-lg"> без<br class="br-md"> замедлений и без страха.
+        //p И для этого мы собрали команду<br class="br-md"> единомышленников, смелых и<br class="br-md"> трудолюбивых профессионалов.

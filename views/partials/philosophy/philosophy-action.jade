@@ -1,11 +1,16 @@
 section.section-layout.philosophy-action
-  div.section-bg.philosophy-action__bg
+  if philosophies.imageBg8 == ''
+    div.section-bg.philosophy-action__bg
+  else
+    div.section-bg.philosophy-action__bg(style="background-image: url(#{philosophies.imageBg8})")
   .circle-layout
     .circle.circle--1
     .circle.circle--2
     .circle.circle--3
   div.philosophy-action__main
     div.philosophy-action__text-layout
-      p.philosophy-action__text Профессия парикмахер —<br> может раскрыть в Вас<br> уникальные творческие<br> возможности!<br> Приходите. Учитесь.<br> Создавайте.
+      p.philosophy-action__text #{philosophies.title8}
+      //p.philosophy-action__text Профессия парикмахер —<br> может раскрыть в Вас<br> уникальные творческие<br> возможности!<br> Приходите. Учитесь.<br> Создавайте.
     div.philosophy-action__link-layout
-      a(href="/courses").btn-black.philosophy-action__link смотреть курсы
+      a(href="/courses").btn-black.philosophy-action__link #{philosophies.btn8}
+      //a(href="/courses").btn-black.philosophy-action__link смотреть курсы
