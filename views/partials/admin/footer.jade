@@ -45,17 +45,22 @@ script.
   }
 
 script.
-  $(function(){
-    $('.dropify').dropify({
+  $(function () {
+    var dropify = $('.dropify').dropify({
       messages: {
-        default: 'Перетащите файл сюда или нажмите'
-        , replace: 'Перетащите файл сюда или нажмите для изменения'
-        , remove: 'Удалить'
-        , error: 'К сожалению, файл слишком большой'
+        default: 'Перетащите файл сюда или нажмите',
+        replace: 'Перетащите файл сюда или нажмите для изменения',
+        remove: 'Удалить',
+        error: 'К сожалению, файл слишком большой'
       },
       error: {
         'fileSize': 'Размер файла слишком большой ({{ value }} max).'
       }
+    });
+
+    dropify.on('dropify.afterClear', function (event, element) {
+      console.log($(element)[0]['element']['id']);
+      $('input[name=' + $(element)[0]['element']['id'] + '_deleted]').val('true');
     });
   });
 

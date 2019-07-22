@@ -45,6 +45,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg1.dropify(type='file' name="imageBg1" data-default-file=(philosophies.imageBg1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg1_deleted" value="false")
 
             br
             h2 Секция 2
@@ -63,6 +64,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg2.dropify(type='file' name="imageBg2" data-default-file=(philosophies.imageBg2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg2_deleted" value="false")
 
             br
             h2 Секция 3
@@ -81,6 +83,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg3.dropify(type='file' name="imageBg3" data-default-file=(philosophies.imageBg3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg3_deleted" value="false")
 
             br
             h2 Секция 4
@@ -99,6 +102,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg4.dropify(type='file' name="imageBg4" data-default-file=(philosophies.imageBg4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg4_deleted" value="false")
 
             br
             h2 Секция 5
@@ -117,6 +121,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg5.dropify(type='file' name="imageBg5" data-default-file=(philosophies.imageBg5 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg5_deleted" value="false")
 
             br
             h2 Секция 5 - Музыка
@@ -134,7 +139,8 @@ block contents
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Иконка (40 X 40):
-                  input#imageBg5_1.dropify(type='file' name="imageBg5_1" data-default-file=(philosophies.imageBg5_1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+                  input#imageBg5_1.dropify(type='file' name="imageBg5_1" data-default-file=(philosophies.imageBg5_1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg+xml" data-max-file-size="1M")
+                  input(type="hidden" name="imageBg5_1_deleted" value="false")
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Текст при наведении:
@@ -156,7 +162,8 @@ block contents
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Иконка (40 X 40):
-                  input#imageBg5_2.dropify(type='file' name="imageBg5_2" data-default-file=(philosophies.imageBg5_2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+                  input#imageBg5_2.dropify(type='file' name="imageBg5_2" data-default-file=(philosophies.imageBg5_2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg+xml" data-max-file-size="1M")
+                  input(type="hidden" name="imageBg5_2_deleted" value="false")
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Текст при наведении:
@@ -178,7 +185,8 @@ block contents
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Иконка (40 X 40):
-                  input#imageBg5_3.dropify(type='file' name="imageBg5_3" data-default-file=(philosophies.imageBg5_3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+                  input#imageBg5_3.dropify(type='file' name="imageBg5_3" data-default-file=(philosophies.imageBg5_3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg+xml" data-max-file-size="1M")
+                  input(type="hidden" name="imageBg5_3_deleted" value="false")
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Текст при наведении:
@@ -200,7 +208,8 @@ block contents
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Иконка (40 X 40):
-                  input#imageBg5_4.dropify(type='file' name="imageBg5_4" data-default-file=(philosophies.imageBg5_4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg" data-max-file-size="1M")
+                  input#imageBg5_4.dropify(type='file' name="imageBg5_4" data-default-file=(philosophies.imageBg5_4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp,image/svg+xml" data-max-file-size="1M")
+                  input(type="hidden" name="imageBg5_4_deleted" value="false")
               .col-sm-6.col-sx-12
                 .form-group
                   label.control-label Текст при наведении:
@@ -218,6 +227,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg6.dropify(type='file' name="imageBg6" data-default-file=(philosophies.imageBg6 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg6_deleted" value="false")
             .row
               .col-sm-4.col-sx-12
                 .form-group
@@ -244,6 +254,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg7.dropify(type='file' name="imageBg7" data-default-file=(philosophies.imageBg7 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg7_deleted" value="false")
             .row
               .col-sm-4.col-sx-12
                 .form-group
@@ -270,6 +281,7 @@ block contents
                 .form-group
                   label.control-label Фоновое изображение (1920 X 1080):
                   input#imageBg8.dropify(type='file' name="imageBg8" data-default-file=(philosophies.imageBg8 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg8_deleted" value="false")
             .row
               .col-sm-6.col-sx-12
                 .form-group

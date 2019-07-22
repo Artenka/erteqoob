@@ -171,69 +171,118 @@ router.post('/philosophy', function (req, res) {
             philosophies.title8 = req.body.title8;
             philosophies.btn8 = req.body.btn8;
 
-            console.log(req.files);
+            // console.log(req.files);
 
-            var newPath;
-            if (req.files.imageBg1) {
-              newPath = req.files.imageBg1[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg1 = newPath.replace('public', '');
+            var newPath, fieldname;
+            if (req.body.imageBg1_deleted == 'false') {
+              if (req.files.imageBg1) {
+                newPath = req.files.imageBg1[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg1 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg1 = '';
             }
-            if (req.files.imageBg2) {
-              newPath = req.files.imageBg2[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg2 = newPath.replace('public', '');
+            if (req.body.imageBg2_deleted == 'false') {
+              if (req.files.imageBg2) {
+                newPath = req.files.imageBg2[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg2 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg2 = '';
             }
-            if (req.files.imageBg3) {
-              newPath = req.files.imageBg3[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg3 = newPath.replace('public', '');
+            if (req.body.imageBg3_deleted == 'false') {
+              if (req.files.imageBg3) {
+                newPath = req.files.imageBg3[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg3 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg3 = '';
             }
-            if (req.files.imageBg4) {
-              newPath = req.files.imageBg4[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg4 = newPath.replace('public', '');
+            if (req.body.imageBg4_deleted == 'false') {
+              if (req.files.imageBg4) {
+                newPath = req.files.imageBg4[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg4 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg4 = '';
             }
-            if (req.files.imageBg5) {
-              newPath = req.files.imageBg5[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg5 = newPath.replace('public', '');
+            if (req.body.imageBg5_deleted == 'false') {
+              if (req.files.imageBg5) {
+                newPath = req.files.imageBg5[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg5 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg5 = '';
             }
-            if (req.files.imageBg5_1) {
-              newPath = req.files.imageBg5_1[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg5_1 = newPath.replace('public', '');
+            if (req.body.imageBg5_1_deleted == 'false') {
+              if (req.files.imageBg5_1) {
+                newPath = req.files.imageBg5_1[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg5_1 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg5_1 = '';
             }
-            if (req.files.imageBg5_2) {
-              newPath = req.files.imageBg5_2[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg5_2 = newPath.replace('public', '');
+            if (req.body.imageBg5_2_deleted == 'false') {
+              if (req.files.imageBg5_2) {
+                newPath = req.files.imageBg5_2[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg5_2 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg5_2 = '';
             }
-            if (req.files.imageBg5_3) {
-              newPath = req.files.imageBg5_3[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg5_3 = newPath.replace('public', '');
+            if (req.body.imageBg5_3_deleted == 'false') {
+              if (req.files.imageBg5_3) {
+                newPath = req.files.imageBg5_3[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg5_3 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg5_3 = '';
             }
-            if (req.files.imageBg5_4) {
-              newPath = req.files.imageBg5_4[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg5_4 = newPath.replace('public', '');
+            if (req.body.imageBg5_4_deleted == 'false') {
+              if (req.files.imageBg5_4) {
+                newPath = req.files.imageBg5_4[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg5_4 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg5_4 = '';
             }
-            if (req.files.imageBg6) {
-              newPath = req.files.imageBg6[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg6 = newPath.replace('public', '');
+            if (req.body.imageBg6_deleted == 'false') {
+              if (req.files.imageBg6) {
+                newPath = req.files.imageBg6[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg6 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg6 = '';
             }
-            if (req.files.imageBg7) {
-              newPath = req.files.imageBg7[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg7 = newPath.replace('public', '');
+            if (req.body.imageBg7_deleted == 'false') {
+              if (req.files.imageBg7) {
+                newPath = req.files.imageBg7[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg7 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg7 = '';
             }
-            if (req.files.imageBg8) {
-              newPath = req.files.imageBg8[0].path;
-              newPath = newPath.split('\\').join('/');
-              philosophies.imageBg8 = newPath.replace('public', '');
+            if (req.body.imageBg8_deleted == 'false') {
+              if (req.files.imageBg8) {
+                newPath = req.files.imageBg8[0].path;
+                newPath = newPath.split('\\').join('/');
+                philosophies.imageBg8 = newPath.replace('public', '');
+              }
+            } else {
+              philosophies.imageBg8 = '';
             }
+
 
             philosophies.save(function (err, item) {
               if (err) {
