@@ -1,7 +1,10 @@
 section.section-layout.home-system-layout
+  if homepages.imageBg4 != ''
+    div.section-bg(style="background-image: url(#{homepages.imageBg4})")
   div.home-system
     div.page-title-big-layout.home-system__title-layout
-      h1.page-title-big.home-system__title Система обучения<br> с собственным<br class="br-lg br-sm"> характером
+      h1.page-title-big.home-system__title #{homepages.title4}
+      //h1.page-title-big.home-system__title Система обучения<br> с собственным<br class="br-lg br-sm"> характером
     div.home-system__lists-layout
       .home-system__logo
       .home-system__line.home-system__line--1
@@ -10,20 +13,24 @@ section.section-layout.home-system-layout
       div.home-system__lists
         ul.home-system-list
           li.home-system-list__item
-            div.home-system-list__item-text Обучение основам,<br> возможность применять<br> новые навыки в салоне,<br> продолжая учиться
+            div.home-system-list__item-text #{homepages.text4_1}
+            //div.home-system-list__item-text Обучение основам,<br> возможность применять<br> новые навыки в салоне,<br> продолжая учиться
               .home-system-list__item-text-line-layout
                 .home-system-list__item-text-line
           li.home-system-list__item
-            div.home-system-list__item-text Умение видеть и создавать<br> наилучший вариант<br> стрижки для клиента<br> по его параметрам
+            div.home-system-list__item-text #{homepages.text4_2}
+            //div.home-system-list__item-text Умение видеть и создавать<br> наилучший вариант<br> стрижки для клиента<br> по его параметрам
               .home-system-list__item-text-line-layout
                 .home-system-list__item-text-line
         ul.home-system-list
           li.home-system-list__item
-            div.home-system-list__item-text оттачивание<br> безукоризненного вкуса,<br> чувства стиля,<br> творческого потенциала
+            div.home-system-list__item-text #{homepages.text4_3}
+            //div.home-system-list__item-text оттачивание<br> безукоризненного вкуса,<br> чувства стиля,<br> творческого потенциала
               .home-system-list__item-text-line-layout
                 .home-system-list__item-text-line
           li.home-system-list__item
-            div.home-system-list__item-text пополнение арсенала<br> авторскими технологиями,<br> приобретение<br> индивидуального почерка
+            div.home-system-list__item-text #{homepages.text4_4}
+            //div.home-system-list__item-text пополнение арсенала<br> авторскими технологиями,<br> приобретение<br> индивидуального почерка
               .home-system-list__item-text-line-layout
                 .home-system-list__item-text-line
     div.home-system__link-layout

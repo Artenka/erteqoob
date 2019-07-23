@@ -1,14 +1,25 @@
 var nodemailer = require('nodemailer');
 var eLogger = require('../lib/logger').eLogger;
 
-var Contacts = require('../models/contacts').Contacts;
+var Homepages = require('../models/homepages').Homepages;
 var Philosophies = require('../models/philosophies').Philosophies;
+var Contacts = require('../models/contacts').Contacts;
 
 
 module.exports = function (app, passport) {
 
   app.get('/', function(req, res, next) {
-    res.render('pages/home');
+    Homepages.findOne({homepages_id: 1})
+      .exec(function (err, homepages) {
+        if (!err && homepages) {
+          res.render('pages/home', {
+            homepages: homepages
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
 
   app.get('/philosophy', function(req, res, next) {

@@ -1,20 +1,37 @@
 section.section-layout.home-think-layout
+  if homepages.imageBg1 != ''
+    div.section-bg(style="background-image: url(#{homepages.imageBg1})")
   ul.home-think
     li.home-think__item
-      img(src="img/client/home/home-think-1.png").home-think__item-bg
+      if homepages.image1_1 == ''
+        img(src="img/client/home/home-think-1.png").home-think__item-bg
+      else
+        img(src="#{homepages.image1_1}").home-think__item-bg
       div.home-think__item-title-layout
-        h1.home-think__item-title Мы
+        h1.home-think__item-title #{homepages.title1_1}
+        //h1.home-think__item-title Мы
       div.home-think__item-text-layout
-        p.home-think__item-text инновационны<br> и  самобытны
+        p.home-think__item-text #{homepages.subtitle1_1}
+        //p.home-think__item-text инновационны<br> и  самобытны
     li.home-think__item
-      img(src="img/client/home/home-think-2.png").home-think__item-bg
+      if homepages.image1_2 == ''
+        img(src="img/client/home/home-think-2.png").home-think__item-bg
+      else
+        img(src="#{homepages.image1_2}").home-think__item-bg
       div.home-think__item-title-layout
-        h1.home-think__item-title Учим
+        h1.home-think__item-title #{homepages.title1_2}
+        //h1.home-think__item-title Учим
       div.home-think__item-text-layout
-        p.home-think__item-text безукоризненному<br> чувству<br> стиля
+        p.home-think__item-text #{homepages.subtitle1_2}
+        //p.home-think__item-text безукоризненному<br> чувству<br> стиля
     li.home-think__item
-      img(src="img/client/home/home-think-3.png").home-think__item-bg
+      if homepages.image1_3 == ''
+        img(src="img/client/home/home-think-3.png").home-think__item-bg
+      else
+        img(src="#{homepages.image1_3}").home-think__item-bg
       div.home-think__item-title-layout
-        h1.home-think__item-title Думать
+        h1.home-think__item-title #{homepages.title1_3}
+        //h1.home-think__item-title Думать
       div.home-think__item-text-layout
-        p.home-think__item-text как создатель<br> образов жизни
+        p.home-think__item-text #{homepages.subtitle1_3}
+        //p.home-think__item-text как создатель<br> образов жизни

@@ -1,0 +1,284 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Домашняя страница
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/pages') Страницы
+              li.active Домашняя страница
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/pages/homepage' enctype='multipart/form-data')
+            br
+            h2 Секция 1
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg1.dropify(type='file' name="imageBg1" data-default-file=(homepages.imageBg1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg1_deleted" value="false")
+
+            br
+            h2 Секция 1 - Блок 1
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1_1' rows="2")!= homepages.title1_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle1_1' rows="2")!= homepages.subtitle1_1
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение (415 X 424):
+                  input#image1_1.dropify(type='file' name="image1_1" data-default-file=(homepages.image1_1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="image1_1_deleted" value="false")
+
+            br
+            h2 Секция 1 - Блок 2
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1_2' rows="2")!= homepages.title1_2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle1_2' rows="2")!= homepages.subtitle1_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение (415 X 424):
+                  input#image1_2.dropify(type='file' name="image1_2" data-default-file=(homepages.image1_2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="image1_2_deleted" value="false")
+
+            br
+            h2 Секция 1 - Блок 3
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1_3' rows="2")!= homepages.title1_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle1_3' rows="2")!= homepages.subtitle1_3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение (415 X 424):
+                  input#image1_3.dropify(type='file' name="image1_3" data-default-file=(homepages.image1_3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="image1_3_deleted" value="false")
+
+            br
+            h2 Секция 2
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title2' rows="9")!= homepages.title2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg2.dropify(type='file' name="imageBg2" data-default-file=(homepages.imageBg2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg2_deleted" value="false")
+
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок 1:
+                  textarea.form-control(name='subtitle2_1' rows="2")!= homepages.subtitle2_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок 2:
+                  textarea.form-control(name='subtitle2_2' rows="2")!= homepages.subtitle2_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок 3:
+                  textarea.form-control(name='subtitle2_3' rows="2")!= homepages.subtitle2_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок 4:
+                  textarea.form-control(name='subtitle2_4' rows="2")!= homepages.subtitle2_4
+
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Цифра 1:
+                  textarea.form-control(name='number2_1' rows="2")!= homepages.number2_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок к цифре 1:
+                  textarea.form-control(name='numberSubtitle2_1' rows="2")!= homepages.numberSubtitle2_1
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Цифра 2:
+                  textarea.form-control(name='number2_2' rows="2")!= homepages.number2_2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок к цифре 2:
+                  textarea.form-control(name='numberSubtitle2_2' rows="2")!= homepages.numberSubtitle2_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Цифра 3:
+                  textarea.form-control(name='number2_3' rows="2")!= homepages.number2_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок к цифре 3:
+                  textarea.form-control(name='numberSubtitle2_3' rows="2")!= homepages.numberSubtitle2_3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Цифра 4:
+                  textarea.form-control(name='number2_4' rows="2")!= homepages.number2_4
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок к цифре 4:
+                  textarea.form-control(name='numberSubtitle2_4' rows="2")!= homepages.numberSubtitle2_4
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Цифра 5:
+                  textarea.form-control(name='number2_5' rows="2")!= homepages.number2_5
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок к цифре 5:
+                  textarea.form-control(name='numberSubtitle2_5' rows="2")!= homepages.numberSubtitle2_5
+
+            br
+            h2 Секция 3
+            br
+            .row
+              .col-sm-12.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title3' rows="2")!= homepages.title3
+
+            br
+            h2 Секция 3 - Преподаватель 1
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Имя / Фамилиия:
+                  textarea.form-control(name='name3_1' rows="2")!= homepages.name3_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Должность:
+                  textarea.form-control(name='position3_1' rows="2")!= homepages.position3_1
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фото преподавателя (690 X 1220):
+                  input#photo3_1.dropify(type='file' name="photo3_1" data-default-file=(homepages.photo3_1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="photo3_1_deleted" value="false")
+
+            br
+            h2 Секция 3 - Преподаватель 2
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Имя / Фамилиия:
+                  textarea.form-control(name='name3_2' rows="2")!= homepages.name3_2
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Должность:
+                  textarea.form-control(name='position3_2' rows="2")!= homepages.position3_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фото преподавателя (690 X 1220):
+                  input#photo3_2.dropify(type='file' name="photo3_2" data-default-file=(homepages.photo3_2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="photo3_2_deleted" value="false")
+
+            br
+            h2 Секция 3 - Преподаватель 3
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Имя / Фамилиия:
+                  textarea.form-control(name='name3_3' rows="2")!= homepages.name3_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Должность:
+                  textarea.form-control(name='position3_3' rows="2")!= homepages.position3_3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фото преподавателя (690 X 1220):
+                  input#photo3_3.dropify(type='file' name="photo3_3" data-default-file=(homepages.photo3_3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="photo3_3_deleted" value="false")
+
+            br
+            h2 Секция 4
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title4' rows="9")!= homepages.title4
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg4.dropify(type='file' name="imageBg4" data-default-file=(homepages.imageBg4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg4_deleted" value="false")
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текстовый блок 1:
+                  textarea.form-control(name='text4_1' rows="2")!= homepages.text4_1
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текстовый блок 2:
+                  textarea.form-control(name='text4_2' rows="2")!= homepages.text4_2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текстовый блок 3:
+                  textarea.form-control(name='text4_3' rows="2")!= homepages.text4_3
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Текстовый блок 4:
+                  textarea.form-control(name='text4_4' rows="2")!= homepages.text4_4
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade

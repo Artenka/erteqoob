@@ -1,14 +1,20 @@
 section.section-layout.home-founders-layout
-  h1.page-title.home-founders-title основатели академии
+  h1.page-title.home-founders-title #{homepages.title3}
+  //h1.page-title.home-founders-title основатели академии
   div.erteqoob-title.home-founders-subtitle
   ul.home-founders
     li.home-founder
-      div.home-founder__image
+      if homepages.photo3_1 == ''
+        div.home-founder__image
+      else
+        div.home-founder__image(style="background-image: url(#{homepages.photo3_1})")
       div.home-founder__preview
         div.home-founder__preview-position-layout
-          h2.home-founder__preview-position Form<br> Director
+          h2.home-founder__preview-position #{homepages.position3_1}
+          //h2.home-founder__preview-position Form<br> Director
         div.home-founder__preview-name-layout
-          h1.home-founder__preview-name Елена<br> Кузьмичева
+          h1.home-founder__preview-name #{homepages.name3_1}
+          //h1.home-founder__preview-name Елена<br> Кузьмичева
           div.home-founder__preview-name-line
         div.home-founder__preview-star-layout
           div.home-founder__preview-star
@@ -20,14 +26,20 @@ section.section-layout.home-founders-layout
             p.home-founder__inner-text В природе нет симметрии.
             p.home-founder__inner-text Истинная красота асимметрична»
         div.home-founder__inner-title-layout
-          h1.home-founder__inner-title Елена Кузьмичева
+          h1.home-founder__inner-title #{homepages.name3_1}
+          //h1.home-founder__inner-title Елена Кузьмичева
     li.home-founder
-      div.home-founder__image
+      if homepages.photo3_2 == ''
+        div.home-founder__image
+      else
+        div.home-founder__image(style="background-image: url(#{homepages.photo3_2})")
       div.home-founder__preview
         div.home-founder__preview-position-layout
-          h2.home-founder__preview-position Compose<br> Director
+          h2.home-founder__preview-position #{homepages.position3_2}
+          //h2.home-founder__preview-position Compose<br> Director
         div.home-founder__preview-name-layout
-          h1.home-founder__preview-name Андрей<br> Крупчинский
+          h1.home-founder__preview-name #{homepages.name3_2}
+          //h1.home-founder__preview-name Андрей<br> Крупчинский
           div.home-founder__preview-name-line
         div.home-founder__preview-star-layout
           div.home-founder__preview-star
@@ -39,14 +51,20 @@ section.section-layout.home-founders-layout
             p.home-founder__inner-text Стремитесь стать мастером
             p.home-founder__inner-text в каждой детали»
         div.home-founder__inner-title-layout
-          h1.home-founder__inner-title Андрей Крупчинский
+          h1.home-founder__inner-title #{homepages.name3_2}
+          //h1.home-founder__inner-title Андрей Крупчинский
     li.home-founder
-      div.home-founder__image
+      if homepages.photo3_3 == ''
+        div.home-founder__image
+      else
+        div.home-founder__image(style="background-image: url(#{homepages.photo3_3})")
       div.home-founder__preview
         div.home-founder__preview-position-layout
-          h2.home-founder__preview-position Frame<br> Director
+          h2.home-founder__preview-position #{homepages.position3_3}
+          //h2.home-founder__preview-position Frame<br> Director
         div.home-founder__preview-name-layout
-          h1.home-founder__preview-name Дмитрий<br> Кузьмичев
+          h1.home-founder__preview-name #{homepages.name3_3}
+          //h1.home-founder__preview-name Дмитрий<br> Кузьмичев
           div.home-founder__preview-name-line
         div.home-founder__preview-star-layout
           div.home-founder__preview-star
@@ -59,7 +77,8 @@ section.section-layout.home-founders-layout
             p.home-founder__inner-text адаптируются под клиента
             p.home-founder__inner-text индивидуально»
         div.home-founder__inner-title-layout
-          h1.home-founder__inner-title Дмитрий Кузьмичев
+          h1.home-founder__inner-title #{homepages.name3_3}
+          //h1.home-founder__inner-title Дмитрий Кузьмичев
 
 script.
   $(function(){
