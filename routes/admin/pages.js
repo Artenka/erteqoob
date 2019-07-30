@@ -3,6 +3,7 @@ var router = express.Router();
 
 var Homepages = require('../../models/homepages').Homepages;
 var Philosophies = require('../../models/philosophies').Philosophies;
+var Academy = require('../../models/academy').Academy;
 var Contacts = require('../../models/contacts').Contacts;
 
 var eLogger = require('../../lib/logger').eLogger;
@@ -26,6 +27,15 @@ const storageHomepages = multer.diskStorage({
 const storagePhilosophies = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, 'public/files/philosophies/');
+  },
+  filename: function (req, file, callback) {
+    var secs = new Date().getTime();
+    callback(null, secs + '_' + file.originalname.replace(/\s/g, '_'));
+  }
+});
+const storageAcademy = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, 'public/files/academy/');
   },
   filename: function (req, file, callback) {
     var secs = new Date().getTime();
@@ -440,6 +450,104 @@ router.post('/philosophy', function (req, res) {
                 });
               } else {
                 res.redirect('/admin/pages/philosophy');
+              }
+            });
+          }
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/admin/pages');
+      }
+    });
+});
+
+router.get('/academy', function (req, res) {
+  Academy.findOne({academy_id: 1})
+    .exec(function (err, academy) {
+      if (!err && academy) {
+        res.render('pages/admin/pages/admin-page-academy', {
+          user: req.user,
+          academy: academy
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/admin');
+      }
+    });
+});
+
+router.post('/academy', function (req, res) {
+  Academy.findOne({academy_id: 1})
+    .exec(function (err, academy) {
+      if (!err && academy) {
+        var uploadImage = multer({storage: storageAcademy}).fields([
+          {name: 'kyivGallery'},
+          {name: 'kharkivGallery'},
+        ]);
+
+        uploadImage(req, res, function (err) {
+          if (err) {
+            eLogger.error(err);
+            res.render('pages/admin/pages/admin-page-academy', {
+              user: req.user,
+              academy: academy,
+              message: err
+            });
+          } else {
+
+            var kyivGalleryList = [];
+            if(req.body.kyivGalleryPath) {
+              if(typeof req.body.kyivGalleryPath === 'string') {
+                kyivGalleryList.push(req.body.kyivGalleryPath);
+              } else {
+                kyivGalleryList = req.body.kyivGalleryPath.filter(function (el) {
+                  return el != '';
+                });
+              }
+            }
+            if (req.files.kyivGallery) {
+              req.files.kyivGallery.forEach(function (item, index) {
+                newPath = item.path;
+                newPath = newPath.split('\\').join('/');
+                newPath = newPath.replace('public', '');
+                kyivGalleryList.push(newPath);
+              });
+            }
+            academy.kyivGallery = kyivGalleryList;
+
+
+            var kharkivGalleryList = [];
+            if(req.body.kharkivGalleryPath) {
+              if(typeof req.body.kyivGalleryPath === 'string') {
+                kharkivGalleryList.push(req.body.kharkivGalleryPath);
+              } else {
+                kharkivGalleryList = req.body.kharkivGalleryPath.filter(function (el) {
+                  return el != '';
+                });
+              }
+
+            }
+            if (req.files.kharkivGallery) {
+              req.files.kharkivGallery.forEach(function (item, index) {
+                newPath = item.path;
+                newPath = newPath.split('\\').join('/');
+                newPath = newPath.replace('public', '');
+                kharkivGalleryList.push(newPath);
+              });
+            }
+            academy.kharkivGallery = kharkivGalleryList;
+
+
+            academy.save(function (err, item) {
+              if (err) {
+                eLogger.error(err);
+                res.render('pages/admin/pages/admin-page-academy', {
+                  user: req.user,
+                  academy: academy,
+                  message: 'Ошибка сохранения страницы Академии'
+                });
+              } else {
+                res.redirect('/admin/pages/academy');
               }
             });
           }

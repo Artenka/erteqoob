@@ -1,0 +1,170 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Академия
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/pages') Страницы
+              li.active Академия
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/pages/academy' enctype='multipart/form-data')
+            h2 Киев
+            br
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Галерея:
+            .row
+              #galleryBlockKyiv
+                if academy.kyivGallery != ''
+                  each item, index in academy.kyivGallery
+                    .col-sm-6.col-sx-12.m-b-20
+                      input(type="hidden" name="kyivGalleryPath" value="#{item}")
+                      input.dropify-gallery-kyiv(type='file' name="kyivGallery" data-default-file=(item || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                else
+                  .col-sm-6.col-sx-12.m-b-20
+                    input.dropify-gallery-kyiv(type='file' name="kyivGallery" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row.m-t-20
+              .col-sm-6.col-sx-12
+                button#addGalleryKyiv.btn.waves-effect.waves-light(type='button')
+                  span.btn-label
+                    i.fa.icon-plus
+                  | Добавить фотографию
+
+            br
+            h2 Харьков
+            br
+
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Галерея:
+
+            .row
+              #galleryBlockKharkiv
+                if academy.kharkivGallery != ''
+                  each item, index in academy.kharkivGallery
+                    .col-sm-6.col-sx-12.m-b-20
+                      input(type="hidden" name="kharkivGalleryPath" value="#{item}")
+                      input.dropify-gallery-kharkiv(type='file' name="kharkivGallery" data-default-file=(item || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                else
+                  .col-sm-6.col-sx-12.m-b-20
+                    input.dropify-gallery-kharkiv(type='file' name="kharkivGallery" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row.m-t-20
+              .col-sm-6.col-sx-12
+                button#addGalleryKharkiv.btn.waves-effect.waves-light(type='button')
+                  span.btn-label
+                    i.fa.icon-plus
+                  | Добавить фотографию
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade
+
+
+    script.
+      $(function () {
+        var dropifyGalleryKyiv = $('.dropify-gallery-kyiv').dropify({
+          messages: {
+            default: 'Перетащите файл сюда или нажмите',
+            replace: 'Перетащите файл сюда или нажмите для изменения',
+            remove: 'Удалить',
+            error: 'К сожалению, файл слишком большой'
+          },
+          error: {
+            'fileSize': 'Размер файла слишком большой ({{ value }} max).'
+          }
+        });
+
+        dropifyGalleryKyiv.on('dropify.afterClear', function (event, element) {
+          $('input[name="kyivGalleryPath"][value="' + $(element)[0]['element']['dataset']['defaultFile'] + '"]').val('');
+        });
+
+        $("input[type=file].dropify-gallery-kyiv").on('change', function () {
+          $('input[name="kyivGalleryPath"][value="' + $(this).data('default-file') + '"]').val('');
+        });
+
+        $(document).on('click', '#addGalleryKyiv', function () {
+          $(this).closest('.row').prev('.row').find('#galleryBlockKyiv').append(
+                  '<div class="col-sm-6 col-sx-12 m-b-20"><input class="dropify-gallery" type="file" name="kyivGallery" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M" /></div>'
+          );
+
+          var dropifyGalleryKyiv = $('.dropify-gallery').dropify({
+            messages: {
+              default: 'Перетащите файл сюда или нажмите',
+              replace: 'Перетащите файл сюда или нажмите для изменения',
+              remove: 'Удалить',
+              error: 'К сожалению, файл слишком большой'
+            },
+            error: {
+              'fileSize': 'Размер файла слишком большой ({{ value }} max).'
+            }
+          });
+        });
+      });
+
+
+    script.
+      $(function () {
+        var dropifyGalleryKharkiv = $('.dropify-gallery-kharkiv').dropify({
+          messages: {
+            default: 'Перетащите файл сюда или нажмите',
+            replace: 'Перетащите файл сюда или нажмите для изменения',
+            remove: 'Удалить',
+            error: 'К сожалению, файл слишком большой'
+          },
+          error: {
+            'fileSize': 'Размер файла слишком большой ({{ value }} max).'
+          }
+        });
+
+        dropifyGalleryKharkiv.on('dropify.afterClear', function (event, element) {
+          $('input[name="kharkivGalleryPath"][value="' + $(element)[0]['element']['dataset']['defaultFile'] + '"]').val('');
+        });
+
+        $("input[type=file].dropify-gallery-kharkiv").on('change', function () {
+          $('input[name="kharkivGalleryPath"][value="' + $(this).data('default-file') + '"]').val('');
+        });
+
+        $(document).on('click', '#addGalleryKharkiv', function () {
+          $(this).closest('.row').prev('.row').find('#galleryBlockKharkiv').append(
+                  '<div class="col-sm-6 col-sx-12 m-b-20"><input class="dropify-gallery" type="file" name="kharkivGallery" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M" /></div>'
+          );
+
+          var dropifyGalleryKharkiv = $('.dropify-gallery').dropify({
+            messages: {
+              default: 'Перетащите файл сюда или нажмите',
+              replace: 'Перетащите файл сюда или нажмите для изменения',
+              remove: 'Удалить',
+              error: 'К сожалению, файл слишком большой'
+            },
+            error: {
+              'fileSize': 'Размер файла слишком большой ({{ value }} max).'
+            }
+          });
+        });
+      });

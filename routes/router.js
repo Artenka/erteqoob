@@ -3,6 +3,7 @@ var eLogger = require('../lib/logger').eLogger;
 
 var Homepages = require('../models/homepages').Homepages;
 var Philosophies = require('../models/philosophies').Philosophies;
+var Academy = require('../models/academy').Academy;
 var Contacts = require('../models/contacts').Contacts;
 
 
@@ -36,7 +37,17 @@ module.exports = function (app, passport) {
       });
   });
   app.get('/academy', function(req, res, next) {
-    res.render('pages/academy');
+    Academy.findOne({academy_id: 1})
+      .exec(function (err, academy) {
+        if (!err && academy) {
+          res.render('pages/academy', {
+            academy: academy
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
   app.get('/collections', function(req, res, next) {
     res.render('pages/collections');
