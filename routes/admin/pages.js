@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var Homepages = require('../../models/homepages').Homepages;
-var Contacts = require('../../models/contacts').Contacts;
 var Philosophies = require('../../models/philosophies').Philosophies;
+var Contacts = require('../../models/contacts').Contacts;
 
 var eLogger = require('../../lib/logger').eLogger;
 
@@ -26,6 +26,15 @@ const storageHomepages = multer.diskStorage({
 const storagePhilosophies = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, 'public/files/philosophies/');
+  },
+  filename: function (req, file, callback) {
+    var secs = new Date().getTime();
+    callback(null, secs + '_' + file.originalname.replace(/\s/g, '_'));
+  }
+});
+const storageContacts = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, 'public/files/contacts/');
   },
   filename: function (req, file, callback) {
     var secs = new Date().getTime();
@@ -458,43 +467,101 @@ router.get('/contacts', function (req, res) {
 });
 
 router.post('/contacts', function (req, res) {
-  Contacts.findOne({contacts_id: 1}, function (err, contacts) {
-    if (!err && contacts) {
-      contacts.title1 = req.body.title1;
-      contacts.title2 = req.body.title2;
+  Contacts.findOne({contacts_id: 1})
+    .exec(function (err, contacts) {
+      if (!err && contacts) {
+        var uploadImage = multer({storage: storageContacts}).fields([
+          {name: 'kyivGallery'},
+          {name: 'kharkivGallery'},
+        ]);
 
-      contacts.kyivAddress = req.body.kyivAddress;
-      contacts.kyivPhone1 = req.body.kyivPhone1;
-      contacts.kyivPhone2 = req.body.kyivPhone2;
-      contacts.kyivTime1 = req.body.kyivTime1;
-      contacts.kyivTime2 = req.body.kyivTime2;
+        uploadImage(req, res, function (err) {
+          if (err) {
+            eLogger.error(err);
+            res.render('pages/admin/pages/admin-page-contacts', {
+              user: req.user,
+              contacts: contacts,
+              message: err
+            });
+          } else {
+            contacts.title1 = req.body.title1;
+            contacts.title2 = req.body.title2;
 
-      contacts.kharkivAddress = req.body.kharkivAddress;
-      contacts.kharkivPhone1 = req.body.kharkivPhone1;
-      contacts.kharkivPhone2 = req.body.kharkivPhone2;
-      contacts.kharkivTime1 = req.body.kharkivTime1;
-      contacts.kharkivTime2 = req.body.kharkivTime2;
+            contacts.kyivAddress = req.body.kyivAddress;
+            contacts.kyivPhone1 = req.body.kyivPhone1;
+            contacts.kyivPhone2 = req.body.kyivPhone2;
+            contacts.kyivTime1 = req.body.kyivTime1;
+            contacts.kyivTime2 = req.body.kyivTime2;
 
-      contacts.save(function (err, item) {
-        if (err) {
-          eLogger.error(err);
-          res.render('pages/admin/pages/admin-page-contacts', {
-            user: req.user,
-            contacts: contacts,
-            message: 'Ошибка сохранения страницы Контактов'
-          });
-        } else {
-          res.redirect('/admin/pages');
-        }
-      });
-    } else {
-      eLogger.error(err);
-      res.render('pages/admin/pages/admin-page-contacts', {
-        user: req.user,
-        message: 'Ошибка загрузки страницы Контактов'
-      });
-    }
-  });
+            contacts.kharkivAddress = req.body.kharkivAddress;
+            contacts.kharkivPhone1 = req.body.kharkivPhone1;
+            contacts.kharkivPhone2 = req.body.kharkivPhone2;
+            contacts.kharkivTime1 = req.body.kharkivTime1;
+            contacts.kharkivTime2 = req.body.kharkivTime2;
+
+
+            var kyivGalleryList = [];
+            if(req.body.kyivGalleryPath) {
+              if(typeof req.body.kyivGalleryPath === 'string') {
+                kyivGalleryList.push(req.body.kyivGalleryPath);
+              } else {
+                kyivGalleryList = req.body.kyivGalleryPath.filter(function (el) {
+                  return el != '';
+                });
+              }
+            }
+            if (req.files.kyivGallery) {
+              req.files.kyivGallery.forEach(function (item, index) {
+                newPath = item.path;
+                newPath = newPath.split('\\').join('/');
+                newPath = newPath.replace('public', '');
+                kyivGalleryList.push(newPath);
+              });
+            }
+            contacts.kyivGallery = kyivGalleryList;
+
+
+            var kharkivGalleryList = [];
+            if(req.body.kharkivGalleryPath) {
+              if(typeof req.body.kyivGalleryPath === 'string') {
+                kharkivGalleryList.push(req.body.kharkivGalleryPath);
+              } else {
+                kharkivGalleryList = req.body.kharkivGalleryPath.filter(function (el) {
+                  return el != '';
+                });
+              }
+
+            }
+            if (req.files.kharkivGallery) {
+              req.files.kharkivGallery.forEach(function (item, index) {
+                newPath = item.path;
+                newPath = newPath.split('\\').join('/');
+                newPath = newPath.replace('public', '');
+                kharkivGalleryList.push(newPath);
+              });
+            }
+            contacts.kharkivGallery = kharkivGalleryList;
+
+
+            contacts.save(function (err, item) {
+              if (err) {
+                eLogger.error(err);
+                res.render('pages/admin/pages/admin-page-contacts', {
+                  user: req.user,
+                  contacts: contacts,
+                  message: 'Ошибка сохранения страницы Контактов'
+                });
+              } else {
+                res.redirect('/admin/pages/contacts');
+              }
+            });
+          }
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/admin/pages');
+      }
+    });
 });
 
 module.exports = router;

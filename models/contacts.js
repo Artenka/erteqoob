@@ -14,12 +14,14 @@ var contactsSchema = new Schema({
   kyivPhone2:  {type: String},
   kyivTime1:  {type: String},
   kyivTime2:  {type: String},
+  kyivGallery:  [],
 
   kharkivAddress:  {type: String},
   kharkivPhone1:  {type: String},
   kharkivPhone2:  {type: String},
   kharkivTime1:  {type: String},
   kharkivTime2:  {type: String},
+  kharkivGallery:  [],
 
 });
 

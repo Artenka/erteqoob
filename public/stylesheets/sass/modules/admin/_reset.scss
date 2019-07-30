@@ -42,6 +42,14 @@ body, h1, h2, h3, h4, h5, h6 {
   background: #fff;
   color: #000;
  }
+
+ .btn-label {
+  background: transparent;
+  font-size: 16px;
+  margin: 0 0 0 -25px;
+  position: relative;
+  top: 2px;
+ }
 }
 .form-control {
  height: auto;
@@ -1293,4 +1301,11 @@ hr.hr-material-dashed {
   white-space: pre-wrap;
   line-height: inherit;
  }
+}
+
+.dropzone .dz-preview .dz-image {
+ border-radius: 0;
+}
+.dropzone .dz-preview.dz-error .dz-error-message {
+ display: none;
 }

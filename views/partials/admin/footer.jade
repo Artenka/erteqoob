@@ -33,6 +33,7 @@ script(src='/js/pages/admin-material/custom.min.js')
 script(src='/plugins/bower_components/styleswitcher/jQuery.style.switcher.js')
 
 script(src='/plugins/bower_components/dropify/dist/js/dropify.min.js')
+script(src='/plugins/bower_components/dropzone-master/dist/dropzone.js')
 
 
 script.
@@ -58,9 +59,11 @@ script.
       }
     });
 
+    $("input[type=file].dropify").on('change', function () {
+      $('input[name=' + $(this).attr('name') + '_deleted]').val('false');
+    });
     dropify.on('dropify.afterClear', function (event, element) {
-      console.log($(element)[0]['element']['id']);
-      $('input[name=' + $(element)[0]['element']['id'] + '_deleted]').val('true');
+      $('input[name=' + $(element)[0]['element']['name'] + '_deleted]').val('true');
     });
   });
 
