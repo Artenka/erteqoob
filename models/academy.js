@@ -6,6 +6,9 @@ var Schema = mongoose.Schema;
 var academySchema = new Schema({
   academy_id : {type: Number, unique: true},
 
+  title5:  {type: String},
+  subtitle5:  {type: String},
+  imageBg5: {type: String},
   kyivGallery:  [],
   kharkivGallery:  [],
 

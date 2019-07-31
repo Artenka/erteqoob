@@ -481,6 +481,7 @@ router.post('/academy', function (req, res) {
     .exec(function (err, academy) {
       if (!err && academy) {
         var uploadImage = multer({storage: storageAcademy}).fields([
+          {name: 'imageBg5', maxCount: 1},
           {name: 'kyivGallery'},
           {name: 'kharkivGallery'},
         ]);
@@ -494,6 +495,22 @@ router.post('/academy', function (req, res) {
               message: err
             });
           } else {
+
+            academy.title5 = req.body.title5;
+            academy.subtitle5 = req.body.subtitle5;
+
+
+            var newPath;
+            if (req.body.imageBg5_deleted == 'false') {
+              if (req.files.imageBg5) {
+                newPath = req.files.imageBg5[0].path;
+                newPath = newPath.split('\\').join('/');
+                academy.imageBg5 = newPath.replace('public', '');
+              }
+            } else {
+              academy.imageBg5 = '';
+            }
+
 
             var kyivGalleryList = [];
             if(req.body.kyivGalleryPath) {

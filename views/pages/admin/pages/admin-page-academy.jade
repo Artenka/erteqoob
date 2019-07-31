@@ -28,12 +28,28 @@ block contents
 
         .row
           form(method='post', action='/admin/pages/academy' enctype='multipart/form-data')
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5', rows="4")!= academy.title5
+              .col-sm-6.col-sx-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5' rows="4")!= academy.subtitle5
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg5.dropify(type='file' name="imageBg5" data-default-file=(academy.imageBg5 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg5_deleted" value="false")
+
             h2 Киев
             br
             .row
               .col-sm-6.col-sx-12
                 .form-group
-                  label.control-label Галерея:
+                  label.control-label Галерея (1280 X 755):
             .row
               #galleryBlockKyiv
                 if academy.kyivGallery != ''
@@ -58,7 +74,7 @@ block contents
             .row
               .col-sm-6.col-sx-12
                 .form-group
-                  label.control-label Галерея:
+                  label.control-label Галерея (1280 X 755):
 
             .row
               #galleryBlockKharkiv

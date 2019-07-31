@@ -1441,6 +1441,7 @@
    position: relative;
    top: 30px;
    opacity: 0;
+   white-space: pre-line;
    @include tablet {
     font-size: 23px;
     letter-spacing: 7.39px;
@@ -1476,6 +1477,7 @@
    position: relative;
    top: 200px;
    opacity: 0;
+   white-space: pre-line;
    @include tablet {
     font-size: 39px;
     letter-spacing: 11.75px;

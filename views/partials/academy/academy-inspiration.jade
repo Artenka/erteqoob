@@ -1,5 +1,9 @@
 section.section-layout.academy-inspiration
-  div.section-bg.academy-inspiration__bg
+  if academy.imageBg5 == ''
+    div.section-bg.academy-inspiration__bg
+  else
+    div.section-bg.academy-inspiration__bg(style="background-image: url(#{academy.imageBg5})")
+
   .circle-layout
     .circle.circle--1
     .circle.circle--2
@@ -7,14 +11,16 @@ section.section-layout.academy-inspiration
   div.academy-inspiration__main
     header.academy-inspiration__header
       div.academy-inspiration__subtitle-layout
-        h2.academy-inspiration__subtitle
-          | Мы сами создали<br class="br-md-sm"> своё творческое<br>
-          | пространство,<br class="br-md-sm"> в которое приглашаем<br>
-          | ищущих и горящих<br class="br-md-sm"> сердцем!
+        h2.academy-inspiration__subtitle #{academy.subtitle5}
+        //h2.academy-inspiration__subtitle
+        //  | Мы сами создали<br class="br-md-sm"> своё творческое<br>
+        //  | пространство,<br class="br-md-sm"> в которое приглашаем<br>
+        //  | ищущих и горящих<br class="br-md-sm"> сердцем!
       div.academy-inspiration__title-layout
-        h1.academy-inspiration__title
-          | Смотрите. Вдохновляйтесь.<br>
-          | Приходите.
+        h1.academy-inspiration__title #{academy.title5}
+        //h1.academy-inspiration__title
+        //  | Смотрите. Вдохновляйтесь.<br>
+        //  | Приходите.
     ul.academy-inspiration__city-btns
       li(data-slider='kiev').academy-inspiration__city-btn.academy-inspiration__city-btn--kiev.academy-inspiration__city-btn--active академия в киеве
       li(data-slider='kharkiv').academy-inspiration__city-btn.academy-inspiration__city-btn--kharkiv академия в харькове
