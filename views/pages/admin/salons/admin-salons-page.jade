@@ -1,0 +1,47 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Салоны
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li.active Салоны
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/salons')
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title', required='')!= salons.title
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle', required='')!= salons.subtitle
+
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade

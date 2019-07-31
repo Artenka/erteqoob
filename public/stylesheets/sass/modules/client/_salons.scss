@@ -233,6 +233,7 @@
  left: 0;
  z-index: 6;
  transition: 0.2s;
+ white-space: pre-line;
  @include laptop {
   top: calc(50% - 97px);
  }
@@ -268,6 +269,7 @@
  left: 0;
  z-index: 6;
  transition: 0.2s;
+ white-space: pre-line;
  @include laptop {
   top: calc(50% + 17px);
  }

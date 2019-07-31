@@ -3,7 +3,7 @@
 	.sidebar-nav.navbar-collapse.slimscrollsidebar
 		ul#side-menu.nav
 			li
-				a.waves-effect(href='/admin/admins')
+				a.waves-effect(href='/admin/pages')
 					i.ti-book
 					span.hide-menu
 						| Страницы
@@ -17,6 +17,16 @@
 						a(href='/admin/pages/academy') Академия
 					li
 						a(href='/admin/pages/contacts') Контакты
+
+			li
+				a.waves-effect(href='/admin/admins')
+					i.fa.fa-scissors
+					span.hide-menu
+						| Салоны
+						span.fa.arrow
+				ul.nav.nav-second-level
+					li
+						a(href='/admin/salons') Обшая страница
 
 			li
 				a.waves-effect(href='/admin/admins')

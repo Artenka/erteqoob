@@ -6,6 +6,8 @@ var Philosophies = require('../models/philosophies').Philosophies;
 var Academy = require('../models/academy').Academy;
 var Contacts = require('../models/contacts').Contacts;
 
+var Salons = require('../models/salons/salons').Salons;
+
 
 module.exports = function (app, passport) {
 
@@ -62,7 +64,17 @@ module.exports = function (app, passport) {
     res.render('pages/splash');
   });
   app.get('/salons', function(req, res, next) {
-    res.render('pages/salons');
+    Salons.findOne({salons_id: 1})
+      .exec(function (err, salons) {
+        if (!err && salons) {
+          res.render('pages/salons', {
+            salons: salons
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
   app.get('/salons/kost', function(req, res, next) {
     res.render('pages/salon-kost');

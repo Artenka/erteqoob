@@ -161,6 +161,9 @@ if (cluster.isMaster) {
     var adminPages = require('./routes/admin/pages');
     app.use('/admin/pages', adminPages);
 
+    var adminSalons = require('./routes/admin/salons');
+    app.use('/admin/salons', adminSalons);
+
     // catch 404 and forward to error handler
     app.use(function(req, res, next) {
         var err = new Error('Not Found');
