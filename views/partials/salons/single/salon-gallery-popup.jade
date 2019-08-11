@@ -1,0 +1,27 @@
+#salon-gallery-popup.popup-layout.popup-layout--black
+  .photo-popup
+    .popup__close
+
+    ul.photo-popup-slider.academy-inspiration-popup__slider.academy-inspiration-popup__slider--active.slider-arrows-long.slider-arrows-long--edge.salon-gallery-popup-slider
+      each imagePath in salons.gallery
+        li.photo-popup-slide
+          .photo-popup-slide-layout
+            img(src="#{imagePath}")
+
+
+    script.
+      $(function () {
+        $('.salon-gallery-popup-slider').slick({
+          slidesToShow: 1,
+          speed: 800,
+          arrows: true,
+          dots: false,
+          draggable: true,
+          accessibility: false,
+          centerMode: true,
+          variableWidth: true,
+          infinite: true,
+          asNavFor: '.salon-gallery-slider',
+          swipeToSlide: true
+        });
+      });

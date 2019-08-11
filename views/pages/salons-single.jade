@@ -1,0 +1,62 @@
+extends ../layouts/main-client-salon.jade
+
+block contents
+  div.main-layout#salon
+    //include ../partials/link-home.jade
+    include ../partials/salons/single/salon-intro.jade
+    include ../partials/salons/single/salon-info.jade
+    include ../partials/salons/single/salon-teachers.jade
+    include ../partials/salons/single/salon-gallery.jade
+
+    .br-lg
+      include ../partials/footer-min.jade
+    .br-md-sm
+      include ../partials/footer.jade
+
+  include ../partials/scripts.jade
+
+  include ../partials/salons/single/salon-gallery-popup.jade
+  include ../partials/salons/single/salon-pricelist.jade
+
+  script.
+    $(function () {
+      // stupid bug fix(delete if possible)
+      //$('.main-layout').css('overflow', 'hidden');
+      //$('body, html').css('height', '100%');
+      $('.main, body, html').css('overflow', 'auto');
+
+      // salons init animations
+      fixedMenusInitAnimation();
+      TweenMax.to($('.main-layout .link-back'), 1, {opacity: 1, ease: Power1.easeOut});
+      TweenMax.to($('.main-layout .main-nav--cities'), 1, {opacity: 1, ease: Power1.easeOut});
+      TweenMax.to($('.main-layout .register-link'), 1, {opacity: 1, ease: Power1.easeOut});
+      TweenMax.to($('.main-layout .main-nav--socials'), 1, {opacity: 1, ease: Power1.easeOut});
+      TweenMax.to($('.main-layout .main-nav-toggle'), 1, {opacity: 1, ease: Power1.easeOut});
+      TweenMax.to($('#salon'), 1.2, {opacity: 1, ease: Power1.easeOut, delay: 0.2});
+
+      // salon gallery
+      $('.salon-gallery-slider').slick({
+        slidesToShow: 5,
+        speed: 800,
+        mobileFirst: true,
+        arrows: true,
+        dots: false,
+        draggable: true,
+        accessibility: false,
+        centerMode: true,
+        variableWidth: true,
+        adaptiveHeight: false,
+        infinite: true,
+        swipeToSlide: true,
+        asNavFor: '.salon-gallery-popup-slider'
+      });
+
+      $('.contacts-slide').click(function () {
+        setTimeout(function () {
+          $('.academy-inspiration-popup__slider').slick("setPosition");
+        }, 500)
+      });
+    });
+
+
+

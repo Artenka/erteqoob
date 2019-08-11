@@ -2,6 +2,11 @@ body, h1, h2, h3, h4, h5, h6 {
  font-family: Circe, sans-serif;
 }
 
+select.form-control {
+ -webkit-appearance: none;
+ background: url(../../img/icons/dropdown-icon.svg) no-repeat center right 14px / 20px, #353c48;
+}
+
 .logo {
  display: block;
  width: 220px;

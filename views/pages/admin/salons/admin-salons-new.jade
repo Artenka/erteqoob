@@ -1,0 +1,228 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Новый салон
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/admin/salons') Салоны
+              li.active Новый салон
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/salons/new' enctype='multipart/form-data')
+            .row
+              .col-xs-12
+                .form-group
+                  label Название салона:
+                  input.form-control(name='name', required='' value="")
+            .row
+              .col-xs-12
+                .form-group
+                  label Ссылка:
+                  input.form-control(name='path', required='' value="")
+            .row
+              .col-xs-12
+                .form-group
+                  label Город:
+                  input.form-control(name='city', required='' value="")
+            .row
+              .col-xs-12
+                .form-group
+                  label Адрес на общей странице:
+                  textarea.form-control(name='address', required='')
+            .row
+              .col-xs-12
+                .form-group
+                  label Телефоны на общей странице:
+                  textarea.form-control(name='phones', required='')
+
+            br
+            br
+            h2 Секция 1
+            br
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1', required='')
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle1', required='')
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Расположение карты:
+                  select.form-control(name='map_position', required='')
+                    option(value="left") Слева
+                    option(value="right") Справа
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение карты - десктоп версия (1360 X 1090):
+                  input#map.dropify(type='file' name="map" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="map_deleted" value="false")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение карты - мобильная версия (640 X 750):
+                  input#map_mobile.dropify(type='file' name="map_mobile" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="map_mobile_deleted" value="false")
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение салона - десктоп версия (1360 X 1090):
+                  input#imageBg1.dropify(type='file' name="imageBg1" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg1_deleted" value="false")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Изображение салона - мобильная версия (640 X 750):
+                  input#imageBg1_mobile.dropify(type='file' name="imageBg1_mobile" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg1_mobile_deleted" value="false")
+
+            br
+            br
+            h2 Секция 2
+            br
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Заголовок 1 (телефон):
+                  textarea.form-control(name='title2_1')
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Заголовок 2 (график работы):
+                  textarea.form-control(name='title2_2')
+
+            .row
+              .col-sm-4.col-xs-12
+                .form-group
+                  label Телефон 1:
+                  textarea.form-control(name='phone1')
+              .col-sm-4.col-xs-12
+                .form-group
+                  label Телефон 2:
+                  textarea.form-control(name='phone2')
+              .col-sm-4.col-xs-12
+                .form-group
+                  label Телефон 3:
+                  textarea.form-control(name='phone3')
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label График работы:
+                  textarea.form-control(name='schedule')
+
+
+            br
+            br
+            h2 Секция 3
+            br
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title3')
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle3')
+
+            br
+            br
+            h2 Мастера
+            br
+
+            #teachersBlock
+              .panel.panel-default
+                .panel-heading
+                  | &nbsp;
+                  .panel-action
+                    a(href="#" data-perform="panel-collapse")
+                      i.ti-minus
+                    a(href="#" data-perform="panel-dismiss")
+                      i.ti-close
+                .panel-wrapper.collapse.in(aria-expanded="true")
+                  .panel-body
+                    .row
+                      .col-sm-6.col-xs-12
+                        .form-group
+                          label Имя:
+                          textarea.form-control(name='teachers_name')
+                      .col-sm-6.col-xs-12
+                        .form-group
+                          label Должность:
+                          textarea.form-control(name='teachers_position')
+                    .row
+                      .col-sm-6.col-xs-12
+                        .form-group
+                          label Фейсбук:
+                          textarea.form-control(name='teachers_fb')
+                      .col-sm-6.col-xs-12
+                        .form-group
+                          label Инстаграм:
+                          textarea.form-control(name='teachers_in')
+                    .row
+                      .col-sm-6.col-sx-12
+                        .form-group
+                          label.control-label Фотография (300 X 450):
+                          input(type="hidden" name="teachersPath" value="")
+                          input.dropify-teachers(type='file' name="teachers_photo" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                          input(type="hidden" name="teachers_deleted" value="false")
+
+            .row.m-t-20
+              .col-sm-6.col-sx-12
+                button#addTeachers.btn.waves-effect.waves-light(type='button')
+                  span.btn-label
+                    i.fa.icon-plus
+                  | Добавить мастера
+
+
+            br
+            br
+            h2 Галерея <small>(1280 X 755)</small>:
+            br
+
+            .row
+              #galleryBlock
+                .col-sm-6.col-sx-12.m-b-20
+                  input.dropify-gallery(type='file' name="gallery" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+            .row.m-t-20
+              .col-sm-6.col-sx-12
+                button#addGallery.btn.waves-effect.waves-light(type='button')
+                  span.btn-label
+                    i.fa.icon-plus
+                  | Добавить фотографию
+
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade
+
+    script(src="/js/pages/admin/admin-salons-edit.js")

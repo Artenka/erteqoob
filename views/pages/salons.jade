@@ -15,84 +15,119 @@ block contents
       .circle.salons-circle.salons-circle--3
 
     .salons-logo
-    h1.salons-title #{salons.title}
+    h1.salons-title #{salonpages.title}
     //h1.salons-title салоны
-    h2.salons-subtitle #{salons.subtitle}
+    h2.salons-subtitle #{salonpages.subtitle}
     //h2.salons-subtitle настоящий комфорт<br> для создания уникального<br> образа
 
     p.salons-info__exit выбрать другой<br> салон
     .salons-info
-      .salons-info__item.salons-info__item--kost
-        h1.salons-title.salons-info__title салон
-        p.salons-info__text в киеве<br> на улице костельной,<br> 9
-      .salons-info__item.salons-info__item--vlad
-        h1.salons-title.salons-info__title салон
-        p.salons-info__text в киеве<br> на улице владимирской,<br> 49 А
-      .salons-info__item.salons-info__item--nval
-        h1.salons-title.salons-info__title салон
-        p.salons-info__text в харькове<br> на улице культуры,<br> 3
+      each salon, index in salons
+        .salons-info__item
+          h1.salons-title.salons-info__title салон
+          p.salons-info__text в #{salon.city}<br> #{salon.address}
+
+    //.salons-info
+    //  .salons-info__item.salons-info__item--kost
+    //    h1.salons-title.salons-info__title салон
+    //    p.salons-info__text в киеве<br> на улице костельной,<br> 9
+    //  .salons-info__item.salons-info__item--vlad
+    //    h1.salons-title.salons-info__title салон
+    //    p.salons-info__text в киеве<br> на улице владимирской,<br> 49 А
+    //  .salons-info__item.salons-info__item--nval
+    //    h1.salons-title.salons-info__title салон
+    //    p.salons-info__text в харькове<br> на улице культуры,<br> 3
 
     .salons-btns
-      a(href="/salons/vlad").salons-btn.salons-btn--kost
-        h3 киев
-        p
-          | ул. владимирская<br class="br-lg"> <span class="inline-md-sm">/</span>
-          | 49 А
-          br.br-lg-md
-          br.br-lg-md
-          span.salons-btn__phones
-            | 067 705 57 57<br>
-            | 099 315 04 05
-      a(href="/salons/kost").salons-btn.salons-btn--vlad
-        h3 киев
-        p
-          | ул. костельная<br class="br-lg"> <span class="inline-md-sm">/</span>
-          | 9
-          br.br-lg-md
-          br.br-lg-md
-          span.salons-btn__phones
-            | 067 528 12 06<br>
-            | 050 844 83 77
-      a(href="/salons/kharkiv").salons-btn.salons-btn--nval
-        h3 Харьков
-        p
-          | ул. культуры<br class="br-lg"> <span class="inline-md-sm">/</span>
-          | 3
-          br.br-lg-md
-          br.br-lg-md
-          span.salons-btn__phones
-            | 068 033 77 33<br>
-            | 050 337 73 30
+      each salon, index in salons
+        a(href="/salons/#{salon.path}" data-item="#{index}").salons-btn
+          h3!= salon.city
+          p
+            | #{salon.address}
+            br.br-lg-md
+            br.br-lg-md
+            span.salons-btn__phones #{salon.phones}
+
+    //.salons-btns
+    //  a(href="/salons/vlad").salons-btn.salons-btn--kost
+    //    h3 киев
+    //    p
+    //      | ул. владимирская<br class="br-lg"> <span class="inline-md-sm">/</span>
+    //      | 49 А
+    //      br.br-lg-md
+    //      br.br-lg-md
+    //      span.salons-btn__phones
+    //        | 067 705 57 57<br>
+    //        | 099 315 04 05
+    //  a(href="/salons/kost").salons-btn.salons-btn--vlad
+    //    h3 киев
+    //    p
+    //      | ул. костельная<br class="br-lg"> <span class="inline-md-sm">/</span>
+    //      | 9
+    //      br.br-lg-md
+    //      br.br-lg-md
+    //      span.salons-btn__phones
+    //        | 067 528 12 06<br>
+    //        | 050 844 83 77
+    //  a(href="/salons/kharkiv").salons-btn.salons-btn--nval
+    //    h3 Харьков
+    //    p
+    //      | ул. культуры<br class="br-lg"> <span class="inline-md-sm">/</span>
+    //      | 3
+    //      br.br-lg-md
+    //      br.br-lg-md
+    //      span.salons-btn__phones
+    //        | 068 033 77 33<br>
+    //        | 050 337 73 30
+
 
     .salons-layout
       .salon-side.salon-side--left
         .salon-side__background
         .salon-side__background-mobile
-        .salon-side__background-hover.salon-side__background-hover--kost
-        .salon-side__background-hover.salon-side__background-hover--vlad
-          .pin-block
-            .pin
-            .circle.pin-circle.pin-circle--1
-            .circle.pin-circle.pin-circle--2
-        .salon-side__background-hover.salon-side__background-hover--nval
+        each salon, index in salons
+          if salon.map_position === 'left'
+            .salon-side__background-hover(style="background-image: url(#{salon.map})" data-item="#{index}")
+          else if salon.map_position === 'right'
+            .salon-side__background-hover(style="background-image: url(#{salon.imageBg1})" data-item="#{index}")
       .salon-side.salon-side--right
         .salon-side__background
         .salon-side__background-mobile
-          .pin-block
-            .pin
-            .circle.pin-circle.pin-circle--1
-            .circle.pin-circle.pin-circle--2
-        .salon-side__background-hover.salon-side__background-hover--kost
-          .pin-block
-            .pin
-            .circle.pin-circle.pin-circle--1
-            .circle.pin-circle.pin-circle--2
-        .salon-side__background-hover.salon-side__background-hover--vlad
-        .salon-side__background-hover.salon-side__background-hover--nval
-          .pin-block
-            .pin
-            .circle.pin-circle.pin-circle--1
-            .circle.pin-circle.pin-circle--2
+        each salon, index in salons
+          if salon.map_position === 'left'
+            .salon-side__background-hover(style="background-image: url(#{salon.imageBg1})" data-item="#{index}")
+          else if salon.map_position === 'right'
+            .salon-side__background-hover(style="background-image: url(#{salon.map})" data-item="#{index}")
+
+    //.salons-layout
+    //  .salon-side.salon-side--left
+    //    .salon-side__background
+    //    .salon-side__background-mobile
+    //    .salon-side__background-hover.salon-side__background-hover--kost
+    //    .salon-side__background-hover.salon-side__background-hover--vlad
+    //      .pin-block
+    //        .pin
+    //        .circle.pin-circle.pin-circle--1
+    //        .circle.pin-circle.pin-circle--2
+    //    .salon-side__background-hover.salon-side__background-hover--nval
+    //  .salon-side.salon-side--right
+    //    .salon-side__background
+    //    .salon-side__background-mobile
+    //      .pin-block
+    //        .pin
+    //        .circle.pin-circle.pin-circle--1
+    //        .circle.pin-circle.pin-circle--2
+    //    .salon-side__background-hover.salon-side__background-hover--kost
+    //      .pin-block
+    //        .pin
+    //        .circle.pin-circle.pin-circle--1
+    //        .circle.pin-circle.pin-circle--2
+    //    .salon-side__background-hover.salon-side__background-hover--vlad
+    //    .salon-side__background-hover.salon-side__background-hover--nval
+    //      .pin-block
+    //        .pin
+    //        .circle.pin-circle.pin-circle--1
+    //        .circle.pin-circle.pin-circle--2
 
 
   include ../partials/scripts.jade
@@ -111,17 +146,20 @@ block contents
       // salon btn hover laptop
       $('.salons-btn').hover(
         function(){
+          var item = $(this).data('item');
+          console.log(item);
           if ($(window).width() > 1250) {
             $('.salon-side__background').addClass('salon-side__background--disable');
+            $('.salon-side__background-hover[data-item="' + item + '"]').addClass('salon-side__background-hover--active');
 
-            if ($(this).hasClass('salons-btn--kost')) {
-              $('.salon-side__background-hover--kost').addClass('salon-side__background-hover--active');
-            } else if ($(this).hasClass('salons-btn--vlad')) {
-              $('.salon-side__background-hover--vlad').addClass('salon-side__background-hover--active');
-              $('.salon-side__background').addClass('salon-side__background--disable-reverse');
-            } else if ($(this).hasClass('salons-btn--nval')) {
-              $('.salon-side__background-hover--nval').addClass('salon-side__background-hover--active');
-            }
+            //if ($(this).hasClass('salons-btn--kost')) {
+            //  $('.salon-side__background-hover--kost').addClass('salon-side__background-hover--active');
+            //} else if ($(this).hasClass('salons-btn--vlad')) {
+            //  $('.salon-side__background-hover--vlad').addClass('salon-side__background-hover--active');
+            //  $('.salon-side__background').addClass('salon-side__background--disable-reverse');
+            //} else if ($(this).hasClass('salons-btn--nval')) {
+            //  $('.salon-side__background-hover--nval').addClass('salon-side__background-hover--active');
+            //}
           }
         },
         function(){

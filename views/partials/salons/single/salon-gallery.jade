@@ -1,0 +1,15 @@
+if salons.gallery.length
+  section.section-layout.salon-gallery
+    h1.page-title галерея
+    .salon-gallery-circles
+      .circle.salon-gallery-circle.salon-gallery-circle--1
+      .circle.salon-gallery-circle.salon-gallery-circle--2
+      .circle.salon-gallery-circle.salon-gallery-circle--3
+    ul.slider-arrows-long.contacts-slider.contacts-slider--active.salon-gallery-slider
+      each imagePath, index in salons.gallery
+        li(onclick="showPopup('#salon-gallery-popup')").contacts-slide.popup-link
+          .contacts-slide-inner
+            .contacts-slide-inner__img
+              p.contacts-slide-inner__number!= index+1
+              img(src="#{imagePath}")
+

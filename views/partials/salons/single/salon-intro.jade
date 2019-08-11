@@ -1,0 +1,47 @@
+section.section-layout.salon-intro
+  //include ../partials/link-home.jade
+  include ../../../partials/link-back-salons.jade
+  include ../../../partials/main-nav-socials.jade
+  include ../../../partials/main-nav-lang.jade
+  include ../../../partials/main-nav-toggle.jade
+  include ../../../partials/courses-link.jade
+
+  .salons-circles
+    .circle.salons-circle.salons-circle--1
+    .circle.salons-circle.salons-circle--2
+    .circle.salons-circle.salons-circle--3
+
+  .salons-logo.salons-logo--disable
+
+  if salons.map_position === 'right'
+    a(href="/salons").salons-info__exit.salons-info__exit--left.salons-info__exit--active выбрать другой<br> салон
+  else if salons.map_position === 'left'
+    a(href="/salons").salons-info__exit.salons-info__exit--right.salons-info__exit--active выбрать другой<br> салон
+
+  .salons-info
+    .salons-info__item.salons-info__item--vlad.salons-info__item--active
+      h1.salons-title.salons-info__title #{salons.title1}
+      p.salons-info__text #{salons.subtitle1}
+
+
+  .salons-layout
+    if salons.map_position === 'left'
+      .salon-side.salon-side--left
+        .salon-side__background
+        .salon-side__background-mobile.salon-side__background-mobile--active(style="background-image: url(#{salons.map_mobile})")
+        .salon-side__background-hover.salon-side__background-hover--active(style="background-image: url(#{salons.map})")
+      .salon-side.salon-side--right
+        .salon-side__background
+        .salon-side__background-mobile.salon-side__background-mobile--active(style="background-image: url(#{salons.imageBg1_mobile})")
+        .salon-side__background-hover.salon-side__background-hover--active(style="background-image: url(#{salons.imageBg1})")
+
+    else if salons.map_position === 'right'
+      .salon-side.salon-side--left
+        .salon-side__background
+        .salon-side__background-mobile.salon-side__background-mobile--active(style="background-image: url(#{salons.imageBg1_mobile})")
+        .salon-side__background-hover.salon-side__background-hover--active(style="background-image: url(#{salons.imageBg1})")
+      .salon-side.salon-side--right
+        .salon-side__background
+        .salon-side__background-mobile.salon-side__background-mobile--active(style="background-image: url(#{salons.map_mobile})")
+        .salon-side__background-hover.salon-side__background-hover--active(style="background-image: url(#{salons.map})")
+

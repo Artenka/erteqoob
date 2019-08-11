@@ -6,7 +6,7 @@ var Philosophies = require('../models/philosophies').Philosophies;
 var Academy = require('../models/academy').Academy;
 var Contacts = require('../models/contacts').Contacts;
 
-var Salons = require('../models/salons/salons').Salons;
+var Salonpages = require('../models/salons/salonpages').Salonpages;
 
 
 module.exports = function (app, passport) {
@@ -63,19 +63,19 @@ module.exports = function (app, passport) {
   app.get('/courses', function(req, res, next) {
     res.render('pages/splash');
   });
-  app.get('/salons', function(req, res, next) {
-    Salons.findOne({salons_id: 1})
-      .exec(function (err, salons) {
-        if (!err && salons) {
-          res.render('pages/salons', {
-            salons: salons
-          });
-        } else {
-          eLogger.error(err);
-          res.redirect('/');
-        }
-      });
-  });
+  // app.get('/salons', function(req, res, next) {
+  //   Salonpages.findOne({salonpages_id: 1})
+  //     .exec(function (err, salonpages) {
+  //       if (!err && salonpages) {
+  //         res.render('pages/salons', {
+  //           salonpages: salonpages
+  //         });
+  //       } else {
+  //         eLogger.error(err);
+  //         res.redirect('/');
+  //       }
+  //     });
+  // });
   app.get('/salons/kost', function(req, res, next) {
     res.render('pages/salon-kost');
   });

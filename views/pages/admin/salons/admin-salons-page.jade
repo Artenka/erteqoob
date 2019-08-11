@@ -25,16 +25,16 @@ block contents
             p(style='color:red;') #{message}
 
         .row
-          form(method='post', action='/admin/salons')
+          form(method='post', action='/admin/salons/page')
             .row
               .col-sm-6
                 .form-group
                   label Заголовок:
-                  textarea.form-control(name='title', required='')!= salons.title
+                  textarea.form-control(name='title', required='')!= salonpages.title
               .col-sm-6
                 .form-group
                   label Подзаголовок:
-                  textarea.form-control(name='subtitle', required='')!= salons.subtitle
+                  textarea.form-control(name='subtitle', required='')!= salonpages.subtitle
 
 
 
