@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 var salonsSchema = new Schema({
   salons_id: {type: Number, unique: true},
+  priority: {type: Number, default: 0},
 
   name: {type: String},
   path: {type: String},

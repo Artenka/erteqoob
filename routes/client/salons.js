@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
   async.parallel([
     function (callback) {
       Salons.find({})
+        .sort('-priority')
         .exec(function (err, salons) {
           if (!err && salons) {
             callback(null, salons);

@@ -80,7 +80,8 @@ router.get('/list', function(req, res) {
           list.data.push([
             salon.salons_id,
             salon.name,
-            salon.salons_id
+            salon.priority,
+            salon.salons_id,
           ]);
         });
 
@@ -258,6 +259,39 @@ router.post('/new', function (req, res) {
           res.redirect('/admin/salons');
         }
       });
+    }
+  });
+});
+
+router.get('/actions', function(req, res) {
+  Salons.find({salons_id: req.query.contacts}, function(err, salons) {
+    if (!err && salons) {
+      async.each(salons, function(salon, callback) {
+
+        if (req.query.action === "up") {
+          salon.priority += 1;
+        } else if (req.query.action === "down") {
+          if (salon.priority > 0) {
+            salon.priority -= 1;
+          }
+        }
+
+        salon.save(function(err, item) {
+          if (err) {
+            eLogger.error(err);
+            console.error(err);
+          }
+        });
+
+        callback();
+      }, function(err) {
+        if (err) {
+          res.send({result: 0});
+        }
+        res.send({result: 1});
+      });
+    } else {
+      res.send({result: 0});
     }
   });
 });

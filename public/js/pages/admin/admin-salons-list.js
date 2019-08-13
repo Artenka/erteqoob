@@ -7,10 +7,10 @@ $(document).ready(function () {
   var table = $('#table_salons').DataTable({
     ajax: {
       url: "/admin/salons/list",
-      columns: [
-        {data: 'salons_id'},
-        {data: 'name'}
-      ]
+      // columns: [
+      //   {data: 'salons_id'},
+      //   {data: 'name'}
+      // ]
     },
     columnDefs: [
       {
@@ -23,12 +23,38 @@ $(document).ready(function () {
         }
       }
     ],
-    order: [0, 'desc'],
+    order: [2, 'desc'],
     select: true,
     "fnRowCallback": function (nRow, aData, iDisplayIndex) {
       nRow.setAttribute('id', aData[0]);
 
       nRow.lastChild.innerHTML = '';
+
+      var aTag = document.createElement('a');
+      aTag.setAttribute('title', 'Повысить приоритет');
+      aTag.setAttribute('style', 'cursor:pointer; margin-right:5px');
+      aTag.onclick = function() {
+        priorityAction(aData[0], 'up');
+      };
+
+      iTag = document.createElement('i');
+      iTag.setAttribute('class', 'fa fa-arrow-up');
+      aTag.appendChild(iTag);
+
+      nRow.lastChild.appendChild(aTag);
+
+      aTag = document.createElement('a');
+      aTag.setAttribute('title', 'Понизить приоритет');
+      aTag.setAttribute('style', 'cursor:pointer; margin-right:5px');
+      aTag.onclick = function() {
+        priorityAction(aData[0], 'down');
+      };
+
+      iTag = document.createElement('i');
+      iTag.setAttribute('class', 'fa fa-arrow-down');
+      aTag.appendChild(iTag);
+
+      nRow.lastChild.appendChild(aTag);
 
       var aTag = document.createElement('a');
       aTag.setAttribute('title', 'Удалить');
@@ -52,6 +78,23 @@ $(document).ready(function () {
 
   table_all_global = table;
 });
+
+function priorityAction(id, action) {
+  var data = {
+    contacts: id,
+    action: action
+  };
+
+  if (!window.location.origin) {
+    window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+  }
+
+  $.get(window.location.origin + "/admin/salons/actions", data, function(resp) {
+    if (resp.result) {
+      table_all_global.ajax.reload();
+    }
+  });
+}
 
 function deleteItem(selectedId) {
   Dialog("Удалить пост?", function () {
