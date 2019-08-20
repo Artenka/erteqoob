@@ -1,27 +1,50 @@
-section#sp-foundation.section-layout.section.sp-foundation.sp-foundation--cinema.black-overlay.black-overlay--04
+section#sp-foundation.section-layout.section.sp-foundation.sp-foundation--cinema.black-overlay.black-overlay--04(style="background-image: url(#{cinemas.imageBg2})")
   div.page-title
     .page-title__logo
-    h2 Раз в год компания ERTEQOOB
-    h1 собирает таких же<br class="br-sm"> креативных мыслящих людей<br> на одной локации
+    h2 #{cinemas.title2}
+    //h2 Раз в год компания ERTEQOOB
+    h1 #{cinemas.subtitle2}
+    //h1 собирает таких же<br class="br-sm"> креативных мыслящих людей<br> на одной локации
 
   ul.sp-foundation-list
-    li.sp-foundation-list__item
-      div.sp-foundation-list__item-title Cinema - это перфоманс<br> в парикмахерском искусстве
-        .sp-foundation-list__item-dots
-      p.sp-foundation-list__item-text состоящий из нескольких<br> блоков
-    li.sp-foundation-list__item
-      div.sp-foundation-list__item-title На сцене одновременно<br> выступают несколько<br> парикмахеров
-        .sp-foundation-list__item-dots
-      p.sp-foundation-list__item-text в режиме реального времени<br> работая с волосами предварительно<br> подготовленных моделей<br> (дизайнерская одежда, обувь, make-up)
-    li.sp-foundation-list__item
-      div.sp-foundation-list__item-title Отличие от<br> парикмахерских<br> шоу в том
-        .sp-foundation-list__item-dots
-      p.sp-foundation-list__item-text что на тему Cinema<br> не влияет мода и тренды
-    li.sp-foundation-list__item
-      div.sp-foundation-list__item-title Здесь воплощаются<br> самые смелые идеи
-        .sp-foundation-list__item-dots
-      p.sp-foundation-list__item-text  Внеординарные творческие решения,<br> основанные на внутреннем ощущении,<br>  создается будущее.
+    if cinemas.block2_title1 != '' || cinemas.block2_text1 != ''
+      li.sp-foundation-list__item
+        div.sp-foundation-list__item-title #{cinemas.block2_title1}
+          .sp-foundation-list__item-dots
+        p.sp-foundation-list__item-text #{cinemas.block2_text1}
+    if cinemas.block2_title2 != '' || cinemas.block2_text2 != ''
+      li.sp-foundation-list__item
+        div.sp-foundation-list__item-title #{cinemas.block2_title2}
+          .sp-foundation-list__item-dots
+        p.sp-foundation-list__item-text #{cinemas.block2_text2}
+    if cinemas.block2_title3 != '' || cinemas.block2_text3 != ''
+      li.sp-foundation-list__item
+        div.sp-foundation-list__item-title #{cinemas.block2_title3}
+          .sp-foundation-list__item-dots
+        p.sp-foundation-list__item-text #{cinemas.block2_text3}
+    if cinemas.block2_title4 != '' || cinemas.block2_text4 != ''
+      li.sp-foundation-list__item
+        div.sp-foundation-list__item-title #{cinemas.block2_title4}
+          .sp-foundation-list__item-dots
+        p.sp-foundation-list__item-text #{cinemas.block2_text4}
 
-  div.page-title.page-title--bottom
-    h2 Если провести аналогию с дизайном одежды
-    h1 то салоны и академии<br class="br-sm"> создают «прет-а-порте»,<br> а Cinema - это «от кутюр».
+    //li.sp-foundation-list__item
+    //  div.sp-foundation-list__item-title Cinema - это перфоманс<br> в парикмахерском искусстве
+    //    .sp-foundation-list__item-dots
+    //  p.sp-foundation-list__item-text состоящий из нескольких<br> блоков
+    //li.sp-foundation-list__item
+    //  div.sp-foundation-list__item-title На сцене одновременно<br> выступают несколько<br> парикмахеров
+    //    .sp-foundation-list__item-dots
+    //  p.sp-foundation-list__item-text в режиме реального времени<br> работая с волосами предварительно<br> подготовленных моделей<br> (дизайнерская одежда, обувь, make-up)
+    //li.sp-foundation-list__item
+    //  div.sp-foundation-list__item-title Отличие от<br> парикмахерских<br> шоу в том
+    //    .sp-foundation-list__item-dots
+    //  p.sp-foundation-list__item-text что на тему Cinema<br> не влияет мода и тренды
+    //li.sp-foundation-list__item
+    //  div.sp-foundation-list__item-title Здесь воплощаются<br> самые смелые идеи
+    //    .sp-foundation-list__item-dots
+    //  p.sp-foundation-list__item-text  Внеординарные творческие решения,<br> основанные на внутреннем ощущении,<br>  создается будущее.
+
+  //div.page-title.page-title--bottom
+  //  h2 Если провести аналогию с дизайном одежды
+  //  h1 то салоны и академии<br class="br-sm"> создают «прет-а-порте»,<br> а Cinema - это «от кутюр».

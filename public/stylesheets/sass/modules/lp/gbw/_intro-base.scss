@@ -149,6 +149,7 @@
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-top: 400px;
+    white-space: pre-line;
     @include laptop-tablet {
      font-size: 12px;
      line-height: 18px;

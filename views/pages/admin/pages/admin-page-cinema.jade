@@ -1,0 +1,354 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Cinema
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/admin/pages/') Страницы
+              li.active Cinema
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/pages/cinema' enctype='multipart/form-data')
+            h2 Общая информация
+            br
+
+            .row
+              .col-sm-6
+                .form-group
+                  label Дата:
+                  input.form-control(type='text', name='date', required='', value= cinemas.date)
+              .col-sm-6
+                .form-group
+                  label Время:
+                  input.form-control(type='text', name='time', required='', value= cinemas.time)
+            .row
+              .col-sm-6
+                .form-group
+                  label Место проведения:
+                  input.form-control(type='text', name='place', required='', value= cinemas.place)
+              .col-sm-6
+                .form-group
+                  label Ссылка на место проведения:
+                  input.form-control(type='text', name='place_link', required='', value= cinemas.place_link)
+            .row
+              .col-sm-6
+                .form-group
+                  label Текущее количество мест:
+                  input.form-control(type='text', name='seats_current', required='', value= cinemas.seats_current)
+              .col-sm-6
+                .form-group
+                  label Общее количество мест:
+                  input.form-control(type='text', name='seats_total', required='', value= cinemas.seats_total)
+            .row
+              .col-xs-12
+                .form-group
+                  label Цены (последняя цена активная, остальные перечеркнутые):
+                  #priceBlock
+                    each item, index in cinemas.prices
+                      if index === 0
+                        .row
+                          .col-sm-6.col-xs-10
+                            input.form-control(type='text', name='prices', required='', value= item)
+                        br
+                      else
+                        .price-row
+                          .row
+                            .col-sm-6.col-xs-10
+                              input.form-control(type='text', name='prices', required='', value= item)
+                            .col-sm-6.col-xs-2
+                              button(type="button").btn.btn-circle.remove-price
+                                i.fa.fa-times
+                          br
+
+                  button#addPrice.btn(type='button') Добавить цену
+
+            .row
+              .col-sm-6
+                .form-group
+                  label Fondy - мерчант айди:
+                  input.form-control(type='text', name='fondy_id', required='', value= cinemas.fondy_id)
+              .col-sm-6
+                .form-group
+                  label Fondy - цена (грн.):
+                  input.form-control(type='text', name='fondy_price', required='', value= cinemas.fondy_price)
+
+            br
+            h2 Секция 1
+            br
+
+            .row
+              .col-sm-6
+                .form-group
+                  label Подзаголовок 1:
+                  textarea.form-control(name='subtitle1_1')!= cinemas.subtitle1_1
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title1')!= cinemas.title1
+            .row
+              .col-sm-6
+                .form-group
+                  label Подзаголовок 2:
+                  textarea.form-control(name='subtitle1_2')!= cinemas.subtitle1_2
+              .col-sm-6
+                .form-group
+                  label Текст при наведении на кнопку "посмотреть видео":
+                  textarea.form-control(name='videoBtn')!= cinemas.videoBtn
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg1.dropify(type='file' name="imageBg1" data-default-file=(cinemas.imageBg1 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg1_deleted" value="false")
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Видео:
+                  input#video1.dropify(type='file' name="video1" data-default-file=(cinemas.video1 || '')  accept="video/mp4,video/x-m4v,video/*" data-max-file-size="50M")
+                  input(type="hidden" name="video1_deleted" value="false")
+
+            br
+            h2 Секция 2
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle2')!= cinemas.subtitle2
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title2')!= cinemas.title2
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg2.dropify(type='file' name="imageBg2" data-default-file=(cinemas.imageBg2 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg2_deleted" value="false")
+            .row
+              .col-sm-6
+                .form-group
+                  label Блок 1 - заголовок:
+                  textarea.form-control(name='block2_title1')!= cinemas.block2_title1
+              .col-sm-6
+                .form-group
+                  label Блок 1 - текст:
+                  textarea.form-control(name='block2_text1')!= cinemas.block2_text1
+            .row
+              .col-sm-6
+                .form-group
+                  label Блок 2 - заголовок:
+                  textarea.form-control(name='block2_title2')!= cinemas.block2_title2
+              .col-sm-6
+                .form-group
+                  label Блок 2 - текст:
+                  textarea.form-control(name='block2_text2')!= cinemas.block2_text2
+            .row
+              .col-sm-6
+                .form-group
+                  label Блок 3 - заголовок:
+                  textarea.form-control(name='block2_title3')!= cinemas.block2_title3
+              .col-sm-6
+                .form-group
+                  label Блок 3 - текст:
+                  textarea.form-control(name='block2_text3')!= cinemas.block2_text3
+            .row
+              .col-sm-6
+                .form-group
+                  label Блок 4 - заголовок:
+                  textarea.form-control(name='block2_title4')!= cinemas.block2_title4
+              .col-sm-6
+                .form-group
+                  label Блок 4 - текст:
+                  textarea.form-control(name='block2_text4')!= cinemas.block2_text4
+
+            br
+            h2 Секция 3
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title3')!= cinemas.title3
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle3')!= cinemas.subtitle3
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg3.dropify(type='file' name="imageBg3" data-default-file=(cinemas.imageBg3 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg3_deleted" value="false")
+
+            br
+            h2 Секция 4
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title4')!= cinemas.title4
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle4')!= cinemas.subtitle4
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg4.dropify(type='file' name="imageBg4" data-default-file=(cinemas.imageBg4 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg4_deleted" value="false")
+
+            br
+            h2 Секция 5
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title5')!= cinemas.title5
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle5')!= cinemas.subtitle5
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg5.dropify(type='file' name="imageBg5" data-default-file=(cinemas.imageBg5 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg5_deleted" value="false")
+
+            br
+            h2 Секция 6
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title6')!= cinemas.title6
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle6')!= cinemas.subtitle6
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg6.dropify(type='file' name="imageBg6" data-default-file=(cinemas.imageBg6 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg6_deleted" value="false")
+
+            br
+            h2 Секция 7
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title7')!= cinemas.title7
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle7')!= cinemas.subtitle7
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg7.dropify(type='file' name="imageBg7" data-default-file=(cinemas.imageBg7 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg7_deleted" value="false")
+
+            br
+            h2 Секция 8
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title8')!= cinemas.title8
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle8')!= cinemas.subtitle8
+            .row
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg8.dropify(type='file' name="imageBg8" data-default-file=(cinemas.imageBg8 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg8_deleted" value="false")
+
+            br
+            h2 Секция 9
+            br
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title9')!= cinemas.title9
+              .col-sm-6.col-sx-12
+                .form-group
+                  label.control-label Фоновое изображение (1920 X 1080):
+                  input#imageBg9.dropify(type='file' name="imageBg9" data-default-file=(cinemas.imageBg9 || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                  input(type="hidden" name="imageBg9_deleted" value="false")
+            .row
+              .col-sm-6
+                .form-group
+                  label Текст 1:
+                  textarea.form-control(name='text9_1')!= cinemas.text9_1
+              .col-sm-6
+                .form-group
+                  label Текст 2:
+                  textarea.form-control(name='text9_2')!= cinemas.text9_2
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade
+
+
+    script.
+      $(function(){
+        // add/remove price
+        $(document).on('click', '.remove-price', function () {
+          $(this).closest('.row').closest('.price-row').remove();
+        });
+
+        $(document).on('click', '#addPrice', function () {
+          $('#priceBlock').append(
+            '<div class="price-row">'+
+            '<div class="row">'+
+            '<div class="col-sm-6 col-xs-10">'+
+            '<input class="form-control" type="text" name="prices" required="" value=""/>'+
+            '</div>'+
+            '<div class="col-sm-6 col-xs-2">'+
+            '<button type="button" class="btn btn-circle remove-price">'+
+            '<i class="fa fa-times"></i>'+
+            '</button>'+
+            '</div>'+
+            '</div>'+
+            '<br/>'+
+            '</div>'
+          );
+        });
+      });

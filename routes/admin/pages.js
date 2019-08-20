@@ -5,6 +5,7 @@ var Homepages = require('../../models/homepages').Homepages;
 var Philosophies = require('../../models/philosophies').Philosophies;
 var Academy = require('../../models/academy').Academy;
 var Contacts = require('../../models/contacts').Contacts;
+var Cinemas = require('../../models/cinemas').Cinemas;
 
 var eLogger = require('../../lib/logger').eLogger;
 
@@ -45,6 +46,15 @@ const storageAcademy = multer.diskStorage({
 const storageContacts = multer.diskStorage({
   destination: function (req, file, callback) {
     callback(null, 'public/files/contacts/');
+  },
+  filename: function (req, file, callback) {
+    var secs = new Date().getTime();
+    callback(null, secs + '_' + file.originalname.replace(/\s/g, '_'));
+  }
+});
+const storageCinemas = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, 'public/files/cinema/');
   },
   filename: function (req, file, callback) {
     var secs = new Date().getTime();
@@ -688,5 +698,211 @@ router.post('/contacts', function (req, res) {
       }
     });
 });
+
+
+router.get('/cinema', function (req, res) {
+  Cinemas.findOne({cinemas_id: 1})
+    .exec(function (err, cinemas) {
+      if (!err && cinemas) {
+        res.render('pages/admin/pages/admin-page-cinema', {
+          user: req.user,
+          cinemas: cinemas
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/admin');
+      }
+    });
+});
+
+router.post('/cinema', function (req, res) {
+  Cinemas.findOne({cinemas_id: 1})
+    .exec(function (err, cinemas) {
+      if (!err && cinemas) {
+        var uploadImage = multer({storage: storageCinemas}).fields([
+          {name: 'imageBg1', maxCount: 1},
+          {name: 'video1', maxCount: 1},
+          {name: 'imageBg2', maxCount: 1},
+          {name: 'imageBg3', maxCount: 1},
+          {name: 'imageBg4', maxCount: 1},
+          {name: 'imageBg5', maxCount: 1},
+          {name: 'imageBg6', maxCount: 1},
+          {name: 'imageBg7', maxCount: 1},
+          {name: 'imageBg8', maxCount: 1},
+          {name: 'imageBg9', maxCount: 1},
+        ]);
+
+        uploadImage(req, res, function (err) {
+          if (err) {
+            eLogger.error(err);
+            res.render('pages/admin/pages/admin-page-cinema', {
+              user: req.user,
+              cinemas: cinemas,
+              message: 'Ошибка сохранения изображения'
+            });
+          } else {
+            cinemas.date = req.body.date;
+            cinemas.time = req.body.time;
+            cinemas.place = req.body.place;
+            cinemas.place_link = req.body.place_link;
+            cinemas.seats_current = req.body.seats_current;
+            cinemas.seats_total = req.body.seats_total;
+            cinemas.prices = req.body.prices;
+            cinemas.fondy_id = req.body.fondy_id;
+            cinemas.fondy_price = req.body.fondy_price;
+
+            cinemas.subtitle1_1 = req.body.subtitle1_1;
+            cinemas.title1 = req.body.title1;
+            cinemas.subtitle1_2 = req.body.subtitle1_2;
+            cinemas.videoBtn = req.body.videoBtn;
+
+            cinemas.subtitle2 = req.body.subtitle2;
+            cinemas.title2 = req.body.title2;
+            cinemas.block2_title1 = req.body.block2_title1;
+            cinemas.block2_text1 = req.body.block2_text1;
+            cinemas.block2_title2 = req.body.block2_title2;
+            cinemas.block2_text2 = req.body.block2_text2;
+            cinemas.block2_title3 = req.body.block2_title3;
+            cinemas.block2_text3 = req.body.block2_text3;
+            cinemas.block2_title4 = req.body.block2_title4;
+            cinemas.block2_text4 = req.body.block2_text4;
+
+            cinemas.title3 = req.body.title3;
+            cinemas.subtitle3 = req.body.subtitle3;
+
+            cinemas.title4 = req.body.title4;
+            cinemas.subtitle4 = req.body.subtitle4;
+
+            cinemas.title5 = req.body.title5;
+            cinemas.subtitle5 = req.body.subtitle5;
+
+            cinemas.title6 = req.body.title6;
+            cinemas.subtitle6 = req.body.subtitle6;
+
+            cinemas.title7 = req.body.title7;
+            cinemas.subtitle7 = req.body.subtitle7;
+
+            cinemas.title8 = req.body.title8;
+            cinemas.subtitle8 = req.body.subtitle8;
+
+            cinemas.title9 = req.body.title9;
+            cinemas.text9_1 = req.body.text9_1;
+            cinemas.text9_2 = req.body.text9_2;
+
+
+            var newPath;
+            if (req.body.imageBg1_deleted == 'false') {
+              if (req.files.imageBg1) {
+                newPath = req.files.imageBg1[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg1 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg1 = '';
+            }
+            if (req.body.video1_deleted == 'false') {
+              if (req.files.video1) {
+                newPath = req.files.video1[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.video1 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.video1 = '';
+            }
+            if (req.body.imageBg2_deleted == 'false') {
+              if (req.files.imageBg2) {
+                newPath = req.files.imageBg2[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg2 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg2 = '';
+            }
+            if (req.body.imageBg3_deleted == 'false') {
+              if (req.files.imageBg3) {
+                newPath = req.files.imageBg3[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg3 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg3 = '';
+            }
+            if (req.body.imageBg4_deleted == 'false') {
+              if (req.files.imageBg4) {
+                newPath = req.files.imageBg4[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg4 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg4 = '';
+            }
+            if (req.body.imageBg5_deleted == 'false') {
+              if (req.files.imageBg5) {
+                newPath = req.files.imageBg5[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg5 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg5 = '';
+            }
+            if (req.body.imageBg6_deleted == 'false') {
+              if (req.files.imageBg6) {
+                newPath = req.files.imageBg6[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg6 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg6 = '';
+            }
+            if (req.body.imageBg7_deleted == 'false') {
+              if (req.files.imageBg7) {
+                newPath = req.files.imageBg7[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg7 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg7 = '';
+            }
+            if (req.body.imageBg8_deleted == 'false') {
+              if (req.files.imageBg8) {
+                newPath = req.files.imageBg8[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg8 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg8 = '';
+            }
+            if (req.body.imageBg9_deleted == 'false') {
+              if (req.files.imageBg9) {
+                newPath = req.files.imageBg9[0].path;
+                newPath = newPath.split('\\').join('/');
+                cinemas.imageBg9 = newPath.replace('public', '');
+              }
+            } else {
+              cinemas.imageBg9 = '';
+            }
+
+
+            cinemas.save(function (err, item) {
+              if (err) {
+                eLogger.error(err);
+                res.render('pages/admin/pages/admin-page-cinema', {
+                  user: req.user,
+                  cinemas: cinemas,
+                  message: 'Ошибка сохранения страницы Философия'
+                });
+              } else {
+                res.redirect('/admin/pages/cinema');
+              }
+            });
+          }
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/admin/pages');
+      }
+    });
+});
+
 
 module.exports = router;

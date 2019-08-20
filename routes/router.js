@@ -5,6 +5,7 @@ var Homepages = require('../models/homepages').Homepages;
 var Philosophies = require('../models/philosophies').Philosophies;
 var Academy = require('../models/academy').Academy;
 var Contacts = require('../models/contacts').Contacts;
+var Cinemas = require('../models/cinemas').Cinemas;
 
 var Salonpages = require('../models/salons/salonpages').Salonpages;
 
@@ -195,11 +196,21 @@ module.exports = function (app, passport) {
   });
 
   app.get('/cinema', function(req, res, next) {
-    res.render('pages/lp/cinema');
+    Cinemas.findOne({cinemas_id: 1})
+      .exec(function (err, cinemas) {
+        if (!err && cinemas) {
+          res.render('pages/lp/cinema', {
+            cinemas: cinemas
+          });
+        } else {
+          eLogger.error(err);
+          res.redirect('/');
+        }
+      });
   });
-  app.get('/courses/pro/cinema/kharkiv', function(req, res, next) {
-    res.render('pages/lp/cinema-kharkiv');
-  });
+  // app.get('/courses/pro/cinema/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/cinema-kharkiv');
+  // });
 
   app.get('/courses/pro/gbw', function(req, res, next) {
     res.render('pages/lp/gbw-base');

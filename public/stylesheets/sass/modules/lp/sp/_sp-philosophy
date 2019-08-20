@@ -448,6 +448,7 @@
   margin: 8px 0 86px;
   position: relative;
   z-index: 3;
+  white-space: pre-line;
   @include laptop {
    margin-top: 28px;
   }
@@ -480,6 +481,7 @@
   font-weight: 500;
   line-height: 26px;
   text-transform: uppercase;
+  white-space: pre-line;
   @include mobile {
    width: 320px;
    font-size: 11px;

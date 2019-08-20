@@ -212,26 +212,22 @@ block contents
       registerStep2Cinema();
 
       // seats counter
-      var seats = 1000;
-      var randNumbers = [2, 6, 6, 8, 3, 5, 2, 4, 5, 7, 7, 9, 1, 9, 7, 5, 9, 2, 22, 76, 80, 30, 48, 52, 64, 14, 53, 85, 99, 46, 67, 50, 65, 38, 92, 68, 13, 53, 31];
-      var week = 6.048e+8;
-      var now = new Date().getTime();
-      var startDay = new Date("2018-12-17").getTime();
-      var i;
-
-      if(now > startDay) {
-        i = Math.floor((now - startDay)/week);
-
-        for(j=0; j<=i; j++){
-          seats -= randNumbers[j];
-        }
-
-        if(seats < 0) {
-          seats = 0;
-        }
-
-        $('.cinema-seats').text(seats);
-      }
+      //var seats = 1000;
+      //var randNumbers = [2, 6, 6, 8, 3, 5, 2, 4, 5, 7, 7, 9, 1, 9, 7, 5, 9, 2, 22, 76, 80, 30, 48, 52, 64, 14, 53, 85, 99, 46, 67, 50, 65, 38, 92, 68, 13, 53, 31];
+      //var week = 6.048e+8;
+      //var now = new Date().getTime();
+      //var startDay = new Date("2018-12-17").getTime();
+      //var i;
+      //if(now > startDay) {
+      //  i = Math.floor((now - startDay)/week);
+      //  for(j=0; j<=i; j++){
+      //    seats -= randNumbers[j];
+      //  }
+      //  if(seats < 0) {
+      //    seats = 0;
+      //  }
+      //  $('.cinema-seats').text(seats);
+      //}
     });
 
     var philosophyPros1Reinit = true;

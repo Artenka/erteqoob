@@ -9,6 +9,12 @@ script(src='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.js')
 link(rel='stylesheet' href='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.css')
 script.
 
+  var fondy_id = "#{cinemas.fondy_id}";
+  if(fondy_id == '') fondy_id = 1402220;
+  var fondy_price = "#{cinemas.fondy_price}";
+
+  var amount = parseInt(fondy_price + '00', 10);
+
   var Options = {
     options: {
       title: "Cinema",
@@ -18,10 +24,10 @@ script.
       css: 'bootstrap4'
     },
     params: {
-      merchant_id: 1402220,
+      merchant_id: fondy_id,
       currency: 'UAH',
       order_id: new Date().getTime(),
-      amount: 150000,
+      amount: amount,
       order_desc: 'Cinema payment',
       //response_url: 'https://erteqoob.com/cinema',
       lang: 'ru'
@@ -37,7 +43,7 @@ script.
   })
 
   setTimeout(function(){
-    $('.f-btn-block span').text('Оплатить 1500 UAH');
+    $('.f-btn-block span').text('Оплатить ' + fondy_price + ' UAH');
     $('label[for="f-card_number"]').text('Номер карты');
     $('label[for="f-expiry_date"]').text('Срок действия');
   }, 500)

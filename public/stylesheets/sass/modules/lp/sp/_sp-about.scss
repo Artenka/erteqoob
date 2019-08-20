@@ -148,10 +148,10 @@
    .sp-about-block__main {
 
     .sp-about-block__main-title {
-     width: 240px;
-     height: 60px;
-     background: url(../../../img/cinema-logo.png) no-repeat center / contain;
-     cursor: pointer;
+     //width: 240px;
+     //height: 60px;
+     //background: url(../../../img/cinema-logo.png) no-repeat center / contain;
+     //cursor: pointer;
     }
    }
 
@@ -368,6 +368,7 @@
    letter-spacing: 11.2px;
    text-transform: uppercase;
    margin-top: 59px;
+   white-space: pre-line;
    @include tablet-mobile {
     margin-top: 0;
    }
@@ -403,6 +404,7 @@
    line-height: 26px;
    text-transform: uppercase;
    margin-top: 46px;
+   white-space: pre-line;
    @include tablet {
     margin-top: 39px;
    }

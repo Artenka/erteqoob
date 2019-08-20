@@ -1,11 +1,4 @@
-section#about.section-layout.section.sp-about.sp-about--intro.sp-about--cinema.black-overlay
-  //include ../../partials/main-nav-links-1.jade
-  //include ../../partials/link-home.jade
-  //include ../../partials/main-nav-socials.jade
-  //include ../../partials/main-nav-lang.jade
-  //include ../../partials/main-nav-toggle.jade
-  //include ../../partials/courses-link.jade
-
+section#about.section-layout.section.sp-about.sp-about--intro.sp-about--cinema.black-overlay(style="background-image: url(#{cinemas.imageBg1})")
   .logo
 
   .sp-about-logo
@@ -18,15 +11,24 @@ section#about.section-layout.section.sp-about.sp-about--intro.sp-about--cinema.b
   div.sp-about-block
     p.sp-about-block__duration
       | Цена:<br>
-      span.sp-about-block__duration--passed Декабрь - 800 грн.<br>
-      span.sp-about-block__duration--passed Январь - 900 грн.<br>
-      span.sp-about-block__duration--passed Март - 1000 грн.<br>
-      span.sp-about-block__duration--passed Апрель-май - 1200 грн.<br>
-      | Июнь - 1500 грн.
+      each item, index in cinemas.prices
+        if index+1 === cinemas.prices.length
+          | #{item}
+        else
+          span.sp-about-block__duration--passed!= item
+          br
+
+      //span.sp-about-block__duration--passed Декабрь - 800 грн.<br>
+      //span.sp-about-block__duration--passed Январь - 900 грн.<br>
+      //span.sp-about-block__duration--passed Март - 1000 грн.<br>
+      //span.sp-about-block__duration--passed Апрель-май - 1200 грн.<br>
+      //| Июнь - 1500 грн.
     div.sp-about-block__main
       .logo.sp-about-block__logo
-      h1#cinema-logo.sp-about-block__main-title
+      h1.sp-about-block__main-title
+        span #{cinemas.subtitle1_1}
         //span Творческий проект
+        | #{cinemas.title1}
         //| Cinema
       .gbw-video__link.gbw-video__link--center
         .gbw-video__link-icon
@@ -39,15 +41,24 @@ section#about.section-layout.section.sp-about.sp-about--intro.sp-about--cinema.b
                       rect#Rectangle(fill='#FFFFFF', fill-rule='evenodd', transform='translate(43.000000, 42.000000) scale(-1, 1) rotate(45.000000) translate(-43.000000, -42.000000) ', x='41.3333333', y='37.3333333', width='3.33333333', height='9.33333333')
                       circle#Oval-2(stroke='#FFFFFF', stroke-width='2.5', cx='24', cy='24', r='22.75')
                       polygon#Path-4(fill='#FFFFFF', fill-rule='evenodd', points='20.1836552 17.3333333 20 31.0468861 31.7501461 24.2819373')
-        p.gbw-video__link-text Заглянуть<br class="br-sm"> за кулисы<br> Cinema
-      h2.sp-about-block__main-subtitle Стань частью главного события<br> в парикмахерском искусстве страны
+        p.gbw-video__link-text #{cinemas.videoBtn}
+        //p.gbw-video__link-text Заглянуть<br class="br-sm"> за кулисы<br> Cinema
+      h2.sp-about-block__main-subtitle #{cinemas.subtitle1_2}
+      //h2.sp-about-block__main-subtitle Стань частью главного события<br> в парикмахерском искусстве страны
       button(onclick="registerStep1Cinema()").btn.sp-about-block__main-link.popup-link Купить билет
     div.sp-about-block__info
       p.sp-about-block__info-date
-        | 14.06.2019 <br>
-        | 20:00
-      a(href="https://goo.gl/maps/dT1kdN98yZNFjaiM8" target="_blank").sp-about-block__info-place киностудия им.А.Довженко
-      p.sp-about-block__info-seats <span>Места: <span class="cinema-seats">1000</span></span> из 1000
+        | #{cinemas.date}
+        //| 14.06.2019 <br>
+        br
+        | #{cinemas.time}
+        //| 20:00
+      if cinemas.place_link
+        a(href="#{cinemas.place_link}" target="_blank").sp-about-block__info-place #{cinemas.place}
+      else
+        .sp-about-block__info-place #{cinemas.place}
+      //a(href="https://goo.gl/maps/dT1kdN98yZNFjaiM8" target="_blank").sp-about-block__info-place киностудия им.А.Довженко
+      p.sp-about-block__info-seats <span>Места: <span class="cinema-seats">#{cinemas.seats_current}</span></span> из #{cinemas.seats_total}
 
   .scroll-down.link-smooth(href="#sp-foundation")
     p.scroll-down__text вниз

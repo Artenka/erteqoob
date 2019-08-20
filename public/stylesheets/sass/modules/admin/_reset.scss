@@ -56,6 +56,16 @@ select.form-control {
   top: 2px;
  }
 }
+
+.btn.btn-circle {
+ width: 48px;
+ height: 48px;
+ border-radius: 50%;
+ font-size: 20px;
+ line-height: 48px;
+ padding: 0 0 0 3px;
+}
+
 .form-control {
  height: auto;
  padding: 13px 20px;

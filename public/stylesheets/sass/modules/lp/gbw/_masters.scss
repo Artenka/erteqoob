@@ -12,6 +12,7 @@
  .page-title {
 
   h2 {
+   white-space: pre-line;
    @include mobile {
     font-size: 12px;
     font-weight: 400;
@@ -22,6 +23,7 @@
   }
 
   h1 {
+   white-space: pre-line;
 
    span {
     color: inherit;

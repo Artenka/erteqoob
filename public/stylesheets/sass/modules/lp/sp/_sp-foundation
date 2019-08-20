@@ -195,6 +195,7 @@
    line-height: 45px;
    text-transform: uppercase;
    position: relative;
+   white-space: pre-line;
    @include mobile {
     font-size: 16px;
     line-height: 23px;
@@ -236,6 +237,7 @@
    line-height: 26px;
    text-transform: uppercase;
    margin-top: 20px;
+   white-space: pre-line;
    @include mobile {
     font-size: 10px;
     line-height: 15px;

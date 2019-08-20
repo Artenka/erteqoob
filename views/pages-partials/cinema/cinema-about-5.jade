@@ -1,8 +1,9 @@
 section#cinema-about-5.section-layout.philosophy-pros.philosophy-pros--1.philosophy-pros--cinema-about-5.sp-about.sp-about--cinema.black-overlay.black-overlay--04
-  div.section-bg.philosophy-pros__bg
+  div.section-bg.philosophy-pros__bg(style="background-image: url(#{cinemas.imageBg9})")
   div.philosophy-pros__main
     div.page-title-big-layout.home-pros__title-layout
-      h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title Глобальная цель проекта Cinema:<br class="br-lg-md"> поиск и объединение идейных творческих<br class="br-lg-md"> людей, вовлеченных в свое дело.
+      h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title #{cinemas.title9}
+      //h1.page-title-big.home-pros__title.home-pros__title--1.philosophy-title Глобальная цель проекта Cinema:<br class="br-lg-md"> поиск и объединение идейных творческих<br class="br-lg-md"> людей, вовлеченных в свое дело.
     div.philosophy-pros-list-layout
       ul.philosophy-pros-list
         li.philosophy-pros-list__item
@@ -10,26 +11,33 @@ section#cinema-about-5.section-layout.philosophy-pros.philosophy-pros--1.philoso
             div.philosophy-pros-list__item-line-left-layout
               div.philosophy-pros-list__item-line-left
             div.philosophy-pros-list__item-line-top
-            p.philosophy-pros-list__item-text Эта коллаборация будет способствовать созданию и развитию субкультуры и прогрессивного будущего.<br>
+            p.philosophy-pros-list__item-text #{cinemas.text9_1}
+            //p.philosophy-pros-list__item-text Эта коллаборация будет способствовать созданию и развитию субкультуры и прогрессивного будущего.<br>
         li.philosophy-pros-list__item
           div.philosophy-pros-list__item-inner
             div.philosophy-pros-list__item-line-left-layout
               div.philosophy-pros-list__item-line-left
             div.philosophy-pros-list__item-line-top
-            p.philosophy-pros-list__item-text Команда ERTEQOOB создает резонанс, не следуя требованиям конъюнктуры, вызывает эмоцию, делая приверженцев и антагонистов бренда неравнодушными.
+            p.philosophy-pros-list__item-text #{cinemas.text9_2}
+            //p.philosophy-pros-list__item-text Команда ERTEQOOB создает резонанс, не следуя требованиям конъюнктуры, вызывает эмоцию, делая приверженцев и антагонистов бренда неравнодушными.
     div.sp-about-block
       p.sp-about-block__duration
         | Цена:<br>
-        span.sp-about-block__duration--passed Декабрь - 800 грн.<br>
-        span.sp-about-block__duration--passed Январь - 900 грн.<br>
-        span.sp-about-block__duration--passed Март - 1000 грн.<br>
-        span.sp-about-block__duration--passed Апрель-май - 1200 грн.<br>
-        | Июнь - 1500 грн.
+        each item, index in cinemas.prices
+          if index + 1 === cinemas.prices.length
+            | #{item}
+          else
+            span.sp-about-block__duration--passed!= item
+            br
       div.sp-about-block__main
         button(onclick="registerStep1Cinema()").btn.sp-about-block__main-link.popup-link Купить билет
       div.sp-about-block__info
         p.sp-about-block__info-date
-          | 14.06.2019 <br>
-          | 20:00
-        a(href="https://goo.gl/maps/dT1kdN98yZNFjaiM8" target="_blank").sp-about-block__info-place киностудия им.А.Довженко
-        p.sp-about-block__info-seats <span>Места: <span class="cinema-seats">1000</span></span> из 1000
+          | #{cinemas.date}
+          br
+          | #{cinemas.time}
+        if cinemas.place_link
+          a(href="#{cinemas.place_link}" target="_blank").sp-about-block__info-place #{cinemas.place}
+        else
+          .sp-about-block__info-place #{cinemas.place}
+        p.sp-about-block__info-seats <span>Места: <span class="cinema-seats">#{cinemas.seats_current}</span></span> из #{cinemas.seats_total}
