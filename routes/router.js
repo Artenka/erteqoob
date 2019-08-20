@@ -77,15 +77,15 @@ module.exports = function (app, passport) {
   //       }
   //     });
   // });
-  app.get('/salons/kost', function(req, res, next) {
-    res.render('pages/salon-kost');
-  });
-  app.get('/salons/vlad', function(req, res, next) {
-    res.render('pages/salon-vlad');
-  });
-  app.get('/salons/kharkiv', function(req, res, next) {
-    res.render('pages/salon-kharkiv');
-  });
+  // app.get('/salons/kost', function(req, res, next) {
+  //   res.render('pages/salon-kost');
+  // });
+  // app.get('/salons/vlad', function(req, res, next) {
+  //   res.render('pages/salon-vlad');
+  // });
+  // app.get('/salons/kharkiv', function(req, res, next) {
+  //   res.render('pages/salon-kharkiv');
+  // });
   app.get('/contacts', function(req, res, next) {
     Contacts.findOne({contacts_id: 1})
       .exec(function (err, contacts) {

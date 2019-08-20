@@ -1,46 +1,46 @@
 extends ../../layouts/main-admin
 
 block contents
-    // Preloader
-    .preloader
-        .cssload-speeding-wheel
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
 
-    #wrapper
-        include ./../../partials/admin/header.jade
-        include ./../../partials/admin/aside-menu.jade
+  #wrapper
+    include ./../../partials/admin/header.jade
+    include ./../../partials/admin/aside-menu.jade
 
-        // Page Content
-        #page-wrapper
-            .container-fluid
-                .row.bg-title
-                    .col-lg-3.col-md-4.col-sm-4.col-xs-12
-                        h4.page-title Edit
-                    .col-lg-9.col-sm-8.col-md-8.col-xs-12
-                        ol.breadcrumb
-                            li
-                                a(href='/admin') Main
-                            li
-                                a(href='/admin/admins') All admins
-                            li.active Edit
-                if (message)
-                    .row
-                        p(style='color:red;') #{message}
-                .row
-                    form(method='post', action='/admin/admins/' + admin.admin_id + '/edit')
-                        .form-group
-                            label Email:
-                            input.form-control(type='email', name='email', required='', placeholder='Enter e-mail', value= admin.email)
-                        .form-group
-                            label First name:
-                            input.form-control(type='text', name='name', required='', placeholder='Enter first name', value= admin.name)
-                        .form-group
-                            label Last name:
-                            input.form-control(type='text', name='lastName', required='', placeholder='Enter last name', value= admin.lastName)
-                        .form-group
-                            label Password:
-                            input.form-control(type='password', name='password', placeholder='Enter password')
-                            small(class='form-text text-muted') If you don't want change password just set this field empty
-                        .clear
-                        button.btn(type='submit' style="float:left") Save
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Редактировать
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/admin/admins') Список администраторов
+              li.active Редактировать
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+        .row
+          form(method='post', action='/admin/admins/' + admin.admin_id + '/edit')
+            .form-group
+              label Email:
+              input.form-control(type='email', name='email', required='', value= admin.email)
+            .form-group
+              label Имя:
+              input.form-control(type='text', name='name', required='', value= admin.name)
+            .form-group
+              label Фамилия:
+              input.form-control(type='text', name='lastName', required='', value= admin.lastName)
+            .form-group
+              label Пароль:
+              input.form-control(type='password', name='password')
+              small(class='form-text text-muted') Если Вы не хотите менять пароль, оставьте поле пустым
+            .clear
+            button.btn(type='submit' style="float:left") Сохранить
 
-        include ./../../partials/admin/footer.jade
+    include ./../../partials/admin/footer.jade

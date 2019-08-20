@@ -43,7 +43,7 @@ $(document).ready(function() {
             nRow.lastChild.innerHTML = '';
 
             var aTag = document.createElement('a');
-            aTag.setAttribute('title', 'Remove');
+            aTag.setAttribute('title', 'Удалить');
             aTag.setAttribute('style', 'cursor:pointer');
             aTag.onclick = function() {
                 deleteItem(aData[0]);
@@ -110,7 +110,7 @@ $(document).ready(function() {
 });
 
 function deleteItem(selectedId) {
-    Dialog("Delete admin?", function() {
+    Dialog("Удалить администратора?", function() {
         deleteItemBack(selectedId)
     }, function() {
         return false
@@ -127,7 +127,7 @@ function deleteItemBack(selectedId) {
             table_all_global.ajax.reload();
         } else {
             if (resp.error){
-                alert('Error deleting admin');
+                alert('Ошибка удаления администратора');
             }
         }
     });
