@@ -3,7 +3,7 @@
 	.sidebar-nav.navbar-collapse.slimscrollsidebar
 		ul#side-menu.nav
 			li
-				a.waves-effect(href='/admin/pages')
+				a.waves-effect(href='javascript:void(0)')
 					i.ti-book
 					span.hide-menu
 						| Страницы
@@ -21,7 +21,7 @@
 						a(href='/admin/pages/cinema') Cinema
 
 			li
-				a.waves-effect(href='/admin/salons')
+				a.waves-effect(href='javascript:void(0)')
 					i.fa.fa-scissors
 					span.hide-menu
 						| Салоны
@@ -35,7 +35,27 @@
 						a(href='/admin/salons/new') Новый салон
 
 			li
-				a.waves-effect(href='/admin/admins')
+				a.waves-effect(href="javascript:void(0)")
+					i.fa.fa-graduation-cap
+					span.hide-menu
+						| Курсы
+						span.fa.arrow
+				ul.nav.nav-second-level
+					li
+						a(href="/admin/courses") Страницы курсов
+					li
+						a.waves-effect(href="javascript:void(0)")
+							| Общие страницы курсов
+							span.fa.arrow
+						ul.nav.nav-third-level
+							li
+								a(href="/admin/courses/page/beginner") Beginner
+							li
+								a(href="/admin/courses/page/pro") Pro
+
+
+			li
+				a.waves-effect(href='javascript:void(0)')
 					i.fa.fa-users
 					span.hide-menu
 						| Администраторы

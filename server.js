@@ -167,6 +167,12 @@ if (cluster.isMaster) {
     var clientSalons = require('./routes/client/salons');
     app.use('/salons', clientSalons);
 
+    var adminCourses = require('./routes/admin/courses');
+    app.use('/admin/courses', adminCourses);
+
+    var clientCourses = require('./routes/client/courses');
+    app.use('/courses', clientCourses);
+
     // catch 404 and forward to error handler
     app.use(function(req, res, next) {
         var err = new Error('Not Found');

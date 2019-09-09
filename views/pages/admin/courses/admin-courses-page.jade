@@ -1,0 +1,69 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Курсы #{coursespages.title}
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li.active Курсы #{coursespages.title}
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/courses/page/#{coursespages.name}')
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='title')!= coursespages.title
+              .col-sm-6
+                .form-group
+                  label Подзаголовок:
+                  textarea.form-control(name='subtitle')!= coursespages.subtitle
+
+            h2 Секция "Описание раздела"
+            br
+
+            .row
+              .col-sm-6
+                .form-group
+                  label Заголовок:
+                  textarea.form-control(name='about_title')!= coursespages.about_title
+              .col-sm-6
+                .form-group
+                  label Подзаголовок 1:
+                  textarea.form-control(name='about_subtitle_1')!= coursespages.about_subtitle_1
+            .row
+              .col-sm-6
+                .form-group
+                  label Подзаголовок 2:
+                  textarea.form-control(name='about_subtitle_2')!= coursespages.about_subtitle_2
+              .col-sm-6
+                .form-group
+                  label Подзаголовок 3:
+                  textarea.form-control(name='about_subtitle_3')!= coursespages.about_subtitle_3
+
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade

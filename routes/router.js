@@ -61,9 +61,9 @@ module.exports = function (app, passport) {
   app.get('/blog', function(req, res, next) {
     res.render('pages/blog');
   });
-  app.get('/courses', function(req, res, next) {
-    res.render('pages/splash');
-  });
+  // app.get('/courses', function(req, res, next) {
+  //   res.render('pages/splash');
+  // });
   // app.get('/salons', function(req, res, next) {
   //   Salonpages.findOne({salonpages_id: 1})
   //     .exec(function (err, salonpages) {
@@ -101,12 +101,12 @@ module.exports = function (app, passport) {
   });
 
 
-  app.get('/courses/beginner', function(req, res, next) {
-    res.render('pages/lp/courses-beginner');
-  });
-  app.get('/courses/pro', function(req, res, next) {
-    res.render('pages/lp/courses-pro');
-  });
+  // app.get('/courses/beginner', function(req, res, next) {
+  //   res.render('pages/lp/courses-beginner');
+  // });
+  // app.get('/courses/pro', function(req, res, next) {
+  //   res.render('pages/lp/courses-pro');
+  // });
 
   app.get('/lp', function(req, res, next) {
     res.render('pages/lp/home');
