@@ -39,7 +39,16 @@ var salonsSchema = new Schema({
     photo: {type: String}
   }],
 
-  gallery:  [],
+  prices: [{
+    name: {type: String},
+    photo: {type: String},
+    positions: [{
+      name: {type: String},
+      price: {type: String}
+    }]
+  }],
+
+  gallery:  []
 
 });
 

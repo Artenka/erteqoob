@@ -121,8 +121,6 @@ router.post('/new', function (req, res) {
       });
     } else {
 
-      console.log(req.body);
-
       var salons = new Salons({});
 
       salons.name = req.body.name;
@@ -321,6 +319,7 @@ router.post('/:id/edit', function(req, res) {
           {name: 'imageBg1', maxCount: 1},
           {name: 'imageBg1_mobile', maxCount: 1},
           {name: 'teachers_photo'},
+          {name: 'prices_photo'},
           {name: 'gallery'}
         ]);
 
@@ -444,6 +443,59 @@ router.post('/:id/edit', function(req, res) {
             salons.teachers = teachersArray;
 
 
+
+            var prices_name = req.body.prices_name instanceof Array ? req.body.prices_name : [req.body.prices_name];
+            var pricesPath = req.body.pricesPath instanceof Array ? req.body.pricesPath : [req.body.pricesPath];
+            var prices_deleted = req.body.prices_deleted instanceof Array ? req.body.prices_deleted : [req.body.prices_deleted];
+            var prices_positions_name = [];
+            var prices_positions_price = [];
+
+            var pricesArray = [];
+            var pricesPositionsArray = [];
+            photoPath = '';
+            i = 0;
+            pricesPath.forEach(function (item, index) {
+              if (item === '' && prices_deleted[index] === 'false') {
+                if (req.files.prices_photo) {
+                  if (typeof req.files.prices_photo[i] !== 'undefined') {
+                    photoPath = req.files.prices_photo[i].path;
+                    photoPath = photoPath.split('\\').join('/');
+                    photoPath = photoPath.replace('public', '');
+                    i++;
+                  }
+                }
+              } else {
+                photoPath = item;
+              }
+
+
+              pricesPositionsArray = [];
+
+              if(typeof req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_name'] !== 'undefined') {
+                prices_positions_name = req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_name'] instanceof Array ? req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_name'] : [req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_name']];
+                prices_positions_price = req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_price'] instanceof Array ? req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_price'] : [req.body['prices_positions_'+ (parseInt(index, 10)+1) +'_price']];
+
+                prices_positions_name.forEach(function (positionsItem, positionsIndex) {
+                  pricesPositionsArray.push({
+                    name: prices_positions_name[positionsIndex],
+                    price: prices_positions_price[positionsIndex]
+                  });
+                });
+              }
+
+
+              pricesArray.push({
+                name: prices_name[index],
+                photo: photoPath,
+                positions: pricesPositionsArray
+              });
+            });
+
+
+            salons.prices = pricesArray;
+
+
+
             var galleryList = [];
             if(req.body.galleryPath) {
               if(typeof req.body.galleryPath === 'string') {
@@ -463,6 +515,7 @@ router.post('/:id/edit', function(req, res) {
               });
             }
             salons.gallery = galleryList;
+
 
 
             salons.save(function (err, item) {

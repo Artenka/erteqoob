@@ -210,6 +210,66 @@ block contents
 
             br
             br
+            h2 Прайслист
+            br
+
+            #pricesBlock
+              - var i = 0;
+              each listItem, index in salons.prices
+                - i++;
+                .panel.panel-default(data-item="#{i}")
+                  .panel-heading
+                    | &nbsp;
+                    .panel-action
+                      a(href="#" data-perform="panel-collapse")
+                        i.ti-minus
+                      a.panel-dismiss(href="#" data-perform="panel-dismiss")
+                        i.ti-close
+                  .panel-wrapper.collapse.in(aria-expanded="true")
+                    .panel-body
+                      .row
+                        .col-sm-6.col-xs-12
+                          .form-group
+                            label Имя мастера:
+                            textarea.form-control(name='prices_name')!= listItem.name || ''
+                        .col-sm-6.col-sx-12
+                          .form-group
+                            label.control-label Фотография мастера (300 X 300):
+                            input(type="hidden" name="pricesPath" value!=listItem.photo || '')
+                            input.dropify-prices(type='file' name="prices_photo" data-default-file=(listItem.photo || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                            if listItem.photo === ''
+                              input(type="hidden" name="prices_deleted" value="true")
+                            else
+                              input(type="hidden" name="prices_deleted" value="false")
+                      .positionsBlock
+                        each item, index in listItem.positions
+                          .positions-row
+                            .row
+                              .col-sm-8.col-xs-7
+                                label Название:
+                                input.form-control.prices-positions-name(type='text', name='prices_positions_#{i}_name', required='', value= item.name)
+                              .col-sm-3.col-xs-3
+                                label Цена:
+                                input.form-control.prices-positions-price(type='text', name='prices_positions_#{i}_price', value= item.price)
+                              .col-sm-1.col-xs-2
+                                label &nbsp;
+                                button(type="button").btn.btn-circle.remove-positions
+                                  i.fa.fa-times
+                            br
+
+                      button.addPositions.btn(type='button') Добавить позицию прайслиста
+
+            .row.m-t-20
+              .col-sm-6.col-sx-12
+                button#addPrices.btn.waves-effect.waves-light(type='button' data-counter="#{i}")
+                  span.btn-label
+                    i.fa.icon-plus
+                  | Добавить мастера прайслиста
+
+
+
+            br
+            br
             h2 Галерея <small>(1280 X 755)</small>:
             br
 
