@@ -1,0 +1,51 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ./../../../partials/admin/header.jade
+    include ./../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Новый курс
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li
+                a(href='/admin/courses') Салоны
+              li.active Новый курс
+        if (message)
+          .row
+            p(style='color:red;') #{message}
+
+        .row
+          form(method='post', action='/admin/courses/new' enctype='multipart/form-data')
+            .row
+              .col-xs-12
+                .form-group
+                  label Название курса:
+                  input.form-control(name='name', required='' value="")
+            .row
+              .col-xs-12
+                .form-group
+                  label Ссылка:
+                  input.form-control(name='path', required='' value="")
+
+
+            .clear
+            br
+            br
+
+            button.btn(type='submit') Сохранить
+
+    include ./../../../partials/admin/footer.jade
+
+    script(src="/js/pages/admin/admin-courses-edit.js")

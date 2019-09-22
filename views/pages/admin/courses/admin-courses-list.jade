@@ -1,0 +1,42 @@
+extends ../../../layouts/main-admin
+
+block contents
+  // Preloader
+  .preloader
+    .cssload-speeding-wheel
+
+  #wrapper
+    include ../../../partials/admin/header.jade
+    include ../../../partials/admin/aside-menu.jade
+
+    // Page Content
+    #page-wrapper
+      .container-fluid
+        .row.bg-title
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Курсы
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            ol.breadcrumb
+              li
+                a(href='/admin') Главная
+              li.active Курсы
+        .row
+          .form-group
+            .col-sm-4.m-b-20
+              a.btn.btn-block.btn-outline.btn-lg(href="/admin/courses/new") Добавить салон
+        .row
+          .col-sm-12
+            .white-box
+              .table-responsive
+                table#table_courses.table.table-striped
+                  thead
+                    tr
+                      th ID
+                      th Название
+                      th Приоритет
+                      th Действие
+
+    include ../../../partials/admin/footer.jade
+
+    script(src='/plugins/bower_components/datatables/jquery.dataTables.min.js')
+    script(src="/js/pages/admin/admin-courses-list.js")
