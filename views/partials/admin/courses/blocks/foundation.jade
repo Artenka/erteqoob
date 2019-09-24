@@ -1,0 +1,59 @@
+mixin block_foundation(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Фундамент успешной профессии"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_foundation")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 1 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_title]')!= item.item_1_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 1 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_text]')!= item.item_1_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 2 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_title]')!= item.item_2_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 2 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_text]')!= item.item_2_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 3 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_3_title]')!= item.item_3_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 3 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_3_text]')!= item.item_3_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 4 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_4_title]')!= item.item_4_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 4 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_4_text]')!= item.item_4_text

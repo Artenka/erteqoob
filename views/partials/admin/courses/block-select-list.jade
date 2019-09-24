@@ -1,0 +1,70 @@
+mixin block_select(city)
+  h2
+    b Выберите блок который хотите добавить:
+  br
+  .row
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_1_#{city}" style="background-image: url(/img/admin/courses/1.jpg)")
+        input(id="radio1_1_#{city}" type="radio" name="block_type_#{city}" value="block_intro" checked="")
+        label(for="radio1_1_#{city}") Блок "Вступление"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_2_#{city}" style="background-image: url(/img/admin/courses/2.jpg)")
+        input(id="radio1_2_#{city}" type="radio" name="block_type_#{city}" value="block_foundation")
+        label(for="radio1_2_#{city}") Блок "Фундамент успешной профессии"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_3_1_#{city}" style="background-image: url(/img/admin/courses/3.jpg)")
+        input(id="radio1_3_1_#{city}" type="radio" name="block_type_#{city}" value="block_masters")
+        label(for="radio1_3_1_#{city}") Блок "Подходит для мастеров"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_3_2_#{city}" style="background-image: url(/img/admin/courses/10.jpg)")
+        input(id="radio1_3_2_#{city}" type="radio" name="block_type_#{city}" value="block_masters_2")
+        label(for="radio1_3_2_#{city}") Блок "Подходит для мастеров" - 2
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_4_#{city}" style="background-image: url(/img/admin/courses/4.jpg)")
+        input(id="radio1_4_#{city}" type="radio" name="block_type_#{city}" value="block_skills")
+        label(for="radio1_4_#{city}") Блок "Вы научитесь"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_5_1_#{city}" style="background-image: url(/img/admin/courses/5.jpg)")
+        input(id="radio1_5_1_#{city}" type="radio" name="block_type_#{city}" value="block_format")
+        label(for="radio1_5_1_#{city}") Блок "Формат обучения"
+    //.col-xs-12.col-sm-6.col-md-4
+    //  .radio.radio-info
+    //    label.radio__thumb(for="radio1_5_2" style="background-image: url(/img/admin/courses/13.jpg)")
+    //    input#radio1_5_2(type="radio" name="block_type" value="block_format_2")
+    //    label(for="radio1_5_2") Блок "Формат обучения" - 2
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_6_1_#{city}" style="background-image: url(/img/admin/courses/6.jpg)")
+        input(id="radio1_6_1_#{city}" type="radio" name="block_type_#{city}" value="block_program")
+        label(for="radio1_6_1_#{city}") Блок "Программа"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_6_2_#{city}" style="background-image: url(/img/admin/courses/11.jpg)")
+        input(id="radio1_6_2_#{city}" type="radio" name="block_type_#{city}" value="block_program_2")
+        label(for="radio1_6_2") Блок "Программа" - 2
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_7_#{city}" style="background-image: url(/img/admin/courses/7.jpg)")
+        input(id="radio1_7_#{city}" type="radio" name="block_type_#{city}" value="block_study")
+        label(for="radio1_7_#{city}") Блок "Для обучения мы предоставим"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_8_#{city}" style="background-image: url(/img/admin/courses/8.jpg)")
+        input(id="radio1_8_#{city}" type="radio" name="block_type_#{city}" value="block_philosophy")
+        label(for="radio1_8_#{city}")  Блок "Самые яркие инновации"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_9_#{city}" style="background-image: url(/img/admin/courses/12.jpg)")
+        input(id="radio1_9_#{city}" type="radio" name="block_type_#{city}" value="block_teachers")
+        label(for="radio1_9_#{city}")  Блок "Преподаватели"
+    .col-xs-12.col-sm-6.col-md-4
+      .radio.radio-info
+        label.radio__thumb(for="radio1_10_#{city}" style="background-image: url(/img/admin/courses/9.jpg)")
+        input(id="radio1_10_#{city}" type="radio" name="block_type_#{city}" value="block_action")
+        label(for="radio1_10_#{city}")  Блок "Технологии"

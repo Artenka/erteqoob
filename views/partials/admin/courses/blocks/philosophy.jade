@@ -1,0 +1,55 @@
+mixin block_philosophy(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Самые яркие инновации"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_philosophy")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок 1:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle_1]')!= item.subtitle_1
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок 2:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle_2]')!= item.subtitle_2
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок блока с кнопками:
+              textarea.form-control(name='pages[#{city}][#{index}][title_btn_1]')!= item.title_btn_1
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Кнопка 1 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][btn_1_text]')!= item.btn_1_text
+          .col-xs-12.col-sm-6
+            .form-group
+              label Кнопка 1 - ссылка:
+              textarea.form-control(name='pages[#{city}][#{index}][btn_1_link]')!= item.btn_1_link
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Кнопка 2 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][btn_2_text]')!= item.btn_2_text
+          .col-xs-12.col-sm-6
+            .form-group
+              label Кнопка 2 - ссылка:
+              textarea.form-control(name='pages[#{city}][#{index}][btn_2_link]')!= item.btn_2_link

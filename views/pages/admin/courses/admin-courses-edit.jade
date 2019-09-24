@@ -1,6 +1,21 @@
 extends ../../../layouts/main-admin
 
 block contents
+  // mixins
+  include ./../../../partials/admin/courses/block-select-list
+  include ./../../../partials/admin/courses/blocks/intro
+  include ./../../../partials/admin/courses/blocks/foundation
+  include ./../../../partials/admin/courses/blocks/masters
+  include ./../../../partials/admin/courses/blocks/masters_2
+  include ./../../../partials/admin/courses/blocks/skills
+  include ./../../../partials/admin/courses/blocks/format
+  include ./../../../partials/admin/courses/blocks/program
+  include ./../../../partials/admin/courses/blocks/program_2
+  include ./../../../partials/admin/courses/blocks/study
+  include ./../../../partials/admin/courses/blocks/philosophy
+  include ./../../../partials/admin/courses/blocks/teachers
+  include ./../../../partials/admin/courses/blocks/action
+
   link(href="/plugins/bower_components/nestable/nestable.css" rel="stylesheet" type="text/css")
 
   // Preloader
@@ -69,7 +84,7 @@ block contents
               .row
                 .col-sm-6.col-sx-12
                   .form-group
-                    label.control-label Превью курса:
+                    label.control-label Превью курса (1440 x 300):
                     input(type="hidden" name="preview_path" value=(courses.preview || ''))
                     input#preview.dropify(type='file' name="preview" data-default-file=(courses.preview || '')  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
                     input(type="hidden" name="preview_deleted" value="false")
@@ -89,998 +104,83 @@ block contents
             .tab-content
               #kievTab.tab-pane.fade.active.in(role="tabpanel")
                 .white-box
-                  h2
-                    b Выберите блок который хотите добавить:
-                  br
-                  .row
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_1" style="background-image: url(/img/admin/courses/1.jpg)")
-                        input#radio1_1(type="radio" name="block_type" value="block_intro" checked="")
-                        label(for="radio1_1") Блок "Вступление"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_2" style="background-image: url(/img/admin/courses/2.jpg)")
-                        input#radio1_2(type="radio" name="block_type" value="block_foundation")
-                        label(for="radio1_2") Блок "Фундамент успешной профессии"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_3_1" style="background-image: url(/img/admin/courses/3.jpg)")
-                        input#radio1_3_1(type="radio" name="block_type" value="block_masters_1")
-                        label(for="radio1_3_1") Блок "Подходит для мастеров"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_3_2" style="background-image: url(/img/admin/courses/10.jpg)")
-                        input#radio1_3_2(type="radio" name="block_type" value="block_masters_2")
-                        label(for="radio1_3_2") Блок "Подходит для мастеров" - 2
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_4" style="background-image: url(/img/admin/courses/4.jpg)")
-                        input#radio1_4(type="radio" name="block_type" value="block_skills")
-                        label(for="radio1_4") Блок "Вы научитесь"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_5_1" style="background-image: url(/img/admin/courses/5.jpg)")
-                        input#radio1_5_1(type="radio" name="block_type" value="block_format")
-                        label(for="radio1_5_1") Блок "Формат обучения"
-                    //.col-xs-12.col-sm-6.col-md-4
-                    //  .radio.radio-info
-                    //    label.radio__thumb(for="radio1_5_2" style="background-image: url(/img/admin/courses/13.jpg)")
-                    //    input#radio1_5_2(type="radio" name="block_type" value="block_format_2")
-                    //    label(for="radio1_5_2") Блок "Формат обучения" - 2
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_6_1" style="background-image: url(/img/admin/courses/6.jpg)")
-                        input#radio1_6_1(type="radio" name="block_type" value="block_program")
-                        label(for="radio1_6_1") Блок "Программа"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_6_2" style="background-image: url(/img/admin/courses/11.jpg)")
-                        input#radio1_6_2(type="radio" name="block_type" value="block_program_2")
-                        label(for="radio1_6_2") Блок "Программа" - 2
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_7" style="background-image: url(/img/admin/courses/7.jpg)")
-                        input#radio1_7(type="radio" name="block_type" value="block_study")
-                        label(for="radio1_7") Блок "Для обучения мы предоставим"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_8" style="background-image: url(/img/admin/courses/8.jpg)")
-                        input#radio1_8(type="radio" name="block_type" value="block_philosophy")
-                        label(for="radio1_8")  Блок "Самые яркие инновации"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_9" style="background-image: url(/img/admin/courses/12.jpg)")
-                        input#radio1_9(type="radio" name="block_type" value="block_teachers")
-                        label(for="radio1_9")  Блок "Преподаватели"
-                    .col-xs-12.col-sm-6.col-md-4
-                      .radio.radio-info
-                        label.radio__thumb(for="radio1_10" style="background-image: url(/img/admin/courses/9.jpg)")
-                        input#radio1_10(type="radio" name="block_type" value="block_action")
-                        label(for="radio1_10")  Блок "Технологии"
+                  +block_select('kiev')
                   .row.m-t-20
                     .col-sm-6.col-sx-12
-                      button#addBlock.btn.waves-effect.waves-light(type='button' data-city="kiev" data-counter="0")
+                      - var kievCounter = courses.pages[0].blocks.length
+                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kiev" data-counter="#{kievCounter}")
                         span.btn-label
                           i.fa.icon-plus
                         | Добавить блок
 
-                #coursesBlocksKiev.dd.myadmin-dd.courses-blocks
-                  ol.dd-list.sortable
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Вступление"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][0][block_type]', required='' value="block_intro")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][0][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][0][title]')
-                            .row
-                              .col-xs-12.col-sm-12
-                                .form-group
-                                  label Описание:
-                                  textarea.form-control(name='pages[kiev][0][text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Длительность:
-                                  textarea.form-control(name='pages[kiev][0][duration]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Дата начала:
-                                  textarea.form-control(name='pages[kiev][0][date]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Текущее количество мест:
-                                  input.form-control(name='pages[kiev][0][seats_current]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Общее количество мест:
-                                  input.form-control(name='pages[kiev][0][seats_total]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][0][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][0][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][0][bg_deleted]" value="false")
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Фундамент успешной профессии"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][1][block_type]', required='' value="block_foundation")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][1][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][1][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][1][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][1][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][1][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][1][item_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][1][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][1][item_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - заголовок:
-                                  textarea.form-control(name='pages[kiev][1][item_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - текст:
-                                  textarea.form-control(name='pages[kiev][1][item_3_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 4 - заголовок:
-                                  textarea.form-control(name='pages[kiev][1][item_4_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 4 - текст:
-                                  textarea.form-control(name='pages[kiev][1][item_4_text]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Подходит для мастеров"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][2][block_type]', required='' value="block_masters")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][2][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][2][title]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][2][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][2][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][2][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][2][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][2][item_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][2][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][2][item_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - заголовок:
-                                  textarea.form-control(name='pages[kiev][2][item_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - текст:
-                                  textarea.form-control(name='pages[kiev][2][item_3_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 4 - заголовок:
-                                  textarea.form-control(name='pages[kiev][2][item_4_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 4 - текст:
-                                  textarea.form-control(name='pages[kiev][2][item_4_text]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Подходит для мастеров" - 2
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][3][block_type]', required='' value="block_masters_2")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][3][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][3][title]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][3][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][3][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][3][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][3][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][3][item_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][3][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][3][item_2_text]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Вы научитесь"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][4][block_type]', required='' value="block_skills")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][4][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][4][title]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][4][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][4][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][4][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_1_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_1_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_1_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_1_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 3 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_1_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Левый столбец - пункт 3 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_1_3_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_2_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_2_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_2_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_2_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 3 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_2_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Центральный столбец - пункт 3 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_2_3_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 1 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_3_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 1 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_3_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 2 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_3_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 2 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_3_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 3 - заголовок:
-                                  textarea.form-control(name='pages[kiev][4][item_3_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Правый столбец - пункт 3 - текст:
-                                  textarea.form-control(name='pages[kiev][4][item_3_3_text]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Формат обучения"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][6][block_type]', required='' value="block_format")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][6][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][6][subtitle]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][6][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][6][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][6][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12
-                                .form-group
-                                  label Текст в левом блоке:
-                                  textarea.mymce.form-control(name='pages[kiev][6][text_left]')
-                            .row
-                              .col-xs-12
-                                .form-group
-                                  label Текст в правом блоке:
-                                  textarea.mymce.form-control(name='pages[kiev][6][text_right]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Текст про стоимость:
-                                  textarea.form-control(name='pages[kiev][6][price]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Текст про предоплату:
-                                  textarea.form-control(name='pages[kiev][6][prepayment]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Текст про скидку:
-                                  textarea.form-control(name='pages[kiev][6][discount]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Программа"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][7][block_type]', required='' value="block_program")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][7][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][title]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Описание:
-                                  textarea.form-control(name='pages[kiev][7][text]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Дата старта:
-                                  textarea.form-control(name='pages[kiev][7][date]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][7][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][7][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][7][bg_deleted]" value="false")
-                            h3 Этапы (минимум - 2, максимум - 9):
-                            br
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 1 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 1 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 2 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 2 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 3 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 3 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_3_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 4 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_4_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 4 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_4_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 5 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_5_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 5 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_5_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 6 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_6_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 6 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_6_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 7 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_7_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 7 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_7_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 8 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_8_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 8 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_8_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 9 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][7][item_9_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Этап 9 - Описание:
-                                  textarea.form-control(name='pages[kiev][7][item_9_text]')
-
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Программа" - 2
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][8][block_type]', required='' value="block_program_2")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][8][subtitle]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][8][title]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][8][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][8][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][8][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - Заголовок(день):
-                                  textarea.form-control(name='pages[kiev][8][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][8][item_1_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][8][item_1_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][8][item_1_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - Название:
-                                  textarea.form-control(name='pages[kiev][8][item_1_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 1 - Текст:
-                                  textarea.form-control(name='pages[kiev][8][item_1_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - Заголовок(день):
-                                  textarea.form-control(name='pages[kiev][8][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][8][item_2_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][8][item_2_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][8][item_2_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - Название:
-                                  textarea.form-control(name='pages[kiev][8][item_2_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 2 - Текст:
-                                  textarea.form-control(name='pages[kiev][8][item_2_text]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - Заголовок(день):
-                                  textarea.form-control(name='pages[kiev][8][item_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][8][item_3_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][8][item_3_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][8][item_3_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - Название:
-                                  textarea.form-control(name='pages[kiev][8][item_3_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Пункт 3 - Текст:
-                                  textarea.form-control(name='pages[kiev][8][item_3_text]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Для обучения мы предоставим"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][9][block_type]', required='' value="block_study")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][9][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 1 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_1_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 1 -  Изображение (230 X 260):
-                                  input(type="hidden" name="pages[kiev][9][item_1_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_1_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_1_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 2 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_2_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 2 -  Изображение (200 X 255):
-                                  input(type="hidden" name="pages[kiev][9][item_2_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_2_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_2_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 3 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_3_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 3 -  Изображение (212 X 212):
-                                  input(type="hidden" name="pages[kiev][9][item_3_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_3_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_3_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 4 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_4_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 4 -  Изображение (215 X 200):
-                                  input(type="hidden" name="pages[kiev][9][item_4_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_4_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_4_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 5 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_5_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 5 -  Изображение (180 X 210):
-                                  input(type="hidden" name="pages[kiev][9][item_5_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_5_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_5_image_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Блок 6 - Заголовок:
-                                  textarea.form-control(name='pages[kiev][9][item_6_title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Блок 6 -  Изображение (230 X 155):
-                                  input(type="hidden" name="pages[kiev][9][item_6_image_path]")
-                                  input.dropify(type='file' name="pages[kiev][9][item_6_image]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][9][item_6_image_deleted]" value="false")
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Самые яркие инновации"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][10][block_type]', required='' value="block_philosophy")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][10][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][10][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][10][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][10][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок 1:
-                                  textarea.form-control(name='pages[kiev][10][subtitle_1]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок 2:
-                                  textarea.form-control(name='pages[kiev][10][subtitle_2]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок блока с кнопками:
-                                  textarea.form-control(name='pages[kiev][10][title_btn_1]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Кнопка 1 - текст:
-                                  textarea.form-control(name='pages[kiev][10][btn_1_text]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Кнопка 1 - ссылка:
-                                  textarea.form-control(name='pages[kiev][10][btn_1_link]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Кнопка 2 - текст:
-                                  textarea.form-control(name='pages[kiev][10][btn_2_text]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Кнопка 2 - ссылка:
-                                  textarea.form-control(name='pages[kiev][10][btn_2_link]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Преподаватели"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][11][block_type]', required='' value="block_teachers")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][11][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][11][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 1 - Имя:
-                                  textarea.form-control(name='pages[kiev][11][teacher_1_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Преподаватель 1 - Фото (260 X 180):
-                                  input(type="hidden" name="pages[kiev][11][teacher_1_photo_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][teacher_1_photo]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][teacher_1_photo_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 1 - Фейсбук:
-                                  input.form-control(name='pages[kiev][11][teacher_1_fb]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 1 - Инстаграм:
-                                  input.form-control(name='pages[kiev][11][teacher_1_in]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 2 - Имя:
-                                  textarea.form-control(name='pages[kiev][11][teacher_2_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Преподаватель 2 - Фото (260 X 180):
-                                  input(type="hidden" name="pages[kiev][11][teacher_2_photo_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][teacher_2_photo]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][teacher_2_photo_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 2 - Фейсбук:
-                                  input.form-control(name='pages[kiev][11][teacher_2_fb]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 2 - Инстаграм:
-                                  input.form-control(name='pages[kiev][11][teacher_2_in]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 3 - Имя:
-                                  textarea.form-control(name='pages[kiev][11][teacher_3_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Преподаватель 3 - Фото (260 X 180):
-                                  input(type="hidden" name="pages[kiev][11][teacher_3_photo_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][teacher_3_photo]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][teacher_3_photo_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 3 - Фейсбук:
-                                  input.form-control(name='pages[kiev][11][teacher_3_fb]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 3 - Инстаграм:
-                                  input.form-control(name='pages[kiev][11][teacher_3_in]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 4 - Имя:
-                                  textarea.form-control(name='pages[kiev][11][teacher_4_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Преподаватель 4 - Фото (260 X 180):
-                                  input(type="hidden" name="pages[kiev][11][teacher_4_photo_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][teacher_4_photo]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][teacher_4_photo_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 4 - Фейсбук:
-                                  input.form-control(name='pages[kiev][11][teacher_4_fb]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 4 - Инстаграм:
-                                  input.form-control(name='pages[kiev][11][teacher_4_in]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 5 - Имя:
-                                  textarea.form-control(name='pages[kiev][11][teacher_5_name]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Преподаватель 5 - Фото (260 X 180):
-                                  input(type="hidden" name="pages[kiev][11][teacher_5_photo_path]")
-                                  input.dropify(type='file' name="pages[kiev][11][teacher_5_photo]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][11][teacher_5_photo_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 5 - Фейсбук:
-                                  input.form-control(name='pages[kiev][11][teacher_5_fb]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Преподаватель 5 - Инстаграм:
-                                  input.form-control(name='pages[kiev][11][teacher_5_in]')
-
-                    li.dd-item
-                      .panel.panel-default
-                        .panel-heading
-                          | Блок "Технологии"
-                          .panel-action
-                            a(href="#" data-perform="panel-collapse")
-                              i.ti-minus
-                            a(href="#" data-perform="panel-dismiss")
-                              i.ti-close
-                        .panel-wrapper.collapse.in(aria-expanded="true")
-                          .panel-body
-                            input.form-control(type="hidden" name='pages[kiev][12][block_type]', required='' value="block_action")
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Заголовок:
-                                  textarea.form-control(name='pages[kiev][12][title]')
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label Подзаголовок:
-                                  textarea.form-control(name='pages[kiev][12][subtitle]')
-                            .row
-                              .col-xs-12.col-sm-6
-                                .form-group
-                                  label.control-label Фоновое изображение (1920 X 1080):
-                                  input(type="hidden" name="pages[kiev][12][bg_path]")
-                                  input.dropify(type='file' name="pages[kiev][12][bg]" data-default-file=''  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
-                                  input(type="hidden" name="pages[kiev][12][bg_deleted]" value="false")
-                            .row
-                              .col-xs-12.col-sm-4
-                                .form-group
-                                  label Блок призыва - слово 1:
-                                  input.form-control(name='pages[kiev][12][block_word_1]')
-                              .col-xs-12.col-sm-4
-                                .form-group
-                                  label Блок призыва - слово 2:
-                                  input.form-control(name='pages[kiev][12][block_word_2]')
-                              .col-xs-12.col-sm-4
-                                .form-group
-                                  label Блок призыва - слово 3:
-                                  input.form-control(name='pages[kiev][12][block_word_3]')
-
+                #kievCoursesBlocks.dd.myadmin-dd.courses-blocks
+                  each item, index in courses.pages[0].blocks
+                    case item.block_type
+                      when 'block_intro'
+                        +block_intro(index, 'kiev', item)
+                      when 'block_foundation'
+                        +block_foundation(index, 'kiev', item)
+                      when 'block_masters'
+                        +block_masters(index, 'kiev', item)
+                      when 'block_masters_2'
+                        +block_masters_2(index, 'kiev', item)
+                      when 'block_skills'
+                        +block_skills(index, 'kiev', item)
+                      when 'block_format'
+                        +block_format(index, 'kiev', item)
+                      when 'block_program'
+                        +block_program(index, 'kiev', item)
+                      when 'block_program_2'
+                        +block_program_2(index, 'kiev', item)
+                      when 'block_study'
+                        +block_study(index, 'kiev', item)
+                      when 'block_philosophy'
+                        +block_philosophy(index, 'kiev', item)
+                      when 'block_teachers'
+                        +block_teachers(index, 'kiev', item)
+                      when 'block_action'
+                        +block_action(index, 'kiev', item)
 
 
               #kharkivTab.tab-pane.fade(role="tabpanel")
                 .white-box
+                  +block_select('kharkiv')
+                  .row.m-t-20
+                    .col-sm-6.col-sx-12
+                      - var kharkivCounter = courses.pages[1].blocks.length
+                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kharkiv" data-counter="#{kharkivCounter}")
+                        span.btn-label
+                          i.fa.icon-plus
+                        | Добавить блок
+
+                #kharkivCoursesBlocks.dd.myadmin-dd.courses-blocks
+                  ol.dd-list.sortable
+                    each item, index in courses.pages[1].blocks
+                      case item.block_type
+                        when 'block_intro'
+                          +block_intro(index, 'kharkiv', item)
+                        when 'block_foundation'
+                          +block_foundation(index, 'kharkiv', item)
+                        when 'block_masters'
+                          +block_masters(index, 'kharkiv', item)
+                        when 'block_masters_2'
+                          +block_masters_2(index, 'kharkiv', item)
+                        when 'block_skills'
+                          +block_skills(index, 'kharkiv', item)
+                        when 'block_format'
+                          +block_format(index, 'kharkiv', item)
+                        when 'block_program'
+                          +block_program(index, 'kharkiv', item)
+                        when 'block_program_2'
+                          +block_program_2(index, 'kharkiv', item)
+                        when 'block_study'
+                          +block_study(index, 'kharkiv', item)
+                        when 'block_philosophy'
+                          +block_philosophy(index, 'kharkiv', item)
+                        when 'block_teachers'
+                          +block_teachers(index, 'kharkiv', item)
+                        when 'block_action'
+                          +block_action(index, 'kharkiv', item)
 
 
 

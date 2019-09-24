@@ -1,0 +1,51 @@
+mixin block_intro(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Вступление"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_intro")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle]')!= item.subtitle
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+        .row
+          .col-xs-12.col-sm-12
+            .form-group
+              label Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][text]')!= item.text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Длительность:
+              textarea.form-control(name='pages[#{city}][#{index}][duration]')!= item.duration
+          .col-xs-12.col-sm-6
+            .form-group
+              label Дата начала:
+              textarea.form-control(name='pages[#{city}][#{index}][date]')!= item.date
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Текущее количество мест:
+              input.form-control(name='pages[#{city}][#{index}][seats_current]' value!= item.seats_current)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Общее количество мест:
+              input.form-control(name='pages[#{city}][#{index}][seats_total]' value!= item.seats_total)
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")

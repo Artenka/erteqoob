@@ -1,0 +1,120 @@
+mixin block_program(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Программа"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_program")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle]')!= item.subtitle
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][text]')!= item.text
+          .col-xs-12.col-sm-6
+            .form-group
+              label Дата старта:
+              textarea.form-control(name='pages[#{city}][#{index}][date]')!= item.date
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        h3 Этапы (минимум - 2, максимум - 9):
+        br
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 1 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_title]')!= item.item_1_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 1 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_text]')!= item.item_1_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 2 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_title]')!= item.item_2_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 2 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_text]')!= item.item_2_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 3 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_3_title]')!= item.item_3_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 3 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_3_text]')!= item.item_3_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 4 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_4_title]')!= item.item_4_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 4 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_4_text]')!= item.item_4_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 5 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_5_title]')!= item.item_5_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 5 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_5_text]')!= item.item_5_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 6 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_6_title]')!= item.item_6_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 6 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_6_text]')!= item.item_6_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 7 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_7_title]')!= item.item_7_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 7 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_7_text]')!= item.item_7_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 8 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_8_title]')!= item.item_8_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 8 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_8_text]')!= item.item_8_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 9 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_9_title]')!= item.item_9_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 9 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_9_text]')!= item.item_9_text

@@ -1,0 +1,46 @@
+mixin block_masters_2(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Подходит для мастеров" - 2
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_masters_2")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle]')!= item.subtitle
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 1 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_title]')!= item.item_1_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 1 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_text]')!= item.item_1_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 2 - заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_title]')!= item.item_2_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Пункт 2 - текст:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_text]')!= item.item_2_text

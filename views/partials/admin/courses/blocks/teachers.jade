@@ -1,0 +1,123 @@
+mixin block_teachers(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Преподаватели"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_teachers")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 1 - Имя:
+              textarea.form-control(name='pages[#{city}][#{index}][item_1_title]')!= item.item_1_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Преподаватель 1 - Фото (260 X 180):
+              input(type="hidden" name="pages_#{city}_#{index}_item_1_image_path" value!= item.item_1_image)
+              input.dropify(type='file' name="pages_#{city}_#{index}_item_1_image" data-default-file!= item.item_1_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_item_1_image_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 1 - Фейсбук:
+              input.form-control(name='pages[#{city}][#{index}][item_1_fb]' value!= item.item_1_fb)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 1 - Инстаграм:
+              input.form-control(name='pages[#{city}][#{index}][item_1_in]' value!= item.item_1_in)
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 2 - Имя:
+              textarea.form-control(name='pages[#{city}][#{index}][item_2_title]')!= item.item_2_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Преподаватель 2 - Фото (260 X 180):
+              input(type="hidden" name="pages_#{city}_#{index}_item_2_image_path" value!= item.item_2_image)
+              input.dropify(type='file' name="pages_#{city}_#{index}_item_2_image" data-default-file!= item.item_2_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_item_2_image_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 2 - Фейсбук:
+              input.form-control(name='pages[#{city}][#{index}][item_2_fb]' value!= item.item_2_fb)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 2 - Инстаграм:
+              input.form-control(name='pages[#{city}][#{index}][item_2_in]' value!= item.item_2_in)
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 3 - Имя:
+              textarea.form-control(name='pages[#{city}][#{index}][item_3_title]')!= item.item_3_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Преподаватель 3 - Фото (260 X 180):
+              input(type="hidden" name="pages_#{city}_#{index}_item_3_image_path" value!= item.item_3_image)
+              input.dropify(type='file' name="pages_#{city}_#{index}_item_3_image" data-default-file!= item.item_3_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_item_3_image_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 3 - Фейсбук:
+              input.form-control(name='pages[#{city}][#{index}][item_3_fb]' value!= item.item_3_fb)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 3 - Инстаграм:
+              input.form-control(name='pages[#{city}][#{index}][item_3_in]' value!= item.item_3_in)
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 4 - Имя:
+              textarea.form-control(name='pages[#{city}][#{index}][item_4_title]')!= item.item_4_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Преподаватель 4 - Фото (260 X 180):
+              input(type="hidden" name="pages_#{city}_#{index}_item_4_image_path" value!= item.item_4_image)
+              input.dropify(type='file' name="pages_#{city}_#{index}_item_4_image" data-default-file!= item.item_4_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_item_4_image_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 4 - Фейсбук:
+              input.form-control(name='pages[#{city}][#{index}][item_4_fb]' value!= item.item_4_fb)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 4 - Инстаграм:
+              input.form-control(name='pages[#{city}][#{index}][item_4_in]' value!= item.item_4_in)
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 5 - Имя:
+              textarea.form-control(name='pages[#{city}][#{index}][item_5_title]')!= item.item_5_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Преподаватель 5 - Фото (260 X 180):
+              input(type="hidden" name="pages_#{city}_#{index}_item_5_image_path" value!= item.item_5_image)
+              input.dropify(type='file' name="pages_#{city}_#{index}_item_5_image" data-default-file!= item.item_5_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_item_5_image_deleted" value="false")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 5 - Фейсбук:
+              input.form-control(name='pages[#{city}][#{index}][item_5_fb]' value!= item.item_5_fb)
+          .col-xs-12.col-sm-6
+            .form-group
+              label Преподаватель 5 - Инстаграм:
+              input.form-control(name='pages[#{city}][#{index}][item_5_in]' value!= item.item_5_in)

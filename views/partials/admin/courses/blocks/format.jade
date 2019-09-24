@@ -1,0 +1,52 @@
+mixin block_format(index, city, item)
+  .panel.panel-default(data-item="#{index}")
+    .panel-heading
+      | Блок "Формат обучения"
+      .panel-action
+        a(href="#" data-perform="panel-collapse")
+          i.ti-minus
+        a.panel-dismiss(href="#" data-perform="panel-dismiss")
+          i.ti-close
+    .panel-wrapper.collapse.in(aria-expanded="true")
+      .panel-body
+        input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_format")
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Подзаголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle]')!= item.subtitle
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label.control-label Фоновое изображение (1920 X 1080):
+              input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
+              input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+              input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
+        .row
+          .col-xs-12
+            .form-group
+              label Текст в левом блоке:
+              textarea.mymce.form-control(name='pages[#{city}][#{index}][text_left]')!= item.text_left
+        .row
+          .col-xs-12
+            .form-group
+              label Текст в правом блоке:
+              textarea.mymce.form-control(name='pages[#{city}][#{index}][text_right]')!= item.text_right
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Текст про стоимость:
+              textarea.form-control(name='pages[#{city}][#{index}][price]')!= item.price
+          .col-xs-12.col-sm-6
+            .form-group
+              label Текст про предоплату:
+              textarea.form-control(name='pages[#{city}][#{index}][prepayment]')!= item.prepayment
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Текст про скидку:
+              textarea.form-control(name='pages[#{city}][#{index}][discount]')!= item.discount
