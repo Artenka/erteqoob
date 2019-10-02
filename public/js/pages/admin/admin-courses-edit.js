@@ -78,7 +78,20 @@ function addItemClick() {
 
 
 function updateItemsNumber(city) {
-  $('body').on('click', '#'+ city +'Tab .panel-dismiss', function(){
+  var deleteConfirmed = false;
+
+  $('body').on('click', '#'+ city +'Tab .panel-dismiss', function(e){
+    // e.preventDefault();
+    //
+    // if (!deleteConfirmed) {
+    //   if (confirm('Delete?')) {
+    //     deleteConfirmed = true;
+    //     $(this).trigger('click');
+    //   }
+    // } else {
+    //   deleteConfirmed = false;
+    // }
+
     var $addBtn = $('#'+ city +'Tab .addBlock');
     var counter =  parseInt($addBtn.attr('data-counter'), 10);
     counter--;
@@ -191,10 +204,13 @@ function returnBlockFoundation(index, city) {
   + "            <div class=\"panel-body\"><input class=\"form-control\" type=\"hidden\" name=\"pages["+ city +"]["+ index +"][block_type]\" required=\"\" value=\"block_foundation\" \/>"
   + "                <div class=\"row\">"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Подзаголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][subtitle]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
   + "                        <div class=\"form-group\"><label>Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label class=\"control-label\">Фоновое изображение (1920 X 1080):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_bg_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages["+ city +"]"+ index +"[bg]\" data-default-file=\"\" accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\""
+  + "                        <div class=\"form-group\"><label class=\"control-label\">Фоновое изображение (1920 X 1080):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_bg_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_bg\" data-default-file=\"\" accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\""
   + "                                data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_bg_deleted\" value=\"false\" \/><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
@@ -312,8 +328,8 @@ function returnBlockMasters_2(index, city) {
   + "                <\/div>"
   + "                <div class=\"row\">"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label class=\"control-label\">Фоновое изображение (1920 X 1080):<\/label><input type=\"hidden\" name=\"pages["+ city +"]"+ index +"[bg_path]\" \/><input class=\"dropify\" type=\"file\" name=\"pages["+ city +"]"+ index +"[bg]\" data-default-file=\"\" accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\""
-  + "                                data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages["+ city +"]"+ index +"[bg_deleted]\" value=\"false\" \/><\/div>"
+  + "                        <div class=\"form-group\"><label class=\"control-label\">Фоновое изображение (1920 X 1080):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_bg_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_bg\" data-default-file=\"\" accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\""
+  + "                                data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_bg_deleted\" value=\"false\" \/><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
   + "                <div class=\"row\">"

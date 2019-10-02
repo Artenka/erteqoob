@@ -1,0 +1,34 @@
+mixin block_masters(index, city, item)
+  section#masters.section-layout.section.sp-masters(style="background-image: url(#{item.bg})")
+    div.page-title
+      .page-title__logo
+      if item.subtitle
+        h2 #{item.subtitle}
+      if item.title
+        h1 #{item.title}
+
+    ul.sp-masters-list
+      if item.item_1_title || item.item_1_text
+        li.sp-masters-list__item
+          p.sp-masters-list__item-text
+            span #{item.item_1_title}
+            | #{item.item_1_text}
+          .sp-masters-list__item-dot
+      if item.item_2_title || item.item_2_text
+        li.sp-masters-list__item
+          p.sp-masters-list__item-text
+            span #{item.item_2_title}
+            | #{item.item_2_text}
+          .sp-masters-list__item-dot
+      if item.item_3_title || item.item_3_text
+        li.sp-masters-list__item
+          p.sp-masters-list__item-text
+            span #{item.item_3_title}
+            | #{item.item_3_text}
+          .sp-masters-list__item-dot
+      if item.item_4_title || item.item_4_text
+        li.sp-masters-list__item
+          p.sp-masters-list__item-text
+            span #{item.item_4_title}
+            | #{item.item_4_text}
+          .sp-masters-list__item-dot

@@ -248,111 +248,13 @@ router.post('/:id/edit', function (req, res) {
               if (typeof kievData !== 'undefined' && kievData.length > 0) {
                 kievData.forEach(function (item, index) {
 
-
-                  // var kievBgPath;
-                  // if (req.body['pages_kiev_'+ index +'_bg_deleted'] == 'false') {
-                  //   kievBgPath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_bg';
-                  //   });
-                  //   if (typeof kievBgPath !== 'undefined' && kievBgPath.length > 0) {
-                  //     kievBgPath = kievBgPath[0].path;
-                  //     kievBgPath = kievBgPath.split('\\').join('/');
-                  //     kievBgPath = kievBgPath.replace('public', '');
-                  //   } else {
-                  //     kievBgPath = req.body['pages_kiev_'+ index +'_bg_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem1ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_1_image_deleted'] == 'false') {
-                  //   kievItem1ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_1_image';
-                  //   });
-                  //   if (typeof kievItem1ImagePath !== 'undefined' && kievItem1ImagePath.length > 0) {
-                  //     kievItem1ImagePath = kievItem1ImagePath[0].path;
-                  //     kievItem1ImagePath = kievItem1ImagePath.split('\\').join('/');
-                  //     kievItem1ImagePath = kievItem1ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem1ImagePath = req.body['pages_kiev_'+ index +'_item_1_image_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem2ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_2_image_deleted'] == 'false') {
-                  //   kievItem2ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_2_image';
-                  //   });
-                  //   if (typeof kievItem2ImagePath !== 'undefined' && kievItem2ImagePath.length > 0) {
-                  //     kievItem2ImagePath = kievItem2ImagePath[0].path;
-                  //     kievItem2ImagePath = kievItem2ImagePath.split('\\').join('/');
-                  //     kievItem2ImagePath = kievItem2ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem2ImagePath = req.body['pages_kiev_'+ index +'_item_2_image_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem3ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_3_image_deleted'] == 'false') {
-                  //   kievItem3ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_3_image';
-                  //   });
-                  //   if (typeof kievItem3ImagePath !== 'undefined' && kievItem3ImagePath.length > 0) {
-                  //     kievItem3ImagePath = kievItem3ImagePath[0].path;
-                  //     kievItem3ImagePath = kievItem3ImagePath.split('\\').join('/');
-                  //     kievItem3ImagePath = kievItem3ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem3ImagePath = req.body['pages_kiev_'+ index +'_item_3_image_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem4ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_4_image_deleted'] == 'false') {
-                  //   kievItem4ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_4_image';
-                  //   });
-                  //   if (typeof kievItem4ImagePath !== 'undefined' && kievItem4ImagePath.length > 0) {
-                  //     kievItem4ImagePath = kievItem4ImagePath[0].path;
-                  //     kievItem4ImagePath = kievItem4ImagePath.split('\\').join('/');
-                  //     kievItem4ImagePath = kievItem4ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem4ImagePath = req.body['pages_kiev_'+ index +'_item_4_image_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem5ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_5_image_deleted'] == 'false') {
-                  //   kievItem5ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_5_image';
-                  //   });
-                  //   if (typeof kievItem5ImagePath !== 'undefined' && kievItem5ImagePath.length > 0) {
-                  //     kievItem5ImagePath = kievItem5ImagePath[0].path;
-                  //     kievItem5ImagePath = kievItem5ImagePath.split('\\').join('/');
-                  //     kievItem5ImagePath = kievItem5ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem5ImagePath = req.body['pages_kiev_'+ index +'_item_5_image_path'];
-                  //   }
-                  // }
-                  //
-                  // var kievItem6ImagePath;
-                  // if (req.body['pages_kiev_'+ index +'_item_6_image_deleted'] == 'false') {
-                  //   kievItem6ImagePath = req.files.filter(function(e) {
-                  //     return e.fieldname == 'pages_kiev_'+ index +'_item_6_image';
-                  //   });
-                  //   if (typeof kievItem6ImagePath !== 'undefined' && kievItem6ImagePath.length > 0) {
-                  //     kievItem6ImagePath = kievItem6ImagePath[0].path;
-                  //     kievItem6ImagePath = kievItem6ImagePath.split('\\').join('/');
-                  //     kievItem6ImagePath = kievItem6ImagePath.replace('public', '');
-                  //   } else {
-                  //     kievItem6ImagePath = req.body['pages_kiev_'+ index +'_item_6_image_path'];
-                  //   }
-                  // }
-
                   kievBlocks.push({
                     block_type: preventUndefined(item.block_type),
                     title: preventUndefined(item.title),
                     subtitle: preventUndefined(item.subtitle),
                     bg: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'bg', index)),
                     text: preventUndefined(item.text),
+                    disclaimer: preventUndefined(item.disclaimer),
                     duration: preventUndefined(item.duration),
                     date: preventUndefined(item.date),
                     seats_current: preventUndefined(item.seats_current),
@@ -429,6 +331,7 @@ router.post('/:id/edit', function (req, res) {
                     subtitle: preventUndefined(item.subtitle),
                     bg: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'bg', index)),
                     text: preventUndefined(item.text),
+                    disclaimer: preventUndefined(item.disclaimer),
                     duration: preventUndefined(item.duration),
                     date: preventUndefined(item.date),
                     seats_current: preventUndefined(item.seats_current),
@@ -503,10 +406,12 @@ router.post('/:id/edit', function (req, res) {
 
             var kievPage = {
               city: 'kiev',
+              grtoken: req.body.kiev_grtoken,
               blocks: kievBlocks
             };
             var kharkivPage = {
               city: 'kharkiv',
+              grtoken: req.body.kharkiv_grtoken,
               blocks: kharkivBlocks
             };
 
@@ -525,7 +430,7 @@ router.post('/:id/edit', function (req, res) {
                   message: 'Ошибка сохранения салона'
                 });
               } else {
-                res.redirect('/admin/courses');
+                res.redirect('/admin/courses/' + req.params.id);
               }
             });
           }

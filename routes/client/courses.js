@@ -41,5 +41,25 @@ router.get('/pro', function(req, res, next) {
     });
 });
 
+router.get('/:difficulty/:path', function(req, res, next) {
+  res.redirect('/courses/'+ req.params.difficulty +'/'+ req.params.path +'/kiev');
+});
+
+router.get('/:difficulty/:path/:city', function(req, res) {
+  Courses.findOne({difficulty: req.params.difficulty, path: req.params.path})
+    .exec(function (err, courses) {
+      if (!err && courses && (req.params.city === 'kiev' || req.params.city === 'kharkiv')) {
+        res.render('pages/courses-single', {
+          user: req.user,
+          city: req.params.city,
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+
 
 module.exports = router;

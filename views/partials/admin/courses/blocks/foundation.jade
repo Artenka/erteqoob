@@ -4,17 +4,22 @@ mixin block_foundation(index, city, item)
       | Блок "Фундамент успешной профессии"
       .panel-action
         a(href="#" data-perform="panel-collapse")
-          i.ti-minus
+          i.ti-plus
         a.panel-dismiss(href="#" data-perform="panel-dismiss")
           i.ti-close
-    .panel-wrapper.collapse.in(aria-expanded="true")
+    .panel-wrapper.collapse(aria-expanded="false")
       .panel-body
         input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_foundation")
         .row
           .col-xs-12.col-sm-6
             .form-group
+              label Подзаголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][subtitle]')!= item.subtitle
+          .col-xs-12.col-sm-6
+            .form-group
               label Заголовок:
               textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
+        .row
           .col-xs-12.col-sm-6
             .form-group
               label.control-label Фоновое изображение (1920 X 1080):

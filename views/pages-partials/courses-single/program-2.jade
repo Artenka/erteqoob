@@ -1,0 +1,106 @@
+mixin block_program_2(index, city, item)
+  section#program.section-layout.section.sp-program-adaptation(style="background-image: url(#{item.bg})")
+    div.page-title
+      .page-title__logo
+      h2 программа трека
+      h1 Man innovations
+
+    .sp-program-adaptation-days-layout.br-lg-md
+      ul.sp-program-adaptation-days.sp-program-adaptation-days--3-dots
+        li(data-day='1').sp-program-adaptation-day.sp-program-adaptation-day--1.sp-program-adaptation-day--active
+          p.sp-program-adaptation-day__text 01  день
+          .sp-program-adaptation-day__dot
+            .sp-program-adaptation-day__dot-center
+            .circle.sp-program-adaptation-day__dot-circle
+          .sp-program-adaptation-day__bg
+            .sp-program-adaptation-day__bg-img
+              img(src="/img/lp/sp/program/sp-program-man-innovations-day.png")
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--1
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--2
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--3
+        li(data-day='2').sp-program-adaptation-day.sp-program-adaptation-day--2
+          p.sp-program-adaptation-day__text 02  день
+          .sp-program-adaptation-day__dot
+            .sp-program-adaptation-day__dot-center
+            .circle.sp-program-adaptation-day__dot-circle
+          .sp-program-adaptation-day__bg
+            .sp-program-adaptation-day__bg-img
+              img(src="/img/lp/sp/program/sp-program-man-innovations-day.png")
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--1
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--2
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--3
+        li(data-day='3').sp-program-adaptation-day.sp-program-adaptation-day--3
+          p.sp-program-adaptation-day__text 03  день
+          .sp-program-adaptation-day__dot
+            .sp-program-adaptation-day__dot-center
+            .circle.sp-program-adaptation-day__dot-circle
+          .sp-program-adaptation-day__bg
+            .sp-program-adaptation-day__bg-img
+              img(src="/img/lp/sp/program/sp-program-man-innovations-day.png")
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--1
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--2
+            .circle.sp-program-adaptation-day__bg-circle.sp-program-adaptation-day__bg-circle--3
+
+      .sp-program-man-innovations-info-layout
+        .sp-program-man-innovations-info.sp-program-man-innovations-info--1.sp-program-man-innovations-info--active
+          h1 Коррекция формы лица и головы
+          p
+            | с помощью прямоугольной формы<br>
+            | стрижки.
+            br
+            br
+            | Фундаментальная форма -<br>
+            | квадрат.
+        .sp-program-man-innovations-info.sp-program-man-innovations-info--2
+          h1 Создание формы с увеличением длины
+          p
+            | в верхних зонах, наполнение<br>
+            | силуэта по падению или смещению<br>
+            | волос.
+            br
+            br
+            | Фундаментальная форма -<br>
+            | треугольник.
+        .sp-program-man-innovations-info.sp-program-man-innovations-info--3
+          h1 Создание текстуры,
+          p
+            | работа с плотностью волос<br>
+            | и равномерным распределением<br>
+            | структуры.
+            br
+            br
+            | Фундаментальная форма -<br>
+            | круг
+
+    ul.sp-program-info-mobile.br-sm
+      li.sp-program-info__item.sp-program-info__item--1.sp-program-info__item--active
+        .vertical-line.sp-program-info__item-line
+        p.sp-program-info__item-month
+          span 01
+          | день
+        p.sp-program-info__item-text Коррекция формы лица и головы с помощью прямоугольной формы стрижки.<br><br> Фундаментальная форма - квадрат.
+      li.sp-program-info__item.sp-program-info__item--1.sp-program-info__item--active
+        .vertical-line.sp-program-info__item-line
+        p.sp-program-info__item-month
+          span 02
+          | день
+        p.sp-program-info__item-text Создание формы с увеличением длины в верхних зонах, наполнение силуэта по падению или смещению волос.<br><br> Фундаментальная форма - треугольник.
+      li.sp-program-info__item.sp-program-info__item--1.sp-program-info__item--active
+        .vertical-line.sp-program-info__item-line
+        p.sp-program-info__item-month
+          span 03
+          | день
+        p.sp-program-info__item-text Создание текстуры, работа с плотностью волос и равномерным распределением cтруктуры.<br><br> Фундаментальная форма - круг.
+
+
+  script.
+    $(function(){
+      $('.sp-program-adaptation-day').click(function(){
+        if(!$(this).hasClass('sp-program-adaptation-day--active')){
+          $('.sp-program-adaptation-day--active').removeClass('sp-program-adaptation-day--active');
+          $(this).addClass('sp-program-adaptation-day--active');
+          $('.sp-program-man-innovations-info').removeClass('sp-program-man-innovations-info--active');
+          $('.sp-program-man-innovations-info--' + $(this).data('day')).addClass('sp-program-man-innovations-info--active');
+        }
+      });
+    });

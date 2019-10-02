@@ -179,6 +179,7 @@
  margin-top: 140px;
  padding-right: 110px;
  position: relative;
+ white-space: pre-line;
  @include laptop {
   margin-top: 83px;
  }
@@ -211,6 +212,7 @@
  align-items: center;
  margin-top: 56px;
  position: relative;
+ white-space: pre-line;
  @include tablet-mobile {
   width: auto;
   flex-direction: column;

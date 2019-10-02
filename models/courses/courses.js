@@ -18,12 +18,14 @@ var coursesSchema = new Schema({
 
   pages: [{
     city: {type: String},
+    grtoken: {type: String},
     blocks: [{
       block_type: {type: String},
       title: {type: String},
       subtitle: {type: String},
       bg: {type: String},
       text: {type: String},
+      disclaimer: {type: String},
       duration: {type: String},
       date: {type: String},
       seats_current: {type: String},

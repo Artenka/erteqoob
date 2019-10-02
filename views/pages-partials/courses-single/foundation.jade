@@ -1,0 +1,30 @@
+mixin block_foundation(index, city, item)
+  section#sp-foundation.section-layout.section.sp-foundation(style="background-image: url(#{item.bg})")
+    div.page-title
+      .page-title__logo
+      if item.subtitle
+        h2 #{item.subtitle}
+      if item.title
+        h1 #{item.title}
+
+    ul.sp-foundation-list
+      if item.item_1_title || item.item_1_text
+        li.sp-foundation-list__item
+          div.sp-foundation-list__item-title #{item.item_1_title}
+            .sp-foundation-list__item-dots
+          p.sp-foundation-list__item-text #{item.item_1_text}
+      if item.item_2_title || item.item_2_text
+        li.sp-foundation-list__item
+          div.sp-foundation-list__item-title #{item.item_2_title}
+            .sp-foundation-list__item-dots
+          p.sp-foundation-list__item-text #{item.item_2_text}
+      if item.item_3_title || item.item_3_text
+        li.sp-foundation-list__item
+          div.sp-foundation-list__item-title #{item.item_3_title}
+            .sp-foundation-list__item-dots
+          p.sp-foundation-list__item-text #{item.item_3_text}
+      if item.item_4_title || item.item_4_text
+        li.sp-foundation-list__item
+          div.sp-foundation-list__item-title #{item.item_4_title}
+            .sp-foundation-list__item-dots
+          p.sp-foundation-list__item-text #{item.item_4_text}

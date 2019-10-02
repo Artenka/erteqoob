@@ -83,6 +83,7 @@
    line-height: 21px;
    text-transform: uppercase;
    position: absolute;
+   white-space: pre-line;
    @include mobile {
     width: 100%;
     position: static;
@@ -90,6 +91,7 @@
     line-height: 22px;
     letter-spacing: 0;
     text-align: left!important;
+    white-space: initial;
     &:before {
      width: 25px;
      color: $color-gray-2;
@@ -98,7 +100,8 @@
      font-weight: 700;
      letter-spacing: 4px;
      position: absolute;
-     top: -16px;
+     top: 0;
+     //top: -16px;
      left: -38px;
     }
    }

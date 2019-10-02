@@ -4,10 +4,10 @@ mixin block_masters_2(index, city, item)
       | Блок "Подходит для мастеров" - 2
       .panel-action
         a(href="#" data-perform="panel-collapse")
-          i.ti-minus
+          i.ti-plus
         a.panel-dismiss(href="#" data-perform="panel-dismiss")
           i.ti-close
-    .panel-wrapper.collapse.in(aria-expanded="true")
+    .panel-wrapper.collapse(aria-expanded="false")
       .panel-body
         input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_masters_2")
         .row

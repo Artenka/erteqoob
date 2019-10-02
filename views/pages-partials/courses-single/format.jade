@@ -1,0 +1,20 @@
+mixin block_format(index, city, item)
+  section#format.section-layout.section.sp-format(style="background-image: url(#{item.bg})")
+    div.page-title
+      .page-title__logo
+      h1 формат обучения
+      h2 на курсе «Базовый. Киев»
+
+    .sp-format-block-layout
+      div.sp-format-block
+        div.sp-format-block__left!= item.text_left
+        div.sp-format-block__right!= item.text_right
+
+    .sp-format-register
+      .sp-format-register__price #{item.price}
+      p.sp-format-register__prepay #{item.prepayment}
+      p.sp-format-register__discount #{item.discount}
+      if city === 'kiev'
+        button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{item.date}', '#{courses.pages[0].grtoken}')").btn.sp-format-register__link записаться на курс
+      else if city === 'kharkiv'
+        button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{item.date}', '#{courses.pages[1].grtoken}')").btn.sp-format-register__link записаться на курс

@@ -4,10 +4,10 @@ mixin block_program(index, city, item)
       | Блок "Программа"
       .panel-action
         a(href="#" data-perform="panel-collapse")
-          i.ti-minus
+          i.ti-plus
         a.panel-dismiss(href="#" data-perform="panel-dismiss")
           i.ti-close
-    .panel-wrapper.collapse.in(aria-expanded="true")
+    .panel-wrapper.collapse(aria-expanded="false")
       .panel-body
         input.form-control(type="hidden" name='pages[#{city}][#{index}][block_type]', required='' value="block_program")
         .row
@@ -118,3 +118,8 @@ mixin block_program(index, city, item)
             .form-group
               label Этап 9 - Описание:
               textarea.form-control(name='pages[#{city}][#{index}][item_9_text]')!= item.item_9_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Дисклеймер под программой:
+              textarea.form-control(name='pages[#{city}][#{index}][disclaimer]')!= item.disclaimer

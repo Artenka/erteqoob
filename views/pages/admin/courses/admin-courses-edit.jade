@@ -104,6 +104,12 @@ block contents
             .tab-content
               #kievTab.tab-pane.fade.active.in(role="tabpanel")
                 .white-box
+                  .row
+                    .col-xs-12.col-sm-12
+                      .form-group
+                        label Токен GetResponse:
+                        input.form-control(name='kiev_grtoken', required='' value=(courses.pages[0].grtoken || ''))
+                .white-box
                   +block_select('kiev')
                   .row.m-t-20
                     .col-sm-6.col-sx-12
@@ -143,6 +149,12 @@ block contents
 
 
               #kharkivTab.tab-pane.fade(role="tabpanel")
+                .white-box
+                  .row
+                    .col-xs-12.col-sm-12
+                      .form-group
+                        label Токен GetResponse:
+                        input.form-control(name='kharkiv_grtoken', required='' value=(courses.pages[1].grtoken || ''))
                 .white-box
                   +block_select('kharkiv')
                   .row.m-t-20

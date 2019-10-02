@@ -239,6 +239,7 @@
    font-size: 12px;
    position: relative;
    z-index: 3;
+   white-space: pre-line;
    @include mobile {
     line-height: 20px;
     letter-spacing: 0;

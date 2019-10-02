@@ -1,0 +1,64 @@
+extends ../layouts/main-lp
+
+block contents
+  // mixins
+  include ../pages-partials/courses-single/about
+  include ../pages-partials/courses-single/foundation
+  include ../pages-partials/courses-single/masters
+  include ../pages-partials/courses-single/masters-2
+  include ../pages-partials/courses-single/skills
+  include ../pages-partials/courses-single/format
+  include ../pages-partials/courses-single/program
+  include ../pages-partials/courses-single/program-2
+  include ../pages-partials/courses-single/study
+  include ../pages-partials/courses-single/philosophy
+  include ../pages-partials/courses-single/teachers
+  include ../pages-partials/courses-single/action
+
+  div.main-layout#course
+    include ../partials/lp/page-scroll-base
+
+    div.scroll-layout
+      - var blocks = []
+      if city == 'kiev'
+        - blocks = courses.pages[0].blocks
+      else if city == 'kharkiv'
+        - blocks = courses.pages[1].blocks
+
+      each item, index in blocks
+        case item.block_type
+          when 'block_intro'
+            +block_intro(index, city, item, courses)
+          when 'block_foundation'
+            +block_foundation(index, city, item)
+          when 'block_masters'
+            +block_masters(index, city, item)
+          when 'block_masters_2'
+            +block_masters_2(index, city, item)
+          when 'block_skills'
+            +block_skills(index, city, item)
+          when 'block_format'
+            +block_format(index, city, item)
+          when 'block_program'
+            +block_program(index, city, item)
+          when 'block_program_2'
+            +block_program_2(index, city, item)
+          when 'block_study'
+            +block_study(index, city, item)
+          when 'block_philosophy'
+            +block_philosophy(index, city, item)
+          when 'block_teachers'
+            +block_teachers(index, city, item)
+          when 'block_action'
+            +block_action(index, city, item)
+
+
+      if city == 'kiev'
+        include ../partials/lp/footer-kiev
+      else if city == 'kharkiv'
+        include ../partials/lp/footer-kharkiv
+
+
+      include ../partials/popups/popup-register-step-1
+      include ../partials/popups/popup-register-step-2
+      include ../partials/popups/popup-register-step-3

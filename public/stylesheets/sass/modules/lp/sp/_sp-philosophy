@@ -514,6 +514,7 @@
   margin-top: 84px;
   position: relative;
   z-index: 3;
+  white-space: pre-line;
   @include tablet {
    margin-top: 92px;
   }

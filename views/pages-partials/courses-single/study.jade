@@ -1,0 +1,68 @@
+mixin block_study(index, city, item)
+  section#study.section-layout.section.sp-study(style="background-image: url(#{item.bg})")
+    div.page-title
+      .page-title__logo
+      h1 #{item.title}
+
+    ul.sp-study-grid
+      if item.item_1_title || item.item_1_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_1_image}")
+          h1.sp-study-grid__title #{item.item_1_title}
+      if item.item_2_title || item.item_2_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_2_image}")
+          h1.sp-study-grid__title #{item.item_2_title}
+      if item.item_3_title || item.item_3_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_3_image}")
+          h1.sp-study-grid__title #{item.item_3_title}
+      if item.item_4_title || item.item_4_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_4_image}")
+          h1.sp-study-grid__title #{item.item_4_title}
+      if item.item_5_title || item.item_5_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_5_image}")
+          h1.sp-study-grid__title #{item.item_5_title}
+      if item.item_6_title || item.item_6_image
+        li.sp-study-grid__item
+          .sp-study-grid__thumb
+            img(src="#{item.item_6_image}")
+          h1.sp-study-grid__title #{item.item_6_title}
+      .sp-study-grid__path
+        svg(width='23px', height='655px', viewbox='0 0 23 655', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+          defs
+          g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+            g(id='3.2.0,1_Страница-БК-+-SP1_Киев-(320x480)', transform='translate(-63.000000, -6240.000000)')
+              g#block-3(transform='translate(-556.000000, 6106.000000)')
+                g#text(transform='translate(591.000000, 134.000000)')
+                  g#blocks
+                    g#line(transform='translate(29.000000, 0.000000)')
+                      path(d='M10.5,11.5 L10.5,631.5', stroke='#979797', opacity='0.200000003', stroke-linecap='square')
+                      g(id='Dots/check', transform='translate(0.000000, 633.000000)', stroke-width='2')
+                        circle#Oval-4-Copy-5(stroke='#474747', fill='#090909', fill-rule='evenodd', cx='10.5', cy='10.5', r='10.5')
+                        polyline#Line-4-Copy(stroke='#3D3D3D', stroke-linecap='square', transform='translate(10.428571, 10.531831) scale(-1, -1) translate(-10.428571, -10.531831) ', points='14.3681652 10.7629835 11.4233569 7.76683084 6.48897629 13.2968309')
+                      circle#dot-small(fill='#474747', cx='10.5', cy='227.5', r='4.5')
+                      circle#dot-small(fill='#474747', cx='10', cy='337', r='4')
+                      circle#dot-small-copy(fill='#474747', cx='10', cy='448', r='4')
+                      circle#dot-small-copy-2(fill='#474747', cx='10', cy='557', r='4')
+                      circle#dot-small(fill='#474747', cx='10.5', cy='117.5', r='4.5')
+                      circle#dot-start(fill='#474747', cx='10.5', cy='6.5', r='6.5')
+      .sp-study-grid__circles
+        svg(width='150px', height='150px', viewbox='0 0 150 150', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+          defs
+          g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+            g(id='3.2.0,1_Страница-БК-+-SP1_Киев-(320x480)', transform='translate(-85.000000, -6698.000000)', stroke='#979797')
+              g#block-3(transform='translate(-556.000000, 6106.000000)')
+                g#text(transform='translate(591.000000, 134.000000)')
+                  g#placeholder-circles(transform='translate(50.000000, 458.000000)')
+                    rect#Rectangle-3-Copy(opacity='0.400000006', x='55.7631579', y='55.7631579', width='38.0391115', height='38.0391115', rx='19.0195558')
+                    circle#Oval-3(opacity='0.200000003', cx='75', cy='75', r='42.9210526')
+                    circle#Oval-3-Copy-3(opacity='0.200000003', cx='75', cy='75', r='74.5')
+

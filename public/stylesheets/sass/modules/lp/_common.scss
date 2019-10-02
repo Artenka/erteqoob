@@ -191,6 +191,7 @@
   letter-spacing: 6px;
   text-transform: uppercase;
   text-align: center;
+  white-space: pre-line;
   @include mobile {
    font-size: 12px;
    letter-spacing: 3px;
@@ -215,6 +216,7 @@
   text-transform: uppercase;
   margin-bottom: 11px;
   text-align: center;
+  white-space: pre-line;
  }
 
  .page-title__logo-title {
