@@ -1,5 +1,5 @@
 mixin block_intro(index, city, item, courses)
-  section#about.section-layout.section.sp-about(style="background-image: url(#{item.bg})")
+  section#about.section-layout.section.sp-about.sp-about--man-innovations(style="background-image: url(#{item.bg})")
     //include ../../partials/main-nav-links-1.jade
     include ../../partials/link-back-beginner.jade
     include ../../partials/main-nav-socials.jade
@@ -25,16 +25,21 @@ mixin block_intro(index, city, item, courses)
           | #{item.title}
         h2.sp-about-block__main-subtitle #{item.text}
         if city === 'kiev'
-          button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{item.date}', '#{courses.pages[0].grtoken}')").btn.sp-about-block__main-link Принять участие
+          button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{courses.pages[0].date}', '#{courses.pages[0].grtoken}')").btn.sp-about-block__main-link Принять участие
         else if city === 'kharkiv'
-          button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{item.date}', '#{courses.pages[1].grtoken}')").btn.sp-about-block__main-link Принять участие
+          button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{courses.pages[1].date}', '#{courses.pages[1].grtoken}')").btn.sp-about-block__main-link Принять участие
       div.sp-about-block__info
         ul.switcher
-          li.switcher__btn(class=city === "kiev" ? "switcher__btn--active" : "")
-            a(href="/courses/#{courses.difficulty}/#{courses.path}/kiev") киев
-          li.switcher__btn(class=city === "kharkiv" ? "switcher__btn--active" : "")
-            a(href="/courses/#{courses.difficulty}/#{courses.path}/kharkiv") харьков
-        p.sp-about-block__info-date #{item.date}
+          if courses.pages[0].blocks.length
+            li.switcher__btn(class=city === "kiev" ? "switcher__btn--active" : "")
+              a(href="/courses/#{courses.difficulty}/#{courses.path}/kiev") киев
+          if courses.pages[1].blocks.length
+            li.switcher__btn(class=city === "kharkiv" ? "switcher__btn--active" : "")
+              a(href="/courses/#{courses.difficulty}/#{courses.path}/kharkiv") харьков
+        if city === 'kiev'
+          p.sp-about-block__info-date #{courses.pages[0].date}
+        else if city === 'kharkiv'
+          p.sp-about-block__info-date #{courses.pages[1].date}
         if item.seats_current || item.seats_total
           p.sp-about-block__info-seats <span>Места: #{item.seats_current}</span> из #{item.seats_total}
 

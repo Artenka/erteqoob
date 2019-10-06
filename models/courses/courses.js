@@ -9,6 +9,7 @@ var coursesSchema = new Schema({
 
   name: {type: String},
   path: {type: String},
+  isgbw: {type: String},
   course_type: {type: String},
   date: {type: String},
   duration: {type: String},
@@ -18,6 +19,10 @@ var coursesSchema = new Schema({
 
   pages: [{
     city: {type: String},
+    date: {type: String},
+    gbw_white_date: {type: String},
+    gbw_grey_date: {type: String},
+    gbw_black_date: {type: String},
     grtoken: {type: String},
     blocks: [{
       block_type: {type: String},
@@ -76,6 +81,15 @@ var coursesSchema = new Schema({
 
       item_9_title: {type: String},
       item_9_text: {type: String},
+
+      item_10_title: {type: String},
+      item_10_text: {type: String},
+
+      item_11_title: {type: String},
+      item_11_text: {type: String},
+
+      item_12_title: {type: String},
+      item_12_text: {type: String},
 
       item_1_1_title: {type: String},
       item_1_1_text: {type: String},

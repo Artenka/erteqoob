@@ -20,19 +20,19 @@ mixin block_intro(index, city, item)
               label Заголовок:
               textarea.form-control(name='pages[#{city}][#{index}][title]')!= item.title
         .row
-          .col-xs-12.col-sm-12
+          .col-xs-12.col-sm-6
             .form-group
               label Описание:
               textarea.form-control(name='pages[#{city}][#{index}][text]')!= item.text
-        .row
           .col-xs-12.col-sm-6
             .form-group
               label Длительность:
               textarea.form-control(name='pages[#{city}][#{index}][duration]')!= item.duration
-          .col-xs-12.col-sm-6
-            .form-group
-              label Дата начала:
-              textarea.form-control(name='pages[#{city}][#{index}][date]')!= item.date
+        //.row
+        //  .col-xs-12.col-sm-6
+        //    .form-group
+        //      label Дата начала:
+        //      textarea.form-control(name='pages[#{city}][#{index}][date]')!= item.date
         .row
           .col-xs-12.col-sm-6
             .form-group

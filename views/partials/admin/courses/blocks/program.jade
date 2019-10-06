@@ -35,7 +35,7 @@ mixin block_program(index, city, item)
               input(type="hidden" name="pages_#{city}_#{index}_bg_path" value!= item.bg)
               input.dropify(type='file' name="pages_#{city}_#{index}_bg" data-default-file!= item.bg  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
               input(type="hidden" name="pages_#{city}_#{index}_bg_deleted" value="false")
-        h3 Этапы (минимум - 2, максимум - 9):
+        h3 Этапы (максимум - 12):
         br
         .row
           .col-xs-12.col-sm-6
@@ -118,6 +118,33 @@ mixin block_program(index, city, item)
             .form-group
               label Этап 9 - Описание:
               textarea.form-control(name='pages[#{city}][#{index}][item_9_text]')!= item.item_9_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 10 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_10_title]')!= item.item_10_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 10 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_10_text]')!= item.item_10_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 11 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_11_title]')!= item.item_11_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 11 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_11_text]')!= item.item_11_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 12 - Заголовок:
+              textarea.form-control(name='pages[#{city}][#{index}][item_12_title]')!= item.item_12_title
+          .col-xs-12.col-sm-6
+            .form-group
+              label Этап 12 - Описание:
+              textarea.form-control(name='pages[#{city}][#{index}][item_12_text]')!= item.item_12_text
         .row
           .col-xs-12.col-sm-6
             .form-group

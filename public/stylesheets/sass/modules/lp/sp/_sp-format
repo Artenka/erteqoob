@@ -1,6 +1,10 @@
 .sp-format {
  background: $color-black;
  padding: 40px 0;
+ @include tablet-mobile {
+  height: auto;
+  min-height: 0;
+ }
  @include tablet {
   //height: 1280px;
  }
@@ -122,20 +126,21 @@
    align-items: center;
    @include tablet {
     width: 650px;
-    height: 160px;
+    //height: 160px;
     padding: 55px;
     flex-direction: row;
     justify-content: space-between;
    }
    @include mobile {
-    height: 227px;
+    //height: 227px;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    //padding: 0;
    }
    &:before, &:after {
     @include tablet {
-     height: 160px;
+     height: 100%;
+     //height: 160px;
     }
    }
    &:after {
@@ -162,10 +167,12 @@
 
   &.sp-format--adaptation {
    @include tablet {
-    height: 943px;
+    //height: 943px;
+    height: auto;
    }
    @include mobile {
-    height: 900px;
+    //height: 900px;
+    height: auto;
    }
 
    .sp-format-block-layout {
@@ -174,7 +181,7 @@
 
    .sp-format-block {
     width: 810px;
-    height: 215px;
+    //height: 215px;
     @include tablet-mobile {
      height: auto;
     }
@@ -328,7 +335,7 @@
    @include tablet {
     flex-direction: row;
     width: 707px;
-    height: 160px;
+    //height: 160px;
     background: url(../../../img/lp/sp/format/sp-format-dots.svg) no-repeat center;
     padding: 25px 75px;
    }
@@ -501,11 +508,13 @@
 }
 .sp-format-block {
  width: 1080px;
- min-height: 355px;
+ min-height: 215px;
+ //min-height: 355px;
  display: flex;
  justify-content: space-between;
  margin: 20px 0 40px;
  @include tablet-mobile {
+  min-height: 0;
   flex-direction: column;
   margin: 60px 0 20px;
  }
@@ -555,6 +564,44 @@
   }
  }
 
+ h3 {
+  color: $color-gray-2;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  @include mobile {
+   font-size: 10px;
+   line-height: 14px;
+  }
+  &:before {
+   @extend .dots-2;
+   content: '';
+   top: -38px;
+   left: -69px;
+   @include mobile {
+    display: none;
+   }
+  }
+
+  b, strong {
+   color: $color-white;
+   font-family: GothamPro, sans-serif;
+   font-size: 26px;
+   font-weight: 700;
+   line-height: 40px;
+   text-transform: uppercase;
+   position: relative;
+   z-index: 2;
+   @include tablet {
+    font-size: 18px;
+    line-height: 25px;
+   }
+  }
+ }
+
  ul {
   position: relative;
   &:before {
@@ -579,6 +626,7 @@
   padding: 10px 0;
 
   b, strong {
+   flex: none;
    display: block;
    width: 40px;
    margin-right: 8px;
@@ -824,7 +872,8 @@
  .sp-format-block__left {
   width: 50%;
   border-right: 1px solid $color-mine-shaft-07;
-  padding: 4px 51px 0 0;
+  padding: 20px 51px 20px 0;
+  //padding: 4px 51px 0 0;
   @include tablet-mobile {
    border-right: none;
    border-bottom: 1px solid $color-mine-shaft-07;
@@ -968,7 +1017,7 @@
 
  .sp-format-block__right {
   width: 50%;
-  padding: 4px 0 0 77px;
+  padding: 20px 0 20px 77px;
   @include tablet-mobile {
    width: 100%;
   }
@@ -1170,7 +1219,7 @@
 
 .sp-format-register {
  width: 707px;
- height: 160px;
+ //height: 160px;
  display: flex;
  flex-wrap: wrap;
  background: url(../../../img/lp/sp/format/sp-format-dots.svg) no-repeat center;
@@ -1187,15 +1236,15 @@
  }
  @include tablet {
   width: 428px;
-  height: 337px;
-  padding: 47px 43px 0;
+  //height: 337px;
+  padding: 47px 43px 30px;
   margin: 32px 0 49px;
  }
  @include mobile {
   width: 290px;
-  height: 284px;
+  //height: 284px;
   margin: 32px 0 34px;
-  padding: 20px 21px 0;
+  padding: 30px 21px;
  }
  &:before, &:after {
   content: '';
@@ -1206,7 +1255,8 @@
   position: absolute;
   top: 0;
   @include tablet {
-   height: 290px;
+   //height: 290px;
+   height: 100%;
   }
   @include mobile {
    width: 100%;
@@ -1232,7 +1282,8 @@
   @include mobile {
    border-bottom: 2px solid $color-mine-shaft;
    top: auto;
-   bottom: 65px;
+   bottom: 0;
+   //bottom: 65px;
   }
  }
 
@@ -1313,7 +1364,8 @@
    padding: 0;
   }
   @include tablet {
-   margin-top: 20px;
+   margin-top: 43px;
+   //margin-top: 20px;
   }
   @include mobile {
    font-size: 10px;

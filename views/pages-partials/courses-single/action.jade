@@ -1,23 +1,26 @@
 mixin block_action(index, city, item)
-  section#action.section-layout.section.sp-action(style="background-image: url(#{item.bg})")
-    h1.sp-action__title #{item.title}
+  section#action.section-layout.section.sp-action.sp-action--man-innovations(style="background-image: url(#{item.bg})")
+    if item.title
+      h1.sp-action__title #{item.title}
 
-    .sp-action-info
-      p.sp-action-info__text #{item.subtitle}
-      //.sp-action-info__video-link
-      //  .sp-action-info__video-link-icon
-      //  p.sp-action-info__video-link-text смотри, как проходит<br> обучение
+    if item.subtitle
+      .sp-action-info
+        p.sp-action-info__text #{item.subtitle}
+        //.sp-action-info__video-link
+        //  .sp-action-info__video-link-icon
+        //  p.sp-action-info__video-link-text смотри, как проходит<br> обучение
 
-    .sp-action-box
-      .sp-action-box__inner
-        .sp-action-box__text #{item.block_word_1}
-          .dots
-        .sp-action-box__text #{item.block_word_2}
-          .dots
-        .sp-action-box__text #{item.block_word_3}
-          .dots
-      .vertical-line.sp-action-box__line.sp-action-box__line--1
-      .vertical-line.sp-action-box__line.sp-action-box__line--2
+    if item.block_word_1 || item.block_word_2 || item.block_word_3
+      .sp-action-box
+        .sp-action-box__inner
+          .sp-action-box__text #{item.block_word_1}
+            .dots
+          .sp-action-box__text #{item.block_word_2}
+            .dots
+          .sp-action-box__text #{item.block_word_3}
+            .dots
+        .vertical-line.sp-action-box__line.sp-action-box__line--1
+        .vertical-line.sp-action-box__line.sp-action-box__line--2
 
     if city === 'kiev'
       button(type="button" onclick="registerStep1('#{courses.path}_#{city}','#{courses.course_type} #{courses.name}', '#{courses.course_type} «#{courses.name}»', '#{city}', '#{item.date}', '#{courses.pages[0].grtoken}')").btn.sp-action__link записаться на курс

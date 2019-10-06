@@ -44,7 +44,7 @@ block contents
             p(style='color:red;') #{message}
 
         .row
-          form(method='post', action='/admin/courses/#{courses.courses_id}/edit' enctype='multipart/form-data')
+          form(method='post', action='/admin/courses/#{courses.courses_id}/edit' enctype='multipart/form-data' novalidate)
             .white-box
               .row
                 .col-xs-12.col-sm-6
@@ -94,79 +94,178 @@ block contents
             br
 
 
-            ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
-              li.active(role="presentation")
-                a(href="#kievTab" role="tab" data-toggle="tab" aria-expanded="true")
-                  span Киев
-              li(role="presentation")
-                a(href="#kharkivTab" role="tab" data-toggle="tab" aria-expanded="false")
-                  span Харьков
-            .tab-content
-              #kievTab.tab-pane.fade.active.in(role="tabpanel")
-                .white-box
-                  .row
-                    .col-xs-12.col-sm-12
-                      .form-group
-                        label Токен GetResponse:
-                        input.form-control(name='kiev_grtoken', required='' value=(courses.pages[0].grtoken || ''))
-                .white-box
-                  +block_select('kiev')
-                  .row.m-t-20
-                    .col-sm-6.col-sx-12
-                      - var kievCounter = courses.pages[0].blocks.length
-                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kiev" data-counter="#{kievCounter}")
-                        span.btn-label
-                          i.fa.icon-plus
-                        | Добавить блок
+            if courses.isgbw == 'true'
 
-                #kievCoursesBlocks.dd.myadmin-dd.courses-blocks
-                  each item, index in courses.pages[0].blocks
-                    case item.block_type
-                      when 'block_intro'
-                        +block_intro(index, 'kiev', item)
-                      when 'block_foundation'
-                        +block_foundation(index, 'kiev', item)
-                      when 'block_masters'
-                        +block_masters(index, 'kiev', item)
-                      when 'block_masters_2'
-                        +block_masters_2(index, 'kiev', item)
-                      when 'block_skills'
-                        +block_skills(index, 'kiev', item)
-                      when 'block_format'
-                        +block_format(index, 'kiev', item)
-                      when 'block_program'
-                        +block_program(index, 'kiev', item)
-                      when 'block_program_2'
-                        +block_program_2(index, 'kiev', item)
-                      when 'block_study'
-                        +block_study(index, 'kiev', item)
-                      when 'block_philosophy'
-                        +block_philosophy(index, 'kiev', item)
-                      when 'block_teachers'
-                        +block_teachers(index, 'kiev', item)
-                      when 'block_action'
-                        +block_action(index, 'kiev', item)
+              ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
+                li.active(role="presentation")
+                  a(href="#kievTab" role="tab" data-toggle="tab" aria-expanded="true")
+                    span Киев
+                li(role="presentation")
+                  a(href="#kharkivTab" role="tab" data-toggle="tab" aria-expanded="false")
+                    span Харьков
+              .tab-content
+                #kievTab.tab-pane.fade.active.in(role="tabpanel")
+                  .white-box
+                    .row
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Дата начала (будет показана на превью):
+                          input.form-control(name='kiev_date', required='' value=(courses.pages[0].date || ''))
+
+                    ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
+                      li.active(role="presentation")
+                        a(href="#kievWhiteTab" role="tab" data-toggle="tab" aria-expanded="true")
+                          span White
+                      li(role="presentation")
+                        a(href="#kievGreyTab" role="tab" data-toggle="tab" aria-expanded="false")
+                          span Grey
+                      li(role="presentation")
+                        a(href="#kievBlackTab" role="tab" data-toggle="tab" aria-expanded="false")
+                          span Black
+
+                    .tab-content
+                      #kievWhiteTab.tab-pane.fade.active.in(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kiev_gbw_white_date', required='' value=(courses.pages[0].gbw_white_date || ''))
+                      #kievGreyTab.tab-pane.fade(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kiev_gbw_grey_date', required='' value=(courses.pages[0].gbw_grey_date || ''))
+                      #kievBlackTab.tab-pane.fade(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kiev_gbw_black_date', required='' value=(courses.pages[0].gbw_black_date || ''))
 
 
-              #kharkivTab.tab-pane.fade(role="tabpanel")
-                .white-box
-                  .row
-                    .col-xs-12.col-sm-12
-                      .form-group
-                        label Токен GetResponse:
-                        input.form-control(name='kharkiv_grtoken', required='' value=(courses.pages[1].grtoken || ''))
-                .white-box
-                  +block_select('kharkiv')
-                  .row.m-t-20
-                    .col-sm-6.col-sx-12
-                      - var kharkivCounter = courses.pages[1].blocks.length
-                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kharkiv" data-counter="#{kharkivCounter}")
-                        span.btn-label
-                          i.fa.icon-plus
-                        | Добавить блок
+                #kharkivTab.tab-pane.fade(role="tabpanel")
+                  .white-box
+                    .row
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Дата начала (будет показана на превью):
+                          input.form-control(name='kharkiv_date', required='' value=(courses.pages[1].date || ''))
 
-                #kharkivCoursesBlocks.dd.myadmin-dd.courses-blocks
-                  ol.dd-list.sortable
+                    ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
+                      li.active(role="presentation")
+                        a(href="#kharkivWhiteTab" role="tab" data-toggle="tab" aria-expanded="true")
+                          span White
+                      li(role="presentation")
+                        a(href="#kharkivGreyTab" role="tab" data-toggle="tab" aria-expanded="false")
+                          span Grey
+                      li(role="presentation")
+                        a(href="#kharkivBlackTab" role="tab" data-toggle="tab" aria-expanded="false")
+                          span Black
+
+                    .tab-content
+                      #kharkivWhiteTab.tab-pane.fade.active.in(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kharkiv_gbw_white_date', required='' value=(courses.pages[1].gbw_white_date || ''))
+                      #kharkivGreyTab.tab-pane.fade(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kharkiv_gbw_grey_date', required='' value=(courses.pages[1].gbw_grey_date || ''))
+                      #kharkivBlackTab.tab-pane.fade(role="tabpanel")
+                        .row
+                          .col-xs-12.col-sm-6
+                            .form-group
+                              label Дата начала:
+                              input.form-control(name='kharkiv_gbw_black_date', required='' value=(courses.pages[1].gbw_black_date || ''))
+
+
+            else
+
+              ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
+                li.active(role="presentation")
+                  a(href="#kievTab" role="tab" data-toggle="tab" aria-expanded="true")
+                    span Киев
+                li(role="presentation")
+                  a(href="#kharkivTab" role="tab" data-toggle="tab" aria-expanded="false")
+                    span Харьков
+              .tab-content
+                #kievTab.tab-pane.fade.active.in(role="tabpanel")
+                  .white-box
+                    .row
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Дата начала:
+                          input.form-control(name='kiev_date', required='' value=(courses.pages[0].date || ''))
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Токен GetResponse:
+                          input.form-control(name='kiev_grtoken', required='' value=(courses.pages[0].grtoken || ''))
+                  .white-box
+                    +block_select('kiev')
+                    .row.m-t-20
+                      .col-sm-6.col-sx-12
+                        - var kievCounter = courses.pages[0].blocks.length
+                        button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kiev" data-counter="#{kievCounter}")
+                          span.btn-label
+                            i.fa.icon-plus
+                          | Добавить блок
+
+                  #kievCoursesBlocks.dd.myadmin-dd.courses-blocks
+                    each item, index in courses.pages[0].blocks
+                      case item.block_type
+                        when 'block_intro'
+                          +block_intro(index, 'kiev', item)
+                        when 'block_foundation'
+                          +block_foundation(index, 'kiev', item)
+                        when 'block_masters'
+                          +block_masters(index, 'kiev', item)
+                        when 'block_masters_2'
+                          +block_masters_2(index, 'kiev', item)
+                        when 'block_skills'
+                          +block_skills(index, 'kiev', item)
+                        when 'block_format'
+                          +block_format(index, 'kiev', item)
+                        when 'block_program'
+                          +block_program(index, 'kiev', item)
+                        when 'block_program_2'
+                          +block_program_2(index, 'kiev', item)
+                        when 'block_study'
+                          +block_study(index, 'kiev', item)
+                        when 'block_philosophy'
+                          +block_philosophy(index, 'kiev', item)
+                        when 'block_teachers'
+                          +block_teachers(index, 'kiev', item)
+                        when 'block_action'
+                          +block_action(index, 'kiev', item)
+
+
+                #kharkivTab.tab-pane.fade(role="tabpanel")
+                  .white-box
+                    .row
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Дата начала:
+                          input.form-control(name='kharkiv_date', required='' value=(courses.pages[1].date || ''))
+                      .col-xs-12.col-sm-6
+                        .form-group
+                          label Токен GetResponse:
+                          input.form-control(name='kharkiv_grtoken', required='' value=(courses.pages[1].grtoken || ''))
+                  .white-box
+                    +block_select('kharkiv')
+                    .row.m-t-20
+                      .col-sm-6.col-sx-12
+                        - var kharkivCounter = courses.pages[1].blocks.length
+                        button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kharkiv" data-counter="#{kharkivCounter}")
+                          span.btn-label
+                            i.fa.icon-plus
+                          | Добавить блок
+
+                  #kharkivCoursesBlocks.dd.myadmin-dd.courses-blocks
                     each item, index in courses.pages[1].blocks
                       case item.block_type
                         when 'block_intro'
@@ -205,33 +304,5 @@ block contents
     include ./../../../partials/admin/footer.jade
 
     script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
-    script(src="/js/pages/admin/admin-courses-edit.js")
     script(type="text/javascript", src='/plugins/bower_components/tinymce_new/tinymce.min.js')
-    script(type='text/javascript').
-      var $ = jQuery.noConflict();
-
-      var initTinyMCE = function () {
-        if ($(".mymce").length > 0) {
-          tinymce.init({
-            selector: ".mymce",
-            //theme: "modern",
-            height: 300,
-            //file_browser_callback: function (field_name, url, type, win) {
-            //  if (type == 'image') $('#img_editor_upload input').click();
-            //},
-            file_browser_callback_types: 'image',
-            images_upload_url: '/uploadMCE',
-            automatic_uploads: true,
-            plugins: [
-              "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker"
-              , "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking"
-              , "save table contextmenu directionality emoticons template paste textcolor"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
-          });
-        }
-      };
-
-      $(document).ready(function () {
-        initTinyMCE();
-      });
+    script(src="/js/pages/admin/admin-courses-edit.js")

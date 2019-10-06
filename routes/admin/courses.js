@@ -107,9 +107,7 @@ router.get('/new', function (req, res) {
 });
 
 router.post('/new', function (req, res) {
-  var uploadImage = multer({storage: storageCourses}).fields([
-    // {name: 'map', maxCount: 1},
-  ]);
+  var uploadImage = multer({storage: storageCourses}).any();
 
   uploadImage(req, res, function (err) {
     if (err) {
@@ -129,6 +127,241 @@ router.post('/new', function (req, res) {
       courses.duration = req.body.duration;
       courses.difficulty = req.body.difficulty;
       courses.development = req.body.development;
+
+
+      var newPath = '';
+
+      if (req.body.preview_deleted == 'false') {
+        newPath = req.files.filter(function(e) {
+          return e.fieldname == 'preview';
+        });
+        if (typeof newPath !== 'undefined' && newPath.length > 0) {
+          newPath = newPath[0].path.split('\\').join('/');
+          console.log(newPath);
+          courses.preview = newPath.replace('public', '');
+        } else {
+          courses.preview = req.body.preview_path;
+        }
+      } else {
+        courses.preview = '';
+      }
+
+
+
+      var pagesArray = [];
+      var kievBlocks = [];
+      var kharkivBlocks = [];
+
+      if (typeof req.body.pages !== 'undefined') {
+
+        if (typeof req.body.pages.kiev !== 'undefined') var kievData = req.body.pages.kiev instanceof Array ? req.body.pages.kiev : [req.body.pages.kiev];
+        if (typeof req.body.pages.kharkiv !== 'undefined') var kharkivData = req.body.pages.kharkiv instanceof Array ? req.body.pages.kharkiv : [req.body.pages.kharkiv];
+
+        if (typeof kievData !== 'undefined' && kievData.length > 0) {
+          kievData.forEach(function (item, index) {
+            kievBlocks.push({
+              block_type: preventUndefined(item.block_type),
+              title: preventUndefined(item.title),
+              subtitle: preventUndefined(item.subtitle),
+              bg: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'bg', index)),
+              text: preventUndefined(item.text),
+              disclaimer: preventUndefined(item.disclaimer),
+              duration: preventUndefined(item.duration),
+              date: preventUndefined(item.date),
+              seats_current: preventUndefined(item.seats_current),
+              seats_total: preventUndefined(item.seats_total),
+              item_1_title: preventUndefined(item.item_1_title),
+              item_1_text: preventUndefined(item.item_1_text),
+              item_1_name: preventUndefined(item.item_1_name),
+              item_1_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_1_image', index)),
+              item_1_fb: preventUndefined(item.item_1_fb),
+              item_1_in: preventUndefined(item.item_1_in),
+              item_2_title: preventUndefined(item.item_2_title),
+              item_2_text: preventUndefined(item.item_2_text),
+              item_2_name: preventUndefined(item.item_2_name),
+              item_2_fb: preventUndefined(item.item_2_fb),
+              item_2_in: preventUndefined(item.item_2_in),
+              item_2_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_2_image', index)),
+              item_3_title: preventUndefined(item.item_3_title),
+              item_3_text: preventUndefined(item.item_3_text),
+              item_3_name: preventUndefined(item.item_3_name),
+              item_3_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_3_image', index)),
+              item_3_fb: preventUndefined(item.item_3_fb),
+              item_3_in: preventUndefined(item.item_3_in),
+              item_4_title: preventUndefined(item.item_4_title),
+              item_4_text: preventUndefined(item.item_4_text),
+              item_4_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_4_image', index)),
+              item_4_fb: preventUndefined(item.item_4_fb),
+              item_4_in: preventUndefined(item.item_4_in),
+              item_5_title: preventUndefined(item.item_5_title),
+              item_5_text: preventUndefined(item.item_5_text),
+              item_5_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_5_image', index)),
+              item_5_fb: preventUndefined(item.item_5_fb),
+              item_5_in: preventUndefined(item.item_5_in),
+              item_6_title: preventUndefined(item.item_6_title),
+              item_6_text: preventUndefined(item.item_6_text),
+              item_6_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_6_image', index)),
+              item_7_title: preventUndefined(item.item_7_title),
+              item_7_text: preventUndefined(item.item_7_text),
+              item_8_title: preventUndefined(item.item_8_title),
+              item_8_text: preventUndefined(item.item_8_text),
+              item_9_title: preventUndefined(item.item_9_title),
+              item_9_text: preventUndefined(item.item_9_text),
+              item_10_title: preventUndefined(item.item_10_title),
+              item_10_text: preventUndefined(item.item_10_text),
+              item_11_title: preventUndefined(item.item_11_title),
+              item_11_text: preventUndefined(item.item_11_text),
+              item_12_title: preventUndefined(item.item_12_title),
+              item_12_text: preventUndefined(item.item_12_text),
+              item_1_1_title: preventUndefined(item.item_1_1_title),
+              item_1_1_text: preventUndefined(item.item_1_1_text),
+              item_1_2_title: preventUndefined(item.item_1_2_title),
+              item_1_2_text: preventUndefined(item.item_1_2_text),
+              item_1_3_title: preventUndefined(item.item_1_3_title),
+              item_1_3_text: preventUndefined(item.item_1_3_text),
+              item_2_1_title: preventUndefined(item.item_2_1_title),
+              item_2_1_text: preventUndefined(item.item_2_1_text),
+              item_2_2_title: preventUndefined(item.item_2_2_title),
+              item_2_2_text: preventUndefined(item.item_2_2_text),
+              item_2_3_title: preventUndefined(item.item_2_3_title),
+              item_2_3_text: preventUndefined(item.item_2_3_text),
+              item_3_1_title: preventUndefined(item.item_3_1_title),
+              item_3_1_text: preventUndefined(item.item_3_1_text),
+              item_3_2_title: preventUndefined(item.item_3_2_title),
+              item_3_2_text: preventUndefined(item.item_3_2_text),
+              item_3_3_title: preventUndefined(item.item_3_3_title),
+              item_3_3_text: preventUndefined(item.item_3_3_text),
+              text_left: preventUndefined(item.text_left),
+              text_right: preventUndefined(item.text_right),
+              price: preventUndefined(item.price),
+              prepayment: preventUndefined(item.prepayment),
+              discount: preventUndefined(item.discount),
+              subtitle_1: preventUndefined(item.subtitle_1),
+              subtitle_2: preventUndefined(item.subtitle_2),
+              title_btn_1: preventUndefined(item.title_btn_1),
+              btn_1_text: preventUndefined(item.btn_1_text),
+              btn_1_link: preventUndefined(item.btn_1_link),
+              btn_2_text: preventUndefined(item.btn_2_text),
+              btn_2_link: preventUndefined(item.btn_2_link),
+              block_word_1: preventUndefined(item.block_word_1),
+              block_word_2: preventUndefined(item.block_word_2),
+              block_word_3: preventUndefined(item.block_word_3),
+            });
+          });
+        }
+
+        if (typeof kharkivData !== 'undefined' && kharkivData.length > 0) {
+          kharkivData.forEach(function (item, index) {
+            kharkivBlocks.push({
+              block_type: preventUndefined(item.block_type),
+              title: preventUndefined(item.title),
+              subtitle: preventUndefined(item.subtitle),
+              bg: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'bg', index)),
+              text: preventUndefined(item.text),
+              disclaimer: preventUndefined(item.disclaimer),
+              duration: preventUndefined(item.duration),
+              date: preventUndefined(item.date),
+              seats_current: preventUndefined(item.seats_current),
+              seats_total: preventUndefined(item.seats_total),
+              item_1_title: preventUndefined(item.item_1_title),
+              item_1_text: preventUndefined(item.item_1_text),
+              item_1_name: preventUndefined(item.item_1_name),
+              item_1_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_1_image', index)),
+              item_1_fb: preventUndefined(item.item_1_fb),
+              item_1_in: preventUndefined(item.item_1_in),
+              item_2_title: preventUndefined(item.item_2_title),
+              item_2_text: preventUndefined(item.item_2_text),
+              item_2_name: preventUndefined(item.item_2_name),
+              item_2_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_2_image', index)),
+              item_2_fb: preventUndefined(item.item_2_fb),
+              item_2_in: preventUndefined(item.item_2_in),
+              item_3_title: preventUndefined(item.item_3_title),
+              item_3_text: preventUndefined(item.item_3_text),
+              item_3_name: preventUndefined(item.item_3_name),
+              item_3_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_3_image', index)),
+              item_3_fb: preventUndefined(item.item_3_fb),
+              item_3_in: preventUndefined(item.item_3_in),
+              item_4_title: preventUndefined(item.item_4_title),
+              item_4_text: preventUndefined(item.item_4_text),
+              item_4_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_4_image', index)),
+              item_4_fb: preventUndefined(item.item_4_fb),
+              item_4_in: preventUndefined(item.item_4_in),
+              item_5_title: preventUndefined(item.item_5_title),
+              item_5_text: preventUndefined(item.item_5_text),
+              item_5_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_5_image', index)),
+              item_5_fb: preventUndefined(item.item_5_fb),
+              item_5_in: preventUndefined(item.item_5_in),
+              item_6_title: preventUndefined(item.item_6_title),
+              item_6_text: preventUndefined(item.item_6_text),
+              item_6_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_6_image', index)),
+              item_7_title: preventUndefined(item.item_7_title),
+              item_7_text: preventUndefined(item.item_7_text),
+              item_8_title: preventUndefined(item.item_8_title),
+              item_8_text: preventUndefined(item.item_8_text),
+              item_9_title: preventUndefined(item.item_9_title),
+              item_9_text: preventUndefined(item.item_9_text),
+              item_10_title: preventUndefined(item.item_10_title),
+              item_10_text: preventUndefined(item.item_10_text),
+              item_11_title: preventUndefined(item.item_11_title),
+              item_11_text: preventUndefined(item.item_11_text),
+              item_12_title: preventUndefined(item.item_12_title),
+              item_12_text: preventUndefined(item.item_12_text),
+              item_1_1_title: preventUndefined(item.item_1_1_title),
+              item_1_1_text: preventUndefined(item.item_1_1_text),
+              item_1_2_title: preventUndefined(item.item_1_2_title),
+              item_1_2_text: preventUndefined(item.item_1_2_text),
+              item_1_3_title: preventUndefined(item.item_1_3_title),
+              item_1_3_text: preventUndefined(item.item_1_3_text),
+              item_2_1_title: preventUndefined(item.item_2_1_title),
+              item_2_1_text: preventUndefined(item.item_2_1_text),
+              item_2_2_title: preventUndefined(item.item_2_2_title),
+              item_2_2_text: preventUndefined(item.item_2_2_text),
+              item_2_3_title: preventUndefined(item.item_2_3_title),
+              item_2_3_text: preventUndefined(item.item_2_3_text),
+              item_3_1_title: preventUndefined(item.item_3_1_title),
+              item_3_1_text: preventUndefined(item.item_3_1_text),
+              item_3_2_title: preventUndefined(item.item_3_2_title),
+              item_3_2_text: preventUndefined(item.item_3_2_text),
+              item_3_3_title: preventUndefined(item.item_3_3_title),
+              item_3_3_text: preventUndefined(item.item_3_3_text),
+              text_left: preventUndefined(item.text_left),
+              text_right: preventUndefined(item.text_right),
+              price: preventUndefined(item.price),
+              prepayment: preventUndefined(item.prepayment),
+              discount: preventUndefined(item.discount),
+              subtitle_1: preventUndefined(item.subtitle_1),
+              subtitle_2: preventUndefined(item.subtitle_2),
+              title_btn_1: preventUndefined(item.title_btn_1),
+              btn_1_text: preventUndefined(item.btn_1_text),
+              btn_1_link: preventUndefined(item.btn_1_link),
+              btn_2_text: preventUndefined(item.btn_2_text),
+              btn_2_link: preventUndefined(item.btn_2_link),
+              block_word_1: preventUndefined(item.block_word_1),
+              block_word_2: preventUndefined(item.block_word_2),
+              block_word_3: preventUndefined(item.block_word_3),
+            });
+          });
+        }
+
+      }
+
+      var kievPage = {
+        city: 'kiev',
+        date: req.body.kiev_date,
+        grtoken: req.body.kiev_grtoken,
+        blocks: kievBlocks
+      };
+      var kharkivPage = {
+        city: 'kharkiv',
+        date: req.body.kharkiv_date,
+        grtoken: req.body.kharkiv_grtoken,
+        blocks: kharkivBlocks
+      };
+
+      pagesArray.push(kievPage);
+      pagesArray.push(kharkivPage);
+
+      courses.pages = pagesArray;
 
 
       courses.save(function (err, item) {
@@ -223,9 +456,12 @@ router.post('/:id/edit', function (req, res) {
             var newPath = '';
 
             if (req.body.preview_deleted == 'false') {
-              if (req.files.preview) {
-                newPath = req.files.preview[0].path;
-                newPath = newPath.split('\\').join('/');
+              newPath = req.files.filter(function(e) {
+                return e.fieldname == 'preview';
+              });
+              if (typeof newPath !== 'undefined' && newPath.length > 0) {
+                newPath = newPath[0].path.split('\\').join('/');
+                console.log(newPath);
                 courses.preview = newPath.replace('public', '');
               } else {
                 courses.preview = req.body.preview_path;
@@ -247,7 +483,6 @@ router.post('/:id/edit', function (req, res) {
 
               if (typeof kievData !== 'undefined' && kievData.length > 0) {
                 kievData.forEach(function (item, index) {
-
                   kievBlocks.push({
                     block_type: preventUndefined(item.block_type),
                     title: preventUndefined(item.title),
@@ -263,20 +498,30 @@ router.post('/:id/edit', function (req, res) {
                     item_1_text: preventUndefined(item.item_1_text),
                     item_1_name: preventUndefined(item.item_1_name),
                     item_1_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_1_image', index)),
+                    item_1_fb: preventUndefined(item.item_1_fb),
+                    item_1_in: preventUndefined(item.item_1_in),
                     item_2_title: preventUndefined(item.item_2_title),
                     item_2_text: preventUndefined(item.item_2_text),
                     item_2_name: preventUndefined(item.item_2_name),
+                    item_2_fb: preventUndefined(item.item_2_fb),
+                    item_2_in: preventUndefined(item.item_2_in),
                     item_2_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_2_image', index)),
                     item_3_title: preventUndefined(item.item_3_title),
                     item_3_text: preventUndefined(item.item_3_text),
                     item_3_name: preventUndefined(item.item_3_name),
                     item_3_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_3_image', index)),
+                    item_3_fb: preventUndefined(item.item_3_fb),
+                    item_3_in: preventUndefined(item.item_3_in),
                     item_4_title: preventUndefined(item.item_4_title),
                     item_4_text: preventUndefined(item.item_4_text),
                     item_4_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_4_image', index)),
+                    item_4_fb: preventUndefined(item.item_4_fb),
+                    item_4_in: preventUndefined(item.item_4_in),
                     item_5_title: preventUndefined(item.item_5_title),
                     item_5_text: preventUndefined(item.item_5_text),
                     item_5_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_5_image', index)),
+                    item_5_fb: preventUndefined(item.item_5_fb),
+                    item_5_in: preventUndefined(item.item_5_in),
                     item_6_title: preventUndefined(item.item_6_title),
                     item_6_text: preventUndefined(item.item_6_text),
                     item_6_image: preventUndefined(returnImagePath(req.body, req.files, 'kiev', 'pages', 'item_6_image', index)),
@@ -286,6 +531,12 @@ router.post('/:id/edit', function (req, res) {
                     item_8_text: preventUndefined(item.item_8_text),
                     item_9_title: preventUndefined(item.item_9_title),
                     item_9_text: preventUndefined(item.item_9_text),
+                    item_10_title: preventUndefined(item.item_10_title),
+                    item_10_text: preventUndefined(item.item_10_text),
+                    item_11_title: preventUndefined(item.item_11_title),
+                    item_11_text: preventUndefined(item.item_11_text),
+                    item_12_title: preventUndefined(item.item_12_title),
+                    item_12_text: preventUndefined(item.item_12_text),
                     item_1_1_title: preventUndefined(item.item_1_1_title),
                     item_1_1_text: preventUndefined(item.item_1_1_text),
                     item_1_2_title: preventUndefined(item.item_1_2_title),
@@ -340,20 +591,30 @@ router.post('/:id/edit', function (req, res) {
                     item_1_text: preventUndefined(item.item_1_text),
                     item_1_name: preventUndefined(item.item_1_name),
                     item_1_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_1_image', index)),
+                    item_1_fb: preventUndefined(item.item_1_fb),
+                    item_1_in: preventUndefined(item.item_1_in),
                     item_2_title: preventUndefined(item.item_2_title),
                     item_2_text: preventUndefined(item.item_2_text),
                     item_2_name: preventUndefined(item.item_2_name),
                     item_2_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_2_image', index)),
+                    item_2_fb: preventUndefined(item.item_2_fb),
+                    item_2_in: preventUndefined(item.item_2_in),
                     item_3_title: preventUndefined(item.item_3_title),
                     item_3_text: preventUndefined(item.item_3_text),
                     item_3_name: preventUndefined(item.item_3_name),
                     item_3_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_3_image', index)),
+                    item_3_fb: preventUndefined(item.item_3_fb),
+                    item_3_in: preventUndefined(item.item_3_in),
                     item_4_title: preventUndefined(item.item_4_title),
                     item_4_text: preventUndefined(item.item_4_text),
                     item_4_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_4_image', index)),
+                    item_4_fb: preventUndefined(item.item_4_fb),
+                    item_4_in: preventUndefined(item.item_4_in),
                     item_5_title: preventUndefined(item.item_5_title),
                     item_5_text: preventUndefined(item.item_5_text),
                     item_5_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_5_image', index)),
+                    item_5_fb: preventUndefined(item.item_5_fb),
+                    item_5_in: preventUndefined(item.item_5_in),
                     item_6_title: preventUndefined(item.item_6_title),
                     item_6_text: preventUndefined(item.item_6_text),
                     item_6_image: preventUndefined(returnImagePath(req.body, req.files, 'kharkiv', 'pages', 'item_6_image', index)),
@@ -363,6 +624,12 @@ router.post('/:id/edit', function (req, res) {
                     item_8_text: preventUndefined(item.item_8_text),
                     item_9_title: preventUndefined(item.item_9_title),
                     item_9_text: preventUndefined(item.item_9_text),
+                    item_10_title: preventUndefined(item.item_10_title),
+                    item_10_text: preventUndefined(item.item_10_text),
+                    item_11_title: preventUndefined(item.item_11_title),
+                    item_11_text: preventUndefined(item.item_11_text),
+                    item_12_title: preventUndefined(item.item_12_title),
+                    item_12_text: preventUndefined(item.item_12_text),
                     item_1_1_title: preventUndefined(item.item_1_1_title),
                     item_1_1_text: preventUndefined(item.item_1_1_text),
                     item_1_2_title: preventUndefined(item.item_1_2_title),
@@ -402,15 +669,21 @@ router.post('/:id/edit', function (req, res) {
 
             }
 
-            console.log(kievBlocks);
-
             var kievPage = {
               city: 'kiev',
+              date: req.body.kiev_date,
+              gbw_white_date: preventUndefined(req.body.kiev_gbw_white_date),
+              gbw_grey_date: preventUndefined(req.body.kiev_gbw_grey_date),
+              gbw_black_date: preventUndefined(req.body.kiev_gbw_black_date),
               grtoken: req.body.kiev_grtoken,
               blocks: kievBlocks
             };
             var kharkivPage = {
               city: 'kharkiv',
+              date: req.body.kharkiv_date,
+              gbw_white_date: preventUndefined(req.body.kharkiv_gbw_white_date),
+              gbw_grey_date: preventUndefined(req.body.kharkiv_gbw_grey_date),
+              gbw_black_date: preventUndefined(req.body.kharkiv_gbw_black_date),
               grtoken: req.body.kharkiv_grtoken,
               blocks: kharkivBlocks
             };

@@ -212,27 +212,27 @@ module.exports = function (app, passport) {
   //   res.render('pages/lp/cinema-kharkiv');
   // });
 
-  app.get('/courses/pro/gbw', function(req, res, next) {
-    res.render('pages/lp/gbw-base');
-  });
-  app.get('/courses/pro/gbw/grey/kiev', function(req, res, next) {
-    res.render('pages/lp/gbw-grey-kiev');
-  });
-  app.get('/courses/pro/gbw/grey/kharkiv', function(req, res, next) {
-    res.render('pages/lp/gbw-grey-kharkiv');
-  });
-  app.get('/courses/pro/gbw/black/kiev', function(req, res, next) {
-    res.render('pages/lp/gbw-black-kiev');
-  });
-  app.get('/courses/pro/gbw/black/kharkiv', function(req, res, next) {
-    res.render('pages/lp/gbw-black-kharkiv');
-  });
-  app.get('/courses/pro/gbw/white/kiev', function(req, res, next) {
-    res.render('pages/lp/gbw-white-kiev');
-  });
-  app.get('/courses/pro/gbw/white/kharkiv', function(req, res, next) {
-    res.render('pages/lp/gbw-white-kharkiv');
-  });
+  // app.get('/courses/pro/gbw', function(req, res, next) {
+  //   res.render('pages/lp/gbw-base');
+  // });
+  // app.get('/courses/pro/gbw/grey/kiev', function(req, res, next) {
+  //   res.render('pages/lp/gbw-grey-kiev');
+  // });
+  // app.get('/courses/pro/gbw/grey/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/gbw-grey-kharkiv');
+  // });
+  // app.get('/courses/pro/gbw/black/kiev', function(req, res, next) {
+  //   res.render('pages/lp/gbw-black-kiev');
+  // });
+  // app.get('/courses/pro/gbw/black/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/gbw-black-kharkiv');
+  // });
+  // app.get('/courses/pro/gbw/white/kiev', function(req, res, next) {
+  //   res.render('pages/lp/gbw-white-kiev');
+  // });
+  // app.get('/courses/pro/gbw/white/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/gbw-white-kharkiv');
+  // });
 
 
   app.get('/in-development', function(req, res, next) {

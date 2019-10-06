@@ -2,21 +2,17 @@ mixin block_masters_2(index, city, item)
   section#masters.section-layout.section.sp-masters.sp-masters--bg-2.sp-masters--man-innovations(style="background-image: url(#{item.bg})")
     div.page-title
       .page-title__logo
-      h2 Трек Man innovations
-      h1 подходит<br> для мастеров:
+      h2 #{item.subtitle}
+      h1 #{item.title}
 
     ul.sp-masters-list.sp-masters-list--big-items
       li.sp-masters-list__item
         p.sp-masters-list__item-text
-          span Практикующих<br class="br-lg-md"> в салоне
-          | с навыками и опытом<br>
-          | в мужских стрижках
+          span #{item.item_1_title}
+          | #{item.item_1_text}
         .sp-masters-list__item-dot
       li.sp-masters-list__item
         p.sp-masters-list__item-text
-          span
-            br.br-lg
-            | начинающим
-          | рекомендуется после<br class="br-sm"> прохождения<br>
-          | курса Базовый
+          span #{item.item_2_title}
+          | #{item.item_2_text}
         .sp-masters-list__item-dot

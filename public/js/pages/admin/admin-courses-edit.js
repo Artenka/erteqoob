@@ -4,6 +4,10 @@ $(document).ready(function(){
   // $(".sortable").sortable();
   // $(".sortable").disableSelection();
 
+  if ($(".mymce").length > 0) {
+    initTinyMCE();
+  }
+
 
   updateItemsNumber('kiev');
   updateItemsNumber('kharkiv');
@@ -73,6 +77,8 @@ function addItemClick() {
         'fileSize': 'Размер файла слишком большой ({{ value }} max).'
       }
     });
+
+    initTinyMCE();
   });
 }
 
@@ -146,6 +152,24 @@ function updateItemsNumber(city) {
 }
 
 
+function initTinyMCE(){
+  tinymce.init({
+    selector: ".mymce",
+    theme: "silver",
+    height: 300,
+    file_browser_callback_types: 'image',
+    images_upload_url: '/uploadMCE',
+    automatic_uploads: true,
+    plugins: [
+      "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker"
+      , "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking"
+      , "save table contextmenu directionality emoticons template paste textcolor"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+  });
+}
+
+
 function returnBlockIntro(index, city) {
   return ""
     + "    <div class=\"panel panel-default\" data-item=\""+ index +"\">"
@@ -163,17 +187,15 @@ function returnBlockIntro(index, city) {
     + "                    <\/div>"
     + "                <\/div>"
     + "                <div class=\"row\">"
-    + "                    <div class=\"col-xs-12 col-sm-12\">"
+    + "                    <div class=\"col-xs-12 col-sm-6\">"
     + "                        <div class=\"form-group\"><label>Описание:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][text]\"><\/textarea><\/div>"
     + "                    <\/div>"
-    + "                <\/div>"
-    + "                <div class=\"row\">"
     + "                    <div class=\"col-xs-12 col-sm-6\">"
     + "                        <div class=\"form-group\"><label>Длительность:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][duration]\"><\/textarea><\/div>"
     + "                    <\/div>"
-    + "                    <div class=\"col-xs-12 col-sm-6\">"
-    + "                        <div class=\"form-group\"><label>Дата начала:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][date]\"><\/textarea><\/div>"
-    + "                    <\/div>"
+    // + "                    <div class=\"col-xs-12 col-sm-6\">"
+    // + "                        <div class=\"form-group\"><label>Дата начала:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][date]\"><\/textarea><\/div>"
+    // + "                    <\/div>"
     + "                <\/div>"
     + "                <div class=\"row\">"
     + "                    <div class=\"col-xs-12 col-sm-6\">"
@@ -305,6 +327,11 @@ function returnBlockMasters(index, city) {
   + "                        <div class=\"form-group\"><label>Пункт 4 - текст:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_4_text]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
+  + "                <div class=\"row\">"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Дисклеймер:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][disclaimer]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                <\/div>"
   + "            <\/div>"
   + "        <\/div>"
   + "    <\/div>";
@@ -317,13 +344,13 @@ function returnBlockMasters_2(index, city) {
   + "            <div class=\"panel-action\"><a href=\"#\" data-perform=\"panel-collapse\"><i class=\"ti-minus\"><\/i><\/a><a href=\"#\" class=\"panel-dismiss\" data-perform=\"panel-dismiss\"><i class=\"ti-close\"><\/i><\/a><\/div>"
   + "        <\/div>"
   + "        <div class=\"panel-wrapper collapse in\" aria-expanded=\"true\">"
-  + "            <div class=\"panel-body\"><input class=\"form-control\" type=\"hidden\" name=\"pages["+ city +"]"+ index +"[block_type]\" required=\"\" value=\"block_masters_2\" \/>"
+  + "            <div class=\"panel-body\"><input class=\"form-control\" type=\"hidden\" name=\"pages["+ city +"]["+ index +"][block_type]\" required=\"\" value=\"block_masters_2\" \/>"
   + "                <div class=\"row\">"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Подзаголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[subtitle]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Подзаголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][subtitle]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[title]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
   + "                <div class=\"row\">"
@@ -334,18 +361,18 @@ function returnBlockMasters_2(index, city) {
   + "                <\/div>"
   + "                <div class=\"row\">"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Пункт 1 - заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[item_1_title]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Пункт 1 - заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_1_title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Пункт 1 - текст:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[item_1_text]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Пункт 1 - текст:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_1_text]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
   + "                <div class=\"row\">"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Пункт 2 - заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[item_2_title]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Пункт 2 - заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_2_title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label>Пункт 2 - текст:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]"+ index +"[item_2_text]\"><\/textarea><\/div>"
+  + "                        <div class=\"form-group\"><label>Пункт 2 - текст:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_2_text]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
   + "            <\/div>"
@@ -605,6 +632,30 @@ function returnBlockProgram(index, city) {
   + "                        <div class=\"form-group\"><label>Этап 9 - Описание:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_9_text]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
+  + "                <div class=\"row\">"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 10 - Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_10_title]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 10 - Описание:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_10_text]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                <\/div>"
+  + "                <div class=\"row\">"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 11 - Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_11_title]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 11 - Описание:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_11_text]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                <\/div>"
+  + "                <div class=\"row\">"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 12 - Заголовок:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_12_title]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                    <div class=\"col-xs-12 col-sm-6\">"
+  + "                        <div class=\"form-group\"><label>Этап 12 - Описание:<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_12_text]\"><\/textarea><\/div>"
+  + "                    <\/div>"
+  + "                <\/div>"
   + "            <\/div>"
   + "        <\/div>"
   + "    <\/div>";
@@ -637,7 +688,7 @@ function returnBlockProgram_2(index, city) {
   + "                        <div class=\"form-group\"><label>Пункт 1 - Заголовок(день):<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_1_title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 1 - Изображение (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_1_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_1_image\" data-default-file=\"\""
+  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 1 - Изображение в круге (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_1_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_1_image\" data-default-file=\"\""
   + "                                accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\" data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_1_image_deleted\" value=\"false\" \/><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
@@ -654,7 +705,7 @@ function returnBlockProgram_2(index, city) {
   + "                        <div class=\"form-group\"><label>Пункт 2 - Заголовок(день):<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_2_title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 2 - Изображение (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_2_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_2_image\" data-default-file=\"\""
+  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 2 - Изображение в круге (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_2_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_2_image\" data-default-file=\"\""
   + "                                accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\" data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_2_image_deleted\" value=\"false\" \/><\/div>"
   + "                    <\/div>"
   + "                <\/div>"
@@ -671,7 +722,7 @@ function returnBlockProgram_2(index, city) {
   + "                        <div class=\"form-group\"><label>Пункт 3 - Заголовок(день):<\/label><textarea class=\"form-control\" name=\"pages["+ city +"]["+ index +"][item_3_title]\"><\/textarea><\/div>"
   + "                    <\/div>"
   + "                    <div class=\"col-xs-12 col-sm-6\">"
-  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 3 - Изображение (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_3_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_3_image\" data-default-file=\"\""
+  + "                        <div class=\"form-group\"><label class=\"control-label\">Пункт 3 - Изображение в круге (300 X 300):<\/label><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_3_image_path\" \/><input class=\"dropify\" type=\"file\" name=\"pages_"+ city +"_"+ index +"_item_3_image\" data-default-file=\"\""
   + "                                accept=\"image\/jpg,image\/jpeg,image\/png,image\/bmp\" data-max-file-size=\"2M\" \/><input type=\"hidden\" name=\"pages_"+ city +"_"+ index +"_item_3_image_deleted\" value=\"false\" \/><\/div>"
   + "                    <\/div>"
   + "                <\/div>"

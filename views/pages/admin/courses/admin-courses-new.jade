@@ -1,6 +1,23 @@
 extends ../../../layouts/main-admin
 
 block contents
+  // mixins
+  include ./../../../partials/admin/courses/block-select-list
+  include ./../../../partials/admin/courses/blocks/intro
+  include ./../../../partials/admin/courses/blocks/foundation
+  include ./../../../partials/admin/courses/blocks/masters
+  include ./../../../partials/admin/courses/blocks/masters_2
+  include ./../../../partials/admin/courses/blocks/skills
+  include ./../../../partials/admin/courses/blocks/format
+  include ./../../../partials/admin/courses/blocks/program
+  include ./../../../partials/admin/courses/blocks/program_2
+  include ./../../../partials/admin/courses/blocks/study
+  include ./../../../partials/admin/courses/blocks/philosophy
+  include ./../../../partials/admin/courses/blocks/teachers
+  include ./../../../partials/admin/courses/blocks/action
+
+  link(href="/plugins/bower_components/nestable/nestable.css" rel="stylesheet" type="text/css")
+
   // Preloader
   .preloader
     .cssload-speeding-wheel
@@ -20,24 +37,115 @@ block contents
               li
                 a(href='/admin') Главная
               li
-                a(href='/admin/courses') Салоны
+                a(href='/admin/courses') Курсы
               li.active Новый курс
         if (message)
           .row
             p(style='color:red;') #{message}
 
         .row
-          form(method='post', action='/admin/courses/new' enctype='multipart/form-data')
-            .row
-              .col-xs-12
-                .form-group
-                  label Название курса:
-                  input.form-control(name='name', required='' value="")
-            .row
-              .col-xs-12
-                .form-group
-                  label Ссылка:
-                  input.form-control(name='path', required='' value="")
+          form(method='post', action='/admin/courses/new' enctype='multipart/form-data' novalidate)
+            .white-box
+              .row
+                .col-xs-12.col-sm-6
+                  .form-group
+                    label Название курса:
+                    input.form-control(name='name', required='')
+                .col-xs-12.col-sm-6
+                  .form-group
+                    label Ссылка:
+                    input.form-control(name='path', required='')
+              .row
+                .col-xs-12.col-sm-4
+                  .form-group
+                    label Тип(курс/трек):
+                    input.form-control(name='course_type')
+                .col-xs-12.col-sm-4
+                  .form-group
+                    label Дата старта:
+                    input.form-control(name='date')
+                .col-xs-12.col-sm-4
+                  .form-group
+                    label Продолжительность:
+                    input.form-control(name='duration')
+              .row
+                .col-xs-12.col-sm-6
+                  .form-group
+                    label Сложность курса:
+                    select.form-control(name='difficulty', required='')
+                      option(value="beginner") Beginner
+                      option(value="pro") Pro
+                .col-xs-12.col-sm-6
+                  .form-group
+                    label В разработке?:
+                    select.form-control(name='development', required='')
+                      option(value="false") Нет
+                      option(value="true") Да
+              .row
+                .col-sm-6.col-sx-12
+                  .form-group
+                    label.control-label Превью курса (1440 x 300):
+                    input(type="hidden" name="preview_path")
+                    input#preview.dropify(type='file' name="preview" accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
+                    input(type="hidden" name="preview_deleted" value="false")
+
+
+            br
+            br
+
+
+            ul.nav.customtab2.nav-tabs.courses-tabs(role="tablist")
+              li.active(role="presentation")
+                a(href="#kievTab" role="tab" data-toggle="tab" aria-expanded="true")
+                  span Киев
+              li(role="presentation")
+                a(href="#kharkivTab" role="tab" data-toggle="tab" aria-expanded="false")
+                  span Харьков
+            .tab-content
+              #kievTab.tab-pane.fade.active.in(role="tabpanel")
+                .white-box
+                  .row
+                    .col-xs-12.col-sm-6
+                      .form-group
+                        label Дата начала:
+                        input.form-control(name='kiev_date', required='')
+                    .col-xs-12.col-sm-6
+                      .form-group
+                        label Токен GetResponse:
+                        input.form-control(name='kiev_grtoken', required='')
+                .white-box
+                  +block_select('kiev')
+                  .row.m-t-20
+                    .col-sm-6.col-sx-12
+                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kiev" data-counter="0")
+                        span.btn-label
+                          i.fa.icon-plus
+                        | Добавить блок
+
+                #kievCoursesBlocks.dd.myadmin-dd.courses-blocks
+
+
+              #kharkivTab.tab-pane.fade(role="tabpanel")
+                .white-box
+                  .row
+                    .col-xs-12.col-sm-6
+                      .form-group
+                        label Дата начала:
+                        input.form-control(name='kharkiv_date', required='')
+                    .col-xs-12.col-sm-6
+                      .form-group
+                        label Токен GetResponse:
+                        input.form-control(name='kharkiv_grtoken', required='')
+                .white-box
+                  +block_select('kharkiv')
+                  .row.m-t-20
+                    .col-sm-6.col-sx-12
+                      button.addBlock.btn.waves-effect.waves-light(type='button' data-city="kharkiv" data-counter="0")
+                        span.btn-label
+                          i.fa.icon-plus
+                        | Добавить блок
+
+                #kharkivCoursesBlocks.dd.myadmin-dd.courses-blocks
 
 
             .clear
@@ -48,4 +156,6 @@ block contents
 
     include ./../../../partials/admin/footer.jade
 
+    script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+    script(type="text/javascript", src='/plugins/bower_components/tinymce_new/tinymce.min.js')
     script(src="/js/pages/admin/admin-courses-edit.js")

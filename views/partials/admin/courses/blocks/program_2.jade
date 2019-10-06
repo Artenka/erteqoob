@@ -33,7 +33,7 @@ mixin block_program_2(index, city, item)
               textarea.form-control(name='pages[#{city}][#{index}][item_1_title]')!= item.item_1_title
           .col-xs-12.col-sm-6
             .form-group
-              label.control-label Пункт 1 - Изображение (300 X 300):
+              label.control-label Пункт 1 - Изображение в круге (300 X 300):
               input(type="hidden" name="pages_#{city}_#{index}_item_1_image_path" value!= item.item_1_image)
               input.dropify(type='file' name="pages_#{city}_#{index}_item_1_image" data-default-file!= item.item_1_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
               input(type="hidden" name="pages_#{city}_#{index}_item_1_image_deleted" value="false")
@@ -53,7 +53,7 @@ mixin block_program_2(index, city, item)
               textarea.form-control(name='pages[#{city}][#{index}][item_2_title]')!= item.item_2_title
           .col-xs-12.col-sm-6
             .form-group
-              label.control-label Пункт 2 - Изображение (300 X 300):
+              label.control-label Пункт 2 - Изображение в круге (300 X 300):
               input(type="hidden" name="pages_#{city}_#{index}_item_2_image_path" value!= item.item_2_image)
               input.dropify(type='file' name="pages_#{city}_#{index}_item_2_image" data-default-file!= item.item_2_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
               input(type="hidden" name="pages_#{city}_#{index}_item_2_image_deleted" value="false")
@@ -73,7 +73,7 @@ mixin block_program_2(index, city, item)
               textarea.form-control(name='pages[#{city}][#{index}][item_3_title]')!= item.item_3_title
           .col-xs-12.col-sm-6
             .form-group
-              label.control-label Пункт 3 - Изображение (300 X 300):
+              label.control-label Пункт 3 - Изображение в круге (300 X 300):
               input(type="hidden" name="pages_#{city}_#{index}_item_3_image_path" value!= item.item_3_image)
               input.dropify(type='file' name="pages_#{city}_#{index}_item_3_image" data-default-file!= item.item_3_image  accept="image/jpg,image/jpeg,image/png,image/bmp" data-max-file-size="2M")
               input(type="hidden" name="pages_#{city}_#{index}_item_3_image_deleted" value="false")

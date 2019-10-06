@@ -18,78 +18,33 @@ section.section-layout.section.courses-list.courses-list--beginner
 
   .courses-lists-layout
     .courses-list-grid
-      a(href="/courses/beginner/base/kiev").courses-list-grid-item
-        .courses-list-grid-item__header
-          p.courses-list-grid-item__header-item киев<br> 03/10/2019
-          //p.courses-list-grid-item__header-item харьков<br> 29/11/2017
-        .courses-list-grid-item__main
-          h2.courses-list-grid-item__subtitle
-            span.courses-list-grid-item__subtitle-course курс
-            span.courses-list-grid-item__subtitle-duration 100 занятий
-          h1.courses-list-grid-item__title Базовый<br> Киев
-          h2.courses-list-grid-item__subtitle.courses-list-grid-item__subtitle--column
-            span.courses-list-grid-item__subtitle-duration 100 занятий
-        .courses-list-grid-item__more узнать больше
-      a(href="/courses/beginner/base/kharkiv").courses-list-grid-item
-        .courses-list-grid-item__header
-          //p.courses-list-grid-item__header-item киев<br> 22/12/2017
-          p.courses-list-grid-item__header-item харьков<br> 13/03/2018
-        .courses-list-grid-item__main
-          h2.courses-list-grid-item__subtitle
-            span.courses-list-grid-item__subtitle-course курс
-            span.courses-list-grid-item__subtitle-duration 7 месяцев / 90 занятий
-          h1.courses-list-grid-item__title Базовый<br> Харьков
-          h2.courses-list-grid-item__subtitle.courses-list-grid-item__subtitle--column
-            span.courses-list-grid-item__subtitle-duration 7 месяцев / 90 занятий
-        .courses-list-grid-item__more узнать больше
-      a(href="/courses/beginner/qualification/kiev").courses-list-grid-item
-        .courses-list-grid-item__header
-          p.courses-list-grid-item__header-item киев<br> 18/07/2019
-          p.courses-list-grid-item__header-item харьков<br> 02/04/2019
-        .courses-list-grid-item__main
-          h2.courses-list-grid-item__subtitle
-            span.courses-list-grid-item__subtitle-course курс
-            span.courses-list-grid-item__subtitle-duration 1 месяц / 12 занятий
-          h1.courses-list-grid-item__title повышение<br> квалификации
-          h2.courses-list-grid-item__subtitle.courses-list-grid-item__subtitle--column
-            span.courses-list-grid-item__subtitle-duration 7 месяцев / 9 занятий
-        .courses-list-grid-item__more узнать больше
-      .courses-list-grid-item.courses-list-grid-item--progress
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 <span class="br-lg-md">&nbsp;&nbsp;</span>Курс
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
-          span повышение квалификации<br class="br-list"> интенсив
-        .courses-list-grid-item__progress-layout
-          .courses-list-grid-item__progress
-            //.courses-list-grid-item__progress-center
-            //.circle.courses-list-grid-item__progress-circle
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--3 в разработке
-      .courses-list-grid-item.courses-list-grid-item--progress
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 <span class="br-lg-md">&nbsp;&nbsp;</span>Курс
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
-          span Базовый курс<br class="br-list"> Man
-        .courses-list-grid-item__progress-layout
-          .courses-list-grid-item__progress
-            //.courses-list-grid-item__progress-center
-            //.circle.courses-list-grid-item__progress-circle
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--3 в разработке
-      .courses-list-grid-item.courses-list-grid-item--progress
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 <span class="br-lg-md">&nbsp;&nbsp;</span>Курс
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
-          span Базовый курс<br class="br-list"> Woman
-        .courses-list-grid-item__progress-layout
-          .courses-list-grid-item__progress
-            //.courses-list-grid-item__progress-center
-            //.circle.courses-list-grid-item__progress-circle
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--3 в разработке
-      .courses-list-grid-item.courses-list-grid-item--progress
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 <span class="br-lg-md">&nbsp;&nbsp;</span>Курс
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
-          span Базовый курс<br class="br-list"> Color
-        .courses-list-grid-item__progress-layout
-          .courses-list-grid-item__progress
-            //.courses-list-grid-item__progress-center
-            //.circle.courses-list-grid-item__progress-circle
-        p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--3 в разработке
+      each course in courses
+        if course.difficulty === 'beginner'
+          if course.development === 'false'
+            a(href="/courses/beginner/#{course.path}" style="background-image: url(#{course.preview})").courses-list-grid-item
+              .courses-list-grid-item__header
+                if course.pages[0].date
+                  p.courses-list-grid-item__header-item киев<br> #{course.pages[0].date}
+                if course.pages[1].date
+                  p.courses-list-grid-item__header-item харьков<br> #{course.pages[1].date}
+              .courses-list-grid-item__main
+                h2.courses-list-grid-item__subtitle
+                  span.courses-list-grid-item__subtitle-course #{course.course_type}
+                  span.courses-list-grid-item__subtitle-duration #{course.duration}
+                h1.courses-list-grid-item__title #{course.name}
+                h2.courses-list-grid-item__subtitle.courses-list-grid-item__subtitle--column
+                  span.courses-list-grid-item__subtitle-duration #{course.duration}
+              .courses-list-grid-item__more узнать больше
+          else if course.development === 'true'
+            .courses-list-grid-item.courses-list-grid-item--progress(style="background-image: url(#{course.preview})")
+              p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--1 #{course.course_type}
+              p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--2
+                span #{course.name}
+              .courses-list-grid-item__progress-layout
+                .courses-list-grid-item__progress
+                  //.courses-list-grid-item__progress-center
+                  //.circle.courses-list-grid-item__progress-circle
+              p.courses-list-grid-item__progress-text.courses-list-grid-item__progress-text--3 в разработке
 
 
 

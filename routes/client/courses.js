@@ -14,29 +14,165 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/beginner', function(req, res, next) {
-  Coursespages.findOne({name: 'beginner'})
-    .exec(function (err, coursespages) {
-      if (!err && coursespages) {
-        res.render('pages/lp/courses-beginner', {
-          coursespages: coursespages
+  async.parallel([
+    function (callback) {
+      Courses.find({})
+        .sort('-priority')
+        .exec(function (err, courses) {
+          if (!err && courses) {
+            callback(null, courses);
+          } else {
+            callback(err, null);
+          }
         });
-      } else {
-        eLogger.error(err);
-        res.redirect('/');
-      }
-    });
+    },
+    function (callback) {
+      Coursespages.findOne({name: 'beginner'})
+        .exec(function (err, coursespages) {
+          if (!err && coursespages) {
+            callback(null, coursespages);
+          } else {
+            callback(err, null);
+          }
+        });
+    }
+  ], function (err, results) {
+    if (err) {
+      eLogger.error(err);
+      res.redirect('/courses');
+    } else {
+      res.render('pages/lp/courses-beginner', {
+        courses: results[0],
+        coursespages: results[1]
+      });
+    }
+  });
 });
 
 router.get('/pro', function(req, res, next) {
-  Coursespages.findOne({name: 'pro'})
-    .exec(function (err, coursespages) {
-      if (!err && coursespages) {
-        res.render('pages/lp/courses-pro', {
-          coursespages: coursespages
+  async.parallel([
+    function (callback) {
+      Courses.find({})
+        .sort('-priority')
+        .exec(function (err, courses) {
+          if (!err && courses) {
+            callback(null, courses);
+          } else {
+            callback(err, null);
+          }
+        });
+    },
+    function (callback) {
+      Coursespages.findOne({name: 'pro'})
+        .exec(function (err, coursespages) {
+          if (!err && coursespages) {
+            callback(null, coursespages);
+          } else {
+            callback(err, null);
+          }
+        });
+    }
+  ], function (err, results) {
+    if (err) {
+      eLogger.error(err);
+      res.redirect('/courses');
+    } else {
+      res.render('pages/lp/courses-pro', {
+        courses: results[0],
+        coursespages: results[1]
+      });
+    }
+  });
+});
+
+router.get('/pro/gbw', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-base', {
+          courses: courses
         });
       } else {
         eLogger.error(err);
-        res.redirect('/');
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/grey/kiev', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-grey-kiev', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/grey/kharkiv', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-grey-kharkiv', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/black/kiev', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-black-kiev', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/black/kharkiv', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-black-kharkiv', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/white/kiev', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-white-kiev', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
+      }
+    });
+});
+router.get('/pro/gbw/white/kharkiv', function(req, res, next) {
+  Courses.findOne({isgbw: 'true'})
+    .exec(function (err, courses) {
+      if (!err && courses) {
+        res.render('pages/lp/gbw-white-kharkiv', {
+          courses: courses
+        });
+      } else {
+        eLogger.error(err);
+        res.redirect('/courses');
       }
     });
 });

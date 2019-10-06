@@ -10,6 +10,7 @@
  .gbw-base-teachers-name__text {
   font-size: 28px;
   line-height: 32px;
+  white-space: pre-line;
   @include mobile {
    font-size: 18px;
    line-height: 27px;

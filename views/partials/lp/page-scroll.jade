@@ -1,0 +1,21 @@
+.page-slider-dots-layout
+  .page-slider-dots
+
+script.
+  $(function(){
+    // page slider dots init
+    var dotsArray = [];
+    var $dots = $('.page-slider-dots');
+    $('.section').each(function(){
+      $dots.append('<a href="#' + $(this).attr('id') + '" class="link-smooth page-slider-dots__item"></a>');
+      dotsArray.push('#' + $(this).attr('id'));
+    });
+
+    // page slider dots click
+    $('.page-slider-dots__item').click(function(){
+      $('.page-slider-dots__item--active').removeClass('page-slider-dots__item--active');
+      $(this).addClass('page-slider-dots__item--active');
+    });
+
+    updateActiveSectionPaginator(dotsArray);
+  });

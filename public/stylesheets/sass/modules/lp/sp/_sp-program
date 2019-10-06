@@ -1,7 +1,9 @@
 .sp-program {
  //height: 1339px;
- height: 1100px;
+ //height: 1100px;
+ height: auto;
  background-image: url(../../../img/lp/sp/program/sp-program.jpg);
+ padding: 0 0 100px;
  @include mobile {
   height: auto;
   padding-bottom: 59px;
@@ -183,9 +185,12 @@
  text-align: center;
  white-space: pre-line;
  @include mobile {
+  max-width: 360px;
   color: $color-white;
   font-size: 10px;
   line-height: 15px;
+  padding: 0 20px;
+  white-space: initial;
  }
 
  .sp-program__disclaimer-star {

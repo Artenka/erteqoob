@@ -62,3 +62,8 @@ mixin block_masters(index, city, item)
             .form-group
               label Пункт 4 - текст:
               textarea.form-control(name='pages[#{city}][#{index}][item_4_text]')!= item.item_4_text
+        .row
+          .col-xs-12.col-sm-6
+            .form-group
+              label Дисклеймер:
+              textarea.form-control(name='pages[#{city}][#{index}][disclaimer]')!= item.disclaimer

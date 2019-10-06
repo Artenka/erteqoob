@@ -325,6 +325,7 @@
    font-size: 10px;
    letter-spacing: 1px;
    line-height: 30px;
+   white-space: initial;
   }
   &:before {
    @extend .dots-2;

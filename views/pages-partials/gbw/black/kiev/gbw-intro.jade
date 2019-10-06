@@ -47,14 +47,14 @@ section#intro.section-layout.section.gbw-base-intro.gbw-base-intro--inner
         span трек
         | black
       h2.sp-about-block__main-subtitle Быстрое приобретение<br> и тренировка навыков салонных стрижек
-      button(onclick="registerStep1('gbwBlackKiev','Black', 'трек «Black»', 'kiev', '03-07.09.2019', '43Ejy')").btn.sp-about-block__main-link записаться на трек
+      button(onclick="registerStep1('gbwBlackKiev','Black', 'трек «Black»', 'kiev', '#{courses.pages[0].gbw_black_date}', '43Ejy')").btn.sp-about-block__main-link записаться на трек
     .sp-about-block__info
       ul.switcher
         li.switcher__btn.switcher__btn--active
           a(href="/courses/pro/gbw/black/kiev") киев
         li.switcher__btn
           a(href="/courses/pro/gbw/black/kharkiv") харьков
-      p.sp-about-block__info-date 03-07.09.2019
+      p.sp-about-block__info-date #{courses.pages[0].gbw_black_date}
       p.sp-about-block__info-seats <span>Места: 7</span> из 10
 
   .dices

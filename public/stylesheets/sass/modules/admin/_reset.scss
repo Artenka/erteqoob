@@ -1345,11 +1345,23 @@ hr.hr-material-dashed {
  max-width: 100%;
 }
 
-.courses-tabs.nav-tabs>li {
- width: 50%;
- font-size: 1.5em;
- font-weight: 300;
- text-align: center;
- text-transform: uppercase;
- letter-spacing: 0.1em;
+.courses-tabs.nav.nav-tabs {
+ display: flex;
+
+ >li {
+  //width: 50%;
+  flex: 1;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+ }
+}
+@media (max-width: 768px) {
+
+ .courses-tabs.nav.nav-tabs>li {
+  font-size: 1em;
+  letter-spacing: 0.05em;
+ }
 }

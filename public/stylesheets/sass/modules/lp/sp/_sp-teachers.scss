@@ -240,6 +240,7 @@
       position: relative;
       font-size: 2.2vw;
       line-height: 2.5vw;
+      white-space: pre-line;
       @include tablet {
        font-size: 41px;
        line-height: 41px;

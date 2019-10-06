@@ -19,6 +19,7 @@
  align-content: center;
  padding-left: 80px;
  padding-bottom: 3%;
+ margin-top: 100px;
  @include tablet {
   padding-left: 7%;
  }
@@ -107,6 +108,13 @@
     display: block;
     color: $color-boulder-2;
    }
+  }
+ }
+
+ ~ .sp-program__disclaimer {
+
+  &, &.sp-program__disclaimer--2 {
+   margin-top: 0;
   }
  }
 }
