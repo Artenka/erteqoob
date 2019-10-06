@@ -108,9 +108,9 @@ module.exports = function (app, passport) {
   //   res.render('pages/lp/courses-pro');
   // });
 
-  app.get('/lp', function(req, res, next) {
-    res.render('pages/lp/home');
-  });
+  // app.get('/lp', function(req, res, next) {
+  //   res.render('pages/lp/home');
+  // });
 
   app.get('/courses/expired', function(req, res, next) {
     res.render('pages/lp/sp-1-expired');
@@ -122,78 +122,78 @@ module.exports = function (app, passport) {
     res.render('pages/lp/sp-1-thankyou-2');
   });
 
-  app.get('/sp/kiev', function(req, res, next) {
-    res.render('pages/lp/sp-kiev');
-  });
-  app.get('/sp/kharkiv', function(req, res, next) {
-    res.render('pages/lp/sp-kharkiv');
-  });
-  app.get('/sp1/kiev', function(req, res, next) {
-    res.render('pages/lp/sp1-kiev');
-  });
-  app.get('/sp1/kharkiv', function(req, res, next) {
-    res.render('pages/lp/sp1-kharkiv');
-  });
-
-  app.get('/webinar', function(req, res, next) {
-    res.render('pages/lp/webinar');
-  });
-
-  app.get('/courses/beginner/base/kiev', function(req, res, next) {
-    res.render('pages/lp/base-kiev');
-  });
-  app.get('/courses/beginner/base/kharkiv', function(req, res, next) {
-    res.render('pages/lp/base-kharkiv');
-  });
-
-  app.get('/courses/beginner/qualification/kiev', function(req, res, next) {
-    res.render('pages/lp/qualification-kiev');
-  });
-  app.get('/courses/beginner/qualification/kharkiv', function(req, res, next) {
-    res.render('pages/lp/qualification-kharkiv');
-  });
-
-  app.get('/courses/pro/adaptation/kiev', function(req, res, next) {
-    res.render('pages/lp/adaptation-kiev');
-  });
-  app.get('/courses/pro/adaptation/kharkiv', function(req, res, next) {
-    res.render('pages/lp/adaptation-kharkiv');
-  });
-
-  app.get('/courses/pro/man-innovations/kiev', function(req, res, next) {
-    res.render('pages/lp/man-innovations-kiev');
-  });
-  app.get('/courses/pro/man-innovations/kharkiv', function(req, res, next) {
-    res.render('pages/lp/man-innovations-kharkiv');
-  });
-
-  app.get('/courses/pro/salon-innovations/kiev', function(req, res, next) {
-    res.render('pages/lp/salon-innovations-kiev');
-  });
-  app.get('/courses/pro/salon-innovations/kharkiv', function(req, res, next) {
-    res.render('pages/lp/salon-innovations-kharkiv');
-  });
-
-  app.get('/courses/pro/long/kiev', function(req, res, next) {
-    res.render('pages/lp/long-kiev');
-  });
-  app.get('/courses/pro/long/kharkiv', function(req, res, next) {
-    res.render('pages/lp/long-kharkiv');
-  });
-
-  app.get('/courses/pro/curly/kiev', function(req, res, next) {
-    res.render('pages/lp/curly-kiev');
-  });
-  app.get('/courses/pro/curly/kharkiv', function(req, res, next) {
-    res.render('pages/lp/curly-kharkiv');
-  });
-
-  app.get('/courses/pro/blond/kiev', function(req, res, next) {
-    res.render('pages/lp/blond-kiev');
-  });
-  app.get('/courses/pro/blond/kharkiv', function(req, res, next) {
-    res.render('pages/lp/blond-kharkiv');
-  });
+  // app.get('/sp/kiev', function(req, res, next) {
+  //   res.render('pages/lp/sp-kiev');
+  // });
+  // app.get('/sp/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/sp-kharkiv');
+  // });
+  // app.get('/sp1/kiev', function(req, res, next) {
+  //   res.render('pages/lp/sp1-kiev');
+  // });
+  // app.get('/sp1/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/sp1-kharkiv');
+  // });
+  //
+  // app.get('/webinar', function(req, res, next) {
+  //   res.render('pages/lp/webinar');
+  // });
+  //
+  // app.get('/courses/beginner/base/kiev', function(req, res, next) {
+  //   res.render('pages/lp/base-kiev');
+  // });
+  // app.get('/courses/beginner/base/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/base-kharkiv');
+  // });
+  //
+  // app.get('/courses/beginner/qualification/kiev', function(req, res, next) {
+  //   res.render('pages/lp/qualification-kiev');
+  // });
+  // app.get('/courses/beginner/qualification/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/qualification-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/adaptation/kiev', function(req, res, next) {
+  //   res.render('pages/lp/adaptation-kiev');
+  // });
+  // app.get('/courses/pro/adaptation/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/adaptation-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/man-innovations/kiev', function(req, res, next) {
+  //   res.render('pages/lp/man-innovations-kiev');
+  // });
+  // app.get('/courses/pro/man-innovations/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/man-innovations-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/salon-innovations/kiev', function(req, res, next) {
+  //   res.render('pages/lp/salon-innovations-kiev');
+  // });
+  // app.get('/courses/pro/salon-innovations/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/salon-innovations-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/long/kiev', function(req, res, next) {
+  //   res.render('pages/lp/long-kiev');
+  // });
+  // app.get('/courses/pro/long/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/long-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/curly/kiev', function(req, res, next) {
+  //   res.render('pages/lp/curly-kiev');
+  // });
+  // app.get('/courses/pro/curly/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/curly-kharkiv');
+  // });
+  //
+  // app.get('/courses/pro/blond/kiev', function(req, res, next) {
+  //   res.render('pages/lp/blond-kiev');
+  // });
+  // app.get('/courses/pro/blond/kharkiv', function(req, res, next) {
+  //   res.render('pages/lp/blond-kharkiv');
+  // });
 
   app.get('/cinema', function(req, res, next) {
     Cinemas.findOne({cinemas_id: 1})
