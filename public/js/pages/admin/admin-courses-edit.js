@@ -23,45 +23,54 @@ function addItemClick() {
     var block_type = $('input[name=block_type_'+ city +']:checked').val();
 
     var $blockLayout = $('#'+ city +'CoursesBlocks');
+    var newBlock;
 
     switch (block_type) {
       case 'block_intro':
-        $blockLayout.append(returnBlockIntro(counter, city));
+        newBlock = returnBlockIntro(counter, city);
         break;
       case 'block_foundation':
-        $blockLayout.append(returnBlockFoundation(counter, city));
+        newBlock = returnBlockFoundation(counter, city);
         break;
       case 'block_masters':
-        $blockLayout.append(returnBlockMasters(counter, city));
+        newBlock = returnBlockMasters(counter, city);
         break;
       case 'block_masters_2':
-        $blockLayout.append(returnBlockMasters_2(counter, city));
+        newBlock = returnBlockMasters_2(counter, city);
         break;
       case 'block_skills':
-        $blockLayout.append(returnBlockSkills(counter, city));
+        newBlock = returnBlockSkills(counter, city);
         break;
       case 'block_format':
-        $blockLayout.append(returnBlockFormat(counter, city));
+        newBlock = returnBlockFormat(counter, city);
         break;
       case 'block_program':
-        $blockLayout.append(returnBlockProgram(counter, city));
+        newBlock = returnBlockProgram(counter, city);
         break;
       case 'block_program_2':
-        $blockLayout.append(returnBlockProgram_2(counter, city));
+        newBlock = returnBlockProgram_2(counter, city);
         break;
       case 'block_study':
-        $blockLayout.append(returnBlockStudy(counter, city));
+        newBlock = returnBlockStudy(counter, city);
         break;
       case 'block_philosophy':
-        $blockLayout.append(returnBlockPhilosophy(counter, city));
+        newBlock = returnBlockPhilosophy(counter, city);
         break;
       case 'block_teachers':
-        $blockLayout.append(returnBlockTeachers(counter, city));
+        newBlock = returnBlockTeachers(counter, city);
         break;
       case 'block_action':
-        $blockLayout.append(returnBlockAction(counter, city));
+        newBlock = returnBlockAction(counter, city);
         break;
     }
+
+    $blockLayout.append(newBlock);
+    if(city == 'kiev') {
+      window.scrollTo(0, $('#kievTab .panel:last-child').offset().top);
+    } else if(city == 'kharkiv') {
+      window.scrollTo(0, $('#kharkivTab .panel:last-child').offset().top);
+    }
+
 
     counter++;
     $(this).attr('data-counter', counter);
@@ -87,67 +96,68 @@ function updateItemsNumber(city) {
   var deleteConfirmed = false;
 
   $('body').on('click', '#'+ city +'Tab .panel-dismiss', function(e){
-    // e.preventDefault();
-    //
-    // if (!deleteConfirmed) {
-    //   if (confirm('Delete?')) {
-    //     deleteConfirmed = true;
-    //     $(this).trigger('click');
-    //   }
-    // } else {
-    //   deleteConfirmed = false;
-    // }
+    e.preventDefault();
+    deleteConfirmed = false;
 
-    var $addBtn = $('#'+ city +'Tab .addBlock');
-    var counter =  parseInt($addBtn.attr('data-counter'), 10);
-    counter--;
-    $addBtn.attr('data-counter', counter);
+    if (!deleteConfirmed) {
+      if (!confirm('Удалить этот блок?')) {
+        deleteConfirmed = true;
+        $(this).trigger('click');
+      }
+    } else {
+      deleteConfirmed = false;
 
-    var prevNumber;
-    var currentName = '';
+      var $addBtn = $('#'+ city +'Tab .addBlock');
+      var counter =  parseInt($addBtn.attr('data-counter'), 10);
+      counter--;
+      $addBtn.attr('data-counter', counter);
 
-    setTimeout(function(){
-      $('#'+ city +'Tab .panel').each(function( index ) {
-        prevNumber = $(this).data('item');
-        $(this).data('item', index);
+      var prevNumber;
+      var currentName = '';
 
-        $(this).find('textarea').each(function(){
-          currentName = $(this).attr('name');
-          $(this).attr('name', currentName.replace(']['+ prevNumber +'][', ']['+ index +']['));
+      setTimeout(function(){
+        $('#'+ city +'Tab .panel').each(function( index ) {
+          prevNumber = $(this).data('item');
+          $(this).data('item', index);
+
+          $(this).find('textarea').each(function(){
+            currentName = $(this).attr('name');
+            $(this).attr('name', currentName.replace(']['+ prevNumber +'][', ']['+ index +']['));
+          });
+
+          $(this).find('input').each(function(){
+            currentName = $(this).attr('name');
+            switch (true) {
+              case currentName.search('_bg') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_bg', '_'+ index +'_bg'));
+                break;
+              case currentName.search('_item_1_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_1_image', '_'+ index +'_item_1_image'));
+                break;
+              case currentName.search('_item_2_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_2_image', '_'+ index +'_item_2_image'));
+                break;
+              case currentName.search('_item_3_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_3_image', '_'+ index +'_item_3_image'));
+                break;
+              case currentName.search('_item_4_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_4_image', '_'+ index +'_item_4_image'));
+                break;
+              case currentName.search('_item_5_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_5_image', '_'+ index +'_item_5_image'));
+                break;
+              case currentName.search('_item_6_image') >= 0:
+                $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_6_image', '_'+ index +'_item_6_image'));
+                break;
+              default:
+                $(this).attr('name', currentName.replace(']['+ prevNumber +'][', ']['+ index +']['));
+                break;
+            }
+          });
+
         });
-
-        $(this).find('input').each(function(){
-          currentName = $(this).attr('name');
-          switch (true) {
-            case currentName.search('_bg') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_bg', '_'+ index +'_bg'));
-              break;
-            case currentName.search('_item_1_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_1_image', '_'+ index +'_item_1_image'));
-              break;
-            case currentName.search('_item_2_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_2_image', '_'+ index +'_item_2_image'));
-              break;
-            case currentName.search('_item_3_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_3_image', '_'+ index +'_item_3_image'));
-              break;
-            case currentName.search('_item_4_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_4_image', '_'+ index +'_item_4_image'));
-              break;
-            case currentName.search('_item_5_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_5_image', '_'+ index +'_item_5_image'));
-              break;
-            case currentName.search('_item_6_image') >= 0:
-              $(this).attr('name', currentName.replace('_'+ prevNumber +'_item_6_image', '_'+ index +'_item_6_image'));
-              break;
-            default:
-              $(this).attr('name', currentName.replace(']['+ prevNumber +'][', ']['+ index +']['));
-              break;
-          }
-        });
-
-      });
-    }, 300);
+      }, 300);
+    }
   });
 }
 
