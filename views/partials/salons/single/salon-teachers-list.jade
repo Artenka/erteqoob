@@ -20,7 +20,8 @@ while i < salons.teachers.length
       div.academy-teacher__photo-bg
       img(src="#{salons.teachers[i]['photo']}")
     div.academy-teacher__info
-      h1.academy-teacher__name #{salons.teachers[i]['name']}
+      h2.academy-teacher__name #{salons.teachers[i]['name']}
+      h3.academy-teacher__position #{salons.teachers[i]['position']}
 
   if i%4 === 3 || i === salons.teachers.length-1
     | </div></div>
