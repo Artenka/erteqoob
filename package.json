@@ -26,7 +26,7 @@
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-auto-increment-fix": "^5.0.2",
     "mongoose-deep-populate": "^3.0.0",
-    "morgan": "~1.7.0",
+    "morgan": "~1.9.1",
     "multer": "^1.1.0",
     "nconf": "^0.8.4",
     "node-sass-middleware": "0.9.8",
