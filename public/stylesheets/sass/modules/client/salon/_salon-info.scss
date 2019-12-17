@@ -139,7 +139,9 @@
    line-height: 21px;
   }
  }
- h3 {
+ h3, .salon-info-block__item-subitem-subtitle {
+  display: block;
+  color: #fff;
   font-size: 14px;
   font-weight: 700;
   line-height: 34px;

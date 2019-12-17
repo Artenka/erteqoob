@@ -6,12 +6,12 @@ section.section-layout.salon-info
       .salon-info-block__item-subitem
         h3 #{salons.title2_1}
         //h3 Телефоны:
-        p #{salons.phone1}
+        a(href="tel:#{salons.phone1}").salon-info-block__item-subitem-subtitle #{salons.phone1}
         //p 067 528 12 06
       .salon-info-block__item-subitem
-        p #{salons.phone2}
+        a(href="tel:#{salons.phone2}").salon-info-block__item-subitem-subtitle #{salons.phone2}
         //p 050 844 83 77
-        p #{salons.phone3}
+        a(href="tel:#{salons.phone3}").salon-info-block__item-subitem-subtitle #{salons.phone3}
         //p 044 270 72 35
     .salon-info-block__item.salon-info-block__item--2
       h3 #{salons.title2_2}
