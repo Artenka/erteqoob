@@ -129,6 +129,7 @@ router.post('/new', function (req, res) {
       salons.address = req.body.address;
       salons.phones = req.body.phones;
 
+      salons.section1_order = req.body.section1_order;
       salons.title1 = req.body.title1;
       salons.subtitle1 = req.body.subtitle1;
       salons.map_position = req.body.map_position;
@@ -137,6 +138,7 @@ router.post('/new', function (req, res) {
       salons.imageBg1 = req.body.imageBg1;
       salons.imageBg1_mobile = req.body.imageBg1_mobile;
 
+      salons.section2_order = req.body.section2_order;
       salons.title2_1 = req.body.title2_1;
       salons.title2_2 = req.body.title2_2;
       salons.phone1 = req.body.phone1;
@@ -144,8 +146,11 @@ router.post('/new', function (req, res) {
       salons.phone3 = req.body.phone3;
       salons.schedule = req.body.schedule;
 
+      salons.section3_order = req.body.section3_order;
       salons.title3 = req.body.title3;
       salons.subtitle3 = req.body.subtitle3;
+
+      salons.section4_order = req.body.section4_order;
 
       var newPath;
 
@@ -338,6 +343,7 @@ router.post('/:id/edit', function(req, res) {
             salons.address = req.body.address;
             salons.phones = req.body.phones;
 
+            salons.section1_order = req.body.section1_order;
             salons.title1 = req.body.title1;
             salons.subtitle1 = req.body.subtitle1;
             salons.map_position = req.body.map_position;
@@ -346,6 +352,7 @@ router.post('/:id/edit', function(req, res) {
             salons.imageBg1 = req.body.imageBg1;
             salons.imageBg1_mobile = req.body.imageBg1_mobile;
 
+            salons.section2_order = req.body.section2_order;
             salons.title2_1 = req.body.title2_1;
             salons.title2_2 = req.body.title2_2;
             salons.phone1 = req.body.phone1;
@@ -353,8 +360,11 @@ router.post('/:id/edit', function(req, res) {
             salons.phone3 = req.body.phone3;
             salons.schedule = req.body.schedule;
 
+            salons.section3_order = req.body.section3_order;
             salons.title3 = req.body.title3;
             salons.subtitle3 = req.body.subtitle3;
+
+            salons.section4_order = req.body.section4_order;
 
 
             var newPath;

@@ -3,10 +3,17 @@ extends ../layouts/main-client-salon.jade
 block contents
   div.main-layout#salon
     //include ../partials/link-home.jade
-    include ../partials/salons/single/salon-intro.jade
-    include ../partials/salons/single/salon-info.jade
-    include ../partials/salons/single/salon-teachers.jade
-    include ../partials/salons/single/salon-gallery.jade
+
+    - salonsOrder.sort(function(a, b){return parseFloat(a.order) - parseFloat(b.order);})
+    - each order in salonsOrder
+      if(order.name === 'intro')
+        include ../partials/salons/single/salon-intro.jade
+      else if(order.name === 'info')
+        include ../partials/salons/single/salon-info.jade
+      else if(order.name === 'teachers')
+        include ../partials/salons/single/salon-teachers.jade
+      else if(order.name === 'gallery')
+        include ../partials/salons/single/salon-gallery.jade
 
     .br-lg
       include ../partials/footer-min.jade

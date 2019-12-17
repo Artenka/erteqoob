@@ -54,7 +54,25 @@ router.get('/:path', function(req, res) {
       if (!err && salons) {
         res.render('pages/salons-single', {
           user: req.user,
-          salons: salons
+          salons: salons,
+          salonsOrder: [
+            {
+              name: 'intro',
+              order: salons.section1_order
+            },
+            {
+              name: 'info',
+              order: salons.section2_order
+            },
+            {
+              name: 'teachers',
+              order: salons.section3_order
+            },
+            {
+              name: 'gallery',
+              order: salons.section4_order
+            }
+          ]
         });
       } else {
         eLogger.error(err);

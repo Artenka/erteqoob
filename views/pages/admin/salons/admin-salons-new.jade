@@ -62,6 +62,12 @@ block contents
             .row
               .col-sm-6.col-xs-12
                 .form-group
+                  label Порядковый номер:
+                  input.form-control(name='section1_order', required='' type="number" min="0" value="0")
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
                   label Заголовок:
                   textarea.form-control(name='title1', required='')
               .col-sm-6.col-xs-12
@@ -106,6 +112,12 @@ block contents
             .row
               .col-sm-6.col-xs-12
                 .form-group
+                  label Порядковый номер:
+                  input.form-control(name='section2_order', required='' type="number" min="0" value="0")
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
                   label Заголовок 1 (телефон):
                   textarea.form-control(name='title2_1')
               .col-sm-6.col-xs-12
@@ -138,6 +150,12 @@ block contents
             br
             h2 Секция 3
             br
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Порядковый номер:
+                  input.form-control(name='section3_order', required='' type="number" min="0" value="0")
 
             .row
               .col-sm-6.col-xs-12
@@ -201,8 +219,14 @@ block contents
 
             br
             br
-            h2 Галерея <small>(1280 X 755)</small>:
+            h2 Секция 4 – Галерея <small>(1280 X 755)</small>:
             br
+
+            .row
+              .col-sm-6.col-xs-12
+                .form-group
+                  label Порядковый номер:
+                  input.form-control(name='section4_order', required='' type="number" min="0" value="0")
 
             .row
               #galleryBlock
