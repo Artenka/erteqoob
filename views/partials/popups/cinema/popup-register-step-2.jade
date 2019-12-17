@@ -9,9 +9,9 @@ script(src='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.js')
 link(rel='stylesheet' href='https://rawgit.com/cloudipsp/checkout-vue/latest/dist/checkout.css')
 script.
 
-  var fondy_id = "#{cinemas.fondy_id}";
+  var fondy_id = parseInt("#{cinemas.fondy_id}", 10);
   if(fondy_id == '') fondy_id = 1402220;
-  var fondy_price = "#{cinemas.fondy_price}";
+  var fondy_price = parseInt("#{cinemas.fondy_price}");
 
   var amount = parseInt(fondy_price + '00', 10);
 
