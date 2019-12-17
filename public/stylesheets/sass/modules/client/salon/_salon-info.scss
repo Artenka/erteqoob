@@ -120,7 +120,8 @@
   }
  }
 
- p {
+ p, .salon-info-block__item-subitem-text {
+  display: block;
   color: $color-gray-2;
   font-size: 12px;
   font-weight: 700;
