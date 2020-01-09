@@ -21,7 +21,10 @@ section.section-layout.salon-intro
   .salons-info
     .salons-info__item.salons-info__item--vlad.salons-info__item--active
       h1.salons-title.salons-info__title #{salons.title1}
-      p.salons-info__text #{salons.subtitle1}
+      if salons.map_link
+        a(href="#{salons.map_link}" target="_blank").salons-info__text #{salons.subtitle1}
+      else
+        p.salons-info__text #{salons.subtitle1}
 
 
   .salons-layout

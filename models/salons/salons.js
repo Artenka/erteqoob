@@ -16,6 +16,7 @@ var salonsSchema = new Schema({
   section1_order: {type: Number, default: 0},
   title1: {type: String},
   subtitle1: {type: String},
+  map_link: {type: String},
   map_position: {type: String},
   map: {type: String},
   map_mobile: {type: String},

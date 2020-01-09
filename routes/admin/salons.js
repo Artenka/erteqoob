@@ -132,6 +132,7 @@ router.post('/new', function (req, res) {
       salons.section1_order = req.body.section1_order;
       salons.title1 = req.body.title1;
       salons.subtitle1 = req.body.subtitle1;
+      salons.map_link = req.body.map_link;
       salons.map_position = req.body.map_position;
       salons.map = req.body.map;
       salons.map_mobile = req.body.map_mobile;
@@ -346,6 +347,7 @@ router.post('/:id/edit', function(req, res) {
             salons.section1_order = req.body.section1_order;
             salons.title1 = req.body.title1;
             salons.subtitle1 = req.body.subtitle1;
+            salons.map_link = req.body.map_link;
             salons.map_position = req.body.map_position;
             salons.map = req.body.map;
             salons.map_mobile = req.body.map_mobile;
