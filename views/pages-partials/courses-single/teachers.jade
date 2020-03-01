@@ -97,7 +97,7 @@ mixin block_teachers(index, city, item)
           }, 0.2);
         }
 
-    else if item.item_1_image === '' ||  item.item_2_image === '' || item.item_2_title === '' || item.item_3_image === '' || item.item_3_title === '' || item.item_4_image === '' || item.item_4_title === '' || item.item_5_image === '' || item.item_5_title === ''
+    else if (item.item_2_image === '' || item.item_2_title === '') && (item.item_3_image === '' || item.item_3_title === '') && (item.item_4_image === '' || item.item_4_title === '') && (item.item_5_image === '' || item.item_5_title === '')
 
       .sp-teacher-blond
         .gbw-base-teachers-name

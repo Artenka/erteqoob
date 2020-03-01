@@ -2,11 +2,11 @@
  background-image: url(../../../img/lp/sp/about/sp-about.jpg);
  @include tablet {
   height: 1260px;
-  background-position: center left 68%;
+  //background-position: center left 68%;
  }
  @include mobile {
   height: 534px;
-  background-position: center left 68%;
+  //background-position: center left 68%;
  }
 
  .switcher {

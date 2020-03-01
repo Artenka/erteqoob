@@ -889,7 +889,7 @@ router.post('/cinema', function (req, res) {
                 res.render('pages/admin/pages/admin-page-cinema', {
                   user: req.user,
                   cinemas: cinemas,
-                  message: 'Ошибка сохранения страницы Философия'
+                  message: 'Ошибка сохранения страницы Cinema'
                 });
               } else {
                 res.redirect('/admin/pages/cinema');
