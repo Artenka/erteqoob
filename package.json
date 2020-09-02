@@ -18,7 +18,7 @@
     "express-fileupload": "^1.1.1-alpha.3",
     "express-session": "^1.14.2",
     "g": "^2.0.1",
-    "googleapis": "^27.0.0",
+    "googleapis": "^59.0.0",
     "jade": "~1.11.0",
     "jquery-circle-progress": "^1.2.2",
     "log4js": "^1.1.1",
